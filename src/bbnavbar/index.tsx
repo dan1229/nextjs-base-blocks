@@ -20,7 +20,6 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
  * @param {string=} imageSrc - Image src for the navbar, can be URL or local
  * @param {string=} routeHome - Route to use for the home button
  * @param {React.ReactNode=} buttonsAuth - Auth buttons to use
- * @param {boolean=} showButtonsAuth - Show the auth buttons
  */
 interface IPropsBBNavbar {
   title: string;
@@ -30,7 +29,6 @@ interface IPropsBBNavbar {
   imageSrc?: string;
   routeHome?: string;
   buttonsAuth?: React.ReactNode;
-  showButtonsAuth?: boolean;
 }
 
 /**
