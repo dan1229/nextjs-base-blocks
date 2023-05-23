@@ -1,4 +1,4 @@
-import type { ApiResponse } from '@/services/typescript-api-services/src/types';
+import type { ApiResponse } from '@/services/typescript-api-services../types';
 
 export function formHandleApiResponse(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

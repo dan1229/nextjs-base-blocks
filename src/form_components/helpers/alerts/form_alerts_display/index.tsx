@@ -1,7 +1,7 @@
 import React from 'react';
-import { AlertsFieldErrors } from '@/src/form_components/helpers/alerts/alerts_field_errors';
-import { AlertsFormErrors } from '@/src/form_components/helpers/alerts/alerts_form_errors';
-import { AlertsFormSuccess } from '@/src/form_components/helpers/alerts/alerts_form_success';
+import { AlertsFieldErrors } from '../form_components/helpers/alerts/alerts_field_errors';
+import { AlertsFormErrors } from '../form_components/helpers/alerts/alerts_form_errors';
+import { AlertsFormSuccess } from '../form_components/helpers/alerts/alerts_form_success';
 import type { FieldErrors } from 'react-hook-form';
 
 /**

@@ -1,5 +1,5 @@
-import BBText, { TBBTextColor, TBBTextSize } from '@/src/bbtext';
-import styles from '@/src/bblink/styles.module.scss';
+import BBText, { TBBTextColor, TBBTextSize } from '../bbtext';
+import styles from '../bblink/styles.module.scss';
 import Link from 'next/link';
 
 /**

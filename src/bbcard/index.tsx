@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import styles from '@/src/bbcard/styles.module.scss';
+import styles from '../bbcard/styles.module.scss';
 import { useTheme } from 'next-themes';
 import React from 'react';
 
