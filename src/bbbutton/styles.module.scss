@@ -1,0 +1,208 @@
+.base {
+  padding: 0.6rem;
+  border-radius: 16px; // this can be a variable
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.noMargin {
+  margin: 0px !important;
+}
+
+.baseVertical {
+  flex-direction: column;
+}
+
+.baseSpaceBetween {
+  justify-content: space-between;
+}
+
+.containerText {
+  margin: 0px 4px;
+}
+
+.disabled {
+  background-color: var(--grey-dark) !important;
+  color: var(--white) !important;
+}
+
+.icon {
+  margin: 0 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.showTextOnHover {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span {
+    display: none;
+  }
+
+  &:hover {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span {
+      display: flex;
+    }
+  }
+}
+
+/*
+  * VARIANTS
+  */
+// PRIMARY
+.primary {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: var(--white);
+}
+.primary.hover:hover > div * {
+  color: var(--primary-light-color) !important;
+}
+.primary.focus > div * {
+  color: var(--primary-light-color) !important;
+}
+.primary:active {
+  background-color: var(--primary-dark-color);
+  border: 1px solid var(--primary-dark-color);
+}
+
+// SECONDARY
+.secondary {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  color: var(--white);
+}
+.secondary.hover:hover > div * {
+  color: var(--secondary-light-color) !important;
+}
+.secondary.focus > div * {
+  color: var(--secondary-light-color) !important;
+}
+.secondary:active {
+  background-color: var(--secondary-dark-color);
+  border: 1px solid var(--secondary-dark-color);
+}
+
+// DANGER
+.danger {
+  background-color: var(--danger-color);
+  border: 1px solid var(--danger-color);
+  color: var(--white);
+}
+.danger.hover:hover > div * {
+  color: var(--danger-light-color) !important;
+}
+.danger.focus > div * {
+  color: var(--danger-light-color) !important;
+}
+.danger:active {
+  background-color: var(--danger-dark-color);
+  border: 1px solid var(--danger-dark-color);
+}
+
+// SUCCESS
+.success {
+  background-color: var(--success-color);
+  border: 1px solid var(--success-color);
+  color: var(--white);
+}
+.success.hover:hover > div * {
+  color: var(--success-light-color) !important;
+}
+.success.focus > div * {
+  color: var(--success-light-color) !important;
+}
+.success:active {
+  background-color: var(--success-dark-color);
+  border: 1px solid var(--success-dark-color);
+}
+
+// WARNING
+.warning {
+  background-color: var(--warning-color);
+  border: 1px solid var(--warning-color);
+  color: var(--white);
+}
+.warning.hover:hover > div * {
+  color: var(--warning-light-color) !important;
+}
+.warning.focus > div * {
+  color: var(--warning-light-color) !important;
+}
+.warning:active {
+  background-color: var(--warning-dark-color);
+  border: 1px solid var(--warning-dark-color);
+}
+
+// INFO
+.info {
+  background-color: var(--info-color);
+  border: 1px solid var(--info-color);
+  color: var(--white);
+}
+.info.hover:hover > div * {
+  color: var(--info-light-color) !important;
+}
+.info.focus > div * {
+  color: var(--info-light-color) !important;
+}
+.info:active {
+  background-color: var(--info-dark-color);
+  border: 1px solid var(--info-dark-color);
+}
+
+// INVERSE INFO
+.inverseInfo {
+  background-color: var(--white);
+  border: 1px solid var(--info-color);
+  * {
+    color: var(--info-color);
+  }
+  &:hover {
+    background-color: var(--grey-light);
+    * {
+    }
+  }
+}
+.inverseInfo.focus > div * {
+  color: var(--grey-light) !important;
+}
+.inverseInfo:active {
+  background-color: var(--grey-dark);
+  border: 1px solid var(--grey-dark);
+}
+
+/*
+  * ELEVATION
+  */
+.elevationNone {
+  box-shadow: none;
+}
+
+.elevationLow {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.elevationMedium {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.elevationHigh {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 15px 30px, rgba(0, 0, 0, 0.22) 0px 12px 10px;
+}

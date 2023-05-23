@@ -1,0 +1,120 @@
+import classnames from 'classnames';
+import { Control, Controller, FieldValues } from 'react-hook-form';
+import BBCard from '@/base_blocks/bbcard';
+import BBText from '@/base_blocks/bbtext';
+import styles from '@/base_blocks/form_components/bbfield_select_multiple/styles.module.scss';
+import { useEffect, useState } from 'react';
+import { getLabel } from '../helpers/helpers';
+
+export interface IBBFieldSelectMultipleOptions {
+  value: string;
+  label: string;
+}
+
+/**
+ * PROPS
+ *
+ * @param {unknown} control - React hook form control.
+ * @param {IBBFieldSelectMultipleOptions[]} options - Options to display.
+ * @param {string} fieldName - Name of the field. Think 'email' or 'name'.
+ * @param {string[] | undefined} selectedInitial - Initial selected options.
+ * @param {string=} className - Any class name to add.
+ */
+interface IPropsBBFieldSelectMultiple {
+  control: unknown;
+  options: IBBFieldSelectMultipleOptions[];
+  fieldName: string;
+  selectedInitial: string[] | undefined;
+  className?: string;
+}
+
+/**
+ * BBFIELD SELECT MULTIPLE
+ */
+export default function BBFieldSelectMultiple(Props: IPropsBBFieldSelectMultiple): React.ReactElement {
+  const { control, options, fieldName, selectedInitial, className } = Props;
+  const [selectedOptions, setSelectedOptions] = useState<IBBFieldSelectMultipleOptions[]>([]);
+
+  const createListOnChange = (list: IBBFieldSelectMultipleOptions[]) => {
+    return list.map((option) => {
+      return option.value;
+    });
+  };
+
+  const onClickOption = (option: IBBFieldSelectMultipleOptions, onChange: Function) => {
+    const found = selectedOptions.find((selectedOption) => selectedOption.value === option.value);
+    const newList = found
+      ? selectedOptions.filter((selectedOption) => selectedOption.value !== option.value)
+      : [...selectedOptions, option];
+    setSelectedOptions(newList);
+    onChange(createListOnChange(newList));
+  };
+
+  /**
+   * RENDER
+   */
+  return (
+    <div className="form-group">
+      <label htmlFor={fieldName}>{getLabel(fieldName)}</label>
+      <Controller
+        control={control as Control<FieldValues>}
+        name={fieldName}
+        defaultValue={selectedOptions}
+        render={({ field: { onChange, ref } }) => {
+          useEffect(() => {
+            if (!!selectedInitial?.length) {
+              const tmp = selectedInitial.map((value) => {
+                const option = options.find((option) => option.value === value);
+                if (!option) return;
+                return option;
+              });
+              const filtered = tmp.filter((option) => !!option) as IBBFieldSelectMultipleOptions[];
+              setSelectedOptions(filtered);
+              onChange(createListOnChange(filtered));
+            }
+          }, [selectedInitial, options]);
+
+          return (
+            <div ref={ref} className={classnames(styles.containerSelectMultiple, className)}>
+              <div className={styles.containerSelectWindow}>
+                <BBText bold>Options</BBText>
+                {options?.map((option) => (
+                  <CardOption key={`${option.value}-option`} option={option} selected={false} onChange={onChange} onClick={onClickOption} />
+                ))}
+              </div>
+              <div className={styles.containerSelectWindow}>
+                <BBText bold>Selected</BBText>
+                {!!selectedOptions?.length ? (
+                  selectedOptions?.map((option) => {
+                    return (
+                      <CardOption
+                        key={`${option.value}-selected`}
+                        option={option}
+                        selected={true}
+                        onChange={onChange}
+                        onClick={onClickOption}
+                      />
+                    );
+                  })
+                ) : (
+                  <BBText color="secondary">No options selected</BBText>
+                )}
+              </div>
+            </div>
+          );
+        }}
+      />
+    </div>
+  );
+}
+
+function CardOption(props: { option: IBBFieldSelectMultipleOptions; selected: boolean; onChange: Function; onClick: Function }) {
+  const { option, selected, onClick, onChange } = props;
+  return (
+    <BBCard className={classnames(styles.cardOption, selected ? styles.cardOptionSelected : '')} onClick={() => onClick(option, onChange)}>
+      <BBCard.Body>
+        <BBText size="small">{option.label}</BBText>
+      </BBCard.Body>
+    </BBCard>
+  );
+}

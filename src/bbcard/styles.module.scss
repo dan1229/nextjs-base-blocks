@@ -1,0 +1,117 @@
+$border-radius: 8px;
+
+.base {
+  border-radius: 10px;
+  background: var(--bg-light-color) !important;
+  border: 2px solid var(--bg-color);
+  white-space: normal;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.card_style__transparent {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+
+  .header {
+    background-color: transparent !important;
+    border: none !important;
+  }
+
+  .footer {
+    background-color: transparent !important;
+    border: none !important;
+  }
+}
+
+.hover {
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-1%);
+    background-color: var(--bg-dark-color);
+    box-shadow: rgba(0, 0, 0, 0.12) 10px 15px 20px;
+
+    .header {
+      background-color: var(--bg-dark-color);
+    }
+  }
+}
+
+/*
+* CARD  SECTIONS
+*/
+.header {
+  padding: 16px;
+  background-color: var(--bg-color);
+  border-radius: $border-radius $border-radius 0 0;
+}
+
+.header:only-child {
+  // if ONLY header, round ALL corners
+  border-radius: $border-radius;
+}
+
+.body {
+  padding: 16px;
+  border-radius: $border-radius;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: var(--bg-light-color);
+}
+
+.footer {
+  padding: 16px;
+  border-top: 1px solid var(--bg-light-color);
+  background-color: var(--bg-color);
+  border-radius: 0 0 $border-radius $border-radius;
+}
+
+.footer:only-child {
+  // if ONLY footer, round ALL corners
+  border-radius: $border-radius;
+  border-top: none !important;
+}
+
+/*
+* BACKGROUND
+*/
+.background_white {
+  background-color: var(--color-white);
+}
+
+.background_grey_light {
+  background-color: var(--color-grey-light);
+}
+
+.background_grey_dark {
+  background-color: var(--color-grey-dark);
+}
+
+.background_black {
+  background-color: var(--color-black);
+}
+
+/*
+* ELEVATIONS
+*/
+.elevation_none {
+  box-shadow: none;
+}
+
+.elevation_low {
+  box-shadow: rgba(0, 0, 0, 0.12) 2px 2px 2px;
+}
+
+.elevation_med {
+  box-shadow: rgba(0, 0, 0, 0.19) 4px 4px 4px;
+}
+
+.elevation_high {
+  box-shadow: rgba(0, 0, 0, 0.3) 4px 16px 16px;
+}

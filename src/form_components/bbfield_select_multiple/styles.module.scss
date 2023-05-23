@@ -1,0 +1,31 @@
+.containerSelectMultiple {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.containerSelectWindow {
+  width: 40%;
+  margin: 1rem;
+}
+
+.cardOption {
+  &:hover {
+    cursor: pointer;
+    div {
+      background-color: var(--bg-dark-color);
+    }
+  }
+
+  .selected {
+    div {
+      background-color: var(--bg-dark-color);
+    }
+  }
+}
+
+.cardOptionSelected {
+  div {
+    background-color: var(--secondary-color);
+  }
+}

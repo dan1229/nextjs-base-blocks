@@ -1,0 +1,126 @@
+.active {
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+}
+
+.navbarItemBase {
+  list-style-type: none;
+  margin: 0 0.2rem;
+  min-width: 15% !important;
+
+  a {
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    * {
+      padding: 24px;
+    }
+  }
+
+  &:hover {
+    border-radius: 8px;
+    background-color: var(--bg-dark-color);
+    .iconDropdown {
+      color: var(--white);
+      transform: scaleY(-1);
+    }
+  }
+}
+
+// TODO find a better selector than this
+// weird situation with 'active' and all that
+.navbarItemBase:hover > div > div > a > * {
+  color: var(--white) !important;
+}
+
+.navbarContentContainer {
+  display: block;
+}
+
+.navbarHeaderContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.iconDropdown {
+  color: var(--secondary-color);
+  margin-right: 0.2rem;
+}
+
+.active .iconDropdown {
+  color: var(--white);
+}
+
+/**
+* DROPDOWN
+*/
+.dropdownContent {
+  display: none !important;
+  position: absolute;
+  border-radius: 8px;
+  min-width: 100%;
+  z-index: 11;
+
+  background-color: var(--bg-light-color);
+  box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+
+  li {
+    margin: 0px;
+  }
+
+  .navbarItemBase {
+    width: 100% !important;
+  }
+}
+
+.dropdownContainer {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.dropdownContainer:hover .dropdownContent {
+  display: block !important;
+}
+
+/**
+* MEDIA
+*/
+@media (max-width: 1200px) {
+  .dropdownContent {
+    left: 90%;
+  }
+
+  .navbarContentContainer {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .iconDropdown {
+    transform: rotate(-90deg);
+  }
+
+  .navbarItemBase {
+    width: 100% !important;
+    margin: 0;
+
+    a {
+      text-align: start;
+    }
+
+    ul,
+    li {
+      margin: 0;
+    }
+
+    &:hover {
+      .iconDropdown {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}

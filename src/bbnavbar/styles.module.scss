@@ -1,0 +1,143 @@
+$border-radius: 8px;
+
+/**
+* ELEVATION
+*/
+
+.elevation_none {
+  box-shadow: none;
+}
+
+.elevation_low {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.elevation_high {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.elevation_rainbow {
+  box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px,
+    rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+}
+
+/**
+* SHARED CSS
+*/
+.navigation {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5rem 0rem;
+  background-color: var(--bg-color);
+  font-family: 'Quicksand', sans-serif;
+}
+
+.brand {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: var(--bg-light-color);
+  }
+}
+
+.containerBrand {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.5rem;
+}
+
+/**
+* NAVIGATION MENU
+*/
+.navigationMenu {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+
+  * {
+    text-decoration: none;
+  }
+}
+
+.navigationMenuList {
+  display: flex;
+  padding: 0;
+}
+
+.containerButtonsAuth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 0 0.25rem;
+}
+
+/**
+* HAMBURGER MENU
+*/
+.hamburger {
+  width: 6%;
+  padding: 1rem;
+  border: none;
+  background-color: transparent;
+  transition: background-color 0.2s ease-in-out;
+  display: none;
+}
+
+.iconHamburger {
+  cursor: pointer;
+  color: var(--secondary-color);
+  padding: 0.5rem;
+  border-radius: $border-radius;
+
+  &:hover {
+    background-color: var(--bg-light-color) !important;
+  }
+}
+
+/**
+* MEDIA QUERIES
+*/
+@media screen and (max-width: 1200px) {
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+
+  .containerBrand {
+    margin-left: auto;
+  }
+
+  .containerButtonsAuth {
+    width: 6%;
+  }
+
+  .navigationMenuList {
+    position: absolute;
+    top: 60px;
+    left: 15px;
+    min-width: 30vw;
+    display: none;
+    flex-direction: column;
+    background-color: var(--bg-light-color);
+    border-radius: $border-radius;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+    z-index: 11;
+  }
+
+  .navigationMenu.expanded ul {
+    display: flex;
+  }
+}

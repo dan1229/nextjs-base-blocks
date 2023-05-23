@@ -1,0 +1,90 @@
+.base {
+  padding: 12px;
+  margin: 12px 0px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  & > * {
+    color: var(--white) !important;
+  }
+
+  & > h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
+    width: 100%;
+  }
+}
+
+.dismissButton {
+  cursor: pointer;
+  color: var(--white);
+  margin-left: 8px;
+  min-width: 20px;
+  height: 20px;
+
+  &:hover {
+    color: var(--danger-color);
+  }
+}
+
+/*
+  * COLOR
+  */
+.color_success {
+  background-color: var(--success-light-color);
+}
+
+.color_warning {
+  background-color: var(--warning-color);
+  & > div {
+    color: var(--black) !important;
+  }
+}
+
+.color_danger {
+  background-color: var(--danger-light-color);
+}
+
+.color_info {
+  background-color: var(--info-light-color);
+}
+
+/**
+  * ELEVATION
+  */
+.elevation_none {
+  box-shadow: none;
+}
+
+.elevation_low {
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.elevation_med {
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+.elevation_high {
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+/**
+* TEXT ALIGNMENT
+*/
+.text_left {
+  text-align: left;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.text_right {
+  text-align: right;
+}

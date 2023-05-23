@@ -1,0 +1,209 @@
+.base {
+  font-weight: 300;
+}
+
+/*
+  * TEXT DECORATIONS
+  */
+.bold {
+  font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.no_margin {
+  margin: 0;
+}
+
+/*
+  * COLORS
+  */
+
+// GREY LIGHT
+.grey_light {
+  color: var(--grey-light);
+}
+
+.grey_light.hover {
+  &:hover {
+    color: var(--grey-dark);
+  }
+}
+
+// GREY DARK
+.grey_dark {
+  color: var(--grey-dark);
+}
+
+.grey_dark.hover {
+  &:hover {
+    color: var(--grey-darkest);
+  }
+}
+
+// BLACK
+.black {
+  color: var(--black);
+}
+.black.hover {
+  &:hover {
+    color: var(--grey-darkest);
+  }
+}
+
+// WHITE
+.white {
+  color: var(--white);
+}
+
+.white.hover {
+  &:hover {
+    color: var(--grey-light);
+  }
+}
+
+// PRIMARy
+.primary {
+  color: var(--primary-color);
+}
+
+.primary.hover {
+  &:hover {
+    color: var(--primary-dark-color);
+  }
+}
+
+// SECONDARY
+.secondary {
+  color: var(--secondary-color);
+}
+
+.secondary.hover {
+  &:hover {
+    color: var(--secondary-dark-color);
+  }
+}
+
+// WARNING
+.warning {
+  color: var(--warning-color);
+}
+.warning.hover {
+  &:hover {
+    color: var(--warning-dark-color);
+  }
+}
+
+// SUCCESS
+.success {
+  color: var(--success-color);
+}
+
+.success.hover {
+  &:hover {
+    color: var(--success-dark-color);
+  }
+}
+
+// DANGER
+.danger {
+  color: var(--danger-color);
+}
+
+.danger.hover {
+  &:hover {
+    color: var(--danger-dark-color);
+  }
+}
+
+// INFO
+
+.info {
+  color: var(--info-color);
+}
+
+.info.hover {
+  &:hover {
+    color: var(--info-dark-color);
+  }
+}
+
+/*
+* SIZE
+*/
+
+// REGULAR
+.tiny {
+  font-size: 0.6rem;
+  margin: 0.1rem 0.2rem;
+}
+
+.small {
+  font-size: 0.8rem;
+  margin: 0.2rem 0.2rem;
+}
+
+.medium {
+  font-size: 1rem;
+  margin: 0.3rem 0.2rem;
+}
+
+.large {
+  font-size: 1.4rem;
+  margin: 0.5rem 0.2rem;
+}
+
+.xlarge {
+  font-size: 1.6rem;
+  font-family: 'Josefin Sans', 'Ubuntu', sans-serif;
+  margin: 0.8rem 0.2rem;
+}
+
+.xxlarge {
+  font-size: 1.8rem;
+  font-family: 'Josefin Sans', 'Ubuntu', sans-serif;
+  margin: 1rem 0.2rem;
+}
+
+.xxxlarge {
+  font-size: 2.3rem;
+  font-family: 'Josefin Sans', 'Ubuntu', sans-serif;
+  margin: 1.2rem 0.2rem;
+}
+
+// MOBILE
+@media all and (max-width: 900px) {
+  .tiny {
+    font-size: 0.4rem;
+  }
+
+  .small {
+    font-size: 0.6rem;
+  }
+
+  .medium {
+    font-size: 0.8rem;
+  }
+
+  .large {
+    font-size: 1.2rem;
+  }
+
+  .xlarge {
+    font-size: 1.4rem;
+  }
+
+  .xxlarge {
+    font-size: 1.7rem;
+  }
+
+  .xxxlarge {
+    font-size: 2rem;
+  }
+}
