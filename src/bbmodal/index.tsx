@@ -1,8 +1,8 @@
-import styles from '../bbmodal/styles.module.scss';
-import BBCard from '../bbcard';
-import BBButton from '../bbbutton';
-import BBText from '../bbtext';
-import { AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineClose } from 'react-icons/ai'
+import BBButton from '../bbbutton'
+import BBCard from '../bbcard'
+import styles from '../bbmodal/styles.module.scss'
+import BBText from '../bbtext'
 
 /**
  * PROPS
@@ -17,22 +17,22 @@ import { AiOutlineClose } from 'react-icons/ai';
  * @param {React.ReactNode=} extraFooter - Extra footer content
  */
 interface IPropsBBModal {
-  children: React.ReactNode;
-  title: string;
-  onDismiss?: () => void;
-  onCancel?: () => void;
-  textCancel?: string;
-  onConfirm?: () => void;
-  textConfirm?: string;
-  extraFooter?: React.ReactNode;
+  children: React.ReactNode
+  title: string
+  onDismiss?: () => void
+  onCancel?: () => void
+  textCancel?: string
+  onConfirm?: () => void
+  textConfirm?: string
+  extraFooter?: React.ReactNode
 }
 
 /**
  * BBModal
  */
-export default function BBModal(Props: IPropsBBModal): React.ReactElement {
-  const { children, title, onDismiss, onCancel, textCancel = 'Cancel', onConfirm, textConfirm = 'Confirm', extraFooter } = Props;
-  const showFooter = !!onConfirm || !!onCancel || !!extraFooter;
+export default function BBModal (Props: IPropsBBModal): React.ReactElement {
+  const { children, title, onDismiss, onCancel, textCancel = 'Cancel', onConfirm, textConfirm = 'Confirm', extraFooter } = Props
+  const showFooter = !!onConfirm || !!onCancel || !!extraFooter
   /**
    * RENDER
    */
@@ -59,5 +59,5 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
         )}
       </BBCard>
     </div>
-  );
+  )
 }

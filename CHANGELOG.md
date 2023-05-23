@@ -63,6 +63,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Basic CI/CD setup
   - Workflow badges in `README.md`
 - Basic linting setup
+- Added Prettier for code formatting
 
 -------------------------------------------------------
 

@@ -1,8 +1,8 @@
-import classnames from 'classnames';
-import React from 'react';
-import { getLabel } from '../helpers/helpers';
+import classnames from 'classnames'
+import React from 'react'
+import { getLabel } from '../helpers/helpers'
 
-type TBBFieldBaseTypes = 'file' | 'checkbox';
+type TBBFieldBaseTypes = 'file' | 'checkbox'
 
 /**
  * PROPS
@@ -15,27 +15,27 @@ type TBBFieldBaseTypes = 'file' | 'checkbox';
  * @param {string=} className - Any class name to add.
  */
 export interface IPropsBBFieldBase {
-  register: Object;
-  fieldName: string;
-  type: TBBFieldBaseTypes;
-  fieldLabel?: string;
-  required?: boolean;
-  className?: string;
+  register: Object
+  fieldName: string
+  type: TBBFieldBaseTypes
+  fieldLabel?: string
+  required?: boolean
+  className?: string
 }
 
 /**
  * BBFIELD BASE
  */
-export default function BBFieldBase(Props: IPropsBBFieldBase): React.ReactElement {
-  const { register, fieldName, type, fieldLabel, required = false, className } = Props;
+export default function BBFieldBase (Props: IPropsBBFieldBase): React.ReactElement {
+  const { register, fieldName, type, fieldLabel, required = false, className } = Props
 
   /**
    * RENDER
    */
   return (
     <div className={classnames('form-group', className)}>
-      <label htmlFor={fieldName}>{!!fieldLabel?.length ? fieldName : getLabel(fieldName)}</label>
+      <label htmlFor={fieldName}>{fieldLabel?.length ? fieldName : getLabel(fieldName)}</label>
       <input className="form-control" id={fieldName} type={type} autoComplete={fieldName} required={required} {...register} />
     </div>
-  );
+  )
 }

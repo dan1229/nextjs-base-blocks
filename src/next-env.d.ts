@@ -1,4 +1,4 @@
 declare module '*.scss' {
-    const classes: { [key: string]: string};
-    export default classes;
+  const classes: Record<string, string>
+  export default classes
 }

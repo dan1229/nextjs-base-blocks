@@ -1,0 +1,1 @@
+This is only here so that we can run `next build` to ensure that this project is built correctly.

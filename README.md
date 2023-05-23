@@ -63,4 +63,19 @@ html,
   --bg-light-color: rgb(255, 255, 255) !important;
   --bg-dark-color: rgb(177, 177, 177) !important;
   --bs-body-color: rgb(24, 23, 23) !important;
+  --text-color: rgb(24, 23, 23) !important;
 }
+```
+
+Add support (overrides) for dark themes like so:
+    
+```scss
+[data-theme='dark'] {
+    // override any of the above variables
+  --bg-color: rgb(25, 25, 25) !important;
+  --bg-light-color: rgb(60, 60, 60) !important;
+  --bg-dark-color: rgb(39, 39, 39) !important;
+  --bs-body-color: rgb(245, 245, 245) !important;
+  --text-primary: rgb(255, 255, 255) !important;
+}
+```

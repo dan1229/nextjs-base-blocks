@@ -1,8 +1,8 @@
-import classnames from 'classnames';
-import React from 'react';
-import { getLabel } from '../helpers/helpers';
+import classnames from 'classnames'
+import React from 'react'
+import { getLabel } from '../helpers/helpers'
 
-type TBBFieldTextType = 'text' | 'textarea' | 'number' | 'password';
+type TBBFieldTextType = 'text' | 'textarea' | 'number' | 'password'
 
 /**
  * PROPS
@@ -16,28 +16,29 @@ type TBBFieldTextType = 'text' | 'textarea' | 'number' | 'password';
  * @param {string=} className - Any class name to add.
  */
 interface IPropsBBFieldText {
-  register: Object;
-  fieldName: string;
-  fieldLabel?: string;
-  required?: boolean;
-  type?: TBBFieldTextType;
-  placeholder?: string;
-  className?: string;
+  register: Object
+  fieldName: string
+  fieldLabel?: string
+  required?: boolean
+  type?: TBBFieldTextType
+  placeholder?: string
+  className?: string
 }
 
 /**
  * BBFIELD TEXT
  */
-export default function BBFieldText(Props: IPropsBBFieldText): React.ReactElement {
-  const { register, fieldName, fieldLabel, required = false, type = 'text', placeholder, className } = Props;
+export default function BBFieldText (Props: IPropsBBFieldText): React.ReactElement {
+  const { register, fieldName, fieldLabel, required = false, type = 'text', placeholder, className } = Props
 
   /**
    * RENDER
    */
   return (
     <div className={classnames('form-group', className)}>
-      <label htmlFor={fieldName}>{!!fieldLabel?.length ? fieldLabel : getLabel(fieldName)}</label>
-      {type == 'textarea' ? (
+      <label htmlFor={fieldName}>{fieldLabel?.length ? fieldLabel : getLabel(fieldName)}</label>
+      {type == 'textarea'
+        ? (
         <textarea
           className="form-control"
           id={fieldName}
@@ -46,7 +47,8 @@ export default function BBFieldText(Props: IPropsBBFieldText): React.ReactElemen
           placeholder={placeholder}
           {...register}
         />
-      ) : (
+          )
+        : (
         <input
           className="form-control"
           id={fieldName}
@@ -56,7 +58,7 @@ export default function BBFieldText(Props: IPropsBBFieldText): React.ReactElemen
           placeholder={placeholder}
           {...register}
         />
-      )}
+          )}
     </div>
-  );
+  )
 }
