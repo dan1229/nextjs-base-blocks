@@ -15,7 +15,6 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
  *
  * @param {string} title - Title to use for navbar
  * @param {React.ReactNode} children - Menu options of the navbar
- * @param {Object=} user - User object
  * @param {TBBNavbarElevation=} elevation - Elevation of the navbar
  * @param {string=} imageSrc - Image src for the navbar, can be URL or local
  * @param {string=} routeHome - Route to use for the home button
@@ -24,7 +23,6 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
 interface IPropsBBNavbar {
   title: string;
   children: React.ReactNode;
-  user?: Object;
   elevation?: TBBNavbarElevation;
   imageSrc?: string;
   routeHome?: string;
