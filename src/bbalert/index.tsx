@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import styles from '@/base_blocks/bbalert/styles.module.scss';
-import BBText, { TBBTextSize } from '@/base_blocks/bbtext';
+import styles from '@/base_blocks/src/bbalert/styles.module.scss';
+import BBText, { TBBTextSize } from '@/base_blocks/src/bbtext';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { useState } from 'react';
 

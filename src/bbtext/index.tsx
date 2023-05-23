@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import styles from '@/base_blocks/bbtext/styles.module.scss';
+import styles from '@/base_blocks/src/bbtext/styles.module.scss';
 import { useTheme } from 'next-themes';
 
 export type TBBTextSize = 'tiny' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge' | 'xxxlarge';

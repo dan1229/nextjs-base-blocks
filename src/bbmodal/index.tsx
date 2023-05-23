@@ -1,7 +1,7 @@
-import styles from '@/base_blocks/bbmodal/styles.module.scss';
-import BBCard from '@/base_blocks/bbcard';
-import BBButton from '@/base_blocks/bbbutton';
-import BBText from '@/base_blocks/bbtext';
+import styles from '@/base_blocks/src/bbmodal/styles.module.scss';
+import BBCard from '@/base_blocks/src/bbcard';
+import BBButton from '@/base_blocks/src/bbbutton';
+import BBText from '@/base_blocks/src/bbtext';
 import { AiOutlineClose } from 'react-icons/ai';
 
 /**

@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import styles from '@/base_blocks/bbbutton/styles.module.scss';
-import BBText, { TBBTextSize } from '@/base_blocks/bbtext';
+import styles from '@/base_blocks/src/bbbutton/styles.module.scss';
+import BBText, { TBBTextSize } from '@/base_blocks/src/bbtext';
 import React from 'react';
 
 export type TBBButtonType = 'submit' | 'button' | 'reset';

@@ -1,5 +1,5 @@
 import React from 'react';
-import BBAlert from '@/base_blocks/bbalert';
+import BBAlert from '@/base_blocks/src/bbalert';
 
 /**
  * IProps
