@@ -14,6 +14,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [0.1.0] - 2023-05-22
+- Initial release!
+- Base Blocks components system
+- Documentation updates
+- Basic CI/CD setup
+  - Workflow badges in `README.md`
+  - Added `lint` and `build`` workflows
+- Basic linting setup
+- Added Prettier for code formatting
+- Added 
+
 
 
 -------------------------------------------------------
@@ -37,42 +48,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### add more variables
 - add for things like `button-border-radius` to allow for easy customization
 
-
 ----
-### 0.0.1
-
-#### how to require that this code builds?
-- install nextjs?
-- add ci step
-  - badge to readme
+### 0.1.1
+- 
 
 
-#### how to handle logo/image in bbnavbar?
-- pass a url?
 
-- form css?
-  - how to apply global css to a git submodule?
+#### form css?
+- how to apply global css to a git submodule?
+- not necessary while the projects override it but yea
 
 
-#### readme requirements
-- css stuff
-  - figure out which variables are using `var` and label
+#### scss variable defaults
 - html variables
   - how to get a default value for those calls to make them all optional?
 
 
 
 
-### [0.0.1] - 2022-07-31
-- Initial release!
-- Base Blocks components system
-- Documentation updates
-- Basic CI/CD setup
-  - Workflow badges in `README.md`
-  - Added `lint` and `build`` workflows
-- Basic linting setup
-- Added Prettier for code formatting
-- Added 
+### [0.1.1] - 2023-MM-DD
+#### TODO
 
 -------------------------------------------------------
 
