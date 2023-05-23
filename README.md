@@ -1,23 +1,7 @@
-# Typescript API Services
+# Base Blocks
 
-[![Lint Client](https://github.com/dan1229/typescript-api-services/actions/workflows/lint-client.yml/badge.svg)](https://github.com/dan1229/typescript-api-services/actions/workflows/lint-client.yml)
+`Base Block`s is a collection of UI 'blocks' that are used to build the rest of the components used on the sites.
 
-#### By: [Daniel Nazarian](https://danielnazarian) 🐧👹
-##### Contact me at <dnaz@danielnazarian.com>
+A `block` ideally is the smallest unit of UI code that can be reasonably reused. It is a self-contained piece of code that can be used in any context. It is not a component, but a building block for other, bigger components.
 
--------------------------------------------------------
-
-### Description
-Just some HTTP services and templates for Typescript projects.
-
-Primarily focussed on using with Django REST Framework however can be used with any API.
-
-### Requirements
-You must have these NPM packages installed
-- [Axios](https://www.npmjs.com/package/axios)
-- [JSCookie](https://www.npmjs.com/package/js-cookie)
-
-
--------------------------------------------------------
-##### [https://danielnazarian.com](https://danielnazarian.com)
-##### Copyright 2023 © Daniel Nazarian.
+The idea behind this is that you can standardize your components and styling without an overabundance of classes and styles or a third party style library like [bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/) or [tailwind](https://tailwindcss.com/) (you can still switch to one if you want though!) This will make it easier to maintain and update your codebase as requirements become more intense.
