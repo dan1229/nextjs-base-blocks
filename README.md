@@ -1,4 +1,12 @@
-# Base Blocks
+# NextJS Base Blocks
+[![Lint Client](https://github.com/dan1229/nextjs-base-blocks/actions/workflows/lint-client.yml/badge.svg)](https://github.com/dan1229/nextjs-base-blocks/actions/workflows/lint-client.yml)
+
+#### By: [Daniel Nazarian](https://danielnazarian) 🐧👹
+##### Contact me at <dnaz@danielnazarian.com>
+
+-------------------------------------------------------
+
+## Description
 
 `Base Block`s is a collection of UI 'blocks' that are used to build the rest of the components used on the sites.
 
@@ -14,9 +22,9 @@ You must have the following installed to use this submodule
 - [React Icons](https://react-icons.github.io/react-icons/)
 - [Recoil](https://recoiljs.org/)
 - [Sass](https://sass-lang.com/)
+- [Node Sass](https://www.npmjs.com/package/node-sass)
 - [classnames](https://www.npmjs.com/package/classnames)
 
-- nextjs themes thing lol?
 
 ### SCSS Globals
 

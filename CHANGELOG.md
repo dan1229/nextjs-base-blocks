@@ -28,6 +28,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - set global variable that takes precedence then good common defaults
 
 
+#### add more variables
+- add for things like `button-border-radius` to allow for easy customization
+
+
 ----
 ### 0.0.1
 
@@ -44,15 +48,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - how to apply global css to a git submodule?
 
 
-#### add more variables
-- add for things like `button-border-radius` to allow for easy customization
-
-
 #### readme requirements
 - css stuff
   - figure out which variables are using `var` and label
     - how to get a default value for those calls to make them all optional?
-- get status badges
+
 
 
 
@@ -61,6 +61,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Base Blocks components system
 - Documentation updates
 - Basic CI/CD setup
+  - Workflow badges in `README.md`
 - Basic linting setup
 
 -------------------------------------------------------
