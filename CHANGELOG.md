@@ -14,45 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
-### [0.2.5] - 2023-05-01
-- URL query param fix for `undefined` or `falsey` values
 
-
-### [0.2.4] - 2023-04-25
-- Lint and cleanup
-
-
-### [0.2.3] - 2023-04-25
-- URL API fix for Django API
-- Installed `js-cookie`
-
-
-### [0.2.2] - 2023-03-22
-- Added 'extraHeaders' param to Django services
-- Some field error processing cleanup
-
-
-### [0.2.1] - 2023-02-27
-- Lots of type cleanup
-
-
-### [0.2.0] - 2023-02-22
-- Fixed import and dependency issues
-- Updated axios client in Django Api to use different headers
-- Cleaned up BaseApi to be more generic than DjangoApi
-- Eslint added and package set up
-- CI - lint for TS
-- CD - for creating branch and release
-
-
-### [0.1.0] - 2023-01-13
-- Architectural/structural changes to help make APIs more specific
-- Broke up Django API into method APIs
-- Major cleanup as well
-
-
-### [0.0.1] - 2022-07-31
-- Initial release!
 
 -------------------------------------------------------
 
@@ -62,35 +24,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### TODO
 
 
-#### ApiResponse error list
-- instead of individual error message, include a list of any
-- find some way to organize:
-  - message - main message
-  - messageList - full list
-  - some way to identify fields or something?
-    - maybe just mimic any fields django sends back?
+#### how to handle custom fonts?
+- set global variable that takes precedence then good common defaults
 
-
-#### ApiResponseHandler -> DjangoApiResponseHandler?
-- move to new file?
-- keep api response handler more generic?
 
 ----
-### 0.3.0
+### 0.0.1
 
-#### base api handler
-- split up handler into django variant and a base variant
-- allow for baseapi instances to use this and get general functionality
-  - detect errors and use 'error' boolean
-  - generic message with 'message' string
+#### how to require that this code builds?
+- install nextjs?
 
 
-#### ci
-- add build step somehow
+#### how to handle logo/image in bbnavbar?
+- pass a url?
+
+- form css?
+  - how to apply global css to a git submodule?
 
 
-### [0.3.0] - 2023-MM-DD
-#### TODO
+#### add more variables
+- add for things like `button-border-radius` to allow for easy customization
+
+
+#### readme requirements
+- css stuff
+  - figure out which variables are using `var` and label
+    - how to get a default value for those calls to make them all optional?
+
+
+
+
+### [0.0.1] - 2022-07-31
+- Initial release!
 
 -------------------------------------------------------
 
