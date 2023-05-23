@@ -52,8 +52,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### 0.1.1
 - 
 
-
-
 #### form css?
 - how to apply global css to a git submodule?
 - not necessary while the projects override it but yea
@@ -62,7 +60,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### scss variable defaults
 - html variables
   - how to get a default value for those calls to make them all optional?
-
 
 
 

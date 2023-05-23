@@ -15,6 +15,8 @@ A `block` ideally is the smallest unit of UI code that can be reasonably reused.
 
 The idea behind this is that you can standardize your components and styling without an overabundance of classes and styles or a third party style library like [bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/) or [tailwind](https://tailwindcss.com/) (you can still switch to one if you want though!) This will make it easier to maintain and update your codebase as requirements become more intense.
 
+If you ever want to move away or edit the base components, you can easily 'remove' the git submodule and do what you need. This is a great way to get started with a new project or to add to an existing one.
+
 ## Requirements
 
 You must have the following installed to use this submodule
