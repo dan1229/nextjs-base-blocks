@@ -1,7 +1,7 @@
 {
-  "name": "typescript-api-services",
+  "name": "nextjs-base-blocks",
   "version": "0.1.0",
-  "description": "API service helpers for TypeScript projects.",
+  "description": "Generic UI components for Next.js",
   "main": "index.js",
   "scripts": {
     "lint": "npx eslint src",

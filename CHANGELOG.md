@@ -33,6 +33,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### how to require that this code builds?
 - install nextjs?
+- add ci step
+  - badge to readme
 
 
 #### how to handle logo/image in bbnavbar?
@@ -50,15 +52,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - css stuff
   - figure out which variables are using `var` and label
     - how to get a default value for those calls to make them all optional?
+- get status badges
 
-
-ci/cd stuff
 
 
 ### [0.0.1] - 2022-07-31
 - Initial release!
 - Base Blocks components system
 - Documentation updates
+- Basic CI/CD setup
+- Basic linting setup
 
 -------------------------------------------------------
 
