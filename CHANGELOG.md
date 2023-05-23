@@ -51,7 +51,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### readme requirements
 - css stuff
   - figure out which variables are using `var` and label
-    - how to get a default value for those calls to make them all optional?
+- html variables
+  - how to get a default value for those calls to make them all optional?
 
 
 

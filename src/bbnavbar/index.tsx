@@ -1,14 +1,14 @@
-import classNames from 'classnames'
-import Image from 'next/image'
-import { useRouter } from 'next/router'
-import React from 'react'
-import { useState, useRef } from 'react'
-import { AiOutlineMenu } from 'react-icons/ai'
-import BBText from '../bbtext'
-import useOutsideClick from '../utils/hooks/UseOutsideClick'
-import styles from './styles.module.scss'
+import classNames from 'classnames';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import React from 'react';
+import { useState, useRef } from 'react';
+import { AiOutlineMenu } from 'react-icons/ai';
+import BBText from '../bbtext';
+import useOutsideClick from '../utils/hooks/UseOutsideClick';
+import styles from './styles.module.scss';
 
-type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow'
+type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
 
 /**
  * PROPS
@@ -23,40 +23,42 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow'
  * @param {boolean=} showButtonsAuth - Show the auth buttons
  */
 interface IPropsBBNavbar {
-  title: string
-  children: React.ReactNode
+  title: string;
+  children: React.ReactNode;
   user?: Object;
-  elevation?: TBBNavbarElevation
-  imageSrc?: string
-  routeHome?: string
-  buttonsAuth?: React.ReactNode
-  showButtonsAuth?: boolean
+  elevation?: TBBNavbarElevation;
+  imageSrc?: string;
+  routeHome?: string;
+  buttonsAuth?: React.ReactNode;
+  showButtonsAuth?: boolean;
 }
 
 /**
  * BBNAVBAR
  */
-export default function BBNavbar (Props: IPropsBBNavbar): React.ReactElement {
-  const { title, children, imageSrc, elevation = 'low', routeHome = '/', buttonsAuth, showButtonsAuth = true } = Props
-  const [showNavExpanded, setShowNavExpanded] = useState(false)
-  const router = useRouter()
+export default function BBNavbar(Props: IPropsBBNavbar): React.ReactElement {
+  const { title, children, imageSrc, elevation = 'low', routeHome = '/', buttonsAuth } = Props;
+  const [showNavExpanded, setShowNavExpanded] = useState(false);
+  const router = useRouter();
 
   // outside click for detecting when to close the expanded nav
-  const ref = useRef<HTMLDivElement>(null)
-  useOutsideClick(ref, () => { setShowNavExpanded(false) })
+  const ref = useRef<HTMLDivElement>(null);
+  useOutsideClick(ref, () => {
+    setShowNavExpanded(false);
+  });
 
   const getClassElevation = () => {
     switch (elevation) {
       case 'none':
-        return styles.elevation_none
+        return styles.elevation_none;
       case 'low':
-        return styles.elevation_low
+        return styles.elevation_low;
       case 'high':
-        return styles.elevation_high
+        return styles.elevation_high;
       case 'rainbow':
-        return styles.elevation_rainbow
+        return styles.elevation_rainbow;
     }
-  }
+  };
 
   /**
    * RENDER
@@ -68,7 +70,7 @@ export default function BBNavbar (Props: IPropsBBNavbar): React.ReactElement {
           size={40}
           className={styles.iconHamburger}
           onClick={() => {
-            setShowNavExpanded(!showNavExpanded)
+            setShowNavExpanded(!showNavExpanded);
           }}
         />
       </div>
@@ -83,5 +85,5 @@ export default function BBNavbar (Props: IPropsBBNavbar): React.ReactElement {
       </div>
       <div className={styles.containerButtonsAuth}>{buttonsAuth}</div>
     </nav>
-  )
+  );
 }

@@ -1,6 +1,7 @@
-import Link from 'next/link'
-import styles from '../bblink/styles.module.scss'
-import BBText, { type TBBTextColor, type TBBTextSize } from '../bbtext'
+import Link from 'next/link';
+import React from 'react';
+import styles from '../bblink/styles.module.scss';
+import BBText, { type TBBTextColor, type TBBTextSize } from '../bbtext';
 
 /**
  * PROPS
@@ -17,21 +18,21 @@ import BBText, { type TBBTextColor, type TBBTextSize } from '../bbtext'
  * @param {string=} className - Any class name to add
  */
 interface IPropsBBLink {
-  children: React.ReactNode
-  href: string
-  size?: TBBTextSize
-  color?: TBBTextColor
-  bold?: boolean
-  italics?: boolean
-  underline?: boolean
-  asSpan?: boolean
-  external?: boolean
-  className?: string
+  children: React.ReactNode;
+  href: string;
+  size?: TBBTextSize;
+  color?: TBBTextColor;
+  bold?: boolean;
+  italics?: boolean;
+  underline?: boolean;
+  asSpan?: boolean;
+  external?: boolean;
+  className?: string;
 }
 /**
  * BBLink
  */
-export default function BBLink (Props: IPropsBBLink): React.ReactElement {
+export default function BBLink(Props: IPropsBBLink): React.ReactElement {
   const {
     children,
     href,
@@ -42,8 +43,8 @@ export default function BBLink (Props: IPropsBBLink): React.ReactElement {
     underline = true,
     asSpan = false,
     external = false,
-    className
-  } = Props
+    className,
+  } = Props;
 
   return (
     <Link
@@ -65,5 +66,5 @@ export default function BBLink (Props: IPropsBBLink): React.ReactElement {
         {children}
       </BBText>
     </Link>
-  )
+  );
 }

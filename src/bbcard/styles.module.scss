@@ -78,9 +78,13 @@ $border-radius: 8px;
   border-top: none !important;
 }
 
-/*
+/**
 * BACKGROUND
 */
+.background_default {
+  background-color: var(--bg-dark-color);
+}
+
 .background_white {
   background-color: var(--color-white);
 }

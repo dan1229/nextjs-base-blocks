@@ -1,8 +1,9 @@
-import classNames from 'classnames'
-import React from 'react'
-import styles from '../bbtext/styles.module.scss'
+import classNames from 'classnames';
+import React from 'react';
+import styles from '../bbtext/styles.module.scss';
+import type { JSX } from 'react';
 
-export type TBBTextSize = 'tiny' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge' | 'xxxlarge'
+export type TBBTextSize = 'tiny' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge' | 'xxxlarge';
 export type TBBTextColor =
   | 'grey_light'
   | 'grey_dark'
@@ -13,7 +14,7 @@ export type TBBTextColor =
   | 'success'
   | 'warning'
   | 'danger'
-  | 'info'
+  | 'info';
 
 /**
  * PROPS
@@ -30,22 +31,22 @@ export type TBBTextColor =
  * @param {() => void=} onClick - Function to call when clicked
  */
 interface IPropsBBText {
-  children: React.ReactNode
-  size?: TBBTextSize
-  color?: TBBTextColor
-  bold?: boolean
-  italics?: boolean
-  underline?: boolean
-  hover?: boolean
-  asSpan?: boolean
-  className?: string
-  onClick?: () => void
+  children: React.ReactNode;
+  size?: TBBTextSize;
+  color?: TBBTextColor;
+  bold?: boolean;
+  italics?: boolean;
+  underline?: boolean;
+  hover?: boolean;
+  asSpan?: boolean;
+  className?: string;
+  onClick?: () => void;
 }
 
 /**
  * BBText
  */
-export default function BBText (Props: IPropsBBText): React.ReactElement {
+export default function BBText(Props: IPropsBBText): React.ReactElement {
   const {
     children,
     size = 'medium',
@@ -56,77 +57,77 @@ export default function BBText (Props: IPropsBBText): React.ReactElement {
     hover = false,
     asSpan = false,
     className,
-    onClick
-  } = Props
+    onClick,
+  } = Props;
 
   const getClassColor = (): string => {
     switch (color) {
       case 'grey_light':
-        return styles.grey_light
+        return styles.grey_light;
       case 'grey_dark':
-        return styles.grey_dark
+        return styles.grey_dark;
       case 'black':
-        return styles.black
+        return styles.black;
       case 'white':
-        return styles.white
+        return styles.white;
       case 'primary':
-        return styles.primary
+        return styles.primary;
       case 'secondary':
-        return styles.secondary
+        return styles.secondary;
       case 'success':
-        return styles.success
+        return styles.success;
       case 'warning':
-        return styles.warning
+        return styles.warning;
       case 'danger':
-        return styles.danger
+        return styles.danger;
       case 'info':
-        return styles.info
+        return styles.info;
       default:
-        return styles.color_default
+        return styles.color_default;
     }
-  }
+  };
 
   const getClassSize = (): string => {
     switch (size) {
       case 'tiny':
-        return styles.tiny
+        return styles.tiny;
       case 'small':
-        return styles.small
+        return styles.small;
       case 'medium':
-        return styles.medium
+        return styles.medium;
       case 'large':
-        return styles.large
+        return styles.large;
       case 'xlarge':
-        return styles.xlarge
+        return styles.xlarge;
       case 'xxlarge':
-        return styles.xxlarge
+        return styles.xxlarge;
       case 'xxxlarge':
-        return styles.xxxlarge
+        return styles.xxxlarge;
     }
-  }
+  };
 
   const getHtmlTag = (): string => {
-    if (asSpan) return 'span'
+    if (asSpan) return 'span';
     switch (size) {
       case 'tiny':
-        return 'p'
+        return 'p';
       case 'small':
-        return 'p'
+        return 'p';
       case 'medium':
-        return 'p'
+        return 'p';
       case 'large':
-        return 'h4'
+        return 'h4';
       case 'xlarge':
-        return 'h3'
+        return 'h3';
       case 'xxlarge':
-        return 'h2'
+        return 'h2';
       case 'xxxlarge':
-        return 'h1'
+        return 'h1';
       default:
-        return 'p'
+        return 'p';
     }
-  }
-  const Tag = getHtmlTag() as keyof JSX.IntrinsicElements
+  };
+  const Tag = getHtmlTag() as keyof JSX.IntrinsicElements;
 
   /**
    * RENDER
@@ -147,5 +148,5 @@ export default function BBText (Props: IPropsBBText): React.ReactElement {
     >
       {children}
     </Tag>
-  )
+  );
 }
