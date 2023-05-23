@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { type Control, Controller, type FieldValues } from 'react-hook-form'
 import BBCard from '../../bbcard'
 import BBText from '../../bbtext'
-import styles from '../form_components/bbfield_select_multiple/styles.module.scss'
+import styles from './styles.module.scss'
 import { getLabel } from '../helpers/helpers'
 
 export interface IBBFieldSelectMultipleOptions {

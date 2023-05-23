@@ -1,7 +1,8 @@
 import classNames from 'classnames';
 import React from 'react';
 import styles from '../bbtext/styles.module.scss';
-import type { JSX } from 'react';
+
+
 
 export type TBBTextSize = 'tiny' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge' | 'xxxlarge';
 export type TBBTextColor =
@@ -127,6 +128,7 @@ export default function BBText(Props: IPropsBBText): React.ReactElement {
         return 'p';
     }
   };
+  
   const Tag = getHtmlTag() as keyof JSX.IntrinsicElements;
 
   /**
