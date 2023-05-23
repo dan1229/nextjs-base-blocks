@@ -23,6 +23,7 @@ You must have the following installed to use this submodule
 - [Sass](https://sass-lang.com/)
 - [Node Sass](https://www.npmjs.com/package/node-sass)
 - [classnames](https://www.npmjs.com/package/classnames)
+- [UseHooks TS](https://usehooks-typescript.com/)
 
 
 ### SCSS Globals
