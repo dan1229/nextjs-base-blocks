@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [0.1.1] - 2023-05-22
+- BBNavbar prop updates
+
+
 ### [0.1.0] - 2023-05-22
 - Initial release!
 - Base Blocks components system
@@ -48,7 +52,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add for things like `button-border-radius` to allow for easy customization
 
 ----
-### 0.1.1
+### 0.1.2
 - 
 
 #### form css?
@@ -62,7 +66,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 
-### [0.1.1] - 2023-MM-DD
+### [0.1.2] - 2023-MM-DD
 #### TODO
 
 -------------------------------------------------------

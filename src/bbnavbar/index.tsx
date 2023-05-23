@@ -19,6 +19,7 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
  * @param {string=} imageSrc - Image src for the navbar, can be URL or local
  * @param {string=} routeHome - Route to use for the home button
  * @param {React.ReactNode=} buttonsAuth - Auth buttons to use
+ * @param {boolean=} showButtonsAuth - Show auth buttons
  */
 interface IPropsBBNavbar {
   title: string;
@@ -27,13 +28,14 @@ interface IPropsBBNavbar {
   imageSrc?: string;
   routeHome?: string;
   buttonsAuth?: React.ReactNode;
+  showButtonsAuth?: boolean;
 }
 
 /**
  * BBNAVBAR
  */
 export default function BBNavbar(Props: IPropsBBNavbar): React.ReactElement {
-  const { title, children, imageSrc, elevation = 'low', routeHome = '/', buttonsAuth } = Props;
+  const { title, children, imageSrc, elevation = 'low', routeHome = '/', buttonsAuth, showButtonsAuth = true } = Props;
   const [showNavExpanded, setShowNavExpanded] = useState(false);
   const router = useRouter();
 
@@ -79,7 +81,7 @@ export default function BBNavbar(Props: IPropsBBNavbar): React.ReactElement {
       <div className={classNames(styles.navigationMenu, showNavExpanded && styles.expanded)}>
         <ul className={styles.navigationMenuList}>{children}</ul>
       </div>
-      <div className={styles.containerButtonsAuth}>{buttonsAuth}</div>
+      {showButtonsAuth && <div className={styles.containerButtonsAuth}>{buttonsAuth}</div>}
     </nav>
   );
 }
