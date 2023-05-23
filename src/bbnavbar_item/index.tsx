@@ -1,10 +1,10 @@
-import BBLink from '../bblink';
-import { useRouter } from 'next/router';
-import styles from '../bbnavbar_item/styles.module.scss';
 import classnames from 'classnames';
+import { useRouter } from 'next/router';
+import React from 'react';
 import { useEffect, useState } from 'react';
 import { IoMdArrowDropdown } from 'react-icons/io';
-import LoadingPage from '@/components/loading/loading_page';
+import BBLink from '../bblink';
+import styles from '../bbnavbar_item/styles.module.scss';
 
 function removeSlashes(str: string | undefined) {
   if (!str) return '';
@@ -43,10 +43,10 @@ export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElem
       }
     });
     setIsActiveInDropdown(found);
-  }, [children, window.location.pathname]);
+  }, [children]);
 
   if (!router.isReady) {
-    return <LoadingPage />;
+    return <></>;
   }
   const urlMatch = !!router.asPath.length && !!href.length && removeSlashes(router.asPath) === removeSlashes(href);
   const isActive = urlMatch || isActiveInDropdown;

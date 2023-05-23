@@ -23,6 +23,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -------------------------------------------------------
 ### TODO
 
+#### code cov
+- hook up code cov and coverage
+
+#### cypress tests?
+- add cypress component testing?
+
 
 #### how to handle custom fonts?
 - set global variable that takes precedence then good common defaults
@@ -51,7 +57,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### readme requirements
 - css stuff
   - figure out which variables are using `var` and label
-    - how to get a default value for those calls to make them all optional?
+- html variables
+  - how to get a default value for those calls to make them all optional?
 
 
 
@@ -62,7 +69,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Documentation updates
 - Basic CI/CD setup
   - Workflow badges in `README.md`
+  - Added `lint` and `build`` workflows
 - Basic linting setup
+- Added Prettier for code formatting
+- Added 
 
 -------------------------------------------------------
 

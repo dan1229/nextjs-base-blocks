@@ -21,9 +21,14 @@
   margin: 0;
 }
 
-/*
-  * COLORS
-  */
+/**
+* COLORS
+*/
+
+// DEFAULT
+.color_default {
+  color: var(--text-color);
+}
 
 // GREY LIGHT
 .grey_light {

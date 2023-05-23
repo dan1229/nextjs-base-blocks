@@ -1,10 +1,10 @@
-import classnames from 'classnames';
-import { useState } from 'react';
-import { getLabel } from '../helpers/helpers';
+import classnames from 'classnames'
+import React from 'react'
+import { getLabel } from '../helpers/helpers'
 
 export interface IBBFieldDropdownOptions {
-  value: string;
-  label: string;
+  value: string
+  label: string
 }
 
 /**
@@ -16,33 +16,18 @@ export interface IBBFieldDropdownOptions {
  * @param {string=} className - Any class name to add.
  */
 interface IPropsBBFieldDropdown {
-  register: Object;
-  options: IBBFieldDropdownOptions[];
-  fieldName: string;
-  className?: string;
+  register: Object
+  options: IBBFieldDropdownOptions[]
+  fieldName: string
+  className?: string
 }
 
 /**
  * BBFIELD DROPDOWN
  */
-export default function BBFieldDropdown(Props: IPropsBBFieldDropdown): React.ReactElement {
-  const { register, options, fieldName, className } = Props;
-  const [selectedOptions, setSelectedOptions] = useState<IBBFieldDropdownOptions[]>([]);
+export default function BBFieldDropdown (Props: IPropsBBFieldDropdown): React.ReactElement {
+  const { register, options, fieldName, className } = Props
 
-  const createListOnChange = (list: IBBFieldDropdownOptions[]) => {
-    return list.map((option) => {
-      return option.value;
-    });
-  };
-
-  const onClickOption = (option: IBBFieldDropdownOptions, onChange: Function) => {
-    const found = selectedOptions.find((selectedOption) => selectedOption.value === option.value);
-    const newList = found
-      ? selectedOptions.filter((selectedOption) => selectedOption.value !== option.value)
-      : [...selectedOptions, option];
-    setSelectedOptions(newList);
-    onChange(createListOnChange(newList));
-  };
 
   /**
    * RENDER
@@ -58,5 +43,5 @@ export default function BBFieldDropdown(Props: IPropsBBFieldDropdown): React.Rea
         ))}
       </select>
     </div>
-  );
+  )
 }

@@ -1,6 +1,7 @@
 import classNames from 'classnames';
+import React from 'react';
 import styles from '../bbtext/styles.module.scss';
-import { useTheme } from 'next-themes';
+import type { JSX } from 'react';
 
 export type TBBTextSize = 'tiny' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge' | 'xxxlarge';
 export type TBBTextColor =
@@ -46,11 +47,10 @@ interface IPropsBBText {
  * BBText
  */
 export default function BBText(Props: IPropsBBText): React.ReactElement {
-  const { theme } = useTheme();
   const {
     children,
     size = 'medium',
-    color = theme == 'dark' ? 'white' : 'black',
+    color,
     bold = false,
     italics = false,
     underline = false,
@@ -82,6 +82,8 @@ export default function BBText(Props: IPropsBBText): React.ReactElement {
         return styles.danger;
       case 'info':
         return styles.info;
+      default:
+        return styles.color_default;
     }
   };
 

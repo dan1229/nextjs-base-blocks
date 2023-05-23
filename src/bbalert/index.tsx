@@ -1,8 +1,8 @@
 import classNames from 'classnames';
-import styles from '../bbalert/styles.module.scss';
-import BBText, { TBBTextSize } from '../bbtext';
+import React, { useState } from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
-import { useState } from 'react';
+import styles from '../bbalert/styles.module.scss';
+import BBText, { type TBBTextSize } from '../bbtext';
 
 export type TBBAlertVariant = 'success' | 'warning' | 'danger' | 'info';
 export type TBBAlertElevation = 'none' | 'low' | 'medium' | 'high';

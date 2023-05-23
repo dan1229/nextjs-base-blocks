@@ -1,8 +1,9 @@
-import styles from '../bbmodal/styles.module.scss';
-import BBCard from '../bbcard';
-import BBButton from '../bbbutton';
-import BBText from '../bbtext';
+import React from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
+import BBButton from '../bbbutton';
+import BBCard from '../bbcard';
+import styles from '../bbmodal/styles.module.scss';
+import BBText from '../bbtext';
 
 /**
  * PROPS

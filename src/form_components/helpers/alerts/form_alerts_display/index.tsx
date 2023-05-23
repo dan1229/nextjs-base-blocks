@@ -1,8 +1,8 @@
-import React from 'react';
-import { AlertsFieldErrors } from '../form_components/helpers/alerts/alerts_field_errors';
-import { AlertsFormErrors } from '../form_components/helpers/alerts/alerts_form_errors';
-import { AlertsFormSuccess } from '../form_components/helpers/alerts/alerts_form_success';
-import type { FieldErrors } from 'react-hook-form';
+import React from 'react'
+import { AlertsFieldErrors } from '../alerts_field_errors'
+import { AlertsFormErrors } from '../alerts_form_errors'
+import { AlertsFormSuccess } from '../alerts_form_success'
+import type { FieldErrors } from 'react-hook-form'
 
 /**
  * IPropsAlert
@@ -12,16 +12,16 @@ import type { FieldErrors } from 'react-hook-form';
  * @param {Array<string>=} formErrors - Form errors to display
  */
 interface IPropsAlert {
-  formSuccess?: Array<string>;
-  fieldErrors?: FieldErrors;
-  formErrors?: Array<string>;
+  formSuccess?: string[]
+  fieldErrors?: FieldErrors
+  formErrors?: string[]
 }
 
 /**
  * FORM ALERTS DISPLAY
  */
-export default function FormAlertsDisplay(Props: IPropsAlert) {
-  const { formSuccess, fieldErrors, formErrors } = Props;
+export default function FormAlertsDisplay (Props: IPropsAlert): React.ReactElement {
+  const { formSuccess, fieldErrors, formErrors } = Props
 
   /**
    * RENDER
@@ -35,5 +35,5 @@ export default function FormAlertsDisplay(Props: IPropsAlert) {
       {/* FIELD ERRORS */}
       <AlertsFieldErrors fieldErrors={fieldErrors} />
     </>
-  );
+  )
 }

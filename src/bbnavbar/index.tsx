@@ -1,16 +1,12 @@
-import useOutsideClick from '@/utils/hooks/UseOutsideClick';
 import classNames from 'classnames';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { useState, useRef, useEffect } from 'react';
+import React from 'react';
+import { useState, useRef } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import BBText from '../bbtext';
+import useOutsideClick from '../utils/hooks/UseOutsideClick';
 import styles from './styles.module.scss';
-import Image from 'next/image';
-import { isLoggedIn } from '@/utils/auth';
-import ButtonsAuth from '@/components/buttons/buttons_auth';
-import ButtonLogout from '@/components/buttons/button_logout';
-import { stateUser } from '@/states/auth';
-import { useRecoilState } from 'recoil';
 
 type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
 
@@ -19,17 +15,21 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
  *
  * @param {string} title - Title to use for navbar
  * @param {React.ReactNode} children - Menu options of the navbar
+ * @param {Object=} user - User object
  * @param {TBBNavbarElevation=} elevation - Elevation of the navbar
  * @param {string=} imageSrc - Image src for the navbar, can be URL or local
  * @param {string=} routeHome - Route to use for the home button
+ * @param {React.ReactNode=} buttonsAuth - Auth buttons to use
  * @param {boolean=} showButtonsAuth - Show the auth buttons
  */
 interface IPropsBBNavbar {
   title: string;
   children: React.ReactNode;
+  user?: Object;
   elevation?: TBBNavbarElevation;
   imageSrc?: string;
   routeHome?: string;
+  buttonsAuth?: React.ReactNode;
   showButtonsAuth?: boolean;
 }
 
@@ -37,24 +37,15 @@ interface IPropsBBNavbar {
  * BBNAVBAR
  */
 export default function BBNavbar(Props: IPropsBBNavbar): React.ReactElement {
-  const { title = 'Get Starty', children, imageSrc, elevation = 'low', routeHome = '/', showButtonsAuth = true } = Props;
-  const [user] = useRecoilState(stateUser);
+  const { title, children, imageSrc, elevation = 'low', routeHome = '/', buttonsAuth } = Props;
   const [showNavExpanded, setShowNavExpanded] = useState(false);
-  const [buttonsAuth, setButtonsAuth] = useState<React.ReactNode>(null);
   const router = useRouter();
 
   // outside click for detecting when to close the expanded nav
   const ref = useRef<HTMLDivElement>(null);
-  useOutsideClick(ref, () => setShowNavExpanded(false));
-
-  useEffect(() => {
-    if (!showButtonsAuth) return;
-    if (!isLoggedIn(user)) {
-      setButtonsAuth(<ButtonsAuth showText />);
-    } else {
-      setButtonsAuth(<ButtonLogout showText />);
-    }
-  }, [user]);
+  useOutsideClick(ref, () => {
+    setShowNavExpanded(false);
+  });
 
   const getClassElevation = () => {
     switch (elevation) {
@@ -83,7 +74,7 @@ export default function BBNavbar(Props: IPropsBBNavbar): React.ReactElement {
           }}
         />
       </div>
-      <div className={styles.containerBrand} onClick={() => router.push(routeHome)}>
+      <div className={styles.containerBrand} onClick={async () => await router.push(routeHome)}>
         <div className={styles.brand}>
           {!!imageSrc && <Image src={imageSrc} alt="" height={60} width={70} />}
           <BBText asSpan>{title}</BBText>

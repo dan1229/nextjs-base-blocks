@@ -1,7 +1,6 @@
 import classNames from 'classnames';
-import styles from '../bbcard/styles.module.scss';
-import { useTheme } from 'next-themes';
 import React from 'react';
+import styles from '../bbcard/styles.module.scss';
 
 export type TBBCardColorBackground = 'white' | 'grey_light' | 'grey_dark' | 'black';
 export type TBBCardElevation = 'none' | 'low' | 'med' | 'high';
@@ -16,7 +15,8 @@ const getChildrenOnDisplayName = (children: React.ReactNode | React.ReactNode[],
       'type' in child &&
       typeof child.type !== 'string'
     ) {
-      if (child.type && 'displayName' in child.type && child.type['displayName'] === displayName) {
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+      if (child.type && 'displayName' in child.type && child.type.displayName === displayName) {
         return child;
       }
     }
@@ -44,8 +44,7 @@ interface IPropsBBCard {
  * BBCard
  */
 const BBCard = (Props: IPropsBBCard) => {
-  const { theme } = useTheme();
-  const { children, colorBackground = theme == 'dark' ? 'white' : 'black', elevation = 'med', className, onClick } = Props;
+  const { children, colorBackground, elevation = 'med', className, onClick } = Props;
   const header = getChildrenOnDisplayName(children, 'Header');
   const body = getChildrenOnDisplayName(children, 'Body');
   const footer = getChildrenOnDisplayName(children, 'Footer');
@@ -60,6 +59,8 @@ const BBCard = (Props: IPropsBBCard) => {
         return styles.background_grey_dark;
       case 'black':
         return styles.background_black;
+      default:
+        return styles.background_default;
     }
   };
 

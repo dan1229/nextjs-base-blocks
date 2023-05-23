@@ -1,5 +1,5 @@
-import React from 'react';
-import BBAlert from '../bbalert';
+import React from 'react'
+import BBAlert from '../../../../bbalert'
 
 /**
  * IProps
@@ -7,16 +7,16 @@ import BBAlert from '../bbalert';
  * @param {string[] | undefined} formSuccess - Form success messages to display
  */
 interface IPropsAlertsFormSuccess {
-  formSuccess: string[] | undefined;
+  formSuccess: string[] | undefined
 }
 
 /**
  * ALERTS FORM SUCCESS
  */
-export function AlertsFormSuccess(props: IPropsAlertsFormSuccess) {
-  const { formSuccess } = props;
+export function AlertsFormSuccess (props: IPropsAlertsFormSuccess): React.ReactElement {
+  const { formSuccess } = props
   if (!formSuccess || !formSuccess.length) {
-    return null;
+    return <></>
   }
   return (
     <>
@@ -26,5 +26,5 @@ export function AlertsFormSuccess(props: IPropsAlertsFormSuccess) {
         </BBAlert>
       ))}
     </>
-  );
+  )
 }

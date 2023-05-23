@@ -1,5 +1,6 @@
 # NextJS Base Blocks
-[![Lint Client](https://github.com/dan1229/nextjs-base-blocks/actions/workflows/lint-client.yml/badge.svg)](https://github.com/dan1229/nextjs-base-blocks/actions/workflows/lint-client.yml)
+[![Lint](https://github.com/dan1229/nextjs-base-blocks/actions/workflows/lint.yml/badge.svg)](https://github.com/dan1229/nextjs-base-blocks/actions/workflows/lint.yml)
+[![Build](https://github.com/dan1229/nextjs-base-blocks/actions/workflows/build.yml/badge.svg)](https://github.com/dan1229/nextjs-base-blocks/actions/workflows/build.yml)
 
 #### By: [Daniel Nazarian](https://danielnazarian) 🐧👹
 ##### Contact me at <dnaz@danielnazarian.com>
@@ -23,6 +24,7 @@ You must have the following installed to use this submodule
 - [Sass](https://sass-lang.com/)
 - [Node Sass](https://www.npmjs.com/package/node-sass)
 - [classnames](https://www.npmjs.com/package/classnames)
+- [UseHooks TS](https://usehooks-typescript.com/)
 
 
 ### SCSS Globals
@@ -63,4 +65,19 @@ html,
   --bg-light-color: rgb(255, 255, 255) !important;
   --bg-dark-color: rgb(177, 177, 177) !important;
   --bs-body-color: rgb(24, 23, 23) !important;
+  --text-color: rgb(24, 23, 23) !important;
 }
+```
+
+Add support (overrides) for dark themes like so:
+    
+```scss
+[data-theme='dark'] {
+    // override any of the above variables
+  --bg-color: rgb(25, 25, 25) !important;
+  --bg-light-color: rgb(60, 60, 60) !important;
+  --bg-dark-color: rgb(39, 39, 39) !important;
+  --bs-body-color: rgb(245, 245, 245) !important;
+  --text-primary: rgb(255, 255, 255) !important;
+}
+```
