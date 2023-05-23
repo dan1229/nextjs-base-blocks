@@ -11,8 +11,10 @@ The idea behind this is that you can standardize your components and styling wit
 You must have the following installed to use this submodule
 - [NextJS](https://nextjs.org/)
 - [React Hook Forms](https://react-hook-form.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
 - [Recoil](https://recoiljs.org/)
 - [Sass](https://sass-lang.com/)
+- [classnames](https://www.npmjs.com/package/classnames)
 
 - nextjs themes thing lol?
 
@@ -24,9 +26,6 @@ To use the `Base Blocks` you are able to have the following SCSS variables defin
 
 html,
 :root {
-  // NOTE: do NOT use 'var' in any of these values as SASS will not compile them
-  // Know as well, ANY updates to the following will require a recompilation of the
-  // stylesheets
   // app theme
   --primary-color: #{$primary-color};
   --primary-dark-color: #{darken($primary-color, 10%)};
@@ -34,7 +33,7 @@ html,
   --secondary-color: #{$secondary-color};
   --secondary-dark-color: #{darken($secondary-color, 10%)};
   --secondary-light-color: #{lighten($secondary-color, 10%)};
-  // shared across all themes
+  // general colors
   --white: #fff;
   --black: 35, 35, 35;
   --grey-light: #8199c2;
@@ -52,10 +51,9 @@ html,
   --danger-color: #{$danger-color};
   --danger-dark-color: #{darken($danger-color, 10%)};
   --danger-light-color: #{lighten($danger-color, 10%)};
-  // light theme colors
+  // bg theme colors
   --bg-color: rgb(221, 221, 221) !important;
   --bg-light-color: rgb(255, 255, 255) !important;
   --bg-dark-color: rgb(177, 177, 177) !important;
   --bs-body-color: rgb(24, 23, 23) !important;
-  --text-primary: rgb(0, 0, 0) !important;
 }

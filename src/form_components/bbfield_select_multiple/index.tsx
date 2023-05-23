@@ -1,8 +1,8 @@
 import classnames from 'classnames';
 import { Control, Controller, FieldValues } from 'react-hook-form';
-import BBCard from '@/base_blocks/src/bbcard';
-import BBText from '@/base_blocks/src/bbtext';
-import styles from '@/base_blocks/src/form_components/bbfield_select_multiple/styles.module.scss';
+import BBCard from '@/src/bbcard';
+import BBText from '@/src/bbtext';
+import styles from '@/src/form_components/bbfield_select_multiple/styles.module.scss';
 import { useEffect, useState } from 'react';
 import { getLabel } from '../helpers/helpers';
 

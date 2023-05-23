@@ -1,6 +1,6 @@
-import BBLink from '@/base_blocks/src/bblink';
+import BBLink from '@/src/bblink';
 import { useRouter } from 'next/router';
-import styles from '@/base_blocks/src/bbnavbar_item/styles.module.scss';
+import styles from '@/src/bbnavbar_item/styles.module.scss';
 import classnames from 'classnames';
 import { useEffect, useState } from 'react';
 import { IoMdArrowDropdown } from 'react-icons/io';

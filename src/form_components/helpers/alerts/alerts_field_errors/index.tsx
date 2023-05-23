@@ -1,5 +1,5 @@
 import React from 'react';
-import BBAlert from '@/base_blocks/src/bbalert';
+import BBAlert from '@/src/bbalert';
 import type { FieldErrors, Ref } from 'react-hook-form';
 
 /**
