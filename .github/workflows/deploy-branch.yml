@@ -3,7 +3,7 @@ name: Deploy Branch
 on:
   workflow_dispatch:
     branches:
-      - 'master'
+      - 'main'
     inputs:
       version:
         required: true
