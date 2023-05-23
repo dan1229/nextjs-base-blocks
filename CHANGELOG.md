@@ -52,10 +52,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - how to get a default value for those calls to make them all optional?
 
 
+ci/cd stuff
 
 
 ### [0.0.1] - 2022-07-31
 - Initial release!
+- Base Blocks components system
+- Documentation updates
 
 -------------------------------------------------------
 
