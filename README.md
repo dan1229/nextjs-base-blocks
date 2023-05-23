@@ -17,7 +17,6 @@ The idea behind this is that you can standardize your components and styling wit
 ## Requirements
 
 You must have the following installed to use this submodule
-- [NextJS](https://nextjs.org/)
 - [React Hook Forms](https://react-hook-form.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
 - [Recoil](https://recoiljs.org/)
