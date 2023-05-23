@@ -1,9 +1,9 @@
-name: Lint Client
+name: Build
 
 on: push
 
 jobs:
-  build-client:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,7 +18,7 @@ jobs:
           cache: 'npm'
 
       - name: Install Dependencies
-        run: npm install
+        run: npm install --include='dev' --no-optional
 
-      - name: Run eslint
-        run: npm run lint
+      - name: Build client
+        run: npm run build

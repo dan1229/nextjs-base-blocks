@@ -1,5 +1,6 @@
 # NextJS Base Blocks
-[![Lint Client](https://github.com/dan1229/nextjs-base-blocks/actions/workflows/lint-client.yml/badge.svg)](https://github.com/dan1229/nextjs-base-blocks/actions/workflows/lint-client.yml)
+[![Lint](https://github.com/dan1229/nextjs-base-blocks/actions/workflows/lint.yml/badge.svg)](https://github.com/dan1229/nextjs-base-blocks/actions/workflows/lint.yml)
+[![Build](https://github.com/dan1229/nextjs-base-blocks/actions/workflows/build.yml/badge.svg)](https://github.com/dan1229/nextjs-base-blocks/actions/workflows/build.yml)
 
 #### By: [Daniel Nazarian](https://danielnazarian) 🐧👹
 ##### Contact me at <dnaz@danielnazarian.com>
