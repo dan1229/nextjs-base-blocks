@@ -40,6 +40,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### code cov
 - hook up code cov and coverage
 
+
 #### cypress tests?
 - add cypress component testing?
 
@@ -64,6 +65,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - html variables
   - how to get a default value for those calls to make them all optional?
 
+
+#### bbfield text
+- add autocomplete as optional prop?
+  - default to field name?
+- add id as optional prop
+  - default to field name?
 
 
 ### [0.1.2] - 2023-MM-DD
