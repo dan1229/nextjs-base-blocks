@@ -88,3 +88,10 @@ Add support (overrides) for dark themes like so:
 ```
 
 TODO move the above into explicit docs somewhere - probably need more docs first
+
+-------------------------------------------------------
+
+##### [https://danielnazarian.com](https://danielnazarian.com)
+
+##### Copyright 2023 © Daniel Nazarian.
+
