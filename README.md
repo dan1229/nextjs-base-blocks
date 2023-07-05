@@ -11,6 +11,8 @@
 
 `Base Block`s is a collection of UI 'blocks' that are used to build the rest of the components used on the sites.
 
+This is intended to be used as a git submodule in a NextJS + Typescript project.
+
 A `block` ideally is the smallest unit of UI code that can be reasonably reused. It is a self-contained piece of code that can be used in any context. It is not a component, but a building block for other, bigger components.
 
 The idea behind this is that you can standardize your components and styling without an overabundance of classes and styles or a third party style library like [bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/) or [tailwind](https://tailwindcss.com/) (you can still switch to one if you want though!) This will make it easier to maintain and update your codebase as requirements become more intense.
@@ -28,6 +30,7 @@ You must have the following installed to use this submodule
 - [classnames](https://www.npmjs.com/package/classnames)
 - [UseHooks TS](https://usehooks-typescript.com/)
 
+See `package.json` for all the requirements.
 
 ### SCSS Globals
 
@@ -83,3 +86,5 @@ Add support (overrides) for dark themes like so:
   --text-primary: rgb(255, 255, 255) !important;
 }
 ```
+
+TODO move the above into explicit docs somewhere - probably need more docs first
