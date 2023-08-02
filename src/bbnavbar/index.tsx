@@ -81,7 +81,7 @@ export default function BBNavbar(Props: IPropsBBNavbar): React.ReactElement {
       <div className={classNames(styles.navigationMenu, showNavExpanded && styles.expanded)}>
         <ul className={styles.navigationMenuList}>{children}</ul>
       </div>
-      {showButtonsAuth && <div className={styles.containerButtonsAuth}>{buttonsAuth}</div>}
+      <div className={styles.containerButtonsAuth}>{showButtonsAuth && buttonsAuth}</div>
     </nav>
   );
 }
