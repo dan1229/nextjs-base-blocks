@@ -66,6 +66,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - how to get a default value for those calls to make them all optional?
 
 
+#### global scss
+- like * {} rule
+
 #### bbfield text
 - add autocomplete as optional prop?
   - default to field name?
