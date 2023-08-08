@@ -53,8 +53,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add for things like `button-border-radius` to allow for easy customization
 
 ----
-### 0.1.2
-- 
+### 0.2.0
+
 
 #### form css?
 - how to apply global css to a git submodule?
@@ -73,7 +73,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - default to field name?
 
 
-### [0.1.2] - 2023-MM-DD
+#### bbnavbar and bbnavbar_item
+- get some fixes from gettwenty?
+
+
+### [0.2.0] - 2023-MM-DD
 #### TODO
 
 -------------------------------------------------------
