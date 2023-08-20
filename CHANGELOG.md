@@ -14,6 +14,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [0.1.3] - 2023.08-20
+- Get twenty base blocks updates
+- Card style options
+- Fixed dependencies a bit
+  - NPM audit fix as well
+
+  
 ### [0.1.1] - 2023-05-22
 - BBNavbar prop updates
 
@@ -82,16 +89,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### [0.2.0] - 2023-MM-DD
 #### TODO
-
-----
-### 0.1.3
-
-
-### [0.1.3] - 2023.08-20
-- Get twenty base blocks updates
-- Card style options
-- Fixed dependencies a bit
-  - NPM audit fix as well
 
 -------------------------------------------------------
 
