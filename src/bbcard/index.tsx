@@ -1,9 +1,11 @@
 import classNames from 'classnames';
+import styles from '@/base_blocks/bbcard/styles.module.scss';
+import { useTheme } from 'next-themes';
 import React from 'react';
-import styles from '../bbcard/styles.module.scss';
 
 export type TBBCardColorBackground = 'white' | 'grey_light' | 'grey_dark' | 'black';
 export type TBBCardElevation = 'none' | 'low' | 'med' | 'high';
+export type TBBCardStyle = 'default' | 'transparent';
 
 const getChildrenOnDisplayName = (children: React.ReactNode | React.ReactNode[], displayName: string) => {
   return React.Children.map(children, (child) => {
@@ -15,8 +17,7 @@ const getChildrenOnDisplayName = (children: React.ReactNode | React.ReactNode[],
       'type' in child &&
       typeof child.type !== 'string'
     ) {
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-      if (child.type && 'displayName' in child.type && child.type.displayName === displayName) {
+      if (child.type && 'displayName' in child.type && child.type['displayName'] === displayName) {
         return child;
       }
     }
@@ -29,6 +30,7 @@ const getChildrenOnDisplayName = (children: React.ReactNode | React.ReactNode[],
  * @param {React.ReactNode | React.ReactNode[]} children - The text to display
  * @param {TBBCardColorBackground=} color - the color of the text
  * @param {TBBCardElevation} elevation - the elevation of the card
+ * @param {TBBCardStyle} cardStyle - the style of the card
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - Function to call when clicked
  */
@@ -36,6 +38,7 @@ interface IPropsBBCard {
   children: React.ReactNode | React.ReactNode[];
   colorBackground?: TBBCardColorBackground;
   elevation?: TBBCardElevation;
+  cardStyle?: TBBCardStyle;
   className?: string;
   onClick?: () => void;
 }
@@ -44,7 +47,15 @@ interface IPropsBBCard {
  * BBCard
  */
 const BBCard = (Props: IPropsBBCard) => {
-  const { children, colorBackground, elevation = 'med', className, onClick } = Props;
+  const { theme } = useTheme();
+  const {
+    children,
+    colorBackground = theme == 'dark' ? 'white' : 'black',
+    elevation = 'med',
+    cardStyle = 'default',
+    className,
+    onClick,
+  } = Props;
   const header = getChildrenOnDisplayName(children, 'Header');
   const body = getChildrenOnDisplayName(children, 'Body');
   const footer = getChildrenOnDisplayName(children, 'Footer');
@@ -59,8 +70,6 @@ const BBCard = (Props: IPropsBBCard) => {
         return styles.background_grey_dark;
       case 'black':
         return styles.background_black;
-      default:
-        return styles.background_default;
     }
   };
 
@@ -77,13 +86,29 @@ const BBCard = (Props: IPropsBBCard) => {
     }
   };
 
+  const getCardStyle = (): string => {
+    switch (cardStyle) {
+      case 'default':
+        return '';
+      case 'transparent':
+        return styles.card_style__transparent;
+    }
+  };
+
   /**
    * RENDER
    */
   return (
     <div
       onClick={onClick}
-      className={classNames(className, styles.base, !!onClick && styles.hover, getClassColorBackground(), getClassElevation())}
+      className={classNames(
+        className,
+        styles.base,
+        !!onClick && styles.hover,
+        getCardStyle(),
+        getClassColorBackground(),
+        getClassElevation()
+      )}
     >
       {!!header && !!body && !!footer ? (
         <>
