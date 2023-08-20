@@ -90,6 +90,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### [0.1.3] - 2023.08-20
 - Get twenty base blocks updates
 - Card style options
+- Fixed dependencies a bit
+  - NPM audit fix as well
 
 -------------------------------------------------------
 
