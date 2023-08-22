@@ -90,20 +90,25 @@ var(--variable, default-value));
   - default to field name?
 
 
-### [0.2.0] - 2023-MM-DD
-#### TODO
-
-----
 
 #### add support for color variables
 - i.e.,
   - `--color-background-navbar` or something
 
 
+
+### [0.2.0] - 2023-MM-DD
+#### TODO
+
+----
+
+
 ### [0.1.4] - 2023-08-21
 - Border radius SCSS variable support
 - BBCard styling and fixes
 - Text sizing improvements
+- Added `.bablerc` for SWC issues
+- Custom font variable support
 
 -------------------------------------------------------
 
