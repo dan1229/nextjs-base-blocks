@@ -73,8 +73,8 @@ html,
   --text-color: rgb(24, 23, 23) !important;
   // border radius options
   --border-radius-bbalert: 8px;
-  --border-radius--bbbutton: 32px;
-  --border-radius--bbcard: 12px;
+  --border-radius--bbbutton: 8px;
+  --border-radius--bbcard: 8px;
   --border-radius--bbnavbar: 8px;
   --border-radius--bbnavbar-item: 8px;
 }

@@ -66,25 +66,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### form css?
 - how to apply global css to a git submodule?
 - not necessary while the projects override it but yea
+- add the `*` css rule from get twenty or something as well
 
 
 #### scss variable defaults
 - html variables
   - how to get a default value for those calls to make them all optional?
+- can do this:
+```
+var(--variable, default-value));
+```
+- play with how we can define `default-value`
 
-
-#### global scss
-- like * {} rule
 
 #### bbfield text
 - add autocomplete as optional prop?
   - default to field name?
 - add id as optional prop
   - default to field name?
-
-
-#### bbnavbar and bbnavbar_item
-- get some fixes from gettwenty?
 
 
 ### [0.2.0] - 2023-MM-DD
