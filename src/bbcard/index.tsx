@@ -1,7 +1,7 @@
+import React from 'react';
 import classNames from 'classnames';
 import styles from './styles.module.scss';
 import { useTheme } from 'next-themes';
-import React from 'react';
 
 export type TBBCardColorBackground = 'white' | 'grey_light' | 'grey_dark' | 'black';
 export type TBBCardElevation = 'none' | 'low' | 'med' | 'high';
@@ -17,6 +17,7 @@ const getChildrenOnDisplayName = (children: React.ReactNode | React.ReactNode[],
       'type' in child &&
       typeof child.type !== 'string'
     ) {
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       if (child.type && 'displayName' in child.type && child.type['displayName'] === displayName) {
         return child;
       }
