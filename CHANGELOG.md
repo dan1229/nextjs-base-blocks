@@ -79,6 +79,10 @@ var(--variable, default-value));
 - play with how we can define `default-value`
 
 
+#### text size variables?
+- add scss vars to edit text size?
+
+
 #### bbfield text
 - add autocomplete as optional prop?
   - default to field name?
@@ -99,6 +103,7 @@ var(--variable, default-value));
 ### [0.1.4] - 2023-08-21
 - Border radius SCSS variable support
 - BBCard styling and fixes
+- Text sizing improvements
 
 -------------------------------------------------------
 
