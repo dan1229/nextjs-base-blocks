@@ -93,6 +93,8 @@ Add support (overrides) for dark themes like so:
 }
 ```
 
+The more of these you have the better for now :)
+
 TODO move the above into explicit docs somewhere - probably need more docs first
 
 -------------------------------------------------------
