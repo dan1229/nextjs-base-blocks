@@ -104,6 +104,8 @@ var(--variable, default-value));
 - Border radius SCSS variable support
 - BBCard styling and fixes
 - Text sizing improvements
+- Added `.bablerc` for SWC issues
+- Custom font variable support
 
 -------------------------------------------------------
 
