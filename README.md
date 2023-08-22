@@ -77,6 +77,8 @@ html,
   --border-radius--bbcard: 8px;
   --border-radius--bbnavbar: 8px;
   --border-radius--bbnavbar-item: 8px;
+  // font family
+  --font-family-main: 'Josefin Sans';
 }
 ```
 
