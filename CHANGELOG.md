@@ -65,7 +65,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### form css?
 - how to apply global css to a git submodule?
-- not necessary while the projects override it but yea
+  - just add a styles/global.scss file and import it in the main app
 - add the `*` css rule from get twenty or something as well
 
 
@@ -91,6 +91,9 @@ var(--variable, default-value));
 
 ----
 
+#### add support for color variables
+- i.e.,
+  - `--color-background-navbar` or something
 
 
 ### [0.1.4] - 2023-08-21
