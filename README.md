@@ -38,7 +38,6 @@ See `package.json` for all the requirements.
 To use the `Base Blocks` you are able to have the following SCSS variables defined in your project, typically in a `globals.scss` file:
 
 ```scss
-
 html,
 :root {
   // app theme
@@ -72,6 +71,12 @@ html,
   --bg-dark-color: rgb(177, 177, 177) !important;
   --bs-body-color: rgb(24, 23, 23) !important;
   --text-color: rgb(24, 23, 23) !important;
+  // border radius options
+  --border-radius-bbalert: 8px;
+  --border-radius--bbbutton: 32px;
+  --border-radius--bbcard: 12px;
+  --border-radius--bbnavbar: 8px;
+  --border-radius--bbnavbar-item: 8px;
 }
 ```
 

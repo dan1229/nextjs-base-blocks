@@ -1,6 +1,6 @@
 .base {
   padding: 0.6rem;
-  border-radius: 16px; // this can be a variable
+  border-radius: var(--border-radius--bbbutton);
   display: flex;
   flex-direction: row;
   justify-content: center;

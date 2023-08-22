@@ -1,7 +1,7 @@
-$border-radius: 8px;
+$border-radius: var(--border-radius--bbcard);
 
 .base {
-  border-radius: 10px;
+  border-radius: $border-radius;
   background: var(--bg-light-color) !important;
   border: 2px solid var(--bg-color);
   white-space: normal;
@@ -78,7 +78,7 @@ $border-radius: 8px;
   border-top: none !important;
 }
 
-/*
+/**
 * BACKGROUND
 */
 .background_default {
@@ -109,13 +109,13 @@ $border-radius: 8px;
 }
 
 .elevation_low {
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  box-shadow: rgba(0, 0, 0, 0.12) 2px 2px 2px;
 }
 
 .elevation_med {
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  box-shadow: rgba(0, 0, 0, 0.19) 4px 4px 4px;
 }
 
 .elevation_high {
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  box-shadow: rgba(0, 0, 0, 0.3) 4px 16px 16px;
 }

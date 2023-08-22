@@ -1,7 +1,7 @@
 .base {
   padding: 12px;
   margin: 12px 0px;
-  border-radius: 8px;
+  border-radius: var(--border-radius-bbalert);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
