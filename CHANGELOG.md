@@ -98,6 +98,7 @@ var(--variable, default-value));
 
 ### [0.1.4] - 2023-08-21
 - Border radius SCSS variable support
+- BBCard styling and fixes
 
 -------------------------------------------------------
 

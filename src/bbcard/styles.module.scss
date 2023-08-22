@@ -1,7 +1,7 @@
 $border-radius: var(--border-radius--bbcard);
 
 .base {
-  border-radius: $border-radius;
+  border-radius: 20px; // this just needs to be a reasonably high number
   background: var(--bg-light-color) !important;
   border: 2px solid var(--bg-color);
   white-space: normal;
@@ -19,11 +19,13 @@ $border-radius: var(--border-radius--bbcard);
 
   .header {
     background-color: transparent !important;
+    border-bottom: none !important;
     border: none !important;
   }
 
   .footer {
     background-color: transparent !important;
+    border-bottom: none !important;
     border: none !important;
   }
 }
@@ -37,6 +39,7 @@ $border-radius: var(--border-radius--bbcard);
 
     .header {
       background-color: var(--bg-dark-color);
+      border-bottom: 1px solid var(--bg-dark-color) !important;
     }
   }
 }
@@ -46,6 +49,7 @@ $border-radius: var(--border-radius--bbcard);
 */
 .header {
   padding: 16px;
+  border-bottom: 1px solid var(--bg-light-color) !important;
   background-color: var(--bg-color);
   border-radius: $border-radius $border-radius 0 0;
 }
@@ -53,6 +57,7 @@ $border-radius: var(--border-radius--bbcard);
 .header:only-child {
   // if ONLY header, round ALL corners
   border-radius: $border-radius;
+  border-bottom: none !important;
 }
 
 .body {
@@ -78,13 +83,9 @@ $border-radius: var(--border-radius--bbcard);
   border-top: none !important;
 }
 
-/**
+/*
 * BACKGROUND
 */
-.background_default {
-  background-color: var(--bg-dark-color);
-}
-
 .background_white {
   background-color: var(--color-white);
 }
@@ -109,13 +110,13 @@ $border-radius: var(--border-radius--bbcard);
 }
 
 .elevation_low {
-  box-shadow: rgba(0, 0, 0, 0.12) 2px 2px 2px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .elevation_med {
-  box-shadow: rgba(0, 0, 0, 0.19) 4px 4px 4px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .elevation_high {
-  box-shadow: rgba(0, 0, 0, 0.3) 4px 16px 16px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
