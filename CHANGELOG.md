@@ -17,6 +17,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### [0.1.4] - 2023-08-21
 - Border radius SCSS variable support
 - BBCard styling and fixes
+- Text sizing improvements
+- Added `.bablerc` for SWC issues
+- Custom font variable support
 
 
 ### [0.1.3] - 2023.08-20
@@ -69,21 +72,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 
-#### add support for color variables
+#### variables - add support for color
 - i.e.,
   - `--color-background-navbar` or something
 
 
-#### bbcard options
+#### variables - bbcard options
 - add option to remove border?
 - how to do 'bool' values in scss
 
 
-#### bbfield text
+#### variables - bbfield text
 - add autocomplete as optional prop?
   - default to field name?
 - add id as optional prop
   - default to field name?
+
+
+#### variables - text size?
+- add scss vars to edit text size?
+
+
+----
+
 
 
 #### form css
