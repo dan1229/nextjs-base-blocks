@@ -93,11 +93,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - default to field name?
 
 
-#### variables - text size?
-- add scss vars to edit text size?
-
 
 ----
+
+#### variables - text size?
+- add scss vars to edit text size?
 
 
 
