@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [0.1.5] - 2023-08-30
+- BBCard border-radius fix
+
+
 ### [0.1.4] - 2023-08-21
 - Border radius SCSS variable support
 - BBCard styling and fixes
@@ -116,15 +120,6 @@ var(--variable, default-value));
 ### [0.2.0] - 2023-MM-DD
 #### TODO
 
-----
-### 0.1.5
-
-
-TODO
-
-
-### [0.1.5] - 2023-MM-DD
-#### TODO
 
 -------------------------------------------------------
 
