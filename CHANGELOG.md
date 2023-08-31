@@ -14,6 +14,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [0.1.4] - 2023-08-21
+- Border radius SCSS variable support
+- BBCard styling and fixes
+
+
 ### [0.1.3] - 2023.08-20
 - Get twenty base blocks updates
 - Card style options
@@ -63,7 +68,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### 0.2.0
 
 
-#### form css?
+
+#### add support for color variables
+- i.e.,
+  - `--color-background-navbar` or something
+
+
+#### bbcard options
+- add option to remove border?
+- how to do 'bool' values in scss
+
+
+#### bbfield text
+- add autocomplete as optional prop?
+  - default to field name?
+- add id as optional prop
+  - default to field name?
+
+
+#### form css
 - how to apply global css to a git submodule?
   - just add a styles/global.scss file and import it in the main app
 - add the `*` css rule from get twenty or something as well
@@ -79,26 +102,18 @@ var(--variable, default-value));
 - play with how we can define `default-value`
 
 
-#### bbfield text
-- add autocomplete as optional prop?
-  - default to field name?
-- add id as optional prop
-  - default to field name?
-
-
 ### [0.2.0] - 2023-MM-DD
 #### TODO
 
 ----
-
-#### add support for color variables
-- i.e.,
-  - `--color-background-navbar` or something
+### 0.1.5
 
 
-### [0.1.4] - 2023-08-21
-- Border radius SCSS variable support
-- BBCard styling and fixes
+TODO
+
+
+### [0.1.5] - 2023-MM-DD
+#### TODO
 
 -------------------------------------------------------
 
