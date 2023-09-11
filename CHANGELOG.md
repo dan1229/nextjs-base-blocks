@@ -60,16 +60,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - hook up code cov and coverage
 
 
-#### cypress tests?
-- add cypress component testing?
+#### cypress tests
+- add cypress component testing
 
 
-#### how to handle custom fonts?
-- set global variable that takes precedence then good common defaults
-
-
-#### add more variables
-- add for things like `button-border-radius` to allow for easy customization
+#### fonts
+- add good defaults, currently mostly relies on input
 
 ----
 ### 0.2.0
