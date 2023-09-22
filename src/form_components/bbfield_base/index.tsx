@@ -15,14 +15,19 @@ export interface IPropsBBFieldBase extends IPropsBBBaseForm {
  * BBFIELD BASE
  */
 export default function BBFieldBase (Props: IPropsBBFieldBase): React.ReactElement {
-  const { register, fieldName, type, required = false } = Props
+  const { register, fieldName, type, required = false, autocomplete, onChange } = Props
+
+  const getAutoComplete = (): string => {
+    if (autocomplete) return autocomplete
+    return fieldName
+  }
 
   /**
    * RENDER
    */
   return (
     <InputWrapper {...Props}>
-      <input className="form-control" id={fieldName} type={type} autoComplete={fieldName} required={required} {...register} />
+      <input className="form-control" id={fieldName} type={type} autoComplete={getAutoComplete()} required={required} onChange={onChange} {...register} />
     </InputWrapper>
   )
 }

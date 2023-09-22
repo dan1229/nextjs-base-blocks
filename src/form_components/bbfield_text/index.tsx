@@ -6,8 +6,8 @@ import type { IPropsBBBaseForm, TBBFieldTextType } from 'src/types'
 /**
  * PROPS
  *
- * @param {TBBFieldTextType=} type - Type of input. Think 'text' or 'textarea'.
- * @param {string=} placeholder - Placeholder text.
+ * @param {TBBFieldTextType=} type - Type of input. Think 'text' or 'textarea'
+ * @param {string=} placeholder - Placeholder text
  */
 interface IPropsBBFieldText extends IPropsBBBaseForm {
   type?: TBBFieldTextType
@@ -18,7 +18,12 @@ interface IPropsBBFieldText extends IPropsBBBaseForm {
  * BBFIELD TEXT
  */
 export default function BBFieldText (Props: IPropsBBFieldText): React.ReactElement {
-  const { register, fieldName, required = false, type = 'text', placeholder } = Props
+  const { register, fieldName, required = false, type = 'text', placeholder, autocomplete, onChange } = Props
+
+  const getAutoComplete = (): string => {
+    if (autocomplete) return autocomplete
+    return fieldName
+  }
 
   /**
    * RENDER
@@ -30,9 +35,10 @@ export default function BBFieldText (Props: IPropsBBFieldText): React.ReactEleme
         <textarea
           className="form-control"
           id={fieldName}
-          autoComplete={fieldName}
+          autoComplete={getAutoComplete()}
           required={required}
           placeholder={placeholder}
+          onChange={onChange}
           {...register}
         />
           )
@@ -41,9 +47,10 @@ export default function BBFieldText (Props: IPropsBBFieldText): React.ReactEleme
           className="form-control"
           id={fieldName}
           type={type}
-          autoComplete={fieldName}
+          autoComplete={getAutoComplete()}
           required={required}
           placeholder={placeholder}
+          onChange={onChange}
           {...register}
         />
           )}

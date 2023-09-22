@@ -43,9 +43,14 @@
 
 ----
 
+
+#### bb field dropdown styling
+- add arrow or something
+    - add to global styling
+
+
 #### variables - text size?
 - add scss vars to edit text size?
-
 
 
 #### form css
@@ -66,27 +71,6 @@ var(--variable, default-value));
 
 ----
 ### 0.2.0
-
-
-
-#### bb field dropdown styling
-- add arrow or something
-    - add to global styling
-
-
-#### bbfield number
-- create number component
-    - replace in building form
-    - replace in currency component
-    
-
-#### bbmodal - close/cancel
-- add support for outside clicks
-  - should close automatically
-  - add prop for close confirmation in such a case
-- add cancel buttons?
-- add to base blocks
-- **add to bootstrapper**
 
 
 #### bbbutton updates
@@ -111,16 +95,26 @@ var(--variable, default-value));
     - remove 'Josefin Sans' from base blocks - not a default
 
 
+----
+
+#### bbmodal - close/cancel
+- add support for outside clicks
+  - should close automatically
+  - add prop for close confirmation in such a case
+- add cancel buttons?
+- add to base blocks
+- **add to bootstrapper*
+
+
+#### bbfield number
+- create number component
+    - replace in building form
+    - replace in currency component
+    
+
 #### BBFieldCustom?
 - add for custom fields like primary phone?
 - use some shared label component?
-
-
-#### bbfield text
-- add 'onChange' param
-- add 'value' param
-- add optional 'autocomplete'
-    - in case name is different
 
 
 ### [0.2.0] - 2023-MM-DD

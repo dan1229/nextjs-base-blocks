@@ -27,16 +27,16 @@ export interface IPropsBBBase {
  * @param {TBBFieldBaseTypes=} type - Type of input to use
  * @prop {string=} label - Label for the component
  * @prop {unknown=} value - Value of the component
- * @prop {(value: unknown) => void} onChange - Change handler
  * @prop {boolean=} required - Whether the field is required
+ * @param {string=} autocomplete - Autocomplete value for the input.
  */
 export interface IPropsBBBaseForm extends IPropsBBBase {
     register: Object;
     fieldName: string;
     label?: string;
-    value?: unknown;
     onChange?: (value: unknown) => void;
     required?: boolean;
+    autocomplete?: string;
 }
 
 // types of input for TBBFieldBase

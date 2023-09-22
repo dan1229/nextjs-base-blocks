@@ -15,15 +15,19 @@ interface IPropsBBFieldDropdown extends IPropsBBBaseForm {
  * BBFIELD DROPDOWN
  */
 export default function BBFieldDropdown (Props: IPropsBBFieldDropdown): React.ReactElement {
-  const { register, options, fieldName, required } = Props
+  const { register, options, fieldName, required, autocomplete, onChange } = Props
 
+  const getAutoComplete = (): string => {
+    if (autocomplete) return autocomplete
+    return fieldName
+  }
 
   /**
    * RENDER
    */
   return (
     <InputWrapper {...Props}>
-      <select className="form-control" id={fieldName} {...register} required={required}>
+      <select className="form-control" id={fieldName} required={required} onChange={onChange} autoComplete={getAutoComplete()} {...register} >
         {options.map((val: IBBFieldDropdownOptions) => (
           <option key={val.value} value={val.value}>
             {val.label}
