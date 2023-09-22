@@ -7,14 +7,14 @@ import type { IPropsBBBaseForm, TBBFieldBaseTypes } from 'src/types'
  * 
  * @param {TBBFieldBaseTypes=} type - Type of input. Think 'text' or 'textarea'.
  */
-export interface IPropsBBFieldBase extends IPropsBBBaseForm {
+export interface IPropsBBFieldBase {
   type: TBBFieldBaseTypes;
 }
 
 /**
  * BBFIELD BASE
  */
-export default function BBFieldBase (Props: IPropsBBFieldBase): React.ReactElement {
+export default function BBFieldBase (Props: IPropsBBFieldBase & IPropsBBBaseForm): React.ReactElement {
   const { register, fieldName, type, required = false, autocomplete, onChange } = Props
 
   const getAutoComplete = (): string => {

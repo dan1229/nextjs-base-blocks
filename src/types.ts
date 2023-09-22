@@ -30,7 +30,7 @@ export interface IPropsBBBase {
  * @prop {boolean=} required - Whether the field is required
  * @param {string=} autocomplete - Autocomplete value for the input.
  */
-export interface IPropsBBBaseForm extends IPropsBBBase {
+interface _IPropsBBBaseForm {
     register: Object;
     fieldName: string;
     label?: string;
@@ -38,6 +38,7 @@ export interface IPropsBBBaseForm extends IPropsBBBase {
     required?: boolean;
     autocomplete?: string;
 }
+export type IPropsBBBaseForm = IPropsBBBase & _IPropsBBBaseForm
 
 // types of input for TBBFieldBase
 export type TBBFieldBaseTypes = 'file' | 'checkbox' | 'number' 

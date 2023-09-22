@@ -7,14 +7,14 @@ import type { IPropsBBBaseForm } from "src/types";
  * 
  * @props {React.ReactNode} children - Children to render.
  */
-export interface IPropsInputWrapper extends IPropsBBBaseForm {
+export interface IPropsInputWrapper {
   children: React.ReactElement;
 }
 
 /**
  * INPUT WRAPPER
  */
-export default function InputWrapper (props: IPropsInputWrapper): React.ReactElement {
+export default function InputWrapper (props: IPropsInputWrapper & IPropsBBBaseForm): React.ReactElement {
   const { children, label, className, fieldName } = props
 
 
