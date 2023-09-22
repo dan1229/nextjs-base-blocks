@@ -15,7 +15,7 @@ export interface IPropsInputWrapper {
  * INPUT WRAPPER
  */
 export default function InputWrapper (props: IPropsInputWrapper & IPropsBBBaseForm): React.ReactElement {
-  const { children, label, className, fieldName } = props
+  const { label, className, fieldName } = props
 
 
   const getLabel = (): string => {
@@ -24,10 +24,7 @@ export default function InputWrapper (props: IPropsInputWrapper & IPropsBBBaseFo
     return fieldNameRes.charAt(0).toUpperCase() + fieldNameRes.slice(1)
   }
 
-  const childProps = {
-    ...props,
-    // TODO remove 'children' from props?
-  }
+  const {children, ...childProps} = props
   
   /**
    * RENDER
