@@ -1,50 +1,44 @@
-import classnames from 'classnames'
 import React from 'react'
-import { getLabel } from '../helpers/helpers'
+import InputWrapper from '../input_wrapper'
+import type { IPropsBBBaseForm, TBBFieldTextType } from 'src/types'
 
-type TBBFieldTextType = 'text' | 'textarea' | 'number' | 'password'
 
 /**
  * PROPS
  *
- * @param {any} register - React hook form register function.
- * @param {string} fieldName - Name of the field. Think 'email' or 'name'.
- * @param {string=} fieldLabel - Label for field.
- * @param {boolean=} required - Whether the field is required.
- * @param {TBBFieldTextType=} type - Type of input. Think 'text' or 'textarea'.
- * @param {string=} placeholder - Placeholder text.
- * @param {string=} className - Any class name to add.
+ * @param {TBBFieldTextType=} type - Type of input. Think 'text' or 'textarea'
+ * @param {string=} placeholder - Placeholder text
  */
-interface IPropsBBFieldText {
-  register: Object
-  fieldName: string
-  fieldLabel?: string
-  required?: boolean
+interface IPropsBBFieldText extends IPropsBBBaseForm {
   type?: TBBFieldTextType
   placeholder?: string
-  className?: string
 }
 
 /**
  * BBFIELD TEXT
  */
 export default function BBFieldText (Props: IPropsBBFieldText): React.ReactElement {
-  const { register, fieldName, fieldLabel, required = false, type = 'text', placeholder, className } = Props
+  const { register, fieldName, required = false, type = 'text', placeholder, autocomplete, onChange } = Props
+
+  const getAutoComplete = (): string => {
+    if (autocomplete) return autocomplete
+    return fieldName
+  }
 
   /**
    * RENDER
    */
   return (
-    <div className={classnames('form-group', className)}>
-      <label htmlFor={fieldName}>{fieldLabel?.length ? fieldLabel : getLabel(fieldName)}</label>
+    <InputWrapper {...Props}>
       {type == 'textarea'
         ? (
         <textarea
           className="form-control"
           id={fieldName}
-          autoComplete={fieldName}
+          autoComplete={getAutoComplete()}
           required={required}
           placeholder={placeholder}
+          onChange={onChange}
           {...register}
         />
           )
@@ -53,12 +47,13 @@ export default function BBFieldText (Props: IPropsBBFieldText): React.ReactEleme
           className="form-control"
           id={fieldName}
           type={type}
-          autoComplete={fieldName}
+          autoComplete={getAutoComplete()}
           required={required}
           placeholder={placeholder}
+          onChange={onChange}
           {...register}
         />
           )}
-    </div>
+    </InputWrapper>
   )
 }

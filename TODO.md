@@ -43,9 +43,14 @@
 
 ----
 
+
+#### bb field dropdown styling
+- add arrow or something
+    - add to global styling
+
+
 #### variables - text size?
 - add scss vars to edit text size?
-
 
 
 #### form css
@@ -66,27 +71,6 @@ var(--variable, default-value));
 
 ----
 ### 0.2.0
-
-
-
-#### bb field dropdown styling
-- add arrow or something
-    - add to global styling
-
-
-#### bbfield number
-- create number component
-    - replace in building form
-    - replace in currency component
-    
-
-#### bbmodal - close/cancel
-- add support for outside clicks
-  - should close automatically
-  - add prop for close confirmation in such a case
-- add cancel buttons?
-- add to base blocks
-- **add to bootstrapper**
 
 
 #### bbbutton updates
@@ -111,30 +95,32 @@ var(--variable, default-value));
     - remove 'Josefin Sans' from base blocks - not a default
 
 
+----
+
+#### bbmodal - close/cancel
+- add support for outside clicks
+  - should close automatically
+  - add prop for close confirmation in such a case
+- add cancel buttons?
+- add to base blocks
+- **add to bootstrapper*
+
+
+#### bbfield number
+- create number component
+    - replace in building form
+    - replace in currency component
+    
+
 #### BBFieldCustom?
 - add for custom fields like primary phone?
 - use some shared label component?
 
 
-#### BBFieldDropdown
-- add fieldLabel
-- add required
-- add to any other components that need these props?
-    - somehow maybe standardize 'the header/label part' of the components?
-
-
-#### bbfield text
-- add 'onChange' param
-- add 'value' param
-- add optional 'autocomplete'
-    - in case name is different
-- rename "fieldLabel" to "label"?
--
-- add to other field components?
-    - make some kind of base params?
-
-
 ### [0.2.0] - 2023-MM-DD
+- Base props added for components and form components
+    - Some breaking changes :/ i.e., `fieldLabel` is now `label` for all components
+- `InputWrapper` component for `BBFormComponents`
 #### TODO
 
 
