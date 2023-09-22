@@ -22,22 +22,13 @@
 ### 0.3.0
 
 
+#### more color variables?
 
-#### variables - add support for color
+
+#### navbar variables - add support for color
 - i.e.,
   - `--color-background-navbar` or something
 
-
-#### variables - bbcard options
-- add option to remove border?
-- how to do 'bool' values in scss
-
-
-#### variables - bbfield text
-- add autocomplete as optional prop?
-  - default to field name?
-- add id as optional prop
-  - default to field name?
 
 
 
@@ -85,6 +76,8 @@ var(--variable, default-value));
 #### bbcard styling
 - transparent not working?
   - see "see more meetings" card on decision maker dashboard
+- add option to remove border?
+    - how to do 'bool' values in scss
 
 
 #### fonts
@@ -94,8 +87,6 @@ var(--variable, default-value));
 - default fonts should be better too
     - remove 'Josefin Sans' from base blocks - not a default
 
-
-----
 
 #### bbmodal - close/cancel
 - add support for outside clicks
