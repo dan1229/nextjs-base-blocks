@@ -4,7 +4,7 @@ import BBButton from '../bbbutton';
 import BBCard from '../bbcard';
 import styles from '../bbmodal/styles.module.scss';
 import BBText from '../bbtext';
-import useOutsideClick from 'src/utils/hooks/UseOutsideClick';
+import useOutsideClick from '@/utils/hooks/UseOutsideClick';
 
 /**
  * PROPS
