@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import BBButton from '../bbbutton';
 import BBCard from '../bbcard';
 import styles from '../bbmodal/styles.module.scss';
 import BBText from '../bbtext';
+import useOutsideClick from 'src/utils/hooks/UseOutsideClick';
 
 /**
  * PROPS
@@ -11,40 +12,49 @@ import BBText from '../bbtext';
  * @param {React.ReactNode} children - The text to display
  * @param {string} title - The title of the modal
  * @param {() => void=} onDismiss - The function to call when the modal is dismissed
- * @param {() => void=} onCancel - The function to call when the modal is cancelled
  * @param {string=} textCancel - The text to display on the cancel button
  * @param {() => void=} onConfirm - The function to call when the modal is confirmed
  * @param {string=} textConfirm - The text to display on the confirm button
  * @param {React.ReactNode=} extraFooter - Extra footer content
  * @param {boolean=} confirmCancel - Whether to show the cancel button
+ * @param {boolean=} outsideClickCloses - Whether to close the modal when clicking outside of it, calls onDismiss function
  */
 interface IPropsBBModal {
   children: React.ReactNode;
   title: string;
   onDismiss?: () => void;
-  onCancel?: () => void;
   textCancel?: string;
   onConfirm?: () => void;
   textConfirm?: string;
   extraFooter?: React.ReactNode;
   confirmCancel?: boolean;
+  outsideClickCloses?: boolean;
 }
 
 /**
  * BBModal
  */
 export default function BBModal(Props: IPropsBBModal): React.ReactElement {
-  const { children, title, onDismiss, onCancel, textCancel = 'Cancel', onConfirm, textConfirm = 'Confirm', extraFooter, confirmCancel = false } = Props;
-  const showFooter = !!onConfirm || !!onCancel || !!extraFooter;
+  const { children, title, onDismiss, textCancel = 'Cancel', onConfirm, textConfirm = 'Confirm', extraFooter, confirmCancel = false, outsideClickCloses = true } = Props;
+  const showFooter = !!onConfirm || !!onDismiss || !!extraFooter;
 
-  let onCancelRes = onCancel
+  // outside click for detecting when to close
+  const ref = useRef<HTMLDivElement>(null);
+  useOutsideClick(ref, () => {
+    if (outsideClickCloses) {
+      onDismiss && onDismiss();
+    }
+  });
+
+  let onDismissRes = onDismiss
   if (confirmCancel) {
-    onCancelRes = () => {
+    onDismissRes = () => {
       if (window.confirm('Are you sure you want to cancel?')) {
-        onCancel && onCancel()
+        onDismiss && onDismiss()
       }
     }
   }
+
 
   /**
    * RENDER
@@ -65,7 +75,7 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
           <BBCard.Footer>
             <div className={styles.containerButtons}>
               {!!onConfirm && <BBButton onClick={onConfirm} text={textConfirm} variant="success" />}
-              {!!onCancelRes && <BBButton onClick={onCancelRes} text={textCancel} variant="danger" />}
+              {!!onDismissRes && <BBButton onClick={onDismissRes} text={textCancel} variant="danger" />}
               {extraFooter}
             </div>
           </BBCard.Footer>

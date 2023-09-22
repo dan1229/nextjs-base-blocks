@@ -91,7 +91,6 @@ var(--variable, default-value));
 #### bbmodal - close/cancel
 - add support for outside clicks
   - should close automatically
-  - add prop for close confirmation in such a case
 - add cancel buttons?
 - add to base blocks
 - **add to bootstrapper*
@@ -104,6 +103,8 @@ var(--variable, default-value));
 - Added `BBFieldNumber` component
 - `BBModal` improvements
     - `confirmCancel` functionality
+    - Outside click functionality
+    - Prop clean up
 #### TODO
 
 
