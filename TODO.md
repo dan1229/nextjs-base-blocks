@@ -88,13 +88,6 @@ var(--variable, default-value));
     - remove 'Josefin Sans' from base blocks - not a default
 
 
-#### bbmodal - close/cancel
-- add support for outside clicks
-  - should close automatically
-- add cancel buttons?
-- add to base blocks
-- **add to bootstrapper*
-
 
 ### [0.2.0] - 2023-MM-DD
 - Base props added for components and form components
