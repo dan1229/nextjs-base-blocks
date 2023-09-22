@@ -21,9 +21,9 @@ import BBText from '../bbtext';
 interface IPropsBBModal {
   children: React.ReactNode;
   title: string;
-  onDismiss?: (args?: unknown) => void);
+  onDismiss?: (args?: any) => void;
   textDismiss?: string;
-  onConfirm?: (args?: unknown) => void;
+  onConfirm?: (args?: any) => void;
   textConfirm?: string;
   extraFooter?: React.ReactNode;
   confirmCancel?: boolean;
