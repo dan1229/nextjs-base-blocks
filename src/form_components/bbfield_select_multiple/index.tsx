@@ -4,26 +4,21 @@ import { useState } from 'react'
 import { type Control, Controller, type FieldValues } from 'react-hook-form'
 import BBCard from '../../bbcard'
 import BBText from '../../bbtext'
-import { getLabel } from '../helpers/helpers'
-import styles from './styles.module.scss'
 import InputWrapper from '../input_wrapper'
-import { IPropsBBBaseForm } from 'src/types'
+import styles from './styles.module.scss'
+import type { IBBFieldSelectMultipleOptions, IPropsBBBaseForm } from 'src/types'
 
 /**
  * PROPS
  *
- * @param {unknown} control - React hook form control.
  * @param {IBBFieldSelectMultipleOptions[]} options - Options to display.
  * @param {string} fieldName - Name of the field. Think 'email' or 'name'.
  * @param {string[] | undefined} selectedInitial - Initial selected options.
- * @param {string=} className - Any class name to add.
  */
 interface IPropsBBFieldSelectMultiple extends IPropsBBBaseForm {
   control: unknown
   options: IBBFieldSelectMultipleOptions[]
-  fieldName: string
   selectedInitial: string[] | undefined
-  className?: string
 }
 
 /**

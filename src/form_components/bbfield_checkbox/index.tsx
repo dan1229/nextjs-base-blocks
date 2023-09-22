@@ -1,6 +1,6 @@
 import React from 'react'
-import { IPropsBBBaseForm } from 'src/types'
 import BBFieldBase from '../bbfield_base'
+import type { IPropsBBBaseForm } from 'src/types'
 
 /**
  * BBFIELD CHECKBOX

@@ -1,3 +1,4 @@
+import type React from 'react';
 
 /**
  * ALL TYPES
@@ -25,16 +26,16 @@ export interface IPropsBBBase {
  * @prop {string} fieldName - Name of the field, used for ID for form submission
  * @param {TBBFieldBaseTypes=} type - Type of input to use
  * @prop {string=} label - Label for the component
- * @prop {any=} value - Value of the component
- * @prop {(value: any) => void} onChange - Change handler
+ * @prop {unknown=} value - Value of the component
+ * @prop {(value: unknown) => void} onChange - Change handler
  * @prop {boolean=} required - Whether the field is required
  */
 export interface IPropsBBBaseForm extends IPropsBBBase {
     register: Object;
     fieldName: string;
     label?: string;
-    value?: any;
-    onChange?: (value: any) => void;
+    value?: unknown;
+    onChange?: (value: unknown) => void;
     required?: boolean;
 }
 
