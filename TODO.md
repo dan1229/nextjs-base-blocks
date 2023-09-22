@@ -135,6 +135,8 @@ var(--variable, default-value));
 
 
 ### [0.2.0] - 2023-MM-DD
+- Base props added for components and form components
+    - Some breaking changes :/ i.e., `fieldLabel` is now `label`
 #### TODO
 
 
