@@ -38,16 +38,6 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
   const { children, title, onDismiss, textCancel = 'Cancel', onConfirm, textConfirm = 'Confirm', extraFooter, confirmCancel = false, outsideClickCloses = true } = Props;
   const showFooter = !!onConfirm || !!onDismiss || !!extraFooter;
 
-  // outside click for detecting when to close
-  const onClickContainer = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    e.preventDefault();
-    if (e.target === e.currentTarget) {
-      onDismiss && onDismiss();
-    }
-    e.stopPropagation();
-  };
-
-
   let onDismissRes = onDismiss
   if (confirmCancel) {
     onDismissRes = () => {
@@ -56,6 +46,15 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
       }
     }
   }
+
+  // outside click for detecting when to close
+  const onClickContainer = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.preventDefault();
+    if (e.target === e.currentTarget) {
+      onDismissRes && onDismissRes();
+    }
+    e.stopPropagation();
+  };
 
 
   /**
