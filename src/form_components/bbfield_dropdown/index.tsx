@@ -1,6 +1,6 @@
 import React from 'react'
 import InputWrapper from '../input_wrapper'
-import type { IBBFieldDropdownOptions, IPropsBBBaseForm } from 'src/types'
+import type { IBBFieldDropdownOptions, IPropsBBBaseForm } from '../../types'
 
 /**
  * PROPS

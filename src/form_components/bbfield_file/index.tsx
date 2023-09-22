@@ -1,6 +1,6 @@
 import React from 'react'
 import BBFieldBase from '../bbfield_base'
-import type { IPropsBBBaseForm } from 'src/types'
+import type { IPropsBBBaseForm } from '../../types'
 
 /**
  * BBFIELD FILE
