@@ -1,5 +1,5 @@
 import classnames from "classnames";
-import React from "react";
+import React, { Children } from "react";
 import type { IPropsBBBaseForm } from "../../types";
 
 /**
@@ -23,12 +23,21 @@ export default function InputWrapper (props: IPropsInputWrapper & IPropsBBBaseFo
     const fieldNameRes = fieldName.includes('_') ? fieldName.replace('_', ' ') : fieldName
     return fieldNameRes.charAt(0).toUpperCase() + fieldNameRes.slice(1)
   }
+
+  const childProps = {
+    ...props,
+    // TODO remove 'children' from props?
+  }
   
   /**
    * RENDER
    */
     return (<div className={classnames('form-group', className)}>
     <label htmlFor={fieldName}>{getLabel()}</label>
-    {React.cloneElement(children, {...props})}
+    {
+      Children.map(children, (child) => {
+        return React.cloneElement(child, {...childProps})
+      })
+    }
   </div>)
 }
