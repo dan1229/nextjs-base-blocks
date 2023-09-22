@@ -1,10 +1,9 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import BBButton from '../bbbutton';
 import BBCard from '../bbcard';
 import styles from '../bbmodal/styles.module.scss';
 import BBText from '../bbtext';
-import useOutsideClick from '@/utils/hooks/UseOutsideClick';
 
 /**
  * PROPS
@@ -51,7 +50,9 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
   const onClickContainer = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
     if (e.target === e.currentTarget) {
-      onDismissRes && onDismissRes();
+      if (outsideClickCloses) {
+        onDismissRes && onDismissRes();
+      }
     }
     e.stopPropagation();
   };
