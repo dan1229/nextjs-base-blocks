@@ -22,22 +22,13 @@
 ### 0.3.0
 
 
+#### more color variables?
 
-#### variables - add support for color
+
+#### navbar variables - add support for color
 - i.e.,
   - `--color-background-navbar` or something
 
-
-#### variables - bbcard options
-- add option to remove border?
-- how to do 'bool' values in scss
-
-
-#### variables - bbfield text
-- add autocomplete as optional prop?
-  - default to field name?
-- add id as optional prop
-  - default to field name?
 
 
 
@@ -85,6 +76,8 @@ var(--variable, default-value));
 #### bbcard styling
 - transparent not working?
   - see "see more meetings" card on decision maker dashboard
+- add option to remove border?
+    - how to do 'bool' values in scss
 
 
 #### fonts
@@ -95,8 +88,6 @@ var(--variable, default-value));
     - remove 'Josefin Sans' from base blocks - not a default
 
 
-----
-
 #### bbmodal - close/cancel
 - add support for outside clicks
   - should close automatically
@@ -106,21 +97,11 @@ var(--variable, default-value));
 - **add to bootstrapper*
 
 
-#### bbfield number
-- create number component
-    - replace in building form
-    - replace in currency component
-    
-
-#### BBFieldCustom?
-- add for custom fields like primary phone?
-- use some shared label component?
-
-
 ### [0.2.0] - 2023-MM-DD
 - Base props added for components and form components
     - Some breaking changes :/ i.e., `fieldLabel` is now `label` for all components
 - `InputWrapper` component for `BBFormComponents`
+- Added `BBFieldNumber` component
 #### TODO
 
 

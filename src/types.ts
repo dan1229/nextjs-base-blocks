@@ -40,7 +40,8 @@ export interface IPropsBBBaseForm extends IPropsBBBase {
 }
 
 // types of input for TBBFieldBase
-export type TBBFieldBaseTypes = 'file' | 'checkbox'
+export type TBBFieldBaseTypes = 'file' | 'checkbox' | 'number' 
+// | 'radio' | 'select' | 'select-multiple'
 
 // types of input for TBBFieldText
 export type TBBFieldTextType = 'text' | 'textarea' | 'number' | 'password'
