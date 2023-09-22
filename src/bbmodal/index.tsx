@@ -17,6 +17,7 @@ import BBText from '../bbtext';
  * @param {React.ReactNode=} extraFooter - Extra footer content
  * @param {boolean=} confirmCancel - Whether to show the cancel button
  * @param {boolean=} outsideClickCloses - Whether to close the modal when clicking outside of it, calls onDismiss function
+ * @param {string=} idForm - The id of the form to submit
  */
 interface IPropsBBModal {
   children: React.ReactNode;
@@ -28,13 +29,14 @@ interface IPropsBBModal {
   extraFooter?: React.ReactNode;
   confirmCancel?: boolean;
   outsideClickCloses?: boolean;
+  idForm?: string;
 }
 
 /**
  * BBModal
  */
 export default function BBModal(Props: IPropsBBModal): React.ReactElement {
-  const { children, title, onDismiss, textDismiss = 'Cancel', onConfirm, textConfirm = 'Confirm', extraFooter, confirmCancel = false, outsideClickCloses = true } = Props;
+  const { children, title, onDismiss, textDismiss = 'Cancel', onConfirm, textConfirm = 'Confirm', extraFooter, confirmCancel = false, outsideClickCloses = true, idForm} = Props;
   const showFooter = !!onConfirm || !!onDismiss || !!extraFooter;
 
   let onDismissRes = onDismiss
@@ -76,7 +78,7 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
         {showFooter && (
           <BBCard.Footer>
             <div className={styles.containerButtons}>
-              {!!onConfirm && <BBButton onClick={onConfirm} text={textConfirm} variant="success" />}
+              {!!onConfirm && <BBButton onClick={onConfirm} text={textConfirm} variant="success" type="submit" idForm={idForm}/>}
               {!!onDismissRes && <BBButton onClick={onDismissRes} text={textDismiss} variant="danger" />}
               {extraFooter}
             </div>
