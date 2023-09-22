@@ -102,6 +102,8 @@ var(--variable, default-value));
     - Some breaking changes :/ i.e., `fieldLabel` is now `label` for all components
 - `InputWrapper` component for `BBFormComponents`
 - Added `BBFieldNumber` component
+- `BBModal` improvements
+    - `confirmCancel` functionality
 #### TODO
 
 

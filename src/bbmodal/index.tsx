@@ -16,6 +16,7 @@ import BBText from '../bbtext';
  * @param {() => void=} onConfirm - The function to call when the modal is confirmed
  * @param {string=} textConfirm - The text to display on the confirm button
  * @param {React.ReactNode=} extraFooter - Extra footer content
+ * @param {boolean=} confirmCancel - Whether to show the cancel button
  */
 interface IPropsBBModal {
   children: React.ReactNode;
@@ -26,14 +27,25 @@ interface IPropsBBModal {
   onConfirm?: () => void;
   textConfirm?: string;
   extraFooter?: React.ReactNode;
+  confirmCancel?: boolean;
 }
 
 /**
  * BBModal
  */
 export default function BBModal(Props: IPropsBBModal): React.ReactElement {
-  const { children, title, onDismiss, onCancel, textCancel = 'Cancel', onConfirm, textConfirm = 'Confirm', extraFooter } = Props;
+  const { children, title, onDismiss, onCancel, textCancel = 'Cancel', onConfirm, textConfirm = 'Confirm', extraFooter, confirmCancel = false } = Props;
   const showFooter = !!onConfirm || !!onCancel || !!extraFooter;
+
+  let onCancelRes = onCancel
+  if (confirmCancel) {
+    onCancelRes = () => {
+      if (window.confirm('Are you sure you want to cancel?')) {
+        onCancel && onCancel()
+      }
+    }
+  }
+
   /**
    * RENDER
    */
@@ -53,7 +65,7 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
           <BBCard.Footer>
             <div className={styles.containerButtons}>
               {!!onConfirm && <BBButton onClick={onConfirm} text={textConfirm} variant="success" />}
-              {!!onCancel && <BBButton onClick={onCancel} text={textCancel} variant="danger" />}
+              {!!onCancelRes && <BBButton onClick={onCancelRes} text={textCancel} variant="danger" />}
               {extraFooter}
             </div>
           </BBCard.Footer>
