@@ -106,21 +106,11 @@ var(--variable, default-value));
 - **add to bootstrapper*
 
 
-#### bbfield number
-- create number component
-    - replace in building form
-    - replace in currency component
-    
-
-#### BBFieldCustom?
-- add for custom fields like primary phone?
-- use some shared label component?
-
-
 ### [0.2.0] - 2023-MM-DD
 - Base props added for components and form components
     - Some breaking changes :/ i.e., `fieldLabel` is now `label` for all components
 - `InputWrapper` component for `BBFormComponents`
+- Added `BBFieldNumber` component
 #### TODO
 
 
