@@ -98,6 +98,7 @@ var(--variable, default-value));
     - `confirmCancel` functionality
     - Outside click functionality
     - Prop clean up
+- Package imports and aliases improved
 #### TODO
 
 
