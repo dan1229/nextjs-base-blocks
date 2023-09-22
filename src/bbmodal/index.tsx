@@ -10,9 +10,9 @@ import BBText from '../bbtext';
  *
  * @param {React.ReactNode} children - The text to display
  * @param {string} title - The title of the modal
- * @param {() => void=} onDismiss - The function to call when the modal is dismissed
+ * @param {(args?: unknown) => void=} onDismiss - The function to call when the modal is dismissed
  * @param {string=} textCancel - The text to display on the cancel button
- * @param {() => void=} onConfirm - The function to call when the modal is confirmed
+ * @param {(args?: unknown) => void=} onConfirm - The function to call when the modal is confirmed
  * @param {string=} textConfirm - The text to display on the confirm button
  * @param {React.ReactNode=} extraFooter - Extra footer content
  * @param {boolean=} confirmCancel - Whether to show the cancel button
@@ -21,9 +21,9 @@ import BBText from '../bbtext';
 interface IPropsBBModal {
   children: React.ReactNode;
   title: string;
-  onDismiss?: () => void;
-  textCancel?: string;
-  onConfirm?: () => void;
+  onDismiss?: (args?: unknown) => void);
+  textDismiss?: string;
+  onConfirm?: (args?: unknown) => void;
   textConfirm?: string;
   extraFooter?: React.ReactNode;
   confirmCancel?: boolean;
@@ -34,7 +34,7 @@ interface IPropsBBModal {
  * BBModal
  */
 export default function BBModal(Props: IPropsBBModal): React.ReactElement {
-  const { children, title, onDismiss, textCancel = 'Cancel', onConfirm, textConfirm = 'Confirm', extraFooter, confirmCancel = false, outsideClickCloses = true } = Props;
+  const { children, title, onDismiss, textDismiss = 'Cancel', onConfirm, textConfirm = 'Confirm', extraFooter, confirmCancel = false, outsideClickCloses = true } = Props;
   const showFooter = !!onConfirm || !!onDismiss || !!extraFooter;
 
   let onDismissRes = onDismiss
@@ -77,7 +77,7 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
           <BBCard.Footer>
             <div className={styles.containerButtons}>
               {!!onConfirm && <BBButton onClick={onConfirm} text={textConfirm} variant="success" />}
-              {!!onDismissRes && <BBButton onClick={onDismissRes} text={textCancel} variant="danger" />}
+              {!!onDismissRes && <BBButton onClick={onDismissRes} text={textDismiss} variant="danger" />}
               {extraFooter}
             </div>
           </BBCard.Footer>
