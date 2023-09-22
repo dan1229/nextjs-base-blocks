@@ -1,42 +1,31 @@
 import classnames from 'classnames'
 import React from 'react'
-import { getLabel } from '../helpers/helpers'
+import { IPropsBBBaseForm, TBBFieldTextType } from 'src/types'
+import InputWrapper from '../input_wrapper'
 
-type TBBFieldTextType = 'text' | 'textarea' | 'number' | 'password'
 
 /**
  * PROPS
  *
- * @param {any} register - React hook form register function.
- * @param {string} fieldName - Name of the field. Think 'email' or 'name'.
- * @param {string=} fieldLabel - Label for field.
- * @param {boolean=} required - Whether the field is required.
  * @param {TBBFieldTextType=} type - Type of input. Think 'text' or 'textarea'.
  * @param {string=} placeholder - Placeholder text.
- * @param {string=} className - Any class name to add.
  */
-interface IPropsBBFieldText {
-  register: Object
-  fieldName: string
-  fieldLabel?: string
-  required?: boolean
+interface IPropsBBFieldText extends IPropsBBBaseForm {
   type?: TBBFieldTextType
   placeholder?: string
-  className?: string
 }
 
 /**
  * BBFIELD TEXT
  */
 export default function BBFieldText (Props: IPropsBBFieldText): React.ReactElement {
-  const { register, fieldName, fieldLabel, required = false, type = 'text', placeholder, className } = Props
+  const { register, fieldName, required = false, type = 'text', placeholder } = Props
 
   /**
    * RENDER
    */
   return (
-    <div className={classnames('form-group', className)}>
-      <label htmlFor={fieldName}>{fieldLabel?.length ? fieldLabel : getLabel(fieldName)}</label>
+    <InputWrapper {...Props}>
       {type == 'textarea'
         ? (
         <textarea
@@ -59,6 +48,6 @@ export default function BBFieldText (Props: IPropsBBFieldText): React.ReactEleme
           {...register}
         />
           )}
-    </div>
+    </InputWrapper>
   )
 }

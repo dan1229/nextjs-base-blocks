@@ -1,22 +1,28 @@
-import classnames from 'classnames'
 import React from 'react'
-import { getLabel } from '../helpers/helpers'
-import { IBBBaseFormProps } from 'src/types'
+import { IPropsBBBaseForm, TBBFieldBaseTypes } from 'src/types'
+import InputWrapper from '../input_wrapper'
 
+/**
+ * PROPS
+ * 
+ * @param {TBBFieldBaseTypes=} type - Type of input. Think 'text' or 'textarea'.
+ */
+export interface IPropsBBFieldBase extends IPropsBBBaseForm {
+  type: TBBFieldBaseTypes;
+}
 
 /**
  * BBFIELD BASE
  */
-export default function BBFieldBase (Props: IBBBaseFormProps): React.ReactElement {
-  const { register, fieldName, type, label, required = false, className } = Props
+export default function BBFieldBase (Props: IPropsBBFieldBase): React.ReactElement {
+  const { register, fieldName, type, required = false } = Props
 
   /**
    * RENDER
    */
   return (
-    <div className={classnames('form-group', className)}>
-      <label htmlFor={fieldName}>{!!label?.length ? label : getLabel(fieldName)}</label>
+    <InputWrapper {...Props}>
       <input className="form-control" id={fieldName} type={type} autoComplete={fieldName} required={required} {...register} />
-    </div>
+    </InputWrapper>
   )
 }

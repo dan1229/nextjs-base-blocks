@@ -116,27 +116,17 @@ var(--variable, default-value));
 - use some shared label component?
 
 
-#### BBFieldDropdown
-- add fieldLabel
-- add required
-- add to any other components that need these props?
-    - somehow maybe standardize 'the header/label part' of the components?
-
-
 #### bbfield text
 - add 'onChange' param
 - add 'value' param
 - add optional 'autocomplete'
     - in case name is different
-- rename "fieldLabel" to "label"?
--
-- add to other field components?
-    - make some kind of base params?
 
 
 ### [0.2.0] - 2023-MM-DD
 - Base props added for components and form components
-    - Some breaking changes :/ i.e., `fieldLabel` is now `label`
+    - Some breaking changes :/ i.e., `fieldLabel` is now `label` for all components
+- `InputWrapper` component for `BBFormComponents`
 #### TODO
 
 

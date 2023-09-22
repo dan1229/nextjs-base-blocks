@@ -1,9 +1,10 @@
 import React from 'react'
-import BBFieldBase, { type IPropsBBFieldBase } from '../bbfield_base'
+import { IPropsBBBaseForm } from 'src/types'
+import BBFieldBase from '../bbfield_base'
 
 /**
  * BBFIELD CHECKBOX
  */
-export default function BBFieldCheckbox (Props: Omit<IPropsBBFieldBase, 'type'>): React.ReactElement {
+export default function BBFieldCheckbox (Props: IPropsBBBaseForm): React.ReactElement {
   return <BBFieldBase {...Props} type="checkbox" />
 }

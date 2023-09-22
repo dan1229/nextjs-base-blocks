@@ -1,5 +1,7 @@
 
-
+/**
+ * ALL TYPES
+ */
 
 /**
  * Base props for all Base Blocks components
@@ -7,10 +9,14 @@
  * @prop {string=} className - CSS class names to add
  * @prop {React.MouseEventHandler<HTMLElement>=} onClick - Click handler
  */
-export interface IBBBaseProps {
+export interface IPropsBBBase {
     className?: string;
     onClick?: React.MouseEventHandler<HTMLElement>;
 }
+
+/**
+ * FORM TYPES
+ */
 
 /**
  * Base props for all Base Blocks FORM components
@@ -23,14 +29,30 @@ export interface IBBBaseProps {
  * @prop {(value: any) => void} onChange - Change handler
  * @prop {boolean=} required - Whether the field is required
  */
-export interface IBBBaseFormProps extends IBBBaseProps {
+export interface IPropsBBBaseForm extends IPropsBBBase {
     register: Object;
     fieldName: string;
-    type?: TBBFieldBaseTypes;
     label?: string;
     value?: any;
     onChange?: (value: any) => void;
     required?: boolean;
 }
 
+// types of input for TBBFieldBase
 export type TBBFieldBaseTypes = 'file' | 'checkbox'
+
+// types of input for TBBFieldText
+export type TBBFieldTextType = 'text' | 'textarea' | 'number' | 'password'
+
+// option format for TBBFieldDropdown
+export interface IBBFieldDropdownOptions {
+    value: string
+    label: string
+}
+  
+// option format for TBBFieldSelectMultiple
+export interface IBBFieldSelectMultipleOptions {
+    value: string
+    label: string
+}
+  

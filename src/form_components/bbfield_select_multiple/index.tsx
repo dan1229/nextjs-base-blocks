@@ -6,11 +6,8 @@ import BBCard from '../../bbcard'
 import BBText from '../../bbtext'
 import { getLabel } from '../helpers/helpers'
 import styles from './styles.module.scss'
-
-export interface IBBFieldSelectMultipleOptions {
-  value: string
-  label: string
-}
+import InputWrapper from '../input_wrapper'
+import { IPropsBBBaseForm } from 'src/types'
 
 /**
  * PROPS
@@ -21,7 +18,7 @@ export interface IBBFieldSelectMultipleOptions {
  * @param {string[] | undefined} selectedInitial - Initial selected options.
  * @param {string=} className - Any class name to add.
  */
-interface IPropsBBFieldSelectMultiple {
+interface IPropsBBFieldSelectMultiple extends IPropsBBBaseForm {
   control: unknown
   options: IBBFieldSelectMultipleOptions[]
   fieldName: string
@@ -55,8 +52,7 @@ export default function BBFieldSelectMultiple (Props: IPropsBBFieldSelectMultipl
    * RENDER
    */
   return (
-    <div className="form-group">
-      <label htmlFor={fieldName}>{getLabel(fieldName)}</label>
+    <InputWrapper {...Props}>
       <Controller
         control={control as Control<FieldValues>}
         name={fieldName}
@@ -105,7 +101,7 @@ export default function BBFieldSelectMultiple (Props: IPropsBBFieldSelectMultipl
           )
         }}
       />
-    </div>
+    </InputWrapper>
   )
 }
 
