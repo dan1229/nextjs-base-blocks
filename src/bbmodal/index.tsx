@@ -59,7 +59,7 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
     showButtonCancel = false,
     loading = false,
   } = Props;
-  const showFooter = !!onConfirm || !!onDismiss || !!extraFooter;
+  const showFooter = !!onConfirm || (!!onDismiss && showButtonCancel) || !!extraFooter;
 
   let onDismissRes = onDismiss;
   if (confirmCancel) {
