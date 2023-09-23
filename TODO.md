@@ -74,8 +74,6 @@ var(--variable, default-value));
 
 
 #### bbcard styling
-- transparent not working?
-  - see "see more meetings" card on decision maker dashboard
 - add option to remove border?
     - how to do 'bool' values in scss
 
@@ -97,6 +95,9 @@ var(--variable, default-value));
 - Font cleanup and standardization
     - Added `font-family-header` option
     - Better default fonts and shit
+- `BBCard` fixes and updates
+    - transparent style fixed
+    - `noBorder` prop
 #### TODO
 
 
