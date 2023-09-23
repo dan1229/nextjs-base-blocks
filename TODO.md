@@ -80,10 +80,6 @@ var(--variable, default-value));
     - how to do 'bool' values in scss
 
 
-#### fonts
-- fonts - what's the main fonts? is this the right one?
-- we currently have `--font-family-main` maybe we need a `--font-family-headers` or something?
-    - current main is Montserrat
 
 ### [0.2.0] - 2023-MM-DD
 - Base props added for components and form components
