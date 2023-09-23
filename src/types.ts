@@ -16,31 +16,6 @@ export interface IPropsBBBase {
 }
 
 /**
- * FORM TYPES
- */
-
-/**
- * Base props for all Base Blocks FORM components
- *
- * @prop {Object} register - React Hook Form register object
- * @prop {string} fieldName - Name of the field, used for ID for form submission
- * @param {TBBFieldBaseTypes=} type - Type of input to use
- * @prop {string=} label - Label for the component
- * @prop {unknown=} value - Value of the component
- * @prop {boolean=} required - Whether the field is required
- * @param {string=} autocomplete - Autocomplete value for the input.
- */
-interface IPropsBBBaseFormBase {
-  register: Object;
-  fieldName: string;
-  label?: string;
-  onChange?: (value: unknown) => void;
-  required?: boolean;
-  autocomplete?: string;
-}
-export type IPropsBBBaseForm = IPropsBBBase & IPropsBBBaseFormBase;
-
-/**
  * BBText
  */
 export type TBBTextSize = 'tiny' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge' | 'xxxlarge';
@@ -99,3 +74,27 @@ export interface IBBFieldSelectMultipleOptions {
   value: string;
   label: string;
 }
+
+/**
+ * FORM TYPES
+ */
+
+/**
+ * Base props for all Base Blocks FORM components
+ *
+ * @prop {Object} register - React Hook Form register object
+ * @prop {string} fieldName - Name of the field, used for ID for form submission
+ * @prop {string=} label - Label for the component
+ * @prop {(value: any) => void} onChange - Change handler
+ * @prop {boolean=} required - Whether the field is required
+ * @param {string=} autocomplete - Autocomplete value for the input.
+ */
+interface IPropsBBBaseFormBase {
+  register: Object;
+  fieldName: string;
+  label?: string;
+  onChange?: (value: any) => void; // eslint-disable-line @typescript-eslint/no-explicit-any
+  required?: boolean;
+  autocomplete?: string;
+}
+export type IPropsBBBaseForm = IPropsBBBase & IPropsBBBaseFormBase;
