@@ -86,6 +86,7 @@ export interface IBBFieldSelectMultipleOptions {
  * @prop {string} fieldName - Name of the field, used for ID for form submission
  * @prop {string=} label - Label for the component
  * @prop {(value: any) => void} onChange - Change handler
+ * @prop {any} value - Value of the field
  * @prop {boolean=} required - Whether the field is required
  * @param {string=} autocomplete - Autocomplete value for the input.
  * @param {string=} placeholder - Placeholder text
@@ -95,6 +96,7 @@ interface IPropsBBBaseFormBase {
   fieldName: string;
   label?: string;
   onChange?: (value: any) => void; // eslint-disable-line @typescript-eslint/no-explicit-any
+  value: any; // eslint-disable-line @typescript-eslint/no-explicit-any
   required?: boolean;
   autocomplete?: string;
   placeholder?: string;
