@@ -60,7 +60,16 @@ export type TBBTextColor =
  * BBButton
  */
 export type TBBButtonType = 'submit' | 'button' | 'reset';
-export type TBBButtonVariant = 'primary' | 'secondary' | 'danger' | 'success' | 'warning' | 'info' | 'inverse-info';
+export type TBBButtonVariant =
+  | 'primary'
+  | 'secondary'
+  | 'danger'
+  | 'success'
+  | 'warning'
+  | 'info'
+  | 'inverse-info'
+  | 'inverse-primary'
+  | 'inverse-secondary';
 export type TBBButtonSize = 'sm' | 'md' | 'lg';
 export type TBBButtonElevation = 'none' | 'low' | 'medium' | 'high';
 export type TBBButtonIconAlign = 'left' | 'right' | 'above' | 'below' | 'space-between';

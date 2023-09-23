@@ -176,14 +176,50 @@
   }
   &:hover {
     background-color: var(--grey-light);
-    * {
-    }
   }
 }
 .inverseInfo.focus > div * {
   color: var(--grey-light) !important;
 }
 .inverseInfo:active {
+  background-color: var(--grey-dark);
+  border: 1px solid var(--grey-dark);
+}
+
+// INVERSE PRIMARY
+.inversePrimary {
+  background-color: var(--white);
+  border: 1px solid var(--primary-color);
+  * {
+    color: var(--primary-color);
+  }
+  &:hover {
+    background-color: var(--grey-light);
+  }
+}
+.inversePrimary.focus > div * {
+  color: var(--grey-light) !important;
+}
+.inversePrimary:active {
+  background-color: var(--grey-dark);
+  border: 1px solid var(--grey-dark);
+}
+
+// INVERSE SECONDARY
+.inverseSecondary {
+  background-color: var(--white);
+  border: 1px solid var(--secondary-color);
+  * {
+    color: var(--secondary-color);
+  }
+  &:hover {
+    background-color: var(--grey-light);
+  }
+}
+.inverseSecondary.focus > div * {
+  color: var(--grey-light) !important;
+}
+.inverseSecondary:active {
   background-color: var(--grey-dark);
   border: 1px solid var(--grey-dark);
 }
