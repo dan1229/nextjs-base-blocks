@@ -86,6 +86,7 @@ var(--variable, default-value));
     - `noBorder` prop
 - `BBButton` features and fixes
     - More color variants and options
+- `showLabel` prop for form inputs and many more new options!
 
 -------------------------------------------------------
 

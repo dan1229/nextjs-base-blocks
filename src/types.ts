@@ -90,6 +90,7 @@ export interface IBBFieldSelectMultipleOptions {
  * @prop {boolean=} required - Whether the field is required
  * @param {string=} autocomplete - Autocomplete value for the input.
  * @param {string=} placeholder - Placeholder text
+ * @param {boolean=} showLabel - Whether to show the label
  */
 interface IPropsBBBaseFormBase {
   register: Object | null;
@@ -100,5 +101,6 @@ interface IPropsBBBaseFormBase {
   required?: boolean;
   autocomplete?: string;
   placeholder?: string;
+  showLabel?: boolean;
 }
 export type IPropsBBBaseForm = IPropsBBBase & IPropsBBBaseFormBase;
