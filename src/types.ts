@@ -6,13 +6,13 @@ import type React from 'react';
 
 /**
  * Base props for all Base Blocks components
- * 
+ *
  * @prop {string=} className - CSS class names to add
  * @prop {React.MouseEventHandler<HTMLElement>=} onClick - Click handler
  */
 export interface IPropsBBBase {
-    className?: string;
-    onClick?: React.MouseEventHandler<HTMLElement>;
+  className?: string;
+  onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
 /**
@@ -21,7 +21,7 @@ export interface IPropsBBBase {
 
 /**
  * Base props for all Base Blocks FORM components
- * 
+ *
  * @prop {Object} register - React Hook Form register object
  * @prop {string} fieldName - Name of the field, used for ID for form submission
  * @param {TBBFieldBaseTypes=} type - Type of input to use
@@ -31,20 +31,19 @@ export interface IPropsBBBase {
  * @param {string=} autocomplete - Autocomplete value for the input.
  */
 interface _IPropsBBBaseForm {
-    register: Object;
-    fieldName: string;
-    label?: string;
-    onChange?: (value: unknown) => void;
-    required?: boolean;
-    autocomplete?: string;
+  register: Object;
+  fieldName: string;
+  label?: string;
+  onChange?: (value: unknown) => void;
+  required?: boolean;
+  autocomplete?: string;
 }
-export type IPropsBBBaseForm = IPropsBBBase & _IPropsBBBaseForm
+export type IPropsBBBaseForm = IPropsBBBase & _IPropsBBBaseForm;
 
-
-
-// SIZES for BBText
+/**
+ * BBText
+ */
 export type TBBTextSize = 'tiny' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge' | 'xxxlarge';
-// COLORS for BBText
 export type TBBTextColor =
   | 'grey_light'
   | 'grey_dark'
@@ -57,22 +56,30 @@ export type TBBTextColor =
   | 'danger'
   | 'info';
 
+/**
+ * BBButton
+ */
+export type TBBButtonType = 'submit' | 'button' | 'reset';
+export type TBBButtonVariant = 'primary' | 'secondary' | 'danger' | 'success' | 'warning' | 'info' | 'inverse-info';
+export type TBBButtonSize = 'sm' | 'md' | 'lg';
+export type TBBButtonElevation = 'none' | 'low' | 'medium' | 'high';
+export type TBBButtonIconAlign = 'left' | 'right' | 'above' | 'below' | 'space-between';
+
 // types of input for TBBFieldBase
-export type TBBFieldBaseTypes = 'file' | 'checkbox' | 'number' 
+export type TBBFieldBaseTypes = 'file' | 'checkbox' | 'number';
 // | 'radio' | 'select' | 'select-multiple'
 
 // types of input for TBBFieldText
-export type TBBFieldTextType = 'text' | 'textarea' | 'number' | 'password'
+export type TBBFieldTextType = 'text' | 'textarea' | 'number' | 'password';
 
 // option format for TBBFieldDropdown
 export interface IBBFieldDropdownOptions {
-    value: string
-    label: string
+  value: string;
+  label: string;
 }
-  
+
 // option format for TBBFieldSelectMultiple
 export interface IBBFieldSelectMultipleOptions {
-    value: string
-    label: string
+  value: string;
+  label: string;
 }
-  

@@ -68,13 +68,11 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
 
   // outside click for detecting when to close
   const onClickContainer = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    e.preventDefault();
     if (e.target === e.currentTarget) {
       if (outsideClickCloses) {
         onDismissRes && onDismissRes();
       }
     }
-    e.stopPropagation();
   };
 
   /**
