@@ -1,10 +1,10 @@
 import React from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
-import type { TBBTextSize } from '@/types';
+import type { TBBTextSize } from '../types';
 import BBButton from '../bbbutton';
 import BBCard from '../bbcard';
 import BBLoadingSpinner from '../bbloading_spinner';
-import styles from '../bbmodal/styles.module.scss';
+import styles from './styles.module.scss';
 import BBText from '../bbtext';
 
 /**

@@ -64,22 +64,8 @@ var(--variable, default-value));
 ### 0.2.0
 
 
-#### bbbutton updates
-- colors
-  - inverse primary
-  - inverse secondary
-  - inverse info text color not working
-- double icon?
-- what other props?
 
-
-#### bbcard styling
-- add option to remove border?
-    - how to do 'bool' values in scss
-
-
-
-### [0.2.0] - 2023-MM-DD
+### [0.2.0] - 2023-09-DD
 - Base props added for components and form components
     - Some breaking changes :/ i.e., `fieldLabel` is now `label` for all components
 - `InputWrapper` component for `BBFormComponents`
@@ -98,8 +84,8 @@ var(--variable, default-value));
 - `BBCard` fixes and updates
     - transparent style fixed
     - `noBorder` prop
-#### TODO
-
+- `BBButton` features and fixes
+    - More color variants and options
 
 -------------------------------------------------------
 

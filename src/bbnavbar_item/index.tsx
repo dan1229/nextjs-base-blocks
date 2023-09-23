@@ -4,7 +4,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import BBLink from '../bblink';
-import styles from '../bbnavbar_item/styles.module.scss';
+import styles from './styles.module.scss';
 
 function removeSlashes(str: string | undefined) {
   if (!str) return '';

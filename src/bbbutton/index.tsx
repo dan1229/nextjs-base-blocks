@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
-import type { TBBButtonIconAlign, TBBButtonType, TBBButtonSize, TBBButtonElevation, TBBButtonVariant, TBBTextSize } from '@/types';
-import styles from '../bbbutton/styles.module.scss';
+import type { TBBButtonIconAlign, TBBButtonType, TBBButtonSize, TBBButtonElevation, TBBButtonVariant, TBBTextSize } from '../types';
+import styles from './styles.module.scss';
 import BBText from '../bbtext';
 
 /**
@@ -48,29 +48,20 @@ interface IPropsBBButton {
   onClick?: () => void;
 }
 
-const defaultType = 'submit';
-const defaultSize = 'md';
-const defaultVariant = 'primary';
-const defaultElevation = 'none';
-const defaultDisabled = false;
-const defaultFocus = false;
-const defaultHover = true;
-const defaultShowTextOnHover = false;
-
 /**
  * BBButton
  */
 export default function BBButton(Props: IPropsBBButton): React.ReactElement {
   const {
     text,
-    type = defaultType,
-    size = defaultSize,
-    variant = defaultVariant,
-    elevation = defaultElevation,
-    disabled = defaultDisabled,
-    hover = defaultHover,
-    focus = defaultFocus,
-    showTextOnHover = defaultShowTextOnHover,
+    type = 'submit',
+    size = 'md',
+    variant = 'primary',
+    elevation = 'none',
+    disabled = false,
+    hover = false,
+    focus = false,
+    showTextOnHover = false,
     icon,
     idForm,
     className,
@@ -97,6 +88,10 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
         return styles.info;
       case 'inverse-info':
         return styles.inverseInfo;
+      case 'inverse-primary':
+        return styles.inversePrimary;
+      case 'inverse-secondary':
+        return styles.inverseSecondary;
     }
   };
 
