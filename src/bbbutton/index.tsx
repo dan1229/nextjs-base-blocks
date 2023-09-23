@@ -97,6 +97,10 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
         return styles.info;
       case 'inverse-info':
         return styles.inverseInfo;
+      case 'inverse-primary':
+        return styles.inversePrimary;
+      case 'inverse-secondary':
+        return styles.inverseSecondary;
     }
   };
 
