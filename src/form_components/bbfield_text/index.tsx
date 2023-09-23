@@ -1,37 +1,33 @@
-import React from 'react'
-import InputWrapper from '../input_wrapper'
-import type { IPropsBBBaseForm, TBBFieldTextType } from '../../types'
-
+import React from 'react';
+import InputWrapper from '../input_wrapper';
+import type { IPropsBBBaseForm, TBBFieldTextType } from '../../types';
 
 /**
  * PROPS
  *
  * @param {TBBFieldTextType=} type - Type of input. Think 'text' or 'textarea'
- * @param {string=} placeholder - Placeholder text
  */
 interface IPropsBBFieldText {
-  type?: TBBFieldTextType
-  placeholder?: string
+  type?: TBBFieldTextType;
 }
 
 /**
  * BBFIELD TEXT
  */
-export default function BBFieldText (Props: IPropsBBFieldText & IPropsBBBaseForm): React.ReactElement {
-  const { register, fieldName, required = false, type = 'text', placeholder, autocomplete, onChange } = Props
+export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm): React.ReactElement {
+  const { register, fieldName, required = false, type = 'text', placeholder, autocomplete, onChange } = Props;
 
   const getAutoComplete = (): string => {
-    if (autocomplete) return autocomplete
-    return fieldName
-  }
+    if (autocomplete) return autocomplete;
+    return fieldName;
+  };
 
   /**
    * RENDER
    */
   return (
     <InputWrapper {...Props}>
-      {type == 'textarea'
-        ? (
+      {type == 'textarea' ? (
         <textarea
           className="form-control"
           id={fieldName}
@@ -41,8 +37,7 @@ export default function BBFieldText (Props: IPropsBBFieldText & IPropsBBBaseForm
           onChange={onChange}
           {...register}
         />
-          )
-        : (
+      ) : (
         <input
           className="form-control"
           id={fieldName}
@@ -53,7 +48,7 @@ export default function BBFieldText (Props: IPropsBBFieldText & IPropsBBBaseForm
           onChange={onChange}
           {...register}
         />
-          )}
+      )}
     </InputWrapper>
-  )
+  );
 }
