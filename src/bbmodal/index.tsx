@@ -5,7 +5,7 @@ import BBCard from '../bbcard';
 import styles from '../bbmodal/styles.module.scss';
 import BBText from '../bbtext';
 import { TBBTextSize } from '@/types';
-import BBLoadingSpinner from '@/bbloading_spinner';
+import BBLoadingSpinner from '../bbloading_spinner';
 
 /**
  * PROPS
