@@ -80,14 +80,6 @@ var(--variable, default-value));
     - how to do 'bool' values in scss
 
 
-#### fonts
-- fonts - what's the main fonts? is this the right one?
-- we currently have `--font-family-main` maybe we need a `--font-family-headers` or something?
-    - current main is Montserrat
-- default fonts should be better too
-    - remove 'Josefin Sans' from base blocks - not a default
-
-
 
 ### [0.2.0] - 2023-MM-DD
 - Base props added for components and form components
@@ -102,6 +94,9 @@ var(--variable, default-value));
     - Prop clean up
 - Package imports and aliases improved
 - `BBLoadingSpinner` component added
+- Font cleanup and standardization
+    - Added `font-family-header` option
+    - Better default fonts and shit
 #### TODO
 
 
