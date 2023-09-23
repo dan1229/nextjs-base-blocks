@@ -1,11 +1,11 @@
 import React from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
+import type { TBBTextSize } from '@/types';
 import BBButton from '../bbbutton';
 import BBCard from '../bbcard';
+import BBLoadingSpinner from '../bbloading_spinner';
 import styles from '../bbmodal/styles.module.scss';
 import BBText from '../bbtext';
-import { TBBTextSize } from '@/types';
-import BBLoadingSpinner from '../bbloading_spinner';
 
 /**
  * PROPS
@@ -27,9 +27,9 @@ import BBLoadingSpinner from '../bbloading_spinner';
 interface IPropsBBModal {
   children: React.ReactNode;
   title: string;
-  onDismiss?: (args?: any) => void;
+  onDismiss?: (args?: any) => void; // eslint-disable-line @typescript-eslint/no-explicit-any
   textDismiss?: string;
-  onConfirm?: (args?: any) => void;
+  onConfirm?: (args?: any) => void; // eslint-disable-line @typescript-eslint/no-explicit-any
   textConfirm?: string;
   extraFooter?: React.ReactNode;
   confirmCancel?: boolean;

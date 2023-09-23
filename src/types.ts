@@ -30,7 +30,7 @@ export interface IPropsBBBase {
  * @prop {boolean=} required - Whether the field is required
  * @param {string=} autocomplete - Autocomplete value for the input.
  */
-interface _IPropsBBBaseForm {
+interface IPropsBBBaseFormBase {
   register: Object;
   fieldName: string;
   label?: string;
@@ -38,7 +38,7 @@ interface _IPropsBBBaseForm {
   required?: boolean;
   autocomplete?: string;
 }
-export type IPropsBBBaseForm = IPropsBBBase & _IPropsBBBaseForm;
+export type IPropsBBBaseForm = IPropsBBBase & IPropsBBBaseFormBase;
 
 /**
  * BBText
@@ -65,20 +65,27 @@ export type TBBButtonSize = 'sm' | 'md' | 'lg';
 export type TBBButtonElevation = 'none' | 'low' | 'medium' | 'high';
 export type TBBButtonIconAlign = 'left' | 'right' | 'above' | 'below' | 'space-between';
 
-// types of input for TBBFieldBase
+/**
+ * BBAlert
+ */
+export type TBBAlertVariant = 'success' | 'warning' | 'danger' | 'info';
+export type TBBAlertElevation = 'none' | 'low' | 'medium' | 'high';
+export type TBBAlertTextAlignment = 'left' | 'center' | 'right';
+
+// TBBFieldBase
 export type TBBFieldBaseTypes = 'file' | 'checkbox' | 'number';
 // | 'radio' | 'select' | 'select-multiple'
 
-// types of input for TBBFieldText
+// TBBFieldText
 export type TBBFieldTextType = 'text' | 'textarea' | 'number' | 'password';
 
-// option format for TBBFieldDropdown
+// TBBFieldDropdown
 export interface IBBFieldDropdownOptions {
   value: string;
   label: string;
 }
 
-// option format for TBBFieldSelectMultiple
+// TBBFieldSelectMultiple
 export interface IBBFieldSelectMultipleOptions {
   value: string;
   label: string;

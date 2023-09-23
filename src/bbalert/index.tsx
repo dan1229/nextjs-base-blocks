@@ -1,12 +1,9 @@
 import classNames from 'classnames';
 import React, { useState } from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
+import type { TBBTextSize, TBBAlertVariant, TBBAlertElevation, TBBAlertTextAlignment } from '@/types';
 import styles from '../bbalert/styles.module.scss';
-import BBText, { type TBBTextSize } from '../bbtext';
-
-export type TBBAlertVariant = 'success' | 'warning' | 'danger' | 'info';
-export type TBBAlertElevation = 'none' | 'low' | 'medium' | 'high';
-export type TBBAlertTextAlignment = 'left' | 'center' | 'right';
+import BBText from '../bbtext';
 
 /**
  * PROPS

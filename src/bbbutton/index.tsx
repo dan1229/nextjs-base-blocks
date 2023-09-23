@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import React from 'react';
+import type { TBBButtonIconAlign, TBBButtonType, TBBButtonSize, TBBButtonElevation, TBBButtonVariant, TBBTextSize } from '@/types';
 import styles from '../bbbutton/styles.module.scss';
 import BBText from '../bbtext';
-import { TBBButtonIconAlign, TBBButtonType, TBBButtonSize, TBBButtonElevation, TBBButtonVariant, TBBTextSize } from '@/types';
 
 /**
  * ICON PROPS

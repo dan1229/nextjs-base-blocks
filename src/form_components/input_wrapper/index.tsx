@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import React, { Children } from 'react';
+import React from 'react';
 import type { IPropsBBBaseForm } from '../../types';
 
 /**
