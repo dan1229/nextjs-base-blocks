@@ -20,6 +20,7 @@ import { TBBTextSize } from '@/types';
  * @param {boolean=} outsideClickCloses - Whether to close the modal when clicking outside of it, calls onDismiss function
  * @param {string=} idForm - The id of the form to submit
  * @param {TBBTextSize=} headerTextSize - The size of the header text
+ * @param {boolean=} showButtonCancel - Whether to show the cancel button
  */
 interface IPropsBBModal {
   children: React.ReactNode;
@@ -33,22 +34,36 @@ interface IPropsBBModal {
   outsideClickCloses?: boolean;
   idForm?: string;
   headerTextSize?: TBBTextSize;
+  showButtonCancel?: boolean;
 }
 
 /**
  * BBModal
  */
 export default function BBModal(Props: IPropsBBModal): React.ReactElement {
-  const { children, title, onDismiss, textDismiss = 'Cancel', onConfirm, textConfirm = 'Confirm', extraFooter, confirmCancel = false, outsideClickCloses = true, idForm, headerTextSize = 'xlarge'} = Props;
+  const {
+    children,
+    title,
+    onDismiss,
+    textDismiss = 'Cancel',
+    onConfirm,
+    textConfirm = 'Confirm',
+    extraFooter,
+    confirmCancel = false,
+    outsideClickCloses = true,
+    idForm,
+    headerTextSize = 'xlarge',
+    showButtonCancel = false,
+  } = Props;
   const showFooter = !!onConfirm || !!onDismiss || !!extraFooter;
 
-  let onDismissRes = onDismiss
+  let onDismissRes = onDismiss;
   if (confirmCancel) {
     onDismissRes = () => {
       if (window.confirm('Are you sure you want to cancel?')) {
-        onDismiss && onDismiss()
+        onDismiss && onDismiss();
       }
-    }
+    };
   }
 
   // outside click for detecting when to close
@@ -61,7 +76,6 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
     }
     e.stopPropagation();
   };
-
 
   /**
    * RENDER
@@ -81,8 +95,8 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
         {showFooter && (
           <BBCard.Footer>
             <div className={styles.containerButtons}>
-              {!!onConfirm && <BBButton onClick={onConfirm} text={textConfirm} variant="success" type="submit" idForm={idForm}/>}
-              {!!onDismissRes && <BBButton onClick={onDismissRes} text={textDismiss} variant="danger" />}
+              {!!onConfirm && <BBButton onClick={onConfirm} text={textConfirm} variant="success" type="submit" idForm={idForm} />}
+              {!!onDismissRes && showButtonCancel && <BBButton onClick={onDismissRes} text={textDismiss} variant="danger" />}
               {extraFooter}
             </div>
           </BBCard.Footer>
