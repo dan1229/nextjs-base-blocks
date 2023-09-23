@@ -96,7 +96,7 @@ interface IPropsBBBaseFormBase {
   fieldName: string;
   label?: string;
   onChange?: (value: any) => void; // eslint-disable-line @typescript-eslint/no-explicit-any
-  value: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+  value?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
   required?: boolean;
   autocomplete?: string;
   placeholder?: string;
