@@ -82,7 +82,7 @@ export interface IBBFieldSelectMultipleOptions {
 /**
  * Base props for all Base Blocks FORM components
  *
- * @prop {Object} register - React Hook Form register object
+ * @prop {Object | null} register - React Hook Form register object. Can be null if not using React Hook Form
  * @prop {string} fieldName - Name of the field, used for ID for form submission
  * @prop {string=} label - Label for the component
  * @prop {(value: any) => void} onChange - Change handler
@@ -90,7 +90,7 @@ export interface IBBFieldSelectMultipleOptions {
  * @param {string=} autocomplete - Autocomplete value for the input.
  */
 interface IPropsBBBaseFormBase {
-  register: Object;
+  register: Object | null;
   fieldName: string;
   label?: string;
   onChange?: (value: any) => void; // eslint-disable-line @typescript-eslint/no-explicit-any
