@@ -172,7 +172,7 @@
   background-color: var(--white);
   border: 2px solid var(--info-color);
   * {
-    color: var(--info-color);
+    color: var(--info-color) !important;
   }
   &:hover {
     background-color: var(--grey-light);
@@ -191,7 +191,7 @@
   background-color: var(--white);
   border: 2px solid var(--primary-color);
   * {
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
   }
   &:hover {
     background-color: var(--grey-light);
@@ -210,7 +210,7 @@
   background-color: var(--white);
   border: 2px solid var(--secondary-color);
   * {
-    color: var(--secondary-color);
+    color: var(--secondary-color) !important;
   }
   &:hover {
     background-color: var(--grey-light);
