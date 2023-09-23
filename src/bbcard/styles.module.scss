@@ -12,18 +12,16 @@ $border-radius: var(--border-radius--bbcard);
   justify-content: space-between;
 }
 
+.no_border {
+  border: none;
+}
+
 .card_style__transparent {
   background-color: transparent !important;
   box-shadow: none !important;
   border: none !important;
 
-  .header {
-    background-color: transparent !important;
-    border-bottom: none !important;
-    border: none !important;
-  }
-
-  .footer {
+  div {
     background-color: transparent !important;
     border-bottom: none !important;
     border: none !important;

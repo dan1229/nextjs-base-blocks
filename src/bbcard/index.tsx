@@ -34,6 +34,7 @@ const getChildrenOnDisplayName = (children: React.ReactNode | React.ReactNode[],
  * @param {TBBCardStyle} cardStyle - the style of the card
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - Function to call when clicked
+ * @param {boolean=} noBorder - Whether to remove the border
  */
 interface IPropsBBCard {
   children: React.ReactNode | React.ReactNode[];
@@ -42,6 +43,7 @@ interface IPropsBBCard {
   cardStyle?: TBBCardStyle;
   className?: string;
   onClick?: () => void;
+  noBorder?: boolean;
 }
 
 /**
@@ -56,6 +58,7 @@ const BBCard = (Props: IPropsBBCard) => {
     cardStyle = 'default',
     className,
     onClick,
+    noBorder = false,
   } = Props;
   const header = getChildrenOnDisplayName(children, 'Header');
   const body = getChildrenOnDisplayName(children, 'Body');
@@ -106,6 +109,7 @@ const BBCard = (Props: IPropsBBCard) => {
         className,
         styles.base,
         !!onClick && styles.hover,
+        noBorder && styles.no_border,
         getCardStyle(),
         getClassColorBackground(),
         getClassElevation()
