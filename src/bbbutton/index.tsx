@@ -60,7 +60,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     elevation = 'none',
     disabled = false,
     hover = false,
-    focus = true,
+    focus = false,
     showTextOnHover = false,
     icon,
     idForm,
