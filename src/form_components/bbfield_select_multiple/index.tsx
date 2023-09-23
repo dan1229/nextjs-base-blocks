@@ -6,7 +6,7 @@ import BBCard from '../../bbcard'
 import BBText from '../../bbtext'
 import InputWrapper from '../input_wrapper'
 import styles from './styles.module.scss'
-import type { IBBFieldSelectMultipleOptions, IPropsBBBaseForm } from 'src/types'
+import type { IBBFieldSelectMultipleOptions, IPropsBBBaseForm } from '../../types'
 
 /**
  * PROPS
@@ -15,7 +15,7 @@ import type { IBBFieldSelectMultipleOptions, IPropsBBBaseForm } from 'src/types'
  * @param {string} fieldName - Name of the field. Think 'email' or 'name'.
  * @param {string[] | undefined} selectedInitial - Initial selected options.
  */
-interface IPropsBBFieldSelectMultiple extends IPropsBBBaseForm {
+interface IPropsBBFieldSelectMultiple {
   control: unknown
   options: IBBFieldSelectMultipleOptions[]
   selectedInitial: string[] | undefined
@@ -24,7 +24,7 @@ interface IPropsBBFieldSelectMultiple extends IPropsBBBaseForm {
 /**
  * BBFIELD SELECT MULTIPLE
  */
-export default function BBFieldSelectMultiple (Props: IPropsBBFieldSelectMultiple): React.ReactElement {
+export default function BBFieldSelectMultiple (Props: IPropsBBFieldSelectMultiple & IPropsBBBaseForm): React.ReactElement {
   const { control, options, fieldName, selectedInitial, className } = Props
   const [selectedOptions, setSelectedOptions] = useState<IBBFieldSelectMultipleOptions[]>([])
 

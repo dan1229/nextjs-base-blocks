@@ -26,10 +26,14 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+
+  button {
+    padding: 0.7rem 0.4rem;
+  }
 }
 
 .modal {
-  width: 80%;
+  width: 70%;
   overflow-y: scroll;
 }
 
@@ -42,4 +46,16 @@
   flex-direction: row;
   justify-content: flex-end;
   gap: 4px;
+}
+
+@media screen and (max-width: 1024px) {
+  .modal {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .modal {
+    width: 100%;
+  }
 }

@@ -1,20 +1,20 @@
 import React from 'react'
 import InputWrapper from '../input_wrapper'
-import type { IBBFieldDropdownOptions, IPropsBBBaseForm } from 'src/types'
+import type { IBBFieldDropdownOptions, IPropsBBBaseForm } from '../../types'
 
 /**
  * PROPS
  *
  * @param {IBBFieldSelectMultipleOptions[]} options - Options to display.
  */
-interface IPropsBBFieldDropdown extends IPropsBBBaseForm {
+interface IPropsBBFieldDropdown {
   options: IBBFieldDropdownOptions[]
 }
 
 /**
  * BBFIELD DROPDOWN
  */
-export default function BBFieldDropdown (Props: IPropsBBFieldDropdown): React.ReactElement {
+export default function BBFieldDropdown (Props: IPropsBBFieldDropdown & IPropsBBBaseForm): React.ReactElement {
   const { register, options, fieldName, required, autocomplete, onChange } = Props
 
   const getAutoComplete = (): string => {

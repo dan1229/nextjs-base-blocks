@@ -1,13 +1,8 @@
-import classNames from 'classnames'
-import React from 'react'
-import styles from '../bbbutton/styles.module.scss'
-import BBText, { type TBBTextSize } from '../bbtext'
-
-export type TBBButtonType = 'submit' | 'button' | 'reset'
-export type TBBButtonVariant = 'primary' | 'secondary' | 'danger' | 'success' | 'warning' | 'info' | 'inverse-info'
-export type TBBButtonSize = 'sm' | 'md' | 'lg'
-export type TBBButtonElevation = 'none' | 'low' | 'medium' | 'high'
-export type TBBButtonIconAlign = 'left' | 'right' | 'above' | 'below' | 'space-between'
+import classNames from 'classnames';
+import React from 'react';
+import type { TBBButtonIconAlign, TBBButtonType, TBBButtonSize, TBBButtonElevation, TBBButtonVariant, TBBTextSize } from '@/types';
+import styles from '../bbbutton/styles.module.scss';
+import BBText from '../bbtext';
 
 /**
  * ICON PROPS
@@ -16,8 +11,8 @@ export type TBBButtonIconAlign = 'left' | 'right' | 'above' | 'below' | 'space-b
  * @param {TBBButtonIconAlign} align - Alignment of icon
  */
 interface IPropsBBButtonIcon {
-  icon: React.ReactNode
-  align?: TBBButtonIconAlign
+  icon: React.ReactNode;
+  align?: TBBButtonIconAlign;
 }
 
 /**
@@ -38,34 +33,34 @@ interface IPropsBBButtonIcon {
  * @param {() => void=} onClick - The function to call when the button is clicked
  */
 interface IPropsBBButton {
-  text?: string
-  type?: TBBButtonType
-  size?: TBBButtonSize
-  elevation?: TBBButtonElevation
-  variant?: TBBButtonVariant
-  disabled?: boolean
-  hover?: boolean
-  focus?: boolean
-  icon?: IPropsBBButtonIcon
-  showTextOnHover?: boolean
-  idForm?: string
-  className?: string
-  onClick?: () => void
+  text?: string;
+  type?: TBBButtonType;
+  size?: TBBButtonSize;
+  elevation?: TBBButtonElevation;
+  variant?: TBBButtonVariant;
+  disabled?: boolean;
+  hover?: boolean;
+  focus?: boolean;
+  icon?: IPropsBBButtonIcon;
+  showTextOnHover?: boolean;
+  idForm?: string;
+  className?: string;
+  onClick?: () => void;
 }
 
-const defaultType = 'submit'
-const defaultSize = 'md'
-const defaultVariant = 'primary'
-const defaultElevation = 'none'
-const defaultDisabled = false
-const defaultFocus = false
-const defaultHover = true
-const defaultShowTextOnHover = false
+const defaultType = 'submit';
+const defaultSize = 'md';
+const defaultVariant = 'primary';
+const defaultElevation = 'none';
+const defaultDisabled = false;
+const defaultFocus = false;
+const defaultHover = true;
+const defaultShowTextOnHover = false;
 
 /**
  * BBButton
  */
-export default function BBButton (Props: IPropsBBButton): React.ReactElement {
+export default function BBButton(Props: IPropsBBButton): React.ReactElement {
   const {
     text,
     type = defaultType,
@@ -79,72 +74,72 @@ export default function BBButton (Props: IPropsBBButton): React.ReactElement {
     icon,
     idForm,
     className,
-    onClick
-  } = Props
+    onClick,
+  } = Props;
   // if button doesn't do anything, disable it
-  const disabledRes = !onClick && type != 'submit' ? true : disabled
-  const hoverRes = disabled || !hover ? false : hover
-  const align = icon?.align || 'left'
+  const disabledRes = !onClick && type != 'submit' ? true : disabled;
+  const hoverRes = disabled || !hover ? false : hover;
+  const align = icon?.align || 'left';
 
   const getClassVariant = () => {
     switch (variant) {
       case 'primary':
-        return styles.primary
+        return styles.primary;
       case 'secondary':
-        return styles.secondary
+        return styles.secondary;
       case 'danger':
-        return styles.danger
+        return styles.danger;
       case 'success':
-        return styles.success
+        return styles.success;
       case 'warning':
-        return styles.warning
+        return styles.warning;
       case 'info':
-        return styles.info
+        return styles.info;
       case 'inverse-info':
-        return styles.inverseInfo
+        return styles.inverseInfo;
     }
-  }
+  };
 
   const getButtonSize = (): TBBTextSize => {
     switch (size) {
       case 'sm':
-        return 'small'
+        return 'small';
       case 'md':
-        return 'medium'
+        return 'medium';
       case 'lg':
-        return 'xlarge'
+        return 'xlarge';
     }
-  }
+  };
 
   const getClassElevation = () => {
     switch (elevation) {
       case 'none':
-        return styles.elevationNone
+        return styles.elevationNone;
       case 'low':
-        return styles.elevationLow
+        return styles.elevationLow;
       case 'medium':
-        return styles.elevationMedium
+        return styles.elevationMedium;
       case 'high':
-        return styles.elevationHigh
+        return styles.elevationHigh;
     }
-  }
+  };
 
   const renderIcon = (currSide: TBBButtonIconAlign, icon?: IPropsBBButtonIcon) => {
-    if (!icon || !icon.icon) return null
-    const element = <div className={styles.icon}>{icon.icon}</div>
+    if (!icon || !icon.icon) return null;
+    const element = <div className={styles.icon}>{icon.icon}</div>;
     if (align == 'left' && currSide == 'left') {
-      return element
+      return element;
     } else if (align == 'right' && currSide == 'right') {
-      return element
+      return element;
     } else if (align == 'above' && currSide == 'left') {
-      return element
+      return element;
     } else if (align == 'below' && currSide == 'right') {
-      return element
+      return element;
     } else if (align == 'space-between' && currSide == 'right') {
-      return element
+      return element;
     }
-    return null
-  }
+    return null;
+  };
 
   /**
    * RENDER
@@ -177,5 +172,5 @@ export default function BBButton (Props: IPropsBBButton): React.ReactElement {
       )}
       {renderIcon('right', icon)}
     </button>
-  )
+  );
 }

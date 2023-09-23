@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
+import type { TBBTextSize, TBBTextColor } from '@/types';
 import styles from '../bblink/styles.module.scss';
-import BBText, { type TBBTextColor, type TBBTextSize } from '../bbtext';
+import BBText from '../bbtext';
 
 /**
  * PROPS

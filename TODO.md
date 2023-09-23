@@ -88,20 +88,20 @@ var(--variable, default-value));
     - remove 'Josefin Sans' from base blocks - not a default
 
 
-#### bbmodal - close/cancel
-- add support for outside clicks
-  - should close automatically
-  - add prop for close confirmation in such a case
-- add cancel buttons?
-- add to base blocks
-- **add to bootstrapper*
-
 
 ### [0.2.0] - 2023-MM-DD
 - Base props added for components and form components
     - Some breaking changes :/ i.e., `fieldLabel` is now `label` for all components
 - `InputWrapper` component for `BBFormComponents`
 - Added `BBFieldNumber` component
+- `BBModal` improvements
+    - `confirmCancel` functionality
+    - Outside click functionality
+    - Loading state
+    - Lots of customization
+    - Prop clean up
+- Package imports and aliases improved
+- `BBLoadingSpinner` component added
 #### TODO
 
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import InputWrapper from '../input_wrapper'
-import type { IPropsBBBaseForm, TBBFieldTextType } from 'src/types'
+import type { IPropsBBBaseForm, TBBFieldTextType } from '../../types'
 
 
 /**
@@ -9,7 +9,7 @@ import type { IPropsBBBaseForm, TBBFieldTextType } from 'src/types'
  * @param {TBBFieldTextType=} type - Type of input. Think 'text' or 'textarea'
  * @param {string=} placeholder - Placeholder text
  */
-interface IPropsBBFieldText extends IPropsBBBaseForm {
+interface IPropsBBFieldText {
   type?: TBBFieldTextType
   placeholder?: string
 }
@@ -17,7 +17,7 @@ interface IPropsBBFieldText extends IPropsBBBaseForm {
 /**
  * BBFIELD TEXT
  */
-export default function BBFieldText (Props: IPropsBBFieldText): React.ReactElement {
+export default function BBFieldText (Props: IPropsBBFieldText & IPropsBBBaseForm): React.ReactElement {
   const { register, fieldName, required = false, type = 'text', placeholder, autocomplete, onChange } = Props
 
   const getAutoComplete = (): string => {
