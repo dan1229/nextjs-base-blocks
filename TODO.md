@@ -64,16 +64,6 @@ var(--variable, default-value));
 ### 0.2.0
 
 
-#### bbbutton updates
-- colors
-  - inverse primary
-  - inverse secondary
-  - inverse info text color not working
-- double icon?
-- what other props?
-
-
-
 
 ### [0.2.0] - 2023-09-DD
 - Base props added for components and form components
