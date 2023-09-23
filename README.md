@@ -78,7 +78,8 @@ html,
   --border-radius--bbnavbar: 8px;
   --border-radius--bbnavbar-item: 8px;
   // font family
-  --font-family-main: 'Josefin Sans';
+  --font-family-header: 'Montserrat';  // Used for larger fonts/headers
+  --font-family-main: 'Josefin Sans';  // Used for main text
 }
 ```
 
