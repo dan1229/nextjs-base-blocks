@@ -29,7 +29,7 @@
 }
 
 .modal {
-  width: 80%;
+  width: 60%;
   overflow-y: scroll;
 }
 
@@ -42,4 +42,17 @@
   flex-direction: row;
   justify-content: flex-end;
   gap: 4px;
+}
+
+@media screen and (max-width: 1024px) {
+  .modal {
+    width: 80%;
+  }
+}
+  
+
+@media screen and (max-width: 480px) {
+  .modal {
+    width: 100%;
+  }
 }
