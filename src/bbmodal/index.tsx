@@ -4,6 +4,7 @@ import BBButton from '../bbbutton';
 import BBCard from '../bbcard';
 import styles from '../bbmodal/styles.module.scss';
 import BBText from '../bbtext';
+import { TBBTextSize } from '@/types';
 
 /**
  * PROPS
@@ -18,6 +19,7 @@ import BBText from '../bbtext';
  * @param {boolean=} confirmCancel - Whether to show the cancel button
  * @param {boolean=} outsideClickCloses - Whether to close the modal when clicking outside of it, calls onDismiss function
  * @param {string=} idForm - The id of the form to submit
+ * @param {TBBTextSize=} headerTextSize - The size of the header text
  */
 interface IPropsBBModal {
   children: React.ReactNode;
@@ -30,13 +32,14 @@ interface IPropsBBModal {
   confirmCancel?: boolean;
   outsideClickCloses?: boolean;
   idForm?: string;
+  headerTextSize?: TBBTextSize;
 }
 
 /**
  * BBModal
  */
 export default function BBModal(Props: IPropsBBModal): React.ReactElement {
-  const { children, title, onDismiss, textDismiss = 'Cancel', onConfirm, textConfirm = 'Confirm', extraFooter, confirmCancel = false, outsideClickCloses = true, idForm} = Props;
+  const { children, title, onDismiss, textDismiss = 'Cancel', onConfirm, textConfirm = 'Confirm', extraFooter, confirmCancel = false, outsideClickCloses = true, idForm, headerTextSize = 'xlarge'} = Props;
   const showFooter = !!onConfirm || !!onDismiss || !!extraFooter;
 
   let onDismissRes = onDismiss
@@ -69,7 +72,7 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
         <BBCard.Header>
           <BBCard.Header>
             <div className={styles.headerRow}>
-              <BBText size="xxlarge">{title}</BBText>
+              <BBText size={headerTextSize}>{title}</BBText>
               {!!onDismissRes && <BBButton onClick={onDismissRes} variant="danger" icon={{ icon: <AiOutlineClose /> }} />}
             </div>
           </BBCard.Header>

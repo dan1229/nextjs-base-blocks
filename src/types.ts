@@ -40,6 +40,23 @@ interface _IPropsBBBaseForm {
 }
 export type IPropsBBBaseForm = IPropsBBBase & _IPropsBBBaseForm
 
+
+
+// SIZES for BBText
+export type TBBTextSize = 'tiny' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge' | 'xxxlarge';
+// COLORS for BBText
+export type TBBTextColor =
+  | 'grey_light'
+  | 'grey_dark'
+  | 'black'
+  | 'white'
+  | 'primary'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'danger'
+  | 'info';
+
 // types of input for TBBFieldBase
 export type TBBFieldBaseTypes = 'file' | 'checkbox' | 'number' 
 // | 'radio' | 'select' | 'select-multiple'

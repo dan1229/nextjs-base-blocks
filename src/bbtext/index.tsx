@@ -1,19 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import styles from '../bbtext/styles.module.scss';
-
-export type TBBTextSize = 'tiny' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge' | 'xxxlarge';
-export type TBBTextColor =
-  | 'grey_light'
-  | 'grey_dark'
-  | 'black'
-  | 'white'
-  | 'primary'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'danger'
-  | 'info';
+import { TBBTextSize, TBBTextColor } from '@/types';
 
 /**
  * PROPS
