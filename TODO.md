@@ -97,8 +97,11 @@ var(--variable, default-value));
 - `BBModal` improvements
     - `confirmCancel` functionality
     - Outside click functionality
+    - Loading state
+    - Lots of customization
     - Prop clean up
 - Package imports and aliases improved
+- `BBLoadingSpinner` component added
 #### TODO
 
 

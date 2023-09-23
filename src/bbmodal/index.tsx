@@ -5,6 +5,7 @@ import BBCard from '../bbcard';
 import styles from '../bbmodal/styles.module.scss';
 import BBText from '../bbtext';
 import { TBBTextSize } from '@/types';
+import BBLoadingSpinner from '@/bbloading_spinner';
 
 /**
  * PROPS
@@ -21,6 +22,7 @@ import { TBBTextSize } from '@/types';
  * @param {string=} idForm - The id of the form to submit
  * @param {TBBTextSize=} headerTextSize - The size of the header text
  * @param {boolean=} showButtonCancel - Whether to show the cancel button
+ * @param {boolean=} loading - Whether to show the loading spinner
  */
 interface IPropsBBModal {
   children: React.ReactNode;
@@ -35,6 +37,7 @@ interface IPropsBBModal {
   idForm?: string;
   headerTextSize?: TBBTextSize;
   showButtonCancel?: boolean;
+  loading?: boolean;
 }
 
 /**
@@ -54,6 +57,7 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
     idForm,
     headerTextSize = 'xlarge',
     showButtonCancel = false,
+    loading = false,
   } = Props;
   const showFooter = !!onConfirm || !!onDismiss || !!extraFooter;
 
@@ -92,11 +96,15 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
         <BBCard.Body className={styles.bodyModal}>{children}</BBCard.Body>
         {showFooter && (
           <BBCard.Footer>
-            <div className={styles.containerButtons}>
-              {!!onConfirm && <BBButton onClick={onConfirm} text={textConfirm} variant="success" type="submit" idForm={idForm} />}
-              {!!onDismissRes && showButtonCancel && <BBButton onClick={onDismissRes} text={textDismiss} variant="danger" />}
-              {extraFooter}
-            </div>
+            {loading ? (
+              <BBLoadingSpinner />
+            ) : (
+              <div className={styles.containerButtons}>
+                {!!onConfirm && <BBButton onClick={onConfirm} text={textConfirm} variant="success" type="submit" idForm={idForm} />}
+                {!!onDismissRes && showButtonCancel && <BBButton onClick={onDismissRes} text={textDismiss} variant="danger" />}
+                {extraFooter}
+              </div>
+            )}
           </BBCard.Footer>
         )}
       </BBCard>
