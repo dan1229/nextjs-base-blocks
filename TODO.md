@@ -15,24 +15,18 @@
 - add cypress component testing
 
 
-#### fonts
-- add good defaults, currently mostly relies on input
+#### more color variables?
+- which ones?
+
 
 ----
 ### 0.3.0
 
 
-#### more color variables?
-
-
 #### navbar variables - add support for color
 - i.e.,
   - `--color-background-navbar` or something
-
-
-
-
-----
+    - maybe variants for navbar?
 
 
 #### bb field dropdown styling
@@ -40,15 +34,21 @@
     - add to global styling
 
 
-#### variables - text size?
-- add scss vars to edit text size?
+#### variables - text size
+- add scss vars to edit text size
+    - i.e., `--text-size-s` or something corresponding to the types
 
+
+----
 
 #### form css
 - how to apply global css to a git submodule?
-  - just add a styles/global.scss file and import it in the main app
-- add the `*` css rule from get twenty or something as well
+  - just add a styles/global.scss file and import it in the main app?
+  - may have to start directly styling the components in the submodule
+    - i.e., `BBFormComponents`
+- add the `*` css rules as well
 
+----
 
 #### scss variable defaults
 - html variables
@@ -60,33 +60,9 @@ var(--variable, default-value));
 - play with how we can define `default-value`
 
 
-----
-### 0.2.0
 
-
-
-### [0.2.0] - 2023-09-DD
-- Base props added for components and form components
-    - Some breaking changes :/ i.e., `fieldLabel` is now `label` for all components
-- `InputWrapper` component for `BBFormComponents`
-- Added `BBFieldNumber` component
-- `BBModal` improvements
-    - `confirmCancel` functionality
-    - Outside click functionality
-    - Loading state
-    - Lots of customization
-    - Prop clean up
-- Package imports and aliases improved
-- `BBLoadingSpinner` component added
-- Font cleanup and standardization
-    - Added `font-family-header` option
-    - Better default fonts and shit
-- `BBCard` fixes and updates
-    - transparent style fixed
-    - `noBorder` prop
-- `BBButton` features and fixes
-    - More color variants and options
-- `showLabel` prop for form inputs and many more new options!
+### [0.3.0] - 2023-10-DD
+#### TODO
 
 -------------------------------------------------------
 

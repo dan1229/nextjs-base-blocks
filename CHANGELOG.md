@@ -14,6 +14,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [0.2.0] - 2023-09-23
+- Base props added for components and form components
+    - Some breaking changes :/ i.e., `fieldLabel` is now `label` for all components
+- `InputWrapper` component for `BBFormComponents`
+- Added `BBFieldNumber` component
+- `BBModal` improvements
+    - `confirmCancel` functionality
+    - Outside click functionality
+    - Loading state
+    - Lots of customization
+    - Prop clean up
+- Package imports and aliases improved
+- `BBLoadingSpinner` component added
+- Font cleanup and standardization
+    - Added `font-family-header` option
+    - Better default fonts and shit
+- `BBCard` fixes and updates
+    - transparent style fixed
+    - `noBorder` prop
+- `BBButton` features and fixes
+    - More color variants and options
+- `showLabel` prop for form inputs and many more new options!
+
+
 ### [0.1.5] - 2023-08-30
 - BBCard border-radius fix
 
