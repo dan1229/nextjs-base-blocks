@@ -60,6 +60,11 @@ var(--variable, default-value));
 - play with how we can define `default-value`
 
 
+#### bbbutton alignment
+- text and icons dont look always vertically aligned
+- particularly when icons are larger than text
+
+
 
 ### [0.3.0] - 2023-10-DD
 #### TODO
