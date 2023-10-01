@@ -23,24 +23,6 @@
 ### 0.3.0
 
 
-#### navbar variables - add support for color
-- i.e.,
-  - `--color-background-navbar` or something
-    - maybe variants for navbar?
-
-
-#### bb field dropdown styling
-- add arrow or something
-    - add to global styling
-
-
-#### variables - text size
-- add scss vars to edit text size
-    - i.e., `--text-size-s` or something corresponding to the types
-
-
-----
-
 #### form css
 - how to apply global css to a git submodule?
   - just add a styles/global.scss file and import it in the main app?
@@ -49,6 +31,12 @@
 - add the `*` css rules as well
 
 ----
+
+#### variables - text size
+- add scss vars to edit text size
+    - i.e., `--text-size-s` or something corresponding to the types
+- NOTE: this must be after defaults are figured out
+
 
 #### scss variable defaults
 - html variables
@@ -59,6 +47,19 @@ var(--variable, default-value));
 ```
 - play with how we can define `default-value`
 
+----
+
+#### navbar variables - add support for color
+- i.e.,
+  - `--color-background-navbar` or something
+    - maybe variants for navbar?
+  - add something for text colors as well
+
+
+#### bb field dropdown styling
+- add arrow or something
+    - add to global styling
+
 
 #### bbbutton alignment
 - text and icons dont look always vertically aligned
@@ -67,6 +68,10 @@ var(--variable, default-value));
 
 #### bbcard
 - add onclick and other props to header/body/footer?
+
+
+#### bbalert
+- add onclick
 
 
 ### [0.3.0] - 2023-10-DD
