@@ -65,6 +65,9 @@ var(--variable, default-value));
 - particularly when icons are larger than text
 
 
+#### bbcard
+- add onclick and other props to header/body/footer?
+
 
 ### [0.3.0] - 2023-10-DD
 #### TODO
