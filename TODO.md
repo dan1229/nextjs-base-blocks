@@ -54,6 +54,8 @@ var(--variable, default-value));
   - `--color-background-navbar` or something
     - maybe variants for navbar?
   - add something for text colors as well
+- navbar items min width - 'dashboard' looks weird
+  - remove 'min_width: 10%'
 
 
 #### bb field dropdown styling
