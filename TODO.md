@@ -72,6 +72,11 @@ var(--variable, default-value));
 - add onclick and other props to header/body/footer?
 
 
+#### bblink
+- make `span` or something so that when you use it inline it looks good
+- i.e., <BBTex>click <BBLink>this link</BBLink> to learn more</BBText>
+
+
 #### bbalert
 - add onclick
 
