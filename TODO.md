@@ -46,12 +46,6 @@ var(--variable, default-value));
 
 ----
 
-#### make page to view all components
-- [ ] Make page displaying different components and capabilities
-- [ ] How to change props by user input? wrap component with said props as state?
-
-
-
 #### new variables
 - text variables - text size
   - add scss vars to edit text size
@@ -72,7 +66,7 @@ var(--variable, default-value));
     - add to global styling
 
 
-#### bbbutton alignment
+#### bbbutton - vertical alignment
 - text and icons dont look always vertically aligned
 - particularly when icons are larger than text
 
@@ -81,13 +75,16 @@ var(--variable, default-value));
 - add onclick and other props to header/body/footer
 
 
-#### bbalert
-- add onclick prop
+
+#### make page to view all components
+- [ ] Make page displaying different components and capabilities
+- [ ] How to change props by user input? wrap component with said props as state?
+
 
 
 ### [0.3.0] - 2023-10-DD
 #### Features
-- TODO
+- `BBAlert` - added `onClick` functionality/prop
 #### Fixes
 - TODO
 #### TODO
