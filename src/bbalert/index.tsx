@@ -17,7 +17,7 @@ import type { TBBTextSize, TBBAlertVariant, TBBAlertElevation, TBBAlertTextAlign
  * @param {() => void=} onClick - the function to call when the alert is clicked
  * @param {string=} className - Any class name to add
  */
-interface IPropsBBAlert {
+export interface IPropsBBAlert {
   children: React.ReactNode;
   size?: TBBTextSize;
   variant?: TBBAlertVariant;
@@ -32,7 +32,16 @@ interface IPropsBBAlert {
  * BBAlert
  */
 export default function BBAlert(Props: IPropsBBAlert): React.ReactElement {
-  const { children, size = 'medium', variant = 'info', elevation = 'none', dismissible = true, textAlignment = 'left', onClick, className } = Props;
+  const {
+    children,
+    size = 'medium',
+    variant = 'info',
+    elevation = 'none',
+    dismissible = true,
+    textAlignment = 'left',
+    onClick,
+    className,
+  } = Props;
   const [isDismissed, setIsDismissed] = useState<boolean>(false);
 
   if (isDismissed) {
