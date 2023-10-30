@@ -28,14 +28,11 @@
   - just add a styles/global.scss file and import it in the main app?
   - may have to start directly styling the components in the submodule
     - i.e., `BBFormComponents`
+- maybe just make scss shared module for form components if that doesnt work?
+  - in forms dir
 - add the `*` css rules as well
 
 ----
-
-#### variables - text size
-- add scss vars to edit text size
-    - i.e., `--text-size-s` or something corresponding to the types
-- NOTE: this must be after defaults are figured out
 
 
 #### scss variable defaults
@@ -49,13 +46,25 @@ var(--variable, default-value));
 
 ----
 
-#### navbar variables - add support for color
-- i.e.,
-  - `--color-background-navbar` or something
-    - maybe variants for navbar?
-  - add something for text colors as well
-- navbar items min width - 'dashboard' looks weird
-  - remove 'min_width: 10%'
+#### make page to view all components
+- [ ] Make page displaying different components and capabilities
+- [ ] How to change props by user input? wrap component with said props as state?
+
+
+
+#### new variables
+- text variables - text size
+  - add scss vars to edit text size
+      - i.e., `--text-size-s` or something corresponding to the types
+  - NOTE: this must be after defaults are figured out
+-
+- navbar variables - add support for color
+  - i.e.,
+    - `--color-background-navbar` or something
+      - maybe variants for navbar?
+    - add something for text colors as well
+  - navbar items min width - 'dashboard' looks weird
+    - remove 'min_width: 10%'
 
 
 #### bb field dropdown styling
@@ -69,14 +78,18 @@ var(--variable, default-value));
 
 
 #### bbcard
-- add onclick and other props to header/body/footer?
+- add onclick and other props to header/body/footer
 
 
 #### bbalert
-- add onclick
+- add onclick prop
 
 
 ### [0.3.0] - 2023-10-DD
+#### Features
+- TODO
+#### Fixes
+- TODO
 #### TODO
 
 -------------------------------------------------------
