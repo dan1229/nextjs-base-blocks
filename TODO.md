@@ -81,8 +81,9 @@ var(--variable, default-value));
 
 
 #### make page to view all components
-- [ ] Make page displaying different components and capabilities
-- [ ] How to change props by user input? wrap component with said props as state?
+- make wrapper component for each input on this page
+- style stateditor component
+
 
 
 

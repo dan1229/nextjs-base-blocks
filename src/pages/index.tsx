@@ -1,13 +1,55 @@
 import BBAlert, { IPropsBBAlert } from '@/bbalert';
-import React, { useState } from 'react';
+import React, { Dispatch, FC, SetStateAction, useState } from 'react';
 
-// TODO make a component that takes a state and setState
-// renders each key of the state as well as it's value
-// allows for quick and simple updates - no validation yet at least
+/**
+ * IPropsStateEditor
+ * @param {Record<string, any>} state - The state to display
+ * @param {Dispatch<SetStateAction<Record<string, any>>>} setState - The function to set the state
+ */
+interface IPropsStateEditor {
+  state: Record<string, any> | undefined;
+  setState: Dispatch<SetStateAction<any>>;
+}
 
+/**
+ * StateEditor
+ * A basic component to help edit state of a component
+ * allows for simple CRUD of said props - no validation or anything
+ */
+const StateEditor: FC<IPropsStateEditor> = ({ state, setState }) => {
+  const handleChange = (key: string, value: any) => {
+    console.log('handleChange', key, value);
+    setState((prevState: any) => ({ ...prevState, [key]: value }));
+  };
+  if (!state) return null;
+
+  return (
+    <div>
+      {Object.entries(state).map(([key, value]) => (
+        <div key={key}>
+          <label htmlFor={key}>{key}</label>
+          <input id={key} type="text" value={value} onChange={(e) => handleChange(key, e.target.value)} />
+        </div>
+      ))}
+    </div>
+  );
+};
+
+/**
+ * DEMO PAGE
+ */
 const DemoPage = () => {
   // state of components displayed
-  const [stateBBAlert, setStateBBAlert] = useState<IPropsBBAlert>();
+  const [stateBBAlert, setStateBBAlert] = useState<IPropsBBAlert>({
+    children: 'Test',
+    size: 'medium',
+    variant: 'info',
+    elevation: 'none',
+    dismissible: true,
+    textAlignment: 'left',
+    onClick: () => {},
+    className: '',
+  });
 
   return (
     <div>
@@ -29,6 +71,7 @@ const DemoPage = () => {
           <h3>BBAlert</h3>
           <div>
             <BBAlert {...stateBBAlert}>Test</BBAlert>
+            <StateEditor state={stateBBAlert} setState={setStateBBAlert} />
           </div>
         </div>
 
