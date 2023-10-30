@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import React, { useState } from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
-import type { TBBTextSize, TBBAlertVariant, TBBAlertElevation, TBBAlertTextAlignment } from '../types';
-import styles from './styles.module.scss';
 import BBText from '../bbtext';
+import styles from './styles.module.scss';
+import type { TBBTextSize, TBBAlertVariant, TBBAlertElevation, TBBAlertTextAlignment } from '../types';
 
 /**
  * PROPS

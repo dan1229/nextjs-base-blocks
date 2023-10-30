@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
-import type { TBBTextSize, TBBTextColor } from '../types';
 import styles from './styles.module.scss';
+import type { TBBTextSize, TBBTextColor } from '../types';
 
 /**
  * PROPS
