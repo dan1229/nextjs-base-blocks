@@ -34,24 +34,13 @@
 
 ----
 
-
-#### scss variable defaults
-- html variables
-  - how to get a default value for those calls to make them all optional?
-- can do this:
-```
-var(--variable, default-value));
-```
-- play with how we can define `default-value`
-
-----
-
-#### new variables
+#### bbtext - size variables
 - text variables - text size
   - add scss vars to edit text size
       - i.e., `--text-size-s` or something corresponding to the types
   - NOTE: this must be after defaults are figured out
--
+
+#### bbnavbar - color variables
 - navbar variables - add support for color
   - i.e.,
     - `--color-background-navbar` or something
@@ -74,6 +63,18 @@ var(--variable, default-value));
 #### bbcard
 - add onclick and other props to header/body/footer
 
+
+----
+
+
+#### scss variable defaults
+- html variables
+  - how to get a default value for those calls to make them all optional?
+- can do this:
+```
+var(--variable, default-value));
+```
+- play with how we can define `default-value`
 
 
 #### make page to view all components
