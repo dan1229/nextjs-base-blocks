@@ -14,6 +14,7 @@ import type { TBBTextSize, TBBAlertVariant, TBBAlertElevation, TBBAlertTextAlign
  * @param {TBBAlertElevation=} elevation - the elevation of the alert
  * @param {boolean=} dismissible - whether the alert is dismissible
  * @param {TBBAlertTextAlignment=} textAlignment - the text alignment of the alert
+ * @param {() => void=} onClick - the function to call when the alert is clicked
  * @param {string=} className - Any class name to add
  */
 interface IPropsBBAlert {
@@ -23,6 +24,7 @@ interface IPropsBBAlert {
   elevation?: TBBAlertElevation;
   dismissible?: boolean;
   textAlignment?: TBBAlertTextAlignment;
+  onClick?: () => void;
   className?: string;
 }
 
@@ -30,7 +32,7 @@ interface IPropsBBAlert {
  * BBAlert
  */
 export default function BBAlert(Props: IPropsBBAlert): React.ReactElement {
-  const { children, size = 'medium', variant = 'info', elevation = 'none', dismissible = true, textAlignment = 'left', className } = Props;
+  const { children, size = 'medium', variant = 'info', elevation = 'none', dismissible = true, textAlignment = 'left', onClick, className } = Props;
   const [isDismissed, setIsDismissed] = useState<boolean>(false);
 
   if (isDismissed) {
@@ -82,7 +84,7 @@ export default function BBAlert(Props: IPropsBBAlert): React.ReactElement {
    * RENDER
    */
   return (
-    <div className={classNames(className, styles.base, getClassVariant(), getClassElevation(), getClassTextAlignment())}>
+    <div className={classNames(className, styles.base, getClassVariant(), getClassElevation(), getClassTextAlignment())} onClick={onClick}>
       <BBText size={size}>{children}</BBText>
       {dismissible && <AiOutlineCloseCircle className={styles.dismissButton} onClick={onClickDismiss} />}
     </div>
