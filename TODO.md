@@ -22,6 +22,9 @@
 #### demo page improvements
 - TODO
 
+#### demo page - form components
+- TODO
+
 ----
 ### 0.3.0
 
@@ -89,6 +92,9 @@ var(--variable, default-value));
 
 ### [0.3.0] - 2023-10-DD
 #### Features
+- Demo Page!!!
+  - Added demo page to show all components
+  - Allows for editing of props to test
 - `BBAlert` - added `onClick` functionality/prop
 #### Fixes
 - TODO
