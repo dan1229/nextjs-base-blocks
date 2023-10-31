@@ -20,7 +20,7 @@ function removeSlashes(str: string | undefined) {
  * @param {string=} className - Any class name to add.
  * @param {React.ReactElement=} children - Children to render.
  */
-interface IPropsBBNavbarItem {
+export interface IPropsBBNavbarItem {
   title: string;
   href: string;
   className?: string;

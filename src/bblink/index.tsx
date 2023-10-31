@@ -18,7 +18,7 @@ import type { TBBTextSize, TBBTextColor } from '../types';
  * @param {boolean} external - whether the link is external or not. will open in new tab and handle seo.
  * @param {string=} className - Any class name to add
  */
-interface IPropsBBLink {
+export interface IPropsBBLink {
   children: React.ReactNode;
   href: string;
   size?: TBBTextSize;

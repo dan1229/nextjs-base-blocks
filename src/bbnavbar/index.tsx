@@ -21,7 +21,7 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
  * @param {React.ReactNode=} buttonsAuth - Auth buttons to use
  * @param {boolean=} showButtonsAuth - Show auth buttons
  */
-interface IPropsBBNavbar {
+export interface IPropsBBNavbar {
   title: string;
   children: React.ReactNode;
   elevation?: TBBNavbarElevation;

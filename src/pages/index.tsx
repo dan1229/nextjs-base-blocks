@@ -42,6 +42,17 @@ const DemoPage = () => {
     className: '',
     onClick: () => alert('You clicked the button!'),
   });
+  // BB Card
+  const [stateBBCard, setStateBBCard] = useState<IPropsBBCard>({
+    children: 'Test',
+    size: 'medium',
+    variant: 'info',
+    elevation: 'none',
+    dismissible: true,
+    textAlignment: 'left',
+    className: '',
+    onClick: () => alert('You clicked the alert!'),
+  });
 
   return (
     <div>
@@ -62,13 +73,7 @@ const DemoPage = () => {
           stateObject={stateBBButton}
           setStateObject={setStateBBButton}
         />
-
-        <div>
-          <h3>BBButton</h3>
-          <div>
-            <p>TODO</p>
-          </div>
-        </div>
+        <DemoComponent name="BBCard" child={<></>} stateObject={{}} setStateObject={() => {}} />
 
         <div>
           <h3>BBCard</h3>

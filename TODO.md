@@ -112,7 +112,7 @@ var(--variable, default-value));
   - Works with 'nested' component props
 - `BBAlert` - added `onClick` functionality/prop
 #### Fixes
-- TODO
+- All component props now exported
 #### TODO
 
 -------------------------------------------------------
