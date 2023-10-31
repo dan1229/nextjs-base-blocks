@@ -22,7 +22,7 @@ interface IPropsStateEditor {
 export default function StateEditor(Props: IPropsStateEditor): React.ReactElement | null {
   const { state, setState } = Props;
   const handleChange = (key: string, value: any) => {
-    console.log('handleChange', key, value);
+    console.log('subKey', key);
     setState((prevState: any) => ({ ...prevState, [key]: value }));
   };
   if (!state) return null;
@@ -30,20 +30,34 @@ export default function StateEditor(Props: IPropsStateEditor): React.ReactElemen
   return (
     <div className={styles.containerStateEditor}>
       {Object.entries(state).map(([key, value]) => {
-        console.log('key', key in BlacklistProps);
         if (BlacklistProps.includes(key)) return null;
+
         return (
           <div key={key} className={styles.containerField}>
             <label htmlFor={key} className={styles.containerLabel}>
               {key}
             </label>
-            <input
-              id={key}
-              className={styles.containerInput}
-              type="text"
-              value={value}
-              onChange={(e) => handleChange(key, e.target.value)}
-            />
+            {typeof value === 'object' ? (
+              <div className={styles.containerObjectInputs}>
+                {Object.keys(value).map((subKey) => {
+                  return (
+                    <div className={styles.containerObjectFieldInput}>
+                      <label htmlFor={subKey} className={styles.containerLabel}>
+                        {subKey}
+                      </label>
+                      <input
+                        id={subKey}
+                        type="text"
+                        value={value[subKey]}
+                        onChange={(e) => handleChange(key, { ...value, [subKey]: e.target.value })}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <input id={key} type="text" value={value} onChange={(e) => handleChange(key, e.target.value)} />
+            )}
           </div>
         );
       })}

@@ -40,6 +40,12 @@
 
 ----
 
+#### bbalert - bugs
+- on click intercepting dismissible
+- dismissible kinda works?
+- dismissible doesnt work in demo
+
+
 #### bbtext - size variables
 - text variables - text size
   - add scss vars to edit text size
@@ -83,9 +89,11 @@ var(--variable, default-value));
 - play with how we can define `default-value`
 
 
+
 #### make page to view all components
 - style stateditor component
 - handle bbbutton icon
+- handle boolean fields?
 -
 - form components readme
 - demo components readme
@@ -101,6 +109,7 @@ var(--variable, default-value));
 - Demo Page!!!
   - Added demo page to show all components
   - Allows for editing of props to test
+  - Works with 'nested' component props
 - `BBAlert` - added `onClick` functionality/prop
 #### Fixes
 - TODO

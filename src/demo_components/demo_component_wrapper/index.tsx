@@ -24,7 +24,6 @@ interface IPropsDemoComponent {
  */
 export default function DemoComponent(Props: IPropsDemoComponent): React.ReactElement | null {
   const { name, child, stateObject, setStateObject } = Props;
-  console.log('stateBBAlert', stateObject);
 
   return (
     <div className={styles.containerDemoComponent}>
