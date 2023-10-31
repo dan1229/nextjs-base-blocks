@@ -14,6 +14,7 @@ import type { IPropsBBNavbar } from '@/bbnavbar';
 import BBNavbar from '@/bbnavbar';
 import type { IPropsBBNavbarItem } from '@/bbnavbar_item';
 import BBNavbarItem from '@/bbnavbar_item';
+import type { IPropsBBText } from '@/bbtext';
 import BBText from '@/bbtext';
 import DemoComponent from '@/demo_components/demo_component';
 
@@ -106,15 +107,34 @@ const DemoPage = () => {
     href: 'https://www.google.com',
     className: '',
   });
+  // BB Text
+  const [stateBBText, setStateBBText] = useState<IPropsBBText>({
+    children: 'Test',
+    size: 'medium',
+    bold: false,
+    italics: false,
+    underline: false,
+    hover: false,
+    asSpan: false,
+    color: 'primary',
+    className: '',
+    onClick: () => alert('You clicked the text!'),
+  });
 
   return (
     <div>
       <div>
         <BBText size="xxxlarge">NextJS Base Blocks</BBText>
-        <BBText size="xlarge">Base blocks for NextJS projects.</BBText>
+        <BBText size="xlarge">Demo Page</BBText>
+        <BBLink href="https://github.com/dan1229/nextjs-base-blocks" size="large" bold external>
+          GitHub link
+        </BBLink>
 
-        {/* TODO write description of page */}
-        {/* Add link to Github repo */}
+        <BBText>
+          The base blocks demonstration page is a demo and testing environment for the base blocks library in NextJS projects. It showcases
+          various components such as BBAlert, BBButton, BBCard, BBLink, and BBLoadingSpinner. The page is designed to provide a visual
+          representation of how these components look and function in a real-world scenario.
+        </BBText>
       </div>
       <hr />
       <div>
@@ -139,12 +159,7 @@ const DemoPage = () => {
         <DemoComponent name="BBLink" child={<BBLink {...stateBBLink} />} stateObject={stateBBLink} setStateObject={setStateBBLink} />
         {/* This one can use whichever set method since it has no props */}
         <DemoComponent name="BBLoadingSpinner" child={<BBLoadingSpinner />} stateObject={{}} setStateObject={setStateBBAlert} />
-        <DemoComponent
-          name="BBModal"
-          child={<BBModal {...stateBBModal} />}
-          stateObject={stateBBModal}
-          setStateObject={setStateBBModal}
-        />
+        <DemoComponent name="BBModal" child={<BBModal {...stateBBModal} />} stateObject={stateBBModal} setStateObject={setStateBBModal} />
         <DemoComponent
           name="BBNavbar"
           child={<BBNavbar {...stateBBNavbar} />}
@@ -157,13 +172,7 @@ const DemoPage = () => {
           stateObject={stateBBNavbarItem}
           setStateObject={setStateBBNavbarItem}
         />
-
-        <div>
-          <h3>BBText</h3>
-          <div>
-            <p>TODO</p>
-          </div>
-        </div>
+        <DemoComponent name="BBText" child={<BBText {...stateBBText} />} stateObject={stateBBText} setStateObject={setStateBBText} />
       </div>
       <div>
         <h2>BB Form Components</h2>
