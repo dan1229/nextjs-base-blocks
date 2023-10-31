@@ -1,5 +1,9 @@
 import BBAlert, { IPropsBBAlert } from '@/bbalert';
 import BBButton, { IPropsBBButton } from '@/bbbutton';
+import BBCard, { IPropsBBCard } from '@/bbcard';
+import BBLink, { IPropsBBLink } from '@/bblink';
+import BBLoadingSpinner from '@/bbloading_spinner';
+import BBModal, { IPropsBBModal } from '@/bbmodal';
 import BBText from '@/bbtext';
 import DemoComponent from '@/demo_components/demo_component_wrapper';
 import StateEditor from '@/demo_components/state_editor';
@@ -44,14 +48,40 @@ const DemoPage = () => {
   });
   // BB Card
   const [stateBBCard, setStateBBCard] = useState<IPropsBBCard>({
-    children: 'Test',
-    size: 'medium',
-    variant: 'info',
+    colorBackground: 'white',
     elevation: 'none',
-    dismissible: true,
-    textAlignment: 'left',
+    cardStyle: 'default',
     className: '',
-    onClick: () => alert('You clicked the alert!'),
+    onClick: () => alert('You clicked the card!'),
+    noBorder: false,
+    children: 'TODO - fix card implementation',
+  });
+  // BB Link
+  const [stateBBLink, setStateBBLink] = useState<IPropsBBLink>({
+    children: 'Test',
+    href: 'https://www.google.com',
+    size: 'medium',
+    color: 'primary',
+    bold: false,
+    italics: false,
+    underline: false,
+    asSpan: false,
+    external: true,
+    className: '',
+  });
+  // BB Modal
+  const [stateBBModal, setStateBBModal] = useState<IPropsBBModal>({
+    children: 'Test',
+    title: 'Test',
+    textDismiss: 'Dismiss',
+    textConfirm: 'Confirm',
+    extraFooter: <></>,
+    confirmCancel: true,
+    outsideClickCloses: true,
+    idForm: '',
+    headerTextSize: 'medium',
+    showButtonCancel: true,
+    loading: false,
   });
 
   return (
@@ -73,29 +103,25 @@ const DemoPage = () => {
           stateObject={stateBBButton}
           setStateObject={setStateBBButton}
         />
-        <DemoComponent name="BBCard" child={<></>} stateObject={{}} setStateObject={() => {}} />
-
-        <div>
-          <h3>BBCard</h3>
-          <div>
-            <p>TODO</p>
-          </div>
-        </div>
-
-        <div>
-          <h3>BBLink</h3>
-          <div>
-            <p>TODO</p>
-          </div>
-        </div>
-
-        <div>
-          <h3>BBLoading Spinner</h3>
-          <div>
-            <p>TODO</p>
-          </div>
-        </div>
-
+        <DemoComponent
+          name="BBCard"
+          child={
+            <BBCard {...stateBBCard}>
+              <BBCard.Body {...stateBBCard}></BBCard.Body>
+            </BBCard>
+          }
+          stateObject={stateBBCard}
+          setStateObject={setStateBBCard}
+        />
+        <DemoComponent name="BBLink" child={<BBLink {...stateBBLink} />} stateObject={stateBBLink} setStateObject={setStateBBLink} />
+        {/* This one can use whichever set method since it has no props */}
+        <DemoComponent name="BBLoadingSpinner" child={<BBLoadingSpinner />} stateObject={{}} setStateObject={setStateBBAlert} />
+        <DemoComponent
+          name="BBModal"
+          child={<BBModal {...stateBBModal}></BBModal>}
+          stateObject={stateBBModal}
+          setStateObject={setStateBBModal}
+        />
         <div>
           <h3>BBModal</h3>
           <div>

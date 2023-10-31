@@ -2,7 +2,7 @@ import BBAlert, { IPropsBBAlert } from '@/bbalert';
 import React, { Dispatch, FC, SetStateAction, useState } from 'react';
 import styles from './styles.module.scss';
 
-const BlacklistProps = ['onClick', 'idForm'];
+const BlacklistProps = ['onClick', 'idForm', 'extraFooter'];
 
 /**
  * IPropsStateEditor

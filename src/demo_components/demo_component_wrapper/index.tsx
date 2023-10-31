@@ -1,8 +1,9 @@
 import BBAlert, { IPropsBBAlert } from '@/bbalert';
-import React, { Dispatch, FC, SetStateAction, useState } from 'react';
+import React, { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
 import StateEditor from '../state_editor';
 import BBText from '@/bbtext';
 import styles from './styles.module.scss';
+import BBButton from '@/bbbutton';
 
 /**
  * IPropsDemoComponent
@@ -24,13 +25,23 @@ interface IPropsDemoComponent {
  */
 export default function DemoComponent(Props: IPropsDemoComponent): React.ReactElement | null {
   const { name, child, stateObject, setStateObject } = Props;
+  const [showComponent, setShowComponent] = useState<boolean>(true);
+  const isBBModal = name === 'BBModal';
+
+  useEffect(() => {
+    // if modal, hide by default
+    if (isBBModal) {
+      setShowComponent(false);
+    }
+  }, [name]);
 
   return (
     <div className={styles.containerDemoComponent}>
       <BBText size="xlarge">{name}</BBText>
       <hr />
       <div>
-        <div className={styles.containerComponent}>{child}</div>
+        {showComponent && <div className={styles.containerComponent}>{child}</div>}
+        {isBBModal && <BBButton onClick={() => setShowComponent(!showComponent)} text={showComponent ? 'Hide' : 'Show'} />}
         <hr />
         <StateEditor state={stateObject} setState={setStateObject} />
       </div>

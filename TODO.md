@@ -22,8 +22,19 @@
 #### demo page improvements
 - TODO
 
+
 #### demo page - form components
-- TODO
+- just add them
+- probably in a different page
+
+
+#### demo page - bbcard 'composite' components
+- what to do with header, body and footer?
+
+
+#### demo page - bbmodal demo doesnt work great
+- need way to hide modal
+- onCancel and onConfirm need to update showComponent state in DemoComponent
 
 ----
 ### 0.3.0
@@ -91,8 +102,6 @@ var(--variable, default-value));
 
 
 #### make page to view all components
-- style stateditor component
-- handle bbbutton icon
 - handle boolean fields?
 -
 - form components readme
