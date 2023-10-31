@@ -56,7 +56,7 @@
 
 
 ----
-### 0.3.0
+### 0.4.0
 
 
 #### form css
@@ -64,14 +64,19 @@
   - just add a styles/global.scss file and import it in the main app?
   - may have to start directly styling the components in the submodule
     - i.e., `BBFormComponents`
+  - if global works, add the `*` css rules as well
+-
 - maybe just make scss shared module for form components if that doesnt work?
   - in forms dir
-- add the `*` css rules as well
+
 
 ----
+### 0.3.0
+
 
 #### bbalert - bugs
 - on click intercepting dismissible
+  - other places could use this too if we get an answer
 - dismissible kinda works?
 - dismissible doesnt work in demo
 
