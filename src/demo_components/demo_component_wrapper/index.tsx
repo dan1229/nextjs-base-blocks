@@ -1,21 +1,32 @@
 import BBAlert, { IPropsBBAlert } from '@/bbalert';
 import React, { Dispatch, FC, SetStateAction, useState } from 'react';
+import StateEditor from '../state_editor';
 
 /**
- * IPropsDemoComponentWrapper
+ * IPropsDemoComponent
  * @param {React.ReactNode} children - The children to display
  */
-interface IPropsDemoComponentWrapper {
-  children: React.ReactNode;
+interface IPropsDemoComponent {
+  name: string;
+  Component: FC<any>;
+  stateObject: Record<string, any>;
+  setStateObject: Dispatch<SetStateAction<any>>;
 }
 
 /**
- * DemoComponentWrapper
- * A basic component to help edit state of a component
- * Mainly handles styling and layout
+ * DemoComponent
+ * A basic component to help demo components
  */
-export default function DemoComponentWrapper(Props: IPropsDemoComponentWrapper): React.ReactElement | null {
-  const { children } = Props;
+export default function DemoComponent(Props: IPropsDemoComponent): React.ReactElement | null {
+  const { name, Component, stateObject, setStateObject } = Props;
 
-  return <div>{children}</div>;
+  return (
+    <div>
+      <h3>{name}</h3>
+      <div>
+        <Component {...stateObject}>Test</Component>
+        <StateEditor state={stateObject} setState={setStateObject} />
+      </div>
+    </div>
+  );
 }

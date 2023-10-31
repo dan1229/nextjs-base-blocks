@@ -1,4 +1,5 @@
 import BBAlert, { IPropsBBAlert } from '@/bbalert';
+import DemoComponent from '@/demo_components/demo_component_wrapper';
 import StateEditor from '@/demo_components/state_editor';
 import React, { Dispatch, FC, SetStateAction, useState } from 'react';
 
@@ -34,13 +35,7 @@ const DemoPage = () => {
       <div>
         <h2>BB Components</h2>
 
-        <div>
-          <h3>BBAlert</h3>
-          <div>
-            <BBAlert {...stateBBAlert}>Test</BBAlert>
-            <StateEditor state={stateBBAlert} setState={setStateBBAlert} />
-          </div>
-        </div>
+        <DemoComponent name="BBAlert" Component={BBAlert} stateObject={stateBBAlert} setStateObject={setStateBBAlert} />
 
         <div>
           <h3>BBButton</h3>
