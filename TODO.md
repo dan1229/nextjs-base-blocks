@@ -45,6 +45,16 @@
 #### demo page - add bbnavbar dropdown
 - i.e., multiple bbnavbar items
 
+
+#### demo page - do boolean fields work
+- test and if not fix
+
+
+#### demo page - show options for props
+- props that have options or types should show them
+- i.e., bbtext size - show the size 'choices'
+
+
 ----
 ### 0.3.0
 
@@ -110,16 +120,6 @@ var(--variable, default-value));
 
 
 
-#### make page to view all components
-- handle boolean fields?
--
-- form components readme
-- demo components readme
--
-- later
-  - show options for props with types/options?
-
-
 
 
 ### [0.3.0] - 2023-10-DD
@@ -131,6 +131,7 @@ var(--variable, default-value));
 - `BBAlert` - added `onClick` functionality/prop
 #### Fixes
 - All component props now exported
+- Improved and added `README`s
 #### TODO
 
 -------------------------------------------------------

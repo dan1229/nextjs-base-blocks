@@ -7,7 +7,7 @@ import BBModal, { IPropsBBModal } from '@/bbmodal';
 import BBNavbar, { IPropsBBNavbar } from '@/bbnavbar';
 import BBNavbarItem, { IPropsBBNavbarItem } from '@/bbnavbar_item';
 import BBText from '@/bbtext';
-import DemoComponent from '@/demo_components/demo_component_wrapper';
+import DemoComponent from '@/demo_components/demo_component';
 import StateEditor from '@/demo_components/state_editor';
 import React, { Dispatch, FC, SetStateAction, useState } from 'react';
 
