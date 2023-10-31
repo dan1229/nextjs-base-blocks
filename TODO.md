@@ -84,8 +84,10 @@ var(--variable, default-value));
 
 
 #### make page to view all components
-- make wrapper component for each input on this page
 - style stateditor component
+-
+- form components readme
+- demo components readme
 
 
 

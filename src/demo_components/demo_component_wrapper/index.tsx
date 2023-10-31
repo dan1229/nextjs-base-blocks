@@ -1,6 +1,7 @@
 import BBAlert, { IPropsBBAlert } from '@/bbalert';
 import React, { Dispatch, FC, SetStateAction, useState } from 'react';
 import StateEditor from '../state_editor';
+import BBText from '@/bbtext';
 
 /**
  * IPropsDemoComponent
@@ -26,7 +27,7 @@ export default function DemoComponent(Props: IPropsDemoComponent): React.ReactEl
 
   return (
     <div>
-      <h3>{name}</h3>
+      <BBText size="xlarge">{name}</BBText>
       <div>
         {child}
         <StateEditor state={stateObject} setState={setStateObject} />

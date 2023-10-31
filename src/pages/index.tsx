@@ -1,4 +1,5 @@
 import BBAlert, { IPropsBBAlert } from '@/bbalert';
+import BBText from '@/bbtext';
 import DemoComponent from '@/demo_components/demo_component_wrapper';
 import StateEditor from '@/demo_components/state_editor';
 import React, { Dispatch, FC, SetStateAction, useState } from 'react';
@@ -25,19 +26,15 @@ const DemoPage = () => {
   return (
     <div>
       <div>
-        <h1>NextJS Base Blocks</h1>
-        <p>Base blocks for NextJS projects.</p>
-        {/* TODO fill out description */}
-        {/* Add link to Github repo */}
-        <p>
-          <b>NOTE:</b> Ironically, this page does NOT use Base Blocks components as this page is primarily intended for testing said
-          components so we use native HTML to ensure the page itself works as well as possible.
-        </p>
-        <p>Please reset the page to reset your props.</p>
-      </div>
-      <div>
-        <h2>BB Components</h2>
+        <BBText size="xxxlarge">NextJS Base Blocks</BBText>
+        <BBText size="xlarge">Base blocks for NextJS projects.</BBText>
 
+        {/* TODO write description of page */}
+        {/* Add link to Github repo */}
+      </div>
+      <hr />
+      <div>
+        <BBText size="xxlarge">BB Components</BBText>
         <DemoComponent name="BBAlert" child={<BBAlert {...stateBBAlert} />} stateObject={stateBBAlert} setStateObject={setStateBBAlert} />
 
         <div>
