@@ -7,7 +7,10 @@ import React, { Dispatch, FC, SetStateAction, useState } from 'react';
  * DEMO PAGE
  */
 const DemoPage = () => {
-  // state of components displayed
+  //
+  // REGULAR COMPONENTS
+  //
+  // BB ALERT
   const [stateBBAlert, setStateBBAlert] = useState<IPropsBBAlert>({
     children: 'Test',
     size: 'medium',
@@ -35,7 +38,7 @@ const DemoPage = () => {
       <div>
         <h2>BB Components</h2>
 
-        <DemoComponent name="BBAlert" Component={BBAlert} stateObject={stateBBAlert} setStateObject={setStateBBAlert} />
+        <DemoComponent name="BBAlert" child={<BBAlert {...stateBBAlert} />} stateObject={stateBBAlert} setStateObject={setStateBBAlert} />
 
         <div>
           <h3>BBButton</h3>
