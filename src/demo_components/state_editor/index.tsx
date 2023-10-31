@@ -1,6 +1,7 @@
-import BBAlert, { IPropsBBAlert } from '@/bbalert';
-import React, { Dispatch, FC, SetStateAction, useState } from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React from 'react';
 import styles from './styles.module.scss';
+import type { Dispatch, SetStateAction } from 'react';
 
 const BlacklistProps = ['onClick', 'idForm', 'extraFooter', 'children'];
 
@@ -22,7 +23,6 @@ interface IPropsStateEditor {
 export default function StateEditor(Props: IPropsStateEditor): React.ReactElement | null {
   const { state, setState } = Props;
   const handleChange = (key: string, value: any) => {
-    console.log('subKey', key);
     setState((prevState: any) => ({ ...prevState, [key]: value }));
   };
   if (!state) return null;
@@ -40,13 +40,14 @@ export default function StateEditor(Props: IPropsStateEditor): React.ReactElemen
             {typeof value === 'object' ? (
               <div className={styles.containerObjectInputs}>
                 {Object.keys(value).map((subKey) => {
+                  const combinedKey = `${key}.${subKey}`;
                   return (
-                    <div className={styles.containerObjectFieldInput}>
+                    <div key={combinedKey} className={styles.containerObjectFieldInput}>
                       <label htmlFor={subKey} className={styles.containerLabel}>
                         {subKey}
                       </label>
                       <input
-                        id={subKey}
+                        id={combinedKey}
                         type="text"
                         value={value[subKey]}
                         onChange={(e) => handleChange(key, { ...value, [subKey]: e.target.value })}

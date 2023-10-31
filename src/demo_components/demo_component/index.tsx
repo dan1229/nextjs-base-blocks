@@ -1,9 +1,9 @@
-import BBAlert, { IPropsBBAlert } from '@/bbalert';
-import React, { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
-import StateEditor from '../state_editor';
-import BBText from '@/bbtext';
-import styles from './styles.module.scss';
+import React, { useEffect, useState } from 'react';
 import BBButton from '@/bbbutton';
+import BBText from '@/bbtext';
+import StateEditor from '../state_editor';
+import styles from './styles.module.scss';
+import type { Dispatch, SetStateAction } from 'react';
 
 /**
  * IPropsDemoComponent
@@ -15,7 +15,9 @@ import BBButton from '@/bbbutton';
 interface IPropsDemoComponent {
   name: string;
   child: React.ReactNode;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   stateObject: Record<string, any>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   setStateObject: Dispatch<SetStateAction<any>>;
 }
 
@@ -33,7 +35,7 @@ export default function DemoComponent(Props: IPropsDemoComponent): React.ReactEl
     if (isBBModal) {
       setShowComponent(false);
     }
-  }, [name]);
+  }, [name, isBBModal]);
 
   return (
     <div className={styles.containerDemoComponent}>

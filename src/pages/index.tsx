@@ -1,15 +1,21 @@
-import BBAlert, { IPropsBBAlert } from '@/bbalert';
-import BBButton, { IPropsBBButton } from '@/bbbutton';
-import BBCard, { IPropsBBCard } from '@/bbcard';
-import BBLink, { IPropsBBLink } from '@/bblink';
+import React, { useState } from 'react';
+import type { IPropsBBAlert } from '@/bbalert';
+import BBAlert from '@/bbalert';
+import type { IPropsBBButton } from '@/bbbutton';
+import BBButton from '@/bbbutton';
+import type { IPropsBBCard } from '@/bbcard';
+import BBCard from '@/bbcard';
+import type { IPropsBBLink } from '@/bblink';
+import BBLink from '@/bblink';
 import BBLoadingSpinner from '@/bbloading_spinner';
-import BBModal, { IPropsBBModal } from '@/bbmodal';
-import BBNavbar, { IPropsBBNavbar } from '@/bbnavbar';
-import BBNavbarItem, { IPropsBBNavbarItem } from '@/bbnavbar_item';
+import type { IPropsBBModal } from '@/bbmodal';
+import BBModal from '@/bbmodal';
+import type { IPropsBBNavbar } from '@/bbnavbar';
+import BBNavbar from '@/bbnavbar';
+import type { IPropsBBNavbarItem } from '@/bbnavbar_item';
+import BBNavbarItem from '@/bbnavbar_item';
 import BBText from '@/bbtext';
 import DemoComponent from '@/demo_components/demo_component';
-import StateEditor from '@/demo_components/state_editor';
-import React, { Dispatch, FC, SetStateAction, useState } from 'react';
 
 /**
  * DEMO PAGE
@@ -124,7 +130,7 @@ const DemoPage = () => {
           name="BBCard"
           child={
             <BBCard {...stateBBCard}>
-              <BBCard.Body {...stateBBCard}></BBCard.Body>
+              <BBCard.Body {...stateBBCard} />
             </BBCard>
           }
           stateObject={stateBBCard}
@@ -135,7 +141,7 @@ const DemoPage = () => {
         <DemoComponent name="BBLoadingSpinner" child={<BBLoadingSpinner />} stateObject={{}} setStateObject={setStateBBAlert} />
         <DemoComponent
           name="BBModal"
-          child={<BBModal {...stateBBModal}></BBModal>}
+          child={<BBModal {...stateBBModal} />}
           stateObject={stateBBModal}
           setStateObject={setStateBBModal}
         />
