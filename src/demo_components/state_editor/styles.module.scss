@@ -1,0 +1,25 @@
+.containerStateEditor {
+  width: 100%;
+}
+
+.containerField {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.containerLabel {
+  min-width: 6rem;
+  text-align: start;
+  padding: 0.5rem;
+}
+
+.containerInput {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid black;
+}

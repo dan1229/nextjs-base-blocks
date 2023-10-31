@@ -2,6 +2,7 @@ import BBAlert, { IPropsBBAlert } from '@/bbalert';
 import React, { Dispatch, FC, SetStateAction, useState } from 'react';
 import StateEditor from '../state_editor';
 import BBText from '@/bbtext';
+import styles from './styles.module.scss';
 
 /**
  * IPropsDemoComponent
@@ -26,10 +27,12 @@ export default function DemoComponent(Props: IPropsDemoComponent): React.ReactEl
   console.log('stateBBAlert', stateObject);
 
   return (
-    <div>
+    <div className={styles.containerDemoComponent}>
       <BBText size="xlarge">{name}</BBText>
+      <hr />
       <div>
-        {child}
+        <div className={styles.containerComponent}>{child}</div>
+        <hr />
         <StateEditor state={stateObject} setState={setStateObject} />
       </div>
     </div>

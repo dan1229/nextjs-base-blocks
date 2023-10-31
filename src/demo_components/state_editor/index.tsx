@@ -1,5 +1,6 @@
 import BBAlert, { IPropsBBAlert } from '@/bbalert';
 import React, { Dispatch, FC, SetStateAction, useState } from 'react';
+import styles from './styles.module.scss';
 
 /**
  * IPropsStateEditor
@@ -25,11 +26,13 @@ export default function StateEditor(Props: IPropsStateEditor): React.ReactElemen
   if (!state) return null;
 
   return (
-    <div>
+    <div className={styles.containerStateEditor}>
       {Object.entries(state).map(([key, value]) => (
-        <div key={key}>
-          <label htmlFor={key}>{key}</label>
-          <input id={key} type="text" value={value} onChange={(e) => handleChange(key, e.target.value)} />
+        <div key={key} className={styles.containerField}>
+          <label htmlFor={key} className={styles.containerLabel}>
+            {key}
+          </label>
+          <input id={key} className={styles.containerInput} type="text" value={value} onChange={(e) => handleChange(key, e.target.value)} />
         </div>
       ))}
     </div>
