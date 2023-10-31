@@ -32,7 +32,7 @@ interface IPropsBBButtonIcon {
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - The function to call when the button is clicked
  */
-interface IPropsBBButton {
+export interface IPropsBBButton {
   text?: string;
   type?: TBBButtonType;
   size?: TBBButtonSize;

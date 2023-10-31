@@ -2,6 +2,8 @@ import BBAlert, { IPropsBBAlert } from '@/bbalert';
 import React, { Dispatch, FC, SetStateAction, useState } from 'react';
 import styles from './styles.module.scss';
 
+const BlacklistProps = ['onClick', 'idForm'];
+
 /**
  * IPropsStateEditor
  * @param {Record<string, any>} state - The state to display
@@ -27,14 +29,24 @@ export default function StateEditor(Props: IPropsStateEditor): React.ReactElemen
 
   return (
     <div className={styles.containerStateEditor}>
-      {Object.entries(state).map(([key, value]) => (
-        <div key={key} className={styles.containerField}>
-          <label htmlFor={key} className={styles.containerLabel}>
-            {key}
-          </label>
-          <input id={key} className={styles.containerInput} type="text" value={value} onChange={(e) => handleChange(key, e.target.value)} />
-        </div>
-      ))}
+      {Object.entries(state).map(([key, value]) => {
+        console.log('key', key in BlacklistProps);
+        if (BlacklistProps.includes(key)) return null;
+        return (
+          <div key={key} className={styles.containerField}>
+            <label htmlFor={key} className={styles.containerLabel}>
+              {key}
+            </label>
+            <input
+              id={key}
+              className={styles.containerInput}
+              type="text"
+              value={value}
+              onChange={(e) => handleChange(key, e.target.value)}
+            />
+          </div>
+        );
+      })}
     </div>
   );
 }

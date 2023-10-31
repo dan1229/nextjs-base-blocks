@@ -1,4 +1,5 @@
 import BBAlert, { IPropsBBAlert } from '@/bbalert';
+import BBButton, { IPropsBBButton } from '@/bbbutton';
 import BBText from '@/bbtext';
 import DemoComponent from '@/demo_components/demo_component_wrapper';
 import StateEditor from '@/demo_components/state_editor';
@@ -19,8 +20,27 @@ const DemoPage = () => {
     elevation: 'none',
     dismissible: true,
     textAlignment: 'left',
-    onClick: () => {},
     className: '',
+    onClick: () => alert('You clicked the alert!'),
+  });
+  // BB Button
+  const [stateBBButton, setStateBBButton] = useState<IPropsBBButton>({
+    text: 'Test',
+    type: 'submit',
+    size: 'md',
+    variant: 'primary',
+    elevation: 'none',
+    disabled: false,
+    hover: true,
+    focus: false,
+    showTextOnHover: false,
+    icon: {
+      icon: 'test',
+      align: 'left',
+    },
+    idForm: '',
+    className: '',
+    onClick: () => alert('You clicked the button!'),
   });
 
   return (
@@ -36,6 +56,12 @@ const DemoPage = () => {
       <div>
         <BBText size="xxlarge">BB Components</BBText>
         <DemoComponent name="BBAlert" child={<BBAlert {...stateBBAlert} />} stateObject={stateBBAlert} setStateObject={setStateBBAlert} />
+        <DemoComponent
+          name="BBButton"
+          child={<BBButton {...stateBBButton} />}
+          stateObject={stateBBButton}
+          setStateObject={setStateBBButton}
+        />
 
         <div>
           <h3>BBButton</h3>

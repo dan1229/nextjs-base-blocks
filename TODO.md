@@ -85,9 +85,13 @@ var(--variable, default-value));
 
 #### make page to view all components
 - style stateditor component
+- handle bbbutton icon
 -
 - form components readme
 - demo components readme
+-
+- later
+  - show options for props with types/options?
 
 
 
