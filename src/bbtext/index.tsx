@@ -17,7 +17,7 @@ import type { TBBTextSize, TBBTextColor } from '../types';
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - Function to call when clicked
  */
-interface IPropsBBText {
+export interface IPropsBBText {
   children: React.ReactNode;
   size?: TBBTextSize;
   color?: TBBTextColor;

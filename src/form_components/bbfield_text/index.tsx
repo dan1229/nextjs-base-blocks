@@ -7,7 +7,7 @@ import type { IPropsBBBaseForm, TBBFieldTextType } from '../../types';
  *
  * @param {TBBFieldTextType=} type - Type of input. Think 'text' or 'textarea'
  */
-interface IPropsBBFieldText {
+export interface IPropsBBFieldText {
   type?: TBBFieldTextType;
 }
 

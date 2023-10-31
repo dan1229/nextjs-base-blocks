@@ -1,0 +1,13 @@
+.containerDemoComponent {
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.containerComponent {
+  min-height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

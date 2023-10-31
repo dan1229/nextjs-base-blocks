@@ -24,7 +24,7 @@ import type { TBBTextSize } from '../types';
  * @param {boolean=} showButtonCancel - Whether to show the cancel button
  * @param {boolean=} loading - Whether to show the loading spinner
  */
-interface IPropsBBModal {
+export interface IPropsBBModal {
   children: React.ReactNode;
   title: string;
   onDismiss?: (args?: any) => void; // eslint-disable-line @typescript-eslint/no-explicit-any

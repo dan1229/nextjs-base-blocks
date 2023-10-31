@@ -20,6 +20,42 @@
 
 
 ----
+### demo page improvements
+
+
+#### demo page - children props
+- what to do about them?
+- React.ReactNode ones render weird
+- most are useless anyway
+
+#### demo page - form components
+- just add them
+- probably in a different page
+
+
+#### demo page - bbcard 'composite' components
+- what to do with header, body and footer?
+
+
+#### demo page - bbmodal demo doesnt work great
+- need way to hide modal
+- onCancel and onConfirm need to update showComponent state in DemoComponent
+
+
+#### demo page - add bbnavbar dropdown
+- i.e., multiple bbnavbar items
+
+
+#### demo page - do boolean fields work
+- test and if not fix
+
+
+#### demo page - show options for props
+- props that have options or types should show them
+- i.e., bbtext size - show the size 'choices'
+
+
+----
 ### 0.3.0
 
 
@@ -33,6 +69,12 @@
 - add the `*` css rules as well
 
 ----
+
+#### bbalert - bugs
+- on click intercepting dismissible
+- dismissible kinda works?
+- dismissible doesnt work in demo
+
 
 #### bbtext - size variables
 - text variables - text size
@@ -77,17 +119,19 @@ var(--variable, default-value));
 - play with how we can define `default-value`
 
 
-#### make page to view all components
-- [ ] Make page displaying different components and capabilities
-- [ ] How to change props by user input? wrap component with said props as state?
 
 
 
 ### [0.3.0] - 2023-10-DD
 #### Features
+- Demo Page!!!
+  - Added demo page to show all components
+  - Allows for editing of props to test
+  - Works with 'nested' component props
 - `BBAlert` - added `onClick` functionality/prop
 #### Fixes
-- TODO
+- All component props now exported
+- Improved and added `README`s
 #### TODO
 
 -------------------------------------------------------

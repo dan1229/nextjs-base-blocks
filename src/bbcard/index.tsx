@@ -36,7 +36,7 @@ const getChildrenOnDisplayName = (children: React.ReactNode | React.ReactNode[],
  * @param {() => void=} onClick - Function to call when clicked
  * @param {boolean=} noBorder - Whether to remove the border
  */
-interface IPropsBBCard {
+export interface IPropsBBCard {
   children: React.ReactNode | React.ReactNode[];
   colorBackground?: TBBCardColorBackground;
   elevation?: TBBCardElevation;
