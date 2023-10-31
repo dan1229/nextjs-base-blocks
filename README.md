@@ -35,7 +35,7 @@ See `package.json` for all the requirements.
 
 ### SCSS Globals
 
-To use the `Base Blocks` you are able to have the following SCSS variables defined in your project, typically in a `globals.scss` file:
+To use the `Base Blocks` properly, you should have the following SCSS variables defined in your project, typically in a `globals.scss` file:
 
 ```scss
 html,
@@ -83,7 +83,7 @@ html,
 }
 ```
 
-Add support (overrides) for dark themes like so:
+Add overrides for dark themes like so:
     
 ```scss
 [data-theme='dark'] {
@@ -96,9 +96,7 @@ Add support (overrides) for dark themes like so:
 }
 ```
 
-The more of these you have the better for now :)
-
-TODO move the above into explicit docs somewhere - probably need more docs first
+While variables are not all required, the more you have defined the better!
 
 -------------------------------------------------------
 

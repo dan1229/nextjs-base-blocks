@@ -19,9 +19,14 @@
 - which ones?
 
 
-#### demo page improvements
-- TODO
+----
+### demo page improvements
 
+
+#### demo page - children props
+- what to do about them?
+- React.ReactNode ones render weird
+- most are useless anyway
 
 #### demo page - form components
 - just add them
@@ -35,6 +40,10 @@
 #### demo page - bbmodal demo doesnt work great
 - need way to hide modal
 - onCancel and onConfirm need to update showComponent state in DemoComponent
+
+
+#### demo page - add bbnavbar dropdown
+- i.e., multiple bbnavbar items
 
 ----
 ### 0.3.0

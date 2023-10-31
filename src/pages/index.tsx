@@ -4,6 +4,8 @@ import BBCard, { IPropsBBCard } from '@/bbcard';
 import BBLink, { IPropsBBLink } from '@/bblink';
 import BBLoadingSpinner from '@/bbloading_spinner';
 import BBModal, { IPropsBBModal } from '@/bbmodal';
+import BBNavbar, { IPropsBBNavbar } from '@/bbnavbar';
+import BBNavbarItem, { IPropsBBNavbarItem } from '@/bbnavbar_item';
 import BBText from '@/bbtext';
 import DemoComponent from '@/demo_components/demo_component_wrapper';
 import StateEditor from '@/demo_components/state_editor';
@@ -83,6 +85,21 @@ const DemoPage = () => {
     showButtonCancel: true,
     loading: false,
   });
+  // BB Navbar
+  const [stateBBNavbar, setStateBBNavbar] = useState<IPropsBBNavbar>({
+    title: 'Test',
+    elevation: 'none',
+    imageSrc: '',
+    routeHome: '/',
+    showButtonsAuth: true,
+    children: <></>,
+  });
+  // BB Navbar Item
+  const [stateBBNavbarItem, setStateBBNavbarItem] = useState<IPropsBBNavbarItem>({
+    title: 'Test',
+    href: 'https://www.google.com',
+    className: '',
+  });
 
   return (
     <div>
@@ -122,26 +139,18 @@ const DemoPage = () => {
           stateObject={stateBBModal}
           setStateObject={setStateBBModal}
         />
-        <div>
-          <h3>BBModal</h3>
-          <div>
-            <p>TODO</p>
-          </div>
-        </div>
-
-        <div>
-          <h3>BBNavbar</h3>
-          <div>
-            <p>TODO</p>
-          </div>
-        </div>
-
-        <div>
-          <h3>BBNavbar Item</h3>
-          <div>
-            <p>TODO</p>
-          </div>
-        </div>
+        <DemoComponent
+          name="BBNavbar"
+          child={<BBNavbar {...stateBBNavbar} />}
+          stateObject={stateBBNavbar}
+          setStateObject={setStateBBNavbar}
+        />
+        <DemoComponent
+          name="BBNavbarItem"
+          child={<BBNavbarItem {...stateBBNavbarItem} />}
+          stateObject={stateBBNavbarItem}
+          setStateObject={setStateBBNavbarItem}
+        />
 
         <div>
           <h3>BBText</h3>
