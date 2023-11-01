@@ -1,14 +1,14 @@
 .base {
   padding: 12px;
   margin: 12px 0px;
-  border-radius: var(--border-radius-bbalert);
+  border-radius: var(--border-radius-bbalert, 4px);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
   & > * {
-    color: var(--white) !important;
+    color: var(--white, #ffffff) !important;
   }
 
   & > h1,
@@ -23,13 +23,13 @@
 
 .dismissButton {
   cursor: pointer;
-  color: var(--white);
+  color: var(--white, #ffffff);
   margin-left: 8px;
   min-width: 20px;
   height: 20px;
 
   &:hover {
-    color: var(--danger-color);
+    color: var(--danger-color, #e8352e);
   }
 }
 
@@ -37,22 +37,22 @@
   * COLOR
   */
 .color_success {
-  background-color: var(--success-light-color);
+  background-color: var(--success-light-color, #50c758);
 }
 
 .color_warning {
-  background-color: var(--warning-color);
+  background-color: var(--warning-color, #f1c500);
   & > div {
     color: var(--black) !important;
   }
 }
 
 .color_danger {
-  background-color: var(--danger-light-color);
+  background-color: var(--danger-light-color, #e8352e);
 }
 
 .color_info {
-  background-color: var(--info-light-color);
+  background-color: var(--info-light-color, #284af7);
 }
 
 /**

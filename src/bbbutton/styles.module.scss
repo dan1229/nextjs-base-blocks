@@ -1,6 +1,6 @@
 .base {
   padding: 0.6rem;
-  border-radius: var(--border-radius--bbbutton);
+  border-radius: var(--border-radius--bbbutton, 4px);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -25,8 +25,8 @@
 }
 
 .disabled {
-  background-color: var(--grey-dark) !important;
-  color: var(--white) !important;
+  background-color: var(--grey-dark, #6e6e6e) !important;
+  color: var(--white, #ffffff) !important;
 }
 
 .icon {
@@ -67,9 +67,9 @@
   */
 // PRIMARY
 .primary {
-  background-color: var(--primary-color);
-  border: 1px solid var(--primary-color);
-  color: var(--white);
+  background-color: var(--primary-color, #e8352e);
+  border: 1px solid var(--primary-color, #e8352e);
+  color: var(--white, #ffffff);
 }
 .primary.hover:hover > div * {
   color: var(--primary-light-color) !important;
@@ -78,150 +78,150 @@
   color: var(--primary-light-color) !important;
 }
 .primary:active {
-  background-color: var(--primary-dark-color);
-  border: 1px solid var(--primary-dark-color);
+  background-color: var(--primary-dark-color, #a71813);
+  border: 1px solid var(--primary-dark-color, #a71813);
 }
 
 // SECONDARY
 .secondary {
-  background-color: var(--secondary-color);
-  border: 1px solid var(--secondary-color);
+  background-color: var(--secondary-color, #284af7);
+  border: 1px solid var(--secondary-color, #284af7);
   color: var(--white);
 }
 .secondary.hover:hover > div * {
-  color: var(--secondary-light-color) !important;
+  color: var(--secondary-light-color, #5b75f7) !important;
 }
 .secondary.focus > div * {
-  color: var(--secondary-light-color) !important;
+  color: var(--secondary-light-color, #5b75f7) !important;
 }
 .secondary:active {
-  background-color: var(--secondary-dark-color);
-  border: 1px solid var(--secondary-dark-color);
+  background-color: var(--secondary-dark-color, #1e3aee);
+  border: 1px solid var(--secondary-dark-color, #1e3aee);
 }
 
 // DANGER
 .danger {
-  background-color: var(--danger-color);
-  border: 1px solid var(--danger-color);
+  background-color: var(--danger-color, #e8352e);
+  border: 1px solid var(--danger-color, #e8352e);
   color: var(--white);
 }
 .danger.hover:hover > div * {
-  color: var(--danger-light-color) !important;
+  color: var(--danger-light-color, #fb7f7b) !important;
 }
 .danger.focus > div * {
-  color: var(--danger-light-color) !important;
+  color: var(--danger-light-color, #fb7f7b) !important;
 }
 .danger:active {
-  background-color: var(--danger-dark-color);
-  border: 1px solid var(--danger-dark-color);
+  background-color: var(--danger-dark-color, #a71813);
+  border: 1px solid var(--danger-dark-color, #a71813);
 }
 
 // SUCCESS
 .success {
-  background-color: var(--success-color);
-  border: 1px solid var(--success-color);
-  color: var(--white);
+  background-color: var(--success-color, #50c758);
+  border: 1px solid var(--success-color, #50c758);
+  color: var(--white, #ffffff);
 }
 .success.hover:hover > div * {
-  color: var(--success-light-color) !important;
+  color: var(--success-light-color, #85f68d) !important;
 }
 .success.focus > div * {
-  color: var(--success-light-color) !important;
+  color: var(--success-light-color, #85f68d) !important;
 }
 .success:active {
-  background-color: var(--success-dark-color);
-  border: 1px solid var(--success-dark-color);
+  background-color: var(--success-dark-color, #2e9e3a);
+  border: 1px solid var(--success-dark-color, #2e9e3a);
 }
 
 // WARNING
 .warning {
-  background-color: var(--warning-color);
-  border: 1px solid var(--warning-color);
+  background-color: var(--warning-color, #f1c500);
+  border: 1px solid var(--warning-color, #f1c500);
   color: var(--white);
 }
 .warning.hover:hover > div * {
-  color: var(--warning-light-color) !important;
+  color: var(--warning-light-color, #fee46d) !important;
 }
 .warning.focus > div * {
-  color: var(--warning-light-color) !important;
+  color: var(--warning-light-color, #fee46d) !important;
 }
 .warning:active {
-  background-color: var(--warning-dark-color);
-  border: 1px solid var(--warning-dark-color);
+  background-color: var(--warning-dark-color, #c9a400);
+  border: 1px solid var(--warning-dark-color, #c9a400);
 }
 
 // INFO
 .info {
-  background-color: var(--info-color);
-  border: 1px solid var(--info-color);
+  background-color: var(--info-color, #284af7);
+  border: 1px solid var(--info-color, #284af7);
   color: var(--white);
 }
 .info.hover:hover > div * {
-  color: var(--info-light-color) !important;
+  color: var(--info-light-color, #5d72f7) !important;
 }
 .info.focus > div * {
-  color: var(--info-light-color) !important;
+  color: var(--info-light-color, #5d72f7) !important;
 }
 .info:active {
-  background-color: var(--info-dark-color);
-  border: 1px solid var(--info-dark-color);
+  background-color: var(--info-dark-color, #1e3aee);
+  border: 1px solid var(--info-dark-color, #1e3aee);
 }
 
 // INVERSE INFO
 .inverseInfo {
-  background-color: var(--white);
-  border: 2px solid var(--info-color);
+  background-color: var(--white, #ffffff);
+  border: 2px solid var(--info-color, #284af7);
   * {
-    color: var(--info-color) !important;
+    color: var(--info-color, #284af7) !important;
   }
   &:hover {
-    background-color: var(--grey-light);
+    background-color: var(--grey-light, #b0b0b0);
   }
 }
 .inverseInfo.focus > div * {
-  color: var(--grey-light) !important;
+  color: var(--grey-light, #b0b0b0) !important;
 }
 .inverseInfo:active {
-  background-color: var(--grey-dark);
-  border: 2px solid var(--grey-dark);
+  background-color: var(--grey-dark, #6e6e6e);
+  border: 2px solid var(--grey-dark, #6e6e6e);
 }
 
 // INVERSE PRIMARY
 .inversePrimary {
-  background-color: var(--white);
-  border: 2px solid var(--primary-color);
+  background-color: var(--white, #ffffff);
+  border: 2px solid var(--primary-color, #e8352e);
   * {
-    color: var(--primary-color) !important;
+    color: var(--primary-color, #e8352e) !important;
   }
   &:hover {
-    background-color: var(--grey-light);
+    background-color: var(--grey-light, #b0b0b0);
   }
 }
 .inversePrimary.focus > div * {
-  color: var(--grey-light) !important;
+  color: var(--grey-light, #b0b0b0) !important;
 }
 .inversePrimary:active {
-  background-color: var(--grey-dark);
-  border: 2px solid var(--grey-dark);
+  background-color: var(--grey-dark, #6e6e6e);
+  border: 2px solid var(--grey-dark, #6e6e6e);
 }
 
 // INVERSE SECONDARY
 .inverseSecondary {
-  background-color: var(--white);
-  border: 2px solid var(--secondary-color);
+  background-color: var(--white, #ffffff);
+  border: 2px solid var(--secondary-color, #284af7);
   * {
-    color: var(--secondary-color) !important;
+    color: var(--secondary-color, #284af7) !important;
   }
   &:hover {
-    background-color: var(--grey-light);
+    background-color: var(--grey-light, #b0b0b0);
   }
 }
 .inverseSecondary.focus > div * {
-  color: var(--grey-light) !important;
+  color: var(--grey-light, #b0b0b0) !important;
 }
 .inverseSecondary:active {
-  background-color: var(--grey-dark);
-  border: 2px solid var(--grey-dark);
+  background-color: var(--grey-dark, #6e6e6e);
+  border: 2px solid var(--grey-dark, #6e6e6e);
 }
 
 /*

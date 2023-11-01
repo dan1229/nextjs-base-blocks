@@ -1,7 +1,7 @@
-$border-radius: var(--border-radius--bbnavbar-item);
+$border-radius: var(--border-radius--bbnavbar-item, 8px);
 
 .active {
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color, #e8352e);
   border-radius: $border-radius;
 }
 
@@ -21,9 +21,9 @@ $border-radius: var(--border-radius--bbnavbar-item);
 
   &:hover {
     border-radius: $border-radius;
-    background-color: var(--bg-dark-color);
+    background-color: var(--bg-dark-color, #1c1c1c);
     .iconDropdown {
-      color: var(--white);
+      color: var(--white, #ffffff);
       transform: scaleY(-1);
     }
   }
@@ -32,7 +32,7 @@ $border-radius: var(--border-radius--bbnavbar-item);
 // TODO find a better selector than this
 // weird situation with 'active' and all that
 .navbarItemBase:hover > div > div > a > * {
-  color: var(--white) !important;
+  color: var(--white, #ffffff) !important;
 }
 
 .navbarContentContainer {
@@ -48,12 +48,12 @@ $border-radius: var(--border-radius--bbnavbar-item);
 }
 
 .iconDropdown {
-  color: var(--secondary-color);
+  color: var(--secondary-color, #e8352e);
   margin-right: 0.2rem;
 }
 
 .active .iconDropdown {
-  color: var(--white);
+  color: var(--white, #ffffff);
 }
 
 /**
@@ -66,7 +66,7 @@ $border-radius: var(--border-radius--bbnavbar-item);
   min-width: 100%;
   z-index: 11;
 
-  background-color: var(--bg-light-color);
+  background-color: var(--bg-light-color, #ffffff);
   box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
 
   li {

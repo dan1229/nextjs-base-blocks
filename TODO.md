@@ -37,10 +37,6 @@
 - what to do with header, body and footer?
 
 
-#### demo page - bbmodal demo doesnt work great
-- need way to hide modal
-- onCancel and onConfirm need to update showComponent state in DemoComponent
-
 
 #### demo page - add bbnavbar dropdown
 - i.e., multiple bbnavbar items
@@ -48,15 +44,22 @@
 
 #### demo page - do boolean fields work
 - test and if not fix
+- some dont
+  - bb text - italics field
+
+
+
+----
+### 0.4.0
+
+#### demo page - bbmodal demo doesnt work great
+- need way to hide modal
+- onCancel and onConfirm need to update showComponent state in DemoComponent
 
 
 #### demo page - show options for props
 - props that have options or types should show them
 - i.e., bbtext size - show the size 'choices'
-
-
-----
-### 0.4.0
 
 
 #### form css
@@ -87,6 +90,7 @@
       - i.e., `--text-size-s` or something corresponding to the types
   - NOTE: this must be after defaults are figured out
 
+
 #### bbnavbar - color variables
 - navbar variables - add support for color
   - i.e.,
@@ -111,20 +115,6 @@
 - add onclick and other props to header/body/footer
 
 
-----
-
-
-#### scss variable defaults
-- html variables
-  - how to get a default value for those calls to make them all optional?
-- can do this:
-```
-var(--variable, default-value));
-```
-- play with how we can define `default-value`
-
-
-
 
 
 ### [0.3.0] - 2023-10-DD
@@ -134,6 +124,9 @@ var(--variable, default-value));
   - Allows for editing of props to test
   - Works with 'nested' component props
 - `BBAlert` - added `onClick` functionality/prop
+- SCSS variable defaults
+  - Added default values to all SCSS variables
+  - Base Blocks now works way better out of the box
 #### Fixes
 - All component props now exported
 - Improved and added `README`s

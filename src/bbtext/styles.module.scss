@@ -1,6 +1,6 @@
 .base {
   font-weight: 300;
-  font-family: var(--font-family-main), Helvetica, Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-main, 'Helvetica'), Helvetica, Arial, Helvetica, sans-serif;
 }
 
 /*
@@ -28,115 +28,115 @@
 
 // DEFAULT
 .color_default {
-  color: var(--text-primary);
+  color: var(--text-primary, #000000);
 }
 
 // GREY LIGHT
 .grey_light {
-  color: var(--grey-light);
+  color: var(--grey-light, #8199c2);
 }
 
 .grey_light.hover {
   &:hover {
-    color: var(--grey-dark);
+    color: var(--grey-dark, #58647a);
   }
 }
 
 // GREY DARK
 .grey_dark {
-  color: var(--grey-dark);
+  color: var(--grey-dark, #58647a);
 }
 
 .grey_dark.hover {
   &:hover {
-    color: var(--grey-darkest);
+    color: var(--grey-darkest, #2d3a4f);
   }
 }
 
 // BLACK
 .black {
-  color: var(--black);
+  color: var(--black, #000000);
 }
 .black.hover {
   &:hover {
-    color: var(--grey-darkest);
+    color: var(--grey-darkest, #2d3a4f);
   }
 }
 
 // WHITE
 .white {
-  color: var(--white);
+  color: var(--white, #ffffff);
 }
 
 .white.hover {
   &:hover {
-    color: var(--grey-light);
+    color: var(--grey-light, #8199c2);
   }
 }
 
 // PRIMARy
 .primary {
-  color: var(--primary-color);
+  color: var(--primary-color, #e8352e);
 }
 
 .primary.hover {
   &:hover {
-    color: var(--primary-dark-color);
+    color: var(--primary-dark-color, #89130f);
   }
 }
 
 // SECONDARY
 .secondary {
-  color: var(--secondary-color);
+  color: var(--secondary-color, #284af7);
 }
 
 .secondary.hover {
   &:hover {
-    color: var(--secondary-dark-color);
+    color: var(--secondary-dark-color, #0f1a89);
   }
 }
 
 // WARNING
 .warning {
-  color: var(--warning-color);
+  color: var(--warning-color, #f1c500);
 }
 .warning.hover {
   &:hover {
-    color: var(--warning-dark-color);
+    color: var(--warning-dark-color, #b89e00);
   }
 }
 
 // SUCCESS
 .success {
-  color: var(--success-color);
+  color: var(--success-color, #50c758);
 }
 
 .success.hover {
   &:hover {
-    color: var(--success-dark-color);
+    color: var(--success-dark-color, #2e9e3a);
   }
 }
 
 // DANGER
 .danger {
-  color: var(--danger-color);
+  color: var(--danger-color, #e8352e);
 }
 
 .danger.hover {
   &:hover {
-    color: var(--danger-dark-color);
+    color: var(--danger-dark-color, #a71813);
   }
 }
 
 // INFO
 
 .info {
-  color: var(--info-color);
+  color: var(--info-color, #284af7);
 }
 
 .info.hover {
   &:hover {
-    color: var(--info-dark-color);
+    color: var(--info-dark-color, #0f1a89);
   }
 }
 
@@ -167,19 +167,19 @@
 
 .xlarge {
   font-size: 2.2rem;
-  font-family: var(--font-family-header), var(--font-family-main), Helvetica, Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-header, 'Helvetica'), var(--font-family-main, 'Helvetica'), Helvetica, Arial, Helvetica, sans-serif;
   margin: 0.8rem 0.2rem;
 }
 
 .xxlarge {
   font-size: 2.8rem;
-  font-family: var(--font-family-header), var(--font-family-main), Helvetica, Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-header, 'Helvetica'), var(--font-family-main, 'Helvetica'), Helvetica, Arial, Helvetica, sans-serif;
   margin: 1rem 0.2rem;
 }
 
 .xxxlarge {
   font-size: 3.2rem;
-  font-family: var(--font-family-header), var(--font-family-main), Helvetica, Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-header, 'Helvetica'), var(--font-family-main, 'Helvetica'), Helvetica, Arial, Helvetica, sans-serif;
   margin: 1.2rem 0.2rem;
 }
 
