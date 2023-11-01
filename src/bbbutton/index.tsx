@@ -121,7 +121,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
 
   const renderIcon = (currSide: TBBButtonIconAlign, icon?: IPropsBBButtonIcon) => {
     if (!icon || !icon.icon) return null;
-    const element = <div className={styles.icon}>{icon.icon}</div>;
+    const element = <div className={styles.containerIcon}>{icon.icon}</div>;
     if (align == 'left' && currSide == 'left') {
       return element;
     } else if (align == 'right' && currSide == 'right') {

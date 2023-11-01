@@ -48,7 +48,7 @@ const DemoPage = () => {
     focus: false,
     showTextOnHover: false,
     icon: {
-      icon: 'test',
+      icon: 'ICON',
       align: 'left',
     },
     idForm: '',
