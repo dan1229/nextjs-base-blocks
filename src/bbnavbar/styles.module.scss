@@ -45,7 +45,7 @@ $background-color: var(--navbar-background-color, #dddddd);
   align-items: center;
 
   &:hover {
-    background-color: color-mix(in srgb, $background-color, #fff 10%);
+    background-color: color-mix(in srgb, $background-color, #fff 20%);
   }
 }
 
@@ -106,7 +106,7 @@ $background-color: var(--navbar-background-color, #dddddd);
   border-radius: $border-radius;
 
   &:hover {
-    background-color: color-mix(in srgb, $background-color, #000 10%) !important;
+    background-color: color-mix(in srgb, $background-color, #000 20%) !important;
   }
 }
 
@@ -135,7 +135,7 @@ $background-color: var(--navbar-background-color, #dddddd);
     min-width: 30vw;
     display: none;
     flex-direction: column;
-    background-color: color-mix(in srgb, $background-color, #000 10%);
+    background-color: color-mix(in srgb, $background-color, #fff 20%);
     border-radius: $border-radius;
     box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
     z-index: 11;
