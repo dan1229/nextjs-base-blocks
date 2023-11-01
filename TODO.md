@@ -92,7 +92,6 @@
 
 
 
-
 ### [0.3.0] - 2023-11-01
 #### Features
 - Demo Page!!!
@@ -112,6 +111,8 @@
   - `BBNavbarItem` styling fixes too
 - `BBText` size variables
   - Added variables and mobile variables
+- Made variable names more consistent
+  - NOTE: this could be breaking! Sorry!
 #### TODO
 
 -------------------------------------------------------

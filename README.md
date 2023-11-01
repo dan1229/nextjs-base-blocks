@@ -73,15 +73,18 @@ html,
   --bg-dark-color: rgb(177, 177, 177) !important;
   --bs-body-color: rgb(24, 23, 23) !important;
   --text-color: rgb(24, 23, 23) !important;
-  // border radius options
-  --border-radius-bbalert: 8px;
-  --border-radius--bbbutton: 8px;
-  --border-radius--bbcard: 8px;
-  --border-radius--bbnavbar: 8px;
-  --border-radius--bbnavbar-item: 8px;
+  // bb alert
+  --alert-border-radius: 8px;
+  // bb button
+  --button-border-radius: 8px;
+  // bb card
+  --card-border-radius: 8px;
   // bb navbar
+  --navbar-border-radius: 8px;
   --navbar-background-color: rgb(221, 221, 221);
   --navbar-title-color: rgb(24, 23, 23);
+  // bb navbar item
+  --navbar-item-border-radius: 8px;
   // bb text
   --text-size-xs: 0.6rem;
   --text-size-s: 0.8rem;
