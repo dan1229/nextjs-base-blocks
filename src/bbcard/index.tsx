@@ -143,8 +143,14 @@ interface IPropsBBCardHeader {
 
 const Header = (props: IPropsBBCardHeader) => {
   const { children, className, onClick } = props;
+
+  const onClickOverride = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.stopPropagation();
+    onClick && onClick();
+  };
+
   return (
-    <div className={classNames(styles.header, className)} onClick={onClick}>
+    <div className={classNames(styles.header, className)} onClick={onClick && onClickOverride}>
       {children}
     </div>
   );
@@ -167,8 +173,14 @@ interface IPropsBBCardBody {
 
 const Body = (props: IPropsBBCardBody) => {
   const { children, className, onClick } = props;
+
+  const onClickOverride = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.stopPropagation();
+    onClick && onClick();
+  };
+
   return (
-    <div className={classNames(styles.body, className)} onClick={onClick}>
+    <div className={classNames(styles.body, className)} onClick={onClick && onClickOverride}>
       {children}
     </div>
   );
@@ -191,8 +203,14 @@ interface IPropsBBCardFooter {
 
 const Footer = (props: IPropsBBCardFooter) => {
   const { children, className, onClick } = props;
+
+  const onClickOverride = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.stopPropagation();
+    onClick && onClick();
+  };
+
   return (
-    <div className={classNames(styles.footer, className)} onClick={onClick}>
+    <div className={classNames(styles.footer, className)} onClick={onClick && onClickOverride}>
       {children}
     </div>
   );

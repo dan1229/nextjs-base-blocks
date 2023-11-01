@@ -88,11 +88,6 @@
 
 
 
-#### where else do we have overlapping clicks?
-- bbcard components
-- TODO
-
-
 
 ### [0.3.0] - 2023-11-01
 #### Features
@@ -107,7 +102,6 @@
 - All component props now exported
 - Improved and added `README`s
 - `BBAlert` - added `onClick` functionality/prop
-  - Also fixed overlapping click and dismissible issues
 - `BBCard` components added `onClick` functionality/prop
 - `BBButton` vertical alignment for text fixed
 - `BBNavbar` new color variables for background and title text
@@ -116,6 +110,7 @@
   - Added variables and mobile variables
 - Made variable names more consistent
   - NOTE: this could be breaking! Sorry!
+- Fixed lots of overlapping click issues
 #### TODO
 
 -------------------------------------------------------
