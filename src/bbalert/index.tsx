@@ -85,15 +85,24 @@ export default function BBAlert(Props: IPropsBBAlert): React.ReactElement {
     }
   };
 
-  const onClickDismiss = (): void => {
+  const onClickDismiss = (e: React.MouseEvent<SVGSVGElement>): void => {
     setIsDismissed(true);
+    e.stopPropagation();
+  };
+
+  const onClickOverride = (e: React.MouseEvent<HTMLDivElement>): void => {
+    e.stopPropagation();
+    onClick && onClick();
   };
 
   /**
    * RENDER
    */
   return (
-    <div className={classNames(className, styles.base, getClassVariant(), getClassElevation(), getClassTextAlignment())} onClick={onClick}>
+    <div
+      className={classNames(className, styles.base, getClassVariant(), getClassElevation(), getClassTextAlignment())}
+      onClick={onClick && onClickOverride}
+    >
       <BBText size={size}>{children}</BBText>
       {dismissible && <AiOutlineCloseCircle className={styles.dismissButton} onClick={onClickDismiss} />}
     </div>

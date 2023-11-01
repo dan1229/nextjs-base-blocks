@@ -47,8 +47,6 @@
 - some dont
   - bb text - italics field
 
-
-
 ----
 ### 0.4.0
 
@@ -60,6 +58,10 @@
 #### demo page - show options for props
 - props that have options or types should show them
 - i.e., bbtext size - show the size 'choices'
+
+
+#### demo page - rehydration error
+- idk fix it
 
 ---
 
@@ -80,15 +82,15 @@
 - do we need the next-theme package?
 
 
+
 ----
 ### 0.3.0
 
 
-#### bbalert - bugs
-- on click intercepting dismissible
-  - other places could use this too if we get an answer
-- dismissible kinda works?
-- dismissible doesnt work in demo
+
+#### where else do we have overlapping clicks?
+- bbcard components
+- TODO
 
 
 
@@ -105,6 +107,7 @@
 - All component props now exported
 - Improved and added `README`s
 - `BBAlert` - added `onClick` functionality/prop
+  - Also fixed overlapping click and dismissible issues
 - `BBCard` components added `onClick` functionality/prop
 - `BBButton` vertical alignment for text fixed
 - `BBNavbar` new color variables for background and title text

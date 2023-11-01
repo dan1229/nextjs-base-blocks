@@ -124,21 +124,20 @@ const DemoPage = () => {
   return (
     <div>
       <div>
-        <BBText size="xxxlarge">NextJS Base Blocks</BBText>
-        <BBText size="xlarge">Demo Page</BBText>
-        <BBLink href="https://github.com/dan1229/nextjs-base-blocks" size="large" bold external>
-          GitHub link
+        <BBLink href="https://github.com/dan1229/nextjs-base-blocks" size="xxxlarge" external underline={false}>
+          NextJS Base Blocks
         </BBLink>
-
-        <BBText>
-          The base blocks demonstration page is a demo and testing environment for the base blocks library in NextJS projects. It showcases
-          various components such as BBAlert, BBButton, BBCard, BBLink, and BBLoadingSpinner. The page is designed to provide a visual
-          representation of how these components look and function in a real-world scenario.
-        </BBText>
       </div>
       <hr />
+      <BBText size="xxlarge">Demo Page</BBText>
+      <BBText>
+        The base blocks demonstration page is a demo and testing environment for the base blocks library in NextJS projects. It showcases
+        various components such as BBAlert, BBButton, BBCard, BBLink, and BBLoadingSpinner. The page is designed to provide a visual
+        representation of how these components look and function in a real-world scenario.
+      </BBText>
+      <hr />
       <div>
-        <BBText size="xxlarge">BB Components</BBText>
+        <BBText size="xlarge">BB Components</BBText>
         <DemoComponent name="BBAlert" child={<BBAlert {...stateBBAlert} />} stateObject={stateBBAlert} setStateObject={setStateBBAlert} />
         <DemoComponent
           name="BBButton"
