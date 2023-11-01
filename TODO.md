@@ -98,10 +98,6 @@
   - NOTE: this must be after defaults are figured out
 
 
-- navbar items min width - 'dashboard' looks weird
-  - remove 'min_width: 10%'
-
-
 ### [0.3.0] - 2023-10-DD
 #### Features
 - Demo Page!!!
@@ -118,6 +114,7 @@
 - `BBCard` components added `onClick` functionality/prop
 - `BBButton` vertical alignment for text fixed
 - `BBNavbar` new color variables for background and title text
+  - `BBNavbarItem` styling fixes too
 #### TODO
 
 -------------------------------------------------------
