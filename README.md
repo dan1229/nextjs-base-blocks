@@ -33,11 +33,22 @@ You must have the following installed to use this submodule
 
 See `package.json` for all the requirements.
 
-### SCSS Globals
+### SCSS Variables
 
-To use the `Base Blocks` properly, you should have the following SCSS variables defined in your project, typically in a `globals.scss` file:
+You are also able to customize `Base Blocks` via SCSS variables. You typically will want to put these in `globals.scss`.
+
+The available options are here:
 
 ```scss
+// keep these variables separate to allow for lighten/darken usage
+$primary-color: #5a65ff;
+$secondary-color: #45b689;
+$info-color: #284af7;
+$warning-color: #f1c500;
+$success-color: #50c758;
+$danger-color: #e8352e;
+
+
 html,
 :root {
   // app theme
@@ -71,20 +82,43 @@ html,
   --bg-dark-color: rgb(177, 177, 177) !important;
   --bs-body-color: rgb(24, 23, 23) !important;
   --text-color: rgb(24, 23, 23) !important;
-  // border radius options
-  --border-radius-bbalert: 8px;
-  --border-radius--bbbutton: 8px;
-  --border-radius--bbcard: 8px;
-  --border-radius--bbnavbar: 8px;
-  --border-radius--bbnavbar-item: 8px;
+  // bb alert
+  --alert-border-radius: 8px;
+  // bb button
+  --button-border-radius: 8px;
+  // bb card
+  --card-border-radius: 8px;
   // bb navbar
+  --navbar-border-radius: 8px;
   --navbar-background-color: rgb(221, 221, 221);
   --navbar-title-color: rgb(24, 23, 23);
+  // bb navbar item
+  --navbar-item-border-radius: 8px;
+  // bb text
+  --text-size-xs: 0.6rem;
+  --text-size-s: 0.8rem;
+  --text-size-m: 1rem;
+  --text-size-l: 1.8rem;
+  --text-size-xl: 2.2rem;
+  --text-size-xxl: 2.8rem;
+  --text-size-xxxl: 3.2rem;
+  --mobile-text-size-xs: 0.6rem;
+  --mobile-text-size-s: 0.8rem;
+  --mobile-text-size-m: 1rem;
+  --mobile-text-size-l: 1.8rem;
+  --mobile-text-size-xl: 2.2rem;
+  --mobile-text-size-xxl: 2.8rem;
+  --mobile-text-size-xxxl: 3.2rem;
   // font family
   --font-family-header: 'Montserrat';  // Used for larger fonts/headers
   --font-family-main: 'Josefin Sans';  // Used for main text
 }
 ```
+
+While none of these variables are required, it definitely will help make your app look and feel more custom.
+
+
+#### Dark Mode / Themes
 
 Add overrides for dark themes like so:
     
@@ -98,9 +132,6 @@ Add overrides for dark themes like so:
   --text-primary: rgb(255, 255, 255) !important;
 }
 ```
-
-While variables are not all required, the more you have defined the better!
-
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)

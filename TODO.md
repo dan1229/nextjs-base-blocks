@@ -63,20 +63,22 @@
 
 ---
 
-#### form css
-- how to apply global css to a git submodule?
-  - just add a styles/global.scss file and import it in the main app?
-  - may have to start directly styling the components in the submodule
-    - i.e., `BBFormComponents`
-  - if global works, add the `*` css rules as well
--
-- maybe just make scss shared module for form components if that doesnt work?
-  - in forms dir
-
 
 #### bb field dropdown styling
 - add arrow or something
-    - add to global styling
+  - add to global styling
+- wait until form css is figured out
+
+#### form css
+- cant use globals
+- maybe just make scss shared module for form components?
+  - in forms dir
+  - will likely have to rewrite a lot of the form scss
+
+
+#### remove next theme?
+- do we need the next-theme package?
+
 
 ----
 ### 0.3.0
@@ -89,14 +91,8 @@
 - dismissible doesnt work in demo
 
 
-#### bbtext - size variables
-- text variables - text size
-  - add scss vars to edit text size
-      - i.e., `--text-size-s` or something corresponding to the types
-  - NOTE: this must be after defaults are figured out
 
-
-### [0.3.0] - 2023-10-DD
+### [0.3.0] - 2023-11-01
 #### Features
 - Demo Page!!!
   - Added demo page to show all components
@@ -113,6 +109,10 @@
 - `BBButton` vertical alignment for text fixed
 - `BBNavbar` new color variables for background and title text
   - `BBNavbarItem` styling fixes too
+- `BBText` size variables
+  - Added variables and mobile variables
+- Made variable names more consistent
+  - NOTE: this could be breaking! Sorry!
 #### TODO
 
 -------------------------------------------------------

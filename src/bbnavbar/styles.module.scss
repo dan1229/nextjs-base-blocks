@@ -1,5 +1,6 @@
-$border-radius: var(--border-radius--bbnavbar, 8px);
+$border-radius: var(--navbar-border-radius, 8px);
 $background-color: var(--navbar-background-color, #dddddd);
+$title-color: var(--navbar-title-color, #6c6c6c);
 
 /**
 * ELEVATION
@@ -58,7 +59,7 @@ $background-color: var(--navbar-background-color, #dddddd);
 }
 
 .textTitle {
-  color: var(--navbar-title-color, #6c6c6c);
+  color: $title-color;
 }
 
 /**
