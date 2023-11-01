@@ -82,13 +82,15 @@
 - do we need the next-theme package?
 
 
-#### where else do we have overlapping clicks?
-- bbcard components
-- TODO
-
 
 ----
 ### 0.3.0
+
+
+
+#### where else do we have overlapping clicks?
+- bbcard components
+- TODO
 
 
 
