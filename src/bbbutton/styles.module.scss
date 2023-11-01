@@ -22,6 +22,10 @@
 
 .containerText {
   margin: 0px 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .disabled {

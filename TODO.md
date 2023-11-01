@@ -106,12 +106,6 @@
     - add to global styling
 
 
-#### bbbutton - vertical alignment
-- text and icons dont look always vertically aligned
-- particularly when icons are larger than text
-
-
-
 
 ### [0.3.0] - 2023-10-DD
 #### Features
@@ -127,6 +121,7 @@
 - Improved and added `README`s
 - `BBAlert` - added `onClick` functionality/prop
 - `BBCard` components added `onClick` functionality/prop
+- `BBButton` vertical alignment for text fixed
 #### TODO
 
 -------------------------------------------------------
