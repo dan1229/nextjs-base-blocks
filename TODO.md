@@ -113,6 +113,7 @@
 - `BBButton` vertical alignment for text fixed
 - `BBNavbar` new color variables for background and title text
   - `BBNavbarItem` styling fixes too
+- `BBText` size variables
 #### TODO
 
 -------------------------------------------------------
