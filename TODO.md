@@ -37,10 +37,6 @@
 - what to do with header, body and footer?
 
 
-#### demo page - bbmodal demo doesnt work great
-- need way to hide modal
-- onCancel and onConfirm need to update showComponent state in DemoComponent
-
 
 #### demo page - add bbnavbar dropdown
 - i.e., multiple bbnavbar items
@@ -48,15 +44,22 @@
 
 #### demo page - do boolean fields work
 - test and if not fix
+- some dont
+  - bb text - italics field
+
+
+
+----
+### 0.4.0
+
+#### demo page - bbmodal demo doesnt work great
+- need way to hide modal
+- onCancel and onConfirm need to update showComponent state in DemoComponent
 
 
 #### demo page - show options for props
 - props that have options or types should show them
 - i.e., bbtext size - show the size 'choices'
-
-
-----
-### 0.4.0
 
 
 #### form css
@@ -86,6 +89,7 @@
   - add scss vars to edit text size
       - i.e., `--text-size-s` or something corresponding to the types
   - NOTE: this must be after defaults are figured out
+
 
 #### bbnavbar - color variables
 - navbar variables - add support for color
