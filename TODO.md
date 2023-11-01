@@ -89,11 +89,6 @@
 - dismissible doesnt work in demo
 
 
-#### bbtext - size variables
-- text variables - text size
-  - add scss vars to edit text size
-      - i.e., `--text-size-s` or something corresponding to the types
-  - NOTE: this must be after defaults are figured out
 
 
 ### [0.3.0] - 2023-10-DD
@@ -114,6 +109,7 @@
 - `BBNavbar` new color variables for background and title text
   - `BBNavbarItem` styling fixes too
 - `BBText` size variables
+  - Added variables and mobile variables
 #### TODO
 
 -------------------------------------------------------

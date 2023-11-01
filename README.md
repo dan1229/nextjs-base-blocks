@@ -33,9 +33,11 @@ You must have the following installed to use this submodule
 
 See `package.json` for all the requirements.
 
-### SCSS Globals
+### SCSS Variables
 
-To use the `Base Blocks` properly, you should have the following SCSS variables defined in your project, typically in a `globals.scss` file:
+You are also able to customize `Base Blocks` via SCSS variables. You typically will want to put these in `globals.scss`.
+
+The available options are here:
 
 ```scss
 html,
@@ -88,11 +90,23 @@ html,
   --text-size-xl: 2.2rem;
   --text-size-xxl: 2.8rem;
   --text-size-xxxl: 3.2rem;
+  --mobile-text-size-xs: 0.6rem;
+  --mobile-text-size-s: 0.8rem;
+  --mobile-text-size-m: 1rem;
+  --mobile-text-size-l: 1.8rem;
+  --mobile-text-size-xl: 2.2rem;
+  --mobile-text-size-xxl: 2.8rem;
+  --mobile-text-size-xxxl: 3.2rem;
   // font family
   --font-family-header: 'Montserrat';  // Used for larger fonts/headers
   --font-family-main: 'Josefin Sans';  // Used for main text
 }
 ```
+
+While none of these variables are required, it definitely will help make your app look and feel more custom.
+
+
+#### Dark Mode / Themes
 
 Add overrides for dark themes like so:
     
@@ -106,9 +120,6 @@ Add overrides for dark themes like so:
   --text-primary: rgb(255, 255, 255) !important;
 }
 ```
-
-While variables are not all required, the more you have defined the better!
-
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)
