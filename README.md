@@ -77,6 +77,9 @@ html,
   --border-radius--bbcard: 8px;
   --border-radius--bbnavbar: 8px;
   --border-radius--bbnavbar-item: 8px;
+  // bb navbar
+  --navbar-background-color: rgb(221, 221, 221);
+  --navbar-title-color: rgb(24, 23, 23);
   // font family
   --font-family-header: 'Montserrat';  // Used for larger fonts/headers
   --font-family-main: 'Josefin Sans';  // Used for main text
@@ -87,7 +90,7 @@ Add overrides for dark themes like so:
     
 ```scss
 [data-theme='dark'] {
-    // override any of the above variables
+  // override any of the above variables
   --bg-color: rgb(25, 25, 25) !important;
   --bg-light-color: rgb(60, 60, 60) !important;
   --bg-dark-color: rgb(39, 39, 39) !important;

@@ -1,9 +1,9 @@
 $border-radius: var(--border-radius--bbnavbar, 8px);
+$background-color: var(--navbar-background-color, #dddddd);
 
 /**
 * ELEVATION
 */
-
 .elevation_none {
   box-shadow: none;
 }
@@ -30,7 +30,7 @@ $border-radius: var(--border-radius--bbnavbar, 8px);
   flex-direction: row;
   justify-content: space-between;
   padding: 0.5rem 0rem;
-  background-color: var(--bg-color, #dddddd);
+  background-color: $background-color;
   font-family: 'Quicksand', sans-serif;
 }
 
@@ -45,7 +45,7 @@ $border-radius: var(--border-radius--bbnavbar, 8px);
   align-items: center;
 
   &:hover {
-    background-color: var(--bg-light-color, #ffffff);
+    background-color: color-mix(in srgb, $background-color, #fff 20%);
   }
 }
 
@@ -55,6 +55,10 @@ $border-radius: var(--border-radius--bbnavbar, 8px);
   justify-content: center;
   align-items: center;
   margin: 0 0.5rem;
+}
+
+.textTitle {
+  color: var(--navbar-title-color, #6c6c6c);
 }
 
 /**
@@ -102,7 +106,7 @@ $border-radius: var(--border-radius--bbnavbar, 8px);
   border-radius: $border-radius;
 
   &:hover {
-    background-color: var(--bg-light-color, #ffffff) !important;
+    background-color: color-mix(in srgb, $background-color, #000 20%) !important;
   }
 }
 
@@ -131,7 +135,7 @@ $border-radius: var(--border-radius--bbnavbar, 8px);
     min-width: 30vw;
     display: none;
     flex-direction: column;
-    background-color: var(--bg-light-color, #ffffff);
+    background-color: color-mix(in srgb, $background-color, #fff 20%);
     border-radius: $border-radius;
     box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
     z-index: 11;

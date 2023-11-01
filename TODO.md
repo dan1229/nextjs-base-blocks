@@ -61,6 +61,7 @@
 - props that have options or types should show them
 - i.e., bbtext size - show the size 'choices'
 
+---
 
 #### form css
 - how to apply global css to a git submodule?
@@ -71,6 +72,12 @@
 -
 - maybe just make scss shared module for form components if that doesnt work?
   - in forms dir
+
+
+#### bb field dropdown styling
+- add arrow or something
+    - add to global styling
+
 
 
 ----
@@ -91,22 +98,6 @@
   - NOTE: this must be after defaults are figured out
 
 
-#### bbnavbar - color variables
-- navbar variables - add support for color
-  - i.e.,
-    - `--color-background-navbar` or something
-      - maybe variants for navbar?
-    - add something for text colors as well
-  - navbar items min width - 'dashboard' looks weird
-    - remove 'min_width: 10%'
-
-
-#### bb field dropdown styling
-- add arrow or something
-    - add to global styling
-
-
-
 ### [0.3.0] - 2023-10-DD
 #### Features
 - Demo Page!!!
@@ -122,6 +113,8 @@
 - `BBAlert` - added `onClick` functionality/prop
 - `BBCard` components added `onClick` functionality/prop
 - `BBButton` vertical alignment for text fixed
+- `BBNavbar` new color variables for background and title text
+  - `BBNavbarItem` styling fixes too
 #### TODO
 
 -------------------------------------------------------
