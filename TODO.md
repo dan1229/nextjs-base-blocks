@@ -91,7 +91,7 @@
 
 
 
-### [0.3.0] - 2023-10-DD
+### [0.3.0] - 2023-11-01
 #### Features
 - Demo Page!!!
   - Added demo page to show all components
