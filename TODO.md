@@ -28,18 +28,16 @@
 - React.ReactNode ones render weird
 - most are useless anyway
 
-#### demo page - form components
-- just add them
-- probably in a different page
-
 
 #### demo page - bbcard 'composite' components
 - what to do with header, body and footer?
 
 
-
-#### demo page - add bbnavbar dropdown
-- i.e., multiple bbnavbar items
+#### demo pages - navbar component
+- fix links
+- add image src
+- bbnavbar item - improve component and add children
+  - i.e., multiple bbnavbar items
 
 
 #### demo page - do boolean fields work
@@ -62,6 +60,12 @@
 
 #### demo page - rehydration error
 - idk fix it
+
+
+#### demo page - form components
+- just add them
+- probably in a different page
+- make sections expandable
 
 ---
 

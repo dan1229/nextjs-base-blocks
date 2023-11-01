@@ -33,11 +33,12 @@
   color: var(--white, #ffffff) !important;
 }
 
-.icon {
+.containerIcon {
   margin: 0 6px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .showTextOnHover {
