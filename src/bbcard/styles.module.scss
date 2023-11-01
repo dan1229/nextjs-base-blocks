@@ -1,9 +1,9 @@
-$border-radius: var(--border-radius--bbcard);
+$border-radius: var(--border-radius--bbcard, 8px);
 
 .base {
   border-radius: calc($border-radius + 2px);
-  background: var(--bg-light-color) !important;
-  border: 2px solid var(--bg-color);
+  background: var(--bg-light-color, #ffffff) !important;
+  border: 2px solid var(--bg-color, #dddddd);
   white-space: normal;
 
   display: flex;
@@ -32,12 +32,12 @@ $border-radius: var(--border-radius--bbcard);
   &:hover {
     cursor: pointer;
     transform: translateY(-1%);
-    background-color: var(--bg-dark-color);
+    background-color: var(--bg-dark-color, #b1b1b1);
     box-shadow: rgba(0, 0, 0, 0.12) 10px 15px 20px;
 
     .header {
-      background-color: var(--bg-dark-color);
-      border-bottom: 1px solid var(--bg-dark-color) !important;
+      background-color: var(--bg-dark-color, #b1b1b1);
+      border-bottom: 1px solid var(--bg-dark-color, #b1b1b1) !important;
     }
   }
 }
@@ -47,8 +47,8 @@ $border-radius: var(--border-radius--bbcard);
 */
 .header {
   padding: 16px;
-  border-bottom: 1px solid var(--bg-light-color) !important;
-  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--bg-light-color, #ffffff) !important;
+  background-color: var(--bg-color, #dddddd);
   border-radius: $border-radius $border-radius 0 0;
 }
 
@@ -65,13 +65,13 @@ $border-radius: var(--border-radius--bbcard);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background: var(--bg-light-color);
+  background: var(--bg-light-color, #ffffff);
 }
 
 .footer {
   padding: 16px;
-  border-top: 1px solid var(--bg-light-color);
-  background-color: var(--bg-color);
+  border-top: 1px solid var(--bg-light-color, #ffffff);
+  background-color: var(--bg-color, #dddddd);
   border-radius: 0 0 $border-radius $border-radius;
 }
 
@@ -85,19 +85,19 @@ $border-radius: var(--border-radius--bbcard);
 * BACKGROUND
 */
 .background_white {
-  background-color: var(--color-white);
+  background-color: var(--white, #ffffff);
 }
 
 .background_grey_light {
-  background-color: var(--color-grey-light);
+  background-color: var(--grey-light, #8199c2);
 }
 
 .background_grey_dark {
-  background-color: var(--color-grey-dark);
+  background-color: var(--grey-dark, #58647a);
 }
 
 .background_black {
-  background-color: var(--color-black);
+  background-color: var(--black, #232323);
 }
 
 /*

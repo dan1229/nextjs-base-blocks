@@ -1,4 +1,4 @@
-$border-radius: var(--border-radius--bbnavbar);
+$border-radius: var(--border-radius--bbnavbar, 8px);
 
 /**
 * ELEVATION
@@ -30,7 +30,7 @@ $border-radius: var(--border-radius--bbnavbar);
   flex-direction: row;
   justify-content: space-between;
   padding: 0.5rem 0rem;
-  background-color: var(--bg-color);
+  background-color: var(--bg-color, #dddddd);
   font-family: 'Quicksand', sans-serif;
 }
 
@@ -45,7 +45,7 @@ $border-radius: var(--border-radius--bbnavbar);
   align-items: center;
 
   &:hover {
-    background-color: var(--bg-light-color);
+    background-color: var(--bg-light-color, #ffffff);
   }
 }
 
@@ -97,12 +97,12 @@ $border-radius: var(--border-radius--bbnavbar);
 
 .iconHamburger {
   cursor: pointer;
-  color: var(--secondary-color);
+  color: var(--secondary-color, #e8352e);
   padding: 0.5rem;
   border-radius: $border-radius;
 
   &:hover {
-    background-color: var(--bg-light-color) !important;
+    background-color: var(--bg-light-color, #ffffff) !important;
   }
 }
 
@@ -131,7 +131,7 @@ $border-radius: var(--border-radius--bbnavbar);
     min-width: 30vw;
     display: none;
     flex-direction: column;
-    background-color: var(--bg-light-color);
+    background-color: var(--bg-light-color, #ffffff);
     border-radius: $border-radius;
     box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
     z-index: 11;

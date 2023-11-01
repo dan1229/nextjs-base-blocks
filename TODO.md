@@ -134,6 +134,9 @@ var(--variable, default-value));
   - Allows for editing of props to test
   - Works with 'nested' component props
 - `BBAlert` - added `onClick` functionality/prop
+- SCSS variable defaults
+  - Added default values to all SCSS variables
+  - Base Blocks now works way better out of the box
 #### Fixes
 - All component props now exported
 - Improved and added `README`s

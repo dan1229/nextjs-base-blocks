@@ -13,19 +13,19 @@
   &:hover {
     cursor: pointer;
     div {
-      background-color: var(--bg-dark-color);
+      background-color: var(--bg-dark-color, #1c1c1c);
     }
   }
 
   .selected {
     div {
-      background-color: var(--bg-dark-color);
+      background-color: var(--bg-dark-color, #1c1c1c);
     }
   }
 }
 
 .cardOptionSelected {
   div {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color, #e8352e);
   }
 }
