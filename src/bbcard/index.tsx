@@ -128,47 +128,74 @@ const BBCard = (Props: IPropsBBCard) => {
   );
 };
 
-/*
+/**
  * BBCard.Header
+ *
+ * @param {React.ReactNode | React.ReactNode[]} children - The text to display
+ * @param {string=} className - Any class name to add
+ * @param {() => void=} onClick - Function to call when clicked
  */
 interface IPropsBBCardHeader {
   children: React.ReactNode | React.ReactNode[];
   className?: string;
+  onClick?: () => void;
 }
 
 const Header = (props: IPropsBBCardHeader) => {
-  const { children, className } = props;
-  return <div className={classNames(styles.header, className)}>{children}</div>;
+  const { children, className, onClick } = props;
+  return (
+    <div className={classNames(styles.header, className)} onClick={onClick}>
+      {children}
+    </div>
+  );
 };
 Header.displayName = 'Header';
 BBCard.Header = Header;
 
-/*
+/**
  * BBCard.Body
+ *
+ * @param {React.ReactNode | React.ReactNode[]} children - The text to display
+ * @param {string=} className - Any class name to add
+ * @param {() => void=} onClick - Function to call when clicked
  */
 interface IPropsBBCardBody {
   children: React.ReactNode | React.ReactNode[];
   className?: string;
+  onClick?: () => void;
 }
 
 const Body = (props: IPropsBBCardBody) => {
-  const { children, className } = props;
-  return <div className={classNames(styles.body, className)}>{children}</div>;
+  const { children, className, onClick } = props;
+  return (
+    <div className={classNames(styles.body, className)} onClick={onClick}>
+      {children}
+    </div>
+  );
 };
 Body.displayName = 'Body';
 BBCard.Body = Body;
 
-/*
+/**
  * BBCard.Footer
+ *
+ * @param {React.ReactNode | React.ReactNode[]} children - The text to display
+ * @param {string=} className - Any class name to add
+ * @param {() => void=} onClick - Function to call when clicked
  */
 interface IPropsBBCardFooter {
   children: React.ReactNode | React.ReactNode[];
   className?: string;
+  onClick?: () => void;
 }
 
 const Footer = (props: IPropsBBCardFooter) => {
-  const { children, className } = props;
-  return <div className={classNames(styles.footer, className)}>{children}</div>;
+  const { children, className, onClick } = props;
+  return (
+    <div className={classNames(styles.footer, className)} onClick={onClick}>
+      {children}
+    </div>
+  );
 };
 Footer.displayName = 'Footer';
 BBCard.Footer = Footer;

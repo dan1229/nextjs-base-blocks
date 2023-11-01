@@ -111,10 +111,6 @@
 - particularly when icons are larger than text
 
 
-#### bbcard
-- add onclick and other props to header/body/footer
-
-
 
 
 ### [0.3.0] - 2023-10-DD
@@ -123,13 +119,14 @@
   - Added demo page to show all components
   - Allows for editing of props to test
   - Works with 'nested' component props
-- `BBAlert` - added `onClick` functionality/prop
 - SCSS variable defaults
   - Added default values to all SCSS variables
   - Base Blocks now works way better out of the box
 #### Fixes
 - All component props now exported
 - Improved and added `README`s
+- `BBAlert` - added `onClick` functionality/prop
+- `BBCard` components added `onClick` functionality/prop
 #### TODO
 
 -------------------------------------------------------
