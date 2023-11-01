@@ -39,8 +39,7 @@ export default function DemoComponent(Props: IPropsDemoComponent): React.ReactEl
 
   return (
     <div className={styles.containerDemoComponent}>
-      <BBText size="xlarge">{name}</BBText>
-      <hr />
+      <BBText size="large">{name}</BBText>
       <div>
         {showComponent && <div className={styles.containerComponent}>{child}</div>}
         {isBBModal && <BBButton onClick={() => setShowComponent(!showComponent)} text={showComponent ? 'Hide' : 'Show'} />}
