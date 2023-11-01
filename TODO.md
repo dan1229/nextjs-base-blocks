@@ -48,6 +48,8 @@
 ----
 ### 0.4.0
 
+
+
 #### demo page - bbmodal demo doesnt work great
 - need way to hide modal
 - onCancel and onConfirm need to update showComponent state in DemoComponent
@@ -87,34 +89,9 @@
 
 
 
-----
-### 0.3.0
 
 
-
-
-### [0.3.0] - 2023-11-01
-#### Features
-- Demo Page!!!
-  - Added demo page to show all components
-  - Allows for editing of props to test
-  - Works with 'nested' component props
-- SCSS variable defaults
-  - Added default values to all SCSS variables
-  - Base Blocks now works way better out of the box
-#### Fixes
-- All component props now exported
-- Improved and added `README`s
-- `BBAlert` - added `onClick` functionality/prop
-- `BBCard` components added `onClick` functionality/prop
-- `BBButton` vertical alignment for text fixed
-- `BBNavbar` new color variables for background and title text
-  - `BBNavbarItem` styling fixes too
-- `BBText` size variables
-  - Added variables and mobile variables
-- Made variable names more consistent
-  - NOTE: this could be breaking! Sorry!
-- Fixed lots of overlapping click issues
+### [0.4.0] - 2023-11-01
 #### TODO
 
 -------------------------------------------------------
