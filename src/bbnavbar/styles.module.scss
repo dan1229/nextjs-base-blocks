@@ -45,7 +45,7 @@ $background-color: var(--navbar-background-color);
   align-items: center;
 
   &:hover {
-    background-color: #{darken($background-color, 10%)};
+    background-color: hsl(from $background-color h s calc(l - 10%));
   }
 }
 
