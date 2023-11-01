@@ -111,20 +111,6 @@
 - add onclick and other props to header/body/footer
 
 
-----
-
-
-#### scss variable defaults
-- html variables
-  - how to get a default value for those calls to make them all optional?
-- can do this:
-```
-var(--variable, default-value));
-```
-- play with how we can define `default-value`
-
-
-
 
 
 ### [0.3.0] - 2023-10-DD
