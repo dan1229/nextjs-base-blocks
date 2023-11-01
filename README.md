@@ -96,9 +96,6 @@ Add overrides for dark themes like so:
   --bg-dark-color: rgb(39, 39, 39) !important;
   --bs-body-color: rgb(245, 245, 245) !important;
   --text-primary: rgb(255, 255, 255) !important;
-  // bb navbar
-  --navbar-background-color: rgb(25, 25, 25);
-  --navbar-title-color: rgb(255, 255, 255);
 }
 ```
 

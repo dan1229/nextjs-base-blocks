@@ -98,14 +98,8 @@
   - NOTE: this must be after defaults are figured out
 
 
-#### bbnavbar - color variables
-- navbar variables - add support for color
-  - i.e.,
-    - `--color-background-navbar` or something
-      - maybe variants for navbar?
-    - add something for text colors as well
-  - navbar items min width - 'dashboard' looks weird
-    - remove 'min_width: 10%'
+- navbar items min width - 'dashboard' looks weird
+  - remove 'min_width: 10%'
 
 
 ### [0.3.0] - 2023-10-DD
@@ -123,6 +117,7 @@
 - `BBAlert` - added `onClick` functionality/prop
 - `BBCard` components added `onClick` functionality/prop
 - `BBButton` vertical alignment for text fixed
+- `BBNavbar` new color variables for background and title text
 #### TODO
 
 -------------------------------------------------------
