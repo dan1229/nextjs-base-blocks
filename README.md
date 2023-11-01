@@ -80,6 +80,14 @@ html,
   // bb navbar
   --navbar-background-color: rgb(221, 221, 221);
   --navbar-title-color: rgb(24, 23, 23);
+  // bb text
+  --text-size-xs: 0.6rem;
+  --text-size-s: 0.8rem;
+  --text-size-m: 1rem;
+  --text-size-l: 1.8rem;
+  --text-size-xl: 2.2rem;
+  --text-size-xxl: 2.8rem;
+  --text-size-xxxl: 3.2rem;
   // font family
   --font-family-header: 'Montserrat';  // Used for larger fonts/headers
   --font-family-main: 'Josefin Sans';  // Used for main text
