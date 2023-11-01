@@ -75,7 +75,9 @@ export default function BBNavbar(Props: IPropsBBNavbar): React.ReactElement {
       <div className={styles.containerBrand} onClick={async () => await router.push(routeHome)}>
         <div className={styles.brand}>
           {!!imageSrc && <Image src={imageSrc} alt="" height={60} width={70} />}
-          <BBText asSpan>{title}</BBText>
+          <BBText className={styles.textTitle} asSpan>
+            {title}
+          </BBText>
         </div>
       </div>
       <div className={classNames(styles.navigationMenu, showNavExpanded && styles.expanded)}>

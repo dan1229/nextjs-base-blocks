@@ -79,6 +79,7 @@ html,
   --border-radius--bbnavbar-item: 8px;
   // bb navbar
   --navbar-background-color: rgb(221, 221, 221);
+  --navbar-title-color: rgb(24, 23, 23);
   // font family
   --font-family-header: 'Montserrat';  // Used for larger fonts/headers
   --font-family-main: 'Josefin Sans';  // Used for main text
@@ -97,6 +98,7 @@ Add overrides for dark themes like so:
   --text-primary: rgb(255, 255, 255) !important;
   // bb navbar
   --navbar-background-color: rgb(25, 25, 25);
+  --navbar-title-color: rgb(255, 255, 255);
 }
 ```
 

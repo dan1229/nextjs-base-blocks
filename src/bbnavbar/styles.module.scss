@@ -58,6 +58,10 @@ $background-color: var(--navbar-background-color, #dddddd);
   margin: 0 0.5rem;
 }
 
+.textTitle {
+  color: var(--navbar-title-color, #e8352e);
+}
+
 /**
 * NAVIGATION MENU
 */
