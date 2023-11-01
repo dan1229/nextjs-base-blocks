@@ -91,13 +91,6 @@
 ### 0.3.0
 
 
-#### bbalert - bugs
-- 
-  - other places could use this too if we get an answer
-- dismissible kinda works?
-- dismissible doesnt work in demo
-
-
 
 ### [0.3.0] - 2023-11-01
 #### Features
