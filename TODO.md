@@ -1,4 +1,4 @@
-# TODO for TypeScript API Services
+# TODO for NextJS Base Blocks
 #### By: [Daniel Nazarian](https://danielnazarian) 🐧👹
 
 -------------------------------------------------------
@@ -77,8 +77,6 @@
 #### bb field dropdown styling
 - add arrow or something
     - add to global styling
-
-
 
 ----
 ### 0.3.0
