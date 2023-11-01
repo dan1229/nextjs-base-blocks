@@ -40,6 +40,15 @@ You are also able to customize `Base Blocks` via SCSS variables. You typically w
 The available options are here:
 
 ```scss
+// keep these variables separate to allow for lighten/darken usage
+$primary-color: #5a65ff;
+$secondary-color: #45b689;
+$info-color: #284af7;
+$warning-color: #f1c500;
+$success-color: #50c758;
+$danger-color: #e8352e;
+
+
 html,
 :root {
   // app theme
