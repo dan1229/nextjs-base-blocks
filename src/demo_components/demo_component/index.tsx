@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import StateEditor from '../state_editor';
 import styles from './styles.module.scss';
 import type { Dispatch, SetStateAction } from 'react';
-import BBButton from 'src/bbbutton';
-import BBText from 'src/bbtext';
+import BBButton from '../../bbbutton';
+import BBText from '../../bbtext';
 
 /**
  * IPropsDemoComponent

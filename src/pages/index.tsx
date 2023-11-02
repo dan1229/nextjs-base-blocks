@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
-import type { IPropsBBAlert } from 'src/bbalert';
-import type { IPropsBBButton } from 'src/bbbutton';
-import type { IPropsBBCard } from 'src/bbcard';
-import type { IPropsBBLink } from 'src/bblink';
-import type { IPropsBBModal } from 'src/bbmodal';
-import type { IPropsBBNavbar } from 'src/bbnavbar';
-import type { IPropsBBNavbarItem } from 'src/bbnavbar_item';
-import type { IPropsBBText } from 'src/bbtext';
-import BBAlert from 'src/bbalert';
-import BBButton from 'src/bbbutton';
-import BBCard from 'src/bbcard';
-import BBLink from 'src/bblink';
-import BBLoadingSpinner from 'src/bbloading_spinner';
-import BBModal from 'src/bbmodal';
-import BBNavbar from 'src/bbnavbar';
-import BBNavbarItem from 'src/bbnavbar_item';
-import BBText from 'src/bbtext';
-import DemoComponent from 'src/demo_components/demo_component';
+import type { IPropsBBAlert } from '../bbalert';
+import type { IPropsBBButton } from '../bbbutton';
+import type { IPropsBBCard } from '../bbcard';
+import type { IPropsBBLink } from '../bblink';
+import type { IPropsBBModal } from '../bbmodal';
+import type { IPropsBBNavbar } from '../bbnavbar';
+import type { IPropsBBNavbarItem } from '../bbnavbar_item';
+import type { IPropsBBText } from '../bbtext';
+import BBAlert from '../bbalert';
+import BBButton from '../bbbutton';
+import BBCard from '../bbcard';
+import BBLink from '../bblink';
+import BBLoadingSpinner from '../bbloading_spinner';
+import BBModal from '../bbmodal';
+import BBNavbar from '../bbnavbar';
+import BBNavbarItem from '../bbnavbar_item';
+import BBText from '../bbtext';
+import DemoComponent from '../demo_components/demo_component';
 
 /**
  * DEMO PAGE
