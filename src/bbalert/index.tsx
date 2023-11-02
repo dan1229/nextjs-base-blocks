@@ -100,7 +100,14 @@ export default function BBAlert(Props: IPropsBBAlert): React.ReactElement {
    */
   return (
     <div
-      className={classNames(className, styles.base, getClassVariant(), getClassElevation(), getClassTextAlignment())}
+      className={classNames(
+        className,
+        styles.base,
+        getClassVariant(),
+        getClassElevation(),
+        getClassTextAlignment(),
+        onClick && styles.clickable
+      )}
       onClick={onClick && onClickOverride}
     >
       <BBText size={size}>{children}</BBText>

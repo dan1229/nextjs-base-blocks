@@ -88,11 +88,22 @@
 - do we need the next-theme package?
 
 
+#### bbnavbar item - bugs
+- hover not really workings?
 
 
 
-### [0.4.0] - 2023-11-01
+### [0.4.0] - 2023-11-DD
 #### TODO
+
+---
+
+#### bbalert 
+
+
+### [0.3.1] - 2023-11-02
+- `BBAlert` - pointer on hover
+
 
 -------------------------------------------------------
 

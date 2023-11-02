@@ -21,6 +21,10 @@
   }
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 .dismissButton {
   cursor: pointer;
   color: var(--white, #ffffff);
