@@ -14,6 +14,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [0.3.1] - 2023-11-02
+- `BBAlert` - pointer on hover
+
+
+### [0.3.0] - 2023-11-01
+#### Features
+- Demo Page!!!
+  - Added demo page to show all components
+  - Allows for editing of props to test
+  - Works with 'nested' component props
+- SCSS variable defaults
+  - Added default values to all SCSS variables
+  - Base Blocks now works way better out of the box
+#### Fixes
+- All component props now exported
+- Improved and added `README`s
+- `BBAlert` - added `onClick` functionality/prop
+- `BBCard` components added `onClick` functionality/prop
+- `BBButton` vertical alignment for text fixed
+- `BBNavbar` new color variables for background and title text
+  - `BBNavbarItem` styling fixes too
+- `BBText` size variables
+  - Added variables and mobile variables
+- Made variable names more consistent
+  - NOTE: this could be breaking! Sorry!
+- Fixed lots of overlapping click issues
+
+
 ### [0.2.0] - 2023-09-23
 - Base props added for components and form components
     - Some breaking changes :/ i.e., `fieldLabel` is now `label` for all components
