@@ -81,7 +81,7 @@ html,
   --bg-light-color: rgb(255, 255, 255) !important;
   --bg-dark-color: rgb(177, 177, 177) !important;
   --bs-body-color: rgb(24, 23, 23) !important;
-  --text-color: rgb(24, 23, 23) !important;
+  --text-primary: rgb(24, 23, 23) !important;
   // bb alert
   --alert-border-radius: 8px;
   // bb button
