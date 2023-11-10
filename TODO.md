@@ -92,6 +92,10 @@
 - hover not really workings?
 
 
+#### bbbutton - bugs
+- disabled
+  - outline color is wrong
+  - hover should be disabled not pointer
 
 ### [0.4.0] - 2023-11-DD
 #### TODO
