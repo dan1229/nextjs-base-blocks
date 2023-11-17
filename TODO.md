@@ -101,6 +101,8 @@
 - disabled
   - outline color is wrong
   - hover should be disabled not pointer
+- inverse-info
+  - focus could use better background color
 
 
 
