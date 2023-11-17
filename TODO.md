@@ -71,14 +71,19 @@
 
 ---
 
+#### loading spinner variants
+- add more css and variants for loading spinner
+
 
 #### bb field dropdown styling
 - add arrow or something
   - add to global styling
 - wait until form css is figured out
 
+
 #### form css
-- cant use globals
+- convert to module.scss
+  - will have to change a lot of the form scss
 - maybe just make scss shared module for form components?
   - in forms dir
   - will likely have to rewrite a lot of the form scss
@@ -97,9 +102,10 @@
   - outline color is wrong
   - hover should be disabled not pointer
 
+
+
 ### [0.4.0] - 2023-11-DD
 #### TODO
-
 
 -------------------------------------------------------
 
