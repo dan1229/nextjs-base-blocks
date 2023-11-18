@@ -106,6 +106,7 @@
   - focus could use better background color
 - inverses in general
   - backgrounds odnt work great on dark mode
+  - thicker backgrounds
   - add 'transparent' option for background color?
 
 
