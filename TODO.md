@@ -104,6 +104,9 @@
   - shouldnt be clickable when disableds
 - inverse-info
   - focus could use better background color
+- inverses in general
+  - backgrounds odnt work great on dark mode
+  - add 'transparent' option for background color?
 
 
 
