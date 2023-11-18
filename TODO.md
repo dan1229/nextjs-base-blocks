@@ -101,6 +101,7 @@
 - disabled
   - outline color is wrong
   - hover should be disabled not pointer
+  - shouldnt be clickable when disableds
 - inverse-info
   - focus could use better background color
 
