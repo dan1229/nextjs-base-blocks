@@ -110,6 +110,21 @@
   - add 'transparent' option for background color?
 
 
+#### bb select multiple field bug
+- Unhandled Runtime Error
+  - seems to be when that field is required via register
+
+```
+TypeError: ref.name is undefined
+Source
+
+base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39:32) @ AlertsFieldErrors/<.children<
+
+  37 | const finalMessage = message
+  38 |   ? message.toString()
+> 39 |   : `Error - ${type} '${(ref as Ref).name.replace(/_/g, ' ').replace(/-/g, ' ')}'
+```
+
 
 ### [0.4.0] - 2023-11-DD
 #### TODO

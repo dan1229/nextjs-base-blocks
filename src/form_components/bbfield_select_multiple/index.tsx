@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { type Control, Controller, type FieldValues } from 'react-hook-form';
 import BBCard from '../../bbcard';
@@ -24,9 +24,24 @@ export interface IPropsBBFieldSelectMultiple {
 /**
  * BBFIELD SELECT MULTIPLE
  */
-export default function BBFieldSelectMultiple(Props: IPropsBBFieldSelectMultiple & IPropsBBBaseForm): React.ReactElement {
-  const { control, options, fieldName, selectedInitial, className } = Props;
+export default function BBFieldSelectMultiple(Props: IPropsBBFieldSelectMultiple & Omit<IPropsBBBaseForm, 'register'>): React.ReactElement {
+  const { control, options, fieldName, selectedInitial, required, className } = Props;
   const [selectedOptions, setSelectedOptions] = useState<IBBFieldSelectMultipleOptions[]>([]);
+
+  // handle initial selected options
+  useEffect(() => {
+    if (selectedInitial?.length) {
+      const tmp = selectedInitial.map((value) => {
+        const option = options.find((option) => option.value === value);
+        if (!option) return;
+        return option;
+      });
+      const filtered = tmp.filter((option) => !!option) as IBBFieldSelectMultipleOptions[];
+      setSelectedOptions(filtered);
+    }
+    // disable so we only run once to handle initial selected options
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const createListOnChange = (list: IBBFieldSelectMultipleOptions[]) => {
     return list.map((option) => {
@@ -51,27 +66,26 @@ export default function BBFieldSelectMultiple(Props: IPropsBBFieldSelectMultiple
       <Controller
         control={control as Control<FieldValues>}
         name={fieldName}
-        defaultValue={selectedOptions}
-        render={({ field: { onChange, ref } }) => {
-          if (selectedInitial?.length) {
-            const tmp = selectedInitial.map((value) => {
-              const option = options.find((option) => option.value === value);
-              if (!option) return;
-              return option;
-            });
-            const filtered = tmp.filter((option) => !!option) as IBBFieldSelectMultipleOptions[];
-            setSelectedOptions(filtered);
-            onChange(createListOnChange(filtered));
-          }
-
+        defaultValue={selectedInitial}
+        rules={{ required: required, validate: (value) => (value && value.length > 0) || 'Please select at least one option' }}
+        render={({ field: { onChange, ref, value } }) => {
           return (
             <div ref={ref} className={classnames(styles.containerSelectMultiple, className)}>
+              {/* ALL OPTIONS */}
               <div className={styles.containerSelectWindow}>
                 <BBText bold>Options</BBText>
                 {options.map((option) => (
-                  <CardOption key={`${option.value}-option`} option={option} selected={false} onChange={onChange} onClick={onClickOption} />
+                  <CardOption
+                    key={`${option.value}-option`}
+                    option={option}
+                    selected={selectedOptions.some((selectedOption) => selectedOption.value === option.value)}
+                    value={value}
+                    onChange={onChange}
+                    onClick={onClickOption}
+                  />
                 ))}
               </div>
+              {/* SELECTED */}
               <div className={styles.containerSelectWindow}>
                 <BBText bold>Selected</BBText>
                 {selectedOptions.length ? (
@@ -81,6 +95,7 @@ export default function BBFieldSelectMultiple(Props: IPropsBBFieldSelectMultiple
                         key={`${option.value}-selected`}
                         option={option}
                         selected={true}
+                        value={value}
                         onChange={onChange}
                         onClick={onClickOption}
                       />
@@ -98,8 +113,15 @@ export default function BBFieldSelectMultiple(Props: IPropsBBFieldSelectMultiple
   );
 }
 
-function CardOption(props: { option: IBBFieldSelectMultipleOptions; selected: boolean; onChange: Function; onClick: Function }) {
-  const { option, selected, onClick, onChange } = props;
+function CardOption(props: {
+  option: IBBFieldSelectMultipleOptions;
+  selected: boolean;
+  value: unknown;
+  onChange: Function;
+  onClick: Function;
+}) {
+  const { option, selected, onClick, value, onChange } = props;
+
   return (
     <BBCard className={classnames(styles.cardOption, selected ? styles.cardOptionSelected : '')} onClick={() => onClick(option, onChange)}>
       <BBCard.Body>
