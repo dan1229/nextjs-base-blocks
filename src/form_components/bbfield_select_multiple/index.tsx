@@ -71,7 +71,7 @@ export default function BBFieldSelectMultiple(Props: IPropsBBFieldSelectMultiple
           required: required,
           validate: (value) => (value && value.length > 0) || 'Please select at least one option',
         }}
-        render={({ field: { onChange, ref, value } }) => {
+        render={({ field: { onChange, ref } }) => {
           return (
             <div ref={ref} className={classnames(styles.containerSelectMultiple, className)}>
               {/* ALL OPTIONS */}
@@ -82,7 +82,6 @@ export default function BBFieldSelectMultiple(Props: IPropsBBFieldSelectMultiple
                     key={`${option.value}-option`}
                     option={option}
                     selected={selectedOptions.some((selectedOption) => selectedOption.value === option.value)}
-                    value={value}
                     onChange={onChange}
                     onClick={onClickOption}
                   />
@@ -98,7 +97,6 @@ export default function BBFieldSelectMultiple(Props: IPropsBBFieldSelectMultiple
                         key={`${option.value}-selected`}
                         option={option}
                         selected={true}
-                        value={value}
                         onChange={onChange}
                         onClick={onClickOption}
                       />
@@ -116,14 +114,8 @@ export default function BBFieldSelectMultiple(Props: IPropsBBFieldSelectMultiple
   );
 }
 
-function CardOption(props: {
-  option: IBBFieldSelectMultipleOptions;
-  selected: boolean;
-  value: unknown;
-  onChange: Function;
-  onClick: Function;
-}) {
-  const { option, selected, onClick, value, onChange } = props;
+function CardOption(props: { option: IBBFieldSelectMultipleOptions; selected: boolean; onChange: Function; onClick: Function }) {
+  const { option, selected, onClick, onChange } = props;
 
   return (
     <BBCard className={classnames(styles.cardOption, selected ? styles.cardOptionSelected : '')} onClick={() => onClick(option, onChange)}>

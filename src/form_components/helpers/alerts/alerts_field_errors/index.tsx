@@ -1,6 +1,6 @@
 import React from 'react';
 import BBAlert from '../../../../bbalert';
-import type { FieldError, FieldErrors, FieldErrorsImpl, Merge, Ref } from 'react-hook-form';
+import type { FieldErrors, Ref } from 'react-hook-form';
 
 /**
  * IProps
@@ -51,7 +51,7 @@ export function AlertsFieldErrors(props: IPropsAlertsFieldErrors): React.ReactEl
           console.error(error);
         }
 
-        finalMessage = !!finalMessage?.length ? finalMessage : getErrorByType(type?.toString());
+        finalMessage = finalMessage?.length ? finalMessage : getErrorByType(type?.toString());
 
         return (
           <BBAlert key={`${keyFieldError}-${Date.now()}`} variant="danger">
