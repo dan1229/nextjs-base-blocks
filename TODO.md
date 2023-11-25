@@ -129,6 +129,14 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 ### [0.4.0] - 2023-11-DD
 #### TODO
 
+---
+
+
+### [0.3.4] - 2023-11-DD
+- `BBFieldSelectMultiple` - fixes
+  - Default value fix
+  - Error rendering fixes with `ref`
+
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)

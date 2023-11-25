@@ -67,7 +67,10 @@ export default function BBFieldSelectMultiple(Props: IPropsBBFieldSelectMultiple
         control={control as Control<FieldValues>}
         name={fieldName}
         defaultValue={selectedInitial}
-        rules={{ required: required, validate: (value) => (value && value.length > 0) || 'Please select at least one option' }}
+        rules={{
+          required: required,
+          validate: (value) => (value && value.length > 0) || 'Please select at least one option',
+        }}
         render={({ field: { onChange, ref, value } }) => {
           return (
             <div ref={ref} className={classnames(styles.containerSelectMultiple, className)}>

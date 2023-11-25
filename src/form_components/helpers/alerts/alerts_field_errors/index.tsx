@@ -1,6 +1,6 @@
 import React from 'react';
 import BBAlert from '../../../../bbalert';
-import type { FieldErrors, Ref } from 'react-hook-form';
+import type { FieldError, FieldErrors, FieldErrorsImpl, Merge, Ref } from 'react-hook-form';
 
 /**
  * IProps
@@ -25,6 +25,16 @@ export function AlertsFieldErrors(props: IPropsAlertsFieldErrors): React.ReactEl
     return <></>;
   }
 
+  const getErrorByType = (type: string | undefined) => {
+    if (!type) {
+      return 'Invalid';
+    }
+    if (type === 'required') {
+      return `Field is required`;
+    }
+    return `Invalid - ${type}`;
+  };
+
   return (
     <>
       {keysFieldErrors.map((keyFieldError: string) => {
@@ -34,8 +44,6 @@ export function AlertsFieldErrors(props: IPropsAlertsFieldErrors): React.ReactEl
         }
 
         const { message, type, ref } = fieldError;
-        console.log('ref', ref);
-        console.log('message', message);
         let finalMessage = message?.toString();
         try {
           finalMessage = `Error - ${type} '${(ref as Ref).name.replace(/_/g, ' ').replace(/-/g, ' ')}'`;
@@ -43,7 +51,7 @@ export function AlertsFieldErrors(props: IPropsAlertsFieldErrors): React.ReactEl
           console.error(error);
         }
 
-        finalMessage = !!finalMessage?.length ? finalMessage : 'Error. Please try again.';
+        finalMessage = !!finalMessage?.length ? finalMessage : getErrorByType(type?.toString());
 
         return (
           <BBAlert key={`${keyFieldError}-${Date.now()}`} variant="danger">
