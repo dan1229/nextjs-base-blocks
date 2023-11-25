@@ -110,9 +110,31 @@
   - add 'transparent' option for background color?
 
 
+#### bb select multiple field bug
+- still not really the best solution - only says field is requied not what field
+
+```
+TypeError: ref.name is undefined
+Source
+
+base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39:32) @ AlertsFieldErrors/<.children<
+
+  37 | const finalMessage = message
+  38 |   ? message.toString()
+> 39 |   : `Error - ${type} '${(ref as Ref).name.replace(/_/g, ' ').replace(/-/g, ' ')}'
+```
+
 
 ### [0.4.0] - 2023-11-DD
 #### TODO
+
+---
+
+
+### [0.3.4] - 2023-11-DD
+- `BBFieldSelectMultiple` - fixes
+  - Default value fix
+  - Error rendering fixes with `ref`
 
 -------------------------------------------------------
 
