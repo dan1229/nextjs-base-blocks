@@ -111,8 +111,7 @@
 
 
 #### bb select multiple field bug
-- Unhandled Runtime Error
-  - seems to be when that field is required via register
+- still not really the best solution - only says field is requied not what field
 
 ```
 TypeError: ref.name is undefined
