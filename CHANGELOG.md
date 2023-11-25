@@ -14,6 +14,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [0.3.4] - 2023-11-24
+- `BBFieldSelectMultiple` - fixes
+  - Default value fix
+  - Error rendering fixes with `ref`
+
+  
 ### [0.3.3] - 2023-11-02
 - Import fixes
 
