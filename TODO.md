@@ -124,6 +124,10 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 > 39 |   : `Error - ${type} '${(ref as Ref).name.replace(/_/g, ' ').replace(/-/g, ' ')}'
 ```
 
+#### bbcard customizable background colors
+- make it a variable!
+- default to current values
+
 
 ### [0.4.0] - 2023-11-DD
 #### TODO
