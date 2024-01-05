@@ -45,8 +45,6 @@
 - some dont
   - bb text - italics field
 
-----
-### 0.4.0
 
 
 
@@ -69,16 +67,21 @@
 - probably in a different page
 - make sections expandable
 
----
 
-#### loading spinner variants
-- add more css and variants for loading spinner
+----
+### 1.0.1?
 
 
 #### bb field dropdown styling
 - add arrow or something
   - add to global styling
 - wait until form css is figured out
+
+
+
+----
+### 1.0.0?
+
 
 
 #### form css
@@ -89,6 +92,8 @@
   - will likely have to rewrite a lot of the form scss
 
 
+----
+
 #### remove next theme?
 - do we need the next-theme package?
 
@@ -97,18 +102,28 @@
 - hover not really workings?
 
 
-#### bbbutton - bugs
-- disabled
-  - outline color is wrong
-  - hover should be disabled not pointer
-  - shouldnt be clickable when disableds
-- inverse-info
-  - focus could use better background color
-- inverses in general
-  - backgrounds odnt work great on dark mode
-  - thicker backgrounds
-  - add 'transparent' option for background color?
 
+#### loading spinner variants
+- add more css and variants for loading spinner
+
+
+#### bbcard customizable background colors
+- make it a variable!
+- default to current values
+
+
+#### main color variables
+- are primary and secondary color required?
+  - add docs for this
+- add support for 'accent' color?
+  - could default to secondary?
+  - add docs for this
+  - add as color option for:
+    - button
+    - link?
+
+
+---
 
 #### bb select multiple field bug
 - still not really the best solution - only says field is requied not what field
@@ -124,20 +139,23 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 > 39 |   : `Error - ${type} '${(ref as Ref).name.replace(/_/g, ' ').replace(/-/g, ' ')}'
 ```
 
-#### bbcard customizable background colors
-- make it a variable!
-- default to current values
+
+#### bbbutton - bugs
+- disabled
+  - outline color is wrong
+  - hover should be disabled not pointer
+  - shouldnt be clickable when disableds
+- inverse-info
+  - focus could use better background color
+- inverses in general
+  - backgrounds odnt work great on dark mode
+  - thicker backgrounds
+  - add 'transparent' option for background color?
 
 
-#### color variables
-- are primary and secondary color required?
-  - add docs for this
-- add support for 'accent' color?
-  - could default to secondary?
-  - add docs for this
 
 
-### [0.4.0] - 2023-11-DD
+### [1.0.0] - 2023-11-DD
 #### TODO
 
 -------------------------------------------------------
