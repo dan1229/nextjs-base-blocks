@@ -92,6 +92,7 @@ html,
   --navbar-border-radius: 8px;
   --navbar-background-color: rgb(221, 221, 221);
   --navbar-title-color: rgb(24, 23, 23);
+  --navbar-brand-padding: 0.5rem;
   // bb navbar item
   --navbar-item-border-radius: 8px;
   // bb text

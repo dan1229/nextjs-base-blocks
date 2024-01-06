@@ -159,7 +159,8 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 
 
 
-### [1.0.0] - 2023-11-DD
+### [1.0.0] - 2024-01-DD
+- Added options for `BBNavbar` and `BBNavbarItem` padding and margins
 #### TODO
 
 -------------------------------------------------------
