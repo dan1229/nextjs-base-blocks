@@ -83,6 +83,9 @@
 ### 1.0.0?
 
 
+#### TEST BEFORE RELEASE
+- TODO - which project to test on?
+
 
 #### form css
 - convert to module.scss
