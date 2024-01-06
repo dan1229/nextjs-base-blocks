@@ -144,18 +144,13 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 - disabled
   - outline color is wrong
   - hover should be disabled not pointer
-  - shouldnt be clickable when disableds
+  - shouldn't be clickable when disableds
 - inverse-info
   - focus could use better background color
 - inverses in general
   - backgrounds odnt work great on dark mode
   - thicker backgrounds
   - add 'transparent' option for background color?
-
-
-#### navbar spacing/padding options
-- navbar spacing/padding options
-    - same with navbar items
 
 
 

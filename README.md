@@ -93,8 +93,10 @@ html,
   --navbar-background-color: rgb(221, 221, 221);
   --navbar-title-color: rgb(24, 23, 23);
   --navbar-brand-padding: 0.5rem;
+  --navbar-container-brand-margin: 0 0.5rem;
   // bb navbar item
   --navbar-item-border-radius: 8px;
+  --navbar-item-padding: 24px;
   // bb text
   --text-size-xs: 0.6rem;
   --text-size-s: 0.8rem;
