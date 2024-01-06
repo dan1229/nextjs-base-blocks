@@ -153,6 +153,10 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
   - add 'transparent' option for background color?
 
 
+#### navbar spacing/padding options
+- navbar spacing/padding options
+    - same with navbar items
+
 
 
 ### [1.0.0] - 2023-11-DD
