@@ -112,17 +112,6 @@
 - default to current values
 
 
-#### main color variables
-- are primary and secondary color required?
-  - add docs for this
-- add support for 'accent' color?
-  - could default to secondary?
-  - add docs for this
-  - add as color option for:
-    - button
-    - link?
-
-
 ---
 
 #### bb select multiple field bug
@@ -154,8 +143,27 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 
 
 
+#### tertiary color
+- add support for it?
+  - could default to the secondary color if required
+- add to docs
+-
+- add as color option for:
+  - button
+  - link?
+  - anywhere we offer 'primary'
+
+#### main color variables
+- are primary and secondary color required?
+  - add docs for this
+
+
+
 ### [1.0.0] - 2024-01-DD
+#### Features
 - Added options for `BBNavbar` and `BBNavbarItem` padding and margins
+#### Bugs
+- Cleaned up primary and secondary color variables
 #### TODO
 
 -------------------------------------------------------
