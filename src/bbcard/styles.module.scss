@@ -1,9 +1,12 @@
 $border-radius: var(--card-border-radius, 8px);
+$bg-color: var(--bg-color, #dddddd);
+$bg-light-color: var(--bg-light-color, #ffffff);
+$bg-dark-color: var(--bg-dark-color, #b1b1b1);
 
 .base {
   border-radius: calc($border-radius + 2px);
-  background: var(--bg-light-color, #ffffff) !important;
-  border: 2px solid var(--bg-color, #dddddd);
+  background: $bg-light-color !important;
+  border: 2px solid $bg-color;
   white-space: normal;
 
   display: flex;
@@ -32,12 +35,12 @@ $border-radius: var(--card-border-radius, 8px);
   &:hover {
     cursor: pointer;
     transform: translateY(-1%);
-    background-color: var(--bg-dark-color, #b1b1b1);
+    background-color: $bg-dark-color;
     box-shadow: rgba(0, 0, 0, 0.12) 10px 15px 20px;
 
     .header {
-      background-color: var(--bg-dark-color, #b1b1b1);
-      border-bottom: 1px solid var(--bg-dark-color, #b1b1b1) !important;
+      background-color: $bg-dark-color;
+      border-bottom: 1px solid $bg-dark-color !important;
     }
   }
 }
@@ -47,8 +50,8 @@ $border-radius: var(--card-border-radius, 8px);
 */
 .header {
   padding: 16px;
-  border-bottom: 1px solid var(--bg-light-color, #ffffff) !important;
-  background-color: var(--bg-color, #dddddd);
+  border-bottom: 1px solid $bg-light-color !important;
+  background-color: $bg-color;
   border-radius: $border-radius $border-radius 0 0;
 }
 
@@ -65,13 +68,13 @@ $border-radius: var(--card-border-radius, 8px);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background: var(--bg-light-color, #ffffff);
+  background: $bg-light-color;
 }
 
 .footer {
   padding: 16px;
-  border-top: 1px solid var(--bg-light-color, #ffffff);
-  background-color: var(--bg-color, #dddddd);
+  border-top: 1px solid $bg-light-color;
+  background-color: $bg-color;
   border-radius: 0 0 $border-radius $border-radius;
 }
 
