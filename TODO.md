@@ -97,21 +97,17 @@
 
 ----
 
-#### remove next theme?
-- do we need the next-theme package?
+#### tertiary color
+- add support for it?
+  - could default to the secondary color if required
+- add to docs
+-
+- add as color option for:
+  - button
+  - link?
+  - anywhere we offer 'primary' adn 'secondary' as color options
 
 
-#### bbnavbar item - bugs
-- hover not really workings?
-
-
-
-#### loading spinner variants
-- add more css and variants for loading spinner
-
-
-
----
 
 #### bb select multiple field bug
 - still not really the best solution - only says field is requied not what field
@@ -127,6 +123,13 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 > 39 |   : `Error - ${type} '${(ref as Ref).name.replace(/_/g, ' ').replace(/-/g, ' ')}'
 ```
 
+---
+
+
+#### loading spinner variants
+- add more css and variants for loading spinner
+
+
 
 #### bbbutton - bugs
 - disabled
@@ -141,16 +144,16 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
   - add 'transparent' option for background color?
 
 
+---
 
-#### tertiary color
-- add support for it?
-  - could default to the secondary color if required
-- add to docs
--
-- add as color option for:
-  - button
-  - link?
-  - anywhere we offer 'primary' adn 'secondary' as color options
+
+
+#### remove next theme?
+- do we need the next-theme package?
+
+
+#### bbnavbar item - bugs
+- hover not really workings?
 
 
 
