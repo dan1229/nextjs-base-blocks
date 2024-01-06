@@ -46,9 +46,7 @@
   - bb text - italics field
 
 
-
-
-#### demo page - bbmodal demo doesnt work great
+#### demo page - bbmodal demo doesn't work great
 - need way to hide modal
 - onCancel and onConfirm need to update showComponent state in DemoComponent
 
@@ -62,14 +60,16 @@
 - idk fix it
 
 
+
+----
+### 1.1.0
+
+
 #### demo page - form components
 - just add them
 - probably in a different page
 - make sections expandable
 
-
-----
-### 1.0.1?
 
 
 #### bb field dropdown styling
@@ -110,7 +110,7 @@
 
 
 #### bb select multiple field bug
-- still not really the best solution - only says field is requied not what field
+- still not really the best solution - only says field is required not what field
 
 ```
 TypeError: ref.name is undefined
