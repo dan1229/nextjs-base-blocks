@@ -40,7 +40,9 @@ You are also able to customize `Base Blocks` via SCSS variables. You typically w
 The available options are here:
 
 ```scss
-// keep these variables separate to allow for lighten/darken usage
+// keep these variables separate to allow for dynamic lighten/darken usage
+// NOTE: these are not required but it is highly recommended to at least
+// set these theme colors
 $primary-color: #5a65ff;
 $secondary-color: #45b689;
 $info-color: #284af7;
@@ -64,6 +66,7 @@ html,
   --grey-light: #8199c2;
   --grey-dark: #58647a;
   --grey-darkest: #2d3a4f;
+  // theme colors
   --info-color: #{$info-color};
   --info-dark-color: #{darken($info-color, 10%)};
   --info-light-color: #{lighten($info-color, 10%)};
@@ -81,7 +84,6 @@ html,
   --bg-light-color: rgb(255, 255, 255) !important;
   --bg-dark-color: rgb(177, 177, 177) !important;
   --bs-body-color: rgb(24, 23, 23) !important;
-  --text-primary: rgb(24, 23, 23) !important;
   // bb alert
   --alert-border-radius: 8px;
   // bb button
@@ -98,6 +100,7 @@ html,
   --navbar-item-border-radius: 8px;
   --navbar-item-padding: 24px;
   // bb text
+  --bbtext-color-primary: rgb(24, 23, 23) !important;
   --text-size-xs: 0.6rem;
   --text-size-s: 0.8rem;
   --text-size-m: 1rem;
@@ -132,7 +135,7 @@ Add overrides for dark themes like so:
   --bg-light-color: rgb(60, 60, 60) !important;
   --bg-dark-color: rgb(39, 39, 39) !important;
   --bs-body-color: rgb(245, 245, 245) !important;
-  --text-primary: rgb(255, 255, 255) !important;
+  --bbtext-color-primary: rgb(255, 255, 255) !important;
 }
 ```
 -------------------------------------------------------

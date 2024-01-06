@@ -107,10 +107,6 @@
 - add more css and variants for loading spinner
 
 
-#### bbcard customizable background colors
-- make it a variable!
-- default to current values
-
 
 ---
 
@@ -151,11 +147,13 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 - add as color option for:
   - button
   - link?
-  - anywhere we offer 'primary'
+  - anywhere we offer 'primary' adn 'secondary' as color options
 
-#### main color variables
-- are primary and secondary color required?
-  - add docs for this
+
+
+#### bbcard customizable background colors
+- make it a variable!
+- default to current values
 
 
 
@@ -164,6 +162,9 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 - Added options for `BBNavbar` and `BBNavbarItem` padding and margins
 #### Bugs
 - Cleaned up primary and secondary color variables
+  - Cleaned up usages of all color variables
+  - `text-primary` variable renamed `bbtext-color-primary`
+  - Lots of other refactoring and clean up of colors and color variables
 #### TODO
 
 -------------------------------------------------------

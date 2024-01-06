@@ -1,3 +1,33 @@
+// color redefinitions to standardize across this file/component
+//
+$white: var(--white, #ffffff);
+$grey-light: var(--grey-light, #8199c2);
+$grey-dark: var(--grey-dark, #58647a);
+
+$info-color: var(--info-color, #284af7);
+$info-light-color: var(--info-light-color, lighten(#284af7, 10%));
+$info-dark-color: var(--info-dark-color, darken(#284af7, 10%));
+
+$primary-color: var(--primary-color, #e8352e);
+$primary-light-color: var(--primary-light-color, lighten(#e8352e, 10%));
+$primary-dark-color: var(--primary-dark-color, darken(#e8352e, 10%));
+
+$secondary-color: var(--secondary-color, #284af7);
+$secondary-light-color: var(--secondary-light-color, lighten(#284af7, 10%));
+$secondary-dark-color: var(--secondary-dark-color, darken(#284af7, 10%));
+
+$danger-color: var(--danger-color, #e8352e);
+$danger-light-color: var(--danger-light-color, lighten(#e8352e, 10%));
+$danger-dark-color: var(--danger-dark-color, darken(#e8352e, 10%));
+
+$success-color: var(--success-color, #50c758);
+$success-light-color: var(--success-light-color, lighten(#50c758, 10%));
+$success-dark-color: var(--success-dark-color, darken(#50c758, 10%));
+
+$warning-color: var(--warning-color, #f1c500);
+$warning-light-color: var(--warning-light-color, lighten(#f1c500, 10%));
+$warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
+
 .base {
   padding: 0.6rem;
   border-radius: var(--button-border-radius, 4px);
@@ -29,8 +59,8 @@
 }
 
 .disabled {
-  background-color: var(--grey-dark, #6e6e6e) !important;
-  color: var(--white, #ffffff) !important;
+  background-color: $grey-dark !important;
+  color: $white !important;
 }
 
 .containerIcon {
@@ -72,161 +102,161 @@
   */
 // PRIMARY
 .primary {
-  background-color: var(--primary-color, #e8352e);
-  border: 1px solid var(--primary-color, #e8352e);
-  color: var(--white, #ffffff);
+  background-color: $primary-color;
+  border: 1px solid $primary-color;
+  color: $white;
 }
 .primary.hover:hover > div * {
-  color: var(--primary-light-color) !important;
+  color: $primary-light-color !important;
 }
 .primary.focus > div * {
-  color: var(--primary-light-color) !important;
+  color: $primary-light-color !important;
 }
 .primary:active {
-  background-color: var(--primary-dark-color, #a71813);
-  border: 1px solid var(--primary-dark-color, #a71813);
+  background-color: $primary-dark-color;
+  border: 1px solid $primary-dark-color;
 }
 
 // SECONDARY
 .secondary {
-  background-color: var(--secondary-color, #284af7);
-  border: 1px solid var(--secondary-color, #284af7);
-  color: var(--white);
+  background-color: $secondary-color;
+  border: 1px solid $secondary-color;
+  color: $white;
 }
 .secondary.hover:hover > div * {
-  color: var(--secondary-light-color, #5b75f7) !important;
+  color: $primary-light-color !important;
 }
 .secondary.focus > div * {
-  color: var(--secondary-light-color, #5b75f7) !important;
+  color: $primary-light-color !important;
 }
 .secondary:active {
-  background-color: var(--secondary-dark-color, #1e3aee);
-  border: 1px solid var(--secondary-dark-color, #1e3aee);
+  background-color: $primary-dark-color;
+  border: 1px solid $primary-dark-color;
 }
 
 // DANGER
 .danger {
-  background-color: var(--danger-color, #e8352e);
-  border: 1px solid var(--danger-color, #e8352e);
-  color: var(--white);
+  background-color: $danger-color;
+  border: 1px solid $danger-color;
+  color: $white;
 }
 .danger.hover:hover > div * {
-  color: var(--danger-light-color, #fb7f7b) !important;
+  color: $danger-light-color !important;
 }
 .danger.focus > div * {
-  color: var(--danger-light-color, #fb7f7b) !important;
+  color: $danger-light-color !important;
 }
 .danger:active {
-  background-color: var(--danger-dark-color, #a71813);
-  border: 1px solid var(--danger-dark-color, #a71813);
+  background-color: $danger-dark-color;
+  border: 1px solid $danger-dark-color;
 }
 
 // SUCCESS
 .success {
-  background-color: var(--success-color, #50c758);
-  border: 1px solid var(--success-color, #50c758);
-  color: var(--white, #ffffff);
+  background-color: $success-color;
+  border: 1px solid $success-color;
+  color: $white;
 }
 .success.hover:hover > div * {
-  color: var(--success-light-color, #85f68d) !important;
+  color: $success-light-color !important;
 }
 .success.focus > div * {
-  color: var(--success-light-color, #85f68d) !important;
+  color: $success-light-color !important;
 }
 .success:active {
-  background-color: var(--success-dark-color, #2e9e3a);
-  border: 1px solid var(--success-dark-color, #2e9e3a);
+  background-color: $success-dark-color;
+  border: 1px solid $success-dark-color;
 }
 
 // WARNING
 .warning {
-  background-color: var(--warning-color, #f1c500);
-  border: 1px solid var(--warning-color, #f1c500);
-  color: var(--white);
+  background-color: $warning-color;
+  border: 1px solid $warning-color;
+  color: $white;
 }
 .warning.hover:hover > div * {
-  color: var(--warning-light-color, #fee46d) !important;
+  color: $warning-light-color !important;
 }
 .warning.focus > div * {
-  color: var(--warning-light-color, #fee46d) !important;
+  color: $warning-light-color !important;
 }
 .warning:active {
-  background-color: var(--warning-dark-color, #c9a400);
-  border: 1px solid var(--warning-dark-color, #c9a400);
+  background-color: $warning-dark-color;
+  border: 1px solid $warning-dark-color;
 }
 
 // INFO
 .info {
-  background-color: var(--info-color, #284af7);
-  border: 1px solid var(--info-color, #284af7);
-  color: var(--white);
+  background-color: $info-color;
+  border: 1px solid $info-color;
+  color: $white;
 }
 .info.hover:hover > div * {
-  color: var(--info-light-color, #5d72f7) !important;
+  color: $info-light-color !important;
 }
 .info.focus > div * {
-  color: var(--info-light-color, #5d72f7) !important;
+  color: $info-light-color !important;
 }
 .info:active {
-  background-color: var(--info-dark-color, #1e3aee);
-  border: 1px solid var(--info-dark-color, #1e3aee);
+  background-color: $info-dark-color;
+  border: 1px solid $info-dark-color;
 }
 
 // INVERSE INFO
 .inverseInfo {
-  background-color: var(--white, #ffffff);
-  border: 2px solid var(--info-color, #284af7);
+  background-color: $white;
+  border: 2px solid $info-color;
   * {
-    color: var(--info-color, #284af7) !important;
+    color: $info-color !important;
   }
   &:hover {
-    background-color: var(--grey-light, #b0b0b0);
+    background-color: $grey-light;
   }
 }
 .inverseInfo.focus > div * {
-  color: var(--grey-light, #b0b0b0) !important;
+  color: $grey-light !important;
 }
 .inverseInfo:active {
-  background-color: var(--grey-dark, #6e6e6e);
-  border: 2px solid var(--grey-dark, #6e6e6e);
+  background-color: $grey-dark;
+  border: 2px solid $grey-dark;
 }
 
 // INVERSE PRIMARY
 .inversePrimary {
-  background-color: var(--white, #ffffff);
-  border: 2px solid var(--primary-color, #e8352e);
+  background-color: $white;
+  border: 2px solid $primary-color;
   * {
-    color: var(--primary-color, #e8352e) !important;
+    color: $primary-color !important;
   }
   &:hover {
-    background-color: var(--grey-light, #b0b0b0);
+    background-color: $grey-light;
   }
 }
 .inversePrimary.focus > div * {
-  color: var(--grey-light, #b0b0b0) !important;
+  color: $grey-light !important;
 }
 .inversePrimary:active {
-  background-color: var(--grey-dark, #6e6e6e);
-  border: 2px solid var(--grey-dark, #6e6e6e);
+  background-color: $grey-dark;
+  border: 2px solid $grey-dark;
 }
 
 // INVERSE SECONDARY
 .inverseSecondary {
-  background-color: var(--white, #ffffff);
-  border: 2px solid var(--secondary-color, #284af7);
+  background-color: $white;
+  border: 2px solid $secondary-color;
   * {
-    color: var(--secondary-color, #284af7) !important;
+    color: $secondary-color !important;
   }
   &:hover {
-    background-color: var(--grey-light, #b0b0b0);
+    background-color: $grey-light;
   }
 }
 .inverseSecondary.focus > div * {
-  color: var(--grey-light, #b0b0b0) !important;
+  color: $grey-light !important;
 }
 .inverseSecondary:active {
-  background-color: var(--grey-dark, #6e6e6e);
-  border: 2px solid var(--grey-dark, #6e6e6e);
+  background-color: $grey-dark;
+  border: 2px solid $grey-dark;
 }
 
 /*
