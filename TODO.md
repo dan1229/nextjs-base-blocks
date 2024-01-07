@@ -156,9 +156,6 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
   - add 'transparent' option for background color?
 
 
----
-
-
 
 
 ### [1.0.0] - 2024-01-DD
