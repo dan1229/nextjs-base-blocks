@@ -170,6 +170,7 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 - `BBButton` bugs
   - Disabled state improved
   - Added `transparent` prop for background color
+  - Secondary color variant fixes
 #### TODO
 
 -------------------------------------------------------
