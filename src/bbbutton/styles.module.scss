@@ -228,9 +228,10 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   }
   &:hover {
     background-color: $info-light-color;
+    border: 2px solid $info-dark-color;
   }
   &:hover > div * {
-    color: $white !important;
+    color: $info-dark-color !important;
   }
 }
 .inverseInfo.focus > div * {
@@ -250,9 +251,10 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   }
   &:hover {
     background-color: $primary-light-color;
+    border: 2px solid $primary-dark-color;
   }
   &:hover > div * {
-    color: $white !important;
+    color: $primary-dark-color !important;
   }
 }
 .inversePrimary.focus > div * {
@@ -272,9 +274,10 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   }
   &:hover {
     background-color: $secondary-light-color;
+    border: 2px solid $secondary-dark-color;
   }
   &:hover > div * {
-    color: $white !important;
+    color: $secondary-dark-color !important;
   }
 }
 .inverseSecondary.focus > div * {
