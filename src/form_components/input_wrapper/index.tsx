@@ -30,9 +30,7 @@ export default function InputWrapper(props: IPropsInputWrapper & IPropsBBBaseFor
   return (
     <div className={classnames('form-group', className)}>
       {showLabel && <label htmlFor={fieldName}>{getLabel(label, fieldName)}</label>}
-      {React.Children.map(children, (child) => {
-        return React.cloneElement(child, { props: childProps });
-      })}
+      {children}
     </div>
   );
 }
