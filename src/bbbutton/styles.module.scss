@@ -207,7 +207,7 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
 
 // INVERSE INFO
 .inverseInfo {
-  background-color: $white;
+  background-color: transparent;
   border: 2px solid $info-color;
   * {
     color: $info-color !important;
@@ -226,7 +226,7 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
 
 // INVERSE PRIMARY
 .inversePrimary {
-  background-color: $white;
+  background-color: transparent;
   border: 2px solid $primary-color;
   * {
     color: $primary-color !important;
@@ -245,7 +245,7 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
 
 // INVERSE SECONDARY
 .inverseSecondary {
-  background-color: $white;
+  background-color: transparent;
   border: 2px solid $secondary-color;
   * {
     color: $secondary-color !important;

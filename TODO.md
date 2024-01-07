@@ -144,12 +144,10 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 
 
 #### bbbutton - bugs
-- disabled
-  - outline color is wrong
 - inverse-info
   - focus could use better background color
 - inverses in general
-  - backgrounds odnt work great on dark mode
+  - backgrounds don't work great on dark mode
   - thicker backgrounds
   - add 'transparent' option for background color?
 
