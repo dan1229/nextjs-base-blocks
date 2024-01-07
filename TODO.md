@@ -73,7 +73,6 @@
 - make sections expandable
 
 
-
 #### bb field dropdown styling
 - add arrow or something
   - add to global styling
@@ -85,8 +84,14 @@
 - `sameColor` prop or something?
 - could allow them to pass colors directly?
 
+
+
+#### bbnavbar item - bugs
+- hover not really workings?
+
+
 ----
-### 1.0.0?
+### 1.0.0
 
 
 #### TEST BEFORE RELEASE
@@ -157,10 +162,6 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 
 #### remove next theme?
 - do we need the next-theme package?
-
-
-#### bbnavbar item - bugs
-- hover not really workings?
 
 
 
