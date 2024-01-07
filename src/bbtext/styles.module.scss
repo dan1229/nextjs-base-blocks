@@ -28,7 +28,7 @@
 
 // DEFAULT
 .color_default {
-  color: var(--text-primary, #000000);
+  color: var(--text-color-default, #000000);
 }
 
 // GREY LIGHT
@@ -55,7 +55,7 @@
 
 // BLACK
 .black {
-  color: var(--black, #000000);
+  color: var(--black, #232323);
 }
 .black.hover {
   &:hover {

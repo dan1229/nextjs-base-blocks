@@ -1,3 +1,35 @@
+// color redefinitions to standardize across this file/component
+//
+$white: var(--white, #ffffff);
+$grey-light: var(--grey-light, #8199c2);
+$grey-dark: var(--grey-dark, #58647a);
+$grey-darkest: var(--grey-darkest, #2f3542);
+
+$info-color: var(--info-color, #284af7);
+$info-light-color: var(--info-light-color, lighten(#284af7, 10%));
+$info-dark-color: var(--info-dark-color, darken(#284af7, 10%));
+
+$primary-color: var(--primary-color, #e8352e);
+$primary-light-color: var(--primary-light-color, lighten(#e8352e, 10%));
+$primary-dark-color: var(--primary-dark-color, darken(#e8352e, 10%));
+
+$secondary-color: var(--secondary-color, #284af7);
+$secondary-light-color: var(--secondary-light-color, lighten(#284af7, 10%));
+$secondary-dark-color: var(--secondary-dark-color, darken(#284af7, 10%));
+
+$danger-color: var(--danger-color, #e8352e);
+$danger-light-color: var(--danger-light-color, lighten(#e8352e, 10%));
+$danger-dark-color: var(--danger-dark-color, darken(#e8352e, 10%));
+
+$success-color: var(--success-color, #50c758);
+$success-light-color: var(--success-light-color, lighten(#50c758, 10%));
+$success-dark-color: var(--success-dark-color, darken(#50c758, 10%));
+
+$warning-color: var(--warning-color, #f1c500);
+$warning-light-color: var(--warning-light-color, lighten(#f1c500, 10%));
+$warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
+
+// base
 .base {
   padding: 0.6rem;
   border-radius: var(--button-border-radius, 4px);
@@ -8,18 +40,27 @@
   cursor: pointer;
 }
 
+// no margin
 .noMargin {
   margin: 0px !important;
 }
 
+// transparent
+.transparent {
+  background-color: transparent !important;
+}
+
+// base vertical
 .baseVertical {
   flex-direction: column;
 }
 
+// base space between
 .baseSpaceBetween {
   justify-content: space-between;
 }
 
+// container text
 .containerText {
   margin: 0px 4px;
   display: flex;
@@ -28,11 +69,15 @@
   align-items: center;
 }
 
+// disabled
 .disabled {
-  background-color: var(--grey-dark, #6e6e6e) !important;
-  color: var(--white, #ffffff) !important;
+  background-color: $grey-dark !important;
+  border: 1px solid $grey-darkest !important;
+  color: $white !important;
+  cursor: not-allowed;
 }
 
+// container icon
 .containerIcon {
   margin: 0 6px;
   display: flex;
@@ -41,6 +86,7 @@
   align-items: center;
 }
 
+// show text on hover
 .showTextOnHover {
   h1,
   h2,
@@ -67,171 +113,9 @@
   }
 }
 
-/*
-  * VARIANTS
-  */
-// PRIMARY
-.primary {
-  background-color: var(--primary-color, #e8352e);
-  border: 1px solid var(--primary-color, #e8352e);
-  color: var(--white, #ffffff);
-}
-.primary.hover:hover > div * {
-  color: var(--primary-light-color) !important;
-}
-.primary.focus > div * {
-  color: var(--primary-light-color) !important;
-}
-.primary:active {
-  background-color: var(--primary-dark-color, #a71813);
-  border: 1px solid var(--primary-dark-color, #a71813);
-}
-
-// SECONDARY
-.secondary {
-  background-color: var(--secondary-color, #284af7);
-  border: 1px solid var(--secondary-color, #284af7);
-  color: var(--white);
-}
-.secondary.hover:hover > div * {
-  color: var(--secondary-light-color, #5b75f7) !important;
-}
-.secondary.focus > div * {
-  color: var(--secondary-light-color, #5b75f7) !important;
-}
-.secondary:active {
-  background-color: var(--secondary-dark-color, #1e3aee);
-  border: 1px solid var(--secondary-dark-color, #1e3aee);
-}
-
-// DANGER
-.danger {
-  background-color: var(--danger-color, #e8352e);
-  border: 1px solid var(--danger-color, #e8352e);
-  color: var(--white);
-}
-.danger.hover:hover > div * {
-  color: var(--danger-light-color, #fb7f7b) !important;
-}
-.danger.focus > div * {
-  color: var(--danger-light-color, #fb7f7b) !important;
-}
-.danger:active {
-  background-color: var(--danger-dark-color, #a71813);
-  border: 1px solid var(--danger-dark-color, #a71813);
-}
-
-// SUCCESS
-.success {
-  background-color: var(--success-color, #50c758);
-  border: 1px solid var(--success-color, #50c758);
-  color: var(--white, #ffffff);
-}
-.success.hover:hover > div * {
-  color: var(--success-light-color, #85f68d) !important;
-}
-.success.focus > div * {
-  color: var(--success-light-color, #85f68d) !important;
-}
-.success:active {
-  background-color: var(--success-dark-color, #2e9e3a);
-  border: 1px solid var(--success-dark-color, #2e9e3a);
-}
-
-// WARNING
-.warning {
-  background-color: var(--warning-color, #f1c500);
-  border: 1px solid var(--warning-color, #f1c500);
-  color: var(--white);
-}
-.warning.hover:hover > div * {
-  color: var(--warning-light-color, #fee46d) !important;
-}
-.warning.focus > div * {
-  color: var(--warning-light-color, #fee46d) !important;
-}
-.warning:active {
-  background-color: var(--warning-dark-color, #c9a400);
-  border: 1px solid var(--warning-dark-color, #c9a400);
-}
-
-// INFO
-.info {
-  background-color: var(--info-color, #284af7);
-  border: 1px solid var(--info-color, #284af7);
-  color: var(--white);
-}
-.info.hover:hover > div * {
-  color: var(--info-light-color, #5d72f7) !important;
-}
-.info.focus > div * {
-  color: var(--info-light-color, #5d72f7) !important;
-}
-.info:active {
-  background-color: var(--info-dark-color, #1e3aee);
-  border: 1px solid var(--info-dark-color, #1e3aee);
-}
-
-// INVERSE INFO
-.inverseInfo {
-  background-color: var(--white, #ffffff);
-  border: 2px solid var(--info-color, #284af7);
-  * {
-    color: var(--info-color, #284af7) !important;
-  }
-  &:hover {
-    background-color: var(--grey-light, #b0b0b0);
-  }
-}
-.inverseInfo.focus > div * {
-  color: var(--grey-light, #b0b0b0) !important;
-}
-.inverseInfo:active {
-  background-color: var(--grey-dark, #6e6e6e);
-  border: 2px solid var(--grey-dark, #6e6e6e);
-}
-
-// INVERSE PRIMARY
-.inversePrimary {
-  background-color: var(--white, #ffffff);
-  border: 2px solid var(--primary-color, #e8352e);
-  * {
-    color: var(--primary-color, #e8352e) !important;
-  }
-  &:hover {
-    background-color: var(--grey-light, #b0b0b0);
-  }
-}
-.inversePrimary.focus > div * {
-  color: var(--grey-light, #b0b0b0) !important;
-}
-.inversePrimary:active {
-  background-color: var(--grey-dark, #6e6e6e);
-  border: 2px solid var(--grey-dark, #6e6e6e);
-}
-
-// INVERSE SECONDARY
-.inverseSecondary {
-  background-color: var(--white, #ffffff);
-  border: 2px solid var(--secondary-color, #284af7);
-  * {
-    color: var(--secondary-color, #284af7) !important;
-  }
-  &:hover {
-    background-color: var(--grey-light, #b0b0b0);
-  }
-}
-.inverseSecondary.focus > div * {
-  color: var(--grey-light, #b0b0b0) !important;
-}
-.inverseSecondary:active {
-  background-color: var(--grey-dark, #6e6e6e);
-  border: 2px solid var(--grey-dark, #6e6e6e);
-}
-
-/*
-  * ELEVATION
-  */
+/**
+* ELEVATION
+*/
 .elevationNone {
   box-shadow: none;
 }
@@ -246,4 +130,179 @@
 
 .elevationHigh {
   box-shadow: rgba(0, 0, 0, 0.3) 0px 15px 30px, rgba(0, 0, 0, 0.22) 0px 12px 10px;
+}
+
+/**
+* VARIANTS
+*/
+
+// PRIMARY
+.primary {
+  background-color: $primary-color;
+  border: 1px solid $primary-color;
+  color: $white;
+}
+.primary.hover:hover > div * {
+  color: $primary-light-color !important;
+}
+.primary.focus > div * {
+  color: $primary-light-color !important;
+}
+.primary:active {
+  background-color: $primary-dark-color;
+  border: 1px solid $primary-dark-color;
+}
+
+// SECONDARY
+.secondary {
+  background-color: $secondary-color;
+  border: 1px solid $secondary-color;
+  color: $white;
+}
+.secondary.hover:hover > div * {
+  color: $secondary-light-color !important;
+}
+.secondary.focus > div * {
+  color: $secondary-light-color !important;
+}
+.secondary:active {
+  background-color: $secondary-dark-color;
+  border: 1px solid $secondary-dark-color;
+}
+
+// DANGER
+.danger {
+  background-color: $danger-color;
+  border: 1px solid $danger-color;
+  color: $white;
+}
+.danger.hover:hover > div * {
+  color: $danger-light-color !important;
+}
+.danger.focus > div * {
+  color: $danger-light-color !important;
+}
+.danger:active {
+  background-color: $danger-dark-color;
+  border: 1px solid $danger-dark-color;
+}
+
+// SUCCESS
+.success {
+  background-color: $success-color;
+  border: 1px solid $success-color;
+  color: $white;
+}
+.success.hover:hover > div * {
+  color: $success-light-color !important;
+}
+.success.focus > div * {
+  color: $success-light-color !important;
+}
+.success:active {
+  background-color: $success-dark-color;
+  border: 1px solid $success-dark-color;
+}
+
+// WARNING
+.warning {
+  background-color: $warning-color;
+  border: 1px solid $warning-color;
+  color: $white;
+}
+.warning.hover:hover > div * {
+  color: $warning-light-color !important;
+}
+.warning.focus > div * {
+  color: $warning-light-color !important;
+}
+.warning:active {
+  background-color: $warning-dark-color;
+  border: 1px solid $warning-dark-color;
+}
+
+// INFO
+.info {
+  background-color: $info-color;
+  border: 1px solid $info-color;
+  color: $white;
+}
+.info.hover:hover > div * {
+  color: $info-light-color !important;
+}
+.info.focus > div * {
+  color: $info-light-color !important;
+}
+.info:active {
+  background-color: $info-dark-color;
+  border: 1px solid $info-dark-color;
+}
+
+// INVERSE INFO
+.inverseInfo {
+  background-color: $white;
+  border: 2px solid $info-color;
+  * {
+    color: $info-color !important;
+  }
+  &:hover {
+    background-color: $info-light-color;
+    border: 2px solid $info-dark-color;
+  }
+  &:hover > div * {
+    color: $info-dark-color !important;
+  }
+}
+.inverseInfo.focus > div * {
+  color: $info-light-color !important;
+}
+.inverseInfo:active {
+  background-color: $info-dark-color;
+  border: 2px solid $info-dark-color;
+}
+
+// INVERSE PRIMARY
+.inversePrimary {
+  background-color: $white;
+  border: 2px solid $primary-color;
+  * {
+    color: $primary-color !important;
+  }
+  &:hover {
+    background-color: $primary-light-color;
+    border: 2px solid $primary-dark-color;
+  }
+  &:hover > div * {
+    color: $primary-dark-color !important;
+  }
+}
+.inversePrimary.focus > div * {
+  color: $primary-dark-color !important;
+}
+.inversePrimary:active {
+  background-color: $primary-dark-color;
+  border: 2px solid $primary-dark-color;
+}
+
+// INVERSE SECONDARY
+.inverseSecondary {
+  background-color: $white;
+  border: 2px solid $secondary-color;
+  * {
+    color: $secondary-light-color !important;
+  }
+  &:hover {
+    background-color: $secondary-light-color;
+    border: 2px solid $secondary-dark-color;
+  }
+  &:hover > div * {
+    color: $secondary-dark-color !important;
+  }
+}
+.inverseSecondary.focus > div * {
+  color: $grey-light !important;
+}
+.inverseSecondary:active {
+  background-color: $secondary-dark-color;
+  border: 2px solid $secondary-dark-color;
 }

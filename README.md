@@ -24,7 +24,6 @@ If you ever want to move away or edit the base components, you can easily 'remov
 You must have the following installed to use this submodule
 - [React Hook Forms](https://react-hook-form.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
-- [Next Themes](https://www.npmjs.com/package/next-themes)
 - [Recoil](https://recoiljs.org/)
 - [Sass](https://sass-lang.com/)
 - [Node Sass](https://www.npmjs.com/package/node-sass)
@@ -40,7 +39,9 @@ You are also able to customize `Base Blocks` via SCSS variables. You typically w
 The available options are here:
 
 ```scss
-// keep these variables separate to allow for lighten/darken usage
+// keep these variables separate to allow for dynamic lighten/darken usage
+// NOTE: these are not required but it is highly recommended to at least
+// set these theme colors
 $primary-color: #5a65ff;
 $secondary-color: #45b689;
 $info-color: #284af7;
@@ -60,10 +61,13 @@ html,
   --secondary-light-color: #{lighten($secondary-color, 10%)};
   // general colors
   --white: #fff;
+  --white-dark: #f5f5f5;
   --black: 35, 35, 35;
-  --grey-light: #8199c2;
+  --grey-light: #a9bcde;
+  --grey-light-dark: #a8b6cc;  // used for hover states and similar
   --grey-dark: #58647a;
-  --grey-darkest: #2d3a4f;
+  --grey-darkest: #606775;
+  // theme colors
   --info-color: #{$info-color};
   --info-dark-color: #{darken($info-color, 10%)};
   --info-light-color: #{lighten($info-color, 10%)};
@@ -81,20 +85,27 @@ html,
   --bg-light-color: rgb(255, 255, 255) !important;
   --bg-dark-color: rgb(177, 177, 177) !important;
   --bs-body-color: rgb(24, 23, 23) !important;
-  --text-primary: rgb(24, 23, 23) !important;
   // bb alert
   --alert-border-radius: 8px;
   // bb button
   --button-border-radius: 8px;
   // bb card
+  --card-background-default-color: rgb(255, 255, 255);
+  --card-darken-default-color: rgb(39, 39, 39);
+  --card-border-default-color: rgb(221, 221, 221);
   --card-border-radius: 8px;
+  --card-border-thickness: 3px;
   // bb navbar
   --navbar-border-radius: 8px;
   --navbar-background-color: rgb(221, 221, 221);
   --navbar-title-color: rgb(24, 23, 23);
+  --navbar-brand-padding: 0rem;
+  --navbar-container-brand-margin: 0.5rem;
   // bb navbar item
   --navbar-item-border-radius: 8px;
+  --navbar-item-padding: 12px;
   // bb text
+  --text-color-default: rgb(24, 23, 23) !important;
   --text-size-xs: 0.6rem;
   --text-size-s: 0.8rem;
   --text-size-m: 1rem;
@@ -110,8 +121,8 @@ html,
   --mobile-text-size-xxl: 2.8rem;
   --mobile-text-size-xxxl: 3.2rem;
   // font family
-  --font-family-header: 'Montserrat';  // Used for larger fonts/headers
   --font-family-main: 'Josefin Sans';  // Used for main text
+  --font-family-header: 'Montserrat';  // Used for larger fonts/headers
 }
 ```
 
@@ -129,7 +140,12 @@ Add overrides for dark themes like so:
   --bg-light-color: rgb(60, 60, 60) !important;
   --bg-dark-color: rgb(39, 39, 39) !important;
   --bs-body-color: rgb(245, 245, 245) !important;
-  --text-primary: rgb(255, 255, 255) !important;
+  // bb card
+  --card-background-default-color: rgb(255, 255, 255);
+  --card-darken-default-color: rgb(39, 39, 39);
+  --card-border-default-color: rgb(221, 221, 221);
+  // bb text
+  --text-color-default: rgb(255, 255, 255) !important;
 }
 ```
 -------------------------------------------------------

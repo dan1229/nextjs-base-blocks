@@ -44,7 +44,9 @@ export type TBBButtonVariant =
   | 'info'
   | 'inverse-info'
   | 'inverse-primary'
-  | 'inverse-secondary';
+  | 'inverse-secondary'
+  | 'transparent-primary'
+  | 'transparent-secondary';
 export type TBBButtonSize = 'sm' | 'md' | 'lg';
 export type TBBButtonElevation = 'none' | 'low' | 'medium' | 'high';
 export type TBBButtonIconAlign = 'left' | 'right' | 'above' | 'below' | 'space-between';
@@ -55,6 +57,14 @@ export type TBBButtonIconAlign = 'left' | 'right' | 'above' | 'below' | 'space-b
 export type TBBAlertVariant = 'success' | 'warning' | 'danger' | 'info';
 export type TBBAlertElevation = 'none' | 'low' | 'medium' | 'high';
 export type TBBAlertTextAlignment = 'left' | 'center' | 'right';
+
+/**
+ * BBCard
+ */
+export type TBBCardColorBackground = 'default' | 'white' | 'grey_light' | 'grey_dark' | 'black' | 'primary' | 'secondary';
+export type TBBCardColorBorder = 'default' | 'transparent' | 'white' | 'grey_light' | 'grey_dark' | 'black' | 'primary' | 'secondary';
+export type TBBCardElevation = 'none' | 'low' | 'med' | 'high';
+export type TBBCardStyle = 'default' | 'transparent';
 
 // TBBFieldBase
 export type TBBFieldBaseTypes = 'file' | 'checkbox' | 'number';

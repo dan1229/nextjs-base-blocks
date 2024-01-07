@@ -1,12 +1,4 @@
 import React, { useState } from 'react';
-import type { IPropsBBAlert } from '../bbalert';
-import type { IPropsBBButton } from '../bbbutton';
-import type { IPropsBBCard } from '../bbcard';
-import type { IPropsBBLink } from '../bblink';
-import type { IPropsBBModal } from '../bbmodal';
-import type { IPropsBBNavbar } from '../bbnavbar';
-import type { IPropsBBNavbarItem } from '../bbnavbar_item';
-import type { IPropsBBText } from '../bbtext';
 import BBAlert from '../bbalert';
 import BBButton from '../bbbutton';
 import BBCard from '../bbcard';
@@ -17,6 +9,14 @@ import BBNavbar from '../bbnavbar';
 import BBNavbarItem from '../bbnavbar_item';
 import BBText from '../bbtext';
 import DemoComponent from '../demo_components/demo_component';
+import type { IPropsBBAlert } from '../bbalert';
+import type { IPropsBBButton } from '../bbbutton';
+import type { IPropsBBCard } from '../bbcard';
+import type { IPropsBBLink } from '../bblink';
+import type { IPropsBBModal } from '../bbmodal';
+import type { IPropsBBNavbar } from '../bbnavbar';
+import type { IPropsBBNavbarItem } from '../bbnavbar_item';
+import type { IPropsBBText } from '../bbtext';
 
 /**
  * DEMO PAGE
@@ -57,7 +57,8 @@ const DemoPage = () => {
   });
   // BB Card
   const [stateBBCard, setStateBBCard] = useState<IPropsBBCard>({
-    colorBackground: 'white',
+    colorBackground: 'primary',
+    colorBorder: 'transparent',
     elevation: 'none',
     cardStyle: 'default',
     className: '',
@@ -149,7 +150,9 @@ const DemoPage = () => {
           name="BBCard"
           child={
             <BBCard {...stateBBCard}>
+              <BBCard.Header {...stateBBCard} />
               <BBCard.Body {...stateBBCard} />
+              <BBCard.Footer {...stateBBCard} />
             </BBCard>
           }
           stateObject={stateBBCard}

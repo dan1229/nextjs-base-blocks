@@ -1,11 +1,7 @@
 import classNames from 'classnames';
-import { useTheme } from 'next-themes';
 import React from 'react';
 import styles from './styles.module.scss';
-
-export type TBBCardColorBackground = 'white' | 'grey_light' | 'grey_dark' | 'black';
-export type TBBCardElevation = 'none' | 'low' | 'med' | 'high';
-export type TBBCardStyle = 'default' | 'transparent';
+import type { TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation, TBBCardStyle } from '../types';
 
 const getChildrenOnDisplayName = (children: React.ReactNode | React.ReactNode[], displayName: string) => {
   return React.Children.map(children, (child) => {
@@ -39,6 +35,7 @@ const getChildrenOnDisplayName = (children: React.ReactNode | React.ReactNode[],
 export interface IPropsBBCard {
   children: React.ReactNode | React.ReactNode[];
   colorBackground?: TBBCardColorBackground;
+  colorBorder?: TBBCardColorBorder;
   elevation?: TBBCardElevation;
   cardStyle?: TBBCardStyle;
   className?: string;
@@ -50,10 +47,10 @@ export interface IPropsBBCard {
  * BBCard
  */
 const BBCard = (Props: IPropsBBCard) => {
-  const { theme } = useTheme();
   const {
     children,
-    colorBackground = theme == 'dark' ? 'white' : 'black',
+    colorBackground = 'default',
+    colorBorder = 'transparent',
     elevation = 'med',
     cardStyle = 'default',
     className,
@@ -66,6 +63,8 @@ const BBCard = (Props: IPropsBBCard) => {
 
   const getClassColorBackground = (): string => {
     switch (colorBackground) {
+      case 'default':
+        return styles.background_default;
       case 'white':
         return styles.background_white;
       case 'grey_light':
@@ -74,6 +73,31 @@ const BBCard = (Props: IPropsBBCard) => {
         return styles.background_grey_dark;
       case 'black':
         return styles.background_black;
+      case 'primary':
+        return styles.background_primary;
+      case 'secondary':
+        return styles.background_secondary;
+    }
+  };
+
+  const getClassColorBorder = (): string => {
+    switch (colorBorder) {
+      case 'default':
+        return styles.border_default;
+      case 'transparent':
+        return styles.border_transparent;
+      case 'white':
+        return styles.border_white;
+      case 'grey_light':
+        return styles.border_grey_light;
+      case 'grey_dark':
+        return styles.border_grey_dark;
+      case 'black':
+        return styles.border_black;
+      case 'primary':
+        return styles.border_primary;
+      case 'secondary':
+        return styles.border_secondary;
     }
   };
 
@@ -112,6 +136,7 @@ const BBCard = (Props: IPropsBBCard) => {
         noBorder && styles.no_border,
         getCardStyle(),
         getClassColorBackground(),
+        getClassColorBorder(),
         getClassElevation()
       )}
     >

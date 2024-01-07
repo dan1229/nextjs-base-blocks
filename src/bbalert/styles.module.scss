@@ -47,7 +47,7 @@
 .color_warning {
   background-color: var(--warning-color, #f1c500);
   & > div {
-    color: var(--black) !important;
+    color: var(--black, #232323) !important;
   }
 }
 

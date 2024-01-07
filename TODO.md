@@ -40,19 +40,17 @@
   - i.e., multiple bbnavbar items
 
 
-#### demo page - do boolean fields work
+#### demo page - do boolean fields work at all?
 - test and if not fix
 - some dont
   - bb text - italics field
-
-----
-### 0.4.0
+  - bb card - noborder field
 
 
-
-#### demo page - bbmodal demo doesnt work great
+#### demo page - bbmodal demo doesn't work great
 - need way to hide modal
 - onCancel and onConfirm need to update showComponent state in DemoComponent
+
 
 
 #### demo page - show options for props
@@ -64,12 +62,15 @@
 - idk fix it
 
 
+
+----
+### 1.1.0
+
+
 #### demo page - form components
 - just add them
 - probably in a different page
 - make sections expandable
-
----
 
 
 #### bb field dropdown styling
@@ -77,25 +78,94 @@
   - add to global styling
 - wait until form css is figured out
 
+
+#### bbcard - footer and header styling
+- find a way to offer customization for these?
+- `sameColor` prop or something?
+- could allow them to pass colors directly?
+
+
+
+#### bbnavbar item - bugs
+- hover not really workings?
+  - what does this mean? can't reproduce
+
+
+
+----
+### 1.0.0
+
+
+#### TEST BEFORE RELEASE
+- TODO - which project to test on?
+
+
+
+----
+
+#### tertiary color
+- add support for it?
+  - could default to the secondary color if required
+- add to docs
+-
+- add as color option for:
+  - button
+  - bbcard background?
+  - link?
+  - anywhere we offer 'primary' adn 'secondary' as color options
+
+
+#### loading spinner variants
+- add more css and variants for loading spinner
+
+
+
+---
+
+#### bb select multiple field bug
+- still not really the best solution - only says field is required not what field
+
+```
+TypeError: ref.name is undefined
+Source
+
+base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39:32) @ AlertsFieldErrors/<.children<
+
+  37 | const finalMessage = message
+  38 |   ? message.toString()
+> 39 |   : `Error - ${type} '${(ref as Ref).name.replace(/_/g, ' ').replace(/-/g, ' ')}'
+```
+
+---
+
 #### form css
-- cant use globals
+- convert to module.scss
+  - will have to change a lot of the form scss
 - maybe just make scss shared module for form components?
   - in forms dir
   - will likely have to rewrite a lot of the form scss
 
 
-#### remove next theme?
-- do we need the next-theme package?
 
 
-#### bbnavbar item - bugs
-- hover not really workings?
-
-
-
-### [0.4.0] - 2023-11-DD
+### [1.0.0] - 2024-01-DD
+#### Features
+- Added options for `BBNavbar` and `BBNavbarItem` padding and margins
+- `BBCard` - new background color options and border option added
+  - Also just cleaned up color organization and theming support
+#### Bugs
+- Cleaned up primary and secondary color variables
+  - Cleaned up usages of all color variables
+  - `text-primary` variable renamed `text-color-primary`
+  - Lots of other refactoring and clean up of colors and color variables
+- Updated other NPM package requirements
+- Removed `next-theme` package
+- `BBButton` bugs
+  - Disabled state improved
+  - Added `transparent` prop for background color
+  - Secondary and inverse color variant fixes
+  - Focus and hover states improved
 #### TODO
-
 
 -------------------------------------------------------
 
