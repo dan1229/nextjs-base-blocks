@@ -145,13 +145,6 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 
 
 
-#### bbbutton - bugs
-- inverses in general
-  - backgrounds don't work great on dark mode
-  - thicker borders
-
-
-
 
 ### [1.0.0] - 2024-01-DD
 #### Features
