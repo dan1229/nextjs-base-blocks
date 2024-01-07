@@ -91,6 +91,8 @@ html,
   // bb button
   --button-border-radius: 8px;
   // bb card
+  --card-background-default-color: rgb(255, 255, 255);
+  --card-border-default-color: rgb(221, 221, 221);
   --card-border-radius: 8px;
   --card-border-thickness: 3px;
   // bb navbar
@@ -103,7 +105,7 @@ html,
   --navbar-item-border-radius: 8px;
   --navbar-item-padding: 24px;
   // bb text
-  --bbtext-color-primary: rgb(24, 23, 23) !important;
+  --text-color-primary: rgb(24, 23, 23) !important;
   --text-size-xs: 0.6rem;
   --text-size-s: 0.8rem;
   --text-size-m: 1rem;
@@ -138,7 +140,11 @@ Add overrides for dark themes like so:
   --bg-light-color: rgb(60, 60, 60) !important;
   --bg-dark-color: rgb(39, 39, 39) !important;
   --bs-body-color: rgb(245, 245, 245) !important;
-  --bbtext-color-primary: rgb(255, 255, 255) !important;
+  // bb card
+  --card-background-default-color: rgb(255, 255, 255);
+  --card-border-default-color: rgb(221, 221, 221);
+  // bb text
+  --text-color-primary: rgb(255, 255, 255) !important;
 }
 ```
 -------------------------------------------------------

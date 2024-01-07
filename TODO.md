@@ -174,7 +174,7 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 #### Bugs
 - Cleaned up primary and secondary color variables
   - Cleaned up usages of all color variables
-  - `text-primary` variable renamed `bbtext-color-primary`
+  - `text-primary` variable renamed `text-color-primary`
   - Lots of other refactoring and clean up of colors and color variables
 #### TODO
 

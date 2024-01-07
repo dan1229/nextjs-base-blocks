@@ -11,6 +11,10 @@ $primary-dark-color: var(--primary-dark-color, #303f9f);
 $secondary-color: var(--secondary-color, #f50057);
 $secondary-dark-color: var(--secondary-dark-color, #c51162);
 
+// default colors
+$card-background-default-color: var(--card-background-default-color, #ffffff);
+$card-border-default-color: var(--card-border-default-color, #e0e0e0);
+
 // bg colors
 $bg-color: var(--bg-color, #dddddd);
 $bg-light-color: var(--bg-light-color, #ffffff);
@@ -91,6 +95,20 @@ $border-thickness: var(--card-border-thickness, 3px);
 /*
 * BACKGROUND
 */
+.background_default {
+  background-color: $bg-color;
+
+  .footer {
+    border-top: 1px solid $bg-dark-color;
+    background-color: $bg-dark-color;
+  }
+
+  .header {
+    border-bottom: 1px solid $bg-dark-color;
+    background-color: $bg-dark-color;
+  }
+}
+
 .background_white {
   background-color: $white;
 
@@ -178,6 +196,10 @@ $border-thickness: var(--card-border-thickness, 3px);
 /*
 * BORDERS
 */
+.border_default {
+  border: 2px solid $card-border-default-color;
+}
+
 .border_transparent {
   border: 2px solid transparent;
 }
