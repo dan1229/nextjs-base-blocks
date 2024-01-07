@@ -58,6 +58,7 @@ const DemoPage = () => {
   // BB Card
   const [stateBBCard, setStateBBCard] = useState<IPropsBBCard>({
     colorBackground: 'white',
+    colorBorder: 'transparent',
     elevation: 'none',
     cardStyle: 'default',
     className: '',
@@ -149,7 +150,9 @@ const DemoPage = () => {
           name="BBCard"
           child={
             <BBCard {...stateBBCard}>
+              <BBCard.Header {...stateBBCard} />
               <BBCard.Body {...stateBBCard} />
+              <BBCard.Footer {...stateBBCard} />
             </BBCard>
           }
           stateObject={stateBBCard}
