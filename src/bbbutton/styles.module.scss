@@ -45,6 +45,11 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   margin: 0px !important;
 }
 
+// transparent
+.transparent {
+  background-color: transparent;
+}
+
 // base vertical
 .baseVertical {
   flex-direction: column;
@@ -62,13 +67,6 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-// transparent
-.transparent {
-  div > * {
-    background-color: transparent !important;
-  }
 }
 
 // disabled
@@ -113,6 +111,25 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
       display: flex;
     }
   }
+}
+
+/**
+* ELEVATION
+*/
+.elevationNone {
+  box-shadow: none;
+}
+
+.elevationLow {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.elevationMedium {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.elevationHigh {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 15px 30px, rgba(0, 0, 0, 0.22) 0px 12px 10px;
 }
 
 /**
@@ -290,21 +307,48 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   border: 2px solid $secondary-dark-color;
 }
 
-/**
-* ELEVATION
-*/
-.elevationNone {
-  box-shadow: none;
-}
+// // TRANSPARENT PRIMARY
+// .transparentPrimary {
+//   background-color: transparent;
+//   border: 2px solid $primary-color;
+//   * {
+//     color: $primary-color !important;
+//   }
+//   &:hover {
+//     background-color: $primary-light-color;
+//     border: 2px solid $primary-dark-color;
+//   }
+//   &:hover > div * {
+//     color: $primary-dark-color !important;
+//   }
+// }
+// .transparentPrimary.focus > div * {
+//   color: $primary-dark-color !important;
+// }
+// .transparentPrimary:active {
+//   background-color: $primary-dark-color;
+//   border: 2px solid $primary-dark-color;
+// }
 
-.elevationLow {
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-}
-
-.elevationMedium {
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-}
-
-.elevationHigh {
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 15px 30px, rgba(0, 0, 0, 0.22) 0px 12px 10px;
-}
+// // TRANSPARENT SECONDARY
+// .transparentSecondary {
+//   background-color: transparent;
+//   border: 2px solid $secondary-color;
+//   * {
+//     color: $secondary-light-color !important;
+//   }
+//   &:hover {
+//     background-color: $secondary-light-color;
+//     border: 2px solid $secondary-dark-color;
+//   }
+//   &:hover > div * {
+//     color: $secondary-dark-color !important;
+//   }
+// }
+// .transparentSecondary.focus > div * {
+//   color: $grey-light !important;
+// }
+// .transparentSecondary:active {
+//   background-color: $secondary-dark-color;
+//   border: 2px solid $secondary-dark-color;
+// }

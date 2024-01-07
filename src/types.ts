@@ -44,7 +44,9 @@ export type TBBButtonVariant =
   | 'info'
   | 'inverse-info'
   | 'inverse-primary'
-  | 'inverse-secondary';
+  | 'inverse-secondary'
+  | 'transparent-primary'
+  | 'transparent-secondary';
 export type TBBButtonSize = 'sm' | 'md' | 'lg';
 export type TBBButtonElevation = 'none' | 'low' | 'medium' | 'high';
 export type TBBButtonIconAlign = 'left' | 'right' | 'above' | 'below' | 'space-between';
