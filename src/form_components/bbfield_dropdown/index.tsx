@@ -15,7 +15,7 @@ export interface IPropsBBFieldDropdown {
  * BBFIELD DROPDOWN
  */
 export default function BBFieldDropdown(Props: IPropsBBFieldDropdown & IPropsBBBaseForm): React.ReactElement {
-  const { register, options, fieldName, required, autocomplete, onChange } = Props;
+  const { showLabel, register, options, fieldName, required, autocomplete, onChange, className } = Props;
 
   const getAutoComplete = (): string => {
     if (autocomplete) return autocomplete;
@@ -26,7 +26,8 @@ export default function BBFieldDropdown(Props: IPropsBBFieldDropdown & IPropsBBB
    * RENDER
    */
   return (
-    <InputWrapper {...Props}>
+    <div className={classnames('form-group', className)}>
+      {showLabel && <label htmlFor={fieldName}>{getLabel(label, fieldName)}</label>}
       <select
         className="form-control"
         id={fieldName}
@@ -41,6 +42,6 @@ export default function BBFieldDropdown(Props: IPropsBBFieldDropdown & IPropsBBB
           </option>
         ))}
       </select>
-    </InputWrapper>
+    </div>
   );
 }
