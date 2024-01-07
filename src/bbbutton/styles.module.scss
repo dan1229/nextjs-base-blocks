@@ -66,7 +66,9 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
 
 // transparent
 .transparent {
-  background-color: transparent !important;
+  * {
+    color: transparent;
+  }
 }
 
 // disabled

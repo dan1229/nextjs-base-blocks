@@ -146,8 +146,6 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 
 
 #### bbbutton - bugs
-- inverse-info
-  - focus could use better background color
 - inverses in general
   - backgrounds don't work great on dark mode
   - thicker borders
@@ -171,6 +169,7 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
   - Disabled state improved
   - Added `transparent` prop for background color
   - Secondary and inverse color variant fixes
+  - Focus and hover states improved
 #### TODO
 
 -------------------------------------------------------
