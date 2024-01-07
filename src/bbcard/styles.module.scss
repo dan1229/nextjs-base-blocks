@@ -96,16 +96,16 @@ $border-thickness: var(--card-border-thickness, 3px);
 * BACKGROUND
 */
 .background_default {
-  background-color: $bg-color;
+  // background-color: $card-background-default-color;
 
   .footer {
-    border-top: 1px solid $bg-dark-color;
-    background-color: $bg-dark-color;
+    border-top: 1px solid $card-background-default-color;
+    background-color: $card-background-default-color;
   }
 
   .header {
-    border-bottom: 1px solid $bg-dark-color;
-    background-color: $bg-dark-color;
+    border-bottom: 1px solid $card-background-default-color;
+    background-color: $card-background-default-color;
   }
 }
 
