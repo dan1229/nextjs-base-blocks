@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import styles from './styles.module.scss';
-import { TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation, TBBCardStyle } from '../types';
+import type { TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation, TBBCardStyle } from '../types';
 
 const getChildrenOnDisplayName = (children: React.ReactNode | React.ReactNode[], displayName: string) => {
   return React.Children.map(children, (child) => {
