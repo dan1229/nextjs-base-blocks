@@ -68,6 +68,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     onClick,
   } = Props;
   // if button doesn't do anything, disable it
+  // otherwise, rely on the disabled prop
   const disabledRes = !onClick && type != 'submit' ? true : disabled;
   const hoverRes = disabled || !hover ? false : hover;
   const align = icon?.align || 'left';

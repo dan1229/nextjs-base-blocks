@@ -60,6 +60,7 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
 
 .disabled {
   background-color: $grey-dark !important;
+  border: 1px solid $grey-darkest !important;
   color: $white !important;
   cursor: not-allowed;
 }

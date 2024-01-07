@@ -146,8 +146,6 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 #### bbbutton - bugs
 - disabled
   - outline color is wrong
-  - hover should be disabled not pointer
-  - shouldn't be clickable when disableds
 - inverse-info
   - focus could use better background color
 - inverses in general
