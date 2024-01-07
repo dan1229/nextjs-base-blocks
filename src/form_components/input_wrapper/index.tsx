@@ -22,7 +22,7 @@ export interface IPropsInputWrapper {
  * INPUT WRAPPER
  */
 export default function InputWrapper(props: IPropsInputWrapper & IPropsBBBaseForm): React.ReactElement {
-  const { label, className, fieldName, showLabel = true, children, ...childProps } = props;
+  const { label, className, fieldName, showLabel = true, children } = props;
 
   /**
    * RENDER
