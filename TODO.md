@@ -156,14 +156,6 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
   - add 'transparent' option for background color?
 
 
----
-
-
-
-#### remove next theme?
-- do we need the next-theme package?
-
-
 
 
 ### [1.0.0] - 2024-01-DD
@@ -174,8 +166,10 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 #### Bugs
 - Cleaned up primary and secondary color variables
   - Cleaned up usages of all color variables
-  - `text-primary` variable renamed `bbtext-color-primary`
+  - `text-primary` variable renamed `text-color-primary`
   - Lots of other refactoring and clean up of colors and color variables
+- Updated other NPM package requirements
+- Removed `next-theme` package
 #### TODO
 
 -------------------------------------------------------

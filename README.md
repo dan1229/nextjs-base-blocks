@@ -24,7 +24,6 @@ If you ever want to move away or edit the base components, you can easily 'remov
 You must have the following installed to use this submodule
 - [React Hook Forms](https://react-hook-form.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
-- [Next Themes](https://www.npmjs.com/package/next-themes)
 - [Recoil](https://recoiljs.org/)
 - [Sass](https://sass-lang.com/)
 - [Node Sass](https://www.npmjs.com/package/node-sass)
@@ -91,19 +90,22 @@ html,
   // bb button
   --button-border-radius: 8px;
   // bb card
+  --card-background-default-color: rgb(255, 255, 255);
+  --card-darken-default-color: rgb(39, 39, 39);
+  --card-border-default-color: rgb(221, 221, 221);
   --card-border-radius: 8px;
   --card-border-thickness: 3px;
   // bb navbar
   --navbar-border-radius: 8px;
   --navbar-background-color: rgb(221, 221, 221);
   --navbar-title-color: rgb(24, 23, 23);
-  --navbar-brand-padding: 0.5rem;
-  --navbar-container-brand-margin: 0 0.5rem;
+  --navbar-brand-padding: 0rem;
+  --navbar-container-brand-margin: 0.5rem;
   // bb navbar item
   --navbar-item-border-radius: 8px;
-  --navbar-item-padding: 24px;
+  --navbar-item-padding: 12px;
   // bb text
-  --bbtext-color-primary: rgb(24, 23, 23) !important;
+  --text-color-default: rgb(24, 23, 23) !important;
   --text-size-xs: 0.6rem;
   --text-size-s: 0.8rem;
   --text-size-m: 1rem;
@@ -119,8 +121,8 @@ html,
   --mobile-text-size-xxl: 2.8rem;
   --mobile-text-size-xxxl: 3.2rem;
   // font family
-  --font-family-header: 'Montserrat';  // Used for larger fonts/headers
   --font-family-main: 'Josefin Sans';  // Used for main text
+  --font-family-header: 'Montserrat';  // Used for larger fonts/headers
 }
 ```
 
@@ -138,7 +140,12 @@ Add overrides for dark themes like so:
   --bg-light-color: rgb(60, 60, 60) !important;
   --bg-dark-color: rgb(39, 39, 39) !important;
   --bs-body-color: rgb(245, 245, 245) !important;
-  --bbtext-color-primary: rgb(255, 255, 255) !important;
+  // bb card
+  --card-background-default-color: rgb(255, 255, 255);
+  --card-darken-default-color: rgb(39, 39, 39);
+  --card-border-default-color: rgb(221, 221, 221);
+  // bb text
+  --text-color-default: rgb(255, 255, 255) !important;
 }
 ```
 -------------------------------------------------------

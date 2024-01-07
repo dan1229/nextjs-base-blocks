@@ -1,10 +1,9 @@
 import classNames from 'classnames';
-import { useTheme } from 'next-themes';
 import React from 'react';
 import styles from './styles.module.scss';
 
-export type TBBCardColorBackground = 'white' | 'grey_light' | 'grey_dark' | 'black' | 'primary' | 'secondary';
-export type TBBCardColorBorder = 'transparent' | 'white' | 'grey_light' | 'grey_dark' | 'black' | 'primary' | 'secondary';
+export type TBBCardColorBackground = 'default' | 'white' | 'grey_light' | 'grey_dark' | 'black' | 'primary' | 'secondary';
+export type TBBCardColorBorder = 'default' | 'transparent' | 'white' | 'grey_light' | 'grey_dark' | 'black' | 'primary' | 'secondary';
 export type TBBCardElevation = 'none' | 'low' | 'med' | 'high';
 export type TBBCardStyle = 'default' | 'transparent';
 
@@ -52,10 +51,9 @@ export interface IPropsBBCard {
  * BBCard
  */
 const BBCard = (Props: IPropsBBCard) => {
-  const { theme } = useTheme();
   const {
     children,
-    colorBackground = theme == 'dark' ? 'white' : 'black',
+    colorBackground = 'default',
     colorBorder = 'transparent',
     elevation = 'med',
     cardStyle = 'default',
@@ -69,6 +67,8 @@ const BBCard = (Props: IPropsBBCard) => {
 
   const getClassColorBackground = (): string => {
     switch (colorBackground) {
+      case 'default':
+        return styles.background_default;
       case 'white':
         return styles.background_white;
       case 'grey_light':
@@ -86,6 +86,8 @@ const BBCard = (Props: IPropsBBCard) => {
 
   const getClassColorBorder = (): string => {
     switch (colorBorder) {
+      case 'default':
+        return styles.border_default;
       case 'transparent':
         return styles.border_transparent;
       case 'white':
