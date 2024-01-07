@@ -96,7 +96,7 @@ $border-thickness: var(--card-border-thickness, 3px);
 * BACKGROUND
 */
 .background_default {
-  // background-color: $card-background-default-color;
+  background-color: $card-background-default-color;
 
   .footer {
     border-top: 1px solid $card-background-default-color;
