@@ -57,7 +57,7 @@ const DemoPage = () => {
   });
   // BB Card
   const [stateBBCard, setStateBBCard] = useState<IPropsBBCard>({
-    colorBackground: 'white',
+    colorBackground: 'primary',
     colorBorder: 'transparent',
     elevation: 'none',
     cardStyle: 'default',

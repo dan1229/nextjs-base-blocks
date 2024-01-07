@@ -80,6 +80,10 @@
 - wait until form css is figured out
 
 
+#### bbcard - footer and header styling
+- find a way to offer customization for these?
+- `sameColor` prop or something?
+- could allow them to pass colors directly?
 
 ----
 ### 1.0.0?
@@ -160,16 +164,12 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 
 
 
-#### bbcard customizable background colors
-- make it a variable!
-- default to current values
-
-
 
 ### [1.0.0] - 2024-01-DD
 #### Features
 - Added options for `BBNavbar` and `BBNavbarItem` padding and margins
 - `BBCard` - new background color options and border option added
+  - Also just cleaned up color organization and theming support
 #### Bugs
 - Cleaned up primary and secondary color variables
   - Cleaned up usages of all color variables

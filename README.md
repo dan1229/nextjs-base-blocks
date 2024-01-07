@@ -62,10 +62,12 @@ html,
   --secondary-light-color: #{lighten($secondary-color, 10%)};
   // general colors
   --white: #fff;
+  --white-dark: #f5f5f5;
   --black: 35, 35, 35;
-  --grey-light: #8199c2;
+  --grey-light: #a9bcde;
+  --grey-light-dark: #a8b6cc;  // used for hover states and similar
   --grey-dark: #58647a;
-  --grey-darkest: #2d3a4f;
+  --grey-darkest: #606775;
   // theme colors
   --info-color: #{$info-color};
   --info-dark-color: #{darken($info-color, 10%)};
@@ -90,6 +92,7 @@ html,
   --button-border-radius: 8px;
   // bb card
   --card-border-radius: 8px;
+  --card-border-thickness: 3px;
   // bb navbar
   --navbar-border-radius: 8px;
   --navbar-background-color: rgb(221, 221, 221);
