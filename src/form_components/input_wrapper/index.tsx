@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import React, { useState } from 'react';
+import React from 'react';
 import type { IPropsBBBaseForm } from '../../types';
 
 export const getLabel = (label: string | undefined, fieldName: string): string => {
@@ -22,18 +22,16 @@ export interface IPropsInputWrapper {
  * INPUT WRAPPER
  */
 export default function InputWrapper(props: IPropsInputWrapper & IPropsBBBaseForm): React.ReactElement {
-  const { label, className, fieldName, showLabel = true } = props;
-  const { children, ...childProps } = props;
-  const [labelRes] = useState<string>(getLabel(label, fieldName));
+  const { label, className, fieldName, showLabel = true, children, ...childProps } = props;
 
   /**
    * RENDER
    */
   return (
     <div className={classnames('form-group', className)}>
-      {showLabel && <label htmlFor={fieldName}>{labelRes}</label>}
+      {showLabel && <label htmlFor={fieldName}>{getLabel(label, fieldName)}</label>}
       {React.Children.map(children, (child) => {
-        return React.cloneElement(child, childProps);
+        return React.cloneElement(child, { props: childProps });
       })}
     </div>
   );
