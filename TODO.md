@@ -88,6 +88,8 @@
 
 #### bbnavbar item - bugs
 - hover not really workings?
+  - what does this mean? can't reproduce
+
 
 
 ----
@@ -148,8 +150,7 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
   - focus could use better background color
 - inverses in general
   - backgrounds don't work great on dark mode
-  - thicker backgrounds
-  - add 'transparent' option for background color?
+  - thicker borders
 
 
 
@@ -167,7 +168,8 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 - Updated other NPM package requirements
 - Removed `next-theme` package
 - `BBButton` bugs
-  - disabled state improved
+  - Disabled state improved
+  - Added `transparent` prop for background color
 #### TODO
 
 -------------------------------------------------------

@@ -1,11 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import styles from './styles.module.scss';
-
-export type TBBCardColorBackground = 'default' | 'white' | 'grey_light' | 'grey_dark' | 'black' | 'primary' | 'secondary';
-export type TBBCardColorBorder = 'default' | 'transparent' | 'white' | 'grey_light' | 'grey_dark' | 'black' | 'primary' | 'secondary';
-export type TBBCardElevation = 'none' | 'low' | 'med' | 'high';
-export type TBBCardStyle = 'default' | 'transparent';
+import { TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation, TBBCardStyle } from '../types';
 
 const getChildrenOnDisplayName = (children: React.ReactNode | React.ReactNode[], displayName: string) => {
   return React.Children.map(children, (child) => {

@@ -31,6 +31,7 @@ interface IPropsBBButtonIcon {
  * @param {string=} idForm - The ID of the form to submit
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - The function to call when the button is clicked
+ * @param {boolean=} transparent - Whether the button is transparent
  */
 export interface IPropsBBButton {
   text?: string;
@@ -46,6 +47,7 @@ export interface IPropsBBButton {
   idForm?: string;
   className?: string;
   onClick?: () => void;
+  transparent?: boolean;
 }
 
 /**
@@ -66,6 +68,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     idForm,
     className,
     onClick,
+    transparent = false,
   } = Props;
   // if button doesn't do anything, disable it
   // otherwise, rely on the disabled prop
@@ -151,7 +154,8 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
         !!focus && styles.focus,
         showTextOnHover && styles.showTextOnHover,
         getClassVariant(),
-        getClassElevation()
+        getClassElevation(),
+        transparent && styles.transparent
       )}
       type={type}
       form={idForm}
