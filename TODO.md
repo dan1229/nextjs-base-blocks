@@ -88,6 +88,8 @@
 
 #### bbnavbar item - bugs
 - hover not really workings?
+  - what does this mean? can't reproduce
+
 
 
 ----
@@ -97,13 +99,6 @@
 #### TEST BEFORE RELEASE
 - TODO - which project to test on?
 
-
-#### form css
-- convert to module.scss
-  - will have to change a lot of the form scss
-- maybe just make scss shared module for form components?
-  - in forms dir
-  - will likely have to rewrite a lot of the form scss
 
 
 ----
@@ -120,6 +115,12 @@
   - anywhere we offer 'primary' adn 'secondary' as color options
 
 
+#### loading spinner variants
+- add more css and variants for loading spinner
+
+
+
+---
 
 #### bb select multiple field bug
 - still not really the best solution - only says field is required not what field
@@ -137,23 +138,12 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 
 ---
 
-
-#### loading spinner variants
-- add more css and variants for loading spinner
-
-
-
-#### bbbutton - bugs
-- disabled
-  - outline color is wrong
-  - hover should be disabled not pointer
-  - shouldn't be clickable when disableds
-- inverse-info
-  - focus could use better background color
-- inverses in general
-  - backgrounds odnt work great on dark mode
-  - thicker backgrounds
-  - add 'transparent' option for background color?
+#### form css
+- convert to module.scss
+  - will have to change a lot of the form scss
+- maybe just make scss shared module for form components?
+  - in forms dir
+  - will likely have to rewrite a lot of the form scss
 
 
 
@@ -170,6 +160,11 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
   - Lots of other refactoring and clean up of colors and color variables
 - Updated other NPM package requirements
 - Removed `next-theme` package
+- `BBButton` bugs
+  - Disabled state improved
+  - Added `transparent` prop for background color
+  - Secondary and inverse color variant fixes
+  - Focus and hover states improved
 #### TODO
 
 -------------------------------------------------------
