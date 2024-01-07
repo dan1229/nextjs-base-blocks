@@ -120,8 +120,8 @@ html,
   --mobile-text-size-xxl: 2.8rem;
   --mobile-text-size-xxxl: 3.2rem;
   // font family
-  --font-family-header: 'Montserrat';  // Used for larger fonts/headers
   --font-family-main: 'Josefin Sans';  // Used for main text
+  --font-family-header: 'Montserrat';  // Used for larger fonts/headers
 }
 ```
 

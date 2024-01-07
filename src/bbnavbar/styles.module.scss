@@ -1,8 +1,8 @@
 $border-radius: var(--navbar-border-radius, 8px);
 $background-color: var(--navbar-background-color, #dddddd);
 $title-color: var(--navbar-title-color, #6c6c6c);
-$brand-padding: (--navbar-brand-padding, 0.5rem);
-$container-brand-margin: (--navbar-container-brand-margin, 0 0.5rem);
+$brand-padding: var(--navbar-brand-padding, 0.5rem);
+$container-brand-margin: var(--navbar-container-brand-margin, 0 0.5rem);
 
 /**
 * ELEVATION
