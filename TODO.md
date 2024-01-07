@@ -100,13 +100,6 @@
 - TODO - which project to test on?
 
 
-#### form css
-- convert to module.scss
-  - will have to change a lot of the form scss
-- maybe just make scss shared module for form components?
-  - in forms dir
-  - will likely have to rewrite a lot of the form scss
-
 
 ----
 
@@ -122,6 +115,12 @@
   - anywhere we offer 'primary' adn 'secondary' as color options
 
 
+#### loading spinner variants
+- add more css and variants for loading spinner
+
+
+
+---
 
 #### bb select multiple field bug
 - still not really the best solution - only says field is required not what field
@@ -139,9 +138,12 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 
 ---
 
-
-#### loading spinner variants
-- add more css and variants for loading spinner
+#### form css
+- convert to module.scss
+  - will have to change a lot of the form scss
+- maybe just make scss shared module for form components?
+  - in forms dir
+  - will likely have to rewrite a lot of the form scss
 
 
 
