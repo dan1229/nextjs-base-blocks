@@ -91,6 +91,7 @@ html,
   --button-border-radius: 8px;
   // bb card
   --card-background-default-color: rgb(255, 255, 255);
+  --card-darken-default-color: rgb(39, 39, 39);
   --card-border-default-color: rgb(221, 221, 221);
   --card-border-radius: 8px;
   --card-border-thickness: 3px;
@@ -141,6 +142,7 @@ Add overrides for dark themes like so:
   --bs-body-color: rgb(245, 245, 245) !important;
   // bb card
   --card-background-default-color: rgb(255, 255, 255);
+  --card-darken-default-color: rgb(39, 39, 39);
   --card-border-default-color: rgb(221, 221, 221);
   // bb text
   --text-color-default: rgb(255, 255, 255) !important;
