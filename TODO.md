@@ -23,10 +23,14 @@
 ### demo page improvements
 
 
-#### demo page - children props
+#### demo page - `children` props
 - what to do about them?
 - React.ReactNode ones render weird
 - most are useless anyway
+
+
+#### how to display all props automatically?
+- currently they're hardcoded
 
 
 #### demo page - bbcard 'composite' components
@@ -67,16 +71,16 @@
 ### 1.1.0
 
 
-#### demo page - form components
-- just add them
-- probably in a different page
-- make sections expandable
-
-
 #### bb field dropdown styling
 - add arrow or something
   - add to global styling
 - wait until form css is figured out
+
+
+#### demo page - form components
+- just add them
+- probably in a different page
+- make sections expandable
 
 
 #### bbcard - footer and header styling
