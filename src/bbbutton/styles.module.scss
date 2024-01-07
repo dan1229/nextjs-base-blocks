@@ -228,6 +228,7 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   }
   &:hover {
     background-color: $info-light-color;
+    color: $white;
   }
 }
 .inverseInfo.focus > div * {
@@ -247,6 +248,7 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   }
   &:hover {
     background-color: $primary-light-color;
+    color: $white;
   }
 }
 .inversePrimary.focus > div * {
@@ -266,6 +268,7 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   }
   &:hover {
     background-color: $secondary-light-color;
+    color: $white;
   }
 }
 .inverseSecondary.focus > div * {
