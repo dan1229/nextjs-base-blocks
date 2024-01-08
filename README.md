@@ -154,5 +154,5 @@ Add overrides for dark themes like so:
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)
 
-##### Copyright 2023 © Daniel Nazarian.
+##### Copyright 2024 © Daniel Nazarian.
 

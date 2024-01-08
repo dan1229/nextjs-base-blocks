@@ -174,4 +174,4 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)
-##### Copyright 2023 © Daniel Nazarian.
+##### Copyright 2024 © Daniel Nazarian.
