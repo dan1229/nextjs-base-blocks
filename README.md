@@ -128,6 +128,8 @@ html,
 
 While none of these variables are required, it definitely will help make your app look and feel more custom.
 
+It is recommended to copy and paste this whole block into your `globals.scss` file and then edit the variables as needed.
+
 
 #### Dark Mode / Themes
 
