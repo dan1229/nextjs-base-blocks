@@ -50,7 +50,7 @@ const BBCard = (Props: IPropsBBCard) => {
   const {
     children,
     colorBackground = 'default',
-    colorBorder = 'transparent',
+    colorBorder = 'default',
     elevation = 'med',
     cardStyle = 'default',
     className,
