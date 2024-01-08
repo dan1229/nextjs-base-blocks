@@ -3,7 +3,6 @@ import React from 'react';
 import type { IPropsBBBaseForm } from '../../types';
 
 export const getLabel = (label: string | undefined, fieldName: string): string => {
-  console.log('getLabel', label, fieldName);
   if (!!label && label.length) return label;
   const fieldNameRes = fieldName.includes('_') ? fieldName.replace('_', ' ') : fieldName;
   return fieldNameRes.charAt(0).toUpperCase() + fieldNameRes.slice(1);

@@ -150,9 +150,6 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
   - will likely have to rewrite a lot of the form scss
 
 
-#### input wrapper rerendering bug
-- kinda fixed, inputs usable but still looks to be rerendering?
-
 
 ### [1.0.0] - 2024-01-DD
 #### Features
