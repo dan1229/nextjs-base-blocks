@@ -23,10 +23,14 @@
 ### demo page improvements
 
 
-#### demo page - children props
+#### demo page - `children` props
 - what to do about them?
 - React.ReactNode ones render weird
 - most are useless anyway
+
+
+#### how to display all props automatically?
+- currently they're hardcoded
 
 
 #### demo page - bbcard 'composite' components
@@ -67,16 +71,16 @@
 ### 1.1.0
 
 
-#### demo page - form components
-- just add them
-- probably in a different page
-- make sections expandable
-
-
 #### bb field dropdown styling
 - add arrow or something
   - add to global styling
 - wait until form css is figured out
+
+
+#### demo page - form components
+- just add them
+- probably in a different page
+- make sections expandable
 
 
 #### bbcard - footer and header styling
@@ -147,7 +151,6 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 
 
 
-
 ### [1.0.0] - 2024-01-DD
 #### Features
 - Added options for `BBNavbar` and `BBNavbarItem` padding and margins
@@ -165,6 +168,7 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
   - Added `transparent` prop for background color
   - Secondary and inverse color variant fixes
   - Focus and hover states improved
+- `InputWrapper` rerendering bugs fixed
 #### TODO
 
 -------------------------------------------------------
