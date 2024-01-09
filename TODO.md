@@ -150,6 +150,24 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
   - will likely have to rewrite a lot of the form scss
 
 
+#### bbnavbar hover
+- bbnavbar - brand doesnt have pointer on hover
+  - add pointer on hover IF onClick
+- bbnavbar item - no pointer on hover
+  - just add a pointer cursor on hover
+
+
+#### bbbutton - hover cursors not working
+- if disabled -> hover state should not show pointer
+  - still not working for some reason?
+  - maybe cursor css not in 'hover' block?
+- if onClick && hovering -> should show pointer
+
+
+#### bbcard - elevation customization
+- make the elevation level values variables to customize
+
+
 
 ### [1.0.0] - 2024-01-DD
 #### Features
