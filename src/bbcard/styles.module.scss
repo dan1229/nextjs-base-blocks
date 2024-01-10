@@ -23,7 +23,9 @@ $bg-dark-color: var(--bg-dark-color, #b1b1b1);
 
 // variables
 $border-radius: var(--card-border-radius, 8px);
-$border-thickness: var(--card-border-thickness, 3px);
+$elevation-low: var(--card-elevation-low, rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px);
+$elevation-med: var(--card-elevation-med, rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px);
+$elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px);
 
 .base {
   border-radius: calc($border-radius + 2px);
@@ -237,13 +239,13 @@ $border-thickness: var(--card-border-thickness, 3px);
 }
 
 .elevation_low {
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  box-shadow: $elevation-low;
 }
 
 .elevation_med {
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  box-shadow: $elevation-med;
 }
 
 .elevation_high {
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  box-shadow: $elevation-high;
 }
