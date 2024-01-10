@@ -95,6 +95,10 @@
   - what does this mean? can't reproduce
 
 
+#### vertical navbar
+- play with it
+- add to base blocks?
+
 
 ----
 ### 1.0.0
