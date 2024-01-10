@@ -28,7 +28,6 @@ const DemoPage = () => {
   // BB ALERT
   const [stateBBAlert, setStateBBAlert] = useState<IPropsBBAlert>({
     children: 'Test',
-    size: 'medium',
     variant: 'info',
     elevation: 'none',
     dismissible: true,
