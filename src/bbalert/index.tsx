@@ -1,15 +1,13 @@
 import classNames from 'classnames';
 import React, { useState } from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
-import BBText from '../bbtext';
 import styles from './styles.module.scss';
-import type { TBBTextSize, TBBAlertVariant, TBBAlertElevation, TBBAlertTextAlignment } from '../types';
+import type { TBBAlertVariant, TBBAlertElevation, TBBAlertTextAlignment } from '../types';
 
 /**
  * PROPS
  *
  * @param {React.ReactNode} children - The text to display
- * @param {TBBTextSize=} size - the size of alert
  * @param {TBBAlertVariant=} variant - the variant of the alert
  * @param {TBBAlertElevation=} elevation - the elevation of the alert
  * @param {boolean=} dismissible - whether the alert is dismissible
@@ -19,7 +17,6 @@ import type { TBBTextSize, TBBAlertVariant, TBBAlertElevation, TBBAlertTextAlign
  */
 export interface IPropsBBAlert {
   children: React.ReactNode;
-  size?: TBBTextSize;
   variant?: TBBAlertVariant;
   elevation?: TBBAlertElevation;
   dismissible?: boolean;
@@ -32,16 +29,7 @@ export interface IPropsBBAlert {
  * BBAlert
  */
 export default function BBAlert(Props: IPropsBBAlert): React.ReactElement {
-  const {
-    children,
-    size = 'medium',
-    variant = 'info',
-    elevation = 'none',
-    dismissible = true,
-    textAlignment = 'left',
-    onClick,
-    className,
-  } = Props;
+  const { children, variant = 'info', elevation = 'none', dismissible = true, textAlignment = 'left', onClick, className } = Props;
   const [isDismissed, setIsDismissed] = useState<boolean>(false);
 
   if (isDismissed) {
@@ -110,7 +98,7 @@ export default function BBAlert(Props: IPropsBBAlert): React.ReactElement {
       )}
       onClick={onClick && onClickOverride}
     >
-      <BBText size={size}>{children}</BBText>
+      <div>{children}</div>
       {dismissible && <AiOutlineCloseCircle className={styles.dismissButton} onClick={onClickDismiss} />}
     </div>
   );
