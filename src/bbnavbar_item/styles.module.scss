@@ -20,6 +20,7 @@ $navbar-item-padding: var(--navbar-item-padding, 0.5rem);
   }
 
   &:hover {
+    cursor: pointer;
     border-radius: $border-radius;
     background-color: var(--bg-dark-color, #1c1c1c);
     .iconDropdown {
