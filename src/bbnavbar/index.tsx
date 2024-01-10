@@ -17,7 +17,7 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
  * @param {React.ReactNode} children - Menu options of the navbar
  * @param {TBBNavbarElevation=} elevation - Elevation of the navbar
  * @param {string=} imageSrc - Image src for the navbar, can be URL or local
- * @param {string=} routeHome - Route to use for the home button
+ * @param {string=} routeBrand - Route to use for the brand button
  * @param {React.ReactNode=} buttonsAuth - Auth buttons to use
  * @param {boolean=} showButtonsAuth - Show auth buttons
  */
@@ -26,7 +26,7 @@ export interface IPropsBBNavbar {
   children: React.ReactNode;
   elevation?: TBBNavbarElevation;
   imageSrc?: string;
-  routeHome?: string;
+  routeBrand?: string;
   buttonsAuth?: React.ReactNode;
   showButtonsAuth?: boolean;
 }
@@ -35,7 +35,7 @@ export interface IPropsBBNavbar {
  * BBNAVBAR
  */
 export default function BBNavbar(Props: IPropsBBNavbar): React.ReactElement {
-  const { title, children, imageSrc, elevation = 'low', routeHome = '/', buttonsAuth, showButtonsAuth = true } = Props;
+  const { title, children, imageSrc, elevation = 'low', routeBrand = '/', buttonsAuth, showButtonsAuth = true } = Props;
   const [showNavExpanded, setShowNavExpanded] = useState(false);
   const router = useRouter();
 
@@ -72,7 +72,7 @@ export default function BBNavbar(Props: IPropsBBNavbar): React.ReactElement {
           }}
         />
       </div>
-      <div className={styles.containerBrand} onClick={async () => await router.push(routeHome)}>
+      <div className={styles.containerBrand} onClick={async () => await router.push(routeBrand)}>
         <div className={styles.brand}>
           {!!imageSrc && <Image src={imageSrc} alt="" height={60} width={70} />}
           <BBText className={styles.textTitle} asSpan>
