@@ -37,7 +37,10 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 // no margin
@@ -74,7 +77,10 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   background-color: $grey-dark !important;
   border: 1px solid $grey-darkest !important;
   color: $white !important;
-  cursor: not-allowed;
+
+  &:hover {
+    cursor: not-allowed;
+  }
 }
 
 // container icon

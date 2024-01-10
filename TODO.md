@@ -162,13 +162,6 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
   - just add a pointer cursor on hover
 
 
-#### bbbutton - hover cursors not working
-- if disabled -> hover state should not show pointer
-  - still not working for some reason?
-  - maybe cursor css not in 'hover' block?
-- if onClick && hovering -> should show pointer
-
-
 
 ### [1.0.0] - 2024-01-DD
 #### Features
@@ -188,6 +181,7 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
   - Added `transparent` prop for background color
   - Secondary and inverse color variant fixes
   - Focus and hover states improved
+  - Hover state cursors improved
 - `InputWrapper` rerendering bugs fixed
 #### TODO
 
