@@ -169,16 +169,13 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 - if onClick && hovering -> should show pointer
 
 
-#### bbcard - elevation customization
-- make the elevation level values variables to customize
-
-
 
 ### [1.0.0] - 2024-01-DD
 #### Features
 - Added options for `BBNavbar` and `BBNavbarItem` padding and margins
 - `BBCard` - new background color options and border option added
   - Also just cleaned up color organization and theming support
+  - Added `elevation` variables to customize elevation levels
 #### Bugs
 - Cleaned up primary and secondary color variables
   - Cleaned up usages of all color variables
