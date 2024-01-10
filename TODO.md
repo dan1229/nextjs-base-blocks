@@ -142,6 +142,11 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 
 ---
 
+#### bbalert 'heirarchy' issues
+- putting bbtext or something as children will cause issues cause there's a p tag in there?
+- not sure
+
+
 #### form css
 - convert to module.scss
   - will have to change a lot of the form scss
