@@ -1,0 +1,220 @@
+/**
+* FORM CONTROLS
+*
+* This was stolen and modified from Bootstrap
+* https://github.com/twbs/bootstrap/blob/main/scss/forms/_form_control.scss
+* 
+* We're using these to globally style forms and inputs
+* via (primarily) the 'form_control' and `form-group` class
+*/
+
+$font-size-base: 1.5rem !default;
+$font-size-sm: 0.875rem !default;
+$font-size-lg: 1.25rem !default;
+$input-padding-x: 0.25rem !default;
+$input-padding-y: 0.5rem !default;
+$input-border-width: 0.2rem !default;
+$input-border-radius: 0.25rem !default;
+$input-font-family: inherit !default;
+$input-font-weight: 400 !default;
+$input-line-height: 1.5 !default;
+$input-bg: var(--bg-color) !default;
+$input-border-color: var(--bg-color) !default;
+$input-color: var(--text-primary) !default;
+$input-focus-color: var(--secondary-color) !default;
+$input-focus-bg: var(--bg-color) !default;
+$input-focus-border-color: $input-focus-color !default;
+$input-placeholder-color: var(--grey-light) !default;
+$input-disabled-color: var(--grey-light) !default;
+$input-disabled-bg: var(--bg-color) !default;
+$input-disabled-border-color: var(--grey-dark) !default;
+$input-padding-x-sm: ($input-padding-x * 0.75) !default;
+$input-padding-x-lg: ($input-padding-x * 1.5) !default;
+$input-padding-y-sm: ($input-padding-y * 0.75) !default;
+$input-padding-y-lg: ($input-padding-y * 1.5) !default;
+$input-font-size-sm: ($font-size-base * $font-size-sm) !default;
+$input-height-sm: ($font-size-sm + $input-padding-y * 2 + $input-border-width * 2) !default;
+$input-height-lg: ($font-size-lg + $input-padding-y * 2 + $input-border-width * 2) !default;
+$input-height: ($font-size-base + $input-padding-y * 2 + $input-border-width * 2) !default;
+$form-color-width: 0.25rem !default;
+$form-file-button-color: var(--white) !default;
+$form-file-button-hover-bg: var(--primary-color) !default;
+$input-plaintext-color: var(--white) !default;
+
+.form-group {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.form_control {
+  display: block;
+  width: 100%;
+  margin: 8px 0px;
+  padding: $input-padding-y $input-padding-x;
+  font-family: $input-font-family;
+  font-weight: $input-font-weight;
+  line-height: $input-line-height;
+  color: $input-color;
+  background-color: $input-bg;
+  background-clip: padding-box;
+  box-sizing: border-box;
+  border: $input-border-width solid $input-border-color;
+  appearance: none; // Fix appearance for date inputs in Safari
+  border-radius: $input-border-radius;
+
+  &[type='file'] {
+    overflow: hidden; // prevent pseudo element button overlap
+
+    &:not(:disabled):not([readonly]) {
+      cursor: pointer;
+    }
+  }
+
+  // Customize the `:focus` state to imitate native WebKit styles.
+  &:focus {
+    color: $input-focus-color;
+    background-color: $input-focus-bg;
+    border-color: $input-focus-border-color;
+    outline: 0;
+  }
+
+  // Add some height to date inputs on iOS
+  // https://github.com/twbs/bootstrap/issues/23307
+  &::-webkit-date-and-time-value {
+    // Multiply line-height by 1em if it has no unit
+    height: if(unit($input-line-height) == '', $input-line-height * 1em, $input-line-height);
+  }
+
+  // Prevent excessive date input height in Webkit
+  // https://github.com/twbs/bootstrap/issues/34433
+  &::-webkit-datetime-edit {
+    display: block;
+    padding: 0;
+  }
+
+  // Placeholder
+  &::placeholder {
+    color: $input-placeholder-color;
+    // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+    opacity: 1;
+  }
+
+  // Disabled inputs
+  //
+  // HTML5 says that controls under a fieldset > legend:first-child won't be
+  // disabled if the fieldset is disabled. Due to implementation difficulty, we
+  // don't honor that edge case; we style them as disabled anyway.
+  &:disabled {
+    color: $input-disabled-color;
+    background-color: $input-disabled-bg;
+    border-color: $input-disabled-border-color;
+    // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+    opacity: 1;
+  }
+
+  // File input buttons theming
+  &::file-selector-button {
+    padding: $input-padding-y $input-padding-x;
+    margin: (-$input-padding-y) (-$input-padding-x);
+    margin-inline-end: $input-padding-x;
+    color: $form-file-button-color;
+    pointer-events: none;
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    border-inline-end-width: $input-border-width;
+    border-radius: 0; // stylelint-disable-line property-disallowed-list
+  }
+
+  &:hover:not(:disabled):not([readonly])::file-selector-button {
+    background-color: $form-file-button-hover-bg;
+  }
+}
+
+// Readonly controls as plain text
+//
+// Apply class to a readonly input to make it appear like regular plain
+// text (without any border, background color, focus indicator)
+.form_control-plaintext {
+  display: block;
+  width: 100%;
+  padding: $input-padding-y 0;
+  margin-bottom: 0; // match inputs if this class comes on inputs with default margins
+  line-height: $input-line-height;
+  color: $input-plaintext-color;
+  background-color: transparent;
+  border: solid transparent;
+  border-width: $input-border-width 0;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &.form_control-sm,
+  &.form_control-lg {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+// Form control sizing
+//
+// Build on `.form_control` with modifier classes to decrease or increase the
+// height and font-size of form controls.
+//
+// Repeated in `_input_group.scss` to avoid Sass extend issues.
+.form_control-sm {
+  min-height: $input-height-sm;
+  padding: $input-padding-y-sm $input-padding-x-sm;
+
+  &::file-selector-button {
+    padding: $input-padding-y-sm $input-padding-x-sm;
+    margin: (-$input-padding-y-sm) (-$input-padding-x-sm);
+    margin-inline-end: $input-padding-x-sm;
+  }
+}
+
+.form_control-lg {
+  min-height: $input-height-lg;
+  padding: $input-padding-y-lg $input-padding-x-lg;
+
+  &::file-selector-button {
+    padding: $input-padding-y-lg $input-padding-x-lg;
+    margin: (-$input-padding-y-lg) (-$input-padding-x-lg);
+    margin-inline-end: $input-padding-x-lg;
+  }
+}
+
+// Make sure textareas don't shrink too much when resized
+// https://github.com/twbs/bootstrap/pull/29124
+// stylelint-disable selector-no-qualifying-type
+textarea {
+  &.form_control {
+    min-height: $input-height;
+  }
+
+  &.form_control-sm {
+    min-height: $input-height-sm;
+  }
+
+  &.form_control-lg {
+    min-height: $input-height-lg;
+  }
+}
+
+.form_control-color {
+  width: $form-color-width;
+  height: $input-height;
+  padding: $input-padding-y;
+
+  &:not(:disabled):not([readonly]) {
+    cursor: pointer;
+  }
+
+  &.form_control-sm {
+    height: $input-height-sm;
+  }
+  &.form_control-lg {
+    height: $input-height-lg;
+  }
+}

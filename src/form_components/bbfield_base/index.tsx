@@ -28,7 +28,7 @@ export default function BBFieldBase(Props: IPropsBBFieldBase & IPropsBBBaseForm)
   return (
     <InputWrapper {...Props}>
       <input
-        className="form-control"
+        className={styles.form_control}
         id={fieldName}
         type={type}
         autoComplete={getAutoComplete()}
