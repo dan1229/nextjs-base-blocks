@@ -122,10 +122,6 @@
 #### loading spinner variants
 - add more css and variants for loading spinner
 
-
-#### update packages in package.json
-- update it yup
-
 ---
 
 #### bb select multiple field bug
@@ -142,18 +138,9 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 > 39 |   : `Error - ${type} '${(ref as Ref).name.replace(/_/g, ' ').replace(/-/g, ' ')}'
 ```
 
----
 
-#### form component sizing
-- add support for 'sm', 'md', 'lg' sizing
-
-
-#### form css
-- convert to module.scss
-  - will have to change a lot of the form scss
-- maybe just make scss shared module for form components?
-  - in forms dir
-  - will likely have to rewrite a lot of the form scss
+#### update packages in package.json
+- update it yup
 
 
 
@@ -161,6 +148,7 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 #### Features
 - Added form styling to BB Form components!
   - No more defining form styles as globals!!!
+  - Added options for sizing
 - Added options for `BBNavbar` and `BBNavbarItem` padding and margins
 - `BBCard` - new background color options and border option added
   - Also just cleaned up color organization and theming support

@@ -69,6 +69,7 @@ export type TBBCardStyle = 'default' | 'transparent';
 // TBBFieldBase
 export type TBBFieldBaseTypes = 'file' | 'checkbox' | 'number';
 // | 'radio' | 'select' | 'select-multiple'
+export type TBBFieldBaseSize = 'sm' | 'md' | 'lg';
 
 // TBBFieldText
 export type TBBFieldTextType = 'text' | 'textarea' | 'number' | 'password';

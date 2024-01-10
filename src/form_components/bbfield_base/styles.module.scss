@@ -29,11 +29,14 @@ $input-disabled-color: var(--grey-light) !default;
 $input-disabled-bg: var(--bg-color) !default;
 $input-disabled-border-color: var(--grey-dark) !default;
 $input-padding-x-sm: ($input-padding-x * 0.75) !default;
+$input-padding-x: $input-padding-x !default;
 $input-padding-x-lg: ($input-padding-x * 1.5) !default;
 $input-padding-y-sm: ($input-padding-y * 0.75) !default;
+$input-padding-y: $input-padding-y !default;
 $input-padding-y-lg: ($input-padding-y * 1.5) !default;
 $input-font-size-sm: ($font-size-base * $font-size-sm) !default;
 $input-height-sm: ($font-size-sm + $input-padding-y * 2 + $input-border-width * 2) !default;
+$input-height: ($font-size-base + $input-padding-y * 2 + $input-border-width * 2) !default;
 $input-height-lg: ($font-size-lg + $input-padding-y * 2 + $input-border-width * 2) !default;
 $input-height: ($font-size-base + $input-padding-y * 2 + $input-border-width * 2) !default;
 $form-color-width: 0.25rem !default;
@@ -151,6 +154,7 @@ $input-plaintext-color: var(--white) !default;
   }
 
   &.sm,
+  &.md,
   &.lg {
     padding-right: 0;
     padding-left: 0;
@@ -171,6 +175,17 @@ $input-plaintext-color: var(--white) !default;
     padding: $input-padding-y-sm $input-padding-x-sm;
     margin: (-$input-padding-y-sm) (-$input-padding-x-sm);
     margin-inline-end: $input-padding-x-sm;
+  }
+}
+
+.md {
+  min-height: $input-height;
+  padding: $input-padding-y $input-padding-x;
+
+  &::file-selector-button {
+    padding: $input-padding-y $input-padding-x;
+    margin: (-$input-padding-y) (-$input-padding-x);
+    margin-inline-end: $input-padding-x;
   }
 }
 
@@ -197,6 +212,10 @@ textarea {
     min-height: $input-height-sm;
   }
 
+  &.md {
+    min-height: $input-height;
+  }
+
   &.lg {
     min-height: $input-height-lg;
   }
@@ -213,6 +232,9 @@ textarea {
 
   &.sm {
     height: $input-height-sm;
+  }
+  &.md {
+    height: $input-height;
   }
   &.lg {
     height: $input-height-lg;
