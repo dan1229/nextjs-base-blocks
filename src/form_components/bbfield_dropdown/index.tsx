@@ -1,6 +1,7 @@
 import React from 'react';
 import InputWrapper from '../input_wrapper';
 import type { IBBFieldDropdownOptions, IPropsBBBaseForm } from '../../types';
+import styles from '../bbfield_base/styles.module.scss';
 
 /**
  * PROPS
@@ -28,7 +29,7 @@ export default function BBFieldDropdown(Props: IPropsBBFieldDropdown & IPropsBBB
   return (
     <InputWrapper {...Props}>
       <select
-        className="form-control"
+        className={styles.form_control}
         id={fieldName}
         required={required}
         onChange={onChange}

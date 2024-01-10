@@ -1,6 +1,7 @@
 import React from 'react';
 import InputWrapper from '../input_wrapper';
 import type { IPropsBBBaseForm, TBBFieldTextType } from '../../types';
+import styles from '../bbfield_base/styles.module.scss';
 
 /**
  * PROPS
@@ -29,7 +30,7 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
     <InputWrapper {...Props}>
       {type == 'textarea' ? (
         <textarea
-          className="form-control"
+          className={styles.form_control}
           id={fieldName}
           autoComplete={getAutoComplete()}
           required={required}
@@ -39,7 +40,7 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
         />
       ) : (
         <input
-          className="form-control"
+          className={styles.form_control}
           id={fieldName}
           type={type}
           autoComplete={getAutoComplete()}

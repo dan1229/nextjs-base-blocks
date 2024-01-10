@@ -144,6 +144,9 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 
 ---
 
+#### form component sizing
+- add support for 'sm', 'md', 'lg' sizing
+
 
 #### form css
 - convert to module.scss
