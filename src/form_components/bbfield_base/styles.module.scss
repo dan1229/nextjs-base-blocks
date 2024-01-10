@@ -44,6 +44,8 @@ $input-plaintext-color: var(--white) !default;
 .form_group {
   width: 100%;
   margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
 }
 
 .form_control {
@@ -135,7 +137,7 @@ $input-plaintext-color: var(--white) !default;
 //
 // Apply class to a readonly input to make it appear like regular plain
 // text (without any border, background color, focus indicator)
-.form_control-plaintext {
+.form_control_plaintext {
   display: block;
   width: 100%;
   padding: $input-padding-y 0;
@@ -150,8 +152,8 @@ $input-plaintext-color: var(--white) !default;
     outline: 0;
   }
 
-  &.form_control-sm,
-  &.form_control-lg {
+  &.form_control_sm,
+  &.form_control_lg {
     padding-right: 0;
     padding-left: 0;
   }
@@ -163,7 +165,7 @@ $input-plaintext-color: var(--white) !default;
 // height and font-size of form controls.
 //
 // Repeated in `_input_group.scss` to avoid Sass extend issues.
-.form_control-sm {
+.form_control_sm {
   min-height: $input-height-sm;
   padding: $input-padding-y-sm $input-padding-x-sm;
 
@@ -174,7 +176,7 @@ $input-plaintext-color: var(--white) !default;
   }
 }
 
-.form_control-lg {
+.form_control_lg {
   min-height: $input-height-lg;
   padding: $input-padding-y-lg $input-padding-x-lg;
 
@@ -193,16 +195,16 @@ textarea {
     min-height: $input-height;
   }
 
-  &.form_control-sm {
+  &.form_control_sm {
     min-height: $input-height-sm;
   }
 
-  &.form_control-lg {
+  &.form_control_lg {
     min-height: $input-height-lg;
   }
 }
 
-.form_control-color {
+.form_control_color {
   width: $form-color-width;
   height: $input-height;
   padding: $input-padding-y;
@@ -211,10 +213,10 @@ textarea {
     cursor: pointer;
   }
 
-  &.form_control-sm {
+  &.form_control_sm {
     height: $input-height-sm;
   }
-  &.form_control-lg {
+  &.form_control_lg {
     height: $input-height-lg;
   }
 }
