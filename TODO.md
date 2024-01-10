@@ -156,6 +156,8 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 
 ### [1.0.0] - 2024-01-DD
 #### Features
+- Added form styling to BB Form components!
+  - No more defining form styles as globals!!!
 - Added options for `BBNavbar` and `BBNavbarItem` padding and margins
 - `BBCard` - new background color options and border option added
   - Also just cleaned up color organization and theming support

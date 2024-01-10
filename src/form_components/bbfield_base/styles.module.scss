@@ -5,7 +5,7 @@
 * https://github.com/twbs/bootstrap/blob/main/scss/forms/_form_control.scss
 * 
 * We're using these to globally style forms and inputs
-* via (primarily) the 'form_control' and `form-group` class
+* via (primarily) the 'form_control' and `form_group` class
 */
 
 $font-size-base: 1.5rem !default;
@@ -41,7 +41,7 @@ $form-file-button-color: var(--white) !default;
 $form-file-button-hover-bg: var(--primary-color) !default;
 $input-plaintext-color: var(--white) !default;
 
-.form-group {
+.form_group {
   width: 100%;
   margin-bottom: 1em;
 }
