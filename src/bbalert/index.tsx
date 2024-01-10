@@ -99,7 +99,7 @@ export default function BBAlert(Props: IPropsBBAlert): React.ReactElement {
       )}
       onClick={onClick && onClickOverride}
     >
-      {children}
+      <div>{children}</div>
       {dismissible && <AiOutlineCloseCircle className={styles.dismissButton} onClick={onClickDismiss} />}
     </div>
   );
