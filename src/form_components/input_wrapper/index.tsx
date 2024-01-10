@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
+import styles from '../bbfield_base/styles.module.scss';
 import type { IPropsBBBaseForm } from '../../types';
 
 export const getLabel = (label: string | undefined, fieldName: string): string => {
@@ -27,7 +28,7 @@ export default function InputWrapper(props: IPropsInputWrapper & IPropsBBBaseFor
    * RENDER
    */
   return (
-    <div className={classnames('form-group', className)}>
+    <div className={classnames(styles.form_group, className)}>
       {showLabel && <label htmlFor={fieldName}>{getLabel(label, fieldName)}</label>}
       {children}
     </div>
