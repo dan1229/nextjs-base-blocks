@@ -142,10 +142,6 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 
 ---
 
-#### bbalert 'heirarchy' issues
-- putting bbtext or something as children will cause issues cause there's a p tag in there?
-- not sure
-
 
 #### form css
 - convert to module.scss
@@ -183,6 +179,7 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
   - Focus and hover states improved
   - Hover state cursors improved
 - `InputWrapper` rerendering bugs fixed
+- `BBAlert` 'hierarchy' bug fixed
 #### TODO
 
 -------------------------------------------------------
