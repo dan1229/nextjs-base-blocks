@@ -97,7 +97,7 @@ const DemoPage = () => {
     title: 'Test',
     elevation: 'none',
     imageSrc: '',
-    routeHome: '/',
+    routeBrand: '/',
     showButtonsAuth: true,
     children: <></>,
   });

@@ -151,13 +151,6 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
   - will likely have to rewrite a lot of the form scss
 
 
-#### bbnavbar hover
-- bbnavbar - brand doesnt have pointer on hover
-  - add pointer on hover IF onClick
-- bbnavbar item - no pointer on hover
-  - just add a pointer cursor on hover
-
-
 
 ### [1.0.0] - 2024-01-DD
 #### Features
@@ -180,6 +173,7 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
   - Hover state cursors improved
 - `InputWrapper` rerendering bugs fixed
 - `BBAlert` 'hierarchy' bug fixed
+- `BBNavbar` and `BBNavbarItem` hover bugs
 #### TODO
 
 -------------------------------------------------------
