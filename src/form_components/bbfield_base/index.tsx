@@ -1,7 +1,8 @@
 import React from 'react';
 import InputWrapper from '../input_wrapper';
-import type { IPropsBBBaseForm, TBBFieldBaseSize, TBBFieldBaseTypes } from '../../types';
 import styles from './styles.module.scss';
+import type { IPropsBBBaseForm, TBBFieldBaseSize, TBBFieldBaseTypes } from '../../types';
+import classnames from 'classnames';
 
 /**
  * PROPS
@@ -31,7 +32,7 @@ export default function BBFieldBase(Props: IPropsBBFieldBase & IPropsBBBaseForm)
   return (
     <InputWrapper {...Props}>
       <input
-        className={`${styles.form_control} ${size ? styles[size] : ''}`}
+        className={classnames(styles.form_control, styles[size])}
         id={fieldName}
         type={type}
         autoComplete={getAutoComplete()}

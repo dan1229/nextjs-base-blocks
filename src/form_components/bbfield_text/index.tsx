@@ -1,8 +1,8 @@
+import classnames from 'classnames';
 import React from 'react';
+import styles from '../bbfield_base/styles.module.scss';
 import InputWrapper from '../input_wrapper';
 import type { IPropsBBBaseForm, TBBFieldBaseSize, TBBFieldTextType } from '../../types';
-import styles from '../bbfield_base/styles.module.scss';
-import classnames from 'classnames';
 
 /**
  * PROPS
@@ -27,7 +27,7 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
   };
 
   const sharedProps = {
-    className: classnames(styles.form_control, size ? styles[size] : ''),
+    className: classnames(styles.form_control, styles[size]),
     id: fieldName,
     autoComplete: getAutoComplete(),
     required: required,
