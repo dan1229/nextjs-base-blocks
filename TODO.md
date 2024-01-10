@@ -188,6 +188,7 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
   - Added `transparent` prop for background color
   - Secondary and inverse color variant fixes
   - Focus and hover states improved
+  - Hover state cursors improved
 - `InputWrapper` rerendering bugs fixed
 #### TODO
 
