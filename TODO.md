@@ -123,6 +123,8 @@
 - add more css and variants for loading spinner
 
 
+#### update packages in package.json
+- update it yup
 
 ---
 
@@ -174,6 +176,7 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 - `InputWrapper` rerendering bugs fixed
 - `BBAlert` 'hierarchy' bug fixed
 - `BBNavbar` and `BBNavbarItem` hover bugs
+- Browser list update
 #### TODO
 
 -------------------------------------------------------
