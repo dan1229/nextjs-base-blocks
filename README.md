@@ -32,6 +32,8 @@ You must have the following installed to use this submodule
 
 See `package.json` for all the requirements.
 
+Since this is a submodule we can't enforce these requirements, but you will get errors if you don't have them installed.
+
 ### SCSS Variables
 
 You are also able to customize `Base Blocks` via SCSS variables. You typically will want to put these in `globals.scss`.
