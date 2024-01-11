@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles.module.scss';
 import classNames from 'classnames';
 
-export type TBBLoadingSpinnerVariants = 'default' | 'double circle' | 'pulse' | 'circle bounce';
+export type TBBLoadingSpinnerVariants = 'default' | 'double circle' | 'circle bounce' | 'spinning square';
 /**
  * PROPS
  *
@@ -24,10 +24,10 @@ export default function BBLoadingSpinner(Props: IPropsBBLoadingSpinner): React.R
     switch (variant) {
       case 'double circle':
         return styles.loader_double_circle;
-      case 'pulse':
-        return styles.loader_pulse;
       case 'circle bounce':
         return styles.loader_circle_bounce;
+      case 'spinning square':
+        return styles.loader_spinning_square;
       case 'default':
       default:
         return classNames(styles.loader_default);
