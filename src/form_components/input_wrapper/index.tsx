@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
-import styles from '../bbfield_base/styles.module.scss';
+import styles from '../styles.module.scss';
 import type { IPropsBBBaseForm } from '../../types';
 
 export const getLabel = (label: string | undefined, fieldName: string): string => {

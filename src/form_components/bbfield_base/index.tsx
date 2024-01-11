@@ -1,6 +1,6 @@
 import React from 'react';
 import InputWrapper from '../input_wrapper';
-import styles from './styles.module.scss';
+import styles from '../styles.module.scss';
 import type { IPropsBBBaseForm, TBBFieldBaseSize, TBBFieldBaseTypes } from '../../types';
 import classnames from 'classnames';
 
