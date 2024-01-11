@@ -16,7 +16,7 @@ $primary_color: var(--primary-color, #e8352e);
   height: 48px;
   border: 2px solid $primary_color;
   border-radius: 50%;
-  border-top-color: #999;
+  border-top-color: white;
   animation: rotationSpinner 1s linear infinite;
 }
 
