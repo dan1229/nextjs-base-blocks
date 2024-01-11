@@ -94,21 +94,6 @@
   - what does this mean? can't reproduce
 
 
-#### vertical navbar
-- play with it
-- add to base blocks?
-
-
-----
-### 1.0.0
-
-
-#### TEST BEFORE RELEASE
-- TODO - which project to test on?
-
-
-
-----
 
 #### accent color
 - add support for it?
@@ -121,6 +106,19 @@
   - link?
   - anywhere we offer 'primary' adn 'secondary' as color options
 
+
+
+#### vertical navbar
+- play with it
+- add to base blocks?
+
+
+----
+### 1.0.0
+
+
+#### TEST BEFORE RELEASE
+- just play with it as much as possible!!
 
 
 
