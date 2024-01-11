@@ -89,6 +89,10 @@
 - could allow them to pass colors directly?
 
 
+#### bbloading spinner - more props
+- size
+- color?
+  - how to do with variants?
 
 #### bbnavbar item - bugs
 - hover not really workings?
