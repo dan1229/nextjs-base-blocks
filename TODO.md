@@ -111,7 +111,7 @@
 
 ----
 
-#### tertiary color
+#### accent color
 - add support for it?
   - could default to the secondary color if required
 - add to docs
@@ -126,21 +126,6 @@
 #### loading spinner variants
 - add more css and variants for loading spinner
 
----
-
-#### bb select multiple field bug
-- still not really the best solution - only says field is required not what field
-
-```
-TypeError: ref.name is undefined
-Source
-
-base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39:32) @ AlertsFieldErrors/<.children<
-
-  37 | const finalMessage = message
-  38 |   ? message.toString()
-> 39 |   : `Error - ${type} '${(ref as Ref).name.replace(/_/g, ' ').replace(/-/g, ' ')}'
-```
 
 
 
