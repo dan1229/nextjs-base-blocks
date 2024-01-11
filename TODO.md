@@ -89,27 +89,11 @@
 - could allow them to pass colors directly?
 
 
-
 #### bbnavbar item - bugs
 - hover not really workings?
   - what does this mean? can't reproduce
 
 
-#### vertical navbar
-- play with it
-- add to base blocks?
-
-
-----
-### 1.0.0
-
-
-#### TEST BEFORE RELEASE
-- TODO - which project to test on?
-
-
-
-----
 
 #### accent color
 - add support for it?
@@ -123,8 +107,19 @@
   - anywhere we offer 'primary' adn 'secondary' as color options
 
 
-#### loading spinner variants
-- add more css and variants for loading spinner
+
+#### vertical navbar
+- play with it
+- add to base blocks?
+
+
+----
+### 1.0.0
+
+
+#### TEST BEFORE RELEASE
+- just play with it as much as possible!!
+
 
 
 
@@ -138,6 +133,8 @@
 - `BBCard` - new background color options and border option added
   - Also just cleaned up color organization and theming support
   - Added `elevation` variables to customize elevation levels
+- `BBLoadingSpinner` - improved a bit and added some variants
+  - Added `size` prop as well
 #### Bugs
 - Cleaned up primary and secondary color variables
   - Cleaned up usages of all color variables
