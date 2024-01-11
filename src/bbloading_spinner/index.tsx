@@ -1,6 +1,6 @@
+import classNames from 'classnames';
 import React from 'react';
 import styles from './styles.module.scss';
-import classNames from 'classnames';
 
 export type TBBLoadingSpinnerVariants = 'default' | 'double circle' | 'circle bounce' | 'spinning square';
 export type TBBLoadingSpinnerSizes = 'sm' | 'md' | 'lg';
