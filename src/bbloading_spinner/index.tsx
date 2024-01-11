@@ -3,22 +3,16 @@ import styles from './styles.module.scss';
 import classNames from 'classnames';
 
 export type TBBLoadingSpinnerVariants = 'default' | 'double circle' | 'circle bounce' | 'spinning square';
-/**
- * PROPS
- *
- * @param {TBBLoadingSpinnerVariants=} variant - The variant of the loading spinner
- * @param {string=} className - The additional class name for the loading spinner container
- */
+export type TBBLoadingSpinnerSizes = 'sm' | 'md' | 'lg';
+
 export interface IPropsBBLoadingSpinner {
   variant?: TBBLoadingSpinnerVariants;
   className?: string;
+  size?: TBBLoadingSpinnerSizes;
 }
 
-/**
- * BBLOADING SPINNER
- */
 export default function BBLoadingSpinner(Props: IPropsBBLoadingSpinner): React.ReactElement {
-  const { variant = 'default', className } = Props;
+  const { variant = 'default', className, size = 'md' } = Props; // Added size destructuring
 
   const getLoadingSpinnerClassName = () => {
     switch (variant) {
@@ -34,12 +28,20 @@ export default function BBLoadingSpinner(Props: IPropsBBLoadingSpinner): React.R
     }
   };
 
-  /**
-   * RENDER
-   */
+  const getLoadingSpinnerSizeClassName = () => {
+    switch (size) {
+      case 'sm':
+        return styles.loader_sm;
+      case 'md':
+        return styles.loader_md;
+      case 'lg':
+        return styles.loader_lg;
+    }
+  };
+
   return (
     <div className={styles.containerLoading}>
-      <span className={classNames(getLoadingSpinnerClassName(), className)} />
+      <span className={classNames(getLoadingSpinnerClassName(), getLoadingSpinnerSizeClassName(), className)} />
     </div>
   );
 }

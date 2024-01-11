@@ -89,11 +89,6 @@
 - could allow them to pass colors directly?
 
 
-#### bbloading spinner - more props
-- size
-- color?
-  - how to do with variants?
-
 #### bbnavbar item - bugs
 - hover not really workings?
   - what does this mean? can't reproduce
@@ -141,6 +136,7 @@
   - Also just cleaned up color organization and theming support
   - Added `elevation` variables to customize elevation levels
 - `BBLoadingSpinner` - improved a bit and added some variants
+  - Added `size` prop as well
 #### Bugs
 - Cleaned up primary and secondary color variables
   - Cleaned up usages of all color variables

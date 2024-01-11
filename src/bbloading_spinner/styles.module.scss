@@ -9,11 +9,27 @@ $primary_color: var(--primary-color, #e8352e);
 }
 
 /**
+* SIZES
+*/
+.loader_sm {
+  width: 24px;
+  height: 24px;
+}
+
+.loader_md {
+  width: 48px;
+  height: 48px;
+}
+
+.loader_lg {
+  width: 64px;
+  height: 64px;
+}
+
+/**
 * DEFAULT
 */
 .loader_default {
-  width: 48px;
-  height: 48px;
   border: 2px solid $primary_color;
   border-radius: 50%;
   border-top-color: white;
@@ -33,8 +49,6 @@ $primary_color: var(--primary-color, #e8352e);
 * DOUBLE CIRCLE
 */
 .loader_double_circle {
-  width: 48px;
-  height: 48px;
   border: 3px dotted #fff;
   border-style: solid solid dotted dotted;
   border-radius: 50%;
@@ -82,8 +96,6 @@ $primary_color: var(--primary-color, #e8352e);
 * CIRCLE BOUNCE
 */
 .loader_circle_bounce {
-  width: 48px;
-  height: 48px;
   border: 4px solid $primary_color;
   border-radius: 50%;
   animation: circleBounceSpinner 1s ease-in-out infinite;
@@ -105,8 +117,6 @@ $primary_color: var(--primary-color, #e8352e);
 * SPINNING SQUARE
 */
 .loader_spinning_square {
-  width: 48px;
-  height: 48px;
   border: 4px solid $primary_color;
   animation: spinningSquareSpinner 1s linear infinite;
 }
