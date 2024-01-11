@@ -171,6 +171,7 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 - `BBNavbar` and `BBNavbarItem` hover bugs
 - Browser list update
 - Updated packages and requirements
+- Fixed `AlertsFieldErrors` bug related to `ref`
 #### TODO
 
 -------------------------------------------------------
