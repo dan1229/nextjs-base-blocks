@@ -143,10 +143,6 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 ```
 
 
-#### update packages in package.json
-- update it yup
-
-
 
 ### [1.0.0] - 2024-01-DD
 #### Features
@@ -174,6 +170,7 @@ base_blocks/src/form_components/helpers/alerts/alerts_field_errors/index.tsx (39
 - `BBAlert` 'hierarchy' bug fixed
 - `BBNavbar` and `BBNavbarItem` hover bugs
 - Browser list update
+- Updated packages and requirements
 #### TODO
 
 -------------------------------------------------------
