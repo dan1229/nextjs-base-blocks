@@ -109,7 +109,7 @@ html,
   --navbar-item-border-radius: 8px;
   --navbar-item-padding: 12px;
   // bb text
-  --text-color-default: rgb(24, 23, 23) !important;
+  --text-color-default: rgb(24, 24, 24) !important;
   --text-size-xs: 0.6rem;
   --text-size-s: 0.8rem;
   --text-size-m: 1rem;
