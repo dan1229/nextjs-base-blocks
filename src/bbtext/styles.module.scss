@@ -55,7 +55,7 @@
 
 // BLACK
 .black {
-  color: var(--black, #232323);
+  color: var(--black, #232323) !important;
 }
 .black.hover {
   &:hover {
