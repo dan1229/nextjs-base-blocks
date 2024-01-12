@@ -47,6 +47,10 @@ $input-plaintext-color: var(--white) !default;
 .form_group {
   width: 100%;
   margin-bottom: 1em;
+
+  label {
+    margin-right: auto;
+  }
 }
 
 .form_control {

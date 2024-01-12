@@ -93,7 +93,7 @@ html,
   --button-border-radius: 8px;
   // bb card
   --card-background-default-color: rgb(255, 255, 255);
-  --card-darken-default-color: rgb(39, 39, 39);
+  --card-darken-default-color: rgb(197, 197, 197);
   --card-border-default-color: rgb(221, 221, 221);
   --card-border-radius: 8px;
   --card-elevation-low: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
