@@ -51,12 +51,15 @@ export function AlertsFieldErrors(props: IPropsAlertsFieldErrors): React.ReactEl
 
         const { message, type, ref } = fieldError;
         let finalMessage = message?.toString();
-        try {
-          finalMessage = `Error - ${type} '${(ref as Ref).name.replace(/_/g, ' ').replace(/-/g, ' ')}'`;
-        } catch (error) {
-          console.error(error);
+
+        if (!finalMessage) {
+          try {
+            finalMessage = `Error - ${type} '${(ref as Ref).name.replace(/_/g, ' ').replace(/-/g, ' ')}'`;
+          } catch (error) {
+            console.error(error);
+          }
+          finalMessage = finalMessage?.length ? finalMessage : getErrorByType(type?.toString());
         }
-        finalMessage = finalMessage?.length ? finalMessage : getErrorByType(type?.toString());
 
         return (
           <BBAlert key={`${keyFieldError}-${Date.now()}`} variant="danger">

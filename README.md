@@ -148,7 +148,7 @@ Add overrides for dark themes like so:
   --bs-body-color: rgb(245, 245, 245);
   // bb navbar
   --navbar-border-radius: 8px;
-  --navbar-background-color: rgb(77, 77, 77);
+  --navbar-background-color: rgb(54, 54, 54);
   --navbar-title-color: rgb(255, 255, 255);
   // bb card
   --card-background-default-color: rgb(77, 77, 77);
