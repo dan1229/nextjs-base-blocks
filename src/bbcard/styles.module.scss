@@ -16,11 +16,6 @@ $card-background-default-color: var(--card-background-default-color, #ffffff);
 $card-darken-default-color: var(--card-darken-default-color, #e0e0e0);
 $card-border-default-color: var(--card-border-default-color, #e0e0e0);
 
-// bg colors
-$bg-color: var(--bg-color, #dddddd);
-$bg-light-color: var(--bg-light-color, #ffffff);
-$bg-dark-color: var(--bg-dark-color, #b1b1b1);
-
 // variables
 $border-radius: var(--card-border-radius, 8px);
 $elevation-low: var(--card-elevation-low, rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px);
