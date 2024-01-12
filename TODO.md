@@ -113,47 +113,9 @@
 - add to base blocks?
 
 
-----
-### 1.0.0
 
 
-#### TEST BEFORE RELEASE
-- just play with it as much as possible!!
-
-
-
-
-
-### [1.0.0] - 2024-01-DD
-#### Features
-- Added form styling to BB Form components!
-  - No more defining form styles as globals!!!
-  - Added options for sizing
-- Added options for `BBNavbar` and `BBNavbarItem` padding and margins
-- `BBCard` - new background color options and border option added
-  - Also just cleaned up color organization and theming support
-  - Added `elevation` variables to customize elevation levels
-- `BBLoadingSpinner` - improved a bit and added some variants
-  - Added `size` prop as well
-#### Bugs
-- Cleaned up primary and secondary color variables
-  - Cleaned up usages of all color variables
-  - `text-primary` variable renamed `text-color-primary`
-  - Lots of other refactoring and clean up of colors and color variables
-- Updated other NPM package requirements
-- Removed `next-theme` package
-- `BBButton` bugs
-  - Disabled state improved
-  - Added `transparent` prop for background color
-  - Secondary and inverse color variant fixes
-  - Focus and hover states improved
-  - Hover state cursors improved
-- `InputWrapper` rerendering bugs fixed
-- `BBAlert` 'hierarchy' bug fixed
-- `BBNavbar` and `BBNavbarItem` hover bugs
-- Browser list update
-- Updated packages and requirements
-- Fixed `AlertsFieldErrors` bug related to `ref`
+### [1.1.0] - 2024-MM-DD
 #### TODO
 
 -------------------------------------------------------

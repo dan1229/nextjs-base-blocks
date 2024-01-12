@@ -14,6 +14,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [1.0.0] - 2024-01-12
+#### Features
+- Added form styling to BB Form components!
+  - No more defining form styles as globals!!!
+  - Added options for sizing
+- Added options for `BBNavbar` and `BBNavbarItem` padding and margins
+- `BBCard` - new background color options and border option added
+  - Also just cleaned up color organization and theming support
+  - Added `elevation` variables to customize elevation levels
+- `BBLoadingSpinner` - improved a bit and added some variants
+  - Added `size` prop as well
+#### Bugs
+- Cleaned up primary and secondary color variables
+  - Cleaned up usages of all color variables
+  - `text-primary` variable renamed `text-color-primary`
+  - Lots of other refactoring and clean up of colors and color variables
+- Updated other NPM package requirements
+- Removed `next-theme` package
+- `BBButton` bugs
+  - Disabled state improved
+  - Added `transparent` prop for background color
+  - Secondary and inverse color variant fixes
+  - Focus and hover states improved
+  - Hover state cursors improved
+- `InputWrapper` rerendering bugs fixed
+- `BBAlert` 'hierarchy' bug fixed
+- `BBNavbar` and `BBNavbarItem` hover bugs
+- Browser list update
+- Updated packages and requirements
+- Fixed `AlertsFieldErrors` bug related to `ref`
+
+
 ### [0.3.4] - 2023-11-24
 - `BBFieldSelectMultiple` - fixes
   - Default value fix
