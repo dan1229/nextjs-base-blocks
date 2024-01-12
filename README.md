@@ -102,7 +102,7 @@ html,
   // bb navbar
   --navbar-border-radius: 8px;
   --navbar-background-color: rgb(221, 221, 221);
-  --navbar-title-color: rgb(24, 24, 24s);
+  --navbar-title-color: #{$primary-color};
   --navbar-brand-padding: 0rem;
   --navbar-container-brand-margin: 0.5rem;
   // bb navbar item
