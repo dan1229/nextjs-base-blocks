@@ -64,7 +64,7 @@ html,
   // general colors
   --white: #fff;
   --white-dark: #f5f5f5;
-  --black: 35, 35, 35;
+  --black: rgb(35, 35, 35);
   --grey-light: #a9bcde;
   --grey-light-dark: #a8b6cc;  // used for hover states and similar
   --grey-dark: #58647a;
@@ -83,10 +83,10 @@ html,
   --danger-dark-color: #{darken($danger-color, 10%)};
   --danger-light-color: #{lighten($danger-color, 10%)};
   // bg theme colors
-  --bg-color: rgb(221, 221, 221) !important;
-  --bg-light-color: rgb(255, 255, 255) !important;
-  --bg-dark-color: rgb(177, 177, 177) !important;
-  --bs-body-color: rgb(24, 23, 23) !important;
+  --bg-color: rgb(221, 221, 221);
+  --bg-light-color: rgb(255, 255, 255);
+  --bg-dark-color: rgb(177, 177, 177);
+  --bs-body-color: rgb(24, 23, 23);
   // bb alert
   --alert-border-radius: 8px;
   // bb button
@@ -109,7 +109,7 @@ html,
   --navbar-item-border-radius: 8px;
   --navbar-item-padding: 12px;
   // bb text
-  --text-color-default: rgb(24, 24, 24) !important;
+  --text-color-default: rgb(24, 24, 24);
   --text-size-xs: 0.6rem;
   --text-size-s: 0.8rem;
   --text-size-m: 1rem;
@@ -142,10 +142,10 @@ Add overrides for dark themes like so:
 ```scss
 [data-theme='dark'] {
   // override any of the above variables
-  --bg-color: rgb(25, 25, 25) !important;
-  --bg-light-color: rgb(60, 60, 60) !important;
-  --bg-dark-color: rgb(39, 39, 39) !important;
-  --bs-body-color: rgb(245, 245, 245) !important;
+  --bg-color: rgb(25, 25, 25);
+  --bg-light-color: rgb(60, 60, 60);
+  --bg-dark-color: rgb(39, 39, 39);
+  --bs-body-color: rgb(245, 245, 245);
   // bb navbar
   --navbar-border-radius: 8px;
   --navbar-background-color: rgb(77, 77, 77);
@@ -155,7 +155,7 @@ Add overrides for dark themes like so:
   --card-darken-default-color: rgb(39, 39, 39);
   --card-border-default-color: rgb(77, 77, 77);
   // bb text
-  --text-color-default: rgb(255, 255, 255) !important;
+  --text-color-default: rgb(255, 255, 255);
 }
 ```
 -------------------------------------------------------
