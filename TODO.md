@@ -71,6 +71,18 @@
 ### 1.1.0
 
 
+#### bb form components variables
+- start adding variables for colors and all that
+- border color
+- border thickness
+  - when focussed
+- border radius
+- background color
+- text color
+   - when focussed
+- placeholder color
+
+
 #### bb field dropdown styling
 - add arrow or something
   - add to global styling
