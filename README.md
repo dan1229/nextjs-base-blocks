@@ -158,6 +158,22 @@ Add overrides for dark themes like so:
   --text-color-default: rgb(255, 255, 255);
 }
 ```
+
+
+## Demo
+
+This project is also a standalone NextJS project that you can run to see the components in action.
+
+To do so, simply run:
+
+```bash
+npm run dev
+```
+
+Then navigate to [http://localhost:3000](http://localhost:3000) to see the demo of the components.
+
+**Please not this is a work in progress.**
+
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)
