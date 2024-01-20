@@ -130,6 +130,11 @@
 
 
 
+#### bbmodal - width prop?
+- 'narrow', 'normal', 'full'?
+
+
+
 ### [1.1.0] - 2024-MM-DD
 #### TODO
 
