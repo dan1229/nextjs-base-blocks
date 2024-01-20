@@ -129,6 +129,14 @@
 - yup
 
 
+#### bbdivier?
+- hr
+- props
+  - color
+  - size?
+  - border?
+
+
 
 #### bbmodal - width prop?
 - 'narrow', 'normal', 'full'?
