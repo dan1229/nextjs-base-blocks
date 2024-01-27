@@ -85,6 +85,13 @@ $input-plaintext-color: var(--white) !default;
     padding-left: 2.5rem;
     margin-bottom: 0.5rem;
     cursor: pointer;
+
+    &:checked {
+      // Add your checked state styles here
+      // For example:
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-dark-color);
+    }
   }
 
   // Customize the `:focus` state to imitate native WebKit styles.
