@@ -129,11 +129,17 @@ $input-plaintext-color: var(--white) !default;
   // disabled if the fieldset is disabled. Due to implementation difficulty, we
   // don't honor that edge case; we style them as disabled anyway.
   &:disabled {
+    cursor: not-allowed;
     color: $input-disabled-color;
     background-color: $input-disabled-bg;
     border-color: $input-disabled-border-color;
     // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
     opacity: 1;
+
+    &[type='checkbox'] {
+      background-color: $input-disabled-color;
+      border-color: $input-disabled-color;
+    }
   }
 
   // File input buttons theming
