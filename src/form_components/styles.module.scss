@@ -78,6 +78,22 @@ $input-plaintext-color: var(--white) !default;
     }
   }
 
+  // Checkbox styles
+  &[type='checkbox'] {
+    width: 1rem;
+    height: 1rem;
+    padding-left: 2.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+
+    &:checked {
+      // Add your checked state styles here
+      // For example:
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-dark-color);
+    }
+  }
+
   // Customize the `:focus` state to imitate native WebKit styles.
   &:focus {
     color: $input-focus-color;
@@ -113,11 +129,17 @@ $input-plaintext-color: var(--white) !default;
   // disabled if the fieldset is disabled. Due to implementation difficulty, we
   // don't honor that edge case; we style them as disabled anyway.
   &:disabled {
+    cursor: not-allowed;
     color: $input-disabled-color;
     background-color: $input-disabled-bg;
     border-color: $input-disabled-border-color;
     // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
     opacity: 1;
+
+    &[type='checkbox'] {
+      background-color: $input-disabled-color;
+      border-color: $input-disabled-color;
+    }
   }
 
   // File input buttons theming
