@@ -147,6 +147,11 @@
 - need to somehow add 'overflow-y: hidden' to 'body'/'html' when modal is open
 
 
+#### bbfield checkbox
+- add size variables/scss variables
+- add border-radius scss variables
+
+
 ### [1.1.0] - 2024-MM-DD
 #### TODO
 
