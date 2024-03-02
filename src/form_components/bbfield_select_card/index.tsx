@@ -15,6 +15,7 @@ import { IBBFieldSelectCardOptions, IPropsBBBaseForm } from 'src/types';
  * @param {string=} selectedInitial - Initial selected options.
  * @param {boolean=} showTitleOptions - Show title options.
  * @param {boolean=} showSelected - Show currently selected option.
+ * @param {string=} optionWidth - Width of the options.
  */
 export interface IPropsBBFieldSelectCard {
   control: unknown;
@@ -22,22 +23,36 @@ export interface IPropsBBFieldSelectCard {
   selectedInitial?: string;
   showTitleOptions?: boolean;
   showSelected?: boolean;
+  optionWidth?: string;
 }
 
 /**
  * BBFIELD SELECT CARD
  */
 export default function BBFieldSelectCard(Props: IPropsBBFieldSelectCard & Omit<IPropsBBBaseForm, 'register'>): React.ReactElement {
-  const { control, options, fieldName, selectedInitial, required, className, showTitleOptions = true, showSelected = true } = Props;
-  const [selectedOption, setSelectedOption] = useState<string>(selectedInitial || '');
+  const {
+    control,
+    options,
+    fieldName,
+    selectedInitial,
+    required,
+    className,
+    showTitleOptions = true,
+    showSelected = true,
+    optionWidth = '30%',
+  } = Props;
+  const selectedInitialOption = selectedInitial ? options.find((option) => option.value === selectedInitial) : undefined;
+  const [selectedOption, setSelectedOption] = useState<IBBFieldSelectCardOptions>(
+    selectedInitialOption || ({} as IBBFieldSelectCardOptions)
+  );
 
   useEffect(() => {
-    if (selectedInitial) {
-      setSelectedOption(selectedInitial);
+    if (selectedInitialOption) {
+      setSelectedOption(selectedInitialOption);
     }
-  }, [selectedInitial]);
+  }, [selectedInitialOption]);
 
-  const onChange = (newValue: string) => {
+  const onChange = (newValue: IBBFieldSelectCardOptions) => {
     setSelectedOption(newValue);
   };
 
@@ -48,23 +63,22 @@ export default function BBFieldSelectCard(Props: IPropsBBFieldSelectCard & Omit<
         name={fieldName}
         defaultValue={selectedInitial || []}
         render={({ field }) => (
-          <div className={styles.containerSelectWindow}>
+          <div className={styles.containerSelectWindow} style={{ width: optionWidth }}>
             {showTitleOptions && <BBText size="small">Options</BBText>}
             <div className={styles.containerOptions}>
               {options.map((option: IBBFieldSelectCardOptions) => (
                 <CardOption
                   key={option.value}
                   option={option}
-                  selected={selectedOption.includes(option.value)}
+                  selected={!!selectedOption.value && !!selectedOption.value.includes(option.value)}
                   onClick={() => {
-                    const newValue = selectedOption === option.value ? '' : option.value;
-                    field.onChange(newValue);
-                    onChange(newValue);
+                    field.onChange(option);
+                    onChange(option);
                   }}
                 />
               ))}
             </div>
-            {showSelected && <BBText size="small">Selected: {selectedOption.length ? selectedOption : 'Not selected'}</BBText>}
+            {showSelected && <BBText size="small">Selected: {selectedOption ? selectedOption.label : 'Not selected'}</BBText>}
           </div>
         )}
       />
