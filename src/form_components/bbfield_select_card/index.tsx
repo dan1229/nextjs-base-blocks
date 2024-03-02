@@ -52,6 +52,12 @@ export default function BBFieldSelectCard(Props: IPropsBBFieldSelectCard & Omit<
     }
   }, [selectedInitialOption]);
 
+  const onClickOption = (selectedOption: IBBFieldSelectCardOptions, onChange: Function) => {
+    const found = options.find((option) => selectedOption.value === option.value);
+    found && setSelectedOption(found);
+    onChange(found);
+  };
+
   const onChange = (newValue: IBBFieldSelectCardOptions) => {
     setSelectedOption(newValue);
   };
@@ -62,7 +68,7 @@ export default function BBFieldSelectCard(Props: IPropsBBFieldSelectCard & Omit<
         control={control as Control<FieldValues>}
         name={fieldName}
         defaultValue={selectedInitial || []}
-        render={({ field }) => (
+        render={() => (
           <div className={styles.containerSelectWindow} style={{ width: optionWidth }}>
             {showTitleOptions && <BBText size="small">Options</BBText>}
             <div className={styles.containerOptions}>
@@ -71,10 +77,7 @@ export default function BBFieldSelectCard(Props: IPropsBBFieldSelectCard & Omit<
                   key={option.value}
                   option={option}
                   selected={!!selectedOption.value && !!selectedOption.value.includes(option.value)}
-                  onClick={() => {
-                    field.onChange(option);
-                    onChange(option);
-                  }}
+                  onClick={onClickOption}
                 />
               ))}
             </div>
@@ -86,9 +89,9 @@ export default function BBFieldSelectCard(Props: IPropsBBFieldSelectCard & Omit<
   );
 }
 
-function CardOption({ option, selected, onClick }: { option: IBBFieldSelectCardOptions; selected: boolean; onClick: () => void }) {
+function CardOption({ option, selected, onClick }: { option: IBBFieldSelectCardOptions; selected: boolean; onClick: Function }) {
   return (
-    <BBCard className={classnames(styles.cardOption, selected && styles.cardOptionSelected)} onClick={onClick}>
+    <BBCard className={classnames(styles.cardOption, selected && styles.cardOptionSelected)} onClick={() => onClick}>
       <BBCard.Body>
         <BBText size="small">{option.label}</BBText>
       </BBCard.Body>
