@@ -13,7 +13,7 @@ import type { Control, FieldValues } from 'react-hook-form';
  *
  * @param {unknown} control - The control object from react-hook-form.
  * @param {IBBFieldSelectCardOptions[]} options - Options to display.
- * @param {string=} selectedInitial - Initial selected options.
+ * @param {string=} selectedInitial - Initial selected options. The VALUE of the option.
  * @param {boolean=} showTitleOptions - Show title options.
  * @param {boolean=} showSelected - Show currently selected option.
  * @param {string=} optionWidth - Width of the options.
@@ -53,10 +53,9 @@ export default function BBFieldSelectCard(Props: IPropsBBFieldSelectCard & Omit<
     }
   }, [selectedInitialOption]);
 
-  const onClickOption = (selectedOption: IBBFieldSelectCardOptions, onChange: Function) => {
-    const found = options.find((option) => selectedOption.value === option.value);
-    found && setSelectedOption(found);
-    onChange(found);
+  const onClickOption = (selectedOption: IBBFieldSelectCardOptions) => {
+    setSelectedOption(selectedOption);
+    // onChange(selectedOption);
   };
 
   return (
@@ -64,18 +63,13 @@ export default function BBFieldSelectCard(Props: IPropsBBFieldSelectCard & Omit<
       <Controller
         control={control as Control<FieldValues>}
         name={fieldName}
-        defaultValue={selectedInitial || []}
+        defaultValue={selectedInitial}
         render={() => (
           <div className={styles.containerSelectWindow} style={{ width: optionWidth }}>
             {showTitleOptions && <BBText size="small">Options</BBText>}
             <div className={styles.containerOptions}>
               {options.map((option: IBBFieldSelectCardOptions) => (
-                <CardOption
-                  key={option.value}
-                  option={option}
-                  selected={!!selectedOption.value && !!selectedOption.value.includes(option.value)}
-                  onClick={onClickOption}
-                />
+                <CardOption key={option.value} option={option} selected={option.value == selectedOption.value} onClick={onClickOption} />
               ))}
             </div>
             {showSelected && <BBText size="small">Selected: {selectedOption.label}</BBText>}
@@ -88,7 +82,7 @@ export default function BBFieldSelectCard(Props: IPropsBBFieldSelectCard & Omit<
 
 function CardOption({ option, selected, onClick }: { option: IBBFieldSelectCardOptions; selected: boolean; onClick: Function }) {
   return (
-    <BBCard className={classnames(styles.cardOption, selected && styles.cardOptionSelected)} onClick={() => onClick}>
+    <BBCard className={classnames(styles.cardOption, selected && styles.cardOptionSelected)} onClick={() => onClick(option)}>
       <BBCard.Body>
         <BBText size="small">{option.label}</BBText>
       </BBCard.Body>
