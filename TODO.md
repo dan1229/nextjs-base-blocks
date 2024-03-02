@@ -161,6 +161,15 @@
 ### [1.1.0] - 2024-MM-DD
 #### TODO
 
+
+----
+
+
+
+
+### [1.0.3] - 2024-03-02
+- Added `BBFieldSelectCard` component
+
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)

@@ -1,0 +1,27 @@
+.containerSelectWindow {
+  margin: 0.25rem 0;
+}
+
+.containerOptions {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.cardOption {
+  margin: 0.25rem;
+  &:hover {
+    cursor: pointer;
+    div {
+      background-color: var(--bg-dark-color, #1c1c1c);
+    }
+  }
+}
+
+.cardOptionSelected {
+  div {
+    background-color: var(--secondary-color, #e8352e);
+  }
+}

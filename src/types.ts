@@ -81,6 +81,12 @@ export interface IBBFieldDropdownOptions {
 }
 
 // TBBFieldSelectMultiple
+export interface IBBFieldSelectCardOptions {
+  value: string;
+  label: string;
+}
+
+// TBBFieldSelectMultiple
 export interface IBBFieldSelectMultipleOptions {
   value: string;
   label: string;
