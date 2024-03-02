@@ -1,11 +1,12 @@
 import classnames from 'classnames';
 import React, { useEffect, useState } from 'react';
-import { Control, Controller, FieldValues } from 'react-hook-form';
+import { Controller } from 'react-hook-form';
 import BBCard from '../../bbcard';
 import BBText from '../../bbtext';
 import InputWrapper from '../input_wrapper';
 import styles from './styles.module.scss';
-import { IBBFieldSelectCardOptions, IPropsBBBaseForm } from '../../types';
+import type { IBBFieldSelectCardOptions, IPropsBBBaseForm } from '../../types';
+import type { Control, FieldValues } from 'react-hook-form';
 
 /**
  * PROPS
@@ -58,10 +59,6 @@ export default function BBFieldSelectCard(Props: IPropsBBFieldSelectCard & Omit<
     onChange(found);
   };
 
-  const onChange = (newValue: IBBFieldSelectCardOptions) => {
-    setSelectedOption(newValue);
-  };
-
   return (
     <InputWrapper fieldName={fieldName} className={className} required={required}>
       <Controller
@@ -81,7 +78,7 @@ export default function BBFieldSelectCard(Props: IPropsBBFieldSelectCard & Omit<
                 />
               ))}
             </div>
-            {showSelected && <BBText size="small">Selected: {selectedOption ? selectedOption.label : 'Not selected'}</BBText>}
+            {showSelected && <BBText size="small">Selected: {selectedOption.label}</BBText>}
           </div>
         )}
       />
