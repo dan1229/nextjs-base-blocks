@@ -13,18 +13,22 @@ import { IBBFieldSelectCardOptions, IPropsBBBaseForm } from 'src/types';
  * @param {unknown} control - The control object from react-hook-form.
  * @param {IBBFieldSelectCardOptions[]} options - Options to display.
  * @param {string=} selectedInitial - Initial selected options.
+ * @param {boolean=} showTitleOptions - Show title options.
+ * @param {boolean=} showSelected - Show currently selected option.
  */
 export interface IPropsBBFieldSelectCard {
   control: unknown;
   options: IBBFieldSelectCardOptions[];
   selectedInitial?: string;
+  showTitleOptions?: boolean;
+  showSelected?: boolean;
 }
 
 /**
  * BBFIELD SELECT CARD
  */
 export default function BBFieldSelectCard(Props: IPropsBBFieldSelectCard & Omit<IPropsBBBaseForm, 'register'>): React.ReactElement {
-  const { control, options, fieldName, selectedInitial, required, className } = Props;
+  const { control, options, fieldName, selectedInitial, required, className, showTitleOptions = true, showSelected = true } = Props;
   const [selectedOption, setSelectedOption] = useState<string>(selectedInitial || '');
 
   useEffect(() => {
@@ -44,9 +48,9 @@ export default function BBFieldSelectCard(Props: IPropsBBFieldSelectCard & Omit<
         name={fieldName}
         defaultValue={selectedInitial || []}
         render={({ field }) => (
-          <div className={classnames(styles.containerSelectMultiple, className)}>
-            <div className={styles.containerSelectWindow}>
-              <BBText bold>Options</BBText>
+          <div className={styles.containerSelectWindow}>
+            {showTitleOptions && <BBText size="small">Options</BBText>}
+            <div className={styles.containerOptions}>
               {options.map((option: IBBFieldSelectCardOptions) => (
                 <CardOption
                   key={option.value}
@@ -60,20 +64,7 @@ export default function BBFieldSelectCard(Props: IPropsBBFieldSelectCard & Omit<
                 />
               ))}
             </div>
-            <div className={styles.containerSelectWindow}>
-              <BBText bold>Selected</BBText>
-              {selectedOption.length ? (
-                selectedOption === '' ? (
-                  <BBText color="secondary">No options selected</BBText>
-                ) : (
-                  options
-                    .filter((option) => selectedOption.includes(option.value))
-                    .map((option) => <CardOption key={option.value} option={option} selected={true} onClick={() => {}} />)
-                )
-              ) : (
-                <BBText color="secondary">No options selected</BBText>
-              )}
-            </div>
+            {showSelected && <BBText size="small">Selected: {selectedOption.length ? selectedOption : 'Not selected'}</BBText>}
           </div>
         )}
       />
