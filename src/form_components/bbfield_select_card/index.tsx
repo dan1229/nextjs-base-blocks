@@ -5,7 +5,7 @@ import BBCard from '../../bbcard';
 import BBText from '../../bbtext';
 import InputWrapper from '../input_wrapper';
 import styles from './styles.module.scss';
-import { IBBFieldSelectCardOptions, IPropsBBBaseForm } from 'src/types';
+import { IBBFieldSelectCardOptions, IPropsBBBaseForm } from '../../types';
 
 /**
  * PROPS
