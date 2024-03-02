@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Controller } from 'react-hook-form';
 import BBCard from '../../bbcard';
 import BBText from '../../bbtext';
