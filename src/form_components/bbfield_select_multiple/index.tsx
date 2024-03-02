@@ -11,8 +11,8 @@ import type { IBBFieldSelectMultipleOptions, IPropsBBBaseForm } from '../../type
 /**
  * PROPS
  *
+ * @param {unknown} control - The control object from react-hook-form.
  * @param {IBBFieldSelectMultipleOptions[]} options - Options to display.
- * @param {string} fieldName - Name of the field. Think 'email' or 'name'.
  * @param {string[] | undefined} selectedInitial - Initial selected options.
  */
 export interface IPropsBBFieldSelectMultiple {

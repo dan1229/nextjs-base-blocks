@@ -5,29 +5,25 @@ import BBCard from '../../bbcard';
 import BBText from '../../bbtext';
 import InputWrapper from '../input_wrapper';
 import styles from './styles.module.scss';
+import { IBBFieldSelectCardOptions } from 'src/types';
 
-export interface IBBFieldCardSelectOption {
-  value: string;
-  label: string;
+/**
+ * PROPS
+ *
+ * @param {unknown} control - The control object from react-hook-form.
+ * @param {IBBFieldSelectCardOptions[]} options - Options to display.
+ * @param {string[] | undefined} selectedInitial - Initial selected options.
+ */
+export interface IPropsBBFieldSelectMultiple {
+  control: unknown;
+  options: IBBFieldSelectCardOptions[];
+  selectedInitial: string[] | undefined;
 }
 
-export interface IPropsBBFieldCardSelect {
-  control: any;
-  options: IBBFieldCardSelectOption[];
-  fieldName: string;
-  selectedInitial?: string[];
-  required?: boolean;
-  className?: string;
-}
-
-export default function BBFieldCardSelect({
-  control,
-  options,
-  fieldName,
-  selectedInitial,
-  required,
-  className,
-}: IPropsBBFieldCardSelect): React.ReactElement {
+/**
+ * BBFIELD SELECT MULTIPLE
+ */
+export default function BBFieldSelectMultiple(Props: IPropsBBFieldSelectMultiple & Omit<IPropsBBBaseForm, 'register'>): React.ReactElement {
   const [selectedOptions, setSelectedOptions] = useState<string[]>(selectedInitial || []);
 
   useEffect(() => {
