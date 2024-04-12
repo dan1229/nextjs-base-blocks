@@ -38,15 +38,20 @@ export type TBBButtonType = 'submit' | 'button' | 'reset';
 export type TBBButtonVariant =
   | 'primary'
   | 'secondary'
+  | 'accent'
   | 'danger'
   | 'success'
   | 'warning'
   | 'info'
+  | 'black'
+  | 'white'
   | 'inverse-info'
   | 'inverse-primary'
   | 'inverse-secondary'
+  | 'inverse-accent'
   | 'transparent-primary'
-  | 'transparent-secondary';
+  | 'transparent-secondary'
+  | 'transparent-accent';
 export type TBBButtonSize = 'sm' | 'md' | 'lg';
 export type TBBButtonElevation = 'none' | 'low' | 'medium' | 'high';
 export type TBBButtonIconAlign = 'left' | 'right' | 'above' | 'below' | 'space-between';

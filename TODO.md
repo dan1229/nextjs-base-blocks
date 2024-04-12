@@ -133,6 +133,11 @@
   - could allow them to pass colors directly? same as body?
 
 
+
+#### bbbutton
+- colors
+  - inverse danger/success/warning?
+
 ----
 ### 1.1.0
 
@@ -230,12 +235,6 @@
 
 
 #### bbbutton
-- colors
-  - add accent color
-  - inverse accent color?
-  - black
-  - white
--
 - 'link' functionality
   - i.e., 'type=link' or something to use right click
     - should this just be the default behavior...?
@@ -254,16 +253,17 @@
 
 
 
-#### accent color
-- add support for it?
-  - could default to the secondary color if required
-- add to docs
-
 
 
 ### [1.1.0] - 2024-04-DD
+- `BBButton`
+  - New colors!
+    - `accent`/`inverse-accent`/`transparent-accent`
+    - `black`/`white`
+  - Added `colorText` prop to change text color manually
 - `BBFieldSelectCard`
   - remove `optionWidth` prop
+- Support for `accent` color
 #### TODO
 
 -------------------------------------------------------
