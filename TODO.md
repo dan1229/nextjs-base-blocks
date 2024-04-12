@@ -261,8 +261,6 @@
 
 
 
-
-
 ### [1.1.0] - 2024-04-DD
 - `BBFieldSelectCard`
   - remove `optionWidth` prop
