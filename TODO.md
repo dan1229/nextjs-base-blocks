@@ -230,12 +230,6 @@
 
 
 #### bbbutton
-- colors
-  - add accent color
-  - inverse accent color?
-  - black
-  - white
--
 - 'link' functionality
   - i.e., 'type=link' or something to use right click
     - should this just be the default behavior...?
@@ -254,16 +248,20 @@
 
 
 
-#### accent color
-- add support for it?
-  - could default to the secondary color if required
-- add to docs
 
+- colors
+  - black
+  - white
+-
 
 
 ### [1.1.0] - 2024-04-DD
+- `BBButton`
+  - New colors!
+    - `accent`/`inverse-accent`/`transparent-accent`
 - `BBFieldSelectCard`
   - remove `optionWidth` prop
+- Support for `accent` color
 #### TODO
 
 -------------------------------------------------------

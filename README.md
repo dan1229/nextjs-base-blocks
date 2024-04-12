@@ -46,6 +46,7 @@ The available options are here:
 // set these theme colors
 $primary-color: #5a65ff;
 $secondary-color: #45b689;
+$accent-color: #5a65ff;
 $info-color: #284af7;
 $warning-color: #f1c500;
 $success-color: #50c758;
@@ -61,6 +62,9 @@ html,
   --secondary-color: #{$secondary-color};
   --secondary-dark-color: #{darken($secondary-color, 10%)};
   --secondary-light-color: #{lighten($secondary-color, 10%)};
+  --accent-color: #{$accent-color};
+  --accent-dark-color: #{darken($accent-color, 10%)};
+  --accent-light-color: #{lighten($accent-color, 10%)};
   // general colors
   --white: #fff;
   --white-dark: #f5f5f5;
