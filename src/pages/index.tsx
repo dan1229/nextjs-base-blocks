@@ -53,6 +53,8 @@ const DemoPage = () => {
     idForm: '',
     className: '',
     onClick: () => alert('You clicked the button!'),
+    transparent: false,
+    colorText: 'white',
   });
   // BB Card
   const [stateBBCard, setStateBBCard] = useState<IPropsBBCard>({

@@ -133,6 +133,11 @@
   - could allow them to pass colors directly? same as body?
 
 
+
+#### bbbutton
+- colors
+  - inverse danger/success/warning?
+
 ----
 ### 1.1.0
 
@@ -248,11 +253,6 @@
 
 
 
-
-- colors
-  - black
-  - white
-- inverse danger?
 
 
 ### [1.1.0] - 2024-04-DD
