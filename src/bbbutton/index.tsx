@@ -11,6 +11,7 @@ import type {
   TBBTextSize,
   TBBTextColor,
 } from '../types';
+import BBLink from 'src/bblink';
 
 /**
  * ICON PROPS
@@ -167,10 +168,26 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     return null;
   };
 
-  if (href) {
+  // main shared component
+  const mainComponent = (
+    <>
+      {renderIcon('left', icon)}
+      {!!text && (
+        <div className={classNames(styles.containerText, showTextOnHover && styles.noMargin)}>
+          <BBText color={colorText} size={getButtonSize()}>
+            {text}
+          </BBText>
+        </div>
+      )}
+      {renderIcon('right', icon)}
+    </>
+  );
+
+  // if href is defined, use regular button and show it as disabled
+  if (href && !disabledRes) {
     if (onClick) console.warn('BBButton: Both onClick and href are defined. onClick will be ignored.');
     return (
-      <a
+      <BBLink
         href={href}
         className={classNames(
           className,
@@ -184,19 +201,13 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
           getClassElevation(),
           transparent && styles.transparent
         )}
-        target="_blank"
-        rel="noopener noreferrer"
+        external
+        underline={false}
+        size={getButtonSize()}
+        color={colorText}
       >
-        {renderIcon('left', icon)}
-        {!!text && (
-          <div className={classNames(styles.containerText, showTextOnHover && styles.noMargin)}>
-            <BBText color={colorText} size={getButtonSize()}>
-              {text}
-            </BBText>
-          </div>
-        )}
-        {renderIcon('right', icon)}
-      </a>
+        {mainComponent}
+      </BBLink>
     );
   }
 
@@ -219,15 +230,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
       disabled={disabledRes}
       onClick={disabledRes ? undefined : onClick}
     >
-      {renderIcon('left', icon)}
-      {!!text && (
-        <div className={classNames(styles.containerText, showTextOnHover && styles.noMargin)}>
-          <BBText color={colorText} size={getButtonSize()}>
-            {text}
-          </BBText>
-        </div>
-      )}
-      {renderIcon('right', icon)}
+      {mainComponent}
     </button>
   );
 }

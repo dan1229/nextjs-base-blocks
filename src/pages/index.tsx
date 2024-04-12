@@ -3,7 +3,7 @@ import BBAlert from '../bbalert';
 import BBButton from '../bbbutton';
 import BBCard from '../bbcard';
 import BBLink from '../bblink';
-import BBLoadingSpinner from '../bbloading_spinner';
+import BBLoadingSpinner, { IPropsBBLoadingSpinner, TBBLoadingSpinnerSizes, TBBLoadingSpinnerVariants } from '../bbloading_spinner';
 import BBModal from '../bbmodal';
 import BBNavbar from '../bbnavbar';
 import BBNavbarItem from '../bbnavbar_item';
@@ -80,6 +80,12 @@ const DemoPage = () => {
     asSpan: false,
     external: true,
     className: '',
+  });
+  // BB Loading Spinner
+  const [stateBBLoadingSpinner, setStateBBLoadingSpinner] = useState<IPropsBBLoadingSpinner>({
+    variant: 'default',
+    className: '',
+    size: 'md',
   });
   // BB Modal
   const [stateBBModal, setStateBBModal] = useState<IPropsBBModal>({
@@ -161,8 +167,12 @@ const DemoPage = () => {
           setStateObject={setStateBBCard}
         />
         <DemoComponent name="BBLink" child={<BBLink {...stateBBLink} />} stateObject={stateBBLink} setStateObject={setStateBBLink} />
-        {/* This one can use whichever set method since it has no props */}
-        <DemoComponent name="BBLoadingSpinner" child={<BBLoadingSpinner />} stateObject={{}} setStateObject={setStateBBAlert} />
+        <DemoComponent
+          name="BBLoadingSpinner"
+          child={<BBLoadingSpinner {...stateBBLoadingSpinner} />}
+          stateObject={stateBBLoadingSpinner}
+          setStateObject={setStateBBLoadingSpinner}
+        />
         <DemoComponent name="BBModal" child={<BBModal {...stateBBModal} />} stateObject={stateBBModal} setStateObject={setStateBBModal} />
         <DemoComponent
           name="BBNavbar"
