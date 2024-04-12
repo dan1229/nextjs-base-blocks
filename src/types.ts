@@ -43,6 +43,8 @@ export type TBBButtonVariant =
   | 'success'
   | 'warning'
   | 'info'
+  | 'black'
+  | 'white'
   | 'inverse-info'
   | 'inverse-primary'
   | 'inverse-secondary'

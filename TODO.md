@@ -252,13 +252,15 @@
 - colors
   - black
   - white
--
+- inverse danger?
 
 
 ### [1.1.0] - 2024-04-DD
 - `BBButton`
   - New colors!
     - `accent`/`inverse-accent`/`transparent-accent`
+    - `black`/`white`
+  - Added `colorText` prop to change text color manually
 - `BBFieldSelectCard`
   - remove `optionWidth` prop
 - Support for `accent` color

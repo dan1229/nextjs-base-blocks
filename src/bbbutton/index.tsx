@@ -2,7 +2,15 @@ import classNames from 'classnames';
 import React from 'react';
 import BBText from '../bbtext';
 import styles from './styles.module.scss';
-import type { TBBButtonIconAlign, TBBButtonType, TBBButtonSize, TBBButtonElevation, TBBButtonVariant, TBBTextSize } from '../types';
+import type {
+  TBBButtonIconAlign,
+  TBBButtonType,
+  TBBButtonSize,
+  TBBButtonElevation,
+  TBBButtonVariant,
+  TBBTextSize,
+  TBBTextColor,
+} from '../types';
 
 /**
  * ICON PROPS
@@ -32,6 +40,7 @@ interface IPropsBBButtonIcon {
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - The function to call when the button is clicked
  * @param {boolean=} transparent - Whether the button is transparent
+ * @param {TBBTextColor=} colorText - The color of the text
  */
 export interface IPropsBBButton {
   text?: string;
@@ -48,6 +57,7 @@ export interface IPropsBBButton {
   className?: string;
   onClick?: () => void;
   transparent?: boolean;
+  colorText?: TBBTextColor;
 }
 
 /**
@@ -69,6 +79,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     className,
     onClick,
     transparent = false,
+    colorText = 'white',
   } = Props;
   // if button doesn't do anything, disable it
   // otherwise, rely on the disabled prop
@@ -92,6 +103,10 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
         return styles.warning;
       case 'info':
         return styles.info;
+      case 'black':
+        return styles.black;
+      case 'white':
+        return styles.white;
       case 'inverse-info':
         return styles.inverseInfo;
       case 'inverse-primary':
@@ -169,7 +184,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
       {renderIcon('left', icon)}
       {!!text && (
         <div className={classNames(styles.containerText, showTextOnHover && styles.noMargin)}>
-          <BBText color="white" size={getButtonSize()}>
+          <BBText color={colorText} size={getButtonSize()}>
             {text}
           </BBText>
         </div>

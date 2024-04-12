@@ -33,6 +33,8 @@ $warning-color: var(--warning-color, #f1c500);
 $warning-light-color: var(--warning-light-color, lighten(#f1c500, 10%));
 $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
 
+$black: var(--black, #000000);
+
 // base
 .base {
   padding: 0.6rem;
@@ -263,6 +265,40 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
 .info:active {
   background-color: $info-dark-color;
   border: 1px solid $info-dark-color;
+}
+
+// BLACK
+.black {
+  background-color: $black;
+  border: 1px solid $white;
+  color: $white;
+}
+.black.hover:hover > div * {
+  color: $grey-light !important;
+}
+.black.focus > div * {
+  color: $grey-light !important;
+}
+.black:active {
+  background-color: $grey-dark;
+  border: 1px solid $grey-dark;
+}
+
+// WHITE
+.white {
+  background-color: $white;
+  border: 1px solid $black;
+  color: $black;
+}
+.white.hover:hover > div * {
+  color: $grey-light !important;
+}
+.white.focus > div * {
+  color: $grey-light !important;
+}
+.white:active {
+  background-color: $grey-darkest;
+  border: 1px solid $grey-darkest;
 }
 
 // INVERSE INFO
