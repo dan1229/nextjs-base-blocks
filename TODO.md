@@ -235,13 +235,6 @@
 
 
 #### bbbutton
-- 'link' functionality
-  - i.e., 'type=link' or something to use right click
-    - should this just be the default behavior...?
-  - test this works first then worry about backwards compatibility?
-  - how to do this with bbcard
-    - OR what other components?
--
 - fixes
   - better mobile styling
     - particularly big sizes
@@ -254,6 +247,9 @@
 
 
 
+- 'link' functionality
+
+
 
 ### [1.1.0] - 2024-04-DD
 - `BBButton`
@@ -261,6 +257,8 @@
     - `accent`/`inverse-accent`/`transparent-accent`
     - `black`/`white`
   - Added `colorText` prop to change text color manually
+  - Added `href` prop to make button a link
+    - Allows for right-clicking and opening in new tab
 - `BBFieldSelectCard`
   - remove `optionWidth` prop
 - Support for `accent` color

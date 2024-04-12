@@ -55,6 +55,7 @@ const DemoPage = () => {
     onClick: () => alert('You clicked the button!'),
     transparent: false,
     colorText: 'white',
+    href: '',
   });
   // BB Card
   const [stateBBCard, setStateBBCard] = useState<IPropsBBCard>({

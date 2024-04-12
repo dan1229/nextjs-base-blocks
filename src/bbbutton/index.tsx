@@ -58,6 +58,7 @@ export interface IPropsBBButton {
   onClick?: () => void;
   transparent?: boolean;
   colorText?: TBBTextColor;
+  href?: string;
 }
 
 /**
@@ -66,7 +67,7 @@ export interface IPropsBBButton {
 export default function BBButton(Props: IPropsBBButton): React.ReactElement {
   const {
     text,
-    type = 'submit',
+    type = 'button',
     size = 'md',
     variant = 'primary',
     elevation = 'none',
@@ -80,6 +81,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     onClick,
     transparent = false,
     colorText = 'white',
+    href,
   } = Props;
   // if button doesn't do anything, disable it
   // otherwise, rely on the disabled prop
@@ -115,6 +117,8 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
         return styles.inverseSecondary;
       case 'inverse-accent':
         return styles.inverseAccent;
+      default:
+        return '';
     }
   };
 
@@ -126,6 +130,8 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
         return 'medium';
       case 'lg':
         return 'xlarge';
+      default:
+        return 'medium';
     }
   };
 
@@ -139,38 +145,70 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
         return styles.elevationMedium;
       case 'high':
         return styles.elevationHigh;
+      default:
+        return '';
     }
   };
 
   const renderIcon = (currSide: TBBButtonIconAlign, icon?: IPropsBBButtonIcon) => {
     if (!icon || !icon.icon) return null;
     const element = <div className={styles.containerIcon}>{icon.icon}</div>;
-    if (align == 'left' && currSide == 'left') {
+    if (align === 'left' && currSide === 'left') {
       return element;
-    } else if (align == 'right' && currSide == 'right') {
+    } else if (align === 'right' && currSide === 'right') {
       return element;
-    } else if (align == 'above' && currSide == 'left') {
+    } else if (align === 'above' && currSide === 'left') {
       return element;
-    } else if (align == 'below' && currSide == 'right') {
+    } else if (align === 'below' && currSide === 'right') {
       return element;
-    } else if (align == 'space-between' && currSide == 'right') {
+    } else if (align === 'space-between' && currSide === 'right') {
       return element;
     }
     return null;
   };
 
-  /**
-   * RENDER
-   */
+  if (href) {
+    if (onClick) console.warn('BBButton: Both onClick and href are defined. onClick will be ignored.');
+    return (
+      <a
+        href={href}
+        className={classNames(
+          className,
+          styles.base,
+          align === 'above' || align === 'below' ? styles.baseVertical : null,
+          disabledRes && styles.disabled,
+          hoverRes && styles.hover,
+          focus && styles.focus,
+          showTextOnHover && styles.showTextOnHover,
+          getClassVariant(),
+          getClassElevation(),
+          transparent && styles.transparent
+        )}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {renderIcon('left', icon)}
+        {!!text && (
+          <div className={classNames(styles.containerText, showTextOnHover && styles.noMargin)}>
+            <BBText color={colorText} size={getButtonSize()}>
+              {text}
+            </BBText>
+          </div>
+        )}
+        {renderIcon('right', icon)}
+      </a>
+    );
+  }
+
   return (
     <button
       className={classNames(
         className,
         styles.base,
-        align == 'above' || align == 'below' ? styles.baseVertical : null,
-        !!disabledRes && styles.disabled,
-        !!hoverRes && styles.hover,
-        !!focus && styles.focus,
+        align === 'above' || align === 'below' ? styles.baseVertical : null,
+        disabledRes && styles.disabled,
+        hoverRes && styles.hover,
+        focus && styles.focus,
         showTextOnHover && styles.showTextOnHover,
         getClassVariant(),
         getClassElevation(),
