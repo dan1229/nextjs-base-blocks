@@ -4,71 +4,85 @@
 -------------------------------------------------------
 ## [Unreleased]
 ------
-
 ### TODO
+----
+#### Cypress Testing
 
-#### code cov
-- hook up code cov and coverage
 
-
-#### cypress tests
+##### cypress tests
 - add cypress component testing
 
 
-#### more color variables?
-- which ones?
+
+##### code cov
+- hook up code cov and coverage
+
 
 
 ----
-### demo page improvements
+#### demo page improvements
 
 
-#### demo page - `children` props
+##### demo page - `children` props
 - what to do about them?
 - React.ReactNode ones render weird
 - most are useless anyway
 
 
-#### how to display all props automatically?
+##### how to display all props automatically?
 - currently they're hardcoded
 
 
-#### demo page - bbcard 'composite' components
+##### demo page - bbcard 'composite' components
 - what to do with header, body and footer?
 
 
-#### demo pages - navbar component
+##### demo pages - navbar component
 - fix links
 - add image src
 - bbnavbar item - improve component and add children
   - i.e., multiple bbnavbar items
 
 
-#### demo page - do boolean fields work at all?
+##### demo page - do boolean fields work at all?
 - test and if not fix
 - some dont
   - bb text - italics field
   - bb card - noborder field
 
 
-#### demo page - bbmodal demo doesn't work great
+##### demo page - bbmodal demo doesn't work great
 - need way to hide modal
 - onCancel and onConfirm need to update showComponent state in DemoComponent
 
 
 
-#### demo page - show options for props
+##### demo page - show options for props
 - props that have options or types should show them
 - i.e., bbtext size - show the size 'choices'
 
 
-#### demo page - rehydration error
+##### demo page - rehydration error
 - idk fix it
 
 
-
 ----
-### 1.1.0
+### 1.2.0
+
+
+
+
+#### bbform fields - sizes
+- add size options
+  - small, normal, large
+- can i add this to the base component/props?
+
+
+#### bbform fields - helper text
+- add helper text
+  - color options
+- can i add this to the base component/props?
+- can this be handled by BBToolTip?
 
 
 #### bb form components variables
@@ -89,34 +103,20 @@
 - wait until form css is figured out
 
 
-#### demo page - form components
-- just add them
-- probably in a different page
-- make sections expandable
-
-
-#### bbcard - footer and header styling
-- find a way to offer customization for these?
-- `sameColor` prop or something?
-- could allow them to pass colors directly?
-
-
-#### bbnavbar item - bugs
-- hover not really workings?
-  - what does this mean? can't reproduce
 
 
 
-#### accent color
-- add support for it?
-  - could default to the secondary color if required
-- add to docs
--
-- add as color option for:
+
+#### tooltips
+- add tooltip functionality
+  - BBToolTip components?
+- add to other components
   - button
-  - bbcard background?
   - link?
-  - anywhere we offer 'primary' adn 'secondary' as color options
+  - TODO
+  - fields?
+    - TODO
+
 
 
 
@@ -125,11 +125,26 @@
 - add to base blocks?
 
 
-#### bbbutton - black and whtie variants
-- yup
+
+#### bbcard - footer and header styling
+- find a way to offer customization for these?
+  - same as body?
+- `sameColor` prop or something?
+  - could allow them to pass colors directly? same as body?
 
 
-#### bbdivier?
+----
+### 1.1.0
+
+
+#### demo page - form components
+- just add them
+- probably in a different page
+- make sections expandable
+
+
+
+#### bbdivider?
 - hr
 - props
   - color
@@ -138,19 +153,15 @@
 
 
 
-#### bbmodal - width prop?
-- 'narrow', 'normal', 'full'?
 
+#### bbmodal
+- background scrolling
+  - still not great
+  - need to somehow add 'overflow-y: hidden' to 'body'/'html' when modal is open
+-
+- width prop?
+  - 'narrow', 'normal', 'full'?
 
-#### bbmodal - background scrolling
-- still not great
-- need to somehow add 'overflow-y: hidden' to 'body'/'html' when modal is open
-
-
-#### bbnavbar
-- customizable logo size
-- customizable logo image padding
-- make title optional
 
 
 #### bbfield checkbox
@@ -158,17 +169,105 @@
 - add border-radius scss variables
 
 
-### [1.1.0] - 2024-MM-DD
+
+
+#### bb collapsible
+- use bbcard
+- collapsible component similar to card at least
+- BBSectionCollapsible
+  - BBSectionCollapsibleHeader
+  - BBSectionCollapsibleBody
+
+
+
+#### bbcard
+- color options
+  - accent color option
+    - border and background?
+-
+- add 'noPadding' prop
+  - to header, body, footer
+  - make the padding smaller in general?
+-
+- 'cardStyle'
+  - remove?
+  - only uses 'transparent' - this can just be a background option...?
+
+
+
+#### bbnavbar
+- add title color as prop/option?
+- add className prop
+- add 'sticky' prop
+-
+- customizable logo size
+- customizable logo image padding
+- make title optional
+
+
+
+#### bbnavbar item
+-  mobile styling hover mode - try to get border-radius not curved on 'middle' items
+-
+- bugs
+  - hover not really workings?
+    - what does this mean? can't reproduce
+
+
+
+#### bbtext
+- color options
+  - add accent color
+  - add '-light' options?
+-
+- add 'font' prop
+-
+- mobile styling could be improved
+  - more media queries
+  - more appropriate sizes
+
+  
+
+
+#### bbbutton
+- colors
+  - add accent color
+  - inverse accent color?
+  - black
+  - white
+-
+- 'link' functionality
+  - i.e., 'type=link' or something to use right click
+    - should this just be the default behavior...?
+  - test this works first then worry about backwards compatibility?
+  - how to do this with bbcard
+    - OR what other components?
+-
+- fixes
+  - better mobile styling
+    - particularly big sizes
+  - does hover work in mobile?
+    - is it supposed to...?
+  - maybe more sizes in general
+    - xs and xl?
+  
+
+
+
+#### bbfield select
+- remove optionWidth
+
+
+
+#### accent color
+- add support for it?
+  - could default to the secondary color if required
+- add to docs
+
+
+
+### [1.1.0] - 2024-04-DD
 #### TODO
-
-
-----
-
-
-
-
-### [1.0.3] - 2024-03-02
-- Added `BBFieldSelectCard` component
 
 -------------------------------------------------------
 
