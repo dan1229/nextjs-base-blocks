@@ -208,7 +208,11 @@
 - 'cardStyle'
   - remove?
   - only uses 'transparent' - this can just be a background option...?
-
+-
+- add 'href' prop
+  - similar to bbbutton - just to allow for right click
+  - if passed, auto navigate to that href on click
+    - console warning if both are passed
 
 
 #### bbnavbar
@@ -253,6 +257,9 @@
     - is it supposed to...?
   - maybe more sizes in general
     - xs and xl?
+-
+- helper text?
+  - if hovering, show helper text?
   
 
 
