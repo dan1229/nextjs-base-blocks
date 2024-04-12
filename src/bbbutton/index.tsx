@@ -41,7 +41,7 @@ interface IPropsBBButtonIcon {
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - The function to call when the button is clicked
  * @param {boolean=} transparent - Whether the button is transparent
- * @param {TBBTextColor=} colorText - The color of the text
+ * @param {TBBTextColor=} colorText - The color of the text. This doesn't really work with 'inverse-*' variants
  */
 export interface IPropsBBButton {
   text?: string;

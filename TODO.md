@@ -138,6 +138,12 @@
 - colors
   - inverse danger/success/warning?
 
+
+#### default theme colors?
+- update
+- have to find and replace lots of defaults sadly
+
+
 ----
 ### 1.1.0
 
@@ -146,6 +152,11 @@
 - just add them
 - probably in a different page
 - make sections expandable
+-
+- make home page a real home page
+  - links to:
+  - `/components`
+  - `/components/forms`
 
 
 
@@ -260,6 +271,8 @@
   - Added `colorText` prop to change text color manually
   - Added `href` prop to make button a link
     - Allows for right-clicking and opening in new tab
+  - `SCSS` clean up
+  - `hover` and `focus` state clean up and color improvements
 - `BBFieldSelectCard`
   - remove `optionWidth` prop
 - Support for `accent` color
