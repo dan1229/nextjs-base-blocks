@@ -11,6 +11,7 @@ import type {
   TBBTextSize,
   TBBTextColor,
 } from '../types';
+import BBLink from 'src/bblink';
 
 /**
  * ICON PROPS
@@ -40,7 +41,7 @@ interface IPropsBBButtonIcon {
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - The function to call when the button is clicked
  * @param {boolean=} transparent - Whether the button is transparent
- * @param {TBBTextColor=} colorText - The color of the text
+ * @param {TBBTextColor=} colorText - The color of the text. This doesn't really work with 'inverse-*' variants
  */
 export interface IPropsBBButton {
   text?: string;
@@ -58,6 +59,7 @@ export interface IPropsBBButton {
   onClick?: () => void;
   transparent?: boolean;
   colorText?: TBBTextColor;
+  href?: string;
 }
 
 /**
@@ -66,7 +68,7 @@ export interface IPropsBBButton {
 export default function BBButton(Props: IPropsBBButton): React.ReactElement {
   const {
     text,
-    type = 'submit',
+    type = 'button',
     size = 'md',
     variant = 'primary',
     elevation = 'none',
@@ -80,6 +82,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     onClick,
     transparent = false,
     colorText = 'white',
+    href,
   } = Props;
   // if button doesn't do anything, disable it
   // otherwise, rely on the disabled prop
@@ -115,6 +118,8 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
         return styles.inverseSecondary;
       case 'inverse-accent':
         return styles.inverseAccent;
+      default:
+        return '';
     }
   };
 
@@ -126,6 +131,8 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
         return 'medium';
       case 'lg':
         return 'xlarge';
+      default:
+        return 'medium';
     }
   };
 
@@ -139,38 +146,79 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
         return styles.elevationMedium;
       case 'high':
         return styles.elevationHigh;
+      default:
+        return '';
     }
   };
 
   const renderIcon = (currSide: TBBButtonIconAlign, icon?: IPropsBBButtonIcon) => {
     if (!icon || !icon.icon) return null;
     const element = <div className={styles.containerIcon}>{icon.icon}</div>;
-    if (align == 'left' && currSide == 'left') {
+    if (align === 'left' && currSide === 'left') {
       return element;
-    } else if (align == 'right' && currSide == 'right') {
+    } else if (align === 'right' && currSide === 'right') {
       return element;
-    } else if (align == 'above' && currSide == 'left') {
+    } else if (align === 'above' && currSide === 'left') {
       return element;
-    } else if (align == 'below' && currSide == 'right') {
+    } else if (align === 'below' && currSide === 'right') {
       return element;
-    } else if (align == 'space-between' && currSide == 'right') {
+    } else if (align === 'space-between' && currSide === 'right') {
       return element;
     }
     return null;
   };
 
-  /**
-   * RENDER
-   */
+  // main shared component
+  const mainComponent = (
+    <>
+      {renderIcon('left', icon)}
+      {!!text && (
+        <div className={classNames(styles.containerText, showTextOnHover && styles.noMargin)}>
+          <BBText color={colorText} size={getButtonSize()}>
+            {text}
+          </BBText>
+        </div>
+      )}
+      {renderIcon('right', icon)}
+    </>
+  );
+
+  // if href is defined, use regular button and show it as disabled
+  if (href && !disabledRes) {
+    if (onClick) console.warn('BBButton: Both onClick and href are defined. onClick will be ignored.');
+    return (
+      <BBLink
+        href={href}
+        className={classNames(
+          className,
+          styles.base,
+          align === 'above' || align === 'below' ? styles.baseVertical : null,
+          hoverRes && styles.hover,
+          focus && styles.focus,
+          showTextOnHover && styles.showTextOnHover,
+          getClassVariant(),
+          getClassElevation(),
+          transparent && styles.transparent
+        )}
+        external
+        underline={false}
+        size={getButtonSize()}
+        color={colorText}
+      >
+        {mainComponent}
+      </BBLink>
+    );
+  }
+
   return (
     <button
       className={classNames(
         className,
         styles.base,
-        align == 'above' || align == 'below' ? styles.baseVertical : null,
-        !!disabledRes && styles.disabled,
-        !!hoverRes && styles.hover,
-        !!focus && styles.focus,
+        align === 'above' || align === 'below' ? styles.baseVertical : null,
+        disabledRes && styles.disabled,
+        hoverRes && styles.hover,
+        focus && styles.focus,
         showTextOnHover && styles.showTextOnHover,
         getClassVariant(),
         getClassElevation(),
@@ -181,15 +229,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
       disabled={disabledRes}
       onClick={disabledRes ? undefined : onClick}
     >
-      {renderIcon('left', icon)}
-      {!!text && (
-        <div className={classNames(styles.containerText, showTextOnHover && styles.noMargin)}>
-          <BBText color={colorText} size={getButtonSize()}>
-            {text}
-          </BBText>
-        </div>
-      )}
-      {renderIcon('right', icon)}
+      {mainComponent}
     </button>
   );
 }

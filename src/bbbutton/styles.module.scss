@@ -2,6 +2,7 @@
 //
 $white: var(--white, #ffffff);
 $grey-light: var(--grey-light, #8199c2);
+$grey-light-dark: var(--grey-light-dark, #a8b6cc);
 $grey-dark: var(--grey-dark, #58647a);
 $grey-darkest: var(--grey-darkest, #2f3542);
 
@@ -96,9 +97,16 @@ $black: var(--black, #000000);
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  * {
+    color: inherit;
+  }
+
+  &:hover > * {
+    color: $primary-light-color !important;
+  }
 }
 
-// show text on hover
 .showTextOnHover {
   h1,
   h2,
@@ -153,242 +161,414 @@ $black: var(--black, #000000);
   background-color: $primary-color;
   border: 1px solid $primary-color;
   color: $white;
-}
-.primary.hover:hover > div * {
-  color: $primary-light-color !important;
-}
-.primary.focus > div * {
-  color: $primary-light-color !important;
-}
-.primary:active {
-  background-color: $primary-dark-color;
-  border: 1px solid $primary-dark-color;
+
+  &:hover {
+    color: $grey-light;
+    background-color: $primary-light-color;
+
+    * {
+      color: $grey-light;
+    }
+  }
+
+  &:focus {
+    color: $grey-light-dark;
+    background-color: $primary-dark-color;
+
+    * {
+      color: $grey-light-dark;
+    }
+  }
+
+  &:active {
+    color: $grey-light-dark;
+    background-color: $primary-dark-color;
+
+    * {
+      color: $grey-light-dark;
+    }
+  }
 }
 
-// SECONDARY
 .secondary {
   background-color: $secondary-color;
   border: 1px solid $secondary-color;
   color: $white;
-}
-.secondary.hover:hover > div * {
-  color: $secondary-light-color !important;
-}
-.secondary.focus > div * {
-  color: $secondary-light-color !important;
-}
-.secondary:active {
-  background-color: $secondary-dark-color;
-  border: 1px solid $secondary-dark-color;
+
+  &:hover {
+    color: $grey-light;
+    background-color: $secondary-light-color;
+
+    * {
+      color: $grey-light;
+    }
+  }
+
+  &:focus {
+    color: $grey-light-dark;
+    background-color: $secondary-dark-color;
+
+    * {
+      color: $grey-light-dark;
+    }
+  }
+
+  &:active {
+    color: $grey-light-dark;
+    background-color: $secondary-dark-color;
+
+    * {
+      color: $grey-light-dark;
+    }
+  }
 }
 
-// ACCENT
 .accent {
   background-color: $accent-color;
   border: 1px solid $accent-color;
   color: $white;
-}
-.accent.hover:hover > div * {
-  color: $grey-dark !important;
-}
-.accent.focus > div * {
-  color: $accent-light-color !important;
-}
-.accent:active {
-  background-color: $accent-dark-color;
-  border: 1px solid $accent-dark-color;
+
+  &:hover {
+    color: $grey-light;
+    background-color: $accent-light-color;
+
+    * {
+      color: $grey-light;
+    }
+  }
+
+  &:focus {
+    color: $grey-light-dark;
+    background-color: $accent-dark-color;
+
+    * {
+      color: $grey-light-dark;
+    }
+  }
+
+  &:active {
+    color: $grey-light-dark;
+    background-color: $accent-dark-color;
+
+    * {
+      color: $grey-light-dark;
+    }
+  }
 }
 
-// DANGER
 .danger {
   background-color: $danger-color;
   border: 1px solid $danger-color;
   color: $white;
-}
-.danger.hover:hover > div * {
-  color: $danger-light-color !important;
-}
-.danger.focus > div * {
-  color: $danger-light-color !important;
-}
-.danger:active {
-  background-color: $danger-dark-color;
-  border: 1px solid $danger-dark-color;
+
+  &:hover {
+    color: $grey-light;
+    background-color: $danger-light-color;
+
+    * {
+      color: $grey-light;
+    }
+  }
+
+  &:focus {
+    color: $grey-light-dark;
+    background-color: $danger-dark-color;
+
+    * {
+      color: $grey-light-dark;
+    }
+  }
+
+  &:active {
+    color: $grey-light-dark;
+    background-color: $danger-dark-color;
+
+    * {
+      color: $grey-light-dark;
+    }
+  }
 }
 
-// SUCCESS
 .success {
   background-color: $success-color;
   border: 1px solid $success-color;
   color: $white;
-}
-.success.hover:hover > div * {
-  color: $success-light-color !important;
-}
-.success.focus > div * {
-  color: $success-light-color !important;
-}
-.success:active {
-  background-color: $success-dark-color;
-  border: 1px solid $success-dark-color;
+
+  &:hover {
+    color: $grey-light;
+    background-color: $success-light-color;
+
+    * {
+      color: $grey-light;
+    }
+  }
+
+  &:focus {
+    color: $grey-light-dark;
+    background-color: $success-dark-color;
+
+    * {
+      color: $grey-light-dark;
+    }
+  }
+
+  &:active {
+    color: $grey-light-dark;
+    background-color: $success-dark-color;
+
+    * {
+      color: $grey-light-dark;
+    }
+  }
 }
 
-// WARNING
 .warning {
   background-color: $warning-color;
   border: 1px solid $warning-color;
   color: $white;
-}
-.warning.hover:hover > div * {
-  color: $warning-light-color !important;
-}
-.warning.focus > div * {
-  color: $warning-light-color !important;
-}
-.warning:active {
-  background-color: $warning-dark-color;
-  border: 1px solid $warning-dark-color;
+
+  &:hover {
+    color: $grey-light;
+    background-color: $warning-light-color;
+
+    * {
+      color: $grey-light;
+    }
+  }
+
+  &:focus {
+    color: $grey-light-dark;
+    background-color: $warning-dark-color;
+
+    * {
+      color: $grey-light-dark;
+    }
+  }
+
+  &:active {
+    color: $grey-light-dark;
+    background-color: $warning-dark-color;
+
+    * {
+      color: $grey-light-dark;
+    }
+  }
 }
 
-// INFO
 .info {
   background-color: $info-color;
   border: 1px solid $info-color;
   color: $white;
-}
-.info.hover:hover > div * {
-  color: $info-light-color !important;
-}
-.info.focus > div * {
-  color: $info-light-color !important;
-}
-.info:active {
-  background-color: $info-dark-color;
-  border: 1px solid $info-dark-color;
+
+  &:hover {
+    color: $grey-light;
+    background-color: $info-light-color;
+
+    * {
+      color: $grey-light;
+    }
+  }
+
+  &:focus {
+    color: $grey-light-dark;
+    background-color: $info-dark-color;
+
+    * {
+      color: $grey-light-dark;
+    }
+  }
+
+  &:active {
+    color: $grey-light-dark;
+    background-color: $info-dark-color;
+
+    * {
+      color: $grey-light-dark;
+    }
+  }
 }
 
-// BLACK
 .black {
   background-color: $black;
   border: 1px solid $white;
   color: $white;
-}
-.black.hover:hover > div * {
-  color: $grey-light !important;
-}
-.black.focus > div * {
-  color: $grey-light !important;
-}
-.black:active {
-  background-color: $grey-dark;
-  border: 1px solid $grey-dark;
+
+  &:hover {
+    color: $grey-dark;
+    background-color: $black;
+
+    * {
+      color: $grey-dark;
+    }
+  }
+
+  &:focus {
+    color: $grey-darkest;
+    background-color: $black;
+
+    * {
+      color: $grey-darkest;
+    }
+  }
+
+  &:active {
+    color: $grey-darkest;
+    background-color: $black;
+
+    * {
+      color: $grey-darkest;
+    }
+  }
 }
 
-// WHITE
 .white {
   background-color: $white;
   border: 1px solid $black;
   color: $black;
-}
-.white.hover:hover > div * {
-  color: $grey-light !important;
-}
-.white.focus > div * {
-  color: $grey-light !important;
-}
-.white:active {
-  background-color: $grey-darkest;
-  border: 1px solid $grey-darkest;
+
+  &:hover {
+    color: $grey-light-dark;
+    background-color: $grey-light;
+    border: 1px solid $grey-light-dark;
+
+    * {
+      color: $grey-light-dark;
+    }
+  }
+
+  &:focus {
+    color: $grey-darkest;
+    background-color: $grey-light-dark;
+    border: 1px solid $grey-darkest;
+
+    * {
+      color: $grey-darkest;
+    }
+  }
+
+  &:active {
+    color: $grey-darkest;
+    background-color: $grey-light-dark;
+    border: 1px solid $grey-darkest;
+
+    * {
+      color: $grey-darkest;
+    }
+  }
 }
 
 // INVERSE INFO
 .inverseInfo {
   background-color: $white;
   border: 2px solid $info-color;
+
   * {
-    color: $info-color !important;
+    color: $info-color;
   }
+
   &:hover {
     background-color: $info-light-color;
     border: 2px solid $info-dark-color;
+
+    * {
+      color: $info-dark-color;
+    }
   }
-  &:hover > div * {
-    color: $info-dark-color !important;
+
+  &:focus {
+    background-color: $info-dark-color;
+    border: 2px solid $info-dark-color;
   }
-}
-.inverseInfo.focus > div * {
-  color: $info-light-color !important;
-}
-.inverseInfo:active {
-  background-color: $info-dark-color;
-  border: 2px solid $info-dark-color;
+
+  &:active {
+    background-color: $info-dark-color;
+    border: 2px solid $info-dark-color;
+  }
 }
 
-// INVERSE PRIMARY
+// INVESRE PRIMARY
 .inversePrimary {
   background-color: $white;
   border: 2px solid $primary-color;
+
   * {
-    color: $primary-color !important;
+    color: $primary-color;
   }
+
   &:hover {
     background-color: $primary-light-color;
     border: 2px solid $primary-dark-color;
+
+    * {
+      color: $primary-dark-color;
+    }
   }
-  &:hover > div * {
-    color: $primary-dark-color !important;
+
+  &:focus {
+    background-color: $primary-dark-color;
+    border: 2px solid $primary-dark-color;
   }
-}
-.inversePrimary.focus > div * {
-  color: $primary-dark-color !important;
-}
-.inversePrimary:active {
-  background-color: $primary-dark-color;
-  border: 2px solid $primary-dark-color;
+
+  &:active {
+    background-color: $primary-dark-color;
+    border: 2px solid $primary-dark-color;
+  }
 }
 
 // INVERSE SECONDARY
 .inverseSecondary {
   background-color: $white;
   border: 2px solid $secondary-color;
+
   * {
-    color: $secondary-light-color !important;
+    color: $secondary-color;
   }
+
   &:hover {
     background-color: $secondary-light-color;
     border: 2px solid $secondary-dark-color;
+
+    * {
+      color: $secondary-dark-color;
+    }
   }
-  &:hover > div * {
-    color: $secondary-dark-color !important;
+
+  &:focus {
+    background-color: $secondary-dark-color;
+    border: 2px solid $secondary-dark-color;
   }
-}
-.inverseSecondary.focus > div * {
-  color: $grey-light !important;
-}
-.inverseSecondary:active {
-  background-color: $secondary-dark-color;
-  border: 2px solid $secondary-dark-color;
+
+  &:active {
+    background-color: $secondary-dark-color;
+    border: 2px solid $secondary-dark-color;
+  }
 }
 
 // INVERSE ACCENT
 .inverseAccent {
   background-color: $white;
   border: 2px solid $accent-color;
+
   * {
-    color: $accent-color !important;
+    color: $accent-color;
   }
+
   &:hover {
     background-color: $accent-light-color;
     border: 2px solid $accent-dark-color;
+
+    * {
+      color: $accent-dark-color;
+    }
   }
-  &:hover > div * {
-    color: $accent-dark-color !important;
+
+  &:focus {
+    background-color: $accent-dark-color;
+    border: 2px solid $accent-dark-color;
   }
-}
-.inverseAccent.focus > div * {
-  color: $accent-light-color !important;
-}
-.inverseAccent:active {
-  background-color: $accent-dark-color;
-  border: 2px solid $accent-dark-color;
+
+  &:active {
+    background-color: $accent-dark-color;
+    border: 2px solid $accent-dark-color;
+  }
 }
