@@ -14,21 +14,10 @@ export interface IPropsBBFieldSelectCard {
   selectedInitial?: string;
   showTitleOptions?: boolean;
   showSelected?: boolean;
-  optionWidth?: string;
 }
 
 export default function BBFieldSelectCard(Props: IPropsBBFieldSelectCard & Omit<IPropsBBBaseForm, 'register'>): React.ReactElement {
-  const {
-    control,
-    options,
-    fieldName,
-    selectedInitial,
-    required,
-    className,
-    showTitleOptions = true,
-    showSelected = true,
-    optionWidth = '30%',
-  } = Props;
+  const { control, options, fieldName, selectedInitial, required, className, showTitleOptions = true, showSelected = true } = Props;
 
   return (
     <InputWrapper fieldName={fieldName} className={className} required={required}>
@@ -37,7 +26,7 @@ export default function BBFieldSelectCard(Props: IPropsBBFieldSelectCard & Omit<
         name={fieldName}
         defaultValue={selectedInitial || ''}
         render={({ field: { onChange, value } }) => (
-          <div className={styles.containerSelectWindow} style={{ width: optionWidth }}>
+          <div className={styles.containerSelectWindow}>
             {showTitleOptions && <BBText size="small">Options</BBText>}
             <div className={styles.containerOptions}>
               {options.map((option: IBBFieldSelectCardOptions) => (

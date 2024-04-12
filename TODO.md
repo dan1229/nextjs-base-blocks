@@ -254,11 +254,6 @@
 
 
 
-#### bbfield select
-- remove optionWidth
-
-
-
 #### accent color
 - add support for it?
   - could default to the secondary color if required
@@ -266,7 +261,11 @@
 
 
 
+
+
 ### [1.1.0] - 2024-04-DD
+- `BBFieldSelectCard`
+  - remove `optionWidth` prop
 #### TODO
 
 -------------------------------------------------------
