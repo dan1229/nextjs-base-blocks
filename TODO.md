@@ -258,9 +258,6 @@
 
 
 
-- 'link' functionality
-  - anything else to test?
-
 
 
 ### [1.1.0] - 2024-04-DD

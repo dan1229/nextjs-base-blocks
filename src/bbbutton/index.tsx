@@ -193,7 +193,6 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
           className,
           styles.base,
           align === 'above' || align === 'below' ? styles.baseVertical : null,
-          disabledRes && styles.disabled,
           hoverRes && styles.hover,
           focus && styles.focus,
           showTextOnHover && styles.showTextOnHover,
