@@ -1,6 +1,6 @@
-import classNames from 'classnames';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import BBText from '../bbtext';
+import classNames from 'classnames';
 import styles from './styles.module.scss';
 import type {
   TBBButtonIconAlign,
@@ -92,13 +92,33 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     classNameHelperText,
   } = Props;
 
-  const [isHovered, setIsHovered] = useState(false);
-
   // if button doesn't do anything, disable it
   // otherwise, rely on the disabled prop
   const disabledRes = !onClick && type !== 'submit' ? true : disabled;
-  const hoverRes = disabled || !hover ? false : hover;
-  const align = icon?.align || 'left';
+  // if hover is disabled or button as a whole
+  // id disabled , don't show hover
+  const hoverRes = disabledRes || !hover ? false : hover;
+
+  // icon alignment
+  const [align] = useState<TBBButtonIconAlign>(icon?.align || 'left');
+
+  // handle hover state
+  const [isHovered, setIsHovered] = useState(false);
+  const mainWrapperRef = useRef<HTMLDivElement>(null);
+  const helperTextRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!mainWrapperRef.current?.contains(e.relatedTarget as Node) && !helperTextRef.current?.contains(e.relatedTarget as Node)) {
+      setIsHovered(false);
+    }
+  };
+
+  // GET CLASS VARIANTS
+  //
   const getClassVariant = () => {
     switch (variant) {
       case 'primary':
@@ -176,21 +196,12 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     }
     return null;
   };
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
-  // main shared component
   const mainComponent = (
     <div
       className={classNames(styles.containerMain, isHovered && helperTextOnHover && styles.showHelperText, classNameHelperText)}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      ref={mainWrapperRef}
     >
       {renderIcon('left', icon)}
       {!!text && (
@@ -202,57 +213,54 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
       )}
       {renderIcon('right', icon)}
       {helperTextOnHover && (
-        <div className={classNames(styles.helperText, isHovered && styles.helperTextVisible)}>
+        <div className={classNames(styles.helperText, isHovered && styles.helperTextVisible)} ref={helperTextRef}>
           <BBText color={colorHelperTextOnHover}>{helperTextOnHover}</BBText>
         </div>
       )}
     </div>
   );
 
+  // class names for buttons
+  let baseClassNames = classNames(
+    styles.base,
+    align === 'above' || align === 'below' ? styles.baseVertical : null,
+    disabledRes && styles.disabled,
+    getClassVariant(),
+    getClassElevation(),
+    // if transparent, show transparent
+    transparent && styles.transparent,
+    // if focused, show focus
+    focus && styles.focus,
+    // extra class name
+    className
+  );
+
   // if href is defined, use regular button and show it as disabled
   if (href && !disabledRes) {
+    // add hover state for links
+    if (hoverRes) {
+      baseClassNames += ` ${styles.hover}`;
+    }
     if (onClick) console.warn('BBButton: Both onClick and href are defined. onClick will be ignored.');
     return (
-      <BBLink
-        href={href}
-        className={classNames(
-          className,
-          styles.base,
-          align === 'above' || align === 'below' ? styles.baseVertical : null,
-          hoverRes && styles.hover,
-          focus && styles.focus,
-          getClassVariant(),
-          getClassElevation(),
-          transparent && styles.transparent
-        )}
-        external
-        underline={false}
-        size={getButtonSize()}
-        color={colorText}
-      >
+      <BBLink href={href} className={baseClassNames} external underline={false} size={getButtonSize()} color={colorText}>
         {mainComponent}
       </BBLink>
     );
   }
 
+  // only 'regular buttons' support a disabled state
+  if (disabledRes) {
+    baseClassNames += ` ${styles.disabled}`;
+  }
+
+  // add hover state for buttons that are not disabled
+  if (hoverRes && !disabledRes) {
+    baseClassNames += ` ${styles.hover}`;
+  }
+
   return (
-    <button
-      className={classNames(
-        className,
-        styles.base,
-        align === 'above' || align === 'below' ? styles.baseVertical : null,
-        disabledRes && styles.disabled,
-        hoverRes && styles.hover,
-        focus && styles.focus,
-        getClassVariant(),
-        getClassElevation(),
-        transparent && styles.transparent
-      )}
-      type={type}
-      form={idForm}
-      disabled={disabledRes}
-      onClick={disabledRes ? undefined : onClick}
-    >
+    <button className={baseClassNames} type={type} form={idForm} disabled={disabledRes} onClick={disabledRes ? undefined : onClick}>
       {mainComponent}
     </button>
   );
