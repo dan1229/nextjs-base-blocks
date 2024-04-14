@@ -106,16 +106,11 @@ $black: var(--black, #000000);
 .containerMain {
   width: 100%;
   position: relative;
-}
 
-// show helper text
-.showHelperText .helperText {
-  display: block;
-
-  &:hover {
-    .helperTextContent {
-      display: flex;
-    }
+  // Show helper text on hover or focus
+  &:hover .helperText,
+  &:focus .helperText {
+    display: block;
   }
 }
 
@@ -130,10 +125,14 @@ $black: var(--black, #000000);
   border-radius: 1rem;
   padding: 0.3rem 0.6rem;
   margin: 0 1rem;
-  display: none;
   white-space: nowrap;
-}
+  display: none; // Initially hide the helper text
 
+  * {
+    // color the text despite the button being in 'hover' state
+    color: $grey-light !important;
+  }
+}
 .helperTextContent {
   display: flex;
   flex-direction: row;
@@ -143,12 +142,13 @@ $black: var(--black, #000000);
 .helperTextQuestionMark {
   background-color: $grey-light-dark;
   border-radius: 1rem;
-  padding: 0.2rem;
+  padding: 0.2rem 0.4rem;
+  color: $white !important;
 }
 
 // helper text visible
 .helperTextVisible {
-  display: block;
+  display: block !important;
 }
 
 /**

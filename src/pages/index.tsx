@@ -57,7 +57,6 @@ const DemoPage = () => {
     colorText: 'white',
     href: '',
     helperTextOnHover: '',
-    colorHelperTextOnHover: 'black',
   });
   // BB Card
   const [stateBBCard, setStateBBCard] = useState<IPropsBBCard>({

@@ -43,7 +43,6 @@ interface IPropsBBButtonIcon {
  * @param {TBBTextColor=} colorText - The color of the text. This doesn't really work with 'inverse-*' variants
  * @param {string=} href - The href to navigate to
  * @param {string=} helperTextOnHover - The helper text to display on hover
- * @param {TBBTextColor=} colorHelperTextOnHover - The color of the helper text
  * @param {string=} classNameHelperText - Extra class name for the helper text
  */
 export interface IPropsBBButton {
@@ -63,7 +62,6 @@ export interface IPropsBBButton {
   colorText?: TBBTextColor;
   href?: string;
   helperTextOnHover?: string;
-  colorHelperTextOnHover?: TBBTextColor;
   classNameHelperText?: string;
 }
 
@@ -88,7 +86,6 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     colorText = 'white',
     href,
     helperTextOnHover,
-    colorHelperTextOnHover = 'black',
     classNameHelperText,
   } = Props;
 
@@ -206,7 +203,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
             <BBText color="white" className={styles.helperTextQuestionMark}>
               ?
             </BBText>
-            <BBText color={colorHelperTextOnHover}>{helperTextOnHover}</BBText>
+            <BBText>{helperTextOnHover}</BBText>
           </div>
         </div>
       )}

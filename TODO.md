@@ -278,7 +278,6 @@
   - `SCSS` clean up
   - `hover` and `focus` state clean up and color improvements
   - `textHelperOnHover` prop to show helper text on hover
-    - `colorHelperTextOnHover` and `classNameHelperText` props added as well
   - Removed old `showTextOnHover` prop
 - `BBFieldSelectCard`
   - remove `optionWidth` prop
