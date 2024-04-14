@@ -36,7 +36,6 @@ interface IPropsBBButtonIcon {
  * @param {boolean=} hover - Whether the button is hovered
  * @param {boolean=} focus - Whether the button is focused
  * @param {IPropsBBButtonIcon=} icon - The icon to display on the button
- * @param {boolean=} showTextOnHover - Whether to show the text on hover
  * @param {string=} idForm - The ID of the form to submit
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - The function to call when the button is clicked
@@ -53,7 +52,6 @@ export interface IPropsBBButton {
   hover?: boolean;
   focus?: boolean;
   icon?: IPropsBBButtonIcon;
-  showTextOnHover?: boolean;
   idForm?: string;
   className?: string;
   onClick?: () => void;
@@ -75,7 +73,6 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     disabled = false,
     hover = true,
     focus = false,
-    showTextOnHover = false,
     icon,
     idForm,
     className,
@@ -173,7 +170,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     <>
       {renderIcon('left', icon)}
       {!!text && (
-        <div className={classNames(styles.containerText, showTextOnHover && styles.noMargin)}>
+        <div className={classNames(styles.containerText)}>
           <BBText color={colorText} size={getButtonSize()}>
             {text}
           </BBText>
@@ -195,7 +192,6 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
           align === 'above' || align === 'below' ? styles.baseVertical : null,
           hoverRes && styles.hover,
           focus && styles.focus,
-          showTextOnHover && styles.showTextOnHover,
           getClassVariant(),
           getClassElevation(),
           transparent && styles.transparent
@@ -219,7 +215,6 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
         disabledRes && styles.disabled,
         hoverRes && styles.hover,
         focus && styles.focus,
-        showTextOnHover && styles.showTextOnHover,
         getClassVariant(),
         getClassElevation(),
         transparent && styles.transparent

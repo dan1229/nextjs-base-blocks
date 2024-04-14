@@ -50,11 +50,6 @@ $black: var(--black, #000000);
   }
 }
 
-// no margin
-.noMargin {
-  margin: 0px !important;
-}
-
 // transparent
 .transparent {
   background-color: transparent !important;
@@ -104,32 +99,6 @@ $black: var(--black, #000000);
 
   &:hover > * {
     color: $primary-light-color !important;
-  }
-}
-
-.showTextOnHover {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  span {
-    display: none;
-  }
-
-  &:hover {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    span {
-      display: flex;
-    }
   }
 }
 
