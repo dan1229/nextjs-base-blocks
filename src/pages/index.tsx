@@ -46,7 +46,6 @@ const DemoPage = () => {
     disabled: false,
     hover: true,
     focus: false,
-    showTextOnHover: false,
     icon: {
       icon: 'ICON',
       align: 'left',
@@ -57,6 +56,8 @@ const DemoPage = () => {
     transparent: false,
     colorText: 'white',
     href: '',
+    helperTextOnHover: '',
+    colorHelperTextOnHover: 'black',
   });
   // BB Card
   const [stateBBCard, setStateBBCard] = useState<IPropsBBCard>({
@@ -155,6 +156,7 @@ const DemoPage = () => {
           stateObject={stateBBButton}
           setStateObject={setStateBBButton}
         />
+        <BBButton text="Test" onClick={() => alert('You clicked the button!')} helperTextOnHover="test text" />
         <DemoComponent
           name="BBCard"
           child={

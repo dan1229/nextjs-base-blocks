@@ -102,6 +102,37 @@ $black: var(--black, #000000);
   }
 }
 
+// hover text
+.containerMain {
+  width: 100%;
+  position: relative;
+}
+
+// show helper text
+.showHelperText .helperText {
+  display: block;
+}
+
+// helper text
+.helperText {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $white;
+  border: 1px solid $grey-light-dark;
+  border-radius: 1rem;
+  padding: 0.3rem 0.6rem;
+  margin: 0 1rem;
+  display: none;
+  white-space: nowrap;
+}
+
+// helper text visible
+.helperTextVisible {
+  display: block;
+}
+
 /**
 * ELEVATION
 */

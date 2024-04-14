@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { useState } from 'react';
 import BBText from '../bbtext';
 import styles from './styles.module.scss';
 import type {
@@ -44,6 +44,7 @@ interface IPropsBBButtonIcon {
  * @param {string=} href - The href to navigate to
  * @param {string=} helperTextOnHover - The helper text to display on hover
  * @param {TBBTextColor=} colorHelperTextOnHover - The color of the helper text
+ * @param {string=} classNameHelperText - Extra class name for the helper text
  */
 export interface IPropsBBButton {
   text?: string;
@@ -63,6 +64,7 @@ export interface IPropsBBButton {
   href?: string;
   helperTextOnHover?: string;
   colorHelperTextOnHover?: TBBTextColor;
+  classNameHelperText?: string;
 }
 
 /**
@@ -87,13 +89,16 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     href,
     helperTextOnHover,
     colorHelperTextOnHover = 'black',
+    classNameHelperText,
   } = Props;
+
+  const [isHovered, setIsHovered] = useState(false);
+
   // if button doesn't do anything, disable it
   // otherwise, rely on the disabled prop
-  const disabledRes = !onClick && type != 'submit' ? true : disabled;
+  const disabledRes = !onClick && type !== 'submit' ? true : disabled;
   const hoverRes = disabled || !hover ? false : hover;
   const align = icon?.align || 'left';
-
   const getClassVariant = () => {
     switch (variant) {
       case 'primary':
@@ -172,9 +177,21 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     return null;
   };
 
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   // main shared component
   const mainComponent = (
-    <>
+    <div
+      className={classNames(styles.containerMain, isHovered && helperTextOnHover && styles.showHelperText, classNameHelperText)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       {renderIcon('left', icon)}
       {!!text && (
         <div className={classNames(styles.containerText)}>
@@ -184,7 +201,12 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
         </div>
       )}
       {renderIcon('right', icon)}
-    </>
+      {helperTextOnHover && (
+        <div className={classNames(styles.helperText, isHovered && styles.helperTextVisible)}>
+          <BBText color={colorHelperTextOnHover}>{helperTextOnHover}</BBText>
+        </div>
+      )}
+    </div>
   );
 
   // if href is defined, use regular button and show it as disabled
