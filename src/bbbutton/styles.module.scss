@@ -111,6 +111,12 @@ $black: var(--black, #000000);
 // show helper text
 .showHelperText .helperText {
   display: block;
+
+  &:hover {
+    .helperTextContent {
+      display: flex;
+    }
+  }
 }
 
 // helper text
@@ -126,6 +132,18 @@ $black: var(--black, #000000);
   margin: 0 1rem;
   display: none;
   white-space: nowrap;
+}
+
+.helperTextContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.helperTextQuestionMark {
+  background-color: $grey-light-dark;
+  border-radius: 1rem;
+  padding: 0.2rem;
 }
 
 // helper text visible

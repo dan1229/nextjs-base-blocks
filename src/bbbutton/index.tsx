@@ -107,16 +107,6 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
   const mainWrapperRef = useRef<HTMLDivElement>(null);
   const helperTextRef = useRef<HTMLDivElement>(null);
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!mainWrapperRef.current?.contains(e.relatedTarget as Node) && !helperTextRef.current?.contains(e.relatedTarget as Node)) {
-      setIsHovered(false);
-    }
-  };
-
   // GET CLASS VARIANTS
   //
   const getClassVariant = () => {
@@ -199,8 +189,6 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
   const mainComponent = (
     <div
       className={classNames(styles.containerMain, isHovered && helperTextOnHover && styles.showHelperText, classNameHelperText)}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
       ref={mainWrapperRef}
     >
       {renderIcon('left', icon)}
@@ -214,7 +202,12 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
       {renderIcon('right', icon)}
       {helperTextOnHover && (
         <div className={classNames(styles.helperText, isHovered && styles.helperTextVisible)} ref={helperTextRef}>
-          <BBText color={colorHelperTextOnHover}>{helperTextOnHover}</BBText>
+          <div className={styles.helperTextContent}>
+            <BBText color="white" className={styles.helperTextQuestionMark}>
+              ?
+            </BBText>
+            <BBText color={colorHelperTextOnHover}>{helperTextOnHover}</BBText>
+          </div>
         </div>
       )}
     </div>
