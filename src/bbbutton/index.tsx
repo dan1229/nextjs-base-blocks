@@ -41,6 +41,9 @@ interface IPropsBBButtonIcon {
  * @param {() => void=} onClick - The function to call when the button is clicked
  * @param {boolean=} transparent - Whether the button is transparent
  * @param {TBBTextColor=} colorText - The color of the text. This doesn't really work with 'inverse-*' variants
+ * @param {string=} href - The href to navigate to
+ * @param {string=} helperTextOnHover - The helper text to display on hover
+ * @param {TBBTextColor=} colorHelperTextOnHover - The color of the helper text
  */
 export interface IPropsBBButton {
   text?: string;
@@ -58,6 +61,8 @@ export interface IPropsBBButton {
   transparent?: boolean;
   colorText?: TBBTextColor;
   href?: string;
+  helperTextOnHover?: string;
+  colorHelperTextOnHover?: TBBTextColor;
 }
 
 /**
@@ -80,6 +85,8 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     transparent = false,
     colorText = 'white',
     href,
+    helperTextOnHover,
+    colorHelperTextOnHover = 'black',
   } = Props;
   // if button doesn't do anything, disable it
   // otherwise, rely on the disabled prop
