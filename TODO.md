@@ -244,14 +244,6 @@
 
 
 
-#### bbtext
-- mobile styling could be improved
-  - more media queries
-  - more appropriate sizes
-
-  
-
-
 
 
 ### [1.1.0] - 2024-04-DD
