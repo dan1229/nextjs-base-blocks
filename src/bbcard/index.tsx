@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import styles from './styles.module.scss';
-import type { TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation, TBBCardStyle } from '../types';
+import type { TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation } from '../types';
 
 const getChildrenOnDisplayName = (children: React.ReactNode | React.ReactNode[], displayName: string) => {
   return React.Children.map(children, (child) => {
@@ -27,7 +27,6 @@ const getChildrenOnDisplayName = (children: React.ReactNode | React.ReactNode[],
  * @param {React.ReactNode | React.ReactNode[]} children - The text to display
  * @param {TBBCardColorBackground=} color - the color of the text
  * @param {TBBCardElevation} elevation - the elevation of the card
- * @param {TBBCardStyle} cardStyle - the style of the card
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - Function to call when clicked
  * @param {boolean=} noBorder - Whether to remove the border
@@ -37,7 +36,6 @@ export interface IPropsBBCard {
   colorBackground?: TBBCardColorBackground;
   colorBorder?: TBBCardColorBorder;
   elevation?: TBBCardElevation;
-  cardStyle?: TBBCardStyle;
   className?: string;
   onClick?: () => void;
   noBorder?: boolean;
@@ -47,16 +45,7 @@ export interface IPropsBBCard {
  * BBCard
  */
 const BBCard = (Props: IPropsBBCard) => {
-  const {
-    children,
-    colorBackground = 'default',
-    colorBorder = 'default',
-    elevation = 'med',
-    cardStyle = 'default',
-    className,
-    onClick,
-    noBorder = false,
-  } = Props;
+  const { children, colorBackground = 'default', colorBorder = 'default', elevation = 'med', className, onClick, noBorder = false } = Props;
   const header = getChildrenOnDisplayName(children, 'Header');
   const body = getChildrenOnDisplayName(children, 'Body');
   const footer = getChildrenOnDisplayName(children, 'Footer');
@@ -65,6 +54,8 @@ const BBCard = (Props: IPropsBBCard) => {
     switch (colorBackground) {
       case 'default':
         return styles.background_default;
+      case 'transparent':
+        return styles.background_transparent;
       case 'white':
         return styles.background_white;
       case 'grey_light':
@@ -77,6 +68,8 @@ const BBCard = (Props: IPropsBBCard) => {
         return styles.background_primary;
       case 'secondary':
         return styles.background_secondary;
+      case 'accent':
+        return styles.background_accent;
     }
   };
 
@@ -98,6 +91,8 @@ const BBCard = (Props: IPropsBBCard) => {
         return styles.border_primary;
       case 'secondary':
         return styles.border_secondary;
+      case 'accent':
+        return styles.border_accent;
     }
   };
 
@@ -114,15 +109,6 @@ const BBCard = (Props: IPropsBBCard) => {
     }
   };
 
-  const getCardStyle = (): string => {
-    switch (cardStyle) {
-      case 'default':
-        return '';
-      case 'transparent':
-        return styles.card_style__transparent;
-    }
-  };
-
   /**
    * RENDER
    */
@@ -134,7 +120,6 @@ const BBCard = (Props: IPropsBBCard) => {
         styles.base,
         !!onClick && styles.hover,
         noBorder && styles.no_border,
-        getCardStyle(),
         getClassColorBackground(),
         getClassColorBorder(),
         getClassElevation()
@@ -159,15 +144,17 @@ const BBCard = (Props: IPropsBBCard) => {
  * @param {React.ReactNode | React.ReactNode[]} children - The text to display
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - Function to call when clicked
+ * @param {boolean=} noPadding - Whether to remove the padding
  */
 interface IPropsBBCardHeader {
   children: React.ReactNode | React.ReactNode[];
   className?: string;
   onClick?: () => void;
+  noPadding?: boolean;
 }
 
 const Header = (props: IPropsBBCardHeader) => {
-  const { children, className, onClick } = props;
+  const { children, className, onClick, noPadding = false } = props;
 
   const onClickOverride = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation();
@@ -175,7 +162,7 @@ const Header = (props: IPropsBBCardHeader) => {
   };
 
   return (
-    <div className={classNames(styles.header, className)} onClick={onClick && onClickOverride}>
+    <div className={classNames(styles.header, className, noPadding && styles.no_padding)} onClick={onClick && onClickOverride}>
       {children}
     </div>
   );
@@ -189,15 +176,17 @@ BBCard.Header = Header;
  * @param {React.ReactNode | React.ReactNode[]} children - The text to display
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - Function to call when clicked
+ * @param {boolean=} noPadding - Whether to remove the padding
  */
 interface IPropsBBCardBody {
   children: React.ReactNode | React.ReactNode[];
   className?: string;
   onClick?: () => void;
+  noPadding?: boolean;
 }
 
 const Body = (props: IPropsBBCardBody) => {
-  const { children, className, onClick } = props;
+  const { children, className, onClick, noPadding = false } = props;
 
   const onClickOverride = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation();
@@ -205,7 +194,7 @@ const Body = (props: IPropsBBCardBody) => {
   };
 
   return (
-    <div className={classNames(styles.body, className)} onClick={onClick && onClickOverride}>
+    <div className={classNames(styles.body, className, noPadding && styles.no_padding)} onClick={onClick && onClickOverride}>
       {children}
     </div>
   );
@@ -219,15 +208,17 @@ BBCard.Body = Body;
  * @param {React.ReactNode | React.ReactNode[]} children - The text to display
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - Function to call when clicked
+ * @param {boolean=} noPadding - Whether to remove the padding
  */
 interface IPropsBBCardFooter {
   children: React.ReactNode | React.ReactNode[];
   className?: string;
   onClick?: () => void;
+  noPadding?: boolean;
 }
 
 const Footer = (props: IPropsBBCardFooter) => {
-  const { children, className, onClick } = props;
+  const { children, className, onClick, noPadding = false } = props;
 
   const onClickOverride = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation();
@@ -235,7 +226,7 @@ const Footer = (props: IPropsBBCardFooter) => {
   };
 
   return (
-    <div className={classNames(styles.footer, className)} onClick={onClick && onClickOverride}>
+    <div className={classNames(styles.footer, className, noPadding && styles.no_padding)} onClick={onClick && onClickOverride}>
       {children}
     </div>
   );

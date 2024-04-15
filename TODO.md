@@ -225,18 +225,6 @@
 
 
 #### bbcard
-- color options
-  - accent color option
-    - border and background?
--
-- add 'noPadding' prop
-  - to header, body, footer
-  - make the padding smaller in general?
--
-- 'cardStyle'
-  - remove?
-  - only uses 'transparent' - this can just be a background option...?
--
 - add 'href' prop
   - similar to bbbutton - just to allow for right click
   - if passed, auto navigate to that href on click
@@ -259,11 +247,18 @@
   - `textHelperOnHover` prop to show helper text on hover
   - Added `xs` and `xl` sizes
   - *Removed old `showTextOnHover` prop*
+- `BBCard`
+  - New colors!
+    - `accent` for background and border
+    - `transparent` for background
+  - `noPadding` prop added to `header`, `body`, and `footer`
+    - Padding in general tweaked a bit
 - `BBText`
   - New colors!
     - `accent` color
     - `_light` and `_dark` variations for some colors
   - Fixed mobile styling sizes
+  - *Removed `cardStyle` prop*
 - `BBFieldSelectCard`
   - remove `optionWidth` prop
 - Support for `accent` color
