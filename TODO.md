@@ -271,6 +271,7 @@
   - New colors!
     - `accent` color
     - `_light` and `_dark` variations for some colors
+  - Fixed mobile styling sizes
 - `BBFieldSelectCard`
   - remove `optionWidth` prop
 - Support for `accent` color
