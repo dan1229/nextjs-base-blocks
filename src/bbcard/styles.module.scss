@@ -10,6 +10,8 @@ $primary-color: var(--primary-color, #3f51b5);
 $primary-dark-color: var(--primary-dark-color, #303f9f);
 $secondary-color: var(--secondary-color, #f50057);
 $secondary-dark-color: var(--secondary-dark-color, #c51162);
+$accent-color: var(--accent-color, #ff4081);
+$accent-dark-color: var(--accent-dark-color, #f50057);
 
 // default colors
 $card-background-default-color: var(--card-background-default-color, #ffffff);
@@ -188,6 +190,20 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
   .header {
     border-bottom: 1px solid $secondary-dark-color;
     background-color: $secondary-dark-color;
+  }
+}
+
+.background_accent {
+  background-color: $accent-color;
+
+  .footer {
+    border-top: 1px solid $accent-dark-color;
+    background-color: $accent-dark-color;
+  }
+
+  .header {
+    border-bottom: 1px solid $accent-dark-color;
+    background-color: $accent-dark-color;
   }
 }
 

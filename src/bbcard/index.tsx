@@ -77,6 +77,8 @@ const BBCard = (Props: IPropsBBCard) => {
         return styles.background_primary;
       case 'secondary':
         return styles.background_secondary;
+      case 'accent':
+        return styles.background_accent;
     }
   };
 

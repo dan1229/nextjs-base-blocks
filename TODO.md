@@ -259,6 +259,9 @@
   - `textHelperOnHover` prop to show helper text on hover
   - Added `xs` and `xl` sizes
   - *Removed old `showTextOnHover` prop*
+- `BBCard`
+  - New colors! `accent` for background and border
+  - TODO
 - `BBText`
   - New colors!
     - `accent` color
