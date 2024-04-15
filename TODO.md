@@ -248,7 +248,9 @@
   - Added `xs` and `xl` sizes
   - *Removed old `showTextOnHover` prop*
 - `BBCard`
-  - New colors! `accent` for background and border
+  - New colors!
+    - `accent` for background and border
+    - `transparent` for background
   - `noPadding` prop added to `header`, `body`, and `footer`
     - Padding in general tweaked a bit
 - `BBText`
