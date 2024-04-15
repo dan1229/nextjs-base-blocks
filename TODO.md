@@ -225,10 +225,6 @@
 
 
 #### bbcard
-- 'cardStyle'
-  - remove?
-  - only uses 'transparent' - this can just be a background option...?
--
 - add 'href' prop
   - similar to bbbutton - just to allow for right click
   - if passed, auto navigate to that href on click
@@ -260,6 +256,7 @@
     - `accent` color
     - `_light` and `_dark` variations for some colors
   - Fixed mobile styling sizes
+  - *Removed `cardStyle` prop*
 - `BBFieldSelectCard`
   - remove `optionWidth` prop
 - Support for `accent` color

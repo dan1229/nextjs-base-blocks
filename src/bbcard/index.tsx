@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import styles from './styles.module.scss';
-import type { TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation, TBBCardStyle } from '../types';
+import type { TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation } from '../types';
 
 const getChildrenOnDisplayName = (children: React.ReactNode | React.ReactNode[], displayName: string) => {
   return React.Children.map(children, (child) => {
@@ -27,7 +27,6 @@ const getChildrenOnDisplayName = (children: React.ReactNode | React.ReactNode[],
  * @param {React.ReactNode | React.ReactNode[]} children - The text to display
  * @param {TBBCardColorBackground=} color - the color of the text
  * @param {TBBCardElevation} elevation - the elevation of the card
- * @param {TBBCardStyle} cardStyle - the style of the card
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - Function to call when clicked
  * @param {boolean=} noBorder - Whether to remove the border
@@ -37,7 +36,6 @@ export interface IPropsBBCard {
   colorBackground?: TBBCardColorBackground;
   colorBorder?: TBBCardColorBorder;
   elevation?: TBBCardElevation;
-  cardStyle?: TBBCardStyle;
   className?: string;
   onClick?: () => void;
   noBorder?: boolean;
@@ -47,16 +45,7 @@ export interface IPropsBBCard {
  * BBCard
  */
 const BBCard = (Props: IPropsBBCard) => {
-  const {
-    children,
-    colorBackground = 'default',
-    colorBorder = 'default',
-    elevation = 'med',
-    cardStyle = 'default',
-    className,
-    onClick,
-    noBorder = false,
-  } = Props;
+  const { children, colorBackground = 'default', colorBorder = 'default', elevation = 'med', className, onClick, noBorder = false } = Props;
   const header = getChildrenOnDisplayName(children, 'Header');
   const body = getChildrenOnDisplayName(children, 'Body');
   const footer = getChildrenOnDisplayName(children, 'Footer');
@@ -65,6 +54,8 @@ const BBCard = (Props: IPropsBBCard) => {
     switch (colorBackground) {
       case 'default':
         return styles.background_default;
+      case 'transparent':
+        return styles.background_transparent;
       case 'white':
         return styles.background_white;
       case 'grey_light':
@@ -118,15 +109,6 @@ const BBCard = (Props: IPropsBBCard) => {
     }
   };
 
-  const getCardStyle = (): string => {
-    switch (cardStyle) {
-      case 'default':
-        return '';
-      case 'transparent':
-        return styles.card_style__transparent;
-    }
-  };
-
   /**
    * RENDER
    */
@@ -138,7 +120,6 @@ const BBCard = (Props: IPropsBBCard) => {
         styles.base,
         !!onClick && styles.hover,
         noBorder && styles.no_border,
-        getCardStyle(),
         getClassColorBackground(),
         getClassColorBorder(),
         getClassElevation()

@@ -42,18 +42,6 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
   padding: 0 !important;
 }
 
-.card_style__transparent {
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-
-  div {
-    background-color: transparent !important;
-    border-bottom: none !important;
-    border: none !important;
-  }
-}
-
 .hover {
   &:hover {
     cursor: pointer;
@@ -110,6 +98,30 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
   .header {
     border-bottom: 1px solid $card-darken-default-color;
     background-color: $card-darken-default-color;
+  }
+}
+
+.background_transparent {
+  background-color: transparent;
+
+  // background-color: transparent !important;
+  // box-shadow: none !important;
+  // border: none !important;
+
+  // div {
+  //   background-color: transparent !important;
+  //   border-bottom: none !important;
+  //   border: none !important;
+  // }
+
+  .footer {
+    border-top: 1px solid transparent;
+    background-color: transparent;
+  }
+
+  .header {
+    border-bottom: 1px solid transparent;
+    background-color: transparent;
   }
 }
 

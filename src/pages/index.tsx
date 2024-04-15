@@ -63,7 +63,6 @@ const DemoPage = () => {
     colorBackground: 'primary',
     colorBorder: 'transparent',
     elevation: 'none',
-    cardStyle: 'default',
     className: '',
     onClick: () => alert('You clicked the card!'),
     noBorder: false,
