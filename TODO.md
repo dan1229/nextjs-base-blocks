@@ -258,11 +258,6 @@
   - maybe more sizes in general
     - xs and xl?
 -
-- helper text?
-  - if hovering, show helper text?
-  
-
-
 
 
 
@@ -277,6 +272,8 @@
     - Allows for right-clicking and opening in new tab
   - `SCSS` clean up
   - `hover` and `focus` state clean up and color improvements
+  - `textHelperOnHover` prop to show helper text on hover
+  - *Removed old `showTextOnHover` prop*
 - `BBFieldSelectCard`
   - remove `optionWidth` prop
 - Support for `accent` color

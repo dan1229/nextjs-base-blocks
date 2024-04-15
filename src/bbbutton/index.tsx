@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import BBText from '../bbtext';
 import styles from './styles.module.scss';
 import type {
@@ -36,12 +36,14 @@ interface IPropsBBButtonIcon {
  * @param {boolean=} hover - Whether the button is hovered
  * @param {boolean=} focus - Whether the button is focused
  * @param {IPropsBBButtonIcon=} icon - The icon to display on the button
- * @param {boolean=} showTextOnHover - Whether to show the text on hover
  * @param {string=} idForm - The ID of the form to submit
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - The function to call when the button is clicked
  * @param {boolean=} transparent - Whether the button is transparent
  * @param {TBBTextColor=} colorText - The color of the text. This doesn't really work with 'inverse-*' variants
+ * @param {string=} href - The href to navigate to
+ * @param {string=} helperTextOnHover - The helper text to display on hover
+ * @param {string=} classNameHelperText - Extra class name for the helper text
  */
 export interface IPropsBBButton {
   text?: string;
@@ -53,13 +55,14 @@ export interface IPropsBBButton {
   hover?: boolean;
   focus?: boolean;
   icon?: IPropsBBButtonIcon;
-  showTextOnHover?: boolean;
   idForm?: string;
   className?: string;
   onClick?: () => void;
   transparent?: boolean;
   colorText?: TBBTextColor;
   href?: string;
+  helperTextOnHover?: string;
+  classNameHelperText?: string;
 }
 
 /**
@@ -75,7 +78,6 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     disabled = false,
     hover = true,
     focus = false,
-    showTextOnHover = false,
     icon,
     idForm,
     className,
@@ -83,13 +85,27 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     transparent = false,
     colorText = 'white',
     href,
+    helperTextOnHover,
+    classNameHelperText,
   } = Props;
+
   // if button doesn't do anything, disable it
   // otherwise, rely on the disabled prop
-  const disabledRes = !onClick && type != 'submit' ? true : disabled;
-  const hoverRes = disabled || !hover ? false : hover;
-  const align = icon?.align || 'left';
+  const disabledRes = !onClick && type !== 'submit' ? true : disabled;
+  // if hover is disabled or button as a whole
+  // id disabled , don't show hover
+  const hoverRes = disabledRes || !hover ? false : hover;
 
+  // icon alignment
+  const [align] = useState<TBBButtonIconAlign>(icon?.align || 'left');
+
+  // handle hover state
+  const [isHovered] = useState(false);
+  const mainWrapperRef = useRef<HTMLDivElement>(null);
+  const helperTextRef = useRef<HTMLDivElement>(null);
+
+  // GET CLASS VARIANTS
+  //
   const getClassVariant = () => {
     switch (variant) {
       case 'primary':
@@ -167,68 +183,74 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     }
     return null;
   };
-
-  // main shared component
   const mainComponent = (
-    <>
+    <div
+      className={classNames(styles.containerMain, isHovered && helperTextOnHover && styles.showHelperText, classNameHelperText)}
+      ref={mainWrapperRef}
+    >
       {renderIcon('left', icon)}
       {!!text && (
-        <div className={classNames(styles.containerText, showTextOnHover && styles.noMargin)}>
+        <div className={classNames(styles.containerText)}>
           <BBText color={colorText} size={getButtonSize()}>
             {text}
           </BBText>
         </div>
       )}
       {renderIcon('right', icon)}
-    </>
+      {helperTextOnHover && (
+        <div className={classNames(styles.helperText, isHovered && styles.helperTextVisible)} ref={helperTextRef}>
+          <div className={styles.helperTextContent}>
+            <BBText color="white" size="small" className={styles.helperTextQuestionMark}>
+              ?
+            </BBText>
+            <BBText size="small">{helperTextOnHover}</BBText>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+
+  // class names for buttons
+  let baseClassNames = classNames(
+    styles.base,
+    align === 'above' || align === 'below' ? styles.baseVertical : null,
+    disabledRes && styles.disabled,
+    getClassVariant(),
+    getClassElevation(),
+    // if transparent, show transparent
+    transparent && styles.transparent,
+    // if focused, show focus
+    focus && styles.focus,
+    // extra class name
+    className
   );
 
   // if href is defined, use regular button and show it as disabled
   if (href && !disabledRes) {
+    // add hover state for links
+    if (hoverRes) {
+      baseClassNames += ` ${styles.hover}`;
+    }
     if (onClick) console.warn('BBButton: Both onClick and href are defined. onClick will be ignored.');
     return (
-      <BBLink
-        href={href}
-        className={classNames(
-          className,
-          styles.base,
-          align === 'above' || align === 'below' ? styles.baseVertical : null,
-          hoverRes && styles.hover,
-          focus && styles.focus,
-          showTextOnHover && styles.showTextOnHover,
-          getClassVariant(),
-          getClassElevation(),
-          transparent && styles.transparent
-        )}
-        external
-        underline={false}
-        size={getButtonSize()}
-        color={colorText}
-      >
+      <BBLink href={href} className={baseClassNames} external underline={false} size={getButtonSize()} color={colorText}>
         {mainComponent}
       </BBLink>
     );
   }
 
+  // only 'regular buttons' support a disabled state
+  if (disabledRes) {
+    baseClassNames += ` ${styles.disabled}`;
+  }
+
+  // add hover state for buttons that are not disabled
+  if (hoverRes && !disabledRes) {
+    baseClassNames += ` ${styles.hover}`;
+  }
+
   return (
-    <button
-      className={classNames(
-        className,
-        styles.base,
-        align === 'above' || align === 'below' ? styles.baseVertical : null,
-        disabledRes && styles.disabled,
-        hoverRes && styles.hover,
-        focus && styles.focus,
-        showTextOnHover && styles.showTextOnHover,
-        getClassVariant(),
-        getClassElevation(),
-        transparent && styles.transparent
-      )}
-      type={type}
-      form={idForm}
-      disabled={disabledRes}
-      onClick={disabledRes ? undefined : onClick}
-    >
+    <button className={baseClassNames} type={type} form={idForm} disabled={disabledRes} onClick={disabledRes ? undefined : onClick}>
       {mainComponent}
     </button>
   );

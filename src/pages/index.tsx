@@ -46,7 +46,6 @@ const DemoPage = () => {
     disabled: false,
     hover: true,
     focus: false,
-    showTextOnHover: false,
     icon: {
       icon: 'ICON',
       align: 'left',
@@ -57,6 +56,7 @@ const DemoPage = () => {
     transparent: false,
     colorText: 'white',
     href: '',
+    helperTextOnHover: '',
   });
   // BB Card
   const [stateBBCard, setStateBBCard] = useState<IPropsBBCard>({
