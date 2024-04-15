@@ -225,10 +225,6 @@
 
 
 #### bbcard
-- add 'noPadding' prop
-  - to header, body, footer
-  - make the padding smaller in general?
--
 - 'cardStyle'
   - remove?
   - only uses 'transparent' - this can just be a background option...?
@@ -257,7 +253,8 @@
   - *Removed old `showTextOnHover` prop*
 - `BBCard`
   - New colors! `accent` for background and border
-  - TODO
+  - `noPadding` prop added to `header`, `body`, and `footer`
+    - Padding in general tweaked a bit
 - `BBText`
   - New colors!
     - `accent` color
