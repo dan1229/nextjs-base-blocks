@@ -242,6 +242,10 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
   border: 2px solid $secondary-color;
 }
 
+.border_accent {
+  border: 2px solid $accent-color;
+}
+
 /*
 * ELEVATIONS
 */

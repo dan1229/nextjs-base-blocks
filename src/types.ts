@@ -74,7 +74,16 @@ export type TBBAlertTextAlignment = 'left' | 'center' | 'right';
  * BBCard
  */
 export type TBBCardColorBackground = 'default' | 'white' | 'grey_light' | 'grey_dark' | 'black' | 'primary' | 'secondary' | 'accent';
-export type TBBCardColorBorder = 'default' | 'transparent' | 'white' | 'grey_light' | 'grey_dark' | 'black' | 'primary' | 'secondary';
+export type TBBCardColorBorder =
+  | 'default'
+  | 'transparent'
+  | 'white'
+  | 'grey_light'
+  | 'grey_dark'
+  | 'black'
+  | 'primary'
+  | 'secondary'
+  | 'accent';
 export type TBBCardElevation = 'none' | 'low' | 'med' | 'high';
 export type TBBCardStyle = 'default' | 'transparent';
 

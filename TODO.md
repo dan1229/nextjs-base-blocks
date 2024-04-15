@@ -225,10 +225,6 @@
 
 
 #### bbcard
-- color options
-  - accent color option
-    - border and background?
--
 - add 'noPadding' prop
   - to header, body, footer
   - make the padding smaller in general?

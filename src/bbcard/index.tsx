@@ -100,6 +100,8 @@ const BBCard = (Props: IPropsBBCard) => {
         return styles.border_primary;
       case 'secondary':
         return styles.border_secondary;
+      case 'accent':
+        return styles.border_accent;
     }
   };
 
