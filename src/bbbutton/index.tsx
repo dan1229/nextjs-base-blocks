@@ -141,11 +141,15 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
 
   const getButtonSize = (): TBBTextSize => {
     switch (size) {
+      case 'xs':
+        return 'tiny';
       case 'sm':
         return 'small';
       case 'md':
         return 'medium';
       case 'lg':
+        return 'large';
+      case 'xl':
         return 'xlarge';
       default:
         return 'medium';

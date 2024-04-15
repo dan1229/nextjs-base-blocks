@@ -52,7 +52,7 @@ export type TBBButtonVariant =
   | 'transparent-primary'
   | 'transparent-secondary'
   | 'transparent-accent';
-export type TBBButtonSize = 'sm' | 'md' | 'lg';
+export type TBBButtonSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 export type TBBButtonElevation = 'none' | 'low' | 'medium' | 'high';
 export type TBBButtonIconAlign = 'left' | 'right' | 'above' | 'below' | 'space-between';
 

@@ -144,9 +144,6 @@
 - have to find and replace lots of defaults sadly
 
 
-----
-### 1.1.0
-
 
 #### demo page - form components
 - just add them
@@ -157,6 +154,15 @@
   - links to:
   - `/components`
   - `/components/forms`
+
+
+#### bbtext
+- add 'font' prop
+
+
+
+----
+### 1.1.0
 
 
 
@@ -196,24 +202,6 @@
 
 
 
-#### bbcard
-- color options
-  - accent color option
-    - border and background?
--
-- add 'noPadding' prop
-  - to header, body, footer
-  - make the padding smaller in general?
--
-- 'cardStyle'
-  - remove?
-  - only uses 'transparent' - this can just be a background option...?
--
-- add 'href' prop
-  - similar to bbbutton - just to allow for right click
-  - if passed, auto navigate to that href on click
-    - console warning if both are passed
-
 
 #### bbnavbar
 - add title color as prop/option?
@@ -235,12 +223,31 @@
 
 
 
+
+#### bbcard
+- color options
+  - accent color option
+    - border and background?
+-
+- add 'noPadding' prop
+  - to header, body, footer
+  - make the padding smaller in general?
+-
+- 'cardStyle'
+  - remove?
+  - only uses 'transparent' - this can just be a background option...?
+-
+- add 'href' prop
+  - similar to bbbutton - just to allow for right click
+  - if passed, auto navigate to that href on click
+    - console warning if both are passed
+
+
+
 #### bbtext
 - color options
   - add accent color
   - add '-light' options?
--
-- add 'font' prop
 -
 - mobile styling could be improved
   - more media queries
@@ -255,8 +262,6 @@
     - particularly big sizes
   - does hover work in mobile?
     - is it supposed to...?
-  - maybe more sizes in general
-    - xs and xl?
 -
 
 
@@ -273,6 +278,7 @@
   - `SCSS` clean up
   - `hover` and `focus` state clean up and color improvements
   - `textHelperOnHover` prop to show helper text on hover
+  - Added `xs` and `xl` sizes
   - *Removed old `showTextOnHover` prop*
 - `BBFieldSelectCard`
   - remove `optionWidth` prop
