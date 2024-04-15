@@ -256,15 +256,6 @@
   
 
 
-#### bbbutton
-- fixes
-  - better mobile styling
-    - particularly big sizes
-  - does hover work in mobile?
-    - is it supposed to...?
--
-
-
 
 
 ### [1.1.0] - 2024-04-DD
