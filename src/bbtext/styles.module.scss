@@ -85,6 +85,28 @@
   }
 }
 
+// PRIMARY DARK
+.primary_dark {
+  color: var(--primary-dark-color, #89130f);
+}
+
+.primary_dark.hover {
+  &:hover {
+    color: var(--primary-darkest-color, #5c0d0a);
+  }
+}
+
+// PRIMARY LIGHT
+.primary_light {
+  color: var(--primary-light-color, #f2b7b5);
+}
+
+.primary_light.hover {
+  &:hover {
+    color: var(--primary-color, #e8352e);
+  }
+}
+
 // SECONDARY
 .secondary {
   color: var(--secondary-color, #284af7);
@@ -93,6 +115,61 @@
 .secondary.hover {
   &:hover {
     color: var(--secondary-dark-color, #0f1a89);
+  }
+}
+
+// SECONDARY DARK
+.secondary_dark {
+  color: var(--secondary-dark-color, #0f1a89);
+}
+
+.secondary_dark.hover {
+  &:hover {
+    color: var(--secondary-darkest-color, #0f1a89);
+  }
+}
+
+// SECONDARY LIGHT
+.secondary_light {
+  color: var(--secondary-light-color, #b7c7f2);
+}
+
+.secondary_light.hover {
+  &:hover {
+    color: var(--secondary-color, #284af7);
+  }
+}
+
+// ACCENT
+.accent {
+  color: var(--accent-color, #f1c500);
+}
+
+.accent.hover {
+  &:hover {
+    color: var(--accent-dark-color, #b89e00);
+  }
+}
+
+// ACCENT DARK
+.accent_dark {
+  color: var(--accent-dark-color, #b89e00);
+}
+
+.accent_dark.hover {
+  &:hover {
+    color: var(--accent-darkest-color, #b89e00);
+  }
+}
+
+// ACCENT LIGHT
+.accent_light {
+  color: var(--accent-light-color, #f2e7b5);
+}
+
+.accent_light.hover {
+  &:hover {
+    color: var(--accent-color, #f1c500);
   }
 }
 

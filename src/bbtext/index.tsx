@@ -59,8 +59,22 @@ export default function BBText(Props: IPropsBBText): React.ReactElement {
         return styles.white;
       case 'primary':
         return styles.primary;
+      case 'primary_dark':
+        return styles.primary_dark;
+      case 'primary_light':
+        return styles.primary_light;
       case 'secondary':
         return styles.secondary;
+      case 'secondary_dark':
+        return styles.secondary_dark;
+      case 'secondary_light':
+        return styles.secondary_light;
+      case 'accent':
+        return styles.accent;
+      case 'accent_dark':
+        return styles.accent_dark;
+      case 'accent_light':
+        return styles.accent_light;
       case 'success':
         return styles.success;
       case 'warning':
