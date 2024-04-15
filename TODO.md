@@ -225,10 +225,9 @@
 
 
 #### bbcard
-- add 'href' prop
-  - similar to bbbutton - just to allow for right click
-  - if passed, auto navigate to that href on click
-    - console warning if both are passed
+- ensure that onClicks on header/body/footer don't intercept the link
+-
+- test!!! lots of clean up make sure cards still look good in a real site
 
 
 
@@ -253,6 +252,9 @@
     - `transparent` for background
   - `noPadding` prop added to `header`, `body`, and `footer`
     - Padding in general tweaked a bit
+  - Added `href` property to make card a link
+    - Allows for right-clicking and opening in new tab
+    - `hrefColor` prop to change the color of the link
 - `BBText`
   - New colors!
     - `accent` color

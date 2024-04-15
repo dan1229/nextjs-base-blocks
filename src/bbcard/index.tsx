@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import styles from './styles.module.scss';
-import type { TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation } from '../types';
+import type { TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation, TBBTextColor } from '../types';
 import BBLink from 'src/bblink';
 
 /**
@@ -13,6 +13,7 @@ import BBLink from 'src/bblink';
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - Function to call when clicked
  * @param {string=} href - URL for the link
+ * @param {TBBTextColor=} hrefColor - The color of the link
  * @param {boolean=} noBorder - Whether to remove the border
  */
 export interface IPropsBBCard {
@@ -23,6 +24,7 @@ export interface IPropsBBCard {
   className?: string;
   onClick?: () => void;
   href?: string;
+  hrefColor?: TBBTextColor;
   noBorder?: boolean;
 }
 
@@ -38,6 +40,7 @@ const BBCard = (Props: IPropsBBCard) => {
     className,
     onClick,
     href,
+    hrefColor = 'black',
     noBorder = false,
   } = Props;
   // const header = getChildrenOnDisplayName(children, 'Header');
@@ -110,6 +113,7 @@ const BBCard = (Props: IPropsBBCard) => {
   /**
    * RENDER
    */
+  console.log(!href ? onClick : undefined);
   return (
     <div
       onClick={!href ? onClick : undefined}
@@ -123,7 +127,13 @@ const BBCard = (Props: IPropsBBCard) => {
         getClassElevation()
       )}
     >
-      {href ? <BBLink href={href}>{children}</BBLink> : children}
+      {href ? (
+        <BBLink href={href} underline={false} color={hrefColor}>
+          {children}
+        </BBLink>
+      ) : (
+        children
+      )}
     </div>
   );
 };
