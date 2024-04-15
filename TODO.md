@@ -244,18 +244,6 @@
 
 
 
-#### bbtext
-- color options
-  - add accent color
-  - add '-light' options?
--
-- mobile styling could be improved
-  - more media queries
-  - more appropriate sizes
-
-  
-
-
 
 
 ### [1.1.0] - 2024-04-DD
@@ -271,6 +259,11 @@
   - `textHelperOnHover` prop to show helper text on hover
   - Added `xs` and `xl` sizes
   - *Removed old `showTextOnHover` prop*
+- `BBText`
+  - New colors!
+    - `accent` color
+    - `_light` and `_dark` variations for some colors
+  - Fixed mobile styling sizes
 - `BBFieldSelectCard`
   - remove `optionWidth` prop
 - Support for `accent` color

@@ -85,6 +85,28 @@
   }
 }
 
+// PRIMARY DARK
+.primary_dark {
+  color: var(--primary-dark-color, #89130f);
+}
+
+.primary_dark.hover {
+  &:hover {
+    color: var(--primary-darkest-color, #5c0d0a);
+  }
+}
+
+// PRIMARY LIGHT
+.primary_light {
+  color: var(--primary-light-color, #f2b7b5);
+}
+
+.primary_light.hover {
+  &:hover {
+    color: var(--primary-color, #e8352e);
+  }
+}
+
 // SECONDARY
 .secondary {
   color: var(--secondary-color, #284af7);
@@ -93,6 +115,61 @@
 .secondary.hover {
   &:hover {
     color: var(--secondary-dark-color, #0f1a89);
+  }
+}
+
+// SECONDARY DARK
+.secondary_dark {
+  color: var(--secondary-dark-color, #0f1a89);
+}
+
+.secondary_dark.hover {
+  &:hover {
+    color: var(--secondary-darkest-color, #0f1a89);
+  }
+}
+
+// SECONDARY LIGHT
+.secondary_light {
+  color: var(--secondary-light-color, #b7c7f2);
+}
+
+.secondary_light.hover {
+  &:hover {
+    color: var(--secondary-color, #284af7);
+  }
+}
+
+// ACCENT
+.accent {
+  color: var(--accent-color, #f1c500);
+}
+
+.accent.hover {
+  &:hover {
+    color: var(--accent-dark-color, #b89e00);
+  }
+}
+
+// ACCENT DARK
+.accent_dark {
+  color: var(--accent-dark-color, #b89e00);
+}
+
+.accent_dark.hover {
+  &:hover {
+    color: var(--accent-darkest-color, #b89e00);
+  }
+}
+
+// ACCENT LIGHT
+.accent_light {
+  color: var(--accent-light-color, #f2e7b5);
+}
+
+.accent_light.hover {
+  &:hover {
+    color: var(--accent-color, #f1c500);
   }
 }
 
@@ -141,10 +218,9 @@
 }
 
 /*
-* SIZE
+* SIZES
 */
 
-// text size variables
 $text-size-xs: var(--text-size-xs, 0.6rem);
 $text-size-s: var(--text-size-s, 0.8rem);
 $text-size-m: var(--text-size-m, 1rem);
@@ -153,7 +229,6 @@ $text-size-xl: var(--text-size-xl, 2.2rem);
 $text-size-xxl: var(--text-size-xxl, 2.8rem);
 $text-size-xxxl: var(--text-size-xxxl, 3.2rem);
 
-// REGULAR
 .tiny {
   font-size: $text-size-xs;
   margin: 0.1rem 0.2rem;
@@ -192,16 +267,15 @@ $text-size-xxxl: var(--text-size-xxxl, 3.2rem);
   margin: 1.2rem 0.2rem;
 }
 
-// mobile text size variables
-$mobile-text-size-xs: var(--text-size-xs, 0.4rem);
-$mobile-text-size-s: var(--text-size-s, 0.6rem);
-$mobile-text-size-m: var(--text-size-m, 0.8rem);
-$mobile-text-size-l: var(--text-size-l, 1.2rem);
-$mobile-text-size-xl: var(--text-size-xl, 1.6rem);
-$mobile-text-size-xxl: var(--text-size-xxl, 2rem);
-$mobile-text-size-xxxl: var(--text-size-xxxl, 2.5rem);
-
 // MOBILE
+$mobile-text-size-xs: var(--mobile-text-size-xs, 0.4rem);
+$mobile-text-size-s: var(--mobile-text-size-s, 0.6rem);
+$mobile-text-size-m: var(--mobile-text-size-m, 0.8rem);
+$mobile-text-size-l: var(--mobile-text-size-l, 1.2rem);
+$mobile-text-size-xl: var(--mobile-text-size-xl, 1.6rem);
+$mobile-text-size-xxl: var(--mobile-text-size-xxl, 2rem);
+$mobile-text-size-xxxl: var(--mobiletext-size-xxxl, 2.5rem);
+
 @media all and (max-width: 900px) {
   .tiny {
     font-size: $mobile-text-size-xs;
