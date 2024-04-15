@@ -1,6 +1,6 @@
+import classNames from 'classnames';
 import React, { useState, useRef } from 'react';
 import BBText from '../bbtext';
-import classNames from 'classnames';
 import styles from './styles.module.scss';
 import type {
   TBBButtonIconAlign,
@@ -100,7 +100,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
   const [align] = useState<TBBButtonIconAlign>(icon?.align || 'left');
 
   // handle hover state
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered] = useState(false);
   const mainWrapperRef = useRef<HTMLDivElement>(null);
   const helperTextRef = useRef<HTMLDivElement>(null);
 
@@ -200,10 +200,10 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
       {helperTextOnHover && (
         <div className={classNames(styles.helperText, isHovered && styles.helperTextVisible)} ref={helperTextRef}>
           <div className={styles.helperTextContent}>
-            <BBText color="white" className={styles.helperTextQuestionMark}>
+            <BBText color="white" size="small" className={styles.helperTextQuestionMark}>
               ?
             </BBText>
-            <BBText>{helperTextOnHover}</BBText>
+            <BBText size="small">{helperTextOnHover}</BBText>
           </div>
         </div>
       )}

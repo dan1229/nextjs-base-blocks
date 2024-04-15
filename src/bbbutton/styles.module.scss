@@ -117,15 +117,14 @@ $black: var(--black, #000000);
 // helper text
 .helperText {
   position: absolute;
+  max-width: 10rem;
   top: calc(100% + 4px);
-  left: 50%;
+  left: 80%;
   transform: translateX(-50%);
   background-color: $white;
   border: 1px solid $grey-light-dark;
   border-radius: 1rem;
-  padding: 0.3rem 0.6rem;
-  margin: 0 1rem;
-  white-space: nowrap;
+  padding: 0.1rem;
   display: none; // Initially hide the helper text
 
   * {
@@ -133,6 +132,7 @@ $black: var(--black, #000000);
     color: $grey-light !important;
   }
 }
+
 .helperTextContent {
   display: flex;
   flex-direction: row;

@@ -155,7 +155,6 @@ const DemoPage = () => {
           stateObject={stateBBButton}
           setStateObject={setStateBBButton}
         />
-        <BBButton text="Test" onClick={() => alert('You clicked the button!')} helperTextOnHover="test text" />
         <DemoComponent
           name="BBCard"
           child={
