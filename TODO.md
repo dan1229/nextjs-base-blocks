@@ -216,11 +216,9 @@
 
 
 #### bb collapsible
-- use bbcard
-- collapsible component similar to card at least
-- BBSectionCollapsible
-  - BBSectionCollapsibleHeader
-  - BBSectionCollapsibleBody
+- does it need to be split up like card or can it be simple?
+- can it support all the same props?
+  - only if it's built directly on top of bbcard
 
 
 

@@ -43,27 +43,27 @@ const BBCollapsible = (props: IPropsBBCard) => {
   );
 };
 
-// TODO header component
+// TODO header component???
 
-// /**
-//  * BBCollapsible.Content
-//  *
-//  * @param {React.ReactNode | React.ReactNode[]} children - The text to display
-//  * @param {string=} className - Any class name to add
-//  * @param {() => void=} onClick - Function to call when clicked
-//  * @param {boolean=} noPadding - Whether to remove the padding
-//  */
-// interface IPropsBBCollapsibleContent {
-//   children: React.ReactNode | React.ReactNode[];
-//   className?: string;
-//   onClick?: () => void;
-//   noPadding?: boolean;
-// }
+/**
+ * BBCollapsible.Content
+ *
+ * @param {React.ReactNode | React.ReactNode[]} children - The text to display
+ * @param {string=} className - Any class name to add
+ * @param {() => void=} onClick - Function to call when clicked
+ * @param {boolean=} noPadding - Whether to remove the padding
+ */
+interface IPropsBBCollapsibleContent {
+  children: React.ReactNode | React.ReactNode[];
+  className?: string;
+  onClick?: () => void;
+  noPadding?: boolean;
+}
 
-// const Content = (props: IPropsBBCollapsibleContent) => {
-//   return <BBCard.Body {...props}>{props.children}</BBCard.Body>;
-// };
-// Content.displayName = 'Content';
-// BBCollapsible.Content = Content;
+const Content = (props: IPropsBBCollapsibleContent) => {
+  return <BBCard.Body {...props}>{props.children}</BBCard.Body>;
+};
+Content.displayName = 'Content';
+BBCollapsible.Content = Content;
 
-// export default BBCollapsible;
+export default BBCollapsible;
