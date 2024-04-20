@@ -219,13 +219,14 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
   let baseClassNames = classNames(
     styles.base,
     align === 'above' || align === 'below' ? styles.baseVertical : null,
-    disabledRes && styles.disabled,
     getClassVariant(),
     getClassElevation(),
+    // if disabled, show disabled
+    disabledRes ? styles.disabled : null,
     // if transparent, show transparent
-    transparent && styles.transparent,
+    transparent ? styles.transparent : null,
     // if focused, show focus
-    focus && styles.focus,
+    focus ? styles.focus : null,
     // extra class name
     className
   );
