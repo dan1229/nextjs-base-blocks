@@ -40,24 +40,34 @@ $black: var(--black, #000000);
 .base {
   padding: 0.6rem;
   border-radius: var(--button-border-radius, 4px);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
 
   &:hover {
     cursor: pointer;
   }
 }
 
+//container main with hover classes
+.containerMain {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+
+  // Show helper text on hover or focus
+  &:hover .helperText,
+  &:focus .helperText {
+    display: block;
+  }
+}
+
+// vertical for content i.e., if icons and text are in a column
+.contentVertical {
+  flex-direction: column;
+}
+
 // transparent
 .transparent {
   background-color: transparent !important;
-}
-
-// base vertical
-.baseVertical {
-  flex-direction: column;
 }
 
 // base space between
@@ -99,18 +109,6 @@ $black: var(--black, #000000);
 
   &:hover > * {
     color: $primary-light-color !important;
-  }
-}
-
-// hover text
-.containerMain {
-  width: 100%;
-  position: relative;
-
-  // Show helper text on hover or focus
-  &:hover .helperText,
-  &:focus .helperText {
-    display: block;
   }
 }
 

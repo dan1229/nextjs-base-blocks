@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import styles from './styles.module.scss';
 import type { TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation, TBBTextColor } from '../types';
-import BBLink from 'src/bblink';
+import BBLink from '../bblink';
 
 /**
  * PROPS

@@ -54,7 +54,7 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 * CARD SECTIONS
 */
 .header {
-  padding: 0.5rem;
+  padding: 1rem;
   border-radius: $border-radius $border-radius 0 0;
 }
 
@@ -65,7 +65,7 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 }
 
 .body {
-  padding: 0.5rem;
+  padding: 1rem;
   border-radius: $border-radius;
   height: 100%;
   display: flex;
@@ -74,7 +74,7 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 }
 
 .footer {
-  padding: 0.5rem;
+  padding: 1rem;
   border-radius: 0 0 $border-radius $border-radius;
 }
 

@@ -192,17 +192,6 @@
 
 
 
-
-#### bb collapsible
-- use bbcard
-- collapsible component similar to card at least
-- BBSectionCollapsible
-  - BBSectionCollapsibleHeader
-  - BBSectionCollapsibleBody
-
-
-
-
 #### bbnavbar
 - add title color as prop/option?
 - add className prop
@@ -224,11 +213,15 @@
 
 
 
-#### bbcard
-- ensure that onClicks on header/body/footer don't intercept the link
+#### bb collapsible
+- use bbcard
+- collapsible component similar to card at least
+- BBSectionCollapsible
+  - BBSectionCollapsibleHeader
+  - BBSectionCollapsibleBody
 -
-- test!!! lots of clean up make sure cards still look good in a real site
-
+- bbcard
+    - test again!!! lots of clean up make sure cards still look good in a real site
 
 
 
@@ -255,6 +248,7 @@
   - Added `href` property to make card a link
     - Allows for right-clicking and opening in new tab
     - `hrefColor` prop to change the color of the link
+  - `onClick` interception fixes for different parts of the card
 - `BBText`
   - New colors!
     - `accent` color
