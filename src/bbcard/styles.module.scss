@@ -10,8 +10,8 @@ $primary-color: var(--primary-color, #3f51b5);
 $primary-dark-color: var(--primary-dark-color, #303f9f);
 $secondary-color: var(--secondary-color, #f50057);
 $secondary-dark-color: var(--secondary-dark-color, #c51162);
-$accent-color: var(--accent-color, #ff4081);
-$accent-dark-color: var(--accent-dark-color, #f50057);
+$accent-color: var(--accent-color, #ebeb30);
+$accent-dark-color: var(--accent-dark-color, #c3c328);
 
 // default colors
 $card-background-default-color: var(--card-background-default-color, #ffffff);
@@ -54,7 +54,7 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 * CARD SECTIONS
 */
 .header {
-  padding: 0.5rem;
+  padding: 1rem;
   border-radius: $border-radius $border-radius 0 0;
 }
 
@@ -65,7 +65,7 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 }
 
 .body {
-  padding: 0.5rem;
+  padding: 1rem;
   border-radius: $border-radius;
   height: 100%;
   display: flex;
@@ -74,7 +74,7 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 }
 
 .footer {
-  padding: 0.5rem;
+  padding: 1rem;
   border-radius: 0 0 $border-radius $border-radius;
 }
 

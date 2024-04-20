@@ -67,6 +67,7 @@ const DemoPage = () => {
     onClick: () => alert('You clicked the card!'),
     noBorder: false,
     children: 'TODO - fix card implementation',
+    href: '',
   });
   // BB Link
   const [stateBBLink, setStateBBLink] = useState<IPropsBBLink>({

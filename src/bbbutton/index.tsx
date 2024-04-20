@@ -11,7 +11,7 @@ import type {
   TBBTextSize,
   TBBTextColor,
 } from '../types';
-import BBLink from 'src/bblink';
+import BBLink from '../bblink';
 
 /**
  * ICON PROPS
@@ -187,9 +187,15 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     }
     return null;
   };
+
   const mainComponent = (
     <div
-      className={classNames(styles.containerMain, isHovered && helperTextOnHover && styles.showHelperText, classNameHelperText)}
+      className={classNames(
+        styles.containerMain,
+        align === 'above' || align === 'below' ? styles.contentVertical : null,
+        isHovered && helperTextOnHover ? styles.showHelperText : null,
+        classNameHelperText
+      )}
       ref={mainWrapperRef}
     >
       {renderIcon('left', icon)}
@@ -217,17 +223,22 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
   // class names for buttons
   let baseClassNames = classNames(
     styles.base,
-    align === 'above' || align === 'below' ? styles.baseVertical : null,
-    disabledRes && styles.disabled,
     getClassVariant(),
     getClassElevation(),
+    // if disabled, show disabled
+    disabledRes ? styles.disabled : null,
     // if transparent, show transparent
-    transparent && styles.transparent,
+    transparent ? styles.transparent : null,
     // if focused, show focus
-    focus && styles.focus,
+    focus ? styles.focus : null,
     // extra class name
     className
   );
+
+  // LINK COMPONENT
+  // We support a 'link button' via the 'href' prop that will
+  // render a BBLink component instead of a regular button
+  // this allows us to do things like right click to open in new tab
 
   // if href is defined, use regular button and show it as disabled
   if (href && !disabledRes) {
@@ -242,6 +253,9 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
       </BBLink>
     );
   }
+
+  // DEFAULT BUTTON COMPONENT
+  // Just a regular old button
 
   // only 'regular buttons' support a disabled state
   if (disabledRes) {

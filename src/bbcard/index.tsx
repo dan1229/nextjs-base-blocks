@@ -1,25 +1,8 @@
 import classNames from 'classnames';
 import React from 'react';
 import styles from './styles.module.scss';
-import type { TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation } from '../types';
-
-const getChildrenOnDisplayName = (children: React.ReactNode | React.ReactNode[], displayName: string) => {
-  return React.Children.map(children, (child) => {
-    if (
-      !!child &&
-      typeof child !== 'string' &&
-      typeof child !== 'number' &&
-      typeof child !== 'boolean' &&
-      'type' in child &&
-      typeof child.type !== 'string'
-    ) {
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-      if (child.type && 'displayName' in child.type && child.type['displayName'] === displayName) {
-        return child;
-      }
-    }
-  });
-};
+import type { TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation, TBBTextColor } from '../types';
+import BBLink from '../bblink';
 
 /**
  * PROPS
@@ -29,6 +12,8 @@ const getChildrenOnDisplayName = (children: React.ReactNode | React.ReactNode[],
  * @param {TBBCardElevation} elevation - the elevation of the card
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - Function to call when clicked
+ * @param {string=} href - URL for the link
+ * @param {TBBTextColor=} hrefColor - The color of the link
  * @param {boolean=} noBorder - Whether to remove the border
  */
 export interface IPropsBBCard {
@@ -38,6 +23,8 @@ export interface IPropsBBCard {
   elevation?: TBBCardElevation;
   className?: string;
   onClick?: () => void;
+  href?: string;
+  hrefColor?: TBBTextColor;
   noBorder?: boolean;
 }
 
@@ -45,10 +32,20 @@ export interface IPropsBBCard {
  * BBCard
  */
 const BBCard = (Props: IPropsBBCard) => {
-  const { children, colorBackground = 'default', colorBorder = 'default', elevation = 'med', className, onClick, noBorder = false } = Props;
-  const header = getChildrenOnDisplayName(children, 'Header');
-  const body = getChildrenOnDisplayName(children, 'Body');
-  const footer = getChildrenOnDisplayName(children, 'Footer');
+  const {
+    children,
+    colorBackground = 'default',
+    colorBorder = 'default',
+    elevation = 'med',
+    className,
+    onClick,
+    href,
+    hrefColor = 'black',
+    noBorder = false,
+  } = Props;
+  // const header = getChildrenOnDisplayName(children, 'Header');
+  // const body = getChildrenOnDisplayName(children, 'Body');
+  // const footer = getChildrenOnDisplayName(children, 'Footer');
 
   const getClassColorBackground = (): string => {
     switch (colorBackground) {
@@ -109,12 +106,17 @@ const BBCard = (Props: IPropsBBCard) => {
     }
   };
 
+  if (!!href && !!onClick) {
+    console.warn('BBCard: Both href and onClick are set. Only href will be used.');
+  }
+
   /**
    * RENDER
    */
+  console.log(!href ? onClick : undefined);
   return (
     <div
-      onClick={onClick}
+      onClick={!href ? onClick : undefined}
       className={classNames(
         className,
         styles.base,
@@ -125,14 +127,12 @@ const BBCard = (Props: IPropsBBCard) => {
         getClassElevation()
       )}
     >
-      {!!header && !!body && !!footer ? (
-        <>
-          {header}
-          {body}
-          {footer}
-        </>
+      {href ? (
+        <BBLink href={href} underline={false} color={hrefColor}>
+          {children}
+        </BBLink>
       ) : (
-        <>{children}</>
+        children
       )}
     </div>
   );
