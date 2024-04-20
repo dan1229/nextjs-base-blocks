@@ -253,6 +253,9 @@
     - `_light` and `_dark` variations for some colors
   - Fixed mobile styling sizes
   - *Removed `cardStyle` prop*
+- `BBCollapsibleCard`
+  - New component!
+  - Allows for collapsible cards!
 - `BBFieldSelectCard`
   - remove `optionWidth` prop
 - Support for `accent` color

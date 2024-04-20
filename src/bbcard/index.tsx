@@ -43,9 +43,6 @@ const BBCard = (Props: IPropsBBCard) => {
     hrefColor = 'black',
     noBorder = false,
   } = Props;
-  // const header = getChildrenOnDisplayName(children, 'Header');
-  // const body = getChildrenOnDisplayName(children, 'Body');
-  // const footer = getChildrenOnDisplayName(children, 'Footer');
 
   const getClassColorBackground = (): string => {
     switch (colorBackground) {
@@ -156,6 +153,7 @@ interface IPropsBBCardHeader {
 const Header = (props: IPropsBBCardHeader) => {
   const { children, className, onClick, noPadding = false } = props;
 
+  // This is a fix for the onClick event not being triggered when the parent has an onClick event
   const onClickOverride = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation();
     onClick && onClick();
@@ -188,6 +186,7 @@ interface IPropsBBCardBody {
 const Body = (props: IPropsBBCardBody) => {
   const { children, className, onClick, noPadding = false } = props;
 
+  // This is a fix for the onClick event not being triggered when the parent has an onClick event
   const onClickOverride = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation();
     onClick && onClick();
@@ -220,6 +219,7 @@ interface IPropsBBCardFooter {
 const Footer = (props: IPropsBBCardFooter) => {
   const { children, className, onClick, noPadding = false } = props;
 
+  // This is a fix for the onClick event not being triggered when the parent has an onClick event
   const onClickOverride = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation();
     onClick && onClick();
