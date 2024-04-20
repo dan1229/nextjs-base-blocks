@@ -213,14 +213,16 @@
 
 
 
-
-
 #### bb collapsible
 - use bbcard
 - collapsible component similar to card at least
 - BBSectionCollapsible
   - BBSectionCollapsibleHeader
   - BBSectionCollapsibleBody
+-
+- bbcard
+    - test again!!! lots of clean up make sure cards still look good in a real site
+
 
 
 
