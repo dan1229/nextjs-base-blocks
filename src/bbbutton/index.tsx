@@ -187,6 +187,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     }
     return null;
   };
+
   const mainComponent = (
     <div
       className={classNames(styles.containerMain, isHovered && helperTextOnHover && styles.showHelperText, classNameHelperText)}
@@ -229,6 +230,11 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     className
   );
 
+  // LINK COMPONENT
+  // We support a 'link button' via the 'href' prop that will
+  // render a BBLink component instead of a regular button
+  // this allows us to do things like right click to open in new tab
+
   // if href is defined, use regular button and show it as disabled
   if (href && !disabledRes) {
     // add hover state for links
@@ -242,6 +248,9 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
       </BBLink>
     );
   }
+
+  // DEFAULT BUTTON COMPONENT
+  // Just a regular old button
 
   // only 'regular buttons' support a disabled state
   if (disabledRes) {

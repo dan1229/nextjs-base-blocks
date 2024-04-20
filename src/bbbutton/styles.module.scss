@@ -50,6 +50,19 @@ $black: var(--black, #000000);
   }
 }
 
+//container main with hover classes
+.containerMain {
+  width: 100%;
+  position: relative;
+  flex-direction: row;
+
+  // Show helper text on hover or focus
+  &:hover .helperText,
+  &:focus .helperText {
+    display: block;
+  }
+}
+
 // transparent
 .transparent {
   background-color: transparent !important;
@@ -99,18 +112,6 @@ $black: var(--black, #000000);
 
   &:hover > * {
     color: $primary-light-color !important;
-  }
-}
-
-// hover text
-.containerMain {
-  width: 100%;
-  position: relative;
-
-  // Show helper text on hover or focus
-  &:hover .helperText,
-  &:focus .helperText {
-    display: block;
   }
 }
 
