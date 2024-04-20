@@ -213,12 +213,14 @@
 
 
 
-
-
 #### bb collapsible
 - does it need to be split up like card or can it be simple?
 - can it support all the same props?
   - only if it's built directly on top of bbcard
+-
+- bbcard
+    - test again!!! lots of clean up make sure cards still look good in a real site
+
 
 
 
