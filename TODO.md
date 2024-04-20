@@ -218,6 +218,7 @@
 - can it support all the same props?
   - only if it's built directly on top of bbcard
 -
+- test this on a real site
 - bbcard
     - test again!!! lots of clean up make sure cards still look good in a real site
 
