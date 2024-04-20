@@ -255,6 +255,7 @@
   - Added `href` property to make card a link
     - Allows for right-clicking and opening in new tab
     - `hrefColor` prop to change the color of the link
+  - `onClick` interception fixes for different parts of the card
 - `BBText`
   - New colors!
     - `accent` color
