@@ -60,14 +60,14 @@ $black: var(--black, #000000);
   }
 }
 
+// vertical for content i.e., if icons and text are in a column
+.contentVertical {
+  flex-direction: column;
+}
+
 // transparent
 .transparent {
   background-color: transparent !important;
-}
-
-// base vertical
-.baseVertical {
-  flex-direction: column;
 }
 
 // base space between

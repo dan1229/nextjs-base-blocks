@@ -190,7 +190,12 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
 
   const mainComponent = (
     <div
-      className={classNames(styles.containerMain, isHovered && helperTextOnHover && styles.showHelperText, classNameHelperText)}
+      className={classNames(
+        styles.containerMain,
+        align === 'above' || align === 'below' ? styles.contentVertical : null,
+        isHovered && helperTextOnHover ? styles.showHelperText : null,
+        classNameHelperText
+      )}
       ref={mainWrapperRef}
     >
       {renderIcon('left', icon)}
@@ -218,7 +223,6 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
   // class names for buttons
   let baseClassNames = classNames(
     styles.base,
-    align === 'above' || align === 'below' ? styles.baseVertical : null,
     getClassVariant(),
     getClassElevation(),
     // if disabled, show disabled
