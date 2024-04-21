@@ -18,6 +18,8 @@ import type { IPropsBBModal } from '../bbmodal';
 import type { IPropsBBNavbar } from '../bbnavbar';
 import type { IPropsBBNavbarItem } from '../bbnavbar_item';
 import type { IPropsBBText } from '../bbtext';
+import type { TBBCollapsibleHeaderColor } from 'src/types';
+import BBCollapsible from 'src/bbcollapsible';
 
 /**
  * DEMO PAGE
@@ -68,6 +70,19 @@ const DemoPage = () => {
     noBorder: false,
     children: 'TODO - fix card implementation',
     href: '',
+  });
+  // BB Collapsible
+  // TODO (DN 4/2024) - the types for the props here is a bit of a workaround, colorArrow should be a prop of the header
+  const [stateBBCollapsible, setStateBBCollapsible] = useState<IPropsBBCard & { colorArrow: TBBCollapsibleHeaderColor }>({
+    colorBackground: 'primary',
+    colorBorder: 'transparent',
+    elevation: 'none',
+    className: '',
+    onClick: () => alert('You clicked the collapsible!'),
+    noBorder: false,
+    children: 'TODO - fix collapsible implementation',
+    href: '',
+    colorArrow: 'default',
   });
   // BB Link
   const [stateBBLink, setStateBBLink] = useState<IPropsBBLink>({
@@ -166,6 +181,17 @@ const DemoPage = () => {
           }
           stateObject={stateBBCard}
           setStateObject={setStateBBCard}
+        />
+        <DemoComponent
+          name="BBCollapsible"
+          child={
+            <BBCollapsible {...stateBBCollapsible}>
+              <BBCollapsible.Header {...stateBBCollapsible} />
+              <BBCollapsible.Content {...stateBBCollapsible} />
+            </BBCollapsible>
+          }
+          stateObject={stateBBCollapsible}
+          setStateObject={setStateBBCollapsible}
         />
         <DemoComponent name="BBLink" child={<BBLink {...stateBBLink} />} stateObject={stateBBLink} setStateObject={setStateBBLink} />
         <DemoComponent

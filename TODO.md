@@ -35,6 +35,10 @@
 
 ##### demo page - bbcard 'composite' components
 - what to do with header, body and footer?
+- update collapsible similarly
+-
+- how to handle passing props to children?
+  - i.e., 'noPadding' to header/body/footer
 
 
 ##### demo pages - navbar component
@@ -213,19 +217,6 @@
 
 
 
-#### bb collapsible
-- use bbcard
-- collapsible component similar to card at least
-- BBSectionCollapsible
-  - BBSectionCollapsibleHeader
-  - BBSectionCollapsibleBody
--
-- bbcard
-    - test again!!! lots of clean up make sure cards still look good in a real site
-
-
-
-
 ### [1.1.0] - 2024-04-DD
 - `BBButton`
   - New colors!
@@ -255,6 +246,9 @@
     - `_light` and `_dark` variations for some colors
   - Fixed mobile styling sizes
   - *Removed `cardStyle` prop*
+- `BBCollapsibleCard`
+  - New component!
+  - Allows for collapsible cards!
 - `BBFieldSelectCard`
   - remove `optionWidth` prop
 - Support for `accent` color

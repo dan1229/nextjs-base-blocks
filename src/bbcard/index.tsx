@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import React from 'react';
+import BBLink from '../bblink';
 import styles from './styles.module.scss';
 import type { TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation, TBBTextColor } from '../types';
-import BBLink from '../bblink';
 
 /**
  * PROPS
@@ -43,9 +43,6 @@ const BBCard = (Props: IPropsBBCard) => {
     hrefColor = 'black',
     noBorder = false,
   } = Props;
-  // const header = getChildrenOnDisplayName(children, 'Header');
-  // const body = getChildrenOnDisplayName(children, 'Body');
-  // const footer = getChildrenOnDisplayName(children, 'Footer');
 
   const getClassColorBackground = (): string => {
     switch (colorBackground) {
@@ -113,7 +110,6 @@ const BBCard = (Props: IPropsBBCard) => {
   /**
    * RENDER
    */
-  console.log(!href ? onClick : undefined);
   return (
     <div
       onClick={!href ? onClick : undefined}
@@ -156,6 +152,7 @@ interface IPropsBBCardHeader {
 const Header = (props: IPropsBBCardHeader) => {
   const { children, className, onClick, noPadding = false } = props;
 
+  // This is a fix for the onClick event not being triggered when the parent has an onClick event
   const onClickOverride = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation();
     onClick && onClick();
@@ -188,6 +185,7 @@ interface IPropsBBCardBody {
 const Body = (props: IPropsBBCardBody) => {
   const { children, className, onClick, noPadding = false } = props;
 
+  // This is a fix for the onClick event not being triggered when the parent has an onClick event
   const onClickOverride = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation();
     onClick && onClick();
@@ -220,6 +218,7 @@ interface IPropsBBCardFooter {
 const Footer = (props: IPropsBBCardFooter) => {
   const { children, className, onClick, noPadding = false } = props;
 
+  // This is a fix for the onClick event not being triggered when the parent has an onClick event
   const onClickOverride = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation();
     onClick && onClick();
