@@ -212,8 +212,6 @@
 
 
 #### bbnavbar
-- add title color as prop/option?
-- add className prop
 - make title optional
 
 
@@ -250,7 +248,7 @@
   - Fixed mobile styling sizes
   - Removed `cardStyle` prop
 - `BBNavbar`
-  - New props! `colorTitle`
+  - New props! `colorTitle`, `className`
     - Removed `--navbar-title-color` variable
 - `BBFieldCheckbox`
   - Checkbox color support - primary, secondary and accent

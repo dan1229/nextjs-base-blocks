@@ -7,7 +7,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import BBText from '../bbtext';
 import useOutsideClick from '../utils/hooks/UseOutsideClick';
 import styles from './styles.module.scss';
-import { TBBTextColor } from 'src/types';
+import { IPropsBBBase, TBBTextColor } from 'src/types';
 
 type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
 
@@ -37,7 +37,7 @@ export interface IPropsBBNavbar {
 /**
  * BBNAVBAR
  */
-export default function BBNavbar(Props: IPropsBBNavbar): React.ReactElement {
+export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onClick'>): React.ReactElement {
   const {
     title,
     colorTitle = 'primary',
@@ -47,7 +47,7 @@ export default function BBNavbar(Props: IPropsBBNavbar): React.ReactElement {
     routeBrand = '/',
     buttonsAuth,
     showButtonsAuth = true,
-  } = Props;
+  } = props;
   const [showNavExpanded, setShowNavExpanded] = useState(false);
   const router = useRouter();
 
