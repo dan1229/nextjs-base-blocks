@@ -1,6 +1,9 @@
 $primary-color: var(--primary-color, #e8352e);
+$primary-dark-color: var(--primary-dark-color, darken(#e8352e, 10%));
 $secondary-color: var(--secondary-color, #284af7);
+$secondary-dark-color: var(--secondary-dark-color, darken(#284af7, 10%));
 $accent-color: var(--accent-color, #ebeb30);
+$accent-dark-color: var(--accent-dark-color, darken(#ebeb30, 10%));
 
 /**
 * COLORS
@@ -8,8 +11,8 @@ $accent-color: var(--accent-color, #ebeb30);
 .primary {
   input {
     &:checked {
-      background-color: $primary-color !important;
-      border-color: $primary-color !important;
+      background-color: $primary-color;
+      border-color: $primary-dark-color;
     }
   }
 }
@@ -17,8 +20,8 @@ $accent-color: var(--accent-color, #ebeb30);
 .secondary {
   input {
     &:checked {
-      background-color: $secondary-color !important;
-      border-color: $secondary-color !important;
+      background-color: $secondary-color;
+      border-color: $secondary-dark-color;
     }
   }
 }
@@ -26,8 +29,8 @@ $accent-color: var(--accent-color, #ebeb30);
 .accent {
   input {
     &:checked {
-      background-color: $accent-color !important;
-      border-color: $accent-color !important;
+      background-color: $accent-color;
+      border-color: $accent-color;
     }
   }
 }
