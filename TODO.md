@@ -203,10 +203,6 @@
 #### bbnavbar
 - add title color as prop/option?
 - add className prop
-- add 'sticky' prop
--
-- customizable logo size
-- customizable logo image padding
 - make title optional
 
 
@@ -253,6 +249,8 @@
 - `BBCollapsibleCard`
   - New component!
   - Allows for collapsible cards!
+- `BBNavbar`
+  - New props! `colorTitle`
 - `BBFieldCheckbox`
   - Checkbox color support - primary, secondary and accent
 - `BBFieldSelectCard`

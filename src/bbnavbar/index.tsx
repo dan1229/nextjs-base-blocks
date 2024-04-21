@@ -7,6 +7,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import BBText from '../bbtext';
 import useOutsideClick from '../utils/hooks/UseOutsideClick';
 import styles from './styles.module.scss';
+import { TBBTextColor } from 'src/types';
 
 type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
 
@@ -14,6 +15,7 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
  * PROPS
  *
  * @param {string} title - Title to use for navbar
+ * @param {TBBTextColor} colorTitle - Color of the title
  * @param {React.ReactNode} children - Menu options of the navbar
  * @param {TBBNavbarElevation=} elevation - Elevation of the navbar
  * @param {string=} imageSrc - Image src for the navbar, can be URL or local
@@ -23,6 +25,7 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
  */
 export interface IPropsBBNavbar {
   title: string;
+  colorTitle: TBBTextColor;
   children: React.ReactNode;
   elevation?: TBBNavbarElevation;
   imageSrc?: string;
@@ -35,7 +38,16 @@ export interface IPropsBBNavbar {
  * BBNAVBAR
  */
 export default function BBNavbar(Props: IPropsBBNavbar): React.ReactElement {
-  const { title, children, imageSrc, elevation = 'low', routeBrand = '/', buttonsAuth, showButtonsAuth = true } = Props;
+  const {
+    title,
+    colorTitle = 'primary',
+    children,
+    imageSrc,
+    elevation = 'low',
+    routeBrand = '/',
+    buttonsAuth,
+    showButtonsAuth = true,
+  } = Props;
   const [showNavExpanded, setShowNavExpanded] = useState(false);
   const router = useRouter();
 
@@ -75,7 +87,7 @@ export default function BBNavbar(Props: IPropsBBNavbar): React.ReactElement {
       <div className={styles.containerBrand} onClick={async () => await router.push(routeBrand)}>
         <div className={styles.brand}>
           {!!imageSrc && <Image src={imageSrc} alt="" height={60} width={70} />}
-          <BBText className={styles.textTitle} asSpan>
+          <BBText className={styles.textTitle} color={colorTitle} asSpan>
             {title}
           </BBText>
         </div>
