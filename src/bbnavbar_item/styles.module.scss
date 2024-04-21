@@ -21,9 +21,9 @@ $navbar-item-padding: var(--navbar-item-padding, 0.5rem);
 
   &:hover {
     cursor: pointer;
-    // border-radius: $border-radius;
     background-color: var(--bg-dark-color, #1c1c1c);
 
+    // add a radius to the bottom element
     .navbarItemBase:last-child {
       border-bottom-left-radius: $border-radius;
       border-bottom-right-radius: $border-radius;
@@ -134,6 +134,11 @@ $navbar-item-padding: var(--navbar-item-padding, 0.5rem);
     &:hover {
       .iconDropdown {
         transform: rotate(90deg);
+      }
+
+      .navbarItemBase:first-child {
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
       }
     }
   }
