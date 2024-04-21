@@ -15,9 +15,11 @@ This is intended to be used as a git submodule in a NextJS + Typescript project.
 
 A `block` ideally is the smallest unit of UI code that can be reasonably reused. It is a self-contained piece of code that can be used in any context. It is not a component, but a building block for other, bigger components.
 
-The idea behind this is that you can standardize your components and styling without an overabundance of classes and styles or a third party style library like [bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/) or [tailwind](https://tailwindcss.com/) (you can still switch to one if you want though!) This will make it easier to maintain and update your codebase as requirements become more intense.
+The idea behind this is that you can standardize your components and styling without an overabundance of classes and styles or a third party style library like [bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/) or [tailwind](https://tailwindcss.com/) (you can still switch to one if you want though!) This will make it easier to maintain and update your codebase as requirements grow.
 
-If you ever want to move away or edit the base components, you can easily 'remove' the git submodule and do what you need. This is a great way to get started with a new project or to add to an existing one.
+If you ever want to move away or edit the base components, you can easily remove the git submodule and take what you need.
+
+The goal here is to provide consistent and easy to use components that can be used in any project, helping you get a project off the ground quickly or to improve an existing project.
 
 ## Requirements
 
@@ -32,7 +34,32 @@ You must have the following installed to use this submodule
 
 See `package.json` for all the requirements.
 
-Since this is a submodule we can't enforce these requirements, but you will get errors if you don't have them installed.
+Since this is a submodule it can't enforce these requirements, but you will get errors if you don't have them installed.
+
+### Components
+
+At the moment, the following components are available:
+- `BBAlert`
+- `BBButton`
+- `BBCard`
+- `BBCollapsible`
+- `BBLink`
+- `BBLoadingSpinner`
+- `BBModal`
+- `BBNavbar`
+- `BBNavbarItem`
+- `BBText`
+
+As well as the following 'Form Components':
+- `BBFieldBase`
+- `BBFieldCheckbox`
+- `BBFieldDropdown`
+- `BBFieldFile`
+- `BBFieldSelectCard`
+- `BBFieldSelectMultiple`
+- `BBFieldText`
+
+Also including a number of form helper functions and components.
 
 ### SCSS Variables
 
