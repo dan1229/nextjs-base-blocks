@@ -19,7 +19,8 @@ import type { IPropsBBNavbar } from '../bbnavbar';
 import type { IPropsBBNavbarItem } from '../bbnavbar_item';
 import type { IPropsBBText } from '../bbtext';
 import type { TBBCollapsibleHeaderColor } from 'src/types';
-import BBCollapsible from 'src/bbcollapsible';
+import BBCollapsible from '../bbcollapsible';
+import BBFieldCheckbox from 'src/form_components/bbfield_checkbox';
 
 /**
  * DEMO PAGE
@@ -163,6 +164,7 @@ const DemoPage = () => {
       <hr />
       <div>
         <BBText size="xlarge">BB Components</BBText>
+        <BBFieldCheckbox fieldName="test" required={false} />
         <DemoComponent name="BBAlert" child={<BBAlert {...stateBBAlert} />} stateObject={stateBBAlert} setStateObject={setStateBBAlert} />
         <DemoComponent
           name="BBButton"

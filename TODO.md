@@ -190,11 +190,6 @@
 
 
 
-#### bbfield checkbox
-- add size variables/scss variables
-- add border-radius scss variables
-
-
 
 #### bbnavbar
 - add title color as prop/option?
@@ -213,6 +208,11 @@
 - bugs
   - hover not really workings?
     - what does this mean? can't reproduce
+
+
+#### bbfield checkbox
+- add size variables/scss variables
+- add border-radius scss variables
 
 
 
@@ -249,6 +249,8 @@
 - `BBCollapsibleCard`
   - New component!
   - Allows for collapsible cards!
+- `BBFieldCheckbox`
+  - TODO
 - `BBFieldSelectCard`
   - remove `optionWidth` prop
 - Support for `accent` color

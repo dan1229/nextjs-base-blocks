@@ -155,3 +155,6 @@ interface IPropsBBBaseFormBase {
   showLabel?: boolean;
 }
 export type IPropsBBBaseForm = IPropsBBBase & IPropsBBBaseFormBase;
+
+// CHECKBOX
+export type TBBFieldCheckboxColor = 'primary' | 'secondary' | 'accent';
