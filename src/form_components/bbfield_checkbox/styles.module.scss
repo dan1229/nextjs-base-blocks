@@ -14,6 +14,10 @@ $accent-dark-color: var(--accent-dark-color, darken(#ebeb30, 10%));
       background-color: $primary-color;
       border-color: $primary-dark-color;
     }
+
+    &:focus {
+      color: $primary-color !important;
+    }
   }
 }
 
@@ -23,6 +27,10 @@ $accent-dark-color: var(--accent-dark-color, darken(#ebeb30, 10%));
       background-color: $secondary-color;
       border-color: $secondary-dark-color;
     }
+
+    &:focus {
+      color: $secondary-color !important;
+    }
   }
 }
 
@@ -31,6 +39,10 @@ $accent-dark-color: var(--accent-dark-color, darken(#ebeb30, 10%));
     &:checked {
       background-color: $accent-color;
       border-color: $accent-color;
+    }
+
+    &:focus {
+      color: $accent-color !important;
     }
   }
 }
