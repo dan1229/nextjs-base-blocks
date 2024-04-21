@@ -80,11 +80,9 @@ $input-plaintext-color: var(--white) !default;
 
   // Checkbox styles
   &[type='checkbox'] {
-    width: 0.25rem !important;
-    height: 0.25rem !important;
-    padding-left: 2.5rem;
-    margin-bottom: 0.5rem;
     cursor: pointer;
+    max-width: 2rem;
+    min-height: 2rem;
 
     // NOTE this isn't necessary since we're styling this in the component itself
     // but it's here for reference
