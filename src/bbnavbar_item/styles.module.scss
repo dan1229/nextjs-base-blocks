@@ -134,6 +134,11 @@ $navbar-item-padding: var(--navbar-item-padding, 0.5rem);
     width: 100% !important;
     margin: 0;
 
+    &:last-child {
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+
     a {
       text-align: start;
     }
