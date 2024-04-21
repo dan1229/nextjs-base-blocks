@@ -149,15 +149,6 @@ const DemoPage = () => {
       <hr />
       <div>
         <BBText size="xlarge">BB Components</BBText>
-        <BBCollapsible>
-          <BBCollapsible.Header>BB Collapsible</BBCollapsible.Header>
-          <BBCollapsible.Content>
-            <BBText>
-              The BB Components section showcases the various components available in the base blocks library. Each component is displayed
-              with its current state and can be interacted with to see how it functions in real-time.
-            </BBText>
-          </BBCollapsible.Content>
-        </BBCollapsible>
         <DemoComponent name="BBAlert" child={<BBAlert {...stateBBAlert} />} stateObject={stateBBAlert} setStateObject={setStateBBAlert} />
         <DemoComponent
           name="BBButton"

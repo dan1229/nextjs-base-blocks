@@ -95,6 +95,11 @@ export type TBBCardColorBorder =
   | 'accent';
 export type TBBCardElevation = 'none' | 'low' | 'med' | 'high';
 
+/**
+ * BBCollapsible
+ */
+export type TBBCollapsibleHeaderColor = 'default' | 'primary' | 'secondary' | 'accent';
+
 // TBBFieldBase
 export type TBBFieldBaseTypes = 'file' | 'checkbox' | 'number';
 // | 'radio' | 'select' | 'select-multiple'

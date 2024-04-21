@@ -2,6 +2,8 @@ import React, { useState, Children, cloneElement } from 'react';
 import BBCard from '../bbcard';
 import styles from './styles.module.scss';
 import { IPropsBBCard } from 'src/bbcard';
+import { TBBCollapsibleHeaderColor } from '../types';
+import classnames from 'classnames';
 
 /**
  * BBCollapsible
@@ -35,16 +37,17 @@ interface IPropsBBCollapsibleSection {
   className?: string;
   noPadding?: boolean;
   isExpanded?: boolean;
+  colorArrow?: TBBCollapsibleHeaderColor;
 }
 
 /**
  * BBCollapsible.Header
  */
-const Header = ({ children, isExpanded, ...props }: IPropsBBCollapsibleSection) => {
+const Header = ({ children, isExpanded, colorArrow = 'default', ...props }: IPropsBBCollapsibleSection) => {
   return (
     <BBCard.Header {...props} className={styles.mainCollapsibleHeader}>
       {children}
-      <div className={styles.containerArrow}>{isExpanded ? '▲' : '▼'}</div>
+      <div className={classnames(styles.containerArrow, styles[colorArrow])}>{isExpanded ? '▲' : '▼'}</div>
     </BBCard.Header>
   );
 };
