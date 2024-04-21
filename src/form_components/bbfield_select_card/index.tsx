@@ -8,6 +8,15 @@ import styles from './styles.module.scss';
 import type { IBBFieldSelectCardOptions, IPropsBBBaseForm } from '../../types';
 import type { Control, FieldValues } from 'react-hook-form';
 
+/**
+ * PROPS
+ *
+ * @param {unknown} control - The control object from react-hook-form.
+ * @param {IBBFieldSelectCardOptions[]} options - Options to display.
+ * @param {string=} selectedInitial - Initial selected option.
+ * @param {boolean=} showTitleOptions - Whether to show the title 'Options'.
+ * @param {boolean=} showSelected - Whether to show the selected option.
+ */
 export interface IPropsBBFieldSelectCard {
   control: unknown;
   options: IBBFieldSelectCardOptions[];
@@ -16,6 +25,9 @@ export interface IPropsBBFieldSelectCard {
   showSelected?: boolean;
 }
 
+/**
+ * BBFIELD SELECT CARD
+ */
 export default function BBFieldSelectCard(Props: IPropsBBFieldSelectCard & Omit<IPropsBBBaseForm, 'register'>): React.ReactElement {
   const { control, options, fieldName, selectedInitial, required, className, showTitleOptions = true, showSelected = true } = Props;
 

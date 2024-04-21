@@ -79,13 +79,15 @@
 #### bbform fields - sizes
 - add size options
   - small, normal, large
+  - does this work with most?
+    - doesnt work well with checkbox
+-
 - can i add this to the base component/props?
+  - already is...?
 
+  
 
 #### bbform fields - helper text
-- add helper text
-  - color options
-- can i add this to the base component/props?
 - can this be handled by BBToolTip?
 
 
@@ -165,11 +167,6 @@
 
 
 
-----
-### 1.1.0
-
-
-
 #### bbdivider?
 - hr
 - props
@@ -177,6 +174,11 @@
   - size?
   - border?
 
+
+
+
+----
+### 1.1.0
 
 
 
@@ -190,9 +192,11 @@
 
 
 
-#### bbfield checkbox
-- add size variables/scss variables
-- add border-radius scss variables
+#### bbform fields - helper text
+- add 'subheading' or 'helper text'
+- add helper text
+  - color options
+- can i add this to the base component/props?
 
 
 
@@ -249,8 +253,11 @@
 - `BBCollapsibleCard`
   - New component!
   - Allows for collapsible cards!
+- `BBFieldCheckbox`
+  - Checkbox color support - primary, secondary and accent
 - `BBFieldSelectCard`
-  - remove `optionWidth` prop
+  - Remove `optionWidth` prop
+  - Sizing improved
 - Support for `accent` color
 #### TODO
 
