@@ -9,13 +9,13 @@ import styles from './styles.module.scss';
  * @param {TBBFieldCheckboxColor=} color - Color of the checkbox.
  */
 export interface IPropsBBFieldCheckbox {
-  color?: TBBFieldCheckboxColor;
+  colorCheckbox?: TBBFieldCheckboxColor;
 }
 
 /**
  * BBFIELD CHECKBOX
  */
 export default function BBFieldCheckbox(Props: IPropsBBFieldCheckbox & IPropsBBBaseForm): React.ReactElement {
-  const { color = 'primary' } = Props;
-  return <BBFieldBase {...Props} type="checkbox" className={styles[color]} />;
+  const { colorCheckbox = 'secondary' } = Props;
+  return <BBFieldBase {...Props} type="checkbox" className={styles[colorCheckbox]} />;
 }

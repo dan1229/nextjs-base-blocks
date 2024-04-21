@@ -6,23 +6,29 @@ $accent-color: var(--accent-color, #ebeb30);
 * COLORS
 */
 .primary {
-  &:checked {
-    background-color: $primary-color !important;
-    border-color: $primary-color !important;
+  .form_control {
+    &:checked {
+      background-color: $primary-color !important;
+      border-color: $primary-color !important;
+    }
   }
 }
 
 .secondary {
-  &:checked {
-    background-color: $secondary-color !important;
-    border-color: $secondary-color !important;
+  .form_control {
+    &:checked {
+      background-color: $secondary-color !important;
+      border-color: $secondary-color !important;
+    }
   }
 }
 
 .accent {
-  &:checked {
-    background-color: $accent-color !important;
-    border-color: $accent-color !important;
+  .form_control {
+    &:checked {
+      background-color: $accent-color !important;
+      border-color: $accent-color !important;
+    }
   }
 }
 
