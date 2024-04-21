@@ -6,7 +6,7 @@ $accent-color: var(--accent-color, #ebeb30);
 * COLORS
 */
 .primary {
-  .form_control {
+  input {
     &:checked {
       background-color: $primary-color !important;
       border-color: $primary-color !important;
@@ -15,7 +15,7 @@ $accent-color: var(--accent-color, #ebeb30);
 }
 
 .secondary {
-  .form_control {
+  input {
     &:checked {
       background-color: $secondary-color !important;
       border-color: $secondary-color !important;
@@ -24,7 +24,7 @@ $accent-color: var(--accent-color, #ebeb30);
 }
 
 .accent {
-  .form_control {
+  input {
     &:checked {
       background-color: $accent-color !important;
       border-color: $accent-color !important;
