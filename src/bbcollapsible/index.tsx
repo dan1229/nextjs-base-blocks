@@ -43,7 +43,26 @@ const BBCollapsible = (props: IPropsBBCard) => {
   );
 };
 
-// TODO header component???
+/**
+ * BBCollapsible.Header
+ *
+ * @param {React.ReactNode | React.ReactNode[]} children - The text to display
+ * @param {string=} className - Any class name to add
+ * @param {() => void=} onClick - Function to call when clicked
+ * @param {boolean=} noPadding - Whether to remove the padding
+ */
+interface IPropsBBCollapsibleHeader {
+  children: React.ReactNode | React.ReactNode[];
+  className?: string;
+  onClick?: () => void;
+  noPadding?: boolean;
+}
+
+const Header = (props: IPropsBBCollapsibleHeader) => {
+  return <BBCard.Header {...props}>{props.children}</BBCard.Header>;
+};
+Header.displayName = 'Header';
+BBCollapsible.Header = Header;
 
 /**
  * BBCollapsible.Content
