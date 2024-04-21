@@ -200,15 +200,6 @@
 
 
 
-#### bbnavbar
-- add title color as prop/option?
-- add className prop
-- add 'sticky' prop
--
-- customizable logo size
-- customizable logo image padding
-- make title optional
-
 
 
 #### bbnavbar item
@@ -222,6 +213,9 @@
 
 
 ### [1.1.0] - 2024-04-DD
+- `BBCollapsibleCard`
+  - **New component!**
+  - Allows for collapsible cards!
 - `BBButton`
   - New colors!
     - `accent`/`inverse-accent`/`transparent-accent`
@@ -249,10 +243,11 @@
     - `accent` color
     - `_light` and `_dark` variations for some colors
   - Fixed mobile styling sizes
-  - *Removed `cardStyle` prop*
-- `BBCollapsibleCard`
-  - New component!
-  - Allows for collapsible cards!
+  - Removed `cardStyle` prop
+- `BBNavbar`
+  - New props! `colorTitle`, `className`
+    - Removed `--navbar-title-color` variable
+  - `title` now optional
 - `BBFieldCheckbox`
   - Checkbox color support - primary, secondary and accent
 - `BBFieldSelectCard`

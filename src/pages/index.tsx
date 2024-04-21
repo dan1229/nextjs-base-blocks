@@ -122,6 +122,7 @@ const DemoPage = () => {
   const [stateBBNavbar, setStateBBNavbar] = useState<IPropsBBNavbar>({
     title: 'Test',
     elevation: 'none',
+    colorTitle: 'primary',
     imageSrc: '',
     routeBrand: '/',
     showButtonsAuth: true,

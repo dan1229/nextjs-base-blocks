@@ -1,6 +1,5 @@
 $border-radius: var(--navbar-border-radius, 8px);
 $background-color: var(--navbar-background-color, #dddddd);
-$title-color: var(--navbar-title-color, #6c6c6c);
 $brand-padding: var(--navbar-brand-padding, 0.5rem);
 $container-brand-margin: var(--navbar-container-brand-margin, 0 0.5rem);
 
@@ -57,10 +56,6 @@ $container-brand-margin: var(--navbar-container-brand-margin, 0 0.5rem);
   justify-content: center;
   align-items: center;
   margin: $container-brand-margin;
-}
-
-.textTitle {
-  color: $title-color;
 }
 
 /**

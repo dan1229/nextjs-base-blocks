@@ -7,14 +7,16 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import BBText from '../bbtext';
 import useOutsideClick from '../utils/hooks/UseOutsideClick';
 import styles from './styles.module.scss';
+import { IPropsBBBase, TBBTextColor } from 'src/types';
 
 type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
 
 /**
  * PROPS
  *
- * @param {string} title - Title to use for navbar
  * @param {React.ReactNode} children - Menu options of the navbar
+ * @param {string=} title - Title to use for navbar
+ * @param {TBBTextColor=} colorTitle - Color of the title
  * @param {TBBNavbarElevation=} elevation - Elevation of the navbar
  * @param {string=} imageSrc - Image src for the navbar, can be URL or local
  * @param {string=} routeBrand - Route to use for the brand button
@@ -22,8 +24,9 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
  * @param {boolean=} showButtonsAuth - Show auth buttons
  */
 export interface IPropsBBNavbar {
-  title: string;
   children: React.ReactNode;
+  title?: string;
+  colorTitle?: TBBTextColor;
   elevation?: TBBNavbarElevation;
   imageSrc?: string;
   routeBrand?: string;
@@ -34,8 +37,17 @@ export interface IPropsBBNavbar {
 /**
  * BBNAVBAR
  */
-export default function BBNavbar(Props: IPropsBBNavbar): React.ReactElement {
-  const { title, children, imageSrc, elevation = 'low', routeBrand = '/', buttonsAuth, showButtonsAuth = true } = Props;
+export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onClick'>): React.ReactElement {
+  const {
+    children,
+    title,
+    colorTitle = 'primary',
+    imageSrc,
+    elevation = 'low',
+    routeBrand = '/',
+    buttonsAuth,
+    showButtonsAuth = true,
+  } = props;
   const [showNavExpanded, setShowNavExpanded] = useState(false);
   const router = useRouter();
 
@@ -75,9 +87,11 @@ export default function BBNavbar(Props: IPropsBBNavbar): React.ReactElement {
       <div className={styles.containerBrand} onClick={async () => await router.push(routeBrand)}>
         <div className={styles.brand}>
           {!!imageSrc && <Image src={imageSrc} alt="" height={60} width={70} />}
-          <BBText className={styles.textTitle} asSpan>
-            {title}
-          </BBText>
+          {!!title && title.length && (
+            <BBText className={styles.textTitle} color={colorTitle} asSpan>
+              {title}
+            </BBText>
+          )}
         </div>
       </div>
       <div className={classNames(styles.navigationMenu, showNavExpanded && styles.expanded)}>
