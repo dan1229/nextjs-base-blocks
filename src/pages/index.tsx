@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import BBAlert from '../bbalert';
 import BBButton from '../bbbutton';
 import BBCard from '../bbcard';
+import BBCollapsible from '../bbcollapsible';
 import BBLink from '../bblink';
 import BBLoadingSpinner from '../bbloading_spinner';
 import BBModal from '../bbmodal';
@@ -19,7 +20,6 @@ import type { IPropsBBNavbar } from '../bbnavbar';
 import type { IPropsBBNavbarItem } from '../bbnavbar_item';
 import type { IPropsBBText } from '../bbtext';
 import type { TBBCollapsibleHeaderColor } from 'src/types';
-import BBCollapsible from '../bbcollapsible';
 import BBFieldCheckbox from 'src/form_components/bbfield_checkbox';
 
 /**

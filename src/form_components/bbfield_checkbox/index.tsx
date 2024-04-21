@@ -1,7 +1,7 @@
 import React from 'react';
 import BBFieldBase from '../bbfield_base';
-import type { IPropsBBBaseForm, TBBFieldCheckboxColor } from '../../types';
 import styles from './styles.module.scss';
+import type { IPropsBBBaseForm, TBBFieldCheckboxColor } from '../../types';
 
 /**
  * PROPS
