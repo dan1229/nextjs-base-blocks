@@ -86,10 +86,12 @@ $input-plaintext-color: var(--white) !default;
     margin-bottom: 0.5rem;
     cursor: pointer;
 
-    &:checked {
-      background-color: var(--secondary-color);
-      border-color: var(--secondary-dark-color);
-    }
+    // NOTE this isn't necessary since we're styling this in the component itself
+    // but it's here for reference
+    // &:checked {
+    //   background-color: var(--secondary-color);
+    //   border-color: var(--secondary-dark-color);
+    // }
   }
 
   // Customize the `:focus` state to imitate native WebKit styles.
