@@ -83,9 +83,6 @@
 
 
 #### bbform fields - helper text
-- add helper text
-  - color options
-- can i add this to the base component/props?
 - can this be handled by BBToolTip?
 
 
@@ -165,11 +162,6 @@
 
 
 
-----
-### 1.1.0
-
-
-
 #### bbdivider?
 - hr
 - props
@@ -177,6 +169,11 @@
   - size?
   - border?
 
+
+
+
+----
+### 1.1.0
 
 
 
@@ -188,6 +185,13 @@
 - width prop?
   - 'narrow', 'normal', 'full'?
 
+
+
+#### bbform fields - helper text
+- add 'subheading' or 'helper text'
+- add helper text
+  - color options
+- can i add this to the base component/props?
 
 
 

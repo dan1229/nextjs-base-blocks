@@ -7,22 +7,22 @@ $accent-color: var(--accent-color, #ebeb30);
 */
 .primary {
   &:checked {
-    background-color: $primary-color;
-    border-color: $primary-color;
+    background-color: $primary-color !important;
+    border-color: $primary-color !important;
   }
 }
 
 .secondary {
   &:checked {
-    background-color: $secondary-color;
-    border-color: $secondary-color;
+    background-color: $secondary-color !important;
+    border-color: $secondary-color !important;
   }
 }
 
 .accent {
   &:checked {
-    background-color: $accent-color;
-    border-color: $accent-color;
+    background-color: $accent-color !important;
+    border-color: $accent-color !important;
   }
 }
 
