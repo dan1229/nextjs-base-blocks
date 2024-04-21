@@ -79,8 +79,13 @@
 #### bbform fields - sizes
 - add size options
   - small, normal, large
+  - does this work with most?
+    - doesnt work well with checkbox
+-
 - can i add this to the base component/props?
+  - already is...?
 
+  
 
 #### bbform fields - helper text
 - can this be handled by BBToolTip?
@@ -214,11 +219,6 @@
     - what does this mean? can't reproduce
 
 
-#### bbfield checkbox
-- add size variables/scss variables
-- add border-radius scss variables
-
-
 
 
 ### [1.1.0] - 2024-04-DD
@@ -256,7 +256,8 @@
 - `BBFieldCheckbox`
   - Checkbox color support - primary, secondary and accent
 - `BBFieldSelectCard`
-  - remove `optionWidth` prop
+  - Remove `optionWidth` prop
+  - Sizing improved
 - Support for `accent` color
 #### TODO
 
