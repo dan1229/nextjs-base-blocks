@@ -4,6 +4,11 @@ $navbar-item-padding: var(--navbar-item-padding, 0.5rem);
 .active {
   background-color: var(--secondary-color, #e8352e);
   border-radius: $border-radius;
+
+  &:first-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }
 
 .navbarItemBase {
