@@ -17,6 +17,7 @@ $accent-dark-color: var(--accent-dark-color, darken(#ebeb30, 10%));
 
     &:focus {
       color: $primary-color !important;
+      border-color: $primary-color !important;
     }
   }
 }
@@ -30,6 +31,7 @@ $accent-dark-color: var(--accent-dark-color, darken(#ebeb30, 10%));
 
     &:focus {
       color: $secondary-color !important;
+      border-color: $secondary-color !important;
     }
   }
 }
@@ -43,6 +45,7 @@ $accent-dark-color: var(--accent-dark-color, darken(#ebeb30, 10%));
 
     &:focus {
       color: $accent-color !important;
+      border-color: $accent-color !important;
     }
   }
 }

@@ -254,7 +254,7 @@
   - New component!
   - Allows for collapsible cards!
 - `BBFieldCheckbox`
-  - TODO
+  - Checkbox color support - primary, secondary and accent
 - `BBFieldSelectCard`
   - remove `optionWidth` prop
 - Support for `accent` color
