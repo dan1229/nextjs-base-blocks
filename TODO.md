@@ -211,9 +211,6 @@
 
 
 
-#### bbnavbar
-- make title optional
-
 
 ### [1.1.0] - 2024-04-DD
 - `BBCollapsibleCard`
@@ -250,6 +247,7 @@
 - `BBNavbar`
   - New props! `colorTitle`, `className`
     - Removed `--navbar-title-color` variable
+  - `title` now optional
 - `BBFieldCheckbox`
   - Checkbox color support - primary, secondary and accent
 - `BBFieldSelectCard`
