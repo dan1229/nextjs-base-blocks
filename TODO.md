@@ -227,7 +227,7 @@
   - `hover` and `focus` state clean up and color improvements
   - `textHelperOnHover` prop to show helper text on hover
   - Added `xs` and `xl` sizes
-  - *Removed old `showTextOnHover` prop*
+  - Removed old `showTextOnHover` prop
 - `BBCard`
   - New colors!
     - `accent` for background and border
@@ -248,6 +248,8 @@
   - New props! `colorTitle`, `className`
     - Removed `--navbar-title-color` variable
   - `title` now optional
+- `BBNavbarItem`
+  - TODO
 - `BBFieldCheckbox`
   - Checkbox color support - primary, secondary and accent
 - `BBFieldSelectCard`
