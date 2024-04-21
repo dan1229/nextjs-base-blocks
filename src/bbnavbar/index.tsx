@@ -15,8 +15,8 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
  * PROPS
  *
  * @param {string} title - Title to use for navbar
- * @param {TBBTextColor} colorTitle - Color of the title
  * @param {React.ReactNode} children - Menu options of the navbar
+ * @param {TBBTextColor} colorTitle - Color of the title
  * @param {TBBNavbarElevation=} elevation - Elevation of the navbar
  * @param {string=} imageSrc - Image src for the navbar, can be URL or local
  * @param {string=} routeBrand - Route to use for the brand button
@@ -25,8 +25,8 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
  */
 export interface IPropsBBNavbar {
   title: string;
-  colorTitle: TBBTextColor;
   children: React.ReactNode;
+  colorTitle?: TBBTextColor;
   elevation?: TBBNavbarElevation;
   imageSrc?: string;
   routeBrand?: string;

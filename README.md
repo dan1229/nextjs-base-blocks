@@ -133,7 +133,6 @@ html,
   // bb navbar
   --navbar-border-radius: 8px;
   --navbar-background-color: rgb(221, 221, 221);
-  --navbar-title-color: #{$primary-color};
   --navbar-brand-padding: 0rem;
   --navbar-container-brand-margin: 0.5rem;
   // bb navbar item
@@ -180,7 +179,6 @@ Add overrides for dark themes like so:
   // bb navbar
   --navbar-border-radius: 8px;
   --navbar-background-color: rgb(54, 54, 54);
-  --navbar-title-color: rgb(255, 255, 255);
   // bb card
   --card-background-default-color: rgb(77, 77, 77);
   --card-darken-default-color: rgb(39, 39, 39);
