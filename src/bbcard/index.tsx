@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import React from 'react';
+import BBLink from '../bblink';
 import styles from './styles.module.scss';
 import type { TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation, TBBTextColor } from '../types';
-import BBLink from '../bblink';
 
 /**
  * PROPS
@@ -110,7 +110,6 @@ const BBCard = (Props: IPropsBBCard) => {
   /**
    * RENDER
    */
-  console.log(!href ? onClick : undefined);
   return (
     <div
       onClick={!href ? onClick : undefined}

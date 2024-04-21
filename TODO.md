@@ -35,6 +35,10 @@
 
 ##### demo page - bbcard 'composite' components
 - what to do with header, body and footer?
+- update collapsible similarly
+-
+- how to handle passing props to children?
+  - i.e., 'noPadding' to header/body/footer
 
 
 ##### demo pages - navbar component
@@ -209,15 +213,6 @@
 - bugs
   - hover not really workings?
     - what does this mean? can't reproduce
-
-
-
-
-#### bb collapsible
-- add to demo site
-- test this on a real site
-- bbcard
-    - test again!!! lots of clean up make sure cards still look good in a real site
 
 
 

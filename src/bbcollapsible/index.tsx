@@ -1,9 +1,9 @@
+import classnames from 'classnames';
 import React, { useState, Children, cloneElement } from 'react';
 import BBCard from '../bbcard';
 import styles from './styles.module.scss';
-import { IPropsBBCard } from 'src/bbcard';
-import { TBBCollapsibleHeaderColor } from '../types';
-import classnames from 'classnames';
+import type { TBBCollapsibleHeaderColor } from '../types';
+import type { IPropsBBCard } from 'src/bbcard';
 
 /**
  * BBCollapsible
@@ -14,7 +14,9 @@ const BBCollapsible = ({ children, ...props }: IPropsBBCard) => {
 
   const toggleExpand = () => setIsExpanded(!isExpanded);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const header = Children.toArray(children).find((child: any) => child.type.displayName === 'Header');
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const content = Children.toArray(children).find((child: any) => child.type.displayName === 'Content');
 
   return (
