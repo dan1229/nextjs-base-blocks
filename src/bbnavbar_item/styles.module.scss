@@ -4,11 +4,6 @@ $navbar-item-padding: var(--navbar-item-padding, 0.5rem);
 .active {
   background-color: var(--secondary-color, #e8352e);
   border-radius: $border-radius;
-
-  &:first-child {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
 }
 
 .navbarItemBase {
@@ -111,6 +106,13 @@ $navbar-item-padding: var(--navbar-item-padding, 0.5rem);
 * MOBILE
 */
 @media (max-width: 1200px) {
+  .active {
+    &:first-child {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
   .dropdownContent {
     left: 90%;
 
