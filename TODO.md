@@ -202,15 +202,6 @@
 
 
 
-#### bbnavbar item
--  mobile styling hover mode - try to get border-radius not curved on 'middle' items
--
-- bugs
-  - hover not really workings?
-    - what does this mean? can't reproduce
-
-
-
 
 ### [1.1.0] - 2024-04-DD
 - `BBCollapsibleCard`
@@ -249,7 +240,7 @@
     - Removed `--navbar-title-color` variable
   - `title` now optional
 - `BBNavbarItem`
-  - TODO
+  - Cleaned up styling and hover states for desktop and mobile
 - `BBFieldCheckbox`
   - Checkbox color support - primary, secondary and accent
 - `BBFieldSelectCard`

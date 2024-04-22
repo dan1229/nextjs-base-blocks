@@ -25,6 +25,12 @@ $bg-light-color: var(--bg-light-color, #303030);
   ul {
     background-color: $bg-light-color;
   }
+
+  &:hover.hasChildren {
+    border-bottom-left-radius: var(--navbar-item-border-radius, 8px);
+    border-bottom-right-radius: var(--navbar-item-border-radius, 8px);
+  }
+
   &:hover {
     cursor: pointer;
     background-color: $bg-dark-color;
