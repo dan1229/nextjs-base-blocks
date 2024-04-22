@@ -29,8 +29,6 @@ $bg-light-color: var(--bg-light-color, #303030);
   &:hover {
     cursor: pointer;
     background-color: $bg-dark-color;
-    border-top-left-radius: $border-radius;
-    border-top-right-radius: $border-radius;
 
     li {
       border-radius: 0;
