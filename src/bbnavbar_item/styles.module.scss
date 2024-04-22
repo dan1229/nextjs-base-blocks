@@ -29,7 +29,12 @@ $bg-light-color: var(--bg-light-color, #303030);
   &:hover {
     cursor: pointer;
     background-color: $bg-dark-color;
-    border-radius: $border-radius;
+    @if (ul) {
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    } @else {
+      border-radius: $border-radius;
+    }
 
     li {
       border-radius: 0;
