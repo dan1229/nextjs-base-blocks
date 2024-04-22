@@ -197,18 +197,6 @@
 ### [1.1.2] - 2024-MM-DD
 #### TODO
 
-----
-### 1.1.1
-
-
-
-
-### [1.1.1] - 2024-04-21
-- Import fixes
-- `BBButton` - icon and text alignment fix
-- `BBCard` - `noBorder` prop fix
-#### TODO
-
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)

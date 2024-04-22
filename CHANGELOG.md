@@ -14,6 +14,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [1.1.1] - 2024-04-21
+- Import fixes
+- `BBButton` - icon and text alignment fix
+- `BBCard` - `noBorder` prop fix
+
+
 ### [1.1.0] - 2024-04-21
 - `BBCollapsibleCard`
   - **New component!**
