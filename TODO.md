@@ -205,6 +205,8 @@
 
 ### [1.1.1] - 2024-04-21
 - Import fixes
+- `BBButton` - icon and text alignment fix
+- `BBCard` - `noBorder` prop fix
 #### TODO
 
 -------------------------------------------------------
