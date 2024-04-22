@@ -33,7 +33,6 @@
 }
 
 .modal {
-  width: 70%;
   overflow-y: auto;
 }
 
@@ -71,13 +70,19 @@
 * MOBILE
 */
 @media screen and (max-width: 1024px) {
-  .modal {
+  .sm,
+  .md,
+  .lg,
+  .full {
     width: 80%;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .modal {
+  .sm,
+  .md,
+  .lg,
+  .full {
     width: 100%;
   }
 }
