@@ -11,8 +11,8 @@ $bg-light-color: var(--bg-light-color, #303030);
 
 .hasChildren {
   &:hover {
-    border-bottom-left-radius: var(--navbar-item-border-radius, 8px);
-    border-bottom-right-radius: var(--navbar-item-border-radius, 8px);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 }
 
@@ -36,8 +36,7 @@ $bg-light-color: var(--bg-light-color, #303030);
   &:hover {
     cursor: pointer;
     background-color: $bg-dark-color;
-    border-top-left-radius: $border-radius;
-    border-top-right-radius: $border-radius;
+    border-radius: $border-radius;
 
     li {
       border-radius: 0;
