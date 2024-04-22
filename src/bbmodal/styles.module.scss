@@ -70,10 +70,15 @@
 * MOBILE
 */
 @media screen and (max-width: 1024px) {
-  .sm,
-  .md,
-  .lg,
-  .full {
+  .sm {
+    width: 50%;
+  }
+
+  .md {
+    width: 70%;
+  }
+
+  .lg {
     width: 80%;
   }
 }
