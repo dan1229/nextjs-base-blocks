@@ -29,8 +29,7 @@ $bg-light-color: var(--bg-light-color, #303030);
   &:hover {
     cursor: pointer;
     background-color: $bg-dark-color;
-    border-top-left-radius: $border-radius;
-    border-top-right-radius: $border-radius;
+    border-radius: $border-radius;
 
     li {
       border-radius: 0;
@@ -119,6 +118,7 @@ $bg-light-color: var(--bg-light-color, #303030);
 @media (max-width: 1200px) {
   .dropdownContent {
     left: 90%;
+    border-radius: $border-radius;
 
     &:first-child {
       border-top-left-radius: $border-radius;
