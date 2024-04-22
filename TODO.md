@@ -189,13 +189,14 @@
 
 
 ----
-### 1.1.3
+### 1.1.4
 
 
 fix eslint rules for relative imports
+- i.e., 'src' shouldn't be in the import path
 
 
-### [1.1.3] - 2024-MM-DD
+### [1.1.4] - 2024-MM-DD
 #### TODO
 
 -------------------------------------------------------

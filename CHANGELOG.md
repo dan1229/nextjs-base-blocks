@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [1.1.3] - 2024-04-22
+- `BBButton` removed `min-height` for styling
+
+
 ### [1.1.2] - 2024-04-22
 - Relative imports fix AGAIN
 
