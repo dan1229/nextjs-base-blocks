@@ -40,7 +40,6 @@ $black: var(--black, #000000);
 .base {
   padding: 0.6rem;
   border-radius: var(--button-border-radius, 4px);
-
   &:hover {
     cursor: pointer;
   }
@@ -48,10 +47,13 @@ $black: var(--black, #000000);
 
 //container main with hover classes
 .containerMain {
+  min-height: 2rem;
   width: 100%;
-  position: relative;
+  height: 100%;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 
   // Show helper text on hover or focus
   &:hover .helperText,
@@ -77,11 +79,15 @@ $black: var(--black, #000000);
 
 // container text
 .containerText {
-  margin: 0px 4px;
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  * {
+    margin: 0;
+  }
 }
 
 // disabled
@@ -97,11 +103,11 @@ $black: var(--black, #000000);
 
 // container icon
 .containerIcon {
-  margin: 0 6px;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   * {
     color: inherit;
@@ -110,6 +116,12 @@ $black: var(--black, #000000);
   &:hover > * {
     color: $primary-light-color !important;
   }
+}
+
+// Adjusts for when icon and text should be vertically aligned
+.contentVertical .containerIcon {
+  margin-right: 0;
+  margin-bottom: 0.4rem; // Adjust for vertical spacing between icon and text
 }
 
 // helper text

@@ -7,7 +7,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import BBText from '../bbtext';
 import useOutsideClick from '../utils/hooks/UseOutsideClick';
 import styles from './styles.module.scss';
-import type { IPropsBBBase, TBBTextColor } from 'src/types';
+import type { IPropsBBBase, TBBTextColor } from '../types';
 
 type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
 

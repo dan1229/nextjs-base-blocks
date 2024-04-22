@@ -24,7 +24,7 @@ module.exports = {
     'no-underscore-dangle': 'warn',
     'react/self-closing-comp': ['error', { component: true, html: true }],
     'import/order': [
-      'warn',
+      'error',
       {
         groups: ['builtin', 'external', 'parent', 'sibling', 'index', 'object', 'type'],
         pathGroups: [
@@ -47,6 +47,17 @@ module.exports = {
           regex: '^I[A-Z]',
           match: true,
         },
+      },
+    ],
+    'no-restricted-imports': [
+      'error',
+      {
+        paths: [
+          {
+            name: 'src/*',
+            message: 'Please use relative imports instead of "src/" for internal modules.',
+          },
+        ],
       },
     ],
   },

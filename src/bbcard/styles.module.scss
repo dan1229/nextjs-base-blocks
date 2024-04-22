@@ -35,7 +35,7 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 }
 
 .no_border {
-  border: none;
+  border: none !important;
 }
 
 .no_padding {
