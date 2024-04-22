@@ -10,6 +10,7 @@ import BBNavbar from '../bbnavbar';
 import BBNavbarItem from '../bbnavbar_item';
 import BBText from '../bbtext';
 import DemoComponent from '../demo_components/demo_component';
+import BBFieldCheckbox from '../form_components/bbfield_checkbox';
 import type { IPropsBBAlert } from '../bbalert';
 import type { IPropsBBButton } from '../bbbutton';
 import type { IPropsBBCard } from '../bbcard';
@@ -20,7 +21,6 @@ import type { IPropsBBNavbar } from '../bbnavbar';
 import type { IPropsBBNavbarItem } from '../bbnavbar_item';
 import type { IPropsBBText } from '../bbtext';
 import type { TBBCollapsibleHeaderColor } from '../types';
-import BBFieldCheckbox from '../form_components/bbfield_checkbox';
 
 /**
  * DEMO PAGE

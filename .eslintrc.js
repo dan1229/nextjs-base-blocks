@@ -49,5 +49,16 @@ module.exports = {
         },
       },
     ],
+    'no-restricted-imports': [
+      'error',
+      {
+        paths: [
+          {
+            name: 'src/*',
+            message: 'Please use relative imports instead of "src/" for internal modules.',
+          },
+        ],
+      },
+    ],
   },
 };
