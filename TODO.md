@@ -246,6 +246,7 @@
 - `BBFieldSelectCard`
   - Remove `optionWidth` prop
   - Sizing improved
+- Added `helperText` to Form Fields
 - Support for `accent` color
 #### TODO
 

@@ -142,6 +142,8 @@ export interface IBBFieldSelectMultipleOptions {
  * @param {string=} autocomplete - Autocomplete value for the input.
  * @param {string=} placeholder - Placeholder text
  * @param {boolean=} showLabel - Whether to show the label
+ * @param {string=} helperText - Helper text to show below the field
+ * @param {TBBTextColor=} helperTextColor - Color of the helper text
  */
 interface IPropsBBBaseFormBase {
   register?: Object;
@@ -153,6 +155,8 @@ interface IPropsBBBaseFormBase {
   autocomplete?: string;
   placeholder?: string;
   showLabel?: boolean;
+  helperText?: string;
+  helperTextColor?: TBBTextColor;
 }
 export type IPropsBBBaseForm = IPropsBBBase & IPropsBBBaseFormBase;
 
