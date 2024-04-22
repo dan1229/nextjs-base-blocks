@@ -192,13 +192,6 @@
 
 
 
-#### bbform fields - helper text
-- add 'subheading' or 'helper text'
-- add helper text
-  - color options
-- can i add this to the base component/props?
-
-
 
 
 
@@ -247,6 +240,7 @@
   - Remove `optionWidth` prop
   - Sizing improved
 - Added `helperText` to Form Fields
+  - `helperTextColor` added as well
 - Support for `accent` color
 #### TODO
 
