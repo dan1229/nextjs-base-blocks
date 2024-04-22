@@ -40,7 +40,6 @@ $black: var(--black, #000000);
 .base {
   padding: 0.6rem;
   border-radius: var(--button-border-radius, 4px);
-
   &:hover {
     cursor: pointer;
   }
@@ -48,11 +47,13 @@ $black: var(--black, #000000);
 
 //container main with hover classes
 .containerMain {
+  min-height: 2rem;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0.5rem;
 
   // Show helper text on hover or focus
   &:hover .helperText,
@@ -78,16 +79,14 @@ $black: var(--black, #000000);
 
 // container text
 .containerText {
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1;
   text-align: center;
 
   * {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 0;
   }
 }
 
@@ -105,10 +104,9 @@ $black: var(--black, #000000);
 // container icon
 .containerIcon {
   height: 100%;
-  margin: 0 0.25rem;
   display: flex;
   flex-direction: column;
-  align-items: baseline;
+  align-items: center;
   justify-content: center;
 
   * {
