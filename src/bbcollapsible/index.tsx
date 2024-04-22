@@ -3,7 +3,7 @@ import React, { useState, Children, cloneElement } from 'react';
 import BBCard from '../bbcard';
 import styles from './styles.module.scss';
 import type { TBBCollapsibleHeaderColor } from '../types';
-import type { IPropsBBCard } from 'src/bbcard';
+import type { IPropsBBCard } from '../bbcard';
 
 /**
  * BBCollapsible
