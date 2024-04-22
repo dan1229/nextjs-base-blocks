@@ -29,19 +29,15 @@ $bg-light-color: var(--bg-light-color, #303030);
   &:hover {
     cursor: pointer;
     background-color: $bg-dark-color;
-    border-radius: $border-radius;
+    border-radius: $border-radius !important;
 
     li {
       border-radius: 0;
     }
 
-    .hasChildren {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-
-    &.no-child-list {
-      border-radius: $border-radius;
+    &.hasChildren {
+      border-bottom-left-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
     }
 
     &:last-child {
