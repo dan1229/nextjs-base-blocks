@@ -3,6 +3,7 @@ $navbar-item-padding: var(--navbar-item-padding, 0.5rem);
 
 .active {
   background-color: var(--secondary-color, #e8352e);
+  background-color: var(--bg-dark-color, #1c1c1c) !important;
   border-radius: $border-radius;
 }
 
@@ -19,9 +20,12 @@ $navbar-item-padding: var(--navbar-item-padding, 0.5rem);
     }
   }
 
+  ul {
+    background-color: var(--bg-dark-color, #1c1c1c) !important;
+  }
+
   &:hover {
     cursor: pointer;
-    background-color: var(--bg-dark-color, #1c1c1c) !important;
 
     &:first-child {
       border-top-left-radius: $border-radius;
