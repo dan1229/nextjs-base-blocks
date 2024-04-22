@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import React from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import BBButton from '../bbbutton';
@@ -6,7 +7,6 @@ import BBLoadingSpinner from '../bbloading_spinner';
 import BBText from '../bbtext';
 import styles from './styles.module.scss';
 import type { TBBModalWidth, TBBTextSize } from '../types';
-import classnames from 'classnames';
 
 /**
  * PROPS

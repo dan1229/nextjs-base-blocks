@@ -187,13 +187,6 @@
 
 
 
-#### bbmodal
-- width prop?
-  - 'narrow', 'normal', 'full'?
-- mobile styling improvements
-
-
-
 
 ### [1.1.0] - 2024-04-DD
 - `BBCollapsibleCard`
