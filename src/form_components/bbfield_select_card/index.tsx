@@ -29,7 +29,7 @@ export interface IPropsBBFieldSelectCard {
  * BBFIELD SELECT CARD
  */
 export default function BBFieldSelectCard(props: IPropsBBFieldSelectCard & Omit<IPropsBBBaseForm, 'register'>): React.ReactElement {
-  const { control, options, fieldName, selectedInitial, required, className, showTitleOptions = true, showSelected = true } = props;
+  const { control, options, fieldName, selectedInitial, showTitleOptions = true, showSelected = true } = props;
 
   return (
     <InputWrapper {...props}>

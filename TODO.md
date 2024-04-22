@@ -176,6 +176,11 @@
 
 
 
+#### bbmodal
+- background scrolling
+  - still not great
+  - need to somehow add 'overflow-y: hidden' to 'body'/'html' when modal is open
+-
 
 ----
 ### 1.1.0
@@ -183,14 +188,8 @@
 
 
 #### bbmodal
-- background scrolling
-  - still not great
-  - need to somehow add 'overflow-y: hidden' to 'body'/'html' when modal is open
--
 - width prop?
   - 'narrow', 'normal', 'full'?
-
-
 
 
 

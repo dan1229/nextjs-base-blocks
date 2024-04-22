@@ -1,8 +1,8 @@
 import classnames from 'classnames';
 import React from 'react';
+import BBText from '../../bbtext';
 import styles from '../styles.module.scss';
 import type { IPropsBBBaseForm } from '../../types';
-import BBText from '../../bbtext';
 
 export const getLabel = (label: string | undefined, fieldName: string): string => {
   if (!!label && label.length) return label;
