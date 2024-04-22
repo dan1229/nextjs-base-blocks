@@ -48,6 +48,25 @@
   gap: 4px;
 }
 
+/**
+* WIDTHS
+*/
+.sm {
+  width: 30%;
+}
+
+.md {
+  width: 50%;
+}
+
+.lg {
+  width: 70%;
+}
+
+.full {
+  width: 100%;
+}
+
 @media screen and (max-width: 1024px) {
   .modal {
     width: 80%;

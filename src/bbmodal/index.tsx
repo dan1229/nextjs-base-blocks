@@ -5,7 +5,8 @@ import BBCard from '../bbcard';
 import BBLoadingSpinner from '../bbloading_spinner';
 import BBText from '../bbtext';
 import styles from './styles.module.scss';
-import type { TBBTextSize } from '../types';
+import type { TBBModalWidth, TBBTextSize } from '../types';
+import classnames from 'classnames';
 
 /**
  * PROPS
@@ -23,6 +24,7 @@ import type { TBBTextSize } from '../types';
  * @param {TBBTextSize=} headerTextSize - The size of the header text
  * @param {boolean=} showButtonCancel - Whether to show the cancel button
  * @param {boolean=} loading - Whether to show the loading spinner
+ * @param {TBBModalWidth=} width - The width of the modal
  */
 export interface IPropsBBModal {
   children: React.ReactNode;
@@ -38,6 +40,7 @@ export interface IPropsBBModal {
   headerTextSize?: TBBTextSize;
   showButtonCancel?: boolean;
   loading?: boolean;
+  width?: TBBModalWidth;
 }
 
 /**
@@ -58,6 +61,7 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
     headerTextSize = 'xlarge',
     showButtonCancel = false,
     loading = false,
+    width = 'md',
   } = Props;
   const showFooter = !!onConfirm || (!!onDismiss && showButtonCancel) || !!extraFooter;
 
@@ -84,7 +88,7 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
    */
   return (
     <div className={styles.containerModal} onClick={onClickContainer}>
-      <BBCard className={styles.modal}>
+      <BBCard className={classnames(styles.modal, styles[width])}>
         <BBCard.Header>
           <BBCard.Header>
             <div className={styles.headerRow}>
