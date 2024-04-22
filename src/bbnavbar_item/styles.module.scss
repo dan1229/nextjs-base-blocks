@@ -25,19 +25,18 @@ $bg-light-color: var(--bg-light-color, #303030);
   ul {
     background-color: $bg-light-color;
   }
-
   &:hover {
     cursor: pointer;
     background-color: $bg-dark-color;
-    @if (ul) {
-      border-top-left-radius: $border-radius;
-      border-top-right-radius: $border-radius;
-    } @else {
-      border-radius: $border-radius;
-    }
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
 
     li {
       border-radius: 0;
+    }
+
+    &.no-child-list {
+      border-radius: $border-radius;
     }
 
     &:last-child {
