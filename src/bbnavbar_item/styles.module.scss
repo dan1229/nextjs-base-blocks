@@ -121,6 +121,20 @@ $bg-light-color: var(--bg-light-color, #303030);
 * MOBILE
 */
 @media (max-width: 1200px) {
+  .active {
+    border-radius: 0;
+
+    &:first-child {
+      border-top-left-radius: $border-radius !important;
+      border-top-right-radius: $border-radius !important;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+  }
+
   .dropdownContent {
     left: 90%;
     border-radius: $border-radius;
@@ -148,7 +162,6 @@ $bg-light-color: var(--bg-light-color, #303030);
   .navbarItemBase {
     width: 100% !important;
     margin: 0;
-    border-radius: 0;
 
     &:first-child {
       border-top-left-radius: $border-radius;
@@ -165,11 +178,16 @@ $bg-light-color: var(--bg-light-color, #303030);
     }
 
     &:hover {
-      border-radius: 0;
+      border-radius: 0 !important;
 
       &:first-child {
-        border-top-left-radius: $border-radius;
-        border-top-right-radius: $border-radius;
+        border-top-left-radius: $border-radius !important;
+        border-top-right-radius: $border-radius !important;
+      }
+
+      &:last-child {
+        border-bottom-left-radius: $border-radius !important;
+        border-bottom-right-radius: $border-radius !important;
       }
 
       .iconDropdown {
