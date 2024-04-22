@@ -106,13 +106,6 @@ $navbar-item-padding: var(--navbar-item-padding, 0.5rem);
 * MOBILE
 */
 @media (max-width: 1200px) {
-  .active {
-    &:first-child {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-  }
-
   .dropdownContent {
     left: 90%;
 
@@ -141,6 +134,12 @@ $navbar-item-padding: var(--navbar-item-padding, 0.5rem);
   .navbarItemBase {
     width: 100% !important;
     margin: 0;
+    border-radius: 0;
+
+    &:first-child {
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
 
     &:last-child {
       border-bottom-left-radius: $border-radius;
