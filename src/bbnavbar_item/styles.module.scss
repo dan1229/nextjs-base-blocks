@@ -32,7 +32,7 @@ $bg-light-color: var(--bg-light-color, #303030);
     border-radius: $border-radius !important;
 
     li {
-      border-radius: 0;
+      border-radius: 0 !important;
     }
 
     &.hasChildren {
@@ -41,8 +41,8 @@ $bg-light-color: var(--bg-light-color, #303030);
     }
 
     &:last-child {
-      border-bottom-left-radius: $border-radius;
-      border-bottom-right-radius: $border-radius;
+      border-bottom-left-radius: $border-radius !important;
+      border-bottom-right-radius: $border-radius !important;
     }
 
     .iconDropdown {
