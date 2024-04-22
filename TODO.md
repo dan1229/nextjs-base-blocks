@@ -180,64 +180,21 @@
 - background scrolling
   - still not great
   - need to somehow add 'overflow-y: hidden' to 'body'/'html' when modal is open
--
+
+
+
+
+### [1.2.0] - 2024-MM-DD
+#### TODO
+
 
 ----
-### 1.1.0
+### 1.1.1
 
 
 
 
-### [1.1.0] - 2024-04-DD
-- `BBCollapsibleCard`
-  - **New component!**
-  - Allows for collapsible cards!
-- `BBButton`
-  - New colors!
-    - `accent`/`inverse-accent`/`transparent-accent`
-    - `black`/`white`
-  - Added `colorText` prop to change text color manually
-  - Added `href` prop to make button a link
-    - Allows for right-clicking and opening in new tab
-  - `SCSS` clean up
-  - `hover` and `focus` state clean up and color improvements
-  - `textHelperOnHover` prop to show helper text on hover
-  - Added `xs` and `xl` sizes
-  - Removed old `showTextOnHover` prop
-- `BBCard`
-  - New colors!
-    - `accent` for background and border
-    - `transparent` for background
-  - `noPadding` prop added to `header`, `body`, and `footer`
-    - Padding in general tweaked a bit
-  - Added `href` property to make card a link
-    - Allows for right-clicking and opening in new tab
-    - `hrefColor` prop to change the color of the link
-  - `onClick` interception fixes for different parts of the card
-- `BBText`
-  - New colors!
-    - `accent` color
-    - `_light` and `_dark` variations for some colors
-  - Fixed mobile styling sizes
-  - Removed `cardStyle` prop
-- `BBNavbar`
-  - New props! `colorTitle`, `className`
-    - Removed `--navbar-title-color` variable
-  - `title` now optional
-- `BBNavbarItem`
-  - Cleaned up styling and hover states for desktop and mobile
-- `BBModal`
-  - Width options added - `narrow`, `normal`, `full`
-  - Mobile styling improvements
-- `Form Field` improvements:
-  - `BBFieldCheckbox`
-    - Checkbox color support - primary, secondary and accent
-  - `BBFieldSelectCard`
-    - Remove `optionWidth` prop
-    - Sizing improved
-  - Added `helperText` to Form Fields
-    - `helperTextColor` added as well
-- Support for `accent` color
+### [1.1.1] - 2024-MM-DD
 #### TODO
 
 -------------------------------------------------------

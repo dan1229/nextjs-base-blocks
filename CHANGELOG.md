@@ -14,6 +14,58 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [1.1.0] - 2024-04-21
+- `BBCollapsibleCard`
+  - **New component!**
+  - Allows for collapsible cards!
+- `BBButton`
+  - New colors!
+    - `accent`/`inverse-accent`/`transparent-accent`
+    - `black`/`white`
+  - Added `colorText` prop to change text color manually
+  - Added `href` prop to make button a link
+    - Allows for right-clicking and opening in new tab
+  - `SCSS` clean up
+  - `hover` and `focus` state clean up and color improvements
+  - `textHelperOnHover` prop to show helper text on hover
+  - Added `xs` and `xl` sizes
+  - Removed old `showTextOnHover` prop
+- `BBCard`
+  - New colors!
+    - `accent` for background and border
+    - `transparent` for background
+  - `noPadding` prop added to `header`, `body`, and `footer`
+    - Padding in general tweaked a bit
+  - Added `href` property to make card a link
+    - Allows for right-clicking and opening in new tab
+    - `hrefColor` prop to change the color of the link
+  - `onClick` interception fixes for different parts of the card
+- `BBText`
+  - New colors!
+    - `accent` color
+    - `_light` and `_dark` variations for some colors
+  - Fixed mobile styling sizes
+  - Removed `cardStyle` prop
+- `BBNavbar`
+  - New props! `colorTitle`, `className`
+    - Removed `--navbar-title-color` variable
+  - `title` now optional
+- `BBNavbarItem`
+  - Cleaned up styling and hover states for desktop and mobile
+- `BBModal`
+  - Width options added - `narrow`, `normal`, `full`
+  - Mobile styling improvements
+- `Form Field` improvements:
+  - `BBFieldCheckbox`
+    - Checkbox color support - primary, secondary and accent
+  - `BBFieldSelectCard`
+    - Remove `optionWidth` prop
+    - Sizing improved
+  - Added `helperText` to Form Fields
+    - `helperTextColor` added as well
+- Support for `accent` color
+
+
 ### [1.0.3] - 2024-03-02
 - Added `BBFieldSelectCard` component
 
