@@ -151,7 +151,6 @@ $bg-light-color: var(--bg-light-color, #303030);
     border-radius: 0;
 
     &:first-child {
-      border-top-left-radius: $border-radius;
       border-top-right-radius: $border-radius;
     }
 
