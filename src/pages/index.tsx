@@ -19,8 +19,8 @@ import type { IPropsBBModal } from '../bbmodal';
 import type { IPropsBBNavbar } from '../bbnavbar';
 import type { IPropsBBNavbarItem } from '../bbnavbar_item';
 import type { IPropsBBText } from '../bbtext';
-import type { TBBCollapsibleHeaderColor } from 'src/types';
-import BBFieldCheckbox from 'src/form_components/bbfield_checkbox';
+import type { TBBCollapsibleHeaderColor } from '../types';
+import BBFieldCheckbox from '../form_components/bbfield_checkbox';
 
 /**
  * DEMO PAGE
