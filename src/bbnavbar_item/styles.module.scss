@@ -9,13 +9,6 @@ $bg-light-color: var(--bg-light-color, #303030);
   border-radius: $border-radius;
 }
 
-.hasChildren {
-  &:hover {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-}
-
 .navbarItemBase {
   list-style-type: none;
   margin: 0 0.15rem;
@@ -40,6 +33,11 @@ $bg-light-color: var(--bg-light-color, #303030);
 
     li {
       border-radius: 0;
+    }
+
+    .hasChildren {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
     }
 
     &.no-child-list {
