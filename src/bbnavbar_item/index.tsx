@@ -1,7 +1,6 @@
 import classnames from 'classnames';
 import { useRouter } from 'next/router';
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import BBLink from '../bblink';
 import styles from './styles.module.scss';
@@ -34,6 +33,7 @@ export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElem
   const { title, href, className, children } = Props;
   const router = useRouter();
   const [isActiveInDropdown, setIsActiveInDropdown] = useState(false);
+  const hasChildren = !!children && children.length > 0;
 
   useEffect(() => {
     let found = false;
@@ -51,22 +51,24 @@ export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElem
   const urlMatch = !!router.asPath.length && !!href.length && removeSlashes(router.asPath) === removeSlashes(href);
   const isActive = urlMatch || isActiveInDropdown;
 
-  /**
-   * RENDER
-   */
   return (
     <li
       id={`nav-item-${title.toLowerCase()}`}
-      className={classnames(styles.navbarItemBase, styles.dropdownContainer, isActive ? styles.active : '', className)}
+      className={classnames(
+        styles.navbarItemBase,
+        styles.dropdownContainer,
+        { [styles.active]: isActive, [styles.hasChildren]: hasChildren },
+        className
+      )}
     >
       <div className={styles.navbarContentContainer}>
         <div className={styles.navbarHeaderContainer}>
           <BBLink href={href} color={isActive ? 'white' : 'secondary'}>
             {title}
           </BBLink>
-          {!!children && <IoMdArrowDropdown size={30} className={styles.iconDropdown} />}
+          {hasChildren && <IoMdArrowDropdown size={30} className={styles.iconDropdown} />}
         </div>
-        {!!children && <ul className={styles.dropdownContent}>{children}</ul>}
+        {hasChildren && <ul className={styles.dropdownContent}>{children}</ul>}
       </div>
     </li>
   );
