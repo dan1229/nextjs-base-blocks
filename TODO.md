@@ -190,7 +190,7 @@
 #### bbmodal
 - width prop?
   - 'narrow', 'normal', 'full'?
-
+- mobile styling improvements
 
 
 
@@ -233,13 +233,17 @@
   - `title` now optional
 - `BBNavbarItem`
   - Cleaned up styling and hover states for desktop and mobile
-- `BBFieldCheckbox`
-  - Checkbox color support - primary, secondary and accent
-- `BBFieldSelectCard`
-  - Remove `optionWidth` prop
-  - Sizing improved
-- Added `helperText` to Form Fields
-  - `helperTextColor` added as well
+- `BBModal`
+  - Width options added - `narrow`, `normal`, `full`
+  - Mobile styling improvements
+- `Form Field` improvements:
+  - `BBFieldCheckbox`
+    - Checkbox color support - primary, secondary and accent
+  - `BBFieldSelectCard`
+    - Remove `optionWidth` prop
+    - Sizing improved
+  - Added `helperText` to Form Fields
+    - `helperTextColor` added as well
 - Support for `accent` color
 #### TODO
 
