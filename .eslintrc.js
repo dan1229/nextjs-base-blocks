@@ -24,7 +24,7 @@ module.exports = {
     'no-underscore-dangle': 'warn',
     'react/self-closing-comp': ['error', { component: true, html: true }],
     'import/order': [
-      'warn',
+      'error',
       {
         groups: ['builtin', 'external', 'parent', 'sibling', 'index', 'object', 'type'],
         pathGroups: [
