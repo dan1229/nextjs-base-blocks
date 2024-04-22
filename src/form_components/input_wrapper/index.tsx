@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
+import BBText from '../../bbtext';
 import styles from '../styles.module.scss';
 import type { IPropsBBBaseForm } from '../../types';
 
@@ -22,7 +23,7 @@ export interface IPropsInputWrapper {
  * INPUT WRAPPER
  */
 export default function InputWrapper(props: IPropsInputWrapper & IPropsBBBaseForm): React.ReactElement {
-  const { label, className, fieldName, showLabel = true, children } = props;
+  const { label, className, fieldName, showLabel = true, children, helperText, helperTextColor = 'secondary' } = props;
 
   /**
    * RENDER
@@ -31,6 +32,11 @@ export default function InputWrapper(props: IPropsInputWrapper & IPropsBBBaseFor
     <div className={classnames(styles.form_group, className)}>
       {showLabel && <label htmlFor={fieldName}>{getLabel(label, fieldName)}</label>}
       {children}
+      {helperText && (
+        <BBText size="small" color={helperTextColor}>
+          {helperText}
+        </BBText>
+      )}
     </div>
   );
 }
