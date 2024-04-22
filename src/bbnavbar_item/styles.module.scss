@@ -29,6 +29,8 @@ $bg-light-color: var(--bg-light-color, #303030);
   &:hover {
     cursor: pointer;
     background-color: $bg-dark-color;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
 
     li {
       border-radius: 0;
@@ -79,7 +81,8 @@ $bg-light-color: var(--bg-light-color, #303030);
 .dropdownContent {
   display: none !important;
   position: absolute;
-  border-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
   min-width: 100%;
   z-index: 11;
 
