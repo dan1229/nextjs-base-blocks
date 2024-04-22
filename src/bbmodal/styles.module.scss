@@ -33,7 +33,6 @@
 }
 
 .modal {
-  width: 70%;
   overflow-y: auto;
 }
 
@@ -48,14 +47,47 @@
   gap: 4px;
 }
 
+/**
+* WIDTHS
+*/
+.sm {
+  width: 30%;
+}
+
+.md {
+  width: 50%;
+}
+
+.lg {
+  width: 70%;
+}
+
+.full {
+  width: 100%;
+}
+
+/**
+* MOBILE
+*/
 @media screen and (max-width: 1024px) {
-  .modal {
+  .sm {
+    width: 50%;
+  }
+
+  .md {
+    width: 70%;
+  }
+
+  .lg {
     width: 80%;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .modal {
+  .sm,
+  .md,
+  .lg,
+  .full {
     width: 100%;
   }
 }

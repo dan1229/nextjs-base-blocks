@@ -100,31 +100,10 @@ export type TBBCardElevation = 'none' | 'low' | 'med' | 'high';
  */
 export type TBBCollapsibleHeaderColor = 'default' | 'primary' | 'secondary' | 'accent';
 
-// TBBFieldBase
-export type TBBFieldBaseTypes = 'file' | 'checkbox' | 'number';
-// | 'radio' | 'select' | 'select-multiple'
-export type TBBFieldBaseSize = 'sm' | 'md' | 'lg';
-
-// TBBFieldText
-export type TBBFieldTextType = 'text' | 'textarea' | 'number' | 'password';
-
-// TBBFieldDropdown
-export interface IBBFieldDropdownOptions {
-  value: string;
-  label: string;
-}
-
-// TBBFieldSelectMultiple
-export interface IBBFieldSelectCardOptions {
-  value: string;
-  label: string;
-}
-
-// TBBFieldSelectMultiple
-export interface IBBFieldSelectMultipleOptions {
-  value: string;
-  label: string;
-}
+/**
+ * BBModal
+ */
+export type TBBModalWidth = 'sm' | 'md' | 'lg' | 'full';
 
 /**
  * FORM TYPES
@@ -160,5 +139,31 @@ interface IPropsBBBaseFormBase {
 }
 export type IPropsBBBaseForm = IPropsBBBase & IPropsBBBaseFormBase;
 
-// CHECKBOX
+// TBBFieldBase
+export type TBBFieldBaseTypes = 'file' | 'checkbox' | 'number';
+// | 'radio' | 'select' | 'select-multiple'
+export type TBBFieldBaseSize = 'sm' | 'md' | 'lg';
+
+// TBBFieldCheckbox
 export type TBBFieldCheckboxColor = 'primary' | 'secondary' | 'accent';
+
+// TBBFieldDropdown
+export interface IBBFieldDropdownOptions {
+  value: string;
+  label: string;
+}
+
+// TBBFieldSelectMultiple
+export interface IBBFieldSelectCardOptions {
+  value: string;
+  label: string;
+}
+
+// TBBFieldSelectMultiple
+export interface IBBFieldSelectMultipleOptions {
+  value: string;
+  label: string;
+}
+
+// TBBFieldText
+export type TBBFieldTextType = 'text' | 'textarea' | 'number' | 'password';
