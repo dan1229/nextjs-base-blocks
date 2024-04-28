@@ -192,6 +192,11 @@
 ### 1.1.4
 
 
+#### bbmodal scrolling
+- ensure backgrounds dont scroll EVER
+- ensure if tall enough, the content scrolls
+
+
 fix eslint rules for relative imports
 - i.e., 'src' shouldn't be in the import path
 
