@@ -183,13 +183,12 @@
 
 
 
+#### bbloading spinner - allow defalut to be chosen by scss var
+- make default spinner style determined by some css var
+  - `--loading-spinner-variant`
+  - add to readme
+- ensure that 'variant' prop still overrides and works
 
-### [1.2.0] - 2024-MM-DD
-#### TODO
-
-
-----
-### 1.1.4
 
 
 #### bbmodal scrolling
@@ -201,7 +200,8 @@ fix eslint rules for relative imports
 - i.e., 'src' shouldn't be in the import path
 
 
-### [1.1.4] - 2024-MM-DD
+
+### [1.2.0] - 2024-MM-DD
 #### TODO
 
 -------------------------------------------------------
