@@ -190,6 +190,12 @@
 - ensure that 'variant' prop still overrides and works
 
 
+#### bbnavbar item new props
+- color
+  - variable or prop?
+  - variable would be nice since it'll probably be across the board
+
+  
 
 #### bbmodal scrolling
 - ensure backgrounds dont scroll EVER
