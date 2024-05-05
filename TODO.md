@@ -182,6 +182,10 @@
   - need to somehow add 'overflow-y: hidden' to 'body'/'html' when modal is open
 
 
+#### bblink
+- colors not working?
+  - secondary color not working
+
 
 #### bbloading spinner - allow defalut to be chosen by scss var
 - make default spinner style determined by some css var
