@@ -194,8 +194,10 @@
 - ensure that 'variant' prop still overrides and works
 
 
-#### bbnavbar item new props
-- color
+#### bbnavbar and item item new props
+- navbar
+  - uses 'quicksand' font
+- navbaritem color
   - variable or prop?
   - variable would be nice since it'll probably be across the board
 
