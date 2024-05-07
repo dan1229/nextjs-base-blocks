@@ -132,11 +132,12 @@
 
 
 
-#### bbcard - footer and header styling
-- find a way to offer customization for these?
-  - same as body?
-- `sameColor` prop or something?
-  - could allow them to pass colors directly? same as body?
+#### bbcard
+- footer and header styling
+  - find a way to offer customization for these?
+    - same as body?
+  - `sameColor` prop or something?
+    - could allow them to pass colors directly? same as body?
 
 
 
