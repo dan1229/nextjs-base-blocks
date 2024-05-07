@@ -141,11 +141,6 @@
 
 
 
-#### bbbutton
-- colors
-  - inverse danger/success/warning?
-
-
 #### default theme colors?
 - update
 - have to find and replace lots of defaults sadly
@@ -209,13 +204,29 @@
 - ensure if tall enough, the content scrolls
 
 
+### [1.2.0] - 2024-MM-DD
+#### TODO
+
+---
+### 1.1.4
+
+
+#### bbbutton
+- colors
+  - inverse danger/success/warning?
+- disabled res doesnt work for link buttons
+  - add `&& !href ` to the condition
+   
+
+
 fix eslint rules for relative imports
 - i.e., 'src' shouldn't be in the import path
 
 
 
-### [1.2.0] - 2024-MM-DD
+### [1.1.4] - 2024-MM-DD
 #### TODO
+
 
 -------------------------------------------------------
 
