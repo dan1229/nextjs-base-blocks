@@ -14,6 +14,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [1.1.4] - 2024-05-07
+- Added eslint rules for relative imports
+  - This will help prevent issues with imports in the future
+- `BBButton`
+  - New colors! `inverse-danger`, `inverse-success`, `inverse-warning`
+  - Fix disabled state for link buttons
+
+  
 ### [1.1.3] - 2024-04-22
 - `BBButton` removed `min-height` for styling
 
