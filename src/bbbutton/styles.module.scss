@@ -599,3 +599,90 @@ $black: var(--black, #000000);
     border: 2px solid $accent-dark-color;
   }
 }
+
+// INVERSE DANGER
+.inverseDanger {
+  background-color: $white;
+  border: 2px solid $danger-color;
+
+  * {
+    color: $danger-color;
+  }
+
+  &:hover {
+    background-color: $danger-light-color;
+    border: 2px solid $danger-dark-color;
+
+    * {
+      color: $danger-dark-color;
+    }
+  }
+
+  &:focus {
+    background-color: $danger-dark-color;
+    border: 2px solid $danger-dark-color;
+  }
+
+  &:active {
+    background-color: $danger-dark-color;
+    border: 2px solid $danger-dark-color;
+  }
+}
+
+// INVERSE SUCCESS
+.inverseSuccess {
+  background-color: $white;
+  border: 2px solid $success-color;
+
+  * {
+    color: $success-color;
+  }
+
+  &:hover {
+    background-color: $success-light-color;
+    border: 2px solid $success-dark-color;
+
+    * {
+      color: $success-dark-color;
+    }
+  }
+
+  &:focus {
+    background-color: $success-dark-color;
+    border: 2px solid $success-dark-color;
+  }
+
+  &:active {
+    background-color: $success-dark-color;
+    border: 2px solid $success-dark-color;
+  }
+}
+
+// INVERSE WARNING
+.inverseWarning {
+  background-color: $white;
+  border: 2px solid $warning-color;
+
+  * {
+    color: $warning-color;
+  }
+
+  &:hover {
+    background-color: $warning-light-color;
+    border: 2px solid $warning-dark-color;
+
+    * {
+      color: $warning-dark-color;
+    }
+  }
+
+  &:focus {
+    background-color: $warning-dark-color;
+    border: 2px solid $warning-dark-color;
+  }
+
+  &:active {
+    background-color: $warning-dark-color;
+    border: 2px solid $warning-dark-color;
+  }
+}

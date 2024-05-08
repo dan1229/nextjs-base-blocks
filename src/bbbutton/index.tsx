@@ -89,9 +89,9 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     classNameHelperText,
   } = Props;
 
-  // if button doesn't do anything, disable it
-  // otherwise, rely on the disabled prop
-  const disabledRes = !onClick && type !== 'submit' ? true : disabled;
+  // set button disabling if appropriate
+  const disabledRes = !onClick && type !== 'submit' && !href ? true : disabled;
+
   // if hover is disabled or button as a whole
   // id disabled , don't show hover
   const hoverRes = disabledRes || !hover ? false : hover;
