@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { useState, useRef } from 'react';
-import BBLink from '../bblink';
+import BBLink from 'src/bblink';
 import BBText from '../bbtext';
 import styles from './styles.module.scss';
 import type {
