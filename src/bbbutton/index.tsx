@@ -11,7 +11,7 @@ import type {
   TBBTextSize,
   TBBTextColor,
 } from '../types';
-import BBLink from 'src/bblink';
+import BBLink from '../bblink';
 
 /**
  * ICON PROPS
