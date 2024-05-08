@@ -4,6 +4,7 @@ import BBCard from '../bbcard';
 import styles from './styles.module.scss';
 import type { IPropsBBCard } from '../bbcard';
 import type { TBBCollapsibleHeaderColor } from '../types';
+import BBButton from '../bbbutton';
 
 /**
  * BBCollapsible
@@ -49,7 +50,12 @@ const Header = ({ children, isExpanded, colorArrow = 'default', ...props }: IPro
   return (
     <BBCard.Header {...props} className={styles.mainCollapsibleHeader}>
       {children}
-      <div className={classnames(styles.containerArrow, styles[colorArrow])}>{isExpanded ? '▲' : '▼'}</div>
+      <BBButton
+        // on click is necessary to un-disable the button
+        onClick={() => {}}
+        text={isExpanded ? '▲' : '▼'}
+        className={classnames(styles.containerArrow, styles[colorArrow])}
+      />
     </BBCard.Header>
   );
 };
