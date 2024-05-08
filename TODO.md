@@ -142,6 +142,7 @@
   - reduce padding in mobile?
 - using as link breaks a few things
   - no more hover
+    - adding a bogus 'onclick' fixes this
 
 
 
