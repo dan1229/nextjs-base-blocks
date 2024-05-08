@@ -1,10 +1,10 @@
 import classnames from 'classnames';
 import React, { useState, Children, cloneElement } from 'react';
+import BBButton from '../bbbutton';
 import BBCard from '../bbcard';
 import styles from './styles.module.scss';
 import type { IPropsBBCard } from '../bbcard';
 import type { TBBCollapsibleHeaderColor } from '../types';
-import BBButton from '../bbbutton';
 
 /**
  * BBCollapsible
