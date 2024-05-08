@@ -38,7 +38,6 @@ module.exports = {
       },
     ],
     '@typescript-eslint/naming-convention': [
-      // all interfaces must start with "I"
       'warn',
       {
         selector: 'interface',
@@ -57,6 +56,11 @@ module.exports = {
             name: 'src/*',
             message: 'Please use relative imports instead of "src/" for internal modules.',
           },
+        ],
+        patterns: [
+          // This will restrict any absolute import that is not starting with "./" or "../"
+          '!./**',
+          '!../**',
         ],
       },
     ],
