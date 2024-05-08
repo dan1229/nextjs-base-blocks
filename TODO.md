@@ -142,7 +142,6 @@
   - reduce padding in mobile?
 - using as link breaks a few things
   - no more hover
-  - no more elevations styling
 
 
 
