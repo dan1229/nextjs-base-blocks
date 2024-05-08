@@ -138,6 +138,8 @@
     - same as body?
   - `sameColor` prop or something?
     - could allow them to pass colors directly? same as body?
+- padding mobile styling?
+  - reduce padding in mobile?
 
 
 
@@ -216,8 +218,6 @@
 
 
 #### bbbutton
-- colors
-  - inverse danger/success/warning?
 - disabled res doesnt work for link buttons
   - add `&& !href ` to the condition
    
@@ -229,6 +229,8 @@ fix eslint rules for relative imports
 
 
 ### [1.1.4] - 2024-MM-DD
+- `BBButton`
+  - New colors! `inverse-danger`, `inverse-success`, `inverse-warning`
 #### TODO
 
 

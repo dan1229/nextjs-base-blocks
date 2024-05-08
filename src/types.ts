@@ -56,6 +56,9 @@ export type TBBButtonVariant =
   | 'inverse-primary'
   | 'inverse-secondary'
   | 'inverse-accent'
+  | 'inverse-danger'
+  | 'inverse-success'
+  | 'inverse-warning'
   | 'transparent-primary'
   | 'transparent-secondary'
   | 'transparent-accent';
