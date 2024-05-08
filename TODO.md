@@ -217,21 +217,12 @@
 ### 1.1.4
 
 
-#### bbbutton
-
-
-
-fix eslint rules for relative imports
-- i.e., 'src' shouldn't be in the import path
-
-
-
-### [1.1.4] - 2024-MM-DD
+### [1.1.4] - 2024-05-07
+- Added eslint rules for relative imports
+  - This will help prevent issues with imports in the future
 - `BBButton`
   - New colors! `inverse-danger`, `inverse-success`, `inverse-warning`
   - Fix disabled state for link buttons
-#### TODO
-
 
 -------------------------------------------------------
 
