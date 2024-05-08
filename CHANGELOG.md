@@ -14,6 +14,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [1.1.5] - 2024-05-08
+- `BBCollapsible`
+  - Using `BBButton` for collapsible button
+  - Fix button styling
+
+
 ### [1.1.4] - 2024-05-07
 - Added eslint rules for relative imports
   - This will help prevent issues with imports in the future
