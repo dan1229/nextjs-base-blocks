@@ -52,14 +52,8 @@ module.exports = {
       'error',
       {
         patterns: [
-          // This pattern will match any import that doesn't start with ".", "../", or "/"
-          '**/*',
-        ],
-        paths: [
-          {
-            name: 'src/*',
-            message: 'Please use relative imports instead of "src/" for internal modules.',
-          },
+          // this is to prevent importing from src/ folder
+          'src/*',
         ],
       },
     ],
