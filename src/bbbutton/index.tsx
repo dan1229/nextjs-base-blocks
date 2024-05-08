@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React, { useState, useRef } from 'react';
+import BBLink from '../bblink';
 import BBText from '../bbtext';
 import styles from './styles.module.scss';
 import type {
@@ -11,7 +12,6 @@ import type {
   TBBTextSize,
   TBBTextColor,
 } from '../types';
-import BBLink from '../bblink';
 
 /**
  * ICON PROPS
