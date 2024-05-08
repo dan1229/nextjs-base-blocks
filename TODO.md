@@ -140,6 +140,9 @@
     - could allow them to pass colors directly? same as body?
 - padding mobile styling?
   - reduce padding in mobile?
+- using as link breaks a few things
+  - no more hover
+  - no more elevations styling
 
 
 
