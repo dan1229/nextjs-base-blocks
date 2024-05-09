@@ -195,6 +195,24 @@
   - add to readme
 - ensure that 'variant' prop still overrides and works
 
+#### bbbutton
+- href nesting bug:
+```
+Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>.
+div
+div
+p
+BBText@webpack-internal:///./base_blocks/src/bbtext/index.tsx:20:151
+a
+LinkComponent@webpack-internal:///./node_modules/next/dist/client/link.js:106:254
+BBLink@webpack-internal:///./base_blocks/src/bblink/index.tsx:22:164
+BBButton@webpack-internal:///./base_blocks/src/bbbutton/index.tsx:26:262
+div
+ButtonCardDetails@webpack-internal:///./components/buttons/button_card_details/index.tsx:33:175
+div
+```
+
+
 
 #### bbnavbar and item item new props
 - navbar
