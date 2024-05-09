@@ -198,6 +198,7 @@
 
 #### bbnavbar and item item new props
 - navbar
+  - make height/width of image props
   - uses 'quicksand' font
   - rename 'buttonsAuth' to something else
     - buttons action
