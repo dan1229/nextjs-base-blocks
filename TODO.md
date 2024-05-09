@@ -211,6 +211,8 @@ div
 ButtonCardDetails@webpack-internal:///./components/buttons/button_card_details/index.tsx:33:175
 div
 ```
+- href buttons also are a bit less padded than regular buttons
+  - apply to just a tags
 
 
 
