@@ -165,6 +165,7 @@
 
 #### bbtext
 - add 'font' prop
+- italics not working
 
 
 
