@@ -227,7 +227,8 @@ div
 - navbaritem color
   - variable or prop?
   - variable would be nice since it'll probably be across the board
-
+- navbar item active state bug
+  - border-radius not rounded correctly on last child of dropdown
   
 
 #### bbmodal scrolling
