@@ -143,6 +143,7 @@
 - using as link breaks a few things
   - no more hover
     - adding a bogus 'onclick' fixes this but this gives a console warning
+- black border doesnt work
 
 
 
@@ -196,6 +197,8 @@
 - ensure that 'variant' prop still overrides and works
 
 #### bbbutton
+- inverse danger doesnt work
+-
 - href nesting bug:
 ```
 Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>.
