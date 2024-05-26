@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import BBLink from '../bblink';
@@ -34,6 +34,7 @@ export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElem
   const router = useRouter();
   const [isActiveInDropdown, setIsActiveInDropdown] = useState(false);
   const hasChildren = !!children && children.length > 0;
+  const path = usePathname();
 
   useEffect(() => {
     let found = false;
@@ -45,10 +46,7 @@ export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElem
     setIsActiveInDropdown(found);
   }, [children]);
 
-  if (!router.isReady) {
-    return <></>;
-  }
-  const urlMatch = !!router.asPath.length && !!href.length && removeSlashes(router.asPath) === removeSlashes(href);
+  const urlMatch = !!path.length && !!href.length && removeSlashes(path) === removeSlashes(href);
   const isActive = urlMatch || isActiveInDropdown;
 
   return (
