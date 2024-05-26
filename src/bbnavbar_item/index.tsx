@@ -1,6 +1,7 @@
 'use client';
+
 import classnames from 'classnames';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import BBLink from '../bblink';
