@@ -1,3 +1,4 @@
+'use client';
 import classnames from 'classnames';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
