@@ -1,3 +1,5 @@
+'use client';
+
 import classNames from 'classnames';
 import React, { useState, useRef } from 'react';
 import BBLink from '../bblink';
