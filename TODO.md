@@ -242,13 +242,6 @@ div
 ### [1.2.0] - 2024-MM-DD
 #### TODO
 
----
-
-
-
-### [1.1.6] - 2024-05-28
-- Added `use client` directives as appropriate to support app router in NextJS
-
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)

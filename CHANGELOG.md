@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [1.1.6] - 2024-05-28
+- Added `use client` directives as appropriate to support app router in NextJS
+
+
 ### [1.1.5] - 2024-05-08
 - `BBCollapsible`
   - Using `BBButton` for collapsible button
