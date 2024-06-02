@@ -247,8 +247,8 @@ div
 
 
 
-### [1.1.7] - 2024-06-02
-- `BBButton` - `onClick` typing improvements with HTML events
+### [1.1.8] - 2024-06-02
+- TODO
 
 -------------------------------------------------------
 
