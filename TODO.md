@@ -242,6 +242,14 @@ div
 ### [1.2.0] - 2024-MM-DD
 #### TODO
 
+
+---
+
+
+
+### [1.1.7] - 2024-06-02
+- `BBButton` - `onClick` typing improvements with HTML events
+
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)
