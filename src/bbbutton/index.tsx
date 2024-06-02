@@ -40,7 +40,7 @@ interface IPropsBBButtonIcon {
  * @param {IPropsBBButtonIcon=} icon - The icon to display on the button
  * @param {string=} idForm - The ID of the form to submit
  * @param {string=} className - Any class name to add
- * @param {() => void=} onClick - The function to call when the button is clicked
+ * @param {(event: React.MouseEvent<HTMLButtonElement>) => void=} onClick - The function to call when the button is clicked
  * @param {boolean=} transparent - Whether the button is transparent
  * @param {TBBTextColor=} colorText - The color of the text. This doesn't really work with 'inverse-*' variants
  * @param {string=} href - The href to navigate to
@@ -59,7 +59,7 @@ export interface IPropsBBButton {
   icon?: IPropsBBButtonIcon;
   idForm?: string;
   className?: string;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   transparent?: boolean;
   colorText?: TBBTextColor;
   href?: string;
@@ -270,7 +270,13 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
   }
 
   return (
-    <button className={baseClassNames} type={type} form={idForm} disabled={disabledRes} onClick={disabledRes ? undefined : onClick}>
+    <button
+      className={baseClassNames}
+      type={type}
+      form={idForm}
+      disabled={disabledRes}
+      onClick={disabledRes ? undefined : (event) => onClick?.(event)}
+    >
       {mainComponent}
     </button>
   );
