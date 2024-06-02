@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [1.1.8] - 2024-06-02
+- `BBNavbar` support for page routers with `path` detection
+
+
 ### [1.1.7] - 2024-06-02
 - `BBButton` - `onClick` typing improvements with HTML events
 
