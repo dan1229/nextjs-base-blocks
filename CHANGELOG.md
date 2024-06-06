@@ -14,8 +14,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [1.1.9] - 2024-06-05
+- `BBNavbar` new props for brand image dimensions
+
+
 ### [1.1.8] - 2024-06-02
-- `BBNavbar` support for page routers with `path` detection
+- `BBNavbarItem` support for page routers with `path` detection
 
 
 ### [1.1.7] - 2024-06-02
