@@ -133,6 +133,8 @@
 
 
 #### bbcard
+- black color default not working if not provided
+-
 - footer and header styling
   - find a way to offer customization for these?
     - same as body?
@@ -197,6 +199,7 @@
 - ensure that 'variant' prop still overrides and works
 
 #### bbbutton
+- black color default not working if not provided
 - inverse danger doesnt work
 -
 - href nesting bug:
