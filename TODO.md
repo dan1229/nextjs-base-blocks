@@ -243,6 +243,11 @@ div
 - ensure if tall enough, the content scrolls
 
 
+#### docs and scss variables
+- improve defaults for scss variables - namely mobile text sizes
+  - same with dark theme stuff and comments - check get twenty
+
+
 ### [1.2.0] - 2024-MM-DD
 #### TODO
 
