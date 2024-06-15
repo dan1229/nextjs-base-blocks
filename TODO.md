@@ -71,7 +71,7 @@
 
 
 ----
-### 1.2.0
+### 1.3.0
 
 
 
@@ -91,6 +91,7 @@
 - can this be handled by BBToolTip?
 
 
+
 #### bb form components variables
 - start adding variables for colors and all that
 - border color
@@ -103,12 +104,11 @@
 - placeholder color
 
 
+
 #### bb field dropdown styling
 - add arrow or something
   - add to global styling
 - wait until form css is figured out
-
-
 
 
 
@@ -126,12 +126,6 @@
 
 
 
-#### vertical navbar
-- play with it
-- add to base blocks?
-
-
-
 #### bbcard
 - black color default not working if not provided
 -
@@ -140,18 +134,16 @@
     - same as body?
   - `sameColor` prop or something?
     - could allow them to pass colors directly? same as body?
+-
 - padding mobile styling?
   - reduce padding in mobile?
+-
 - using as link breaks a few things
   - no more hover
     - adding a bogus 'onclick' fixes this but this gives a console warning
+-
 - black border doesnt work
-
-
-
-#### default theme colors?
-- update
-- have to find and replace lots of defaults sadly
+  - ensure other borders work
 
 
 
@@ -166,9 +158,20 @@
   - `/components/forms`
 
 
-#### bbtext
-- add 'font' prop
-- italics not working
+#### bbmodal scrolling
+- ensure backgrounds dont scroll EVER
+- ensure if tall enough, the content scrolls
+-
+- background scrolling
+  - still not great
+  - need to somehow add 'overflow-y: hidden' to 'body'/'html' when modal is open
+
+
+
+---
+### 1.2.0
+
+
 
 
 
@@ -181,22 +184,12 @@
 
 
 
-#### bbmodal
-- background scrolling
-  - still not great
-  - need to somehow add 'overflow-y: hidden' to 'body'/'html' when modal is open
-
-
 #### bblink
 - colors not working?
   - secondary color not working
 
 
-#### bbloading spinner - allow defalut to be chosen by scss var
-- make default spinner style determined by some css var
-  - `--loading-spinner-variant`
-  - add to readme
-- ensure that 'variant' prop still overrides and works
+
 
 #### bbbutton
 - black color default not working if not provided
@@ -217,9 +210,25 @@ div
 ButtonCardDetails@webpack-internal:///./components/buttons/button_card_details/index.tsx:33:175
 div
 ```
+- happens a lot tbh
+  - check button in 404 page in bootstrapper
+-
 - href buttons also are a bit less padded than regular buttons
   - apply to just a tags
 
+
+---
+
+#### bbnavbar item
+- navbaritem color
+  - variable or prop?
+  - variable would be nice since it'll probably be across the board
+  - variants for secondary/primary/etc
+- navbar item active state bug
+  - border-radius not rounded correctly on last child of dropdown
+- borders?
+- width?
+- classname if it doesnt already
 
 
 #### bbnavbar and item item new props
@@ -230,22 +239,37 @@ div
     - buttons action
     - component action
     - component buttons
-- navbaritem color
-  - variable or prop?
-  - variable would be nice since it'll probably be across the board
-  - variants for secondary/primary/etc
-- navbar item active state bug
-  - border-radius not rounded correctly on last child of dropdown
-  
 
-#### bbmodal scrolling
-- ensure backgrounds dont scroll EVER
-- ensure if tall enough, the content scrolls
+
+#### vertical navbar
+- play with it
+- add to base blocks?
+
+
+---
+
+#### default theme colors?
+- update
+- have to find and replace lots of defaults sadly
+
+
+
+#### bbtext
+- add 'font' prop
+- italics not working
+
 
 
 #### docs and scss variables
 - improve defaults for scss variables - namely mobile text sizes
   - same with dark theme stuff and comments - check get twenty
+
+
+#### bbloading spinner - allow defalut to be chosen by scss var
+- make default spinner style determined by some css var
+  - `--loading-spinner-variant`
+  - add to readme
+- ensure that 'variant' prop still overrides and works
 
 
 ### [1.2.0] - 2024-MM-DD
