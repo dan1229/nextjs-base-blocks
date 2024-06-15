@@ -228,10 +228,12 @@ div
   - border-radius not rounded correctly on last child of dropdown
 - borders?
 - width?
-- classname if it doesnt already
+- hover color
+- select/active color
+  - should these all be raw css or prop types?
 
 
-#### bbnavbar and item item new props
+#### bbnavbar
 - navbar
   - make height/width of image props
   - uses 'quicksand' font
