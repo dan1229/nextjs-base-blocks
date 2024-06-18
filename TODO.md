@@ -126,26 +126,6 @@
 
 
 
-#### bbcard
-- black color default not working if not provided
--
-- footer and header styling
-  - find a way to offer customization for these?
-    - same as body?
-  - `sameColor` prop or something?
-    - could allow them to pass colors directly? same as body?
--
-- padding mobile styling?
-  - reduce padding in mobile?
--
-- using as link breaks a few things
-  - no more hover
-    - adding a bogus 'onclick' fixes this but this gives a console warning
--
-- black border doesnt work
-  - ensure other borders work
-
-
 
 #### demo page - form components
 - just add them
@@ -156,6 +136,16 @@
   - links to:
   - `/components`
   - `/components/forms`
+
+
+
+#### bbdivider?
+- hr
+- props
+  - color
+  - size?
+  - border?
+
 
 
 #### bbmodal scrolling
@@ -175,20 +165,51 @@
 
 
 
-#### bbdivider?
-- hr
-- props
-  - color
-  - size?
-  - border?
-
-
 
 #### bblink
 - colors not working?
   - secondary color not working
 
 
+
+
+#### bbcard
+- black color default not working if not provided
+-
+- getting dom nesting error on href cards
+  - same as button:
+```
+Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>.
+div
+Body@webpack-internal:///./base_blocks/src/bbcard/index.tsx:122:65
+p
+BBText@webpack-internal:///./base_blocks/src/bbtext/index.tsx:20:151
+a
+LinkComponent@webpack-internal:///./node_modules/next/dist/client/link.js:111:254
+BBLink@webpack-internal:///./base_blocks/src/bblink/index.tsx:22:164
+div
+BBCard@webpack-internal:///./base_blocks/src/bbcard/index.tsx:19:164
+CardTag@webpack-internal:///./components/cards/card_tag/index.tsx:26:52
+div
+div
+SectionTags@webpack-internal:///./components/sections/section_tags/index.tsx:21:40
+```
+-
+- footer and header styling
+  - find a way to offer customization for these?
+    - same as body?
+  - `sameColor` prop or something?
+    - could allow them to pass colors directly? same as body?
+-
+- padding mobile styling?
+  - reduce padding in mobile?
+-
+- using as link breaks a few things
+  - no more hover
+    - adding a bogus 'onclick' fixes this but this gives a console warning
+-
+- black border doesnt work
+  - ensure other borders work
 
 
 #### bbbutton
