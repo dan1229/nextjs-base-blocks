@@ -3,27 +3,72 @@ import React from 'react';
 import BBLink from '../bblink';
 import styles from './styles.module.scss';
 import type { IPropsBBBase, TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation, TBBTextColor } from '../types';
-
-const getClassColorBackground = (colorBackground: string): string | undefined => {
+const getClassColorBackgroundCard = (colorBackground: string): string | undefined => {
   switch (colorBackground) {
     case 'default':
-      return styles.background_default;
+      return styles.background_card_default;
     case 'transparent':
-      return styles.background_transparent;
+      return styles.background_card_transparent;
     case 'white':
-      return styles.background_white;
+      return styles.background_card_white;
     case 'grey_light':
-      return styles.background_grey_light;
+      return styles.background_card_grey_light;
     case 'grey_dark':
-      return styles.background_grey_dark;
+      return styles.background_card_grey_dark;
     case 'black':
-      return styles.background_black;
+      return styles.background_card_black;
     case 'primary':
-      return styles.background_primary;
+      return styles.background_card_primary;
     case 'secondary':
-      return styles.background_secondary;
+      return styles.background_card_secondary;
     case 'accent':
-      return styles.background_accent;
+      return styles.background_card_accent;
+  }
+};
+
+const getClassColorBackgroundFooter = (colorBackground: string): string | undefined => {
+  switch (colorBackground) {
+    case 'default':
+      return styles.background_footer_default;
+    case 'transparent':
+      return styles.background_footer_transparent;
+    case 'white':
+      return styles.background_footer_white;
+    case 'grey_light':
+      return styles.background_footer_grey_light;
+    case 'grey_dark':
+      return styles.background_footer_grey_dark;
+    case 'black':
+      return styles.background_footer_black;
+    case 'primary':
+      return styles.background_footer_primary;
+    case 'secondary':
+      return styles.background_footer_secondary;
+    case 'accent':
+      return styles.background_footer_accent;
+  }
+};
+
+const getClassColorBackgroundHeader = (colorBackground: string): string | undefined => {
+  switch (colorBackground) {
+    case 'default':
+      return styles.background_header_default;
+    case 'transparent':
+      return styles.background_header_transparent;
+    case 'white':
+      return styles.background_header_white;
+    case 'grey_light':
+      return styles.background_header_grey_light;
+    case 'grey_dark':
+      return styles.background_header_grey_dark;
+    case 'black':
+      return styles.background_header_black;
+    case 'primary':
+      return styles.background_header_primary;
+    case 'secondary':
+      return styles.background_header_secondary;
+    case 'accent':
+      return styles.background_header_accent;
   }
 };
 
@@ -117,7 +162,7 @@ const BBCard = (Props: IPropsBBBase & IPropsBBCard) => {
         styles.base,
         !!onClick && styles.hover,
         noBorder && styles.no_border,
-        getClassColorBackground(colorBackground),
+        getClassColorBackgroundCard(colorBackground),
         getClassColorBorder(),
         getClassElevation()
       )}
@@ -161,7 +206,7 @@ const Header = (props: IPropsBBCardHeader) => {
 
   return (
     <div
-      className={classNames(styles.header, className, noPadding && styles.no_padding, getClassColorBackground(colorBackground))}
+      className={classNames(styles.header, className, noPadding && styles.no_padding, getClassColorBackgroundHeader(colorBackground))}
       onClick={onClick && onClickOverride}
     >
       {children}
@@ -232,7 +277,7 @@ const Footer = (props: IPropsBBCardFooter) => {
 
   return (
     <div
-      className={classNames(styles.footer, className, noPadding && styles.no_padding, getClassColorBackground(colorBackground))}
+      className={classNames(styles.footer, className, noPadding && styles.no_padding, getClassColorBackgroundFooter(colorBackground))}
       onClick={onClick && onClickOverride}
     >
       {children}
