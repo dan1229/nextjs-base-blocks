@@ -282,6 +282,8 @@ SectionTags@webpack-internal:///./components/sections/section_tags/index.tsx:21:
   - Fixed DOM nesting error when using `href` prop
   - Fixed padding/styling for `href` buttons
   - Hover state improvements
+  - Black color default not working if not provided
+  - Some inverse colors not working
 #### TODO
 
 -------------------------------------------------------

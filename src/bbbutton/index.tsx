@@ -135,6 +135,12 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
         return styles.inverseSecondary;
       case 'inverse-accent':
         return styles.inverseAccent;
+      case 'inverse-danger':
+        return styles.inverseDanger;
+      case 'inverse-success':
+        return styles.inverseSuccess;
+      case 'inverse-warning':
+        return styles.inverseWarning;
       default:
         return '';
     }
