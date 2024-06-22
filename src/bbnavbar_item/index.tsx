@@ -35,7 +35,6 @@ export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElem
   const { title, href, className, children } = Props;
   const [isActiveInDropdown, setIsActiveInDropdown] = useState(false);
   const [currentPath, setCurrentPath] = useState<string>('');
-  const hasChildren = !!children && children.length > 0;
 
   // Detect the current pathname in a way compatible with both Page Router and App Router
   const path = usePathname();

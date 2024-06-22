@@ -275,34 +275,13 @@ SectionTags@webpack-internal:///./components/sections/section_tags/index.tsx:21:
 #### bbbutton
 - black color default not working if not provided
 - inverse danger doesnt work
--
-- href nesting bug:
-```
-Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>.
-div
-div
-p
-BBText@webpack-internal:///./base_blocks/src/bbtext/index.tsx:20:151
-a
-LinkComponent@webpack-internal:///./node_modules/next/dist/client/link.js:106:254
-BBLink@webpack-internal:///./base_blocks/src/bblink/index.tsx:22:164
-BBButton@webpack-internal:///./base_blocks/src/bbbutton/index.tsx:26:262
-div
-ButtonCardDetails@webpack-internal:///./components/buttons/button_card_details/index.tsx:33:175
-div
-```
-- happens a lot tbh
-  - check button in 404 page in bootstrapper
--
-- href buttons also are a bit less padded than regular buttons
-  - apply to just a tags
-
-
-
-
 
 
 ### [1.2.0] - 2024-MM-DD
+- `BBButton`
+  - Fixed DOM nesting error when using `href` prop
+  - Fixed padding/styling for `href` buttons
+  - Hover state improvements
 #### TODO
 
 -------------------------------------------------------
