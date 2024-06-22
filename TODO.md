@@ -261,13 +261,6 @@ SectionTags@webpack-internal:///./components/sections/section_tags/index.tsx:21:
 
 
 
-- footer and header styling
-  - find a way to offer customization for these?
-    - same as body?
-  - `sameColor` prop or something?
-    - could allow them to pass colors directly? same as body?
-
-
 ### [1.2.0] - 2024-MM-DD
 - `BBButton`
   - Fixed DOM nesting error when using `href` prop
@@ -277,6 +270,7 @@ SectionTags@webpack-internal:///./components/sections/section_tags/index.tsx:21:
   - Some inverse colors not working
 - `BBCard`
   - Mobile styling padding improvements
+  - Added `colorBackground` to `header` and `footer`
 #### TODO
 
 -------------------------------------------------------
