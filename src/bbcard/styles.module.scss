@@ -280,3 +280,20 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 .elevation_high {
   box-shadow: $elevation-high;
 }
+
+/**
+* MEDIA QUERIES
+*/
+@media (max-width: 768px) {
+  .header {
+    padding: 0.5rem;
+  }
+
+  .body {
+    padding: 0.5rem;
+  }
+
+  .footer {
+    padding: 0.5rem;
+  }
+}
