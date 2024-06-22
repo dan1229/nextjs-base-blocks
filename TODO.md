@@ -148,6 +148,11 @@
 
 
 
+#### default theme colors?
+- update
+- have to find and replace lots of defaults sadly
+
+
 #### bbmodal scrolling
 - ensure backgrounds dont scroll EVER
 - ensure if tall enough, the content scrolls
@@ -194,11 +199,6 @@
 
 
 ---
-
-#### default theme colors?
-- update
-- have to find and replace lots of defaults sadly
-
 
 
 #### bbtext
@@ -272,9 +272,6 @@ SectionTags@webpack-internal:///./components/sections/section_tags/index.tsx:21:
   - ensure other borders work
 
 
-#### bbbutton
-- black color default not working if not provided
-- inverse danger doesnt work
 
 
 ### [1.2.0] - 2024-MM-DD
