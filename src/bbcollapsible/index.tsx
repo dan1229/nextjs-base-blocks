@@ -5,6 +5,7 @@ import BBCard from '../bbcard';
 import styles from './styles.module.scss';
 import type { IPropsBBCard } from '../bbcard';
 import type { TBBCollapsibleHeaderColor } from '../types';
+import BBButton from '../bbbutton';
 
 /**
  * BBCollapsible
