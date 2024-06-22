@@ -66,7 +66,7 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 
 .body {
   padding: 1rem;
-  border-radius: $border-radius;
+  border-radius: 0;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -84,43 +84,187 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
   border-top: none !important;
 }
 
+/* If header is followed by body */
+.header + .body {
+  border-radius: 0 0 $border-radius $border-radius;
+}
+
+/* If body is followed by footer */
+.body + .footer {
+  .body {
+    border-radius: 0;
+  }
+  .footer {
+    border-radius: 0 0 $border-radius $border-radius;
+  }
+}
+
+/* If header is followed by footer */
+.header + .footer {
+  .header {
+    border-radius: $border-radius $border-radius 0 0;
+  }
+  .footer {
+    border-radius: 0 0 $border-radius $border-radius;
+  }
+}
+
+/* If only header and footer */
+.header:only-child + .footer:only-child {
+  .header {
+    border-radius: $border-radius $border-radius 0 0;
+    border-bottom: none !important;
+  }
+  .footer {
+    border-radius: 0 0 $border-radius $border-radius;
+    border-top: none !important;
+  }
+}
+
+/* If only body */
+.body:only-child {
+  border-radius: $border-radius;
+}
+
+/* If header, body, and footer are all present */
+.header + .body + .footer {
+  .header {
+    border-radius: $border-radius $border-radius 0 0;
+  }
+  .body {
+    border-radius: 0;
+  }
+  .footer {
+    border-radius: 0 0 $border-radius $border-radius;
+  }
+}
 /*
 * BACKGROUNDS
 */
 .background_card_default {
   background-color: $card-background-default-color !important;
+
+  .footer {
+    border-top: 1px solid $card-darken-default-color;
+    background-color: $card-darken-default-color;
+  }
+
+  .header {
+    border-bottom: 1px solid $card-darken-default-color;
+    background-color: $card-darken-default-color;
+  }
 }
 
 .background_card_transparent {
   background-color: transparent !important;
+
+  .footer {
+    border-top: 1px solid transparent;
+    background-color: transparent;
+  }
+
+  .header {
+    border-bottom: 1px solid transparent;
+    background-color: transparent;
+  }
 }
 
 .background_card_white {
   background-color: $white !important;
+
+  .footer {
+    border-top: 1px solid $white-dark;
+    background-color: $white-dark;
+  }
+
+  .header {
+    border-bottom: 1px solid $white-dark;
+    background-color: $white-dark;
+  }
 }
 
 .background_card_grey_light {
   background-color: $grey-light !important;
+
+  .footer {
+    border-top: 1px solid $grey-light-dark;
+    background-color: $grey-light-dark;
+  }
+
+  .header {
+    border-bottom: 1px solid $grey-light-dark;
+    background-color: $grey-light-dark;
+  }
 }
 
 .background_card_grey_dark {
   background-color: $grey-dark !important;
+
+  .footer {
+    border-top: 1px solid $grey-darkest;
+    background-color: $grey-darkest;
+  }
+
+  .header {
+    border-bottom: 1px solid $grey-darkest;
+    background-color: $grey-darkest;
+  }
 }
 
 .background_card_black {
   background-color: $black !important;
+
+  .footer {
+    border-top: 1px solid $black;
+    background-color: $black;
+  }
+
+  .header {
+    border-bottom: 1px solid $black;
+    background-color: $black;
+  }
 }
 
 .background_card_primary {
   background-color: $primary-color !important;
+
+  .footer {
+    border-top: 1px solid $primary-dark-color;
+    background-color: $primary-dark-color;
+  }
+
+  .header {
+    border-bottom: 1px solid $primary-dark-color;
+    background-color: $primary-dark-color;
+  }
 }
 
 .background_card_secondary {
   background-color: $secondary-color !important;
+
+  .footer {
+    border-top: 1px solid $secondary-dark-color;
+    background-color: $secondary-dark-color;
+  }
+
+  .header {
+    border-bottom: 1px solid $secondary-dark-color;
+    background-color: $secondary-dark-color;
+  }
 }
 
 .background_card_accent {
   background-color: $accent-color !important;
+
+  .footer {
+    border-top: 1px solid $accent-dark-color;
+    background-color: $accent-dark-color;
+  }
+
+  .header {
+    border-bottom: 1px solid $accent-dark-color;
+    background-color: $accent-dark-color;
+  }
 }
 
 .background_footer_default {
@@ -129,88 +273,88 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 }
 
 .background_footer_transparent {
-  border-top: 1px solid transparent;
-  background-color: transparent;
+  border-top: 1px solid transparent !important;
+  background-color: transparent !important;
 }
 
 .background_footer_white {
-  border-top: 1px solid $white-dark;
-  background-color: $white-dark;
+  border-top: 1px solid $white-dark !important;
+  background-color: $white-dark !important;
 }
 
 .background_footer_grey_light {
-  border-top: 1px solid $grey-light-dark;
-  background-color: $grey-light-dark;
+  border-top: 1px solid $grey-light-dark !important;
+  background-color: $grey-light-dark !important;
 }
 
 .background_footer_grey_dark {
-  border-top: 1px solid $grey-darkest;
-  background-color: $grey-darkest;
+  border-top: 1px solid $grey-darkest !important;
+  background-color: $grey-darkest !important;
 }
 
 .background_footer_black {
-  border-top: 1px solid $black;
-  background-color: $black;
+  border-top: 1px solid $black !important;
+  background-color: $black !important;
 }
 
 .background_footer_primary {
-  border-top: 1px solid $primary-dark-color;
-  background-color: $primary-dark-color;
+  border-top: 1px solid $primary-dark-color !important;
+  background-color: $primary-dark-color !important;
 }
 
 .background_footer_secondary {
-  border-top: 1px solid $secondary-dark-color;
-  background-color: $secondary-dark-color;
+  border-top: 1px solid $secondary-dark-color !important;
+  background-color: $secondary-dark-color !important;
 }
 
 .background_footer_accent {
-  border-top: 1px solid $accent-dark-color;
-  background-color: $accent-dark-color;
+  border-top: 1px solid $accent-dark-color !important;
+  background-color: $accent-dark-color !important;
 }
 
 .background_header_default {
-  border-bottom: 1px solid $card-darken-default-color;
-  background-color: $card-darken-default-color;
+  border-bottom: 1px solid $card-darken-default-color !important;
+  background-color: $card-darken-default-color !important;
 }
 
 .background_header_transparent {
-  border-bottom: 1px solid transparent;
-  background-color: transparent;
+  border-bottom: 1px solid transparent !important;
+  background-color: transparent !important;
 }
 
 .background_header_white {
-  border-bottom: 1px solid $white-dark;
-  background-color: $white-dark;
+  border-bottom: 1px solid $white-dark !important;
+  background-color: $white-dark !important;
 }
 
 .background_header_grey_light {
-  border-bottom: 1px solid $grey-light-dark;
-  background-color: $grey-light-dark;
+  border-bottom: 1px solid $grey-light-dark !important;
+  background-color: $grey-light-dark !important;
 }
 
 .background_header_grey_dark {
-  border-bottom: 1px solid $grey-darkest;
-  background-color: $grey-darkest;
+  border-bottom: 1px solid $grey-darkest !important;
+  background-color: $grey-darkest !important;
 }
 
 .background_header_black {
-  border-bottom: 1px solid $black;
-  background-color: $black;
+  border-bottom: 1px solid $black !important;
+  background-color: $black !important;
 }
 
 .background_header_primary {
-  border-bottom: 1px solid $primary-dark-color;
-  background-color: $primary-dark-color;
+  border-bottom: 1px solid $primary-dark-color !important;
+  background-color: $primary-dark-color !important;
 }
 
 .background_header_secondary {
-  border-bottom: 1px solid $secondary-dark-color;
-  background-color: $secondary-dark-color;
+  border-bottom: 1px solid $secondary-dark-color !important;
+  background-color: $secondary-dark-color !important;
 }
 
 .background_header_accent {
-  border-bottom: 1px solid $accent-dark-color;
-  background-color: $accent-dark-color;
+  border-bottom: 1px solid $accent-dark-color !important;
+  background-color: $accent-dark-color !important;
 }
 
 /*

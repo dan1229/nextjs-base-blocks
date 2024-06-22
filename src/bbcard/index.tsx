@@ -3,6 +3,7 @@ import React from 'react';
 import BBLink from '../bblink';
 import styles from './styles.module.scss';
 import type { IPropsBBBase, TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation, TBBTextColor } from '../types';
+
 const getClassColorBackgroundCard = (colorBackground: string): string | undefined => {
   switch (colorBackground) {
     case 'default':
@@ -223,16 +224,18 @@ BBCard.Header = Header;
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - Function to call when clicked
  * @param {boolean=} noPadding - Whether to remove the padding
+ * @param {TBBCardColorBackground=} colorBackground - The color of the background
  */
 interface IPropsBBCardBody {
   children: React.ReactNode | React.ReactNode[];
   className?: string;
   onClick?: () => void;
   noPadding?: boolean;
+  colorBackground?: TBBCardColorBackground;
 }
 
 const Body = (props: IPropsBBCardBody) => {
-  const { children, className, onClick, noPadding = false } = props;
+  const { children, className, onClick, noPadding = false, colorBackground = 'default' } = props;
 
   // This is a fix for the onClick event not being triggered when the parent has an onClick event
   const onClickOverride = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -241,7 +244,10 @@ const Body = (props: IPropsBBCardBody) => {
   };
 
   return (
-    <div className={classNames(styles.body, className, noPadding && styles.no_padding)} onClick={onClick && onClickOverride}>
+    <div
+      className={classNames(styles.body, className, noPadding && styles.no_padding, getClassColorBackgroundCard(colorBackground))}
+      onClick={onClick && onClickOverride}
+    >
       {children}
     </div>
   );
