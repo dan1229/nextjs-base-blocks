@@ -300,6 +300,7 @@ div
 - `BBButton`
   - Fixed DOM nesting error when using `href` prop
   - Fixed padding/styling for `href` buttons
+  - Hover state improvements
 #### TODO
 
 -------------------------------------------------------
