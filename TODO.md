@@ -164,6 +164,21 @@
 
 
 
+#### bbloading spinner - allow defalut to be chosen by scss var
+- make default spinner style determined by some css var
+  - `--loading-spinner-variant`
+  - add to readme
+- ensure that 'variant' prop still overrides and works
+
+
+
+#### docs and scss variables
+- improve defaults for scss variables - namely mobile text sizes
+  - same with dark theme stuff and comments - check get twenty
+
+
+
+---
 
 
 #### bblink
@@ -171,6 +186,51 @@
   - secondary color not working
 
 
+
+
+#### vertical navbar
+- play with it
+- add to base blocks?
+
+
+---
+
+#### default theme colors?
+- update
+- have to find and replace lots of defaults sadly
+
+
+
+#### bbtext
+- add 'font' prop
+- italics not working
+
+
+
+#### bbnavbar item
+- navbaritem color
+  - variable or prop?
+  - variable would be nice since it'll probably be across the board
+  - variants for secondary/primary/etc
+- navbar item active state bug
+  - border-radius not rounded correctly on last child of dropdown
+- borders?
+- width?
+- hover color
+- select/active color
+  - should these all be raw css or prop types?
+
+
+#### bbnavbar
+- navbar
+  - make height/width of image props
+  - uses 'quicksand' font
+  - rename 'buttonsAuth' to something else
+    - buttons action
+    - component action
+    - component buttons
+
+---
 
 
 #### bbcard
@@ -238,61 +298,8 @@ div
   - apply to just a tags
 
 
----
-
-#### bbnavbar item
-- navbaritem color
-  - variable or prop?
-  - variable would be nice since it'll probably be across the board
-  - variants for secondary/primary/etc
-- navbar item active state bug
-  - border-radius not rounded correctly on last child of dropdown
-- borders?
-- width?
-- hover color
-- select/active color
-  - should these all be raw css or prop types?
 
 
-#### bbnavbar
-- navbar
-  - make height/width of image props
-  - uses 'quicksand' font
-  - rename 'buttonsAuth' to something else
-    - buttons action
-    - component action
-    - component buttons
-
-
-#### vertical navbar
-- play with it
-- add to base blocks?
-
-
----
-
-#### default theme colors?
-- update
-- have to find and replace lots of defaults sadly
-
-
-
-#### bbtext
-- add 'font' prop
-- italics not working
-
-
-
-#### docs and scss variables
-- improve defaults for scss variables - namely mobile text sizes
-  - same with dark theme stuff and comments - check get twenty
-
-
-#### bbloading spinner - allow defalut to be chosen by scss var
-- make default spinner style determined by some css var
-  - `--loading-spinner-variant`
-  - add to readme
-- ensure that 'variant' prop still overrides and works
 
 
 ### [1.2.0] - 2024-MM-DD
