@@ -153,6 +153,8 @@
 - have to find and replace lots of defaults sadly
 
 
+
+
 #### bbmodal scrolling
 - ensure backgrounds dont scroll EVER
 - ensure if tall enough, the content scrolls
@@ -160,11 +162,6 @@
 - background scrolling
   - still not great
   - need to somehow add 'overflow-y: hidden' to 'body'/'html' when modal is open
-
-
-
----
-### 1.2.0
 
 
 
@@ -177,13 +174,16 @@
 
 
 
+---
+### 1.2.0
+
+
+
+
 #### docs and scss variables
 - improve defaults for scss variables - namely mobile text sizes
   - same with dark theme stuff and comments - check get twenty
 
-
-
----
 
 
 #### bblink
