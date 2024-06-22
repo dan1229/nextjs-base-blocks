@@ -293,12 +293,6 @@ div
 ```
 - happens a lot tbh
   - check button in 404 page in bootstrapper
--
-- href buttons also are a bit less padded than regular buttons
-  - apply to just a tags
-
-
-
 
 
 
