@@ -100,6 +100,12 @@ $black: var(--black, #000000);
   }
 }
 
+// link button
+.link {
+  // this is to make link buttons fill the container
+  display: inline-block;
+}
+
 // container icon
 .containerIcon {
   height: 100%;
