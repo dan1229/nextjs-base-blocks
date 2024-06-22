@@ -253,9 +253,9 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     baseClassNames += ` ${styles.link}`;
     if (onClick) console.warn('BBButton: Both onClick and href are defined. onClick will be ignored.');
     return (
-      <BBLink href={href} className={baseClassNames} external underline={false} size={getButtonSize()} color={colorText}>
+      <a href={href} className={baseClassNames} target="_blank" rel="noreferrer noopener">
         {mainComponent}
-      </BBLink>
+      </a>
     );
   }
 
