@@ -1,6 +1,8 @@
+'use client';
+
 import classNames from 'classnames';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import { useState, useRef } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
@@ -22,6 +24,8 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
  * @param {string=} routeBrand - Route to use for the brand button
  * @param {React.ReactNode=} buttonsAuth - Auth buttons to use
  * @param {boolean=} showButtonsAuth - Show auth buttons
+ * @param {number=} imageWidth - Width of the image
+ * @param {number=} imageHeight - Height of the image
  */
 export interface IPropsBBNavbar {
   children: React.ReactNode;
@@ -32,6 +36,8 @@ export interface IPropsBBNavbar {
   routeBrand?: string;
   buttonsAuth?: React.ReactNode;
   showButtonsAuth?: boolean;
+  imageWidth?: number;
+  imageHeight?: number;
 }
 
 /**
@@ -47,6 +53,8 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
     routeBrand = '/',
     buttonsAuth,
     showButtonsAuth = true,
+    imageWidth = 70,
+    imageHeight = 60,
   } = props;
   const [showNavExpanded, setShowNavExpanded] = useState(false);
   const router = useRouter();
@@ -86,7 +94,7 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
       </div>
       <div className={styles.containerBrand} onClick={async () => await router.push(routeBrand)}>
         <div className={styles.brand}>
-          {!!imageSrc && <Image src={imageSrc} alt="" height={60} width={70} />}
+          {!!imageSrc && <Image src={imageSrc} alt="" height={imageHeight} width={imageWidth} />}
           {!!title && title.length && (
             <BBText className={styles.textTitle} color={colorTitle} asSpan>
               {title}

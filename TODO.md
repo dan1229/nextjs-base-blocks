@@ -71,7 +71,7 @@
 
 
 ----
-### 1.2.0
+### 1.3.0
 
 
 
@@ -91,6 +91,7 @@
 - can this be handled by BBToolTip?
 
 
+
 #### bb form components variables
 - start adding variables for colors and all that
 - border color
@@ -103,12 +104,11 @@
 - placeholder color
 
 
+
 #### bb field dropdown styling
 - add arrow or something
   - add to global styling
 - wait until form css is figured out
-
-
 
 
 
@@ -126,28 +126,6 @@
 
 
 
-#### vertical navbar
-- play with it
-- add to base blocks?
-
-
-
-#### bbcard
-- footer and header styling
-  - find a way to offer customization for these?
-    - same as body?
-  - `sameColor` prop or something?
-    - could allow them to pass colors directly? same as body?
-- padding mobile styling?
-  - reduce padding in mobile?
-
-
-
-#### default theme colors?
-- update
-- have to find and replace lots of defaults sadly
-
-
 
 #### demo page - form components
 - just add them
@@ -160,10 +138,6 @@
   - `/components/forms`
 
 
-#### bbtext
-- add 'font' prop
-
-
 
 #### bbdivider?
 - hr
@@ -174,15 +148,25 @@
 
 
 
-#### bbmodal
+#### default theme colors?
+- update
+- have to find and replace lots of defaults sadly
+
+
+#### bbmodal scrolling
+- ensure backgrounds dont scroll EVER
+- ensure if tall enough, the content scrolls
+-
 - background scrolling
   - still not great
   - need to somehow add 'overflow-y: hidden' to 'body'/'html' when modal is open
 
 
-#### bblink
-- colors not working?
-  - secondary color not working
+
+---
+### 1.2.0
+
+
 
 
 #### bbloading spinner - allow defalut to be chosen by scss var
@@ -192,25 +176,111 @@
 - ensure that 'variant' prop still overrides and works
 
 
-#### bbnavbar and item item new props
+
+#### docs and scss variables
+- improve defaults for scss variables - namely mobile text sizes
+  - same with dark theme stuff and comments - check get twenty
+
+
+
+---
+
+
+#### bblink
+- colors not working?
+  - secondary color not working
+
+
+
+
+#### vertical navbar
+- play with it
+- add to base blocks?
+
+
+---
+
+
+#### bbtext
+- add 'font' prop
+- italics not working
+
+
+
+#### bbnavbar item
+- navbaritem color
+  - variable or prop?
+  - variable would be nice since it'll probably be across the board
+  - variants for secondary/primary/etc
+- navbar item active state bug
+  - border-radius not rounded correctly on last child of dropdown
+- borders?
+- width?
+- hover color
+- select/active color
+  - should these all be raw css or prop types?
+
+
+#### bbnavbar
 - navbar
+  - make height/width of image props
   - uses 'quicksand' font
   - rename 'buttonsAuth' to something else
     - buttons action
     - component action
     - component buttons
-- navbaritem color
-  - variable or prop?
-  - variable would be nice since it'll probably be across the board
 
-  
+---
 
-#### bbmodal scrolling
-- ensure backgrounds dont scroll EVER
-- ensure if tall enough, the content scrolls
+
+#### bbcard
+- black color default not working if not provided
+-
+- getting dom nesting error on href cards
+  - same as button:
+```
+Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>.
+div
+Body@webpack-internal:///./base_blocks/src/bbcard/index.tsx:122:65
+p
+BBText@webpack-internal:///./base_blocks/src/bbtext/index.tsx:20:151
+a
+LinkComponent@webpack-internal:///./node_modules/next/dist/client/link.js:111:254
+BBLink@webpack-internal:///./base_blocks/src/bblink/index.tsx:22:164
+div
+BBCard@webpack-internal:///./base_blocks/src/bbcard/index.tsx:19:164
+CardTag@webpack-internal:///./components/cards/card_tag/index.tsx:26:52
+div
+div
+SectionTags@webpack-internal:///./components/sections/section_tags/index.tsx:21:40
+```
+-
+- footer and header styling
+  - find a way to offer customization for these?
+    - same as body?
+  - `sameColor` prop or something?
+    - could allow them to pass colors directly? same as body?
+-
+- padding mobile styling?
+  - reduce padding in mobile?
+-
+- using as link breaks a few things
+  - no more hover
+    - adding a bogus 'onclick' fixes this but this gives a console warning
+-
+- black border doesnt work
+  - ensure other borders work
+
+
 
 
 ### [1.2.0] - 2024-MM-DD
+- `BBButton`
+  - Fixed DOM nesting error when using `href` prop
+  - Fixed padding/styling for `href` buttons
+  - Hover state improvements
+  - Black color default not working if not provided
+  - Some inverse colors not working
 #### TODO
 
 -------------------------------------------------------

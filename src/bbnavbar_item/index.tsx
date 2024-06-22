@@ -1,5 +1,7 @@
+'use client';
+
 import classnames from 'classnames';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import BBLink from '../bblink';
@@ -31,24 +33,31 @@ export interface IPropsBBNavbarItem {
  */
 export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElement {
   const { title, href, className, children } = Props;
-  const router = useRouter();
   const [isActiveInDropdown, setIsActiveInDropdown] = useState(false);
-  const hasChildren = !!children && children.length > 0;
+  const [currentPath, setCurrentPath] = useState<string>('');
+
+  // Detect the current pathname in a way compatible with both Page Router and App Router
+  const path = usePathname();
+  useEffect(() => {
+    const isAppRouter = typeof path === 'string';
+    if (isAppRouter) {
+      setCurrentPath(path);
+    } else {
+      setCurrentPath(window.location.pathname);
+    }
+  }, [path]);
 
   useEffect(() => {
     let found = false;
     children?.forEach((child) => {
-      if (removeSlashes(window.location.pathname) === removeSlashes(child.props.href)) {
+      if (removeSlashes(currentPath) === removeSlashes(child.props.href)) {
         found = true;
       }
     });
     setIsActiveInDropdown(found);
-  }, [children]);
+  }, [children, currentPath]);
 
-  if (!router.isReady) {
-    return <></>;
-  }
-  const urlMatch = !!router.asPath.length && !!href.length && removeSlashes(router.asPath) === removeSlashes(href);
+  const urlMatch = !!currentPath.length && !!href.length && removeSlashes(currentPath) === removeSlashes(href);
   const isActive = urlMatch || isActiveInDropdown;
 
   return (
@@ -57,7 +66,7 @@ export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElem
       className={classnames(
         styles.navbarItemBase,
         styles.dropdownContainer,
-        { [styles.active]: isActive, [styles.hasChildren]: hasChildren },
+        { [styles.active]: isActive, [styles.hasChildren]: !!children?.length },
         className
       )}
     >
@@ -66,9 +75,9 @@ export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElem
           <BBLink href={href} color={isActive ? 'white' : 'secondary'}>
             {title}
           </BBLink>
-          {hasChildren && <IoMdArrowDropdown size={30} className={styles.iconDropdown} />}
+          {!!children?.length && <IoMdArrowDropdown size={30} className={styles.iconDropdown} />}
         </div>
-        {hasChildren && <ul className={styles.dropdownContent}>{children}</ul>}
+        {!!children?.length && <ul className={styles.dropdownContent}>{children}</ul>}
       </div>
     </li>
   );

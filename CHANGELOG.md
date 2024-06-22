@@ -14,6 +14,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [1.1.9] - 2024-06-05
+- `BBNavbar` new props for brand image dimensions
+
+
+### [1.1.8] - 2024-06-02
+- `BBNavbarItem` support for page routers with `path` detection
+
+
+### [1.1.7] - 2024-06-02
+- `BBButton` - `onClick` typing improvements with HTML events
+
+
+### [1.1.6] - 2024-05-28
+- Added `use client` directives as appropriate to support app router in NextJS
+
+
+### [1.1.5] - 2024-05-08
+- `BBCollapsible`
+  - Using `BBButton` for collapsible button
+  - Fix button styling
+
+
 ### [1.1.4] - 2024-05-07
 - Added eslint rules for relative imports
   - This will help prevent issues with imports in the future

@@ -1,6 +1,7 @@
+'use client';
+
 import classNames from 'classnames';
 import React, { useState, useRef } from 'react';
-import BBLink from '../bblink';
 import BBText from '../bbtext';
 import styles from './styles.module.scss';
 import type {
@@ -38,7 +39,7 @@ interface IPropsBBButtonIcon {
  * @param {IPropsBBButtonIcon=} icon - The icon to display on the button
  * @param {string=} idForm - The ID of the form to submit
  * @param {string=} className - Any class name to add
- * @param {() => void=} onClick - The function to call when the button is clicked
+ * @param {(event: React.MouseEvent<HTMLButtonElement>) => void=} onClick - The function to call when the button is clicked
  * @param {boolean=} transparent - Whether the button is transparent
  * @param {TBBTextColor=} colorText - The color of the text. This doesn't really work with 'inverse-*' variants
  * @param {string=} href - The href to navigate to
@@ -57,7 +58,7 @@ export interface IPropsBBButton {
   icon?: IPropsBBButtonIcon;
   idForm?: string;
   className?: string;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   transparent?: boolean;
   colorText?: TBBTextColor;
   href?: string;
@@ -100,7 +101,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
   const [align] = useState<TBBButtonIconAlign>(icon?.align || 'left');
 
   // handle hover state
-  const [isHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const mainWrapperRef = useRef<HTMLDivElement>(null);
   const helperTextRef = useRef<HTMLDivElement>(null);
 
@@ -134,6 +135,12 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
         return styles.inverseSecondary;
       case 'inverse-accent':
         return styles.inverseAccent;
+      case 'inverse-danger':
+        return styles.inverseDanger;
+      case 'inverse-success':
+        return styles.inverseSuccess;
+      case 'inverse-warning':
+        return styles.inverseWarning;
       default:
         return '';
     }
@@ -173,7 +180,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
 
   const renderIcon = (currSide: TBBButtonIconAlign, icon?: IPropsBBButtonIcon) => {
     if (!icon || !icon.icon) return null;
-    const element = <div className={styles.containerIcon}>{icon.icon}</div>;
+    const element = <span className={styles.containerIcon}>{icon.icon}</span>;
     if (align === 'left' && currSide === 'left') {
       return element;
     } else if (align === 'right' && currSide === 'right') {
@@ -189,7 +196,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
   };
 
   const mainComponent = (
-    <div
+    <span
       className={classNames(
         styles.containerMain,
         align === 'above' || align === 'below' ? styles.contentVertical : null,
@@ -197,27 +204,29 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
         classNameHelperText
       )}
       ref={mainWrapperRef}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       {renderIcon('left', icon)}
       {!!text && (
-        <div className={classNames(styles.containerText)}>
+        <span className={classNames(styles.containerText)}>
           <BBText color={colorText} size={getButtonSize()}>
             {text}
           </BBText>
-        </div>
+        </span>
       )}
       {renderIcon('right', icon)}
       {helperTextOnHover && (
-        <div className={classNames(styles.helperText, isHovered && styles.helperTextVisible)} ref={helperTextRef}>
-          <div className={styles.helperTextContent}>
+        <span className={classNames(styles.helperText, isHovered && styles.helperTextVisible)} ref={helperTextRef}>
+          <span className={styles.helperTextContent}>
             <BBText color="white" size="small" className={styles.helperTextQuestionMark}>
               ?
             </BBText>
             <BBText size="small">{helperTextOnHover}</BBText>
-          </div>
-        </div>
+          </span>
+        </span>
       )}
-    </div>
+    </span>
   );
 
   // class names for buttons
@@ -246,11 +255,12 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     if (hoverRes) {
       baseClassNames += ` ${styles.hover}`;
     }
+    baseClassNames += ` ${styles.link}`;
     if (onClick) console.warn('BBButton: Both onClick and href are defined. onClick will be ignored.');
     return (
-      <BBLink href={href} className={baseClassNames} external underline={false} size={getButtonSize()} color={colorText}>
+      <a href={href} className={baseClassNames} target="_blank" rel="noreferrer noopener">
         {mainComponent}
-      </BBLink>
+      </a>
     );
   }
 
@@ -268,7 +278,13 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
   }
 
   return (
-    <button className={baseClassNames} type={type} form={idForm} disabled={disabledRes} onClick={disabledRes ? undefined : onClick}>
+    <button
+      className={baseClassNames}
+      type={type}
+      form={idForm}
+      disabled={disabledRes}
+      onClick={disabledRes ? undefined : (event) => onClick?.(event)}
+    >
       {mainComponent}
     </button>
   );
