@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import BBLink from '../bblink';
 import styles from './styles.module.scss';
-import type { TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation, TBBTextColor } from '../types';
+import type { IPropsBBBase, TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation, TBBTextColor } from '../types';
 
 /**
  * PROPS
@@ -21,7 +21,6 @@ export interface IPropsBBCard {
   colorBackground?: TBBCardColorBackground;
   colorBorder?: TBBCardColorBorder;
   elevation?: TBBCardElevation;
-  className?: string;
   onClick?: () => void;
   href?: string;
   hrefColor?: TBBTextColor;
@@ -31,7 +30,7 @@ export interface IPropsBBCard {
 /**
  * BBCard
  */
-const BBCard = (Props: IPropsBBCard) => {
+const BBCard = (Props: IPropsBBBase & IPropsBBCard) => {
   const {
     children,
     colorBackground = 'default',

@@ -266,15 +266,6 @@ SectionTags@webpack-internal:///./components/sections/section_tags/index.tsx:21:
     - same as body?
   - `sameColor` prop or something?
     - could allow them to pass colors directly? same as body?
--
-- padding mobile styling?
-  - reduce padding in mobile?
--
-- black border doesnt work
-  - ensure other borders work
--
-- black color default not working if not provided
-
 
 
 ### [1.2.0] - 2024-MM-DD
