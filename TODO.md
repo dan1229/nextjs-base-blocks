@@ -303,6 +303,9 @@ div
 
 
 ### [1.2.0] - 2024-MM-DD
+- `BBButton`
+  - Fixed DOM nesting error when using `href` prop
+  - Fixed padding/styling for `href` buttons
 #### TODO
 
 -------------------------------------------------------
