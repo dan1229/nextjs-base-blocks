@@ -102,7 +102,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
   const [align] = useState<TBBButtonIconAlign>(icon?.align || 'left');
 
   // handle hover state
-  const [isHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const mainWrapperRef = useRef<HTMLDivElement>(null);
   const helperTextRef = useRef<HTMLDivElement>(null);
 
@@ -175,7 +175,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
 
   const renderIcon = (currSide: TBBButtonIconAlign, icon?: IPropsBBButtonIcon) => {
     if (!icon || !icon.icon) return null;
-    const element = <div className={styles.containerIcon}>{icon.icon}</div>;
+    const element = <span className={styles.containerIcon}>{icon.icon}</span>;
     if (align === 'left' && currSide === 'left') {
       return element;
     } else if (align === 'right' && currSide === 'right') {
@@ -191,7 +191,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
   };
 
   const mainComponent = (
-    <div
+    <span
       className={classNames(
         styles.containerMain,
         align === 'above' || align === 'below' ? styles.contentVertical : null,
@@ -199,27 +199,29 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
         classNameHelperText
       )}
       ref={mainWrapperRef}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       {renderIcon('left', icon)}
       {!!text && (
-        <div className={classNames(styles.containerText)}>
+        <span className={classNames(styles.containerText)}>
           <BBText color={colorText} size={getButtonSize()}>
             {text}
           </BBText>
-        </div>
+        </span>
       )}
       {renderIcon('right', icon)}
       {helperTextOnHover && (
-        <div className={classNames(styles.helperText, isHovered && styles.helperTextVisible)} ref={helperTextRef}>
-          <div className={styles.helperTextContent}>
+        <span className={classNames(styles.helperText, isHovered && styles.helperTextVisible)} ref={helperTextRef}>
+          <span className={styles.helperTextContent}>
             <BBText color="white" size="small" className={styles.helperTextQuestionMark}>
               ?
             </BBText>
             <BBText size="small">{helperTextOnHover}</BBText>
-          </div>
-        </div>
+          </span>
+        </span>
       )}
-    </div>
+    </span>
   );
 
   // class names for buttons
