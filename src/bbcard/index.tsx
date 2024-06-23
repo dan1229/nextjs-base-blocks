@@ -1,8 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
-import BBLink from '../bblink';
 import styles from './styles.module.scss';
-import type { IPropsBBBase, TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation, TBBTextColor } from '../types';
+import type { IPropsBBBase, TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation } from '../types';
 
 const getClassColorBackgroundCard = (colorBackground: string | null): string | undefined => {
   if (!colorBackground) {
