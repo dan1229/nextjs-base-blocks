@@ -94,7 +94,6 @@ const DemoPage = () => {
     underline: false,
     asSpan: false,
     external: true,
-    className: '',
   });
   // BB Loading Spinner
   const [stateBBLoadingSpinner, setStateBBLoadingSpinner] = useState<IPropsBBLoadingSpinner>({
