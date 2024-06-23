@@ -91,7 +91,6 @@ const getClassColorBackgroundHeader = (colorBackground: string | null): string |
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - Function to call when clicked
  * @param {string=} href - URL for the link
- * @param {TBBTextColor=} hrefColor - The color of the link
  * @param {boolean=} noBorder - Whether to remove the border
  */
 export interface IPropsBBCard {
@@ -101,7 +100,6 @@ export interface IPropsBBCard {
   elevation?: TBBCardElevation;
   onClick?: () => void;
   href?: string;
-  hrefColor?: TBBTextColor;
   noBorder?: boolean;
 }
 
@@ -117,7 +115,6 @@ const BBCard = (Props: IPropsBBBase & IPropsBBCard) => {
     className,
     onClick,
     href,
-    hrefColor = 'black',
     noBorder = false,
   } = Props;
 
@@ -179,9 +176,9 @@ const BBCard = (Props: IPropsBBBase & IPropsBBCard) => {
       )}
     >
       {href ? (
-        <BBLink href={href} underline={false} color={hrefColor}>
+        <a href={href} className={styles.linkCard}>
           {children}
-        </BBLink>
+        </a>
       ) : (
         children
       )}
