@@ -238,9 +238,6 @@
 
 #### bbnavbar
 - navbar
-  - update to whatever 'fancy' font is
-    - ensure that font is a system default
-    - remove 'quicksand
   - rename `buttonsAuth` to `buttonsAction`
   -
   - add text size prop?

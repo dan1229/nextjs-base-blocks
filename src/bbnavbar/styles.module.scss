@@ -3,7 +3,11 @@ $background-color: var(--navbar-background-color, #dddddd);
 $brand-padding: var(--navbar-brand-padding, 0.5rem);
 $container-brand-margin: var(--navbar-container-brand-margin, 0 0.5rem);
 
-$default-font-family-header: 'Roboto', sans-serif;
+// this is intended to go like this:
+// 1. use 'font-family-navbar-header' if it is defined
+// 2. if not, use 'font-family-header' if it is defined
+// 3. if not, use sans-serif
+$default-font-family-header: sans-serif;
 $font-family-header: var(--font-family-header, #{$default-font-family-header});
 $font-family-navbar-header: var(--font-family-navbar-header, $font-family-header);
 
