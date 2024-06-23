@@ -170,7 +170,8 @@ const BBCard = (Props: IPropsBBBase & IPropsBBCard) => {
       className={classNames(
         className,
         styles.base,
-        !!onClick && styles.hover,
+        // if there is an onClick or href, add hover effect
+        (!!onClick || !!href?.length) && styles.hover,
         noBorder && styles.no_border,
         getClassColorBackgroundCard(colorBackground),
         getClassColorBorder(),
