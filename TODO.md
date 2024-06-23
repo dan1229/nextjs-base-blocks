@@ -191,8 +191,7 @@
 
 
 #### vertical navbar
-- play with it
-- add to base blocks?
+- see if this works at all
 -
 - docs and scss variables
   - improve defaults for scss variables - namely mobile text sizes
@@ -218,6 +217,7 @@
     - Fixed padding/styling/hover
     - Removed `hrefColor` prop
 - `BBNavbar`
+  - Added `vertical` prop and styling!!!
   - Renamed `buttonsAuth` to `buttonsAction`
     - Same with `show` prop
   - Improved font defaults, styling and new variable
