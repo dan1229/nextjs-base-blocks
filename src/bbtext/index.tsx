@@ -16,6 +16,7 @@ import type { TBBTextSize, TBBTextColor } from '../types';
  * @param {boolean=} asSpan - whether to render as a span or not
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - Function to call when clicked
+ * @param {string=} fontFamily - The font family to use
  */
 export interface IPropsBBText {
   children: React.ReactNode;
@@ -28,6 +29,7 @@ export interface IPropsBBText {
   asSpan?: boolean;
   className?: string;
   onClick?: () => void;
+  fontFamily?: string;
 }
 
 /**
@@ -45,6 +47,7 @@ export default function BBText(Props: IPropsBBText): React.ReactElement {
     asSpan = false,
     className,
     onClick,
+    fontFamily,
   } = Props;
 
   const getClassColor = (): string => {
@@ -148,6 +151,7 @@ export default function BBText(Props: IPropsBBText): React.ReactElement {
         underline && styles.underline,
         hover && styles.hover
       )}
+      style={{ fontFamily: fontFamily }}
     >
       {children}
     </Tag>
