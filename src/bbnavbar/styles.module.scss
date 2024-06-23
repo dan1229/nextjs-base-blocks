@@ -11,6 +11,11 @@ $default-font-family-header: sans-serif;
 $font-family-header: var(--font-family-header, #{$default-font-family-header});
 $font-family-navbar-header: var(--font-family-navbar-header, $font-family-header);
 
+// same with --navbar-icon-mobile-color and --primary-color
+// if neither is defined, use default primary color
+$primary-color: var(--primary-color, #e8352e);
+$navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
+
 /**
 * ELEVATION
 */
@@ -109,7 +114,7 @@ $font-family-navbar-header: var(--font-family-navbar-header, $font-family-header
 
 .iconHamburger {
   cursor: pointer;
-  color: var(--secondary-color, #e8352e);
+  color: $navbar-icon-mobile-color !important;
   padding: 0.5rem;
   border-radius: $border-radius;
 
