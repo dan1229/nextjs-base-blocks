@@ -3,6 +3,9 @@ $background-color: var(--navbar-background-color, #dddddd);
 $brand-padding: var(--navbar-brand-padding, 0.5rem);
 $container-brand-margin: var(--navbar-container-brand-margin, 0 0.5rem);
 
+$font-family-header: var(--font-family-header, 'Roboto', sans-serif);
+$font-family-navbar-header: var(--font-family-navbar-header, $font-family-header);
+
 /**
 * ELEVATION
 */
@@ -32,7 +35,6 @@ $container-brand-margin: var(--navbar-container-brand-margin, 0 0.5rem);
   flex-direction: row;
   justify-content: space-between;
   background-color: $background-color;
-  font-family: 'Quicksand', sans-serif;
 }
 
 .brand {
@@ -56,6 +58,10 @@ $container-brand-margin: var(--navbar-container-brand-margin, 0 0.5rem);
   justify-content: center;
   align-items: center;
   margin: $container-brand-margin;
+}
+
+.textTitle {
+  font-family: var(--font-family-navbar-header);
 }
 
 /**

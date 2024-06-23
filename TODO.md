@@ -242,6 +242,9 @@
     - ensure that font is a system default
     - remove 'quicksand
   - rename `buttonsAuth` to `buttonsAction`
+  -
+  - add text size prop?
+    - how is it affected by adding a size?
 
 
 
@@ -262,7 +265,8 @@
     - Removed `hrefColor` prop
 - `BBNavbar`
   - Renamed `buttonsAuth` to `buttonsAction`
-  - Improved font defaults and styling
+  - Improved font defaults, styling and new variable
+    - `--font-family-navbar-header` added, defaults to `--font-family-header`
 - Updated browser list
 #### TODO
 
