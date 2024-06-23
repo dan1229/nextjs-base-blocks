@@ -3,6 +3,14 @@ $background-color: var(--navbar-background-color, #dddddd);
 $brand-padding: var(--navbar-brand-padding, 0.5rem);
 $container-brand-margin: var(--navbar-container-brand-margin, 0 0.5rem);
 
+// this is intended to go like this:
+// 1. use 'font-family-navbar-header' if it is defined
+// 2. if not, use 'font-family-header' if it is defined
+// 3. if not, use sans-serif
+$default-font-family-header: sans-serif;
+$font-family-header: var(--font-family-header, #{$default-font-family-header});
+$font-family-navbar-header: var(--font-family-navbar-header, $font-family-header);
+
 /**
 * ELEVATION
 */
@@ -32,7 +40,6 @@ $container-brand-margin: var(--navbar-container-brand-margin, 0 0.5rem);
   flex-direction: row;
   justify-content: space-between;
   background-color: $background-color;
-  font-family: 'Quicksand', sans-serif;
 }
 
 .brand {
@@ -58,6 +65,10 @@ $container-brand-margin: var(--navbar-container-brand-margin, 0 0.5rem);
   margin: $container-brand-margin;
 }
 
+.textTitle {
+  font-family: $font-family-navbar-header;
+}
+
 /**
 * NAVIGATION MENU
 */
@@ -76,7 +87,7 @@ $container-brand-margin: var(--navbar-container-brand-margin, 0 0.5rem);
   padding: 0;
 }
 
-.containerButtonsAuth {
+.containerButtonsAction {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -121,7 +132,7 @@ $container-brand-margin: var(--navbar-container-brand-margin, 0 0.5rem);
     margin-left: auto;
   }
 
-  .containerButtonsAuth {
+  .containerButtonsAction {
     width: 6%;
   }
 

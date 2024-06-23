@@ -193,12 +193,6 @@
 
 
 
-#### bblink
-- colors not working?
-  - secondary color not working
-
-
-
 
 #### vertical navbar
 - play with it
@@ -206,6 +200,13 @@
 
 
 ---
+
+#### bblink
+- colors not working?
+  - secondary color not working
+
+
+
 
 #### bbtext
 - add 'font' prop
@@ -236,20 +237,6 @@
 
 
 
-#### bbnavbar
-- navbar
-  - make height/width of image props
-    - improve default
-  - update to whatever 'fancy' font is
-    - ensure that font is a system default
-    - remove 'quicksand
-  - rename 'buttonsAuth' to something else
-    - options;
-      - buttons action
-      - component action
-    
-
-
 
 ### [1.2.0] - 2024-MM-DD
 - `BBButton`
@@ -266,6 +253,12 @@
     - Fixed DOM nesting error
     - Fixed padding/styling/hover
     - Removed `hrefColor` prop
+- `BBNavbar`
+  - Renamed `buttonsAuth` to `buttonsAction`
+    - Same with `show` prop
+  - Improved font defaults, styling and new variable
+    - `--font-family-navbar-header` added, defaults to `--font-family-header`
+  - Added `textSizeTitle` prop
 - Updated browser list
 #### TODO
 
