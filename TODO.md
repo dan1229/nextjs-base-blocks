@@ -270,7 +270,8 @@ SectionTags@webpack-internal:///./components/sections/section_tags/index.tsx:21:
   - Some inverse colors not working
 - `BBCard`
   - Mobile styling padding improvements
-  - Added `colorBackground` to `header` and `footer`
+  - Added `colorBackground` to `header`, `body`, and `footer`
+  - Border radius issues fixed for different combinations of `header`, `body`, and `footer`
 #### TODO
 
 -------------------------------------------------------
