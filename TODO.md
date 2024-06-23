@@ -193,12 +193,6 @@
 
 
 
-#### bblink
-- colors not working?
-  - secondary color not working
-
-
-
 
 #### vertical navbar
 - play with it
@@ -206,6 +200,13 @@
 
 
 ---
+
+#### bblink
+- colors not working?
+  - secondary color not working
+
+
+
 
 #### bbtext
 - add 'font' prop
@@ -234,12 +235,6 @@
   - same as hover
 
 
-
-
-#### bbnavbar
-- navbar
-  - add text size prop?
-    - how is it affected by adding a size?
 
 
 
