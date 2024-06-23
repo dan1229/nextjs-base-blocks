@@ -1,12 +1,36 @@
 $border-radius: var(--navbar-item-border-radius, 8px);
 $navbar-item-padding: var(--navbar-item-padding, 0.5rem);
 $bg-dark-color: var(--bg-dark-color, #1c1c1c);
+$bg-color: var(--bg-color, #303030);
 $bg-light-color: var(--bg-light-color, #303030);
 
+$navbar-item-text-color: var(--navbar-item-text-color, #ffffff);
+
+// this is intended to go like this:
+// 1. use '--navbar-item-text-color' if it is defined
+// 2. if not, use '--primary-color' if it is defined
+// 3. if not, use default primary color
+$primary-color: var(--primary-color, #e8352e);
+$navbar-item-text-color: var(--navbar-item-text-color, $primary-color);
+
+// same with --navbar-item-text-color-hover and --primary-dark-color
+$primary-dark-color: var(--primary-dark-color, darken(#e8352e, 10%));
+$navbar-item-text-color-hover: var(--navbar-item-text-color-hover, $primary-dark-color);
+
+// same with --navbar-item-bg-color-active and --bg-dark-color
+$navbar-item-bg-color-active: var(--navbar-item-bg-color-active, $bg-dark-color);
+
+// same with --navbar-item-text-color-hover and --bg-color
+$navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
+
 .active {
-  background-color: var(--secondary-color, #e8352e);
-  background-color: var(--bg-dark-color, #1c1c1c) !important;
+  background-color: $navbar-item-text-color;
+  background-color: $navbar-item-bg-color-active;
   border-radius: $border-radius;
+}
+
+.textLink {
+  color: $navbar-item-text-color;
 }
 
 .navbarItemBase {
@@ -28,34 +52,43 @@ $bg-light-color: var(--bg-light-color, #303030);
 
   &:hover {
     cursor: pointer;
-    background-color: $bg-dark-color;
+    background-color: $navbar-item-bg-color-hover;
     border-radius: $border-radius !important;
 
+    // handle elements in the dropdown
     li {
-      border-radius: 0 !important;
+      border-radius: 0;
+
+      // handle last child of the dropdown
+      &:last-child {
+        border-bottom-left-radius: $border-radius !important;
+        border-bottom-right-radius: $border-radius !important;
+      }
     }
 
+    // handle the dropdown itself
     &.hasChildren {
       border-bottom-left-radius: 0 !important;
       border-bottom-right-radius: 0 !important;
     }
 
-    &:last-child {
-      border-bottom-left-radius: $border-radius !important;
-      border-bottom-right-radius: $border-radius !important;
-    }
-
     .iconDropdown {
-      color: var(--white, #ffffff);
+      color: $navbar-item-text-color;
       transform: scaleY(-1);
     }
   }
 }
 
-// TODO find a better selector than this
-// weird situation with 'active' and all that
+// TODO find a better selector than these two
+// this is for the text
 .navbarItemBase:hover > div > div > a > * {
-  color: var(--white, #ffffff) !important;
+  // need the !important to override the default color / active color
+  color: $navbar-item-text-color-hover !important;
+}
+// this is for the icon
+.navbarItemBase:hover > div > div > .iconDropdown {
+  // need the !important to override the default color / active color
+  color: $navbar-item-text-color-hover !important;
 }
 
 .navbarContentContainer {
@@ -71,12 +104,12 @@ $bg-light-color: var(--bg-light-color, #303030);
 }
 
 .iconDropdown {
-  color: var(--secondary-color, #e8352e);
+  color: $navbar-item-text-color;
   margin-right: 0.2rem;
 }
 
 .active .iconDropdown {
-  color: var(--white, #ffffff);
+  color: $navbar-item-text-color;
 }
 
 /**

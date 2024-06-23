@@ -214,30 +214,6 @@
 
 
 
-#### bbnavbar item
-- navbar item active state bug
-  - border-radius not rounded correctly on last child of dropdown
--
-- navbar item color
-  - variable or prop?
-    - variable would be nice since it'll probably be across the board
-      - variable should default to primary somehow?
-      - or just some reasonable default
-  - variants for secondary/primary/etc
--
-- hover color
-  - prop or variable?
-    - probably whatever the actual color is
-      - i.e., will depend on setting a good variable as a default
--
-- select/active color
-  - same as hover
--
-- variable / prop for mobile menu color
-  - variable is probably easiest
-
-
-
 
 ### [1.2.0] - 2024-06-DD
 - `BBButton`
@@ -260,8 +236,18 @@
   - Improved font defaults, styling and new variable
     - `--font-family-navbar-header` added, defaults to `--font-family-header`
   - Added `textSizeTitle` prop
+  - Added `--navbar-icon-mobile-color` variable - defaults to `--primary-color`
+- `BBNavbarItem`
+  - Fixed issue with border radius on last child of active dropdown
+  - New variables!
+    - `--navbar-item-text-color` - used for navbar text color, defaults to `--primary-color`
+    - `--navbar-item-text-color-hover` - used for navbar text hover color, defaults to primary dark color
+    - `--navbar-item-bg-color-active` - used for active navbar item background color, defaults to `--bg-dark-color`
+    - `--navbar-item-bg-color-hover` - used for navbar item hover background color, defaults to `--bg-color`
 - `BBCollapsible`
   - Fixed props - added base props
+- `BBLink`
+  - Added `hover` prop
 - Updated browser list
 #### TODO
 

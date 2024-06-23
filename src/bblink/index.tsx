@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import BBText from '../bbtext';
 import styles from './styles.module.scss';
-import type { TBBTextSize, TBBTextColor } from '../types';
+import type { TBBTextSize, TBBTextColor, IPropsBBBase } from '../types';
 
 /**
  * PROPS
@@ -16,7 +16,7 @@ import type { TBBTextSize, TBBTextColor } from '../types';
  * @param {boolean} underline - whether the text is underlined
  * @param {boolean} asSpan - whether to render as a span or not
  * @param {boolean} external - whether the link is external or not. will open in new tab and handle seo.
- * @param {string=} className - Any class name to add
+ * @param {string=} hover - whether the text has a hover effect
  */
 export interface IPropsBBLink {
   children: React.ReactNode;
@@ -28,12 +28,12 @@ export interface IPropsBBLink {
   underline?: boolean;
   asSpan?: boolean;
   external?: boolean;
-  className?: string;
+  hover?: boolean;
 }
 /**
  * BBLink
  */
-export default function BBLink(Props: IPropsBBLink): React.ReactElement {
+export default function BBLink(Props: IPropsBBLink & IPropsBBBase): React.ReactElement {
   const {
     children,
     href,
@@ -44,6 +44,7 @@ export default function BBLink(Props: IPropsBBLink): React.ReactElement {
     underline = true,
     asSpan = false,
     external = false,
+    hover = true,
     className,
   } = Props;
 
@@ -60,7 +61,7 @@ export default function BBLink(Props: IPropsBBLink): React.ReactElement {
         bold={bold}
         italics={italics}
         underline={underline}
-        hover={true}
+        hover={hover}
         asSpan={asSpan}
         className={className}
       >

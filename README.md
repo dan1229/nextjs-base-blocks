@@ -65,7 +65,7 @@ Also including a number of form helper functions and components.
 
 You are also able to customize `Base Blocks` via SCSS variables. You typically will want to put these in `globals.scss`.
 
-The available options are here:
+The list of available options is here:
 
 ```scss
 // keep these variables separate to allow for dynamic lighten/darken usage
@@ -135,9 +135,14 @@ html,
   --navbar-background-color: rgb(221, 221, 221);
   --navbar-brand-padding: 0rem;
   --navbar-container-brand-margin: 0.5rem;
+  --navbar-icon-mobile-color: #{$primary-color};
   // bb navbar item
   --navbar-item-border-radius: 8px;
   --navbar-item-padding: 12px;
+  --navbar-item-text-color: #{$primary-color};
+  --navbar-item-text-color-hover: #{darken($primary-color, 10%)};
+  --navbar-item-bg-color-active: rgb(177, 177, 177);
+  --navbar-item-bg-color-hover: rgb(197, 197, 197);
   // bb text
   --text-color-default: rgb(24, 24, 24);
   --text-size-xs: 0.6rem;

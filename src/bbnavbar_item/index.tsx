@@ -72,7 +72,12 @@ export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElem
     >
       <div className={styles.navbarContentContainer}>
         <div className={styles.navbarHeaderContainer}>
-          <BBLink href={href} color={isActive ? 'white' : 'secondary'}>
+          <BBLink
+            href={href}
+            className={styles.textLink}
+            // hover is handled by this BBNavbarItem component
+            hover={false}
+          >
             {title}
           </BBLink>
           {!!children?.length && <IoMdArrowDropdown size={30} className={styles.iconDropdown} />}
