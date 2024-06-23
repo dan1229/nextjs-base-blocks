@@ -50,6 +50,10 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
   }
 }
 
+.linkCard {
+  text-decoration: none;
+}
+
 /*
 * CARD SECTIONS
 */
