@@ -266,6 +266,7 @@
     - Fixed DOM nesting error
     - Fixed padding/styling/hover
     - Removed `hrefColor` prop
+- Updated browser list
 #### TODO
 
 -------------------------------------------------------
