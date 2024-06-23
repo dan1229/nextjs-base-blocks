@@ -265,6 +265,8 @@
     - `--navbar-item-text-color` - used for navbar text color, defaults to `--primary-color`
 - `BBCollapsible`
   - Fixed props - added base props
+- `BBLink`
+  - Added `hover` prop
 - Updated browser list
 #### TODO
 
