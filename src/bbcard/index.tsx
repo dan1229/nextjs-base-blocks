@@ -202,7 +202,7 @@ interface IPropsBBCardHeader {
   colorBackground?: TBBCardColorBackground;
 }
 
-const Header = (props: IPropsBBCardHeader) => {
+const Header = (props: IPropsBBCardHeader & IPropsBBBase) => {
   const { children, className, onClick, noPadding = false, colorBackground = null } = props;
 
   // This is a fix for the onClick event not being triggered when the parent has an onClick event
@@ -240,7 +240,7 @@ interface IPropsBBCardBody {
   colorBackground?: TBBCardColorBackground;
 }
 
-const Body = (props: IPropsBBCardBody) => {
+const Body = (props: IPropsBBCardBody & IPropsBBBase) => {
   const { children, className, onClick, noPadding = false, colorBackground = null } = props;
 
   // This is a fix for the onClick event not being triggered when the parent has an onClick event
@@ -278,7 +278,7 @@ interface IPropsBBCardFooter {
   colorBackground?: TBBCardColorBackground;
 }
 
-const Footer = (props: IPropsBBCardFooter) => {
+const Footer = (props: IPropsBBCardFooter & IPropsBBBase) => {
   const { children, className, onClick, noPadding = false, colorBackground = null } = props;
 
   // This is a fix for the onClick event not being triggered when the parent has an onClick event
