@@ -215,15 +215,15 @@
 
 
 #### bbnavbar item
-- navbaritem color
+- navbar item active state bug
+  - border-radius not rounded correctly on last child of dropdown
+-
+- navbar item color
   - variable or prop?
     - variable would be nice since it'll probably be across the board
       - variable should default to primary somehow?
       - or just some reasonable default
   - variants for secondary/primary/etc
--
-- navbar item active state bug
-  - border-radius not rounded correctly on last child of dropdown
 -
 - hover color
   - prop or variable?
@@ -237,7 +237,7 @@
 
 
 
-### [1.2.0] - 2024-MM-DD
+### [1.2.0] - 2024-06-DD
 - `BBButton`
   - Fixed DOM nesting error when using `href` prop
   - Fixed padding/styling for `href` buttons
