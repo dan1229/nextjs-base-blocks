@@ -12,9 +12,13 @@ $navbar-item-text-color: var(--navbar-item-text-color, #ffffff);
 $primary-color: var(--primary-color, #e8352e);
 $navbar-item-text-color: var(--navbar-item-text-color, $primary-color);
 
+// same with --navbar-item-text-hover-color
+$primary-dark-color: var(--primary-dark-color, darken(#e8352e, 10%));
+$navbar-item-text-hover-color: var(--navbar-item-text-hover-color, $primary-dark-color);
+
 .active {
   background-color: $navbar-item-text-color;
-  background-color: var(--bg-dark-color, #1c1c1c) !important;
+  background-color: var(--bg-dark-color, #1c1c1c) !important; // variables?
   border-radius: $border-radius;
 }
 
@@ -41,7 +45,7 @@ $navbar-item-text-color: var(--navbar-item-text-color, $primary-color);
 
   &:hover {
     cursor: pointer;
-    background-color: $bg-dark-color;
+    background-color: $bg-dark-color; // TODO replace with variable
     border-radius: $border-radius !important;
 
     li {
@@ -67,8 +71,13 @@ $navbar-item-text-color: var(--navbar-item-text-color, $primary-color);
 
 // TODO find a better selector than this
 // weird situation with 'active' and all that
+// this is for the text
 .navbarItemBase:hover > div > div > a > * {
-  color: $navbar-item-text-color;
+  color: $navbar-item-text-hover-color;
+}
+// this is for the icon
+.navbarItemBase:hover > div > div > .iconDropdown {
+  color: $navbar-item-text-hover-color;
 }
 
 .navbarContentContainer {
