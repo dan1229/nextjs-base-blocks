@@ -234,7 +234,6 @@
 
 
 #### bbcard
-- black color default not working if not provided
 -
 - getting dom nesting error on href cards
   - same as button:
@@ -255,22 +254,10 @@ div
 SectionTags@webpack-internal:///./components/sections/section_tags/index.tsx:21:40
 ```
 -
-- footer and header styling
-  - find a way to offer customization for these?
-    - same as body?
-  - `sameColor` prop or something?
-    - could allow them to pass colors directly? same as body?
--
-- padding mobile styling?
-  - reduce padding in mobile?
--
 - using as link breaks a few things
   - no more hover
     - adding a bogus 'onclick' fixes this but this gives a console warning
 -
-- black border doesnt work
-  - ensure other borders work
-
 
 
 
@@ -281,6 +268,10 @@ SectionTags@webpack-internal:///./components/sections/section_tags/index.tsx:21:
   - Hover state improvements
   - Black color default not working if not provided
   - Some inverse colors not working
+- `BBCard`
+  - Mobile styling padding improvements
+  - Added `colorBackground` to `header`, `body`, and `footer`
+  - Border radius issues fixed for different combinations of `header`, `body`, and `footer`
 #### TODO
 
 -------------------------------------------------------

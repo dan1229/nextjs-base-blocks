@@ -2,7 +2,85 @@ import classNames from 'classnames';
 import React from 'react';
 import BBLink from '../bblink';
 import styles from './styles.module.scss';
-import type { TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation, TBBTextColor } from '../types';
+import type { IPropsBBBase, TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation, TBBTextColor } from '../types';
+
+const getClassColorBackgroundCard = (colorBackground: string | null): string | undefined => {
+  if (!colorBackground) {
+    return undefined;
+  }
+  switch (colorBackground) {
+    case 'default':
+      return styles.background_card_default;
+    case 'transparent':
+      return styles.background_card_transparent;
+    case 'white':
+      return styles.background_card_white;
+    case 'grey_light':
+      return styles.background_card_grey_light;
+    case 'grey_dark':
+      return styles.background_card_grey_dark;
+    case 'black':
+      return styles.background_card_black;
+    case 'primary':
+      return styles.background_card_primary;
+    case 'secondary':
+      return styles.background_card_secondary;
+    case 'accent':
+      return styles.background_card_accent;
+  }
+};
+
+const getClassColorBackgroundFooter = (colorBackground: string | null): string | undefined => {
+  if (!colorBackground) {
+    return undefined;
+  }
+  switch (colorBackground) {
+    case 'default':
+      return styles.background_footer_default;
+    case 'transparent':
+      return styles.background_footer_transparent;
+    case 'white':
+      return styles.background_footer_white;
+    case 'grey_light':
+      return styles.background_footer_grey_light;
+    case 'grey_dark':
+      return styles.background_footer_grey_dark;
+    case 'black':
+      return styles.background_footer_black;
+    case 'primary':
+      return styles.background_footer_primary;
+    case 'secondary':
+      return styles.background_footer_secondary;
+    case 'accent':
+      return styles.background_footer_accent;
+  }
+};
+
+const getClassColorBackgroundHeader = (colorBackground: string | null): string | undefined => {
+  if (!colorBackground) {
+    return undefined;
+  }
+  switch (colorBackground) {
+    case 'default':
+      return styles.background_header_default;
+    case 'transparent':
+      return styles.background_header_transparent;
+    case 'white':
+      return styles.background_header_white;
+    case 'grey_light':
+      return styles.background_header_grey_light;
+    case 'grey_dark':
+      return styles.background_header_grey_dark;
+    case 'black':
+      return styles.background_header_black;
+    case 'primary':
+      return styles.background_header_primary;
+    case 'secondary':
+      return styles.background_header_secondary;
+    case 'accent':
+      return styles.background_header_accent;
+  }
+};
 
 /**
  * PROPS
@@ -21,7 +99,6 @@ export interface IPropsBBCard {
   colorBackground?: TBBCardColorBackground;
   colorBorder?: TBBCardColorBorder;
   elevation?: TBBCardElevation;
-  className?: string;
   onClick?: () => void;
   href?: string;
   hrefColor?: TBBTextColor;
@@ -31,7 +108,7 @@ export interface IPropsBBCard {
 /**
  * BBCard
  */
-const BBCard = (Props: IPropsBBCard) => {
+const BBCard = (Props: IPropsBBBase & IPropsBBCard) => {
   const {
     children,
     colorBackground = 'default',
@@ -43,29 +120,6 @@ const BBCard = (Props: IPropsBBCard) => {
     hrefColor = 'black',
     noBorder = false,
   } = Props;
-
-  const getClassColorBackground = (): string => {
-    switch (colorBackground) {
-      case 'default':
-        return styles.background_default;
-      case 'transparent':
-        return styles.background_transparent;
-      case 'white':
-        return styles.background_white;
-      case 'grey_light':
-        return styles.background_grey_light;
-      case 'grey_dark':
-        return styles.background_grey_dark;
-      case 'black':
-        return styles.background_black;
-      case 'primary':
-        return styles.background_primary;
-      case 'secondary':
-        return styles.background_secondary;
-      case 'accent':
-        return styles.background_accent;
-    }
-  };
 
   const getClassColorBorder = (): string => {
     switch (colorBorder) {
@@ -118,7 +172,7 @@ const BBCard = (Props: IPropsBBCard) => {
         styles.base,
         !!onClick && styles.hover,
         noBorder && styles.no_border,
-        getClassColorBackground(),
+        getClassColorBackgroundCard(colorBackground),
         getClassColorBorder(),
         getClassElevation()
       )}
@@ -141,16 +195,18 @@ const BBCard = (Props: IPropsBBCard) => {
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - Function to call when clicked
  * @param {boolean=} noPadding - Whether to remove the padding
+ * @param {TBBCardColorBackground=} colorBackground - The color of the background
  */
 interface IPropsBBCardHeader {
   children: React.ReactNode | React.ReactNode[];
   className?: string;
   onClick?: () => void;
   noPadding?: boolean;
+  colorBackground?: TBBCardColorBackground;
 }
 
 const Header = (props: IPropsBBCardHeader) => {
-  const { children, className, onClick, noPadding = false } = props;
+  const { children, className, onClick, noPadding = false, colorBackground = null } = props;
 
   // This is a fix for the onClick event not being triggered when the parent has an onClick event
   const onClickOverride = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -159,7 +215,10 @@ const Header = (props: IPropsBBCardHeader) => {
   };
 
   return (
-    <div className={classNames(styles.header, className, noPadding && styles.no_padding)} onClick={onClick && onClickOverride}>
+    <div
+      className={classNames(styles.header, className, noPadding && styles.no_padding, getClassColorBackgroundHeader(colorBackground))}
+      onClick={onClick && onClickOverride}
+    >
       {children}
     </div>
   );
@@ -174,16 +233,18 @@ BBCard.Header = Header;
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - Function to call when clicked
  * @param {boolean=} noPadding - Whether to remove the padding
+ * @param {TBBCardColorBackground=} colorBackground - The color of the background
  */
 interface IPropsBBCardBody {
   children: React.ReactNode | React.ReactNode[];
   className?: string;
   onClick?: () => void;
   noPadding?: boolean;
+  colorBackground?: TBBCardColorBackground;
 }
 
 const Body = (props: IPropsBBCardBody) => {
-  const { children, className, onClick, noPadding = false } = props;
+  const { children, className, onClick, noPadding = false, colorBackground = null } = props;
 
   // This is a fix for the onClick event not being triggered when the parent has an onClick event
   const onClickOverride = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -192,7 +253,10 @@ const Body = (props: IPropsBBCardBody) => {
   };
 
   return (
-    <div className={classNames(styles.body, className, noPadding && styles.no_padding)} onClick={onClick && onClickOverride}>
+    <div
+      className={classNames(styles.body, className, noPadding && styles.no_padding, getClassColorBackgroundCard(colorBackground))}
+      onClick={onClick && onClickOverride}
+    >
       {children}
     </div>
   );
@@ -207,16 +271,18 @@ BBCard.Body = Body;
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - Function to call when clicked
  * @param {boolean=} noPadding - Whether to remove the padding
+ * @param {TBBCardColorBackground=} colorBackground - The color of the background
  */
 interface IPropsBBCardFooter {
   children: React.ReactNode | React.ReactNode[];
   className?: string;
   onClick?: () => void;
   noPadding?: boolean;
+  colorBackground?: TBBCardColorBackground;
 }
 
 const Footer = (props: IPropsBBCardFooter) => {
-  const { children, className, onClick, noPadding = false } = props;
+  const { children, className, onClick, noPadding = false, colorBackground = null } = props;
 
   // This is a fix for the onClick event not being triggered when the parent has an onClick event
   const onClickOverride = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -225,7 +291,10 @@ const Footer = (props: IPropsBBCardFooter) => {
   };
 
   return (
-    <div className={classNames(styles.footer, className, noPadding && styles.no_padding)} onClick={onClick && onClickOverride}>
+    <div
+      className={classNames(styles.footer, className, noPadding && styles.no_padding, getClassColorBackgroundFooter(colorBackground))}
+      onClick={onClick && onClickOverride}
+    >
       {children}
     </div>
   );
