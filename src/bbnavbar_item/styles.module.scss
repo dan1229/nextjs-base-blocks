@@ -68,7 +68,7 @@ $navbar-item-text-color: var(--navbar-item-text-color, $primary-color);
 // TODO find a better selector than this
 // weird situation with 'active' and all that
 .navbarItemBase:hover > div > div > a > * {
-  color: $navbar-item-text-color;
+  color: #ff0000;
 }
 
 .navbarContentContainer {
