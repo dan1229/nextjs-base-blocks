@@ -1,8 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
-import BBLink from '../bblink';
 import styles from './styles.module.scss';
-import type { IPropsBBBase, TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation, TBBTextColor } from '../types';
+import type { IPropsBBBase, TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation } from '../types';
 
 const getClassColorBackgroundCard = (colorBackground: string | null): string | undefined => {
   if (!colorBackground) {
@@ -91,7 +90,6 @@ const getClassColorBackgroundHeader = (colorBackground: string | null): string |
  * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - Function to call when clicked
  * @param {string=} href - URL for the link
- * @param {TBBTextColor=} hrefColor - The color of the link
  * @param {boolean=} noBorder - Whether to remove the border
  */
 export interface IPropsBBCard {
@@ -101,7 +99,6 @@ export interface IPropsBBCard {
   elevation?: TBBCardElevation;
   onClick?: () => void;
   href?: string;
-  hrefColor?: TBBTextColor;
   noBorder?: boolean;
 }
 
@@ -117,7 +114,6 @@ const BBCard = (Props: IPropsBBBase & IPropsBBCard) => {
     className,
     onClick,
     href,
-    hrefColor = 'black',
     noBorder = false,
   } = Props;
 
@@ -170,7 +166,8 @@ const BBCard = (Props: IPropsBBBase & IPropsBBCard) => {
       className={classNames(
         className,
         styles.base,
-        !!onClick && styles.hover,
+        // if there is an onClick or href, add hover effect
+        (!!onClick || !!href?.length) && styles.hover,
         noBorder && styles.no_border,
         getClassColorBackgroundCard(colorBackground),
         getClassColorBorder(),
@@ -178,9 +175,9 @@ const BBCard = (Props: IPropsBBBase & IPropsBBCard) => {
       )}
     >
       {href ? (
-        <BBLink href={href} underline={false} color={hrefColor}>
+        <a href={href} className={styles.linkCard}>
           {children}
-        </BBLink>
+        </a>
       ) : (
         children
       )}
