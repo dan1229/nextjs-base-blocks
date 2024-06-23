@@ -12,11 +12,11 @@ $navbar-item-text-color: var(--navbar-item-text-color, #ffffff);
 $primary-color: var(--primary-color, #e8352e);
 $navbar-item-text-color: var(--navbar-item-text-color, $primary-color);
 
-// same with --navbar-item-text-hover-color
+// same with --navbar-item-text-color-hover and --primary-dark-color
 $primary-dark-color: var(--primary-dark-color, darken(#e8352e, 10%));
-$navbar-item-text-hover-color: var(--navbar-item-text-hover-color, $primary-dark-color);
+$navbar-item-text-color-hover: var(--navbar-item-text-color-hover, $primary-dark-color);
 
-// same with --navbar-item-bg-color-active
+// same with --navbar-item-bg-color-active and --bg-dark-color
 $navbar-item-bg-color-active: var(--navbar-item-bg-color-active, $bg-dark-color);
 
 .active {
@@ -76,11 +76,11 @@ $navbar-item-bg-color-active: var(--navbar-item-bg-color-active, $bg-dark-color)
 // weird situation with 'active' and all that
 // this is for the text
 .navbarItemBase:hover > div > div > a > * {
-  color: $navbar-item-text-hover-color;
+  color: $navbar-item-text-color-hover;
 }
 // this is for the icon
 .navbarItemBase:hover > div > div > .iconDropdown {
-  color: $navbar-item-text-hover-color;
+  color: $navbar-item-text-color-hover;
 }
 
 .navbarContentContainer {

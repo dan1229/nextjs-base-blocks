@@ -139,7 +139,7 @@ html,
   --navbar-item-border-radius: 8px;
   --navbar-item-padding: 12px;
   --navbar-item-text-color: #{$primary-color};
-  --navbar-item-text-hover-color: #{darken($primary-color, 10%)};
+  --navbar-item-text-color-hover: #{darken($primary-color, 10%)};
   --navbar-item-bg-color-active: rgb(177, 177, 177);
   // bb text
   --text-color-default: rgb(24, 24, 24);
