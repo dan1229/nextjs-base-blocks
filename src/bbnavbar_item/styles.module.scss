@@ -59,7 +59,7 @@ $navbar-item-text-color: var(--navbar-item-text-color, $primary-color);
     }
 
     .iconDropdown {
-      color: var(--white, #ffffff);
+      color: $navbar-item-text-color;
       transform: scaleY(-1);
     }
   }
@@ -68,7 +68,7 @@ $navbar-item-text-color: var(--navbar-item-text-color, $primary-color);
 // TODO find a better selector than this
 // weird situation with 'active' and all that
 .navbarItemBase:hover > div > div > a > * {
-  color: $navbar-item-text-color !important;
+  color: $navbar-item-text-color;
 }
 
 .navbarContentContainer {
@@ -84,12 +84,12 @@ $navbar-item-text-color: var(--navbar-item-text-color, $primary-color);
 }
 
 .iconDropdown {
-  color: var(--secondary-color, #e8352e);
+  color: $navbar-item-text-color;
   margin-right: 0.2rem;
 }
 
 .active .iconDropdown {
-  color: var(--white, #ffffff);
+  color: $navbar-item-text-color;
 }
 
 /**
