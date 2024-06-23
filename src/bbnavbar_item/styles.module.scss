@@ -16,9 +16,12 @@ $navbar-item-text-color: var(--navbar-item-text-color, $primary-color);
 $primary-dark-color: var(--primary-dark-color, darken(#e8352e, 10%));
 $navbar-item-text-hover-color: var(--navbar-item-text-hover-color, $primary-dark-color);
 
+// same with --navbar-item-bg-color-active
+$navbar-item-bg-color-active: var(--navbar-item-bg-color-active, $bg-dark-color);
+
 .active {
   background-color: $navbar-item-text-color;
-  background-color: var(--bg-dark-color, #1c1c1c) !important; // variables?
+  background-color: $navbar-item-bg-color-active !important;
   border-radius: $border-radius;
 }
 
