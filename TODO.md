@@ -200,19 +200,6 @@
 
 
 
-#### bblink
-- colors not working?
-  - secondary color not working
-
-
-
-
-#### bbtext
-- add 'font' prop
-- italics not working
-
-
-
 
 
 ### [1.2.0] - 2024-06-DD
