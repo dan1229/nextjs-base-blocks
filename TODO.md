@@ -187,19 +187,18 @@
 
 
 
-#### docs and scss variables
-- improve defaults for scss variables - namely mobile text sizes
-  - same with dark theme stuff and comments - check get twenty
-
 
 
 
 #### vertical navbar
 - play with it
 - add to base blocks?
+-
+- docs and scss variables
+  - improve defaults for scss variables - namely mobile text sizes
+    - same with dark theme stuff and comments - check get twenty
 
 
----
 
 #### bblink
 - colors not working?
