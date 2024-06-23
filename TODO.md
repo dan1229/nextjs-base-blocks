@@ -214,12 +214,6 @@
 
 
 
-#### bbnavbar item
-- variable / prop for mobile menu color
-  - variable is probably easiest
-
-
-
 
 ### [1.2.0] - 2024-06-DD
 - `BBButton`
@@ -242,6 +236,7 @@
   - Improved font defaults, styling and new variable
     - `--font-family-navbar-header` added, defaults to `--font-family-header`
   - Added `textSizeTitle` prop
+  - Added `--navbar-icon-mobile-color` variable - defaults to `--primary-color`
 - `BBNavbarItem`
   - Fixed issue with border radius on last child of active dropdown
   - New variables!
