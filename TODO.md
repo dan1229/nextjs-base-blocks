@@ -238,8 +238,6 @@
 
 #### bbnavbar
 - navbar
-  - rename `buttonsAuth` to `buttonsAction`
-  -
   - add text size prop?
     - how is it affected by adding a size?
 
@@ -262,6 +260,7 @@
     - Removed `hrefColor` prop
 - `BBNavbar`
   - Renamed `buttonsAuth` to `buttonsAction`
+    - Same with `show` prop
   - Improved font defaults, styling and new variable
     - `--font-family-navbar-header` added, defaults to `--font-family-header`
 - Updated browser list

@@ -22,8 +22,8 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
  * @param {TBBNavbarElevation=} elevation - Elevation of the navbar
  * @param {string=} imageSrc - Image src for the navbar, can be URL or local
  * @param {string=} routeBrand - Route to use for the brand button
- * @param {React.ReactNode=} buttonsAuth - Auth buttons to use
- * @param {boolean=} showButtonsAuth - Show auth buttons
+ * @param {React.ReactNode=} buttonsAction - Auth buttons to use
+ * @param {boolean=} showButtonsAction - Show auth buttons
  * @param {number=} imageWidth - Width of the image
  * @param {number=} imageHeight - Height of the image
  */
@@ -34,8 +34,8 @@ export interface IPropsBBNavbar {
   elevation?: TBBNavbarElevation;
   imageSrc?: string;
   routeBrand?: string;
-  buttonsAuth?: React.ReactNode;
-  showButtonsAuth?: boolean;
+  buttonsAction?: React.ReactNode;
+  showButtonsAction?: boolean;
   imageWidth?: number;
   imageHeight?: number;
 }
@@ -51,8 +51,8 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
     imageSrc,
     elevation = 'low',
     routeBrand = '/',
-    buttonsAuth,
-    showButtonsAuth = true,
+    buttonsAction,
+    showButtonsAction = true,
     imageWidth = 60,
     imageHeight = 60,
   } = props;
@@ -105,7 +105,7 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
       <div className={classNames(styles.navigationMenu, showNavExpanded && styles.expanded)}>
         <ul className={styles.navigationMenuList}>{children}</ul>
       </div>
-      <div className={styles.containerButtonsAuth}>{showButtonsAuth && buttonsAuth}</div>
+      <div className={styles.containerButtonsAction}>{showButtonsAction && showButtonsAction}</div>
     </nav>
   );
 }

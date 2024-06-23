@@ -123,7 +123,8 @@ const DemoPage = () => {
     colorTitle: 'primary',
     imageSrc: '',
     routeBrand: '/',
-    showButtonsAuth: true,
+    buttonsAction: <></>,
+    showButtonsAction: true,
     children: <></>,
   });
   // BB Navbar Item
