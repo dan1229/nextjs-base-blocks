@@ -138,6 +138,7 @@ html,
   // bb navbar item
   --navbar-item-border-radius: 8px;
   --navbar-item-padding: 12px;
+  --navbar-item-text-color: #{$primary-color};
   // bb text
   --text-color-default: rgb(24, 24, 24);
   --text-size-xs: 0.6rem;

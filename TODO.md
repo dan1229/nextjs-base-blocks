@@ -260,6 +260,9 @@
   - Improved font defaults, styling and new variable
     - `--font-family-navbar-header` added, defaults to `--font-family-header`
   - Added `textSizeTitle` prop
+- `BBNavbarItem`
+  - New variables!
+    - `--navbar-item-text-color` - used for navbar text color, defaults to `--primary-color`
 - `BBCollapsible`
   - Fixed props - added base props
 - Updated browser list

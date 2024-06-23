@@ -3,10 +3,23 @@ $navbar-item-padding: var(--navbar-item-padding, 0.5rem);
 $bg-dark-color: var(--bg-dark-color, #1c1c1c);
 $bg-light-color: var(--bg-light-color, #303030);
 
+$navbar-item-text-color: var(--navbar-item-text-color, #ffffff);
+
+// this is intended to go like this:
+// 1. use '--navbar-item-text-color' if it is defined
+// 2. if not, use '--primary-color' if it is defined
+// 3. if not, use default primary color
+$primary-color: var(--primary-color, #e8352e);
+$navbar-item-text-color: var(--navbar-item-text-color, $primary-color);
+
 .active {
   background-color: var(--secondary-color, #e8352e);
   background-color: var(--bg-dark-color, #1c1c1c) !important;
   border-radius: $border-radius;
+}
+
+.textLink {
+  color: $navbar-item-text-color;
 }
 
 .navbarItemBase {
