@@ -19,9 +19,12 @@ $navbar-item-text-color-hover: var(--navbar-item-text-color-hover, $primary-dark
 // same with --navbar-item-bg-color-active and --bg-dark-color
 $navbar-item-bg-color-active: var(--navbar-item-bg-color-active, $bg-dark-color);
 
+// same with --navbar-item-text-color-hover and --primary-dark-color
+$navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $primary-dark-color);
+
 .active {
   background-color: $navbar-item-text-color;
-  background-color: $navbar-item-bg-color-active !important;
+  background-color: $navbar-item-bg-color-active;
   border-radius: $border-radius;
 }
 
@@ -48,7 +51,7 @@ $navbar-item-bg-color-active: var(--navbar-item-bg-color-active, $bg-dark-color)
 
   &:hover {
     cursor: pointer;
-    background-color: $bg-dark-color; // TODO replace with variable
+    background-color: $navbar-item-bg-color-hover;
     border-radius: $border-radius !important;
 
     li {
@@ -72,15 +75,16 @@ $navbar-item-bg-color-active: var(--navbar-item-bg-color-active, $bg-dark-color)
   }
 }
 
-// TODO find a better selector than this
-// weird situation with 'active' and all that
+// TODO find a better selector than these two
 // this is for the text
 .navbarItemBase:hover > div > div > a > * {
-  color: $navbar-item-text-color-hover;
+  // need the !important to override the default color / active color
+  color: $navbar-item-text-color-hover !important;
 }
 // this is for the icon
 .navbarItemBase:hover > div > div > .iconDropdown {
-  color: $navbar-item-text-color-hover;
+  // need the !important to override the default color / active color
+  color: $navbar-item-text-color-hover !important;
 }
 
 .navbarContentContainer {
