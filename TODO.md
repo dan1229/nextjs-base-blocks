@@ -258,6 +258,8 @@
   - Improved font defaults, styling and new variable
     - `--font-family-navbar-header` added, defaults to `--font-family-header`
   - Added `textSizeTitle` prop
+- `BBCollapsible`
+  - Fixed props - added base props
 - Updated browser list
 #### TODO
 

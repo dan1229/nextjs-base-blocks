@@ -4,13 +4,13 @@ import BBButton from '../bbbutton';
 import BBCard from '../bbcard';
 import styles from './styles.module.scss';
 import type { IPropsBBCard } from '../bbcard';
-import type { TBBCollapsibleHeaderColor } from '../types';
+import type { IPropsBBBase, TBBCollapsibleHeaderColor } from '../types';
 
 /**
  * BBCollapsible
  * Renders a collapsible component with a header and body content.
  */
-const BBCollapsible = ({ children, ...props }: IPropsBBCard) => {
+const BBCollapsible = ({ children, ...props }: IPropsBBCard & IPropsBBBase) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleExpand = () => setIsExpanded(!isExpanded);
@@ -46,7 +46,7 @@ interface IPropsBBCollapsibleSection {
 /**
  * BBCollapsible.Header
  */
-const Header = ({ children, isExpanded, colorArrow = 'default', ...props }: IPropsBBCollapsibleSection) => {
+const Header = ({ children, isExpanded, colorArrow = 'default', ...props }: IPropsBBCollapsibleSection & IPropsBBBase) => {
   return (
     <BBCard.Header {...props} className={styles.mainCollapsibleHeader}>
       {children}
@@ -64,7 +64,7 @@ Header.displayName = 'Header';
 /**
  * BBCollapsible.Content
  */
-const Content = ({ children, ...props }: IPropsBBCollapsibleSection) => {
+const Content = ({ children, ...props }: IPropsBBCollapsibleSection & IPropsBBBase) => {
   return <BBCard.Body {...props}>{children}</BBCard.Body>;
 };
 Content.displayName = 'Content';
