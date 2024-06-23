@@ -4,7 +4,10 @@ import BBLink from '../bblink';
 import styles from './styles.module.scss';
 import type { IPropsBBBase, TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation, TBBTextColor } from '../types';
 
-const getClassColorBackgroundCard = (colorBackground: string): string | undefined => {
+const getClassColorBackgroundCard = (colorBackground: string | null): string | undefined => {
+  if (!colorBackground) {
+    return undefined;
+  }
   switch (colorBackground) {
     case 'default':
       return styles.background_card_default;
@@ -27,7 +30,10 @@ const getClassColorBackgroundCard = (colorBackground: string): string | undefine
   }
 };
 
-const getClassColorBackgroundFooter = (colorBackground: string): string | undefined => {
+const getClassColorBackgroundFooter = (colorBackground: string | null): string | undefined => {
+  if (!colorBackground) {
+    return undefined;
+  }
   switch (colorBackground) {
     case 'default':
       return styles.background_footer_default;
@@ -50,7 +56,10 @@ const getClassColorBackgroundFooter = (colorBackground: string): string | undefi
   }
 };
 
-const getClassColorBackgroundHeader = (colorBackground: string): string | undefined => {
+const getClassColorBackgroundHeader = (colorBackground: string | null): string | undefined => {
+  if (!colorBackground) {
+    return undefined;
+  }
   switch (colorBackground) {
     case 'default':
       return styles.background_header_default;
@@ -197,7 +206,7 @@ interface IPropsBBCardHeader {
 }
 
 const Header = (props: IPropsBBCardHeader) => {
-  const { children, className, onClick, noPadding = false, colorBackground = 'default' } = props;
+  const { children, className, onClick, noPadding = false, colorBackground = null } = props;
 
   // This is a fix for the onClick event not being triggered when the parent has an onClick event
   const onClickOverride = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -235,7 +244,7 @@ interface IPropsBBCardBody {
 }
 
 const Body = (props: IPropsBBCardBody) => {
-  const { children, className, onClick, noPadding = false, colorBackground = 'default' } = props;
+  const { children, className, onClick, noPadding = false, colorBackground = null } = props;
 
   // This is a fix for the onClick event not being triggered when the parent has an onClick event
   const onClickOverride = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -273,7 +282,7 @@ interface IPropsBBCardFooter {
 }
 
 const Footer = (props: IPropsBBCardFooter) => {
-  const { children, className, onClick, noPadding = false, colorBackground = 'default' } = props;
+  const { children, className, onClick, noPadding = false, colorBackground = null } = props;
 
   // This is a fix for the onClick event not being triggered when the parent has an onClick event
   const onClickOverride = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {

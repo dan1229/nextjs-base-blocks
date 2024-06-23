@@ -85,7 +85,7 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 }
 
 /* If header is followed by body */
-.header + .body {
+.header + .body:not(.footer) {
   border-radius: 0 0 $border-radius $border-radius;
 }
 
@@ -126,18 +126,21 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
   border-radius: $border-radius;
 }
 
-/* If header, body, and footer are all present */
-.header + .body + .footer {
-  .header {
-    border-radius: $border-radius $border-radius 0 0;
-  }
-  .body {
-    border-radius: 0;
-  }
-  .footer {
-    border-radius: 0 0 $border-radius $border-radius;
-  }
-}
+// /* If ALL sections */
+// .header:only-child + .body:only-child + .footer:only-child {
+//   .header {
+//     border-radius: $border-radius $border-radius 0 0;
+//     border-bottom: none !important;
+//   }
+//   .body {
+//     border-radius: 0 !important;
+//   }
+//   .footer {
+//     border-radius: 0 0 $border-radius $border-radius;
+//     border-top: none !important;
+//   }
+// }
+
 /*
 * BACKGROUNDS
 */
