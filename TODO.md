@@ -243,11 +243,7 @@
   - update to whatever 'fancy' font is
     - ensure that font is a system default
     - remove 'quicksand
-  - rename 'buttonsAuth' to something else
-    - options;
-      - buttons action
-      - component action
-    
+  - rename `buttonsAuth` to `buttonsAction`
 
 
 
@@ -266,6 +262,9 @@
     - Fixed DOM nesting error
     - Fixed padding/styling/hover
     - Removed `hrefColor` prop
+- `BBNavbar`
+  - Renamed `buttonsAuth` to `buttonsAction`
+  - Improved font defaults and styling
 - Updated browser list
 #### TODO
 
