@@ -55,18 +55,21 @@ $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
     background-color: $navbar-item-bg-color-hover;
     border-radius: $border-radius !important;
 
+    // handle elements in the dropdown
     li {
-      border-radius: 0 !important;
+      border-radius: 0;
+
+      // handle last child of the dropdown
+      &:last-child {
+        border-bottom-left-radius: $border-radius !important;
+        border-bottom-right-radius: $border-radius !important;
+      }
     }
 
+    // handle the dropdown itself
     &.hasChildren {
       border-bottom-left-radius: 0 !important;
       border-bottom-right-radius: 0 !important;
-    }
-
-    &:last-child {
-      border-bottom-left-radius: $border-radius !important;
-      border-bottom-right-radius: $border-radius !important;
     }
 
     .iconDropdown {
