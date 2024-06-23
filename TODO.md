@@ -232,7 +232,9 @@
 -
 - select/active color
   - same as hover
-
+-
+- variable / prop for mobile menu color
+  - variable is probably easiest
 
 
 
