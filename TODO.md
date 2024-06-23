@@ -265,6 +265,7 @@
     - `--navbar-item-text-color` - used for navbar text color, defaults to `--primary-color`
     - `--navbar-item-text-color-hover` - used for navbar text hover color, defaults to primary dark color
     - `--navbar-item-bg-color-active` - used for active navbar item background color, defaults to `--bg-dark-color`
+    - `--navbar-item-bg-color-hover` - used for navbar item hover background color, defaults to `--bg-color`
 - `BBCollapsible`
   - Fixed props - added base props
 - `BBLink`
