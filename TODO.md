@@ -250,28 +250,6 @@
     
 
 
-#### bbcard
--
-- getting dom nesting error on href cards
-  - same as button:
-```
-Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>.
-div
-Body@webpack-internal:///./base_blocks/src/bbcard/index.tsx:122:65
-p
-BBText@webpack-internal:///./base_blocks/src/bbtext/index.tsx:20:151
-a
-LinkComponent@webpack-internal:///./node_modules/next/dist/client/link.js:111:254
-BBLink@webpack-internal:///./base_blocks/src/bblink/index.tsx:22:164
-div
-BBCard@webpack-internal:///./base_blocks/src/bbcard/index.tsx:19:164
-CardTag@webpack-internal:///./components/cards/card_tag/index.tsx:26:52
-div
-div
-SectionTags@webpack-internal:///./components/sections/section_tags/index.tsx:21:40
-```
-
-
 
 ### [1.2.0] - 2024-MM-DD
 - `BBButton`
@@ -287,6 +265,7 @@ SectionTags@webpack-internal:///./components/sections/section_tags/index.tsx:21:
   - Fixes for `href` cards
     - Fixed DOM nesting error
     - Fixed padding/styling/hover
+    - Removed `hrefColor` prop
 #### TODO
 
 -------------------------------------------------------
