@@ -263,6 +263,7 @@
     - Same with `show` prop
   - Improved font defaults, styling and new variable
     - `--font-family-navbar-header` added, defaults to `--font-family-header`
+  - Added `textSizeTitle` prop
 - Updated browser list
 #### TODO
 

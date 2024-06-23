@@ -9,7 +9,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import BBText from '../bbtext';
 import useOutsideClick from '../utils/hooks/UseOutsideClick';
 import styles from './styles.module.scss';
-import type { IPropsBBBase, TBBTextColor } from '../types';
+import type { IPropsBBBase, TBBTextColor, TBBTextSize } from '../types';
 
 type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
 
@@ -22,6 +22,7 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
  * @param {TBBNavbarElevation=} elevation - Elevation of the navbar
  * @param {string=} imageSrc - Image src for the navbar, can be URL or local
  * @param {string=} routeBrand - Route to use for the brand button
+ * @param {TBBTextSize=} textSizeTitle - Size of the title
  * @param {React.ReactNode=} buttonsAction - Auth buttons to use
  * @param {boolean=} showButtonsAction - Show auth buttons
  * @param {number=} imageWidth - Width of the image
@@ -34,6 +35,7 @@ export interface IPropsBBNavbar {
   elevation?: TBBNavbarElevation;
   imageSrc?: string;
   routeBrand?: string;
+  textSizeTitle?: TBBTextSize;
   buttonsAction?: React.ReactNode;
   showButtonsAction?: boolean;
   imageWidth?: number;
@@ -52,6 +54,7 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
     elevation = 'low',
     routeBrand = '/',
     buttonsAction,
+    textSizeTitle = 'medium',
     showButtonsAction = true,
     imageWidth = 60,
     imageHeight = 60,
@@ -96,7 +99,7 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
         <div className={styles.brand}>
           {!!imageSrc && <Image src={imageSrc} alt="" height={imageHeight} width={imageWidth} />}
           {!!title && title.length && (
-            <BBText className={styles.textTitle} color={colorTitle} asSpan>
+            <BBText className={styles.textTitle} color={colorTitle} size={textSizeTitle} asSpan>
               {title}
             </BBText>
           )}
@@ -105,7 +108,7 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
       <div className={classNames(styles.navigationMenu, showNavExpanded && styles.expanded)}>
         <ul className={styles.navigationMenuList}>{children}</ul>
       </div>
-      <div className={styles.containerButtonsAction}>{showButtonsAction && showButtonsAction}</div>
+      <div className={styles.containerButtonsAction}>{showButtonsAction && buttonsAction}</div>
     </nav>
   );
 }
