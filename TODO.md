@@ -272,6 +272,9 @@ SectionTags@webpack-internal:///./components/sections/section_tags/index.tsx:21:
   - Mobile styling padding improvements
   - Added `colorBackground` to `header`, `body`, and `footer`
   - Border radius issues fixed for different combinations of `header`, `body`, and `footer`
+  - Fixes for `href` cards
+    - Fixed DOM nesting error
+    - Fixed padding/styling/hover
 #### TODO
 
 -------------------------------------------------------
