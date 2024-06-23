@@ -189,15 +189,11 @@ const BBCard = (Props: IPropsBBBase & IPropsBBCard) => {
  * BBCard.Header
  *
  * @param {React.ReactNode | React.ReactNode[]} children - The text to display
- * @param {string=} className - Any class name to add
- * @param {() => void=} onClick - Function to call when clicked
  * @param {boolean=} noPadding - Whether to remove the padding
  * @param {TBBCardColorBackground=} colorBackground - The color of the background
  */
 interface IPropsBBCardHeader {
   children: React.ReactNode | React.ReactNode[];
-  className?: string;
-  onClick?: () => void;
   noPadding?: boolean;
   colorBackground?: TBBCardColorBackground;
 }
@@ -208,7 +204,7 @@ const Header = (props: IPropsBBCardHeader & IPropsBBBase) => {
   // This is a fix for the onClick event not being triggered when the parent has an onClick event
   const onClickOverride = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation();
-    onClick && onClick();
+    onClick && onClick(e);
   };
 
   return (
@@ -227,15 +223,11 @@ BBCard.Header = Header;
  * BBCard.Body
  *
  * @param {React.ReactNode | React.ReactNode[]} children - The text to display
- * @param {string=} className - Any class name to add
- * @param {() => void=} onClick - Function to call when clicked
  * @param {boolean=} noPadding - Whether to remove the padding
  * @param {TBBCardColorBackground=} colorBackground - The color of the background
  */
 interface IPropsBBCardBody {
   children: React.ReactNode | React.ReactNode[];
-  className?: string;
-  onClick?: () => void;
   noPadding?: boolean;
   colorBackground?: TBBCardColorBackground;
 }
@@ -246,7 +238,7 @@ const Body = (props: IPropsBBCardBody & IPropsBBBase) => {
   // This is a fix for the onClick event not being triggered when the parent has an onClick event
   const onClickOverride = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation();
-    onClick && onClick();
+    onClick && onClick(e);
   };
 
   return (
@@ -265,15 +257,11 @@ BBCard.Body = Body;
  * BBCard.Footer
  *
  * @param {React.ReactNode | React.ReactNode[]} children - The text to display
- * @param {string=} className - Any class name to add
- * @param {() => void=} onClick - Function to call when clicked
  * @param {boolean=} noPadding - Whether to remove the padding
  * @param {TBBCardColorBackground=} colorBackground - The color of the background
  */
 interface IPropsBBCardFooter {
   children: React.ReactNode | React.ReactNode[];
-  className?: string;
-  onClick?: () => void;
   noPadding?: boolean;
   colorBackground?: TBBCardColorBackground;
 }
@@ -284,7 +272,7 @@ const Footer = (props: IPropsBBCardFooter & IPropsBBBase) => {
   // This is a fix for the onClick event not being triggered when the parent has an onClick event
   const onClickOverride = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation();
-    onClick && onClick();
+    onClick && onClick(e);
   };
 
   return (
