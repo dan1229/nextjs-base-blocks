@@ -153,6 +153,14 @@
 - have to find and replace lots of defaults sadly
 
 
+#### bbnavbar item
+- borders?
+  - make optional?  
+    - copy from bbcard?
+-
+- width?
+  - set min width somehow?
+
 
 
 #### bbmodal scrolling
@@ -162,7 +170,6 @@
 - background scrolling
   - still not great
   - need to somehow add 'overflow-y: hidden' to 'body'/'html' when modal is open
-
 
 
 
@@ -200,37 +207,47 @@
 
 ---
 
-
 #### bbtext
 - add 'font' prop
 - italics not working
 
 
 
+
 #### bbnavbar item
 - navbaritem color
   - variable or prop?
-  - variable would be nice since it'll probably be across the board
+    - variable would be nice since it'll probably be across the board
+      - variable should default to primary somehow?
+      - or just some reasonable default
   - variants for secondary/primary/etc
+-
 - navbar item active state bug
   - border-radius not rounded correctly on last child of dropdown
-- borders?
-- width?
+-
 - hover color
+  - prop or variable?
+    - probably whatever the actual color is
+      - i.e., will depend on setting a good variable as a default
+-
 - select/active color
-  - should these all be raw css or prop types?
+  - same as hover
+
+
 
 
 #### bbnavbar
 - navbar
   - make height/width of image props
-  - uses 'quicksand' font
+    - improve default
+  - update to whatever 'fancy' font is
+    - ensure that font is a system default
+    - remove 'quicksand
   - rename 'buttonsAuth' to something else
-    - buttons action
-    - component action
-    - component buttons
-
----
+    - options;
+      - buttons action
+      - component action
+    
 
 
 #### bbcard
@@ -253,11 +270,6 @@ div
 div
 SectionTags@webpack-internal:///./components/sections/section_tags/index.tsx:21:40
 ```
--
-- using as link breaks a few things
-  - no more hover
-    - adding a bogus 'onclick' fixes this but this gives a console warning
--
 
 
 
