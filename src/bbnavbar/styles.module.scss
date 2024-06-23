@@ -62,7 +62,7 @@ $font-family-navbar-header: var(--font-family-navbar-header, $font-family-header
 }
 
 .textTitle {
-  font-family: var(--font-family-navbar-header);
+  font-family: $font-family-navbar-header;
 }
 
 /**
