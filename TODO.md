@@ -238,8 +238,6 @@
 
 #### bbnavbar
 - navbar
-  - make height/width of image props
-    - improve default
   - update to whatever 'fancy' font is
     - ensure that font is a system default
     - remove 'quicksand

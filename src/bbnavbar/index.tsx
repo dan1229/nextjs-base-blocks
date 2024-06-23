@@ -53,7 +53,7 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
     routeBrand = '/',
     buttonsAuth,
     showButtonsAuth = true,
-    imageWidth = 70,
+    imageWidth = 60,
     imageHeight = 60,
   } = props;
   const [showNavExpanded, setShowNavExpanded] = useState(false);
