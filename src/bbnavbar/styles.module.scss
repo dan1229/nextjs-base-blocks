@@ -17,7 +17,10 @@ $primary-color: var(--primary-color, #e8352e);
 $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
 
 // navbar vertical width
-$navbar-vertical-width: var(--navbar-vertical-width, 128px);
+$navbar-vertical-width: var(--navbar-vertical-width, auto);
+
+// navbar horizontal height
+$navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
 
 /**
 * ELEVATION
@@ -52,10 +55,13 @@ $navbar-vertical-width: var(--navbar-vertical-width, 128px);
   &.vertical {
     margin-left: $navbar-vertical-width;
   }
+
+  &:not(.vertical) {
+    margin-top: $navbar-horizontal-height;
+  }
 }
 
 .navigation {
-  width: 100vw;
   z-index: 10;
   display: flex;
   flex-direction: row;
@@ -82,6 +88,18 @@ $navbar-vertical-width: var(--navbar-vertical-width, 128px);
     .containerButtonsAction {
       align-items: flex-start;
     }
+  }
+
+  &:not(.vertical) {
+    width: 100vw;
+    height: $navbar-horizontal-height;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &.sticky {
+    position: fixed;
   }
 }
 

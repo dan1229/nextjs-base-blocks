@@ -29,7 +29,8 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
  * @param {boolean=} showButtonsAction - Show auth buttons
  * @param {number=} imageWidth - Width of the image
  * @param {number=} imageHeight - Height of the image
- * @param {string=} classNameWrapper - Custom class name for the wrapper
+ * @param {boolean=} sticky - Whether the navbar is sticky
+ * @param {string=} classNameWrapper - Custom class name for the wrapper. Doesn't really apply with vertical.
  */
 export interface IPropsBBNavbar {
   children: React.ReactNode;
@@ -45,6 +46,7 @@ export interface IPropsBBNavbar {
   imageWidth?: number;
   imageHeight?: number;
   vertical?: boolean;
+  sticky?: boolean;
   classNameWrapper?: string;
 }
 
@@ -66,6 +68,7 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
     imageWidth = 60,
     imageHeight = 60,
     vertical = false,
+    sticky = false,
     classNameWrapper,
   } = props;
   const [showNavExpanded, setShowNavExpanded] = useState(false);
@@ -95,7 +98,7 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
    */
   return (
     <div className={classNames(styles.wrapper, vertical && styles.vertical, classNameWrapper)}>
-      <nav className={classNames(styles.navigation, getClassElevation(), vertical && styles.vertical)} ref={ref}>
+      <nav className={classNames(styles.navigation, getClassElevation(), vertical && styles.vertical, sticky && styles.sticky)} ref={ref}>
         <div className={styles.hamburger}>
           <AiOutlineMenu
             size={40}
