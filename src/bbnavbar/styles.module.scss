@@ -48,14 +48,18 @@ $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
   background-color: $background-color;
 
   &.vertical {
-    max-width: 20vw;
+    width: auto; /* Adjust width based on content */
     height: 100vh;
     flex-direction: column;
     align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
 
     .navigationMenuList {
       flex-direction: column;
       align-items: flex-start;
+      margin: 0;
     }
 
     .containerButtonsAction {
@@ -102,6 +106,7 @@ $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
   &.vertical .navigationMenuList {
     flex-direction: column;
     align-items: flex-start;
+    width: auto; /* Adjust width based on content */
   }
 
   * {
@@ -120,13 +125,18 @@ $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
   justify-content: center;
   align-items: flex-end;
   margin: 0 0.25rem;
+
+  &.vertical {
+    align-items: flex-start;
+    width: auto; /* Adjust width based on content */
+  }
 }
 
 /**
 * HAMBURGER MENU
 */
 .hamburger {
-  width: 6%;
+  width: auto; /* Adjust width based on content */
   padding: 1rem;
   border: none;
   background-color: transparent;
