@@ -68,8 +68,7 @@ $navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
   flex-direction: row;
   justify-content: space-between;
   background-color: $background-color;
-  overflow-x: hidden;
-  overflow-y: visible;
+  overflow: visible;
 
   &.vertical {
     height: 100vh;
@@ -95,7 +94,7 @@ $navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
   &:not(.vertical) {
     width: 100vw;
     height: $navbar-horizontal-height;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
   }
