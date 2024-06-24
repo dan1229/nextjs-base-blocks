@@ -18,7 +18,7 @@ $primary-color: var(--primary-color, #e8352e);
 $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
 
 // navbar vertical width
-$navbar-vertical-width: var(--navbar-vertical-width, auto);
+$navbar-vertical-width: var(--navbar-vertical-width, 10rem);
 
 // navbar horizontal height
 $navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
@@ -52,13 +52,14 @@ $navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
 
 .content {
   width: 100%;
+  box-sizing: border-box;
 
   &.vertical {
-    margin-left: $navbar-vertical-width;
+    padding-left: $navbar-vertical-width;
   }
 
   &:not(.vertical) {
-    margin-top: $navbar-horizontal-height;
+    padding-top: $navbar-horizontal-height;
   }
 }
 
@@ -187,6 +188,20 @@ $navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
 /**
 * HAMBURGER MENU
 */
+.wrapperBrandAndHamburger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:not(.verticalWrapper) {
+    flex-direction: row;
+  }
+
+  &.verticalWrapper {
+    flex-direction: column;
+  }
+}
+
 .hamburger {
   width: auto; /* Adjust width based on content */
   padding: 0.25rem;
@@ -211,6 +226,16 @@ $navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
 * MEDIA QUERIES
 */
 @media screen and (max-width: 1200px) {
+  .wrapperBrandAndHamburger {
+    &.verticalWrapper {
+      flex-direction: column-reverse;
+    }
+
+    &:not(.verticalWrapper) {
+      width: 100%;
+    }
+  }
+
   .hamburger {
     display: flex;
     flex-direction: column;
@@ -226,6 +251,11 @@ $navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
     &:not(.vertical) {
       // give room for brand to fill in
       width: 0px;
+    }
+
+    .vertical {
+      top: 100px;
+      left: 0;
     }
   }
 

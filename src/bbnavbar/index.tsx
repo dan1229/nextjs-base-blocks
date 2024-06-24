@@ -99,23 +99,25 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
   return (
     <div className={classNames(styles.wrapper, vertical && styles.vertical, classNameWrapper)}>
       <nav className={classNames(styles.navigation, getClassElevation(), vertical && styles.vertical, sticky && styles.sticky)} ref={ref}>
-        <div className={styles.hamburger}>
-          <AiOutlineMenu
-            size={40}
-            className={styles.iconHamburger}
-            onClick={() => {
-              setShowNavExpanded(!showNavExpanded);
-            }}
-          />
-        </div>
-        <div className={styles.containerBrand} onClick={async () => router.push(routeBrand)}>
-          <div className={styles.brand}>
-            {!!imageSrc && <Image src={imageSrc} alt="" height={imageHeight} width={imageWidth} />}
-            {!!title && title.length && (
-              <BBText className={styles.textTitle} color={colorTitle} size={textSizeTitle} asSpan>
-                {title}
-              </BBText>
-            )}
+        <div className={classNames(styles.wrapperBrandAndHamburger, vertical && styles.verticalWrapper)}>
+          <div className={styles.hamburger}>
+            <AiOutlineMenu
+              size={40}
+              className={styles.iconHamburger}
+              onClick={() => {
+                setShowNavExpanded(!showNavExpanded);
+              }}
+            />
+          </div>
+          <div className={styles.containerBrand} onClick={async () => router.push(routeBrand)}>
+            <div className={styles.brand}>
+              {!!imageSrc && <Image src={imageSrc} alt="" height={imageHeight} width={imageWidth} />}
+              {!!title && title.length && (
+                <BBText className={styles.textTitle} color={colorTitle} size={textSizeTitle} asSpan>
+                  {title}
+                </BBText>
+              )}
+            </div>
           </div>
         </div>
         <div className={classNames(styles.navigationMenu, showNavExpanded && styles.expanded, vertical && styles.vertical)}>
