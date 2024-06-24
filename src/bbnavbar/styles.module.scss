@@ -41,12 +41,15 @@ $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
 */
 .navigation {
   width: 100%;
+  z-index: 10;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   background-color: $background-color;
 
   &.vertical {
+    max-width: 20vw;
+    height: 100vh;
     flex-direction: column;
     align-items: flex-start;
 
@@ -95,6 +98,11 @@ $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
   margin-right: auto;
   display: flex;
   align-items: center;
+
+  &.vertical .navigationMenuList {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
   * {
     text-decoration: none;
