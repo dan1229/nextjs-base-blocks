@@ -192,6 +192,7 @@
 
 #### vertical navbar
 - see if this works at all
+- center brand / icon in vertical
 -
 - docs and scss variables
   - improve defaults for scss variables - namely mobile text sizes
