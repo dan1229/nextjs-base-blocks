@@ -2,6 +2,7 @@ $border-radius: var(--navbar-border-radius, 8px);
 $background-color: var(--navbar-background-color, #dddddd);
 $brand-padding: var(--navbar-brand-padding, 0.5rem);
 $container-brand-margin: var(--navbar-container-brand-margin, 0 0.5rem);
+$container-brand-width: var(--navbar-container-brand-width, 10%);
 
 // this is intended to go like this:
 // 1. use 'font-family-navbar-header' if it is defined
@@ -68,6 +69,7 @@ $navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
   justify-content: space-between;
   background-color: $background-color;
   overflow-x: hidden;
+  overflow-y: visible;
 
   &.vertical {
     height: 100vh;
@@ -124,6 +126,7 @@ $navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
   justify-content: center;
   align-items: center;
   margin: $container-brand-margin;
+  width: $container-brand-width;
 }
 
 .textTitle {
@@ -135,14 +138,36 @@ $navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
 */
 .navigationMenu {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+
+  .vertical {
+    // TODO improve this
+    // this is intended to make the navbar item text responsive to not
+    // fill the height
+    ul > li {
+      height: 20px !important;
+    }
+  }
+
+  &:not(.vertical) {
+    width: 100%;
+  }
 
   * {
     text-decoration: none;
   }
+
+  // TODO improve this
+  // this is intended to align the navbar item text to the start
+  ul > li > div > div > a > * {
+    text-align: start;
+  }
 }
 
 .navigationMenuList {
+  z-index: 10;
   display: flex;
   padding: 0;
 }
