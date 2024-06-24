@@ -69,6 +69,7 @@ $navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
   justify-content: space-between;
   background-color: $background-color;
   overflow-x: hidden;
+  overflow-y: visible;
 
   &.vertical {
     height: 100vh;
@@ -166,6 +167,7 @@ $navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
 }
 
 .navigationMenuList {
+  z-index: 10;
   display: flex;
   padding: 0;
 }
