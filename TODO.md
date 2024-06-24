@@ -209,6 +209,8 @@
 - `BBNavbar`
   - `content` and alignment improvements
   - Mobile styling improvements
+- `BBCard`
+  - Border radius fixes for only `header` and weird configs
 
 -------------------------------------------------------
 
