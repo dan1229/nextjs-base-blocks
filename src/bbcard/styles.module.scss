@@ -60,12 +60,12 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 .header {
   padding: 1rem;
   border-radius: $border-radius $border-radius 0 0;
-}
 
-.header:only-child {
-  // if ONLY header, round ALL corners
-  border-radius: $border-radius;
-  border-bottom: none !important;
+  &:only-child {
+    // if ONLY header, round ALL corners
+    border-radius: $border-radius;
+    border-bottom: none !important;
+  }
 }
 
 .body {
@@ -95,9 +95,6 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 
 /* If header is followed by body */
 .header + .body {
-  .header {
-    border-radius: $border-radius $border-radius 0 0;
-  }
   .body {
     border-radius: 0;
   }
