@@ -138,17 +138,12 @@ $navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
 */
 .navigationMenu {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   height: 100%;
 
-  .vertical {
-    // TODO improve this
-    // this is intended to make the navbar item text responsive to not
-    // fill the height
-    ul > li {
-      height: 20px !important;
-    }
+  &.vertical {
+    align-items: flex-start !important;
   }
 
   &:not(.vertical) {
