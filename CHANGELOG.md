@@ -14,6 +14,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [1.2.1] - 2024-06-24
+- `BBNavbar`
+  - `content` and alignment improvements
+  - Mobile styling improvements
+- `BBCard`
+  - Border radius fixes for only `header` and weird configs
+
+  
 ### [1.2.0] - 2024-06-23
 - `BBButton`
   - Fixed DOM nesting error when using `href` prop

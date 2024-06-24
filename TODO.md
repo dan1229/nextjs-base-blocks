@@ -199,18 +199,7 @@
 
 
 ### [1.2.X] - 2024-MM-DD
-#### TODO
-
----
-### 1.2.1
-
-
-### [1.2.1] - 2024-06-24
-- `BBNavbar`
-  - `content` and alignment improvements
-  - Mobile styling improvements
-- `BBCard`
-  - Border radius fixes for only `header` and weird configs
+- TODO
 
 -------------------------------------------------------
 
