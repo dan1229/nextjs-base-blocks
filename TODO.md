@@ -191,9 +191,6 @@
 
 
 #### vertical navbar
-- see if this works at all
-- center brand / icon in vertical
-  - same with button actions
 - mobile
   - put brand at top
 -
@@ -221,6 +218,7 @@
     - Fixed padding/styling/hover
     - Removed `hrefColor` prop
 - `BBNavbar`
+  - Updated structure to take `mainContent` prop
   - Added `vertical` prop and styling!!!
   - Renamed `buttonsAuth` to `buttonsAction`
     - Same with `show` prop
@@ -228,6 +226,7 @@
     - `--font-family-navbar-header` added, defaults to `--font-family-header`
   - Added `textSizeTitle` prop
   - Added `--navbar-icon-mobile-color` variable - defaults to `--primary-color`
+  - Added `--navbar-vertical-width` variable - defaults to `8vw`
 - `BBNavbarItem`
   - Fixed issue with border radius on last child of active dropdown
   - New variables!
