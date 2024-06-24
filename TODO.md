@@ -132,6 +132,8 @@
 - probably in a different page
 - make sections expandable
 -
+- ensure all entries options are up to date!
+-
 - make home page a real home page
   - links to:
   - `/components`
@@ -179,7 +181,7 @@
 
 
 ---
-### 1.2.1
+### 1.2.X
 
 
 
@@ -196,8 +198,17 @@
 
 
 
-### [1.2.1] - 2024-MM-DD
+### [1.2.X] - 2024-MM-DD
 #### TODO
+
+---
+### 1.2.1
+
+
+### [1.2.1] - 2024-06-24
+- `BBNavbar`
+  - `content` and alignment improvements
+  - Mobile styling improvements
 
 -------------------------------------------------------
 
