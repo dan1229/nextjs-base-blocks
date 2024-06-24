@@ -27,7 +27,7 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
  * @param {boolean=} showButtonsAction - Show auth buttons
  * @param {number=} imageWidth - Width of the image
  * @param {number=} imageHeight - Height of the image
- * @param {boolean=} vertical - Whether the navbar is vertical
+ * @param {boolean=} vertical - Whether the navbar items are vertical
  */
 export interface IPropsBBNavbar {
   children: React.ReactNode;
@@ -108,7 +108,7 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
           )}
         </div>
       </div>
-      <div className={classNames(styles.navigationMenu, showNavExpanded && styles.expanded)}>
+      <div className={classNames(styles.navigationMenu, showNavExpanded && styles.expanded, vertical && styles.vertical)}>
         <ul className={styles.navigationMenuList}>{children}</ul>
       </div>
       <div className={styles.containerButtonsAction}>{showButtonsAction && buttonsAction}</div>
