@@ -199,9 +199,7 @@
 
 
 #### vertical navbar
-- mobile
-  - put brand at top
--
+- DOUBLE CHECK EVERYTHING
 
 
 
