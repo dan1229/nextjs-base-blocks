@@ -14,6 +14,51 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [1.2.0] - 2024-06-23
+- `BBButton`
+  - Fixed DOM nesting error when using `href` prop
+  - Fixed padding/styling for `href` buttons
+  - Hover state improvements
+  - Black color default not working if not provided
+  - Some inverse colors not working
+- `BBCard`
+  - Mobile styling padding improvements
+  - Added `colorBackground` to `header`, `body`, and `footer`
+  - Border radius issues fixed for different combinations of `header`, `body`, and `footer`
+  - Fixes for `href` cards
+    - Fixed DOM nesting error
+    - Fixed padding/styling/hover
+    - Removed `hrefColor` prop
+- `BBNavbar`
+  - Updated structure to take `mainContent` prop
+  - Added `vertical` prop and styling!!!
+  - Renamed `buttonsAuth` to `buttonsAction`
+    - Same with `show` prop
+  - Added `sticky` prop
+  - Improved font defaults, styling and new variable
+    - `--font-family-navbar-header` added, defaults to `--font-family-header`
+  - Added `textSizeTitle` prop
+  - Added `--navbar-icon-mobile-color` variable - defaults to `--primary-color`
+  - Added `--navbar-vertical-width` variable - defaults to `auto`
+  - Added `--navbar-horizontal-height` variable - defaults to `96px`
+- `BBNavbarItem`
+  - Fixed issue with border radius on last child of active dropdown
+  - New variables!
+    - `--navbar-item-text-color` - used for navbar text color, defaults to `--primary-color`
+    - `--navbar-item-text-color-hover` - used for navbar text hover color, defaults to primary dark color
+    - `--navbar-item-bg-color-active` - used for active navbar item background color, defaults to `--bg-dark-color`
+    - `--navbar-item-bg-color-hover` - used for navbar item hover background color, defaults to `--bg-color`
+- `BBText`
+  - Added `font` prop
+  - Fixed italics not working
+- `BBCollapsible`
+  - Fixed props - added base props
+- `BBLink`
+  - Added `hover` prop
+  - Fixed issues related to some colors not working
+- Updated browser list
+
+
 ### [1.1.9] - 2024-06-05
 - `BBNavbar` new props for brand image dimensions
 
