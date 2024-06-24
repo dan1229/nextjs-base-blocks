@@ -64,7 +64,7 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 
 .header:only-child {
   // if ONLY header, round ALL corners
-  border-radius: $border-radius;
+  border-radius: $border-radius !important;
   border-bottom: none !important;
 }
 
