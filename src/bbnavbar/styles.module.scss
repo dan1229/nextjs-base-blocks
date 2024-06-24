@@ -16,6 +16,9 @@ $font-family-navbar-header: var(--font-family-navbar-header, $font-family-header
 $primary-color: var(--primary-color, #e8352e);
 $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
 
+// navbar vertical width
+$navbar-vertical-width: var(--navbar-vertical-width, 128px);
+
 /**
 * ELEVATION
 */
@@ -39,19 +42,33 @@ $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
 /**
 * SHARED CSS
 */
-.navigation {
+.wrapper {
+  display: flex;
+}
+
+.content {
   width: 100%;
+
+  &.vertical {
+    margin-left: $navbar-vertical-width;
+  }
+}
+
+.navigation {
+  width: 100vw;
   z-index: 10;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   background-color: $background-color;
+  overflow-x: hidden;
 
   &.vertical {
-    width: auto; /* Adjust width based on content */
     height: 100vh;
+    width: $navbar-vertical-width;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    padding-bottom: 1rem;
     position: fixed;
     top: 0;
     left: 0;
@@ -99,15 +116,8 @@ $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
 * NAVIGATION MENU
 */
 .navigationMenu {
-  margin-right: auto;
   display: flex;
   align-items: center;
-
-  &.vertical .navigationMenuList {
-    flex-direction: column;
-    align-items: flex-start;
-    width: auto; /* Adjust width based on content */
-  }
 
   * {
     text-decoration: none;
