@@ -27,6 +27,7 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
  * @param {boolean=} showButtonsAction - Show auth buttons
  * @param {number=} imageWidth - Width of the image
  * @param {number=} imageHeight - Height of the image
+ * @param {boolean=} vertical - Whether the navbar is vertical
  */
 export interface IPropsBBNavbar {
   children: React.ReactNode;
@@ -40,6 +41,7 @@ export interface IPropsBBNavbar {
   showButtonsAction?: boolean;
   imageWidth?: number;
   imageHeight?: number;
+  vertical?: boolean;
 }
 
 /**
@@ -58,6 +60,7 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
     showButtonsAction = true,
     imageWidth = 60,
     imageHeight = 60,
+    vertical = false,
   } = props;
   const [showNavExpanded, setShowNavExpanded] = useState(false);
   const router = useRouter();
@@ -85,7 +88,7 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
    * RENDER
    */
   return (
-    <nav className={classNames(styles.navigation, getClassElevation())} ref={ref}>
+    <nav className={classNames(styles.navigation, getClassElevation(), vertical && styles.vertical)} ref={ref}>
       <div className={styles.hamburger}>
         <AiOutlineMenu
           size={40}

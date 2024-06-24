@@ -45,6 +45,20 @@ $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
   flex-direction: row;
   justify-content: space-between;
   background-color: $background-color;
+
+  &.vertical {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .navigationMenuList {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .containerButtonsAction {
+      align-items: flex-start;
+    }
+  }
 }
 
 .brand {
