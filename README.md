@@ -135,7 +135,10 @@ html,
   --navbar-background-color: rgb(221, 221, 221);
   --navbar-brand-padding: 0rem;
   --navbar-container-brand-margin: 0.5rem;
+  --navbar-container-brand-width: 10%;
   --navbar-icon-mobile-color: #{$primary-color};
+  --navbar-vertical-width: auto;
+  --navbar-horizontal-height: 96px;
   // bb navbar item
   --navbar-item-border-radius: 8px;
   --navbar-item-padding: 12px;

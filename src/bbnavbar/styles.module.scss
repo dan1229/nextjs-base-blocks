@@ -2,6 +2,7 @@ $border-radius: var(--navbar-border-radius, 8px);
 $background-color: var(--navbar-background-color, #dddddd);
 $brand-padding: var(--navbar-brand-padding, 0.5rem);
 $container-brand-margin: var(--navbar-container-brand-margin, 0 0.5rem);
+$container-brand-width: var(--navbar-container-brand-width, 10%);
 
 // this is intended to go like this:
 // 1. use 'font-family-navbar-header' if it is defined
@@ -15,6 +16,12 @@ $font-family-navbar-header: var(--font-family-navbar-header, $font-family-header
 // if neither is defined, use default primary color
 $primary-color: var(--primary-color, #e8352e);
 $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
+
+// navbar vertical width
+$navbar-vertical-width: var(--navbar-vertical-width, 10rem);
+
+// navbar horizontal height
+$navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
 
 /**
 * ELEVATION
@@ -39,12 +46,63 @@ $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
 /**
 * SHARED CSS
 */
-.navigation {
+.wrapper {
+  display: flex;
+}
+
+.content {
   width: 100%;
+  box-sizing: border-box;
+
+  &.vertical {
+    padding-left: $navbar-vertical-width;
+  }
+
+  &:not(.vertical) {
+    padding-top: $navbar-horizontal-height;
+  }
+}
+
+.navigation {
+  z-index: 10;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   background-color: $background-color;
+  overflow: visible;
+
+  &.vertical {
+    height: 100vh;
+    width: $navbar-vertical-width;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    .navigationMenuList {
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 0;
+    }
+
+    .containerButtonsAction {
+      align-items: flex-start;
+    }
+  }
+
+  &:not(.vertical) {
+    width: 100vw;
+    height: $navbar-horizontal-height;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  &.sticky {
+    position: fixed;
+  }
 }
 
 .brand {
@@ -68,6 +126,7 @@ $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
   justify-content: center;
   align-items: center;
   margin: $container-brand-margin;
+  width: $container-brand-width;
 }
 
 .textTitle {
@@ -78,16 +137,37 @@ $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
 * NAVIGATION MENU
 */
 .navigationMenu {
-  margin-right: auto;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+
+  .vertical {
+    // TODO improve this
+    // this is intended to make the navbar item text responsive to not
+    // fill the height
+    ul > li {
+      height: 20px !important;
+    }
+  }
+
+  &:not(.vertical) {
+    width: 100%;
+  }
 
   * {
     text-decoration: none;
   }
+
+  // TODO improve this
+  // this is intended to align the navbar item text to the start
+  ul > li > div > div > a > * {
+    text-align: start;
+  }
 }
 
 .navigationMenuList {
+  z-index: 10;
   display: flex;
   padding: 0;
 }
@@ -98,14 +178,33 @@ $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
   justify-content: center;
   align-items: flex-end;
   margin: 0 0.25rem;
+
+  &.vertical {
+    align-items: flex-start;
+    width: auto; /* Adjust width based on content */
+  }
 }
 
 /**
 * HAMBURGER MENU
 */
+.wrapperBrandAndHamburger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:not(.verticalWrapper) {
+    flex-direction: row;
+  }
+
+  &.verticalWrapper {
+    flex-direction: column;
+  }
+}
+
 .hamburger {
-  width: 6%;
-  padding: 1rem;
+  width: auto; /* Adjust width based on content */
+  padding: 0.25rem;
   border: none;
   background-color: transparent;
   transition: background-color 0.2s ease-in-out;
@@ -127,6 +226,16 @@ $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
 * MEDIA QUERIES
 */
 @media screen and (max-width: 1200px) {
+  .wrapperBrandAndHamburger {
+    &.verticalWrapper {
+      flex-direction: column-reverse;
+    }
+
+    &:not(.verticalWrapper) {
+      width: 100%;
+    }
+  }
+
   .hamburger {
     display: flex;
     flex-direction: column;
@@ -135,16 +244,25 @@ $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
 
   .containerBrand {
     margin-left: auto;
+    margin-right: auto;
   }
 
-  .containerButtonsAction {
-    width: 6%;
+  .navigationMenu {
+    &:not(.vertical) {
+      // give room for brand to fill in
+      width: 0px;
+    }
+
+    .vertical {
+      top: 100px;
+      left: 0;
+    }
   }
 
   .navigationMenuList {
     position: absolute;
-    top: 60px;
-    left: 15px;
+    top: 50px;
+    left: 5px;
     min-width: 30vw;
     display: none;
     flex-direction: column;

@@ -147,6 +147,10 @@
   - border?
 
 
+#### bb navbar
+- add divider between brand and items
+  - horizontal and vertical
+
 
 #### default theme colors?
 - update
@@ -180,6 +184,10 @@
 - ensure that 'variant' prop still overrides and works
 
 
+#### docs and scss variables
+- improve defaults for scss variables - namely mobile text sizes
+  - same with dark theme stuff and comments - check get twenty
+
 
 ---
 ### 1.2.0
@@ -191,13 +199,7 @@
 
 
 #### vertical navbar
-- play with it
-- add to base blocks?
--
-- docs and scss variables
-  - improve defaults for scss variables - namely mobile text sizes
-    - same with dark theme stuff and comments - check get twenty
-
+- DOUBLE CHECK EVERYTHING
 
 
 
@@ -218,12 +220,17 @@
     - Fixed padding/styling/hover
     - Removed `hrefColor` prop
 - `BBNavbar`
+  - Updated structure to take `mainContent` prop
+  - Added `vertical` prop and styling!!!
   - Renamed `buttonsAuth` to `buttonsAction`
     - Same with `show` prop
+  - Added `sticky` prop
   - Improved font defaults, styling and new variable
     - `--font-family-navbar-header` added, defaults to `--font-family-header`
   - Added `textSizeTitle` prop
   - Added `--navbar-icon-mobile-color` variable - defaults to `--primary-color`
+  - Added `--navbar-vertical-width` variable - defaults to `auto`
+  - Added `--navbar-horizontal-height` variable - defaults to `96px`
 - `BBNavbarItem`
   - Fixed issue with border radius on last child of active dropdown
   - New variables!
