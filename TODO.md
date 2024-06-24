@@ -184,6 +184,10 @@
 - ensure that 'variant' prop still overrides and works
 
 
+#### docs and scss variables
+- improve defaults for scss variables - namely mobile text sizes
+  - same with dark theme stuff and comments - check get twenty
+
 
 ---
 ### 1.2.0
@@ -198,10 +202,6 @@
 - mobile
   - put brand at top
 -
-- docs and scss variables
-  - improve defaults for scss variables - namely mobile text sizes
-    - same with dark theme stuff and comments - check get twenty
-
 
 
 
