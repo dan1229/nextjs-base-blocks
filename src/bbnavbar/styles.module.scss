@@ -189,7 +189,7 @@ $navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
 */
 .hamburger {
   width: auto; /* Adjust width based on content */
-  padding: 1rem;
+  padding: 0.25rem;
   border: none;
   background-color: transparent;
   transition: background-color 0.2s ease-in-out;
@@ -219,16 +219,20 @@ $navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
 
   .containerBrand {
     margin-left: auto;
+    margin-right: auto;
   }
 
-  .containerButtonsAction {
-    width: 6%;
+  .navigationMenu {
+    &:not(.vertical) {
+      // give room for brand to fill in
+      width: 0px;
+    }
   }
 
   .navigationMenuList {
     position: absolute;
-    top: 60px;
-    left: 15px;
+    top: 50px;
+    left: 5px;
     min-width: 30vw;
     display: none;
     flex-direction: column;
