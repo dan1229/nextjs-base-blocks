@@ -125,6 +125,7 @@ const DemoPage = () => {
     buttonsAction: <></>,
     showButtonsAction: true,
     children: <></>,
+    mainContent: <></>,
   });
   // BB Navbar Item
   const [stateBBNavbarItem, setStateBBNavbarItem] = useState<IPropsBBNavbarItem>({
