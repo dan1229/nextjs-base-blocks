@@ -222,11 +222,13 @@
   - Added `vertical` prop and styling!!!
   - Renamed `buttonsAuth` to `buttonsAction`
     - Same with `show` prop
+  - Added `sticky` prop
   - Improved font defaults, styling and new variable
     - `--font-family-navbar-header` added, defaults to `--font-family-header`
   - Added `textSizeTitle` prop
   - Added `--navbar-icon-mobile-color` variable - defaults to `--primary-color`
-  - Added `--navbar-vertical-width` variable - defaults to `8vw`
+  - Added `--navbar-vertical-width` variable - defaults to `auto`
+  - Added `--navbar-horizontal-height` variable - defaults to `96px`
 - `BBNavbarItem`
   - Fixed issue with border radius on last child of active dropdown
   - New variables!

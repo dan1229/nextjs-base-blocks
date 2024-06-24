@@ -136,7 +136,8 @@ html,
   --navbar-brand-padding: 0rem;
   --navbar-container-brand-margin: 0.5rem;
   --navbar-icon-mobile-color: #{$primary-color};
-  --navbar-vertical-width: 132px;
+  --navbar-vertical-width: auto;
+  --navbar-horizontal-height: 96px;
   // bb navbar item
   --navbar-item-border-radius: 8px;
   --navbar-item-padding: 12px;
