@@ -147,6 +147,10 @@
   - border?
 
 
+#### bb navbar
+- add divider between brand and items
+  - horizontal and vertical
+
 
 #### default theme colors?
 - update
