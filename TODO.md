@@ -169,11 +169,14 @@
 
 
 
-#### bbmodal scrolling
-- ensure backgrounds dont scroll EVER
-- ensure if tall enough, the content scrolls
+#### bbmodal
+- scrolling
+  - ensure backgrounds dont scroll EVER
+  - ensure if tall enough, the content scrolls
 -
-- add more padding to top / bottom
+- styling
+  - they look awful tbh
+  - add more padding to top / bottom
 -
 - background scrolling
   - still not great
