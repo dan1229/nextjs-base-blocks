@@ -19,7 +19,7 @@ export interface IPropsBBFieldBase {
  * BBFIELD BASE
  */
 export default function BBFieldBase(Props: IPropsBBFieldBase & IPropsBBBaseForm): React.ReactElement {
-  const { register, fieldName, type, required = false, autocomplete, onChange, value, size = 'md' } = Props;
+  const { register, fieldName, type, required = false, autocomplete, onChange, value, size = 'md', className } = Props;
 
   const getAutoComplete = (): string => {
     if (autocomplete) return autocomplete;
@@ -32,7 +32,7 @@ export default function BBFieldBase(Props: IPropsBBFieldBase & IPropsBBBaseForm)
   return (
     <InputWrapper {...Props}>
       <input
-        className={classnames(styles.form_control, styles[size])}
+        className={classnames(styles.form_control, styles[size], className)}
         id={fieldName}
         type={type}
         autoComplete={getAutoComplete()}
