@@ -173,6 +173,8 @@
 - ensure backgrounds dont scroll EVER
 - ensure if tall enough, the content scrolls
 -
+- add more padding to top / bottom
+-
 - background scrolling
   - still not great
   - need to somehow add 'overflow-y: hidden' to 'body'/'html' when modal is open
