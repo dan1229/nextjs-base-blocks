@@ -200,7 +200,9 @@
 
 
 
-### [1.2.X] - 2024-MM-DD
+### [1.2.2] - 2024-MM-DD
+- `BBFieldBase`
+  - Fix for `className` prop not being passed properly
 - TODO
 
 -------------------------------------------------------
