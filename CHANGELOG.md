@@ -14,6 +14,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [1.2.2] - 2024-06-27
+- `BBFieldBase`
+  - Fix for `className` prop not being passed properly
+- `BBButton`
+  - `openInNewTab` prop added for link buttons
+
+  
 ### [1.2.1] - 2024-06-24
 - `BBNavbar`
   - `content` and alignment improvements
