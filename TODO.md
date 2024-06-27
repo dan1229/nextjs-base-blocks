@@ -203,10 +203,11 @@
 
 
 
-### [1.2.2] - 2024-MM-DD
+### [1.2.2] - 2024-06-27
 - `BBFieldBase`
   - Fix for `className` prop not being passed properly
-- TODO
+- `BBButton`
+  - `openInNewTab` prop added for link buttons
 
 -------------------------------------------------------
 
