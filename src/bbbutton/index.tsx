@@ -43,6 +43,7 @@ interface IPropsBBButtonIcon {
  * @param {boolean=} transparent - Whether the button is transparent
  * @param {TBBTextColor=} colorText - The color of the text. This doesn't really work with 'inverse-*' variants
  * @param {string=} href - The href to navigate to
+ * @param {boolean=} openInNewTab - Whether to open the link in a new tab
  * @param {string=} helperTextOnHover - The helper text to display on hover
  * @param {string=} classNameHelperText - Extra class name for the helper text
  */
@@ -62,6 +63,7 @@ export interface IPropsBBButton {
   transparent?: boolean;
   colorText?: TBBTextColor;
   href?: string;
+  openInNewTab?: boolean;
   helperTextOnHover?: string;
   classNameHelperText?: string;
 }
@@ -86,6 +88,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     transparent = false,
     colorText = 'white',
     href,
+    openInNewTab = false,
     helperTextOnHover,
     classNameHelperText,
   } = Props;
@@ -258,7 +261,12 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     baseClassNames += ` ${styles.link}`;
     if (onClick) console.warn('BBButton: Both onClick and href are defined. onClick will be ignored.');
     return (
-      <a href={href} className={baseClassNames} target="_blank" rel="noreferrer noopener">
+      <a
+        href={href}
+        className={baseClassNames}
+        target={openInNewTab ? '_blank' : '_self'}
+        rel={openInNewTab ? 'noreferrer noopener' : undefined}
+      >
         {mainComponent}
       </a>
     );
