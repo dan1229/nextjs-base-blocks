@@ -184,6 +184,14 @@
 
 
 
+#### bbnavbar - vertical mobile styling
+- mobile styling for the vertical navbar is meh
+  - I.e., padding and make the logos and navbar slimmer 
+-
+- 'sticky' prop doesn't seem to be working properly either
+  - i.e., always sticky?
+  - is it just the default value? if so change the name or something
+
 
 ---
 ### 1.2.X
