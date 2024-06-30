@@ -166,6 +166,9 @@
 -
 - width?
   - set min width somehow?
+-
+- hover
+  - border radius on hover is weird - shouldnt do all borders
 
 
 
