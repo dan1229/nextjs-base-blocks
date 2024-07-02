@@ -14,6 +14,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [1.2.3] - 2024-07-01
+- `BBNavbar`
+  - Improve `buttonsAction` padding
+- Improved doc / SCSS variables
+
+
 ### [1.2.2] - 2024-06-27
 - `BBFieldBase`
   - Fix for `className` prop not being passed properly

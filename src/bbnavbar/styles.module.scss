@@ -1,7 +1,7 @@
 $border-radius: var(--navbar-border-radius, 8px);
 $background-color: var(--navbar-background-color, #dddddd);
 $brand-padding: var(--navbar-brand-padding, 0.5rem);
-$container-brand-margin: var(--navbar-container-brand-margin, 0 0.5rem);
+$container-brand-margin: var(--navbar-container-brand-margin, 0 0.75rem);
 $container-brand-width: var(--navbar-container-brand-width, 10%);
 
 // this is intended to go like this:
@@ -173,7 +173,7 @@ $navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  margin: 0 0.25rem;
+  margin: 0 0.75rem;
 
   &.vertical {
     align-items: flex-start;
