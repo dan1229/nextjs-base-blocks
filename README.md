@@ -79,7 +79,6 @@ $warning-color: #f1c500;
 $success-color: #50c758;
 $danger-color: #e8352e;
 
-
 html,
 :root {
   // app theme
@@ -96,7 +95,7 @@ html,
   --white: #fff;
   --white-dark: #f5f5f5;
   --black: rgb(35, 35, 35);
-  --grey-light: #a9bcde;
+  --grey-light: #8199c2;
   --grey-light-dark: #a8b6cc;
   --grey-dark: #58647a;
   --grey-darkest: #606775;
@@ -124,7 +123,7 @@ html,
   --button-border-radius: 8px;
   // bb card
   --card-background-default-color: rgb(255, 255, 255);
-  --card-darken-default-color: rgb(197, 197, 197);
+  --card-darken-default-color: rgb(237, 237, 237);
   --card-border-default-color: rgb(221, 221, 221);
   --card-border-radius: 8px;
   --card-elevation-low: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
@@ -133,19 +132,20 @@ html,
   // bb navbar
   --navbar-border-radius: 8px;
   --navbar-background-color: rgb(221, 221, 221);
+  --navbar-title-color: #{$primary-color};
   --navbar-brand-padding: 0rem;
-  --navbar-container-brand-margin: 0.5rem;
+  --navbar-container-brand-margin: 0.25rem;
   --navbar-container-brand-width: 10%;
   --navbar-icon-mobile-color: #{$primary-color};
-  --navbar-vertical-width: auto;
+  --navbar-vertical-width: 132px;
   --navbar-horizontal-height: 96px;
   // bb navbar item
   --navbar-item-border-radius: 8px;
   --navbar-item-padding: 12px;
   --navbar-item-text-color: #{$primary-color};
-  --navbar-item-text-color-hover: #{darken($primary-color, 10%)};
-  --navbar-item-bg-color-active: rgb(177, 177, 177);
-  --navbar-item-bg-color-hover: rgb(197, 197, 197);
+  --navbar-item-text-color-hover: #{darken($secondary-color, 20%)};
+  --navbar-item-bg-color-active: #{lighten($primary-color, 45%)};
+  --navbar-item-bg-color-hover: #{lighten($secondary-color, 20%)};
   // bb text
   --text-color-default: rgb(24, 24, 24);
   --text-size-xs: 0.6rem;
@@ -158,14 +158,14 @@ html,
   --mobile-text-size-xs: 0.6rem;
   --mobile-text-size-s: 0.8rem;
   --mobile-text-size-m: 1rem;
-  --mobile-text-size-l: 1.8rem;
-  --mobile-text-size-xl: 2.2rem;
-  --mobile-text-size-xxl: 2.8rem;
-  --mobile-text-size-xxxl: 3.2rem;
+  --mobile-text-size-l: 1.2rem;
+  --mobile-text-size-xl: 1.6rem;
+  --mobile-text-size-xxl: 2.4rem;
+  --mobile-text-size-xxxl: 2.8rem;
   // font family
   --font-family-main: 'Josefin Sans';  // Used for main text
   --font-family-header: 'Montserrat';  // Used for larger fonts/headers
-  --font-family-navbar-header: 'Montserrat';  // Used for navbar headers, defaults to header font
+  --font-family-navbar-header: 'Montserrat';  // Used for navbar headers
 }
 ```
 
@@ -188,6 +188,7 @@ Add overrides for dark themes like so:
   // bb navbar
   --navbar-border-radius: 8px;
   --navbar-background-color: rgb(54, 54, 54);
+  --navbar-title-color: rgb(255, 255, 255);
   // bb card
   --card-background-default-color: rgb(77, 77, 77);
   --card-darken-default-color: rgb(39, 39, 39);
