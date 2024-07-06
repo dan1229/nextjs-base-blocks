@@ -166,6 +166,10 @@ html,
   --font-family-main: 'Josefin Sans';  // Used for main text
   --font-family-header: 'Montserrat';  // Used for larger fonts/headers
   --font-family-navbar-header: 'Montserrat';  // Used for navbar headers
+  // font family - app router font usage
+  --font-family-main: var(--font-lexend);
+  --font-family-header: var(--font-lexend);
+  --font-family-navbar-header: var(--font-lexend);
 }
 ```
 
