@@ -152,6 +152,8 @@
 #### bb navbar
 - add divider between brand and items
   - horizontal and vertical
+-
+- weird padding issue on get twenty when bitwarden alert for password shows up
 
 
 #### default theme colors?
@@ -196,6 +198,11 @@
   - is it just the default value? if so change the name or something
 
 
+#### bb collapsible
+- isExpanded prop not working :(
+
+
+  
 ---
 ### 1.2.X
 
