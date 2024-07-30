@@ -193,6 +193,9 @@
 - mobile styling for the vertical navbar is meh
   - I.e., padding and make the logos and navbar slimmer 
 -
+- emulate styling from flutter navbars a bit
+  - i.e., always slide out kinda thing
+-
 - 'sticky' prop doesn't seem to be working properly either
   - i.e., always sticky?
   - is it just the default value? if so change the name or something
