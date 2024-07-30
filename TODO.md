@@ -211,7 +211,7 @@
 
 
 
-#### bbloading spinner - allow defalut to be chosen by scss var
+#### bbloading spinner - allow default to be chosen by scss var
 - make default spinner style determined by some css var
   - `--loading-spinner-variant`
   - add to readme
@@ -221,8 +221,6 @@
 #### docs and scss variables
 - improve defaults for scss variables - namely mobile text sizes
   - same with dark theme stuff and comments - check get twenty
-
-
 
 
 ### [1.2.X] - 2024-MM-DD
