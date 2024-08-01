@@ -154,6 +154,10 @@
   - horizontal and vertical
 -
 - weird padding issue on get twenty when bitwarden alert for password shows up
+-
+- add 'max width'
+  - i.e., like how the page content is sometimes limited, navbar should be too
+  - scss variable?
 
 
 #### default theme colors?
