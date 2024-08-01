@@ -175,8 +175,11 @@
 -
 - hover
   - border radius on hover is weird - shouldnt do all borders
-
-
+-
+- override for active path detection
+  - i.e., some 'home' pages are at '/' not '/home'
+  - add some prop to specify the route
+  
 
 #### bbmodal
 - scrolling
