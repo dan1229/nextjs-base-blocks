@@ -223,6 +223,8 @@
   - `--loading-spinner-variant`
   - add to readme
 - ensure that 'variant' prop still overrides and works
+-
+- add more variants
 
 
 #### docs and scss variables
