@@ -158,6 +158,10 @@
 - add 'max width'
   - i.e., like how the page content is sometimes limited, navbar should be too
   - scss variable?
+-
+- make navbar items aligned center vertically
+-
+- wider button action components?
 
 
 #### default theme colors?
