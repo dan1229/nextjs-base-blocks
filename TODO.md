@@ -216,7 +216,10 @@
 - isExpanded prop not working :(
 
 
-  
+#### bbcard
+- add 'default elevation' option
+  - add global scss var to set this
+
 ---
 ### 1.2.X
 
