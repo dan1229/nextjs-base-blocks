@@ -116,7 +116,6 @@ html,
   --bg-color: rgb(221, 221, 221);
   --bg-light-color: rgb(255, 255, 255);
   --bg-dark-color: rgb(177, 177, 177);
-  --bs-body-color: rgb(24, 23, 23);
   // bb alert
   --alert-border-radius: 8px;
   // bb button
@@ -188,7 +187,6 @@ Add overrides for dark themes like so:
   --bg-color: rgb(25, 25, 25);
   --bg-light-color: rgb(60, 60, 60);
   --bg-dark-color: rgb(39, 39, 39);
-  --bs-body-color: rgb(245, 245, 245);
   // bb navbar
   --navbar-border-radius: 8px;
   --navbar-background-color: rgb(54, 54, 54);
