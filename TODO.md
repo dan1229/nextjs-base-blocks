@@ -219,6 +219,8 @@
 #### bbcard
 - add 'default elevation' option
   - add global scss var to set this
+- add 'default border thickness' option
+  - add global scss var to set this
 
 ---
 ### 1.2.X
