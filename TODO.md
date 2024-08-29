@@ -221,6 +221,7 @@
   - add global scss var to set this
 - add 'default border thickness' option
   - add global scss var to set this
+- hover state cursor doesnt work for href card
 
 ---
 ### 1.2.X
