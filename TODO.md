@@ -222,6 +222,9 @@
 - add 'default border thickness' option
   - add global scss var to set this
 - hover state cursor doesnt work for href card
+-
+- add 'external' prop
+  - opens in new tab
 
 ---
 ### 1.2.X
