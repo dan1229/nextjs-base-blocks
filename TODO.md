@@ -245,6 +245,8 @@
   - same with dark theme stuff and comments - check get twenty
 
 
+get rid of --grey-light-dark variable
+
 ### [1.2.X] - 2024-MM-DD
 - TODO
 
