@@ -214,6 +214,8 @@
 
 #### bb collapsible
 - isExpanded prop not working :(
+-
+- center align header text
 
 
 #### bbcard
