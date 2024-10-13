@@ -74,6 +74,9 @@
 ### 1.3.0
 
 
+update defaults in readme
+- sync with bootstrapper
+
 
 
 #### bbform fields - sizes
