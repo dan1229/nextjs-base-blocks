@@ -222,6 +222,10 @@ update defaults in readme
 -
 - add 'onexpanded' and 'oncollapsed' props
   - callbacks for when the collapsible is expanded or collapsed
+-
+- change icon? use BsChevronBarExpand?
+  - add option / prop?
+    - presets somehow?
 
 
 
