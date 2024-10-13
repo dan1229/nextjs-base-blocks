@@ -219,6 +219,10 @@ update defaults in readme
 - isExpanded prop not working :(
 -
 - center align header text
+-
+- add 'onexpanded' and 'oncollapsed' props
+  - callbacks for when the collapsible is expanded or collapsed
+
 
 
 #### bbcard
