@@ -173,6 +173,12 @@ update defaults in readme
 - have to find and replace lots of defaults sadly
 
 
+#### bbalert
+- add class name to icon dismiss
+  - maybe color prop?
+
+  
+
 #### bbnavbar item
 - borders?
   - make optional?  
