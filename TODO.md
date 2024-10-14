@@ -157,6 +157,7 @@ update defaults in readme
   - horizontal and vertical
 -
 - weird padding issue on get twenty when bitwarden alert for password shows up
+  - something to do with positioning and the size variable
 -
 - add 'max width'
   - i.e., like how the page content is sometimes limited, navbar should be too
