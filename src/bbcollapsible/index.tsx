@@ -55,8 +55,8 @@ const BBCollapsible = (props: IPropsBBCollapsible) => {
  * @param {React.ReactNode | React.ReactNode[]} children - The children components, specifically Header and Content for the collapsible
  * @param {string=} className - Any class name to add
  * @param {boolean=} noPadding - Whether to remove padding from the content
- * @param {string=} arrowUp - The arrow up icon
- * @param {string=} arrowDown - The arrow down icon
+ * @param {React.ReactNode=} arrowUp - The arrow up icon
+ * @param {React.ReactNode=} arrowDown - The arrow down icon
  * @param {boolean=} isExpanded - Whether the content is expanded
  */
 export interface IPropsBBCollapsibleSection extends IPropsBBBase {
@@ -64,8 +64,8 @@ export interface IPropsBBCollapsibleSection extends IPropsBBBase {
   className?: string;
   noPadding?: boolean;
   isExpanded?: boolean;
-  arrowUp?: string;
-  arrowDown?: string;
+  arrowUp?: React.ReactNode;
+  arrowDown?: React.ReactNode;
   colorArrow?: TBBCollapsibleHeaderColor;
 }
 
@@ -81,7 +81,7 @@ const Header = (props: IPropsBBCollapsibleSection) => {
         <BBButton
           // on click is necessary to un-disable the button
           onClick={() => {}}
-          text={isExpanded ? arrowUp : arrowDown}
+          icon={{ icon: isExpanded ? arrowUp : arrowDown }}
           className={classnames(styles.containerArrow, styles[colorArrow])}
         />
       </div>
