@@ -258,6 +258,7 @@
 
 
 
+#### bb collapsible
 - text alignment prop
 -
 - add 'onexpanded' and 'oncollapsed' props
@@ -285,6 +286,7 @@
   - Added `classNameIcon` prop
 - `BBCollapsible`
   - Added `isExpandedInitial` prop
+  - Added `onExpanded` and `onCollapsed` props
   
 
 -------------------------------------------------------

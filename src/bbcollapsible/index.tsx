@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import React, { useState, Children, cloneElement } from 'react';
+import React, { useState, Children, cloneElement, useEffect } from 'react';
 import BBButton from '../bbbutton';
 import BBCard from '../bbcard';
 import styles from './styles.module.scss';
@@ -9,9 +9,11 @@ import type { IPropsBBBase, TBBCollapsibleHeaderColor } from '../types';
 /**
  * PROPS
  * @param {boolean=} isExpandedInitial - Whether the content is expanded initially
+ * @param {Function=} onExpanded - Callback function when the expanded state changes
  */
 export interface IPropsBBCollapsible extends IPropsBBCard {
   isExpandedInitial?: boolean;
+  onExpanded?: (isExpanded: boolean) => void;
 }
 
 /**
@@ -19,10 +21,17 @@ export interface IPropsBBCollapsible extends IPropsBBCard {
  * Renders a collapsible component with a header and body content.
  */
 const BBCollapsible = (props: IPropsBBCollapsible) => {
-  const { isExpandedInitial = false, children } = props;
+  const { isExpandedInitial = false, children, onExpanded } = props;
   const [isExpanded, setIsExpanded] = useState(isExpandedInitial);
 
   const toggleExpand = () => setIsExpanded(!isExpanded);
+
+  // Call onExpanded callback when the expanded state changes
+  useEffect(() => {
+    if (onExpanded) {
+      onExpanded(isExpanded);
+    }
+  }, [isExpanded, onExpanded]);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const header = Children.toArray(children).find((child: any) => child.type.displayName === 'Header');
