@@ -278,9 +278,6 @@
 
 
 #### bbcard
-- add 'default elevation' option
-  - add global scss var to set this
--
 - add 'default border thickness' option
   - add global scss var to set this
 -
@@ -296,8 +293,9 @@
 ### [1.3.X] - 2024-10-DD
 - Variable updates
   - `--grey-light-dark` variable removed
+  - `--card-elevation-default` variable added
 - `BBCard`
-  - TODO
+  - Added `default` elevation prop and SCSS variable
 
 -------------------------------------------------------
 

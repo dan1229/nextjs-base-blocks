@@ -150,6 +150,8 @@ const BBCard = (Props: IPropsBBBase & IPropsBBCard) => {
         return styles.elevation_med;
       case 'high':
         return styles.elevation_high;
+      case 'default':
+        return styles.elevation_default;
     }
   };
 
