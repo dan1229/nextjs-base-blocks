@@ -250,13 +250,6 @@
 
 
 
-#### bbalert
-- add class name to icon dismiss
-  - maybe color prop?
-
-  
-
-
 #### bbmodal
 - scrolling
   - ensure backgrounds dont scroll EVER
@@ -276,6 +269,8 @@
 
 
 
+
+
 ### [1.3.X] - 2024-10-DD
 - Variable updates
   - `--grey-light-dark` renamed to `--grey-light`
@@ -286,6 +281,8 @@
   - Added `default` elevation prop and SCSS variable
   - `href` cards made external links to open in new tab
   - Fix hover state for `href` cards
+- `BBAlert`
+  - Added `classNameIcon` prop
 
 -------------------------------------------------------
 
