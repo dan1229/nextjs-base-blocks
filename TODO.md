@@ -318,6 +318,7 @@ TODO - write specific test cases to write
   - Added `onExpanded` and `onCollapsed` props
   - Added `arrowUp` and `arrowDown` props
   - Added `buttonVariant` prop
+    - Removed `colorArrow` prop
   - Renamed `isExpanded` prop to `showButtonUp`
   
 -------------------------------------------------------
