@@ -4,7 +4,7 @@ import BBButton from '../bbbutton';
 import BBCard from '../bbcard';
 import styles from './styles.module.scss';
 import type { IPropsBBCard } from '../bbcard';
-import type { IPropsBBBase, TBBButtonVariant, TBBCollapsibleHeaderColor } from '../types';
+import type { IPropsBBBase, TBBButtonVariant } from '../types';
 
 /**
  * PROPS
@@ -58,7 +58,8 @@ const BBCollapsible = (props: IPropsBBCollapsible) => {
  * @param {React.ReactNode=} arrowUp - The arrow up icon
  * @param {React.ReactNode=} arrowDown - The arrow down icon
  * @param {boolean=} showButtonUp - Whether to show the button up
- * @param {TBBCollapsibleHeaderColor=} colorArrow - The color of the arrow
+ * @param {TBBButtonVariant=} buttonVariant - The variant of the button
+ * @param {string=} classNameButton - Any class name to add to the button
  */
 export interface IPropsBBCollapsibleSection extends IPropsBBBase {
   children: React.ReactNode | React.ReactNode[];
@@ -67,15 +68,15 @@ export interface IPropsBBCollapsibleSection extends IPropsBBBase {
   showButtonUp?: boolean;
   arrowUp?: React.ReactNode;
   arrowDown?: React.ReactNode;
-  colorArrow?: TBBCollapsibleHeaderColor;
   buttonVariant?: TBBButtonVariant;
+  classNameButton?: string;
 }
 
 /**
  * BBCollapsible.Header
  */
 const Header = (props: IPropsBBCollapsibleSection) => {
-  const { children, showButtonUp, colorArrow = 'default', arrowUp = '▲', arrowDown = '▼', buttonVariant = 'inverse-primary' } = props;
+  const { children, showButtonUp, arrowUp = '▲', arrowDown = '▼', buttonVariant = 'inverse-primary', classNameButton } = props;
   return (
     <BBCard.Header {...props} className={styles.mainCollapsibleHeader}>
       {children}
@@ -85,7 +86,7 @@ const Header = (props: IPropsBBCollapsibleSection) => {
           variant={buttonVariant}
           onClick={() => {}}
           icon={{ icon: showButtonUp ? arrowUp : arrowDown }}
-          className={classnames(styles.buttonArrow, styles[colorArrow])}
+          className={classnames(styles.buttonArrow, classNameButton)}
         />
       </div>
     </BBCard.Header>
