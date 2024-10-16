@@ -226,19 +226,6 @@
 
 
 
-#### bb collapsible
-- isExpanded prop not working :(
--
-- center align header text
--
-- add 'onexpanded' and 'oncollapsed' props
-  - callbacks for when the collapsible is expanded or collapsed
--
-- change icon? use BsChevronBarExpand?
-  - add option / prop?
-    - presets somehow?
-
-
 
 #### bbdivider - NEW COMPONENT
 - hr
@@ -265,13 +252,23 @@
 
 
 
+#### bb collapsible
+- isExpanded prop not working :(
+-
+- center align header text
+-
+- add 'onexpanded' and 'oncollapsed' props
+  - callbacks for when the collapsible is expanded or collapsed
+-
+- change icon? use BsChevronBarExpand?
+  - add option / prop?
+    - presets somehow?
+-
+- general clean up
 
 
 
-
-
-
-### [1.3.X] - 2024-10-DD
+### [1.3.0] - 2024-10-DD
 - Variable updates
   - `--grey-light-dark` renamed to `--grey-light`
   - `--grey-light` renamed to `--grey-lightest`
