@@ -81,11 +81,6 @@
 
 
 
-----
-### 1.4.0
-
-
-
 #### demo page - form components
 - just add them
 - probably in a different page
@@ -100,6 +95,17 @@
 
 
 
+
+---
+### 1.5.0
+
+#### demo page stuff?
+- see above TODOs
+
+
+
+----
+### 1.4.0
 
 
 
