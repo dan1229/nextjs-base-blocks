@@ -14,6 +14,7 @@ import type { TBBAlertVariant, TBBAlertElevation, TBBAlertTextAlignment } from '
  * @param {TBBAlertTextAlignment=} textAlignment - the text alignment of the alert
  * @param {() => void=} onClick - the function to call when the alert is clicked
  * @param {string=} className - Any class name to add
+ * @param {string=} classNameIcon - Any class name to add to the icon
  */
 export interface IPropsBBAlert {
   children: React.ReactNode;
@@ -23,13 +24,23 @@ export interface IPropsBBAlert {
   textAlignment?: TBBAlertTextAlignment;
   onClick?: () => void;
   className?: string;
+  classNameIcon?: string;
 }
 
 /**
  * BBAlert
  */
 export default function BBAlert(Props: IPropsBBAlert): React.ReactElement {
-  const { children, variant = 'info', elevation = 'none', dismissible = true, textAlignment = 'left', onClick, className } = Props;
+  const {
+    children,
+    variant = 'info',
+    elevation = 'none',
+    dismissible = true,
+    textAlignment = 'left',
+    onClick,
+    className,
+    classNameIcon,
+  } = Props;
   const [isDismissed, setIsDismissed] = useState<boolean>(false);
 
   if (isDismissed) {
@@ -99,7 +110,7 @@ export default function BBAlert(Props: IPropsBBAlert): React.ReactElement {
       onClick={onClick && onClickOverride}
     >
       <div>{children}</div>
-      {dismissible && <AiOutlineCloseCircle className={styles.dismissButton} onClick={onClickDismiss} />}
+      {dismissible && <AiOutlineCloseCircle className={classNames(styles.dismissButton, classNameIcon)} onClick={onClickDismiss} />}
     </div>
   );
 }

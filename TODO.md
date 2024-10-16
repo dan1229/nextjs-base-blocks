@@ -81,11 +81,6 @@
 
 
 
-----
-### 1.4.0
-
-
-
 #### demo page - form components
 - just add them
 - probably in a different page
@@ -100,6 +95,17 @@
 
 
 
+
+---
+### 1.5.0
+
+#### demo page stuff?
+- see above TODOs
+
+
+
+----
+### 1.4.0
 
 
 
@@ -226,19 +232,6 @@
 
 
 
-#### bb collapsible
-- isExpanded prop not working :(
--
-- center align header text
--
-- add 'onexpanded' and 'oncollapsed' props
-  - callbacks for when the collapsible is expanded or collapsed
--
-- change icon? use BsChevronBarExpand?
-  - add option / prop?
-    - presets somehow?
-
-
 
 #### bbdivider - NEW COMPONENT
 - hr
@@ -248,13 +241,6 @@
   - border / thickness
   - margin
 
-
-
-#### bbalert
-- add class name to icon dismiss
-  - maybe color prop?
-
-  
 
 
 #### bbmodal
@@ -272,11 +258,23 @@
 
 
 
+#### bb collapsible
+- isExpanded prop not working :(
+-
+- center align header text
+-
+- add 'onexpanded' and 'oncollapsed' props
+  - callbacks for when the collapsible is expanded or collapsed
+-
+- change icon? use BsChevronBarExpand?
+  - add option / prop?
+    - presets somehow?
+-
+- general clean up
 
 
 
-
-### [1.3.X] - 2024-10-DD
+### [1.3.0] - 2024-10-DD
 - Variable updates
   - `--grey-light-dark` renamed to `--grey-light`
   - `--grey-light` renamed to `--grey-lightest`
@@ -286,6 +284,8 @@
   - Added `default` elevation prop and SCSS variable
   - `href` cards made external links to open in new tab
   - Fix hover state for `href` cards
+- `BBAlert`
+  - Added `classNameIcon` prop
 
 -------------------------------------------------------
 
