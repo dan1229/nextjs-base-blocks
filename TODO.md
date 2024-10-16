@@ -259,15 +259,6 @@
 
 
 #### bb collapsible
-- text alignment prop
--
-- add 'onexpanded' and 'oncollapsed' props
-  - callbacks for when the collapsible is expanded or collapsed
--
-- change icon? use BsChevronBarExpand?
-  - add option / prop?
-    - presets somehow?
--
 - general clean up
 
 
@@ -287,6 +278,7 @@
 - `BBCollapsible`
   - Added `isExpandedInitial` prop
   - Added `onExpanded` and `onCollapsed` props
+  - Added `arrowUp` and `arrowDown` props
   
 
 -------------------------------------------------------
