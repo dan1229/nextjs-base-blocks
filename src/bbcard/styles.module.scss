@@ -20,6 +20,7 @@ $card-border-default-color: var(--card-border-default-color, #e0e0e0);
 
 // variables
 $border-radius: var(--card-border-radius, 8px);
+$border-thickness: var(--card-border-thickness, 2px);
 $elevation-default: var(--card-elevation-default, rgba(0, 0, 0, 0.2) 0px 2px 4px);
 $elevation-low: var(--card-elevation-low, rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px);
 $elevation-med: var(--card-elevation-med, rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px);
@@ -374,39 +375,39 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 * BORDERS
 */
 .border_default {
-  border: 2px solid $card-border-default-color;
+  border: $border-thickness solid $card-border-default-color;
 }
 
 .border_transparent {
-  border: 2px solid transparent;
+  border: $border-thickness solid transparent;
 }
 
 .border_white {
-  border: 2px solid $white;
+  border: $border-thickness solid $white;
 }
 
 .border_grey_light {
-  border: 2px solid $grey-light;
+  border: $border-thickness solid $grey-light;
 }
 
 .border_grey_dark {
-  border: 2px solid $grey-dark;
+  border: $border-thickness solid $grey-dark;
 }
 
 .border_black {
-  border: 2px solid $black;
+  border: $border-thickness solid $black;
 }
 
 .border_primary {
-  border: 2px solid $primary-color;
+  border: $border-thickness solid $primary-color;
 }
 
 .border_secondary {
-  border: 2px solid $secondary-color;
+  border: $border-thickness solid $secondary-color;
 }
 
 .border_accent {
-  border: 2px solid $accent-color;
+  border: $border-thickness solid $accent-color;
 }
 
 /*

@@ -124,6 +124,7 @@ html,
   --card-darken-default-color: rgb(237, 237, 237);
   --card-border-default-color: rgb(221, 221, 221);
   --card-border-radius: 8px;
+  --card-border-thickness: 1px;
   --card-elevation-default: rgba(0, 0, 0, 0.12) 0px 1px 1px, rgba(0, 0, 0, 0.24) 0px 1px 1px;
   --card-elevation-low: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   --card-elevation-med: rgba(0, 0, 0, 0.12) 0px 3px 6px, rgba(0, 0, 0, 0.24) 0px 3px 6px;
