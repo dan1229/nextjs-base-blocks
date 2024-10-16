@@ -70,12 +70,22 @@
 - idk fix it
 
 
+#### demo page - add docs
+- add docs / tips for each component
+- quick descpription
+- specific tips
+  - loading spinner - suggest creating a 'wrapper' loader for other loading components
+    - or to set a 'default' loading style
+
 ----
 ### 1.3.0
 
 
 update defaults in readme
 - sync with bootstrapper
+- improve defaults for scss variables - namely mobile text sizes
+  - same with dark theme stuff and comments - check get twenty
+
 
 
 
@@ -247,19 +257,6 @@ update defaults in readme
   - opens in new tab
 
 
-
-#### bbloading spinner - allow default to be chosen by scss var
-- make default spinner style determined by some css var
-  - `--loading-spinner-variant`
-  - add to readme
-- ensure that 'variant' prop still overrides and works
--
-- add more variants
-
-
-#### docs and scss variables
-- improve defaults for scss variables - namely mobile text sizes
-  - same with dark theme stuff and comments - check get twenty
 
 
 
