@@ -296,6 +296,8 @@
 ### [1.3.X] - 2024-10-DD
 - Variable updates
   - `--grey-light-dark` variable removed
+- `BBCard`
+  - TODO
 
 -------------------------------------------------------
 
