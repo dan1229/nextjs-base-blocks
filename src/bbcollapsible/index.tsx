@@ -85,7 +85,7 @@ const Header = (props: IPropsBBCollapsibleSection) => {
           variant={buttonVariant}
           onClick={() => {}}
           icon={{ icon: showButtonUp ? arrowUp : arrowDown }}
-          className={classnames(styles.containerArrow, styles[colorArrow])}
+          className={classnames(styles.buttonArrow, styles[colorArrow])}
         />
       </div>
     </BBCard.Header>
