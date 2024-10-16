@@ -76,6 +76,8 @@
 - specific tips
   - loading spinner - suggest creating a 'wrapper' loader for other loading components
     - or to set a 'default' loading style
+  - variables for each component
+    - i.e., bbcard has elevation and border thickness
 
 
 
@@ -277,25 +279,19 @@
 
 
 
-#### bbcard
-- add 'default elevation' option
-  - add global scss var to set this
--
-- add 'default border thickness' option
-  - add global scss var to set this
--
-- hover state cursor doesnt work for href card
--
-- add 'external' prop
-  - opens in new tab
-
-
 
 
 
 ### [1.3.X] - 2024-10-DD
 - Variable updates
-  - `--grey-light-dark` variable removed
+  - `--grey-light-dark` renamed to `--grey-light`
+  - `--grey-light` renamed to `--grey-lightest`
+  - `--card-elevation-default` variable added
+  - `--card-border-thickness` variable added
+- `BBCard`
+  - Added `default` elevation prop and SCSS variable
+  - `href` cards made external links to open in new tab
+  - Fix hover state for `href` cards
 
 -------------------------------------------------------
 

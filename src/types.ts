@@ -96,7 +96,7 @@ export type TBBCardColorBorder =
   | 'primary'
   | 'secondary'
   | 'accent';
-export type TBBCardElevation = 'none' | 'low' | 'med' | 'high';
+export type TBBCardElevation = 'none' | 'low' | 'med' | 'high' | 'default';
 
 /**
  * BBCollapsible

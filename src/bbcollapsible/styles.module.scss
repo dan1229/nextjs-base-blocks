@@ -3,7 +3,7 @@ $secondary-color: var(--secondary-color, #284af7);
 $accent-color: var(--accent-color, #ebeb30);
 $black: var(--black, #000);
 
-$grey-light: var(--grey-light, #f5f5f5);
+$grey-lightest: var(--grey-lightest, #f5f5f5);
 
 .mainCollapsibleHeader {
   display: flex;
@@ -28,23 +28,23 @@ $grey-light: var(--grey-light, #f5f5f5);
 .default {
   color: $black;
   border: 1px solid $black;
-  background-color: $grey-light;
+  background-color: $grey-lightest;
 }
 
 .primary {
   color: $primary-color;
   border: 1px solid $primary-color;
-  background-color: $grey-light;
+  background-color: $grey-lightest;
 }
 
 .secondary {
   color: $secondary-color;
   border: 1px solid $secondary-color;
-  background-color: $grey-light;
+  background-color: $grey-lightest;
 }
 
 .accent {
   color: $accent-color;
   border: 1px solid $accent-color;
-  background-color: $grey-light;
+  background-color: $grey-lightest;
 }

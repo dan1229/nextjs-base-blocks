@@ -95,7 +95,8 @@ html,
   --white: #fff;
   --white-dark: #f5f5f5;
   --black: rgb(35, 35, 35);
-  --grey-light: #8199c2;
+  --grey-lightest: #8199c2;
+  --grey-light: #9daeca;
   --grey-dark: #58647a;
   --grey-darkest: #606775;
   // theme colors
@@ -124,6 +125,8 @@ html,
   --card-darken-default-color: rgb(237, 237, 237);
   --card-border-default-color: rgb(221, 221, 221);
   --card-border-radius: 8px;
+  --card-border-thickness: 1px;
+  --card-elevation-default: rgba(0, 0, 0, 0.12) 0px 1px 1px, rgba(0, 0, 0, 0.24) 0px 1px 1px;
   --card-elevation-low: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   --card-elevation-med: rgba(0, 0, 0, 0.12) 0px 3px 6px, rgba(0, 0, 0, 0.24) 0px 3px 6px;
   --card-elevation-high: rgba(0, 0, 0, 0.12) 0px 10px 20px, rgba(0, 0, 0, 0.24) 0px 6px 6px;

@@ -2,8 +2,8 @@
 //
 $white: var(--white, #ffffff);
 $black: var(--black, #000000);
+$grey-lightest: var(--grey-lightest, #8199c2);
 $grey-light: var(--grey-light, #8199c2);
-$grey-light-dark: darken($grey-light, 10%);
 $grey-dark: var(--grey-dark, #58647a);
 $grey-darkest: var(--grey-darkest, #2f3542);
 
@@ -138,7 +138,7 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   left: 80%;
   transform: translateX(-50%);
   background-color: $white;
-  border: 1px solid $grey-light-dark;
+  border: 1px solid $grey-light;
   border-radius: 1rem;
   padding: 0.1rem;
   display: none; // Initially hide the helper text
@@ -156,7 +156,7 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
 }
 
 .helperTextQuestionMark {
-  background-color: $grey-light-dark;
+  background-color: $grey-light;
   border-radius: 1rem;
   padding: 0.2rem 0.4rem;
   color: $white !important;
@@ -197,29 +197,29 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   color: $white;
 
   &:hover {
-    color: $grey-light;
+    color: $grey-lightest;
     background-color: $primary-light-color;
+
+    * {
+      color: $grey-lightest;
+    }
+  }
+
+  &:focus {
+    color: $grey-light;
+    background-color: $primary-dark-color;
 
     * {
       color: $grey-light;
     }
   }
 
-  &:focus {
-    color: $grey-light-dark;
-    background-color: $primary-dark-color;
-
-    * {
-      color: $grey-light-dark;
-    }
-  }
-
   &:active {
-    color: $grey-light-dark;
+    color: $grey-light;
     background-color: $primary-dark-color;
 
     * {
-      color: $grey-light-dark;
+      color: $grey-light;
     }
   }
 }
@@ -230,29 +230,29 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   color: $white;
 
   &:hover {
-    color: $grey-light;
+    color: $grey-lightest;
     background-color: $secondary-light-color;
+
+    * {
+      color: $grey-lightest;
+    }
+  }
+
+  &:focus {
+    color: $grey-light;
+    background-color: $secondary-dark-color;
 
     * {
       color: $grey-light;
     }
   }
 
-  &:focus {
-    color: $grey-light-dark;
-    background-color: $secondary-dark-color;
-
-    * {
-      color: $grey-light-dark;
-    }
-  }
-
   &:active {
-    color: $grey-light-dark;
+    color: $grey-light;
     background-color: $secondary-dark-color;
 
     * {
-      color: $grey-light-dark;
+      color: $grey-light;
     }
   }
 }
@@ -263,29 +263,29 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   color: $white;
 
   &:hover {
-    color: $grey-light;
+    color: $grey-lightest;
     background-color: $accent-light-color;
+
+    * {
+      color: $grey-lightest;
+    }
+  }
+
+  &:focus {
+    color: $grey-light;
+    background-color: $accent-dark-color;
 
     * {
       color: $grey-light;
     }
   }
 
-  &:focus {
-    color: $grey-light-dark;
-    background-color: $accent-dark-color;
-
-    * {
-      color: $grey-light-dark;
-    }
-  }
-
   &:active {
-    color: $grey-light-dark;
+    color: $grey-light;
     background-color: $accent-dark-color;
 
     * {
-      color: $grey-light-dark;
+      color: $grey-light;
     }
   }
 }
@@ -296,29 +296,29 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   color: $white;
 
   &:hover {
-    color: $grey-light;
+    color: $grey-lightest;
     background-color: $danger-light-color;
+
+    * {
+      color: $grey-lightest;
+    }
+  }
+
+  &:focus {
+    color: $grey-light;
+    background-color: $danger-dark-color;
 
     * {
       color: $grey-light;
     }
   }
 
-  &:focus {
-    color: $grey-light-dark;
-    background-color: $danger-dark-color;
-
-    * {
-      color: $grey-light-dark;
-    }
-  }
-
   &:active {
-    color: $grey-light-dark;
+    color: $grey-light;
     background-color: $danger-dark-color;
 
     * {
-      color: $grey-light-dark;
+      color: $grey-light;
     }
   }
 }
@@ -329,29 +329,29 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   color: $white;
 
   &:hover {
-    color: $grey-light;
+    color: $grey-lightest;
     background-color: $success-light-color;
+
+    * {
+      color: $grey-lightest;
+    }
+  }
+
+  &:focus {
+    color: $grey-light;
+    background-color: $success-dark-color;
 
     * {
       color: $grey-light;
     }
   }
 
-  &:focus {
-    color: $grey-light-dark;
-    background-color: $success-dark-color;
-
-    * {
-      color: $grey-light-dark;
-    }
-  }
-
   &:active {
-    color: $grey-light-dark;
+    color: $grey-light;
     background-color: $success-dark-color;
 
     * {
-      color: $grey-light-dark;
+      color: $grey-light;
     }
   }
 }
@@ -362,29 +362,29 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   color: $white;
 
   &:hover {
-    color: $grey-light;
+    color: $grey-lightest;
     background-color: $warning-light-color;
+
+    * {
+      color: $grey-lightest;
+    }
+  }
+
+  &:focus {
+    color: $grey-light;
+    background-color: $warning-dark-color;
 
     * {
       color: $grey-light;
     }
   }
 
-  &:focus {
-    color: $grey-light-dark;
-    background-color: $warning-dark-color;
-
-    * {
-      color: $grey-light-dark;
-    }
-  }
-
   &:active {
-    color: $grey-light-dark;
+    color: $grey-light;
     background-color: $warning-dark-color;
 
     * {
-      color: $grey-light-dark;
+      color: $grey-light;
     }
   }
 }
@@ -395,29 +395,29 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   color: $white;
 
   &:hover {
-    color: $grey-light;
+    color: $grey-lightest;
     background-color: $info-light-color;
+
+    * {
+      color: $grey-lightest;
+    }
+  }
+
+  &:focus {
+    color: $grey-light;
+    background-color: $info-dark-color;
 
     * {
       color: $grey-light;
     }
   }
 
-  &:focus {
-    color: $grey-light-dark;
-    background-color: $info-dark-color;
-
-    * {
-      color: $grey-light-dark;
-    }
-  }
-
   &:active {
-    color: $grey-light-dark;
+    color: $grey-light;
     background-color: $info-dark-color;
 
     * {
-      color: $grey-light-dark;
+      color: $grey-light;
     }
   }
 }
@@ -461,18 +461,18 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   color: $black;
 
   &:hover {
-    color: $grey-light-dark;
-    background-color: $grey-light;
-    border: 1px solid $grey-light-dark;
+    color: $grey-light;
+    background-color: $grey-lightest;
+    border: 1px solid $grey-light;
 
     * {
-      color: $grey-light-dark;
+      color: $grey-light;
     }
   }
 
   &:focus {
     color: $grey-darkest;
-    background-color: $grey-light-dark;
+    background-color: $grey-light;
     border: 1px solid $grey-darkest;
 
     * {
@@ -482,7 +482,7 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
 
   &:active {
     color: $grey-darkest;
-    background-color: $grey-light-dark;
+    background-color: $grey-light;
     border: 1px solid $grey-darkest;
 
     * {
