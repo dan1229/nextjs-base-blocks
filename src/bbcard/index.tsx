@@ -162,6 +162,7 @@ const BBCard = (Props: IPropsBBBase & IPropsBBCard) => {
   /**
    * RENDER
    */
+  const hover = !!onClick || (href?.length ?? 0) > 0;
   return (
     <div
       onClick={!href ? onClick : undefined}
@@ -169,8 +170,8 @@ const BBCard = (Props: IPropsBBBase & IPropsBBCard) => {
         className,
         styles.base,
         // if there is an onClick or href, add hover effect
-        (!!onClick || !!href?.length) && styles.hover,
-        noBorder && styles.no_border,
+        hover ? styles.hover : '',
+        noBorder ? styles.no_border : '',
         getClassColorBackgroundCard(colorBackground),
         getClassColorBorder(),
         getClassElevation()

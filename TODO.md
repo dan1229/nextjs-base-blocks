@@ -279,9 +279,6 @@
 
 
 
-#### bbcard
-- hover state cursor doesnt work for href card
-
 
 
 
@@ -293,6 +290,7 @@
 - `BBCard`
   - Added `default` elevation prop and SCSS variable
   - `href` cards made external links to open in new tab
+  - Fix hover state for `href` cards
 
 -------------------------------------------------------
 
