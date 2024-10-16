@@ -10,10 +10,12 @@ import type { IPropsBBBase, TBBCollapsibleHeaderColor } from '../types';
  * PROPS
  * @param {boolean=} isExpandedInitial - Whether the content is expanded initially
  * @param {Function=} onExpanded - Callback function when the expanded state changes
+ * @param {Function=} onCollapsed - Callback function when the collapsed state changes
  */
 export interface IPropsBBCollapsible extends IPropsBBCard {
   isExpandedInitial?: boolean;
   onExpanded?: (isExpanded: boolean) => void;
+  onCollapsed?: () => void;
 }
 
 /**
@@ -21,17 +23,19 @@ export interface IPropsBBCollapsible extends IPropsBBCard {
  * Renders a collapsible component with a header and body content.
  */
 const BBCollapsible = (props: IPropsBBCollapsible) => {
-  const { isExpandedInitial = false, children, onExpanded } = props;
+  const { isExpandedInitial = false, children, onExpanded, onCollapsed } = props;
   const [isExpanded, setIsExpanded] = useState(isExpandedInitial);
 
   const toggleExpand = () => setIsExpanded(!isExpanded);
 
-  // Call onExpanded callback when the expanded state changes
+  // Call onExpanded or onCollapsed callback when the expanded state changes
   useEffect(() => {
-    if (onExpanded) {
+    if (isExpanded && onExpanded) {
       onExpanded(isExpanded);
+    } else if (!isExpanded && onCollapsed) {
+      onCollapsed();
     }
-  }, [isExpanded, onExpanded]);
+  }, [isExpanded, onExpanded, onCollapsed]);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const header = Children.toArray(children).find((child: any) => child.type.displayName === 'Header');
