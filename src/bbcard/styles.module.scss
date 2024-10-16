@@ -2,7 +2,7 @@
 $white: var(--white, #ffffff);
 $white-dark: var(--white-dark, #f5f5f5);
 $grey-light: var(--grey-light, #a9bcde);
-$grey-light-dark: var(--grey-light-dark, #a8b6cc);
+$grey-light-dark: darken($grey-light, 10%);
 $grey-dark: var(--grey-dark, #58647a);
 $grey-darkest: var(--grey-darkest, #606775);
 $black: var(--black, #232323);

@@ -246,9 +246,6 @@ update defaults in readme
 - add 'external' prop
   - opens in new tab
 
----
-### 1.2.X
-
 
 
 #### bbloading spinner - allow default to be chosen by scss var
@@ -265,10 +262,9 @@ update defaults in readme
   - same with dark theme stuff and comments - check get twenty
 
 
-get rid of --grey-light-dark variable
 
-### [1.2.X] - 2024-MM-DD
-- TODO
+### [1.3.X] - 2024-10-DD
+- `--grey-light-dark` variable removed
 
 -------------------------------------------------------
 

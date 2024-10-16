@@ -96,7 +96,6 @@ html,
   --white-dark: #f5f5f5;
   --black: rgb(35, 35, 35);
   --grey-light: #8199c2;
-  --grey-light-dark: #a8b6cc;
   --grey-dark: #58647a;
   --grey-darkest: #606775;
   // theme colors
