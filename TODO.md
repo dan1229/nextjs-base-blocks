@@ -77,14 +77,27 @@
   - loading spinner - suggest creating a 'wrapper' loader for other loading components
     - or to set a 'default' loading style
 
+
+
 ----
-### 1.3.0
+### 1.4.0
 
 
-update defaults in readme
-- sync with bootstrapper
-- improve defaults for scss variables - namely mobile text sizes
-  - same with dark theme stuff and comments - check get twenty
+
+#### demo page - form components
+- just add them
+- probably in a different page
+- make sections expandable
+-
+- ensure all entries options are up to date!
+-
+- make home page a real home page
+  - links to:
+  - `/components`
+  - `/components/forms`
+
+
+
 
 
 
@@ -126,7 +139,11 @@ update defaults in readme
 
 
 
-#### tooltips
+
+
+
+
+#### bb tooltips - NEW COMPONENT
 - add tooltip functionality
   - BBToolTip components?
 - add to other components
@@ -137,29 +154,92 @@ update defaults in readme
     - TODO
 
 
+----
+### 1.3.0
 
 
-
-#### demo page - form components
-- just add them
-- probably in a different page
-- make sections expandable
+#### default theme colors?
+- update
+- have to find and replace lots of defaults sadly
 -
-- ensure all entries options are up to date!
--
-- make home page a real home page
-  - links to:
-  - `/components`
-  - `/components/forms`
+- update defaults in readme
+  - sync with bootstrapper
+  - improve defaults for scss variables - namely mobile text sizes
+    - same with dark theme stuff and comments - check get twenty
 
 
 
-#### bbdivider?
+
+
+
+
+
+
+
+
+#### bbdivider - NEW COMPONENT
 - hr
 - props
   - color
-  - size?
-  - border?
+  - size
+  - border / thickness
+  - margin
+
+
+
+#### bbalert
+- add class name to icon dismiss
+  - maybe color prop?
+
+  
+
+
+#### bbmodal
+- scrolling
+  - ensure backgrounds dont scroll EVER
+  - ensure if tall enough, the content scrolls
+-
+- styling
+  - they look awful tbh
+  - add more padding to top / bottom
+-
+- background scrolling
+  - still not great
+  - need to somehow add 'overflow-y: hidden' to 'body'/'html' when modal is open
+
+
+
+
+
+
+
+
+#### bbnavbar item
+- borders?
+  - make optional?  
+    - copy from bbcard?
+-
+- width?
+  - set min width somehow?
+-
+- hover
+  - border radius on hover is weird - shouldnt do all borders
+-
+- override for active path detection
+  - i.e., some 'home' pages are at '/' not '/home'
+  - add some prop to specify the route
+  
+
+#### bbnavbar - vertical mobile styling
+- mobile styling for the vertical navbar is meh
+  - I.e., padding and make the logos and navbar slimmer 
+-
+- emulate styling from flutter navbars a bit
+  - i.e., always slide out kinda thing
+-
+- 'sticky' prop doesn't seem to be working properly either
+  - i.e., always sticky?
+  - is it just the default value? if so change the name or something
 
 
 #### bb navbar
@@ -178,58 +258,9 @@ update defaults in readme
 - wider button action components?
 
 
-#### default theme colors?
-- update
-- have to find and replace lots of defaults sadly
-
-
-#### bbalert
-- add class name to icon dismiss
-  - maybe color prop?
-
-  
-
-#### bbnavbar item
-- borders?
-  - make optional?  
-    - copy from bbcard?
--
-- width?
-  - set min width somehow?
--
-- hover
-  - border radius on hover is weird - shouldnt do all borders
--
-- override for active path detection
-  - i.e., some 'home' pages are at '/' not '/home'
-  - add some prop to specify the route
-  
-
-#### bbmodal
-- scrolling
-  - ensure backgrounds dont scroll EVER
-  - ensure if tall enough, the content scrolls
--
-- styling
-  - they look awful tbh
-  - add more padding to top / bottom
--
-- background scrolling
-  - still not great
-  - need to somehow add 'overflow-y: hidden' to 'body'/'html' when modal is open
 
 
 
-#### bbnavbar - vertical mobile styling
-- mobile styling for the vertical navbar is meh
-  - I.e., padding and make the logos and navbar slimmer 
--
-- emulate styling from flutter navbars a bit
-  - i.e., always slide out kinda thing
--
-- 'sticky' prop doesn't seem to be working properly either
-  - i.e., always sticky?
-  - is it just the default value? if so change the name or something
 
 
 #### bb collapsible
@@ -249,8 +280,10 @@ update defaults in readme
 #### bbcard
 - add 'default elevation' option
   - add global scss var to set this
+-
 - add 'default border thickness' option
   - add global scss var to set this
+-
 - hover state cursor doesnt work for href card
 -
 - add 'external' prop
@@ -261,7 +294,8 @@ update defaults in readme
 
 
 ### [1.3.X] - 2024-10-DD
-- `--grey-light-dark` variable removed
+- Variable updates
+  - `--grey-light-dark` variable removed
 
 -------------------------------------------------------
 
