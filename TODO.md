@@ -258,10 +258,7 @@
 
 
 
-#### bb collapsible
-- isExpanded prop not working :(
--
-- center align header text
+- text alignment prop
 -
 - add 'onexpanded' and 'oncollapsed' props
   - callbacks for when the collapsible is expanded or collapsed
@@ -286,6 +283,9 @@
   - Fix hover state for `href` cards
 - `BBAlert`
   - Added `classNameIcon` prop
+- `BBCollapsible`
+  - Added `isExpandedInitial` prop
+  
 
 -------------------------------------------------------
 

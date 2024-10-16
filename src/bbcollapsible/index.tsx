@@ -7,11 +7,20 @@ import type { IPropsBBCard } from '../bbcard';
 import type { IPropsBBBase, TBBCollapsibleHeaderColor } from '../types';
 
 /**
+ * PROPS
+ * @param {boolean=} isExpandedInitial - Whether the content is expanded initially
+ */
+export interface IPropsBBCollapsible extends IPropsBBCard {
+  isExpandedInitial?: boolean;
+}
+
+/**
  * BBCollapsible
  * Renders a collapsible component with a header and body content.
  */
-const BBCollapsible = ({ children, ...props }: IPropsBBCard & IPropsBBBase) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+const BBCollapsible = (props: IPropsBBCollapsible) => {
+  const { isExpandedInitial = false, children } = props;
+  const [isExpanded, setIsExpanded] = useState(isExpandedInitial);
 
   const toggleExpand = () => setIsExpanded(!isExpanded);
 
@@ -35,7 +44,7 @@ const BBCollapsible = ({ children, ...props }: IPropsBBCard & IPropsBBBase) => {
  * @param {boolean=} noPadding - Whether to remove padding from the content
  * @param {boolean=} isExpanded - Whether the content is expanded
  */
-interface IPropsBBCollapsibleSection {
+export interface IPropsBBCollapsibleSection extends IPropsBBBase {
   children: React.ReactNode | React.ReactNode[];
   className?: string;
   noPadding?: boolean;
@@ -46,7 +55,8 @@ interface IPropsBBCollapsibleSection {
 /**
  * BBCollapsible.Header
  */
-const Header = ({ children, isExpanded, colorArrow = 'default', ...props }: IPropsBBCollapsibleSection & IPropsBBBase) => {
+const Header = (props: IPropsBBCollapsibleSection) => {
+  const { children, isExpanded, colorArrow = 'default' } = props;
   return (
     <BBCard.Header {...props} className={styles.mainCollapsibleHeader}>
       {children}
@@ -62,9 +72,15 @@ const Header = ({ children, isExpanded, colorArrow = 'default', ...props }: IPro
 Header.displayName = 'Header';
 
 /**
+ * PROPS
+ */
+export interface IPropsBBCollapsibleContent extends IPropsBBCard {}
+
+/**
  * BBCollapsible.Content
  */
-const Content = ({ children, ...props }: IPropsBBCollapsibleSection & IPropsBBBase) => {
+const Content = (props: IPropsBBCollapsibleContent) => {
+  const { children } = props;
   return <BBCard.Body {...props}>{children}</BBCard.Body>;
 };
 Content.displayName = 'Content';
