@@ -99,11 +99,6 @@ export type TBBCardColorBorder =
 export type TBBCardElevation = 'none' | 'low' | 'med' | 'high' | 'default';
 
 /**
- * BBCollapsible
- */
-export type TBBCollapsibleHeaderColor = 'default' | 'primary' | 'secondary' | 'accent';
-
-/**
  * BBModal
  */
 export type TBBModalWidth = 'sm' | 'md' | 'lg' | 'full';

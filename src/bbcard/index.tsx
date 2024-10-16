@@ -87,10 +87,11 @@ const getClassColorBackgroundHeader = (colorBackground: string | null): string |
  * @param {React.ReactNode | React.ReactNode[]} children - The text to display
  * @param {TBBCardColorBackground=} color - the color of the text
  * @param {TBBCardElevation} elevation - the elevation of the card
- * @param {string=} className - Any class name to add
  * @param {() => void=} onClick - Function to call when clicked
  * @param {string=} href - URL for the link
  * @param {boolean=} noBorder - Whether to remove the border
+ * @param {TBBCardColorBackground=} colorBackground - The color of the background
+ * @param {string=} className - Any class name to add
  */
 export interface IPropsBBCard {
   children: React.ReactNode | React.ReactNode[];
@@ -100,6 +101,7 @@ export interface IPropsBBCard {
   onClick?: () => void;
   href?: string;
   noBorder?: boolean;
+  className?: string;
 }
 
 /**
