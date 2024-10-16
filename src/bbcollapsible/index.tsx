@@ -59,6 +59,7 @@ const BBCollapsible = (props: IPropsBBCollapsible) => {
  * @param {React.ReactNode=} arrowDown - The arrow down icon
  * @param {boolean=} showButtonUp - Whether to show the button up
  * @param {TBBButtonVariant=} buttonVariant - The variant of the button
+ * @param {boolean=} buttonTransparent - Whether the button is transparent
  * @param {string=} classNameButton - Any class name to add to the button
  */
 export interface IPropsBBCollapsibleSection extends IPropsBBBase {
@@ -69,6 +70,7 @@ export interface IPropsBBCollapsibleSection extends IPropsBBBase {
   arrowUp?: React.ReactNode;
   arrowDown?: React.ReactNode;
   buttonVariant?: TBBButtonVariant;
+  buttonTransparent?: boolean;
   classNameButton?: string;
 }
 
@@ -76,7 +78,15 @@ export interface IPropsBBCollapsibleSection extends IPropsBBBase {
  * BBCollapsible.Header
  */
 const Header = (props: IPropsBBCollapsibleSection) => {
-  const { children, showButtonUp, arrowUp = '▲', arrowDown = '▼', buttonVariant = 'inverse-primary', classNameButton } = props;
+  const {
+    children,
+    showButtonUp,
+    arrowUp = '▲',
+    arrowDown = '▼',
+    buttonVariant = 'inverse-primary',
+    buttonTransparent,
+    classNameButton,
+  } = props;
   return (
     <BBCard.Header {...props} className={styles.mainCollapsibleHeader}>
       {children}
@@ -84,6 +94,7 @@ const Header = (props: IPropsBBCollapsibleSection) => {
         <BBButton
           // on click is necessary to un-disable the button
           variant={buttonVariant}
+          transparent={buttonTransparent}
           onClick={() => {}}
           icon={{ icon: showButtonUp ? arrowUp : arrowDown }}
           className={classnames(styles.buttonArrow, classNameButton)}

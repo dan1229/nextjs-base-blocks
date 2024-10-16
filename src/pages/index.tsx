@@ -14,13 +14,13 @@ import BBFieldCheckbox from '../form_components/bbfield_checkbox';
 import type { IPropsBBAlert } from '../bbalert';
 import type { IPropsBBButton } from '../bbbutton';
 import type { IPropsBBCard } from '../bbcard';
+import type { IPropsBBCollapsible } from '../bbcollapsible';
 import type { IPropsBBLink } from '../bblink';
 import type { IPropsBBLoadingSpinner } from '../bbloading_spinner';
 import type { IPropsBBModal } from '../bbmodal';
 import type { IPropsBBNavbar } from '../bbnavbar';
 import type { IPropsBBNavbarItem } from '../bbnavbar_item';
 import type { IPropsBBText } from '../bbtext';
-import type { TBBCollapsibleHeaderColor } from '../types';
 
 /**
  * DEMO PAGE
@@ -73,15 +73,18 @@ const DemoPage = () => {
   });
   // BB Collapsible
   // TODO (DN 4/2024) - the types for the props here is a bit of a workaround, colorArrow should be a prop of the header
-  const [stateBBCollapsible, setStateBBCollapsible] = useState<IPropsBBCard & { colorArrow: TBBCollapsibleHeaderColor }>({
+  const [stateBBCollapsible, setStateBBCollapsible] = useState<IPropsBBCollapsible>({
     colorBackground: 'primary',
     colorBorder: 'transparent',
     elevation: 'none',
     onClick: () => alert('You clicked the collapsible!'),
     noBorder: false,
     children: 'TODO - fix collapsible implementation',
+    className: '',
     href: '',
-    colorArrow: 'default',
+    isExpandedInitial: false,
+    onExpanded: (isExpanded: boolean) => alert(`Collapsible expanded: ${isExpanded}`),
+    onCollapsed: () => alert('Collapsible collapsed'),
   });
   // BB Link
   const [stateBBLink, setStateBBLink] = useState<IPropsBBLink>({

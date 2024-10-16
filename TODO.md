@@ -22,7 +22,9 @@
 
 ##### demo page - bbcard 'composite' components
 - what to do with header, body and footer?
-- update collapsible similarly
+-
+- similar issue with collapsible component
+  - even bigger here since collapsible content has specific options
 -
 - how to handle passing props to children?
   - i.e., 'noPadding' to header/body/footer
@@ -320,6 +322,8 @@ TODO - write specific test cases to write
   - Added `buttonVariant` prop
     - Removed `colorArrow` prop
   - Renamed `isExpanded` prop to `showButtonUp`
+  - Added `buttonTransparent` prop
+  - General component styling clean up
   
 -------------------------------------------------------
 
