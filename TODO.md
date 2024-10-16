@@ -310,6 +310,7 @@ TODO - write specific test cases to write
   - Added `default` elevation prop and SCSS variable
   - `href` cards made external links to open in new tab
   - Fix hover state for `href` cards
+  - FIX: added back `className` prop
 - `BBAlert`
   - Added `classNameIcon` prop
 - `BBCollapsible`
@@ -317,7 +318,6 @@ TODO - write specific test cases to write
   - Added `onExpanded` and `onCollapsed` props
   - Added `arrowUp` and `arrowDown` props
   
-
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)
