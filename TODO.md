@@ -5,19 +5,6 @@
 ## [Unreleased]
 ------
 ### TODO
-----
-#### Cypress Testing
-
-
-##### cypress tests
-- add cypress component testing
-
-
-
-##### code cov
-- hook up code cov and coverage
-
-
 
 ----
 #### demo page improvements
@@ -96,6 +83,23 @@
 
 
 
+----
+#### Cypress Testing
+
+
+TODO - write specific test cases to write
+- e.g., for each base blocks component
+
+
+##### cypress tests
+- add cypress component testing
+
+
+
+##### code cov
+- hook up code cov and coverage
+
+
 ---
 ### 1.5.0
 
@@ -104,8 +108,28 @@
 
 
 
+
 ----
 ### 1.4.0
+
+
+
+
+#### cypress testing
+- install
+  - write basic components tests
+  - should / could these use the demo page?
+    - are those just separate tests?
+- coverage
+  - add codecov
+-
+- add TODOs for future tests
+
+
+
+
+
+
 
 
 
@@ -118,25 +142,10 @@
 -
 - can i add this to the base component/props?
   - already is...?
-
   
 
-#### bbform fields - helper text
+#### bb form fields - helper text
 - can this be handled by BBToolTip?
-
-
-
-#### bb form components variables
-- start adding variables for colors and all that
-- border color
-- border thickness
-  - when focussed
-- border radius
-- background color
-- text color
-   - when focussed
-- placeholder color
-
 
 
 #### bb field dropdown styling
@@ -146,8 +155,36 @@
 
 
 
+#### bb form components - basic style variables
+- add variables for colors and all that
+  - border color
+  - border thickness
+    - when focussed
+  - border radius
+  - background color
+  - text color
+    - when focussed
+  - placeholder color
+-
+- are these handled by scss variables well enough?
 
 
+
+
+
+
+
+
+
+
+#### bb navbar
+- add divider between brand and items
+  - horizontal and vertical
+  - any props for this?
+    - thickness
+    - color
+    - padding?
+    - classname?
 
 
 
@@ -184,9 +221,9 @@
 
 
 #### bbnavbar item
-- borders?
+- borders
   - make optional?  
-    - copy from bbcard?
+    - copy set up from bbcard? i.e., noBorder prop OR scss variable?
 -
 - width?
   - set min width somehow?
@@ -196,8 +233,9 @@
 -
 - override for active path detection
   - i.e., some 'home' pages are at '/' not '/home'
-  - add some prop to specify the route
+  - add some prop to specify the override route
   
+
 
 #### bbnavbar - vertical mobile styling
 - mobile styling for the vertical navbar is meh
@@ -205,27 +243,26 @@
 -
 - emulate styling from flutter navbars a bit
   - i.e., always slide out kinda thing
--
-- 'sticky' prop doesn't seem to be working properly either
-  - i.e., always sticky?
-  - is it just the default value? if so change the name or something
 
 
 #### bb navbar
-- add divider between brand and items
-  - horizontal and vertical
--
-- weird padding issue on get twenty when bitwarden alert for password shows up
+- weird padding issue on when bitwarden alert for password shows up
   - something to do with positioning and the size variable
 -
 - add 'max width'
   - i.e., like how the page content is sometimes limited, navbar should be too
-  - scss variable?
+  - scss variable
 -
 - make navbar items aligned center vertically
 -
 - wider button action components?
-
+-
+- issue with centering on mobile
+  - check danielnazarian.com
+-
+- 'sticky' prop doesn't seem to be working properly either
+  - i.e., always sticky?
+  - is it just the default value? if so change the name or something
 
 
 

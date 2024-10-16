@@ -55,6 +55,7 @@ As well as the following 'Form Components':
 - `BBFieldCheckbox`
 - `BBFieldDropdown`
 - `BBFieldFile`
+- `BBFieldNumber`
 - `BBFieldSelectCard`
 - `BBFieldSelectMultiple`
 - `BBFieldText`
