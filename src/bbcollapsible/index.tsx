@@ -11,13 +11,11 @@ import type { IPropsBBBase, TBBButtonVariant, TBBCollapsibleHeaderColor } from '
  * @param {boolean=} isExpandedInitial - Whether the content is expanded initially
  * @param {Function=} onExpanded - Callback function when the expanded state changes
  * @param {Function=} onCollapsed - Callback function when the collapsed state changes
- * @param {TBBButtonVariant=} buttonVariant - The button variant
  */
 export interface IPropsBBCollapsible extends IPropsBBCard {
   isExpandedInitial?: boolean;
   onExpanded?: (isExpanded: boolean) => void;
   onCollapsed?: () => void;
-  buttonVariant?: TBBButtonVariant;
 }
 
 /**
@@ -46,7 +44,7 @@ const BBCollapsible = (props: IPropsBBCollapsible) => {
 
   return (
     <BBCard {...props}>
-      {cloneElement(header as React.ReactElement, { onClick: toggleExpand, isExpanded })}
+      {cloneElement(header as React.ReactElement, { onClick: toggleExpand, showButtonUp: isExpanded })}
       {isExpanded && content}
     </BBCard>
   );
@@ -59,14 +57,14 @@ const BBCollapsible = (props: IPropsBBCollapsible) => {
  * @param {boolean=} noPadding - Whether to remove padding from the content
  * @param {React.ReactNode=} arrowUp - The arrow up icon
  * @param {React.ReactNode=} arrowDown - The arrow down icon
- * @param {boolean=} isExpanded - Whether the content is expanded
+ * @param {boolean=} showButtonUp - Whether to show the button up
  * @param {TBBCollapsibleHeaderColor=} colorArrow - The color of the arrow
  */
 export interface IPropsBBCollapsibleSection extends IPropsBBBase {
   children: React.ReactNode | React.ReactNode[];
   className?: string;
   noPadding?: boolean;
-  isExpanded?: boolean;
+  showButtonUp?: boolean;
   arrowUp?: React.ReactNode;
   arrowDown?: React.ReactNode;
   colorArrow?: TBBCollapsibleHeaderColor;
@@ -77,7 +75,7 @@ export interface IPropsBBCollapsibleSection extends IPropsBBBase {
  * BBCollapsible.Header
  */
 const Header = (props: IPropsBBCollapsibleSection) => {
-  const { children, isExpanded, colorArrow = 'default', arrowUp = '▲', arrowDown = '▼', buttonVariant = 'inverse-primary' } = props;
+  const { children, showButtonUp, colorArrow = 'default', arrowUp = '▲', arrowDown = '▼', buttonVariant = 'inverse-primary' } = props;
   return (
     <BBCard.Header {...props} className={styles.mainCollapsibleHeader}>
       {children}
@@ -86,7 +84,7 @@ const Header = (props: IPropsBBCollapsibleSection) => {
           // on click is necessary to un-disable the button
           variant={buttonVariant}
           onClick={() => {}}
-          icon={{ icon: isExpanded ? arrowUp : arrowDown }}
+          icon={{ icon: showButtonUp ? arrowUp : arrowDown }}
           className={classnames(styles.containerArrow, styles[colorArrow])}
         />
       </div>
