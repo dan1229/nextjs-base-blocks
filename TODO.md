@@ -317,6 +317,7 @@ TODO - write specific test cases to write
   - Added `isExpandedInitial` prop
   - Added `onExpanded` and `onCollapsed` props
   - Added `arrowUp` and `arrowDown` props
+  - Added `buttonVariant` prop
   
 -------------------------------------------------------
 

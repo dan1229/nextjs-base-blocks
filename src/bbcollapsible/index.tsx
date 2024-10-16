@@ -4,18 +4,20 @@ import BBButton from '../bbbutton';
 import BBCard from '../bbcard';
 import styles from './styles.module.scss';
 import type { IPropsBBCard } from '../bbcard';
-import type { IPropsBBBase, TBBCollapsibleHeaderColor } from '../types';
+import type { IPropsBBBase, TBBButtonVariant, TBBCollapsibleHeaderColor } from '../types';
 
 /**
  * PROPS
  * @param {boolean=} isExpandedInitial - Whether the content is expanded initially
  * @param {Function=} onExpanded - Callback function when the expanded state changes
  * @param {Function=} onCollapsed - Callback function when the collapsed state changes
+ * @param {TBBButtonVariant=} buttonVariant - The button variant
  */
 export interface IPropsBBCollapsible extends IPropsBBCard {
   isExpandedInitial?: boolean;
   onExpanded?: (isExpanded: boolean) => void;
   onCollapsed?: () => void;
+  buttonVariant?: TBBButtonVariant;
 }
 
 /**
@@ -58,6 +60,7 @@ const BBCollapsible = (props: IPropsBBCollapsible) => {
  * @param {React.ReactNode=} arrowUp - The arrow up icon
  * @param {React.ReactNode=} arrowDown - The arrow down icon
  * @param {boolean=} isExpanded - Whether the content is expanded
+ * @param {TBBCollapsibleHeaderColor=} colorArrow - The color of the arrow
  */
 export interface IPropsBBCollapsibleSection extends IPropsBBBase {
   children: React.ReactNode | React.ReactNode[];
@@ -67,19 +70,21 @@ export interface IPropsBBCollapsibleSection extends IPropsBBBase {
   arrowUp?: React.ReactNode;
   arrowDown?: React.ReactNode;
   colorArrow?: TBBCollapsibleHeaderColor;
+  buttonVariant?: TBBButtonVariant;
 }
 
 /**
  * BBCollapsible.Header
  */
 const Header = (props: IPropsBBCollapsibleSection) => {
-  const { children, isExpanded, colorArrow = 'default', arrowUp = '▲', arrowDown = '▼' } = props;
+  const { children, isExpanded, colorArrow = 'default', arrowUp = '▲', arrowDown = '▼', buttonVariant = 'inverse-primary' } = props;
   return (
     <BBCard.Header {...props} className={styles.mainCollapsibleHeader}>
       {children}
-      <div>
+      <div className={styles.containerButtonCollapsible}>
         <BBButton
           // on click is necessary to un-disable the button
+          variant={buttonVariant}
           onClick={() => {}}
           icon={{ icon: isExpanded ? arrowUp : arrowDown }}
           className={classnames(styles.containerArrow, styles[colorArrow])}
