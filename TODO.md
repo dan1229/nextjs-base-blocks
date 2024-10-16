@@ -177,45 +177,6 @@
 
 
 
-
-
-#### bbdivider - NEW COMPONENT
-- hr
-- props
-  - color
-  - size
-  - border / thickness
-  - margin
-
-
-
-#### bbalert
-- add class name to icon dismiss
-  - maybe color prop?
-
-  
-
-
-#### bbmodal
-- scrolling
-  - ensure backgrounds dont scroll EVER
-  - ensure if tall enough, the content scrolls
--
-- styling
-  - they look awful tbh
-  - add more padding to top / bottom
--
-- background scrolling
-  - still not great
-  - need to somehow add 'overflow-y: hidden' to 'body'/'html' when modal is open
-
-
-
-
-
-
-
-
 #### bbnavbar item
 - borders?
   - make optional?  
@@ -276,6 +237,39 @@
 - change icon? use BsChevronBarExpand?
   - add option / prop?
     - presets somehow?
+
+
+
+#### bbdivider - NEW COMPONENT
+- hr
+- props
+  - color
+  - size
+  - border / thickness
+  - margin
+
+
+
+#### bbalert
+- add class name to icon dismiss
+  - maybe color prop?
+
+  
+
+
+#### bbmodal
+- scrolling
+  - ensure backgrounds dont scroll EVER
+  - ensure if tall enough, the content scrolls
+-
+- styling
+  - they look awful tbh
+  - add more padding to top / bottom
+-
+- background scrolling
+  - still not great
+  - need to somehow add 'overflow-y: hidden' to 'body'/'html' when modal is open
+
 
 
 
