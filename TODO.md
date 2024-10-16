@@ -284,7 +284,8 @@
 
 ### [1.3.X] - 2024-10-DD
 - Variable updates
-  - `--grey-light-dark` variable removed
+  - `--grey-light-dark` renamed to `--grey-light`
+  - `--grey-light` renamed to `--grey-lightest`
   - `--card-elevation-default` variable added
   - `--card-border-thickness` variable added
 - `BBCard`

@@ -44,7 +44,7 @@ $text-size-xxxl: var(--text-size-xxxl, 3.2rem);
 
 // GREY LIGHT
 .grey_light {
-  color: var(--grey-light, #8199c2);
+  color: var(--grey-lightest, #8199c2);
 }
 
 .grey_light.hover {
@@ -81,7 +81,7 @@ $text-size-xxxl: var(--text-size-xxxl, 3.2rem);
 
 .white.hover {
   &:hover {
-    color: var(--grey-light, #8199c2);
+    color: var(--grey-lightest, #8199c2);
   }
 }
 

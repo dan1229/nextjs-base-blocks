@@ -1,8 +1,8 @@
 // colors
 $white: var(--white, #ffffff);
 $white-dark: var(--white-dark, #f5f5f5);
-$grey-light: var(--grey-light, #a9bcde);
-$grey-light-dark: darken($grey-light, 10%);
+$grey-lightest: var(--grey-lightest, #a9bcde);
+$grey-light: var(--grey-light, #9daeca);
 $grey-dark: var(--grey-dark, #58647a);
 $grey-darkest: var(--grey-darkest, #606775);
 $black: var(--black, #232323);
@@ -198,16 +198,16 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 }
 
 .background_card_grey_light {
-  background-color: $grey-light !important;
+  background-color: $grey-lightest !important;
 
   .footer {
-    border-top: 1px solid $grey-light-dark;
-    background-color: $grey-light-dark;
+    border-top: 1px solid $grey-light;
+    background-color: $grey-light;
   }
 
   .header {
-    border-bottom: 1px solid $grey-light-dark;
-    background-color: $grey-light-dark;
+    border-bottom: 1px solid $grey-light;
+    background-color: $grey-light;
   }
 }
 
@@ -297,8 +297,8 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 }
 
 .background_footer_grey_light {
-  border-top: 1px solid $grey-light-dark !important;
-  background-color: $grey-light-dark !important;
+  border-top: 1px solid $grey-light !important;
+  background-color: $grey-light !important;
 }
 
 .background_footer_grey_dark {
@@ -342,8 +342,8 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 }
 
 .background_header_grey_light {
-  border-bottom: 1px solid $grey-light-dark !important;
-  background-color: $grey-light-dark !important;
+  border-bottom: 1px solid $grey-light !important;
+  background-color: $grey-light !important;
 }
 
 .background_header_grey_dark {
@@ -387,7 +387,7 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 }
 
 .border_grey_light {
-  border: $border-thickness solid $grey-light;
+  border: $border-thickness solid $grey-lightest;
 }
 
 .border_grey_dark {
