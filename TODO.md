@@ -193,6 +193,9 @@ TODO - write specific test cases to write
     - color
     - padding?
     - classname?
+-
+- add back 'sticky' prop
+
 
 
 #### bb tooltips - NEW COMPONENT
@@ -260,19 +263,11 @@ TODO - write specific test cases to write
   - i.e., always slide out kinda thing
 
 
-#### bb navbar
-- weird padding issue on when bitwarden alert for password shows up
-  - something to do with positioning and the size variable
--
-- make navbar items aligned center vertically
--
-- issue with centering on mobile
-  - check danielnazarian.com
--
-- 'sticky' prop doesn't seem to be working properly either
-  - i.e., always sticky?
-  - is it just the default value? if so change the name or something
 
+
+
+#### bb navbar
+- make navbar items aligned center vertically
 
 
 
@@ -312,6 +307,7 @@ TODO - write specific test cases to write
   - Added `colorBorder` prop
 - `BBNavbar`
   - Removed `navbar-horizontal-height` variable
+  - Weird alignment issues fixed with pop ups
 
 -------------------------------------------------------
 
