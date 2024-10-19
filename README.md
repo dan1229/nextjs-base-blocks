@@ -74,7 +74,7 @@ The list of available options is here:
 // set these theme colors
 $primary-color: #5a65ff;
 $secondary-color: #45b689;
-$accent-color: #ebeb30;
+$accent-color: #FF6B6C;
 $info-color: #FFC800;
 $warning-color: #f1c500;
 $success-color: #50c758;
