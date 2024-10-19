@@ -287,18 +287,6 @@ TODO - write specific test cases to write
 
 
 
-#### bbdivider - NEW COMPONENT
-- hr
-- props
-  - color
-  - size
-  - border / thickness
-  - margin
-- add to demo
-
-
-
-
 
 
 ### [1.3.0] - 2024-10-DD
