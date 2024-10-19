@@ -54,6 +54,7 @@ $navbar-vertical-width: var(--navbar-vertical-width, 10rem);
   display: flex;
   flex-direction: column;
   position: relative; /* Allow content to adjust based on its container */
+  margin-top: 0px !important;
 
   &.vertical {
     padding-left: $navbar-vertical-width;
