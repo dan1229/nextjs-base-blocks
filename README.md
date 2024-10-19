@@ -75,7 +75,7 @@ The list of available options is here:
 $primary-color: #5a65ff;
 $secondary-color: #45b689;
 $accent-color: #ebeb30;
-$info-color: #284af7;
+$info-color: #FFC800;
 $warning-color: #f1c500;
 $success-color: #50c758;
 $danger-color: #78CDD7;

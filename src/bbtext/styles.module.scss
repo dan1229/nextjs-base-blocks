@@ -120,7 +120,7 @@ $text-size-xxxl: var(--text-size-xxxl, 3.2rem);
 
 // SECONDARY
 .secondary {
-  color: var(--secondary-color, #284af7);
+  color: var(--secondary-color, #ffc800);
 }
 
 .secondary.hover {
@@ -147,7 +147,7 @@ $text-size-xxxl: var(--text-size-xxxl, 3.2rem);
 
 .secondary_light.hover {
   &:hover {
-    color: var(--secondary-color, #284af7);
+    color: var(--secondary-color, #ffc800);
   }
 }
 
@@ -219,7 +219,7 @@ $text-size-xxxl: var(--text-size-xxxl, 3.2rem);
 // INFO
 
 .info {
-  color: var(--info-color, #284af7);
+  color: var(--info-color, #ffc800);
 }
 
 .info.hover {
