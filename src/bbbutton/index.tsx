@@ -103,7 +103,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
   const hoverRes = disabledRes || !hover ? false : hover;
 
   // icon alignment
-  const [align] = useState<TBBButtonIconAlign>(icon?.align || 'left');
+  const [align] = useState<TBBButtonIconAlign>(icon.align || 'left');
 
   // handle hover state
   const [isHovered, setIsHovered] = useState(false);
