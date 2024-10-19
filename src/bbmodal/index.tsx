@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import BBButton from '../bbbutton';
 import BBCard from '../bbcard';
@@ -66,6 +66,7 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
     width = 'md',
     colorBorder = 'grey_dark',
   } = Props;
+
   const showFooter = !!onConfirm || (!!onDismiss && showButtonCancel) || !!extraFooter;
 
   let onDismissRes = onDismiss;

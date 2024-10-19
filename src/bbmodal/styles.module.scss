@@ -15,10 +15,8 @@
   background-color: rgba(82, 86, 105, 0.6);
   backdrop-filter: blur(5px);
 
-  // this prevents scroll chaining
-  * {
-    overscroll-behavior: contain;
-  }
+  // prevent background scrolling
+  overscroll-behavior: none;
 }
 
 .headerRow {
