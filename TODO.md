@@ -128,6 +128,11 @@ TODO - write specific test cases to write
 - add TODOs for future tests
 
 
+#### bbnavbar item
+- width?
+  - set min width somehow?
+
+  
 
 #### bbnavbar - vertical mobile styling
 - emulate styling from flutter navbars a bit
@@ -246,9 +251,6 @@ TODO - write specific test cases to write
 
 
 #### bbnavbar item
-- width?
-  - set min width somehow?
--
 - hover
   - border radius on hover is weird - shouldnt do all borders
 -
