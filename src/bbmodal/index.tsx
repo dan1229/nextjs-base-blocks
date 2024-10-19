@@ -90,25 +90,29 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
     <div className={styles.containerModal} onClick={onClickContainer}>
       <BBCard className={classnames(styles.modal, styles[width])}>
         <BBCard.Header>
-          <BBCard.Header>
-            <div className={styles.headerRow}>
-              <BBText size={headerTextSize}>{title}</BBText>
-              {!!onDismissRes && <BBButton onClick={onDismissRes} variant="danger" icon={{ icon: <AiOutlineClose size={16} /> }} />}
-            </div>
-          </BBCard.Header>
+          <div className={styles.headerRow}>
+            <BBText size={headerTextSize}>{title}</BBText>
+            {!!onDismissRes && (
+              <div className={styles.containerHeaderButton}>
+                <BBButton onClick={onDismissRes} variant="danger" icon={{ icon: <AiOutlineClose size={16} /> }} />
+              </div>
+            )}
+          </div>
         </BBCard.Header>
         <BBCard.Body className={styles.bodyModal}>{children}</BBCard.Body>
         {showFooter && (
           <BBCard.Footer>
-            {loading ? (
-              <BBLoadingSpinner />
-            ) : (
-              <div className={styles.containerButtons}>
-                {!!onConfirm && <BBButton onClick={onConfirm} text={textConfirm} variant="success" type="submit" idForm={idForm} />}
-                {!!onDismissRes && showButtonCancel && <BBButton onClick={onDismissRes} text={textDismiss} variant="danger" />}
-                {extraFooter}
-              </div>
-            )}
+            <div className={styles.containerButtons}>
+              {loading ? (
+                <BBLoadingSpinner />
+              ) : (
+                <>
+                  {!!onConfirm && <BBButton onClick={onConfirm} text={textConfirm} variant="success" type="submit" idForm={idForm} />}
+                  {!!onDismissRes && showButtonCancel && <BBButton onClick={onDismissRes} text={textDismiss} variant="danger" />}
+                  {extraFooter}
+                </>
+              )}
+            </div>
           </BBCard.Footer>
         )}
       </BBCard>
