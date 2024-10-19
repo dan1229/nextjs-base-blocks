@@ -201,6 +201,14 @@ TODO - write specific test cases to write
     - TODO
 
 
+
+
+#### bbmodal
+- background scrolling
+  - ensure backgrounds dont scroll EVER
+
+
+
 ----
 ### 1.3.0
 
@@ -288,11 +296,6 @@ TODO - write specific test cases to write
   - margin
 
 
-
-#### bbmodal
-- scrolling
-  - ensure backgrounds dont scroll EVER
-  - ensure if tall enough, the content scrolls
 -
 - styling
   - they look awful tbh
