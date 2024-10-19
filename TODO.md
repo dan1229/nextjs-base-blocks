@@ -329,7 +329,9 @@ TODO - write specific test cases to write
   - Renamed `isExpanded` prop to `showButtonUp`
   - Added `buttonTransparent` prop
   - General component styling clean up
-  
+- `BBModal`
+  - TODO
+
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)
