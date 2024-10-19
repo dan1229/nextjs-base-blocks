@@ -6,7 +6,7 @@ import BBCard from '../bbcard';
 import BBLoadingSpinner from '../bbloading_spinner';
 import BBText from '../bbtext';
 import styles from './styles.module.scss';
-import type { TBBModalWidth, TBBTextSize } from '../types';
+import type { TBBCardColorBorder, TBBModalWidth, TBBTextSize } from '../types';
 
 /**
  * PROPS
@@ -25,6 +25,7 @@ import type { TBBModalWidth, TBBTextSize } from '../types';
  * @param {boolean=} showButtonCancel - Whether to show the cancel button
  * @param {boolean=} loading - Whether to show the loading spinner
  * @param {TBBModalWidth=} width - The width of the modal
+ * @param {TBBCardColorBorder} colorBorder - The color of the border
  */
 export interface IPropsBBModal {
   children: React.ReactNode;
@@ -41,6 +42,7 @@ export interface IPropsBBModal {
   showButtonCancel?: boolean;
   loading?: boolean;
   width?: TBBModalWidth;
+  colorBorder?: TBBCardColorBorder;
 }
 
 /**
@@ -62,7 +64,9 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
     showButtonCancel = false,
     loading = false,
     width = 'md',
+    colorBorder = 'grey_dark',
   } = Props;
+
   const showFooter = !!onConfirm || (!!onDismiss && showButtonCancel) || !!extraFooter;
 
   let onDismissRes = onDismiss;
@@ -88,8 +92,8 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
    */
   return (
     <div className={styles.containerModal} onClick={onClickContainer}>
-      <BBCard className={classnames(styles.modal, styles[width])}>
-        <BBCard.Header>
+      <BBCard className={classnames(styles.modal, styles[width])} colorBorder={colorBorder}>
+        <BBCard.Header noPadding>
           <div className={styles.headerRow}>
             <BBText size={headerTextSize}>{title}</BBText>
             {!!onDismissRes && (

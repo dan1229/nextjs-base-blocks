@@ -201,6 +201,14 @@ TODO - write specific test cases to write
     - TODO
 
 
+
+
+#### bbmodal
+- background scrolling
+  - ensure backgrounds dont scroll EVER
+
+
+
 ----
 ### 1.3.0
 
@@ -289,20 +297,6 @@ TODO - write specific test cases to write
 
 
 
-#### bbmodal
-- scrolling
-  - ensure backgrounds dont scroll EVER
-  - ensure if tall enough, the content scrolls
--
-- styling
-  - they look awful tbh
-  - add more padding to top / bottom
--
-- background scrolling
-  - still not great
-  - need to somehow add 'overflow-y: hidden' to 'body'/'html' when modal is open
-
-
 
 
 
@@ -329,7 +323,10 @@ TODO - write specific test cases to write
   - Renamed `isExpanded` prop to `showButtonUp`
   - Added `buttonTransparent` prop
   - General component styling clean up
-  
+- `BBModal`
+  - Improved general styling and feel
+  - Added `colorBorder` prop
+
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)
