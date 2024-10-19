@@ -19,9 +19,7 @@ $primary-color: var(--primary-color, #e8352e);
 $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
 
 // navbar vertical width
-$navbar-vertical-width: var(--navbar-vertical-width, 10rem);
-
-/**
+$navbar-vertical-width: 10%; /**
  * ELEVATION
  */
 .elevation_none {

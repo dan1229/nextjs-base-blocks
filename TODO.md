@@ -129,6 +129,13 @@ TODO - write specific test cases to write
 
 
 
+#### bbnavbar - vertical mobile styling
+- emulate styling from flutter navbars a bit
+  - i.e., always slide out kinda thing
+
+
+
+
 
 
 
@@ -255,16 +262,6 @@ TODO - write specific test cases to write
   
 
 
-#### bbnavbar - vertical mobile styling
-- mobile styling for the vertical navbar is meh
-  - I.e., padding and make the logos and navbar slimmer 
--
-- emulate styling from flutter navbars a bit
-  - i.e., always slide out kinda thing
-
-
-
-
 
 
 ### [1.3.0] - 2024-10-DD
@@ -302,6 +299,8 @@ TODO - write specific test cases to write
   - Removed `navbar-horizontal-height` variable
   - Weird alignment issues fixed with pop ups
   - Mobile styling alignment fixed
+  - Vertical navbar styling improved
+  - Vertical navbar mobile styling improved
 
 -------------------------------------------------------
 
