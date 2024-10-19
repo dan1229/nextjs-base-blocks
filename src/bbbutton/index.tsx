@@ -19,10 +19,12 @@ import type {
  *
  * @param {React.ReactNode} icon - Icon to display
  * @param {TBBButtonIconAlign} align - Alignment of icon
+ * @param {TBBTextColor} color - Color of icon
  */
 interface IPropsBBButtonIcon {
   icon: React.ReactNode;
   align?: TBBButtonIconAlign;
+  color?: TBBTextColor;
 }
 
 /**

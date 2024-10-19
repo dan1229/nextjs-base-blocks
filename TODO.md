@@ -299,6 +299,8 @@ TODO - write specific test cases to write
   - Added new component!
   - Lots of props for styling
   - Added to demo page
+- `BBButton`
+  - Added `iconColor` prop
 - `BBCard`
   - Added `default` elevation prop and SCSS variable
   - `href` cards made external links to open in new tab
