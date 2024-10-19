@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import BBButton from '../bbbutton';
 import BBCard from '../bbcard';
