@@ -6,6 +6,17 @@ $bg-light-color: var(--bg-light-color, #303030);
 
 $navbar-item-text-color: var(--navbar-item-text-color, #ffffff);
 
+// colors
+$white: var(--white, #ffffff);
+$white-dark: var(--white-dark, #f5f5f5);
+$grey-lightest: var(--grey-lightest, #a9bcde);
+$grey-light: var(--grey-light, #9daeca);
+$grey-dark: var(--grey-dark, #58647a);
+$black: var(--black, #232323);
+$primary-color: var(--primary-color, #3f51b5);
+$secondary-color: var(--secondary-color, #f50057);
+$accent-color: var(--accent-color, #ebeb30);
+
 // this is intended to go like this:
 // 1. use '--navbar-item-text-color' if it is defined
 // 2. if not, use '--primary-color' if it is defined
@@ -23,6 +34,11 @@ $navbar-item-bg-color-active: var(--navbar-item-bg-color-active, $bg-dark-color)
 // same with --navbar-item-text-color-hover and --bg-color
 $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
 
+// variables
+$border-radius: var(--navbar-item-border-radius, 8px);
+$border-thickness: var(--navbar-item-border-thickness, 2px);
+$border-default-color: var(--navbar-item-border-default-color, #e0e0e0);
+
 .active {
   background-color: $navbar-item-text-color;
   background-color: $navbar-item-bg-color-active;
@@ -36,6 +52,7 @@ $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
 .navbarItemBase {
   list-style-type: none;
   margin: 0 0.15rem;
+  border-radius: $border-radius;
 
   a {
     text-align: center;
@@ -53,11 +70,15 @@ $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
   &:hover {
     cursor: pointer;
     background-color: $navbar-item-bg-color-hover;
-    border-radius: $border-radius !important;
 
     // handle elements in the dropdown
     li {
       border-radius: 0;
+      // handle first child of the dropdown
+      &:first-child {
+        border-top-left-radius: $border-radius !important;
+        border-top-right-radius: $border-radius !important;
+      }
 
       // handle last child of the dropdown
       &:last-child {
@@ -150,6 +171,49 @@ $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
   display: block !important;
 }
 
+/*
+* BORDERS
+*/
+.noBorder {
+  border: none !important;
+}
+
+.border_default {
+  border: $border-thickness solid $border-default-color;
+}
+
+.border_transparent {
+  border: $border-thickness solid transparent;
+}
+
+.border_white {
+  border: $border-thickness solid $white;
+}
+
+.border_grey_light {
+  border: $border-thickness solid $grey-lightest;
+}
+
+.border_grey_dark {
+  border: $border-thickness solid $grey-dark;
+}
+
+.border_black {
+  border: $border-thickness solid $black;
+}
+
+.border_primary {
+  border: $border-thickness solid $primary-color;
+}
+
+.border_secondary {
+  border: $border-thickness solid $secondary-color;
+}
+
+.border_accent {
+  border: $border-thickness solid $accent-color;
+}
+
 /**
 * MOBILE
 */
@@ -194,11 +258,17 @@ $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
 
   .navbarItemBase {
     width: 100% !important;
+    border-radius: 0;
     margin: 0;
 
     &:first-child {
-      border-top-left-radius: $border-radius;
-      border-top-right-radius: $border-radius;
+      border-top-left-radius: $border-radius !important;
+      border-top-right-radius: $border-radius !important;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: $border-radius !important;
+      border-bottom-right-radius: $border-radius !important;
     }
 
     a {

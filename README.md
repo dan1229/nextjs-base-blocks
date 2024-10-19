@@ -149,6 +149,9 @@ html,
   --navbar-item-text-color-hover: #{darken($secondary-color, 20%)};
   --navbar-item-bg-color-active: #{lighten($primary-color, 45%)};
   --navbar-item-bg-color-hover: #{lighten($secondary-color, 20%)};
+  --navbar-item-border-radius: 8px;
+  --navbar-item-border-thickness: 2px;
+  --navbar-item-border-default-color: #{$primary-color};
   // bb text
   --text-color-default: rgb(24, 24, 24);
   --text-size-xs: 0.6rem;
