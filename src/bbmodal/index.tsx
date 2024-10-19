@@ -93,7 +93,7 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
   return (
     <div className={styles.containerModal} onClick={onClickContainer}>
       <BBCard className={classnames(styles.modal, styles[width])} colorBorder={colorBorder}>
-        <BBCard.Header>
+        <BBCard.Header noPadding>
           <div className={styles.headerRow}>
             <BBText size={headerTextSize}>{title}</BBText>
             {!!onDismissRes && (
