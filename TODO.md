@@ -132,7 +132,7 @@ TODO - write specific test cases to write
 - width?
   - set min width somehow?
 
-  
+
 
 #### bbnavbar - vertical mobile styling
 - emulate styling from flutter navbars a bit
@@ -251,9 +251,6 @@ TODO - write specific test cases to write
 
 
 #### bbnavbar item
-- hover
-  - border radius on hover is weird - shouldnt do all borders
--
 - override for active path detection
   - i.e., some 'home' pages are at '/' not '/home'
   - add some prop to specify the override route
@@ -300,9 +297,13 @@ TODO - write specific test cases to write
   - Vertical navbar styling improved
   - Vertical navbar mobile styling improved
 - `BBNavbarItem`
+  - `activePaths` prop added to specify active paths if they differ from the current path
   - `colorBorder` prop added along with type and styles
+  - `noBorder` prop added
   - `--navbar-item-border-thickness` variable added
   - `--navbar-item-border-radius` variable added
+  - `--navbar-item-border-default-color` variable added
+  - Hover state border radius issue fixed
 
 -------------------------------------------------------
 

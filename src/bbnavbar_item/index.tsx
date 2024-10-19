@@ -45,6 +45,7 @@ const getClassColorBorder = (colorBorder: TBBNavbarItemColorBorder): string => {
  * @param {string} href - Href to use for item.
  * @param {string=} className - Any class name to add.
  * @param {TBBNavbarItemColorBorder=} colorBorder - Color of the border.
+ * @param {boolean=} noBorder - Whether to disable the border.
  */
 export interface IPropsBBNavbarItem {
   title: string;
@@ -52,13 +53,14 @@ export interface IPropsBBNavbarItem {
   href: string;
   className?: string;
   colorBorder?: TBBNavbarItemColorBorder;
+  noBorder?: boolean;
 }
 
 /**
  * BBNAVBAR ITEM
  */
 export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElement {
-  const { title, href, className, children, colorBorder = 'default' } = Props;
+  const { title, href, className, children, colorBorder = 'default', noBorder = false } = Props;
   const [isActiveInDropdown, setIsActiveInDropdown] = useState(false);
   const [currentPath, setCurrentPath] = useState<string>('');
 
@@ -92,6 +94,7 @@ export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElem
       className={classnames(
         styles.navbarItemBase,
         styles.dropdownContainer,
+        noBorder ? styles.noBorder : '',
         getClassColorBorder(colorBorder),
         { [styles.active]: isActive, [styles.hasChildren]: !!children?.length },
         className
