@@ -296,15 +296,6 @@ TODO - write specific test cases to write
   - margin
 
 
--
-- styling
-  - they look awful tbh
-  - add more padding to top / bottom
--
-- background scrolling
-  - still not great
-  - need to somehow add 'overflow-y: hidden' to 'body'/'html' when modal is open
-
 
 
 
