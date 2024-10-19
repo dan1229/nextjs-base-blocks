@@ -142,7 +142,6 @@ html,
   --navbar-container-brand-width: 10%;
   --navbar-icon-mobile-color: #{$primary-color};
   --navbar-vertical-width: 132px;
-  --navbar-horizontal-height: 96px;
   // bb navbar item
   --navbar-item-border-radius: 8px;
   --navbar-item-padding: 12px;

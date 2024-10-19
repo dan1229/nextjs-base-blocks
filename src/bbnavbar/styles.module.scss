@@ -4,6 +4,7 @@ $brand-padding: var(--navbar-brand-padding, 0.5rem);
 $container-brand-margin: var(--navbar-container-brand-margin, 0 0.75rem);
 $container-brand-width: var(--navbar-container-brand-width, 10%);
 
+// Font family fallback strategy
 // this is intended to go like this:
 // 1. use 'font-family-navbar-header' if it is defined
 // 2. if not, use 'font-family-header' if it is defined
@@ -20,12 +21,9 @@ $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
 // navbar vertical width
 $navbar-vertical-width: var(--navbar-vertical-width, 10rem);
 
-// navbar horizontal height
-$navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
-
 /**
-* ELEVATION
-*/
+ * ELEVATION
+ */
 .elevation_none {
   box-shadow: none;
 }
@@ -44,23 +42,22 @@ $navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
 }
 
 /**
-* SHARED CSS
-*/
+ * SHARED CSS
+ */
 .wrapper {
   display: flex;
+  flex-direction: column; /* Ensure that content stacks below the navbar */
 }
 
 .content {
   width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative; /* Allow content to adjust based on its container */
+  margin-top: 0px !important;
 
   &.vertical {
     padding-left: $navbar-vertical-width;
-  }
-
-  &:not(.vertical) {
-    padding-top: $navbar-horizontal-height;
   }
 }
 
@@ -95,14 +92,6 @@ $navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
 
   &:not(.vertical) {
     width: 100vw;
-    height: $navbar-horizontal-height;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
-
-  &.sticky {
-    position: fixed;
   }
 }
 
@@ -110,7 +99,6 @@ $navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
   cursor: pointer;
   border-radius: $border-radius;
   padding: $brand-padding;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -135,8 +123,8 @@ $navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
 }
 
 /**
-* NAVIGATION MENU
-*/
+ * NAVIGATION MENU
+ */
 .navigationMenu {
   display: flex;
   align-items: center;
@@ -155,8 +143,7 @@ $navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
     text-decoration: none;
   }
 
-  // TODO improve this
-  // this is intended to align the navbar item text to the start
+  // Align navbar item text to the start
   ul > li > div > div > a > * {
     text-align: start;
   }
@@ -182,8 +169,8 @@ $navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
 }
 
 /**
-* HAMBURGER MENU
-*/
+ * HAMBURGER MENU
+ */
 .wrapperBrandAndHamburger {
   display: flex;
   justify-content: space-between;
@@ -219,8 +206,8 @@ $navbar-horizontal-height: var(--navbar-horizontal-height, 96px);
 }
 
 /**
-* MEDIA QUERIES
-*/
+ * MEDIA QUERIES
+ */
 @media screen and (max-width: 1200px) {
   .wrapperBrandAndHamburger {
     &.verticalWrapper {
