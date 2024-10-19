@@ -180,6 +180,12 @@ TODO - write specific test cases to write
 
 
 #### bb navbar
+- add 'max width'
+  - i.e., like how the page content is sometimes limited, navbar should be too
+  - scss variable
+-
+- wider button action components?
+-
 - add divider between brand and items
   - horizontal and vertical
   - any props for this?
@@ -187,6 +193,8 @@ TODO - write specific test cases to write
     - color
     - padding?
     - classname?
+-
+- add back 'sticky' prop
 
 
 
@@ -255,27 +263,6 @@ TODO - write specific test cases to write
   - i.e., always slide out kinda thing
 
 
-#### bb navbar
-- weird padding issue on when bitwarden alert for password shows up
-  - something to do with positioning and the size variable
--
-- add 'max width'
-  - i.e., like how the page content is sometimes limited, navbar should be too
-  - scss variable
--
-- make navbar items aligned center vertically
--
-- wider button action components?
--
-- issue with centering on mobile
-  - check danielnazarian.com
--
-- 'sticky' prop doesn't seem to be working properly either
-  - i.e., always sticky?
-  - is it just the default value? if so change the name or something
-
-
-
 
 
 
@@ -313,6 +300,8 @@ TODO - write specific test cases to write
   - Added `colorBorder` prop
 - `BBNavbar`
   - Removed `navbar-horizontal-height` variable
+  - Weird alignment issues fixed with pop ups
+  - Mobile styling alignment fixed
 
 -------------------------------------------------------
 

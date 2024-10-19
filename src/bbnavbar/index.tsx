@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import BBText from '../bbtext';
 import useOutsideClick from '../utils/hooks/UseOutsideClick';
@@ -76,32 +76,6 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
   useOutsideClick(ref, () => {
     setShowNavExpanded(false);
   });
-
-  // Dynamically adjust content margin based on the navbar height
-  useEffect(() => {
-    const adjustContentMargin = () => {
-      const navbarHeight = ref.current?.offsetHeight || 0;
-      const contentElement = document.querySelector(`.${styles.content}`) as HTMLElement;
-
-      if (contentElement) {
-        // Only adjust margin if the navbar height is different from the existing margin
-        const existingMargin = parseInt(contentElement.style.marginTop, 10) || 0;
-        if (existingMargin !== navbarHeight) {
-          contentElement.style.marginTop = `${navbarHeight}px`;
-        }
-      }
-    };
-
-    // Adjust once on initial load
-    adjustContentMargin();
-
-    // Listen for window resize to dynamically adjust
-    window.addEventListener('resize', adjustContentMargin);
-
-    return () => {
-      window.removeEventListener('resize', adjustContentMargin);
-    };
-  }, []);
 
   const getClassElevation = () => {
     switch (elevation) {

@@ -95,27 +95,34 @@ $navbar-vertical-width: var(--navbar-vertical-width, 10rem);
   }
 }
 
+.containerBrand {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; // Ensure text is centered
+  width: 100%;
+  height: 100%;
+  padding: 0.25rem;
+}
+
 .brand {
-  cursor: pointer;
-  border-radius: $border-radius;
-  padding: $brand-padding;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: $container-brand-margin;
+  width: $container-brand-width;
+
+  cursor: pointer;
+  border-radius: $border-radius;
+  padding: $brand-padding;
+  height: 100%;
 
   &:hover {
     background-color: color-mix(in srgb, $background-color, #fff 20%);
   }
-}
-
-.containerBrand {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: $container-brand-margin;
-  width: $container-brand-width;
 }
 
 .textTitle {
@@ -192,6 +199,7 @@ $navbar-vertical-width: var(--navbar-vertical-width, 10rem);
   background-color: transparent;
   transition: background-color 0.2s ease-in-out;
   display: none;
+  margin: 0 0.75rem;
 }
 
 .iconHamburger {
