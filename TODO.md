@@ -238,62 +238,17 @@ TODO - write specific test cases to write
 
 
 ----
-### 1.3.0
+### 1.3.1
 
 
 
 
+TODO
 
 
 
-
-### [1.3.0] - 2024-10-19
-- Variable updates
-  - `--grey-light-dark` renamed to `--grey-light`
-  - `--grey-light` renamed to `--grey-lightest`
-  - `--card-elevation-default` variable added
-  - `--card-border-thickness` variable added
-  - `--white-dark` variable removed
-- `BBDivider`
-  - Added new component!
-  - Lots of props for styling
-  - Added to demo page
-- `BBButton`
-  - Added `iconColor` prop
-- `BBCard`
-  - Added `default` elevation prop and SCSS variable
-  - `href` cards made external links to open in new tab
-  - Fix hover state for `href` cards
-  - FIX: added back `className` prop
-- `BBAlert`
-  - Added `classNameIcon` prop
-- `BBCollapsible`
-  - Added `isExpandedInitial` prop
-  - Added `onExpanded` and `onCollapsed` props
-  - Added `arrowUp` and `arrowDown` props
-  - Added `buttonVariant` prop
-    - Removed `colorArrow` prop
-  - Renamed `isExpanded` prop to `showButtonUp`
-  - Added `buttonTransparent` prop
-  - General component styling clean up
-- `BBModal`
-  - Improved general styling and feel
-  - Added `colorBorder` prop
-- `BBNavbar`
-  - Removed `navbar-horizontal-height` variable
-  - Weird alignment issues fixed with pop ups
-  - Mobile styling alignment fixed
-  - Vertical navbar styling improved
-  - Vertical navbar mobile styling improved
-- `BBNavbarItem`
-  - `activePaths` prop added to specify active paths if they differ from the current path
-  - `colorBorder` prop added along with type and styles
-  - `noBorder` prop added
-  - `--navbar-item-border-thickness` variable added
-  - `--navbar-item-border-radius` variable added
-  - `--navbar-item-border-default-color` variable added
-  - Hover state border radius issue fixed
-- Default theme colors updated
+### [1.3.1] - 2024-MM-DD
+- todo
 
 -------------------------------------------------------
 
