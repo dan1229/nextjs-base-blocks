@@ -129,6 +129,13 @@ TODO - write specific test cases to write
 
 
 
+#### bbnavbar - vertical mobile styling
+- emulate styling from flutter navbars a bit
+  - i.e., always slide out kinda thing
+
+
+
+
 
 
 
@@ -253,16 +260,6 @@ TODO - write specific test cases to write
   - i.e., some 'home' pages are at '/' not '/home'
   - add some prop to specify the override route
   
-
-
-#### bbnavbar - vertical mobile styling
-- mobile styling for the vertical navbar is meh
-  - I.e., padding and make the logos and navbar slimmer 
--
-- emulate styling from flutter navbars a bit
-  - i.e., always slide out kinda thing
-
-
 
 
 
