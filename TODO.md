@@ -115,6 +115,15 @@ TODO - write specific test cases to write
 ### 1.4.0
 
 
+#### default theme colors?
+- update defaults in readme
+  - sync with bootstrapper
+
+
+
+
+
+
 
 
 #### cypress testing
@@ -232,33 +241,19 @@ TODO - write specific test cases to write
 ### 1.3.0
 
 
-#### default theme colors?
-- update
-- have to find and replace lots of defaults sadly
--
-- update defaults in readme
-  - sync with bootstrapper
-  - improve defaults for scss variables - namely mobile text sizes
-    - same with dark theme stuff and comments - check get twenty
 
 
 
 
 
 
-
-
-
-
-
-
-
-### [1.3.0] - 2024-10-DD
+### [1.3.0] - 2024-10-19
 - Variable updates
   - `--grey-light-dark` renamed to `--grey-light`
   - `--grey-light` renamed to `--grey-lightest`
   - `--card-elevation-default` variable added
   - `--card-border-thickness` variable added
+  - `--white-dark` variable removed
 - `BBDivider`
   - Added new component!
   - Lots of props for styling
@@ -298,6 +293,7 @@ TODO - write specific test cases to write
   - `--navbar-item-border-radius` variable added
   - `--navbar-item-border-default-color` variable added
   - Hover state border radius issue fixed
+- Default theme colors updated
 
 -------------------------------------------------------
 

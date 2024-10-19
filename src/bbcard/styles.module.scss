@@ -1,6 +1,5 @@
 // colors
 $white: var(--white, #ffffff);
-$white-dark: var(--white-dark, #f5f5f5);
 $grey-lightest: var(--grey-lightest, #a9bcde);
 $grey-light: var(--grey-light, #9daeca);
 $grey-dark: var(--grey-dark, #58647a);
@@ -10,7 +9,7 @@ $primary-color: var(--primary-color, #3f51b5);
 $primary-dark-color: var(--primary-dark-color, #303f9f);
 $secondary-color: var(--secondary-color, #f50057);
 $secondary-dark-color: var(--secondary-dark-color, #c51162);
-$accent-color: var(--accent-color, #ebeb30);
+$accent-color: var(--accent-color, #ff6b6c);
 $accent-dark-color: var(--accent-dark-color, #c3c328);
 
 // default colors
@@ -187,13 +186,13 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
   background-color: $white !important;
 
   .footer {
-    border-top: 1px solid $white-dark;
-    background-color: $white-dark;
+    border-top: 1px solid $grey-lightest;
+    background-color: $grey-lightest;
   }
 
   .header {
-    border-bottom: 1px solid $white-dark;
-    background-color: $white-dark;
+    border-bottom: 1px solid $grey-lightest;
+    background-color: $grey-lightest;
   }
 }
 
@@ -292,8 +291,8 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 }
 
 .background_footer_white {
-  border-top: 1px solid $white-dark !important;
-  background-color: $white-dark !important;
+  border-top: 1px solid $grey-lightest !important;
+  background-color: $grey-lightest !important;
 }
 
 .background_footer_grey_light {
@@ -337,8 +336,8 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 }
 
 .background_header_white {
-  border-bottom: 1px solid $white-dark !important;
-  background-color: $white-dark !important;
+  border-bottom: 1px solid $grey-lightest !important;
+  background-color: $grey-lightest !important;
 }
 
 .background_header_grey_light {

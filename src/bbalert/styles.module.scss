@@ -33,7 +33,7 @@
   height: 20px;
 
   &:hover {
-    color: var(--danger-color, #e8352e);
+    color: var(--danger-color, #78cdd7);
   }
 }
 
@@ -52,11 +52,11 @@
 }
 
 .color_danger {
-  background-color: var(--danger-light-color, #e8352e);
+  background-color: var(--danger-light-color, #78cdd7);
 }
 
 .color_info {
-  background-color: var(--info-light-color, #284af7);
+  background-color: var(--info-light-color, #ffc800);
 }
 
 /**

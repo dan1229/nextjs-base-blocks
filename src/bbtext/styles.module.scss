@@ -87,7 +87,7 @@ $text-size-xxxl: var(--text-size-xxxl, 3.2rem);
 
 // PRIMARy
 .primary {
-  color: var(--primary-color, #e8352e);
+  color: var(--primary-color, #78cdd7);
 }
 
 .primary.hover {
@@ -114,13 +114,13 @@ $text-size-xxxl: var(--text-size-xxxl, 3.2rem);
 
 .primary_light.hover {
   &:hover {
-    color: var(--primary-color, #e8352e);
+    color: var(--primary-color, #78cdd7);
   }
 }
 
 // SECONDARY
 .secondary {
-  color: var(--secondary-color, #284af7);
+  color: var(--secondary-color, #ffc800);
 }
 
 .secondary.hover {
@@ -147,7 +147,7 @@ $text-size-xxxl: var(--text-size-xxxl, 3.2rem);
 
 .secondary_light.hover {
   &:hover {
-    color: var(--secondary-color, #284af7);
+    color: var(--secondary-color, #ffc800);
   }
 }
 
@@ -207,7 +207,7 @@ $text-size-xxxl: var(--text-size-xxxl, 3.2rem);
 
 // DANGER
 .danger {
-  color: var(--danger-color, #e8352e);
+  color: var(--danger-color, #78cdd7);
 }
 
 .danger.hover {
@@ -219,7 +219,7 @@ $text-size-xxxl: var(--text-size-xxxl, 3.2rem);
 // INFO
 
 .info {
-  color: var(--info-color, #284af7);
+  color: var(--info-color, #ffc800);
 }
 
 .info.hover {

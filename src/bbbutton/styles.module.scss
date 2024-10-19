@@ -7,25 +7,25 @@ $grey-light: var(--grey-light, #8199c2);
 $grey-dark: var(--grey-dark, #58647a);
 $grey-darkest: var(--grey-darkest, #2f3542);
 
-$info-color: var(--info-color, #284af7);
-$info-light-color: var(--info-light-color, lighten(#284af7, 10%));
-$info-dark-color: var(--info-dark-color, darken(#284af7, 10%));
+$info-color: var(--info-color, #ffc800);
+$info-light-color: var(--info-light-color, lighten(#ffc800, 10%));
+$info-dark-color: var(--info-dark-color, darken(#ffc800, 10%));
 
-$primary-color: var(--primary-color, #e8352e);
-$primary-light-color: var(--primary-light-color, lighten(#e8352e, 10%));
-$primary-dark-color: var(--primary-dark-color, darken(#e8352e, 10%));
+$primary-color: var(--primary-color, #78cdd7);
+$primary-light-color: var(--primary-light-color, lighten(#78cdd7, 10%));
+$primary-dark-color: var(--primary-dark-color, darken(#78cdd7, 10%));
 
-$secondary-color: var(--secondary-color, #284af7);
-$secondary-light-color: var(--secondary-light-color, lighten(#284af7, 10%));
-$secondary-dark-color: var(--secondary-dark-color, darken(#284af7, 10%));
+$secondary-color: var(--secondary-color, #ffc800);
+$secondary-light-color: var(--secondary-light-color, lighten(#ffc800, 10%));
+$secondary-dark-color: var(--secondary-dark-color, darken(#ffc800, 10%));
 
-$accent-color: var(--accent-color, #ebeb30);
-$accent-light-color: var(--accent-light-color, lighten(#ebeb30, 10%));
-$accent-dark-color: var(--accent-dark-color, darken(#ebeb30, 10%));
+$accent-color: var(--accent-color, #ff6b6c);
+$accent-light-color: var(--accent-light-color, lighten(#ff6b6c, 10%));
+$accent-dark-color: var(--accent-dark-color, darken(#ff6b6c, 10%));
 
-$danger-color: var(--danger-color, #e8352e);
-$danger-light-color: var(--danger-light-color, lighten(#e8352e, 10%));
-$danger-dark-color: var(--danger-dark-color, darken(#e8352e, 10%));
+$danger-color: var(--danger-color, #78cdd7);
+$danger-light-color: var(--danger-light-color, lighten(#78cdd7, 10%));
+$danger-dark-color: var(--danger-dark-color, darken(#78cdd7, 10%));
 
 $success-color: var(--success-color, #50c758);
 $success-light-color: var(--success-light-color, lighten(#50c758, 10%));

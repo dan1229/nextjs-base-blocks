@@ -8,24 +8,23 @@ $navbar-item-text-color: var(--navbar-item-text-color, #ffffff);
 
 // colors
 $white: var(--white, #ffffff);
-$white-dark: var(--white-dark, #f5f5f5);
 $grey-lightest: var(--grey-lightest, #a9bcde);
 $grey-light: var(--grey-light, #9daeca);
 $grey-dark: var(--grey-dark, #58647a);
 $black: var(--black, #232323);
 $primary-color: var(--primary-color, #3f51b5);
 $secondary-color: var(--secondary-color, #f50057);
-$accent-color: var(--accent-color, #ebeb30);
+$accent-color: var(--accent-color, #ff6b6c);
 
 // this is intended to go like this:
 // 1. use '--navbar-item-text-color' if it is defined
 // 2. if not, use '--primary-color' if it is defined
 // 3. if not, use default primary color
-$primary-color: var(--primary-color, #e8352e);
+$primary-color: var(--primary-color, #78cdd7);
 $navbar-item-text-color: var(--navbar-item-text-color, $primary-color);
 
 // same with --navbar-item-text-color-hover and --primary-dark-color
-$primary-dark-color: var(--primary-dark-color, darken(#e8352e, 10%));
+$primary-dark-color: var(--primary-dark-color, darken(#78cdd7, 10%));
 $navbar-item-text-color-hover: var(--navbar-item-text-color-hover, $primary-dark-color);
 
 // same with --navbar-item-bg-color-active and --bg-dark-color
