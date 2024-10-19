@@ -46,6 +46,7 @@ const getClassColorBorder = (colorBorder: TBBNavbarItemColorBorder): string => {
  * @param {string=} className - Any class name to add.
  * @param {TBBNavbarItemColorBorder=} colorBorder - Color of the border.
  * @param {boolean=} noBorder - Whether to disable the border.
+ * @param {string[]=} activePaths - Paths to consider as active. Consider this an override to the current path. Do not include the base path.
  */
 export interface IPropsBBNavbarItem {
   title: string;
@@ -54,13 +55,14 @@ export interface IPropsBBNavbarItem {
   className?: string;
   colorBorder?: TBBNavbarItemColorBorder;
   noBorder?: boolean;
+  activePaths?: string[];
 }
 
 /**
  * BBNAVBAR ITEM
  */
 export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElement {
-  const { title, href, className, children, colorBorder = 'default', noBorder = false } = Props;
+  const { title, href, className, children, colorBorder = 'default', noBorder = false, activePaths } = Props;
   const [isActiveInDropdown, setIsActiveInDropdown] = useState(false);
   const [currentPath, setCurrentPath] = useState<string>('');
 
@@ -82,8 +84,18 @@ export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElem
         found = true;
       }
     });
+
+    // Check if the current path is in the active paths
+    if (activePaths) {
+      activePaths.forEach((activePath) => {
+        if (removeSlashes(currentPath) === removeSlashes(activePath)) {
+          found = true;
+        }
+      });
+    }
+
     setIsActiveInDropdown(found);
-  }, [children, currentPath]);
+  }, [children, currentPath, activePaths]);
 
   const urlMatch = !!currentPath.length && !!href.length && removeSlashes(currentPath) === removeSlashes(href);
   const isActive = urlMatch || isActiveInDropdown;

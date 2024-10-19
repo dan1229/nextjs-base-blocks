@@ -250,11 +250,6 @@ TODO - write specific test cases to write
 
 
 
-#### bbnavbar item
-- override for active path detection
-  - i.e., some 'home' pages are at '/' not '/home'
-  - add some prop to specify the override route
-  
 
 
 
