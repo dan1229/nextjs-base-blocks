@@ -266,13 +266,6 @@ TODO - write specific test cases to write
 
 
 
-#### bb navbar
-- make navbar items aligned center vertically
-
-
-
-
-
 
 ### [1.3.0] - 2024-10-DD
 - Variable updates
@@ -308,6 +301,7 @@ TODO - write specific test cases to write
 - `BBNavbar`
   - Removed `navbar-horizontal-height` variable
   - Weird alignment issues fixed with pop ups
+  - Mobile styling alignment fixed
 
 -------------------------------------------------------
 
