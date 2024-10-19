@@ -77,33 +77,6 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
     setShowNavExpanded(false);
   });
 
-  // Dynamically adjust content margin based on the navbar height
-  useEffect(() => {
-    const adjustContentMargin = () => {
-      const navbarHeight = ref.current?.offsetHeight || 0;
-      const contentElement = document.querySelector(`.${styles.content}`) as HTMLElement;
-
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-      if (contentElement) {
-        // Only adjust margin if the navbar height is different from the existing margin
-        const existingMargin = parseInt(contentElement.style.marginTop, 10) || 0;
-        if (existingMargin !== navbarHeight) {
-          contentElement.style.marginTop = `${navbarHeight}px`;
-        }
-      }
-    };
-
-    // Adjust once on initial load
-    adjustContentMargin();
-
-    // Listen for window resize to dynamically adjust
-    window.addEventListener('resize', adjustContentMargin);
-
-    return () => {
-      window.removeEventListener('resize', adjustContentMargin);
-    };
-  }, []);
-
   const getClassElevation = () => {
     switch (elevation) {
       case 'none':
