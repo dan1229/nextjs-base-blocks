@@ -294,7 +294,7 @@ TODO - write specific test cases to write
   - size
   - border / thickness
   - margin
-
+- add to demo
 
 
 
@@ -307,6 +307,9 @@ TODO - write specific test cases to write
   - `--grey-light` renamed to `--grey-lightest`
   - `--card-elevation-default` variable added
   - `--card-border-thickness` variable added
+- `BBDivider`
+  - Added new component!
+  - Lots of props for styling
 - `BBCard`
   - Added `default` elevation prop and SCSS variable
   - `href` cards made external links to open in new tab

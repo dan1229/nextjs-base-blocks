@@ -16,27 +16,11 @@ export interface IPropsBBBase {
 }
 
 /**
- * BBText
+ * BBAlert
  */
-export type TBBTextSize = 'tiny' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge' | 'xxxlarge';
-export type TBBTextColor =
-  | 'grey_light'
-  | 'grey_dark'
-  | 'black'
-  | 'white'
-  | 'primary'
-  | 'primary_light'
-  | 'primary_dark'
-  | 'secondary'
-  | 'secondary_light'
-  | 'secondary_dark'
-  | 'accent'
-  | 'accent_light'
-  | 'accent_dark'
-  | 'success'
-  | 'warning'
-  | 'danger'
-  | 'info';
+export type TBBAlertVariant = 'success' | 'warning' | 'danger' | 'info';
+export type TBBAlertElevation = 'none' | 'low' | 'medium' | 'high';
+export type TBBAlertTextAlignment = 'left' | 'center' | 'right';
 
 /**
  * BBButton
@@ -67,11 +51,27 @@ export type TBBButtonElevation = 'none' | 'low' | 'medium' | 'high';
 export type TBBButtonIconAlign = 'left' | 'right' | 'above' | 'below' | 'space-between';
 
 /**
- * BBAlert
+ * BBDivider
  */
-export type TBBAlertVariant = 'success' | 'warning' | 'danger' | 'info';
-export type TBBAlertElevation = 'none' | 'low' | 'medium' | 'high';
-export type TBBAlertTextAlignment = 'left' | 'center' | 'right';
+export type TBBDividerColor =
+  | 'default'
+  | 'white'
+  | 'grey_light'
+  | 'grey_dark'
+  | 'black'
+  | 'primary'
+  | 'primary_light'
+  | 'primary_dark'
+  | 'secondary'
+  | 'secondary_light'
+  | 'secondary_dark'
+  | 'accent'
+  | 'accent_light'
+  | 'accent_dark';
+export type TBBDividerOrientation = 'horizontal' | 'vertical';
+export type TBBDividerStyle = 'solid' | 'dashed' | 'dotted';
+export type TBBDividerThickness = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl';
+export type TBBDividerLength = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl' | 'full';
 
 /**
  * BBCard
@@ -102,6 +102,29 @@ export type TBBCardElevation = 'none' | 'low' | 'med' | 'high' | 'default';
  * BBModal
  */
 export type TBBModalWidth = 'sm' | 'md' | 'lg' | 'full';
+
+/**
+ * BBText
+ */
+export type TBBTextSize = 'tiny' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge' | 'xxxlarge';
+export type TBBTextColor =
+  | 'grey_light'
+  | 'grey_dark'
+  | 'black'
+  | 'white'
+  | 'primary'
+  | 'primary_light'
+  | 'primary_dark'
+  | 'secondary'
+  | 'secondary_light'
+  | 'secondary_dark'
+  | 'accent'
+  | 'accent_light'
+  | 'accent_dark'
+  | 'success'
+  | 'warning'
+  | 'danger'
+  | 'info';
 
 /**
  * FORM TYPES
