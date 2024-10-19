@@ -8,16 +8,16 @@ $grey-light: var(--grey-light, #8199c2);
 $grey-dark: var(--grey-dark, #58647a);
 
 $primary-color: var(--primary-color, #e8352e);
-$primary-light-color: lighten($primary-color, 10%);
-$primary-dark-color: darken($primary-color, 10%);
+$primary-light-color: var(--primary-light-color, lighten(#e8352e, 10%));
+$primary-dark-color: var(--primary-dark-color, darken(#e8352e, 10%));
 
 $secondary-color: var(--secondary-color, #284af7);
-$secondary-light-color: lighten($secondary-color, 10%);
-$secondary-dark-color: darken($secondary-color, 10%);
+$secondary-light-color: var(--secondary-light-color, lighten(#284af7, 10%));
+$secondary-dark-color: var(--secondary-dark-color, darken(#284af7, 10%));
 
 $accent-color: var(--accent-color, #ebeb30);
-$accent-light-color: lighten($accent-color, 10%);
-$accent-dark-color: darken($accent-color, 10%);
+$accent-light-color: var(--accent-light-color, lighten(#ebeb30, 10%));
+$accent-dark-color: var(--accent-dark-color, darken(#ebeb30, 10%));
 
 // Base divider styles
 .divider {
