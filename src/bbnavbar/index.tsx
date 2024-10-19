@@ -83,6 +83,7 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
       const navbarHeight = ref.current?.offsetHeight || 0;
       const contentElement = document.querySelector(`.${styles.content}`) as HTMLElement;
 
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       if (contentElement) {
         // Only adjust margin if the navbar height is different from the existing margin
         const existingMargin = parseInt(contentElement.style.marginTop, 10) || 0;
