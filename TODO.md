@@ -330,7 +330,8 @@ TODO - write specific test cases to write
   - Added `buttonTransparent` prop
   - General component styling clean up
 - `BBModal`
-  - TODO
+  - Improved general styling and feel
+  - Added `colorBorder` prop
 
 -------------------------------------------------------
 
