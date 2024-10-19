@@ -78,7 +78,7 @@ $accent-color: #ebeb30;
 $info-color: #284af7;
 $warning-color: #f1c500;
 $success-color: #50c758;
-$danger-color: #e8352e;
+$danger-color: #78CDD7;
 
 html,
 :root {

@@ -87,7 +87,7 @@ $text-size-xxxl: var(--text-size-xxxl, 3.2rem);
 
 // PRIMARy
 .primary {
-  color: var(--primary-color, #e8352e);
+  color: var(--primary-color, #78cdd7);
 }
 
 .primary.hover {
@@ -114,7 +114,7 @@ $text-size-xxxl: var(--text-size-xxxl, 3.2rem);
 
 .primary_light.hover {
   &:hover {
-    color: var(--primary-color, #e8352e);
+    color: var(--primary-color, #78cdd7);
   }
 }
 
@@ -207,7 +207,7 @@ $text-size-xxxl: var(--text-size-xxxl, 3.2rem);
 
 // DANGER
 .danger {
-  color: var(--danger-color, #e8352e);
+  color: var(--danger-color, #78cdd7);
 }
 
 .danger.hover {
