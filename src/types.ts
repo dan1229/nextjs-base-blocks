@@ -53,6 +53,7 @@ export type TBBButtonIconAlign = 'left' | 'right' | 'above' | 'below' | 'space-b
 /**
  * BBDivider
  */
+// types.ts
 export type TBBDividerColor =
   | 'default'
   | 'white'
@@ -68,10 +69,12 @@ export type TBBDividerColor =
   | 'accent'
   | 'accent_light'
   | 'accent_dark';
+
 export type TBBDividerOrientation = 'horizontal' | 'vertical';
 export type TBBDividerStyle = 'solid' | 'dashed' | 'dotted';
 export type TBBDividerThickness = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl';
 export type TBBDividerLength = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl' | 'full';
+export type TBBDividerMargin = 'none' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl';
 
 /**
  * BBCard
