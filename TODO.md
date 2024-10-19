@@ -287,18 +287,6 @@ TODO - write specific test cases to write
 
 
 
-#### bbdivider - NEW COMPONENT
-- hr
-- props
-  - color
-  - size
-  - border / thickness
-  - margin
-
-
-
-
-
 
 
 ### [1.3.0] - 2024-10-DD
@@ -307,6 +295,10 @@ TODO - write specific test cases to write
   - `--grey-light` renamed to `--grey-lightest`
   - `--card-elevation-default` variable added
   - `--card-border-thickness` variable added
+- `BBDivider`
+  - Added new component!
+  - Lots of props for styling
+  - Added to demo page
 - `BBCard`
   - Added `default` elevation prop and SCSS variable
   - `href` cards made external links to open in new tab

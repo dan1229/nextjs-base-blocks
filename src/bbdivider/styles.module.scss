@@ -1,0 +1,114 @@
+// styles.module.scss
+
+// Color redefinitions to standardize across this file/component
+//
+$default: var(--divider-color-default, #000000);
+$white: var(--white, #ffffff);
+$black: var(--black, #000000);
+$grey-light: var(--grey-light, #8199c2);
+$grey-dark: var(--grey-dark, #58647a);
+
+$primary-color: var(--primary-color, #e8352e);
+$primary-light-color: var(--primary-light-color, lighten(#e8352e, 10%));
+$primary-dark-color: var(--primary-dark-color, darken(#e8352e, 10%));
+
+$secondary-color: var(--secondary-color, #284af7);
+$secondary-light-color: var(--secondary-light-color, lighten(#284af7, 10%));
+$secondary-dark-color: var(--secondary-dark-color, darken(#284af7, 10%));
+
+$accent-color: var(--accent-color, #ebeb30);
+$accent-light-color: var(--accent-light-color, lighten(#ebeb30, 10%));
+$accent-dark-color: var(--accent-dark-color, darken(#ebeb30, 10%));
+
+// Base divider styles
+.divider {
+  box-sizing: border-box;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+// Orientation styles
+.horizontal {
+  width: 100%;
+  height: 0;
+}
+
+.vertical {
+  height: 100%;
+  width: 0;
+}
+
+// Style types
+.styleSolid {
+  border-style: solid;
+}
+
+.styleDashed {
+  border-style: dashed;
+}
+
+.styleDotted {
+  border-style: dotted;
+}
+
+// Thickness variants
+@each $size, $value in ('xs': 1px, 's': 2px, 'm': 3px, 'l': 4px, 'xl': 6px, 'xxl': 8px, 'xxxl': 10px) {
+  .thickness#{$size} {
+    &.horizontal {
+      border-bottom-width: $value;
+    }
+    &.vertical {
+      border-right-width: $value;
+    }
+  }
+}
+
+// Length variants
+@each $size, $value in ('xs': 25%, 's': 50%, 'm': 75%, 'l': 90%, 'xl': 100%, 'xxl': 150%, 'xxxl': 200%, 'full': 100%) {
+  .length#{$size} {
+    &.horizontal {
+      width: $value;
+    }
+    &.vertical {
+      height: $value;
+    }
+  }
+}
+
+// Margin variants
+@each $size, $value in ('none': 0, 'xs': 1px, 's': 0.25rem, 'm': 0.5rem, 'l': 1rem, 'xl': 2rem, 'xxl': 3rem, 'xxxl': 4rem) {
+  .margin#{$size} {
+    &.horizontal {
+      margin: #{$value} 0;
+    }
+    &.vertical {
+      margin: 0 #{$value};
+    }
+  }
+}
+
+// Color variants
+@each $name,
+  $color
+    in (
+      'default': $black,
+      'white': $white,
+      'grey_light': $grey-light,
+      'grey_dark': $grey-dark,
+      'black': $black,
+      'primary': $primary-color,
+      'primary_light': $primary-light-color,
+      'primary_dark': $primary-dark-color,
+      'secondary': $secondary-color,
+      'secondary_light': $secondary-light-color,
+      'secondary_dark': $secondary-dark-color,
+      'accent': $accent-color,
+      'accent_light': $accent-light-color,
+      'accent_dark': $accent-dark-color
+    )
+{
+  .color#{$name} {
+    color: $color;
+  }
+}

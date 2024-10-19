@@ -131,6 +131,8 @@ html,
   --card-elevation-low: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   --card-elevation-med: rgba(0, 0, 0, 0.12) 0px 3px 6px, rgba(0, 0, 0, 0.24) 0px 3px 6px;
   --card-elevation-high: rgba(0, 0, 0, 0.12) 0px 10px 20px, rgba(0, 0, 0, 0.24) 0px 6px 6px;
+  // bb divider
+  --divider-color-default: rgb(221, 221, 221);
   // bb navbar
   --navbar-border-radius: 8px;
   --navbar-background-color: rgb(221, 221, 221);
@@ -198,6 +200,8 @@ Add overrides for dark themes like so:
   --card-background-default-color: rgb(77, 77, 77);
   --card-darken-default-color: rgb(39, 39, 39);
   --card-border-default-color: rgb(77, 77, 77);
+  // bb divider
+  --divider-color-default: rgb(77, 77, 77);
   // bb text
   --text-color-default: rgb(255, 255, 255);
 }

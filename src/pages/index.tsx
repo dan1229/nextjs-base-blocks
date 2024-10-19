@@ -3,6 +3,7 @@ import BBAlert from '../bbalert';
 import BBButton from '../bbbutton';
 import BBCard from '../bbcard';
 import BBCollapsible from '../bbcollapsible';
+import BBDivider from '../bbdivider';
 import BBLink from '../bblink';
 import BBLoadingSpinner from '../bbloading_spinner';
 import BBModal from '../bbmodal';
@@ -15,6 +16,7 @@ import type { IPropsBBAlert } from '../bbalert';
 import type { IPropsBBButton } from '../bbbutton';
 import type { IPropsBBCard } from '../bbcard';
 import type { IPropsBBCollapsible } from '../bbcollapsible';
+import type { IPropsBBDivider } from '../bbdivider';
 import type { IPropsBBLink } from '../bblink';
 import type { IPropsBBLoadingSpinner } from '../bbloading_spinner';
 import type { IPropsBBModal } from '../bbmodal';
@@ -85,6 +87,16 @@ const DemoPage = () => {
     isExpandedInitial: false,
     onExpanded: (isExpanded: boolean) => alert(`Collapsible expanded: ${isExpanded}`),
     onCollapsed: () => alert('Collapsible collapsed'),
+  });
+  // BB Divider
+  const [stateBBDivider, setStateBBDivider] = useState<IPropsBBDivider>({
+    color: 'black',
+    thickness: 'xs',
+    orientation: 'horizontal',
+    styleType: 'solid',
+    className: '',
+    length: 'full',
+    margin: 'none',
   });
   // BB Link
   const [stateBBLink, setStateBBLink] = useState<IPropsBBLink>({
@@ -197,6 +209,12 @@ const DemoPage = () => {
           }
           stateObject={stateBBCollapsible}
           setStateObject={setStateBBCollapsible}
+        />
+        <DemoComponent
+          name="BBDivider"
+          child={<BBDivider {...stateBBDivider} />}
+          stateObject={stateBBDivider}
+          setStateObject={setStateBBDivider}
         />
         <DemoComponent name="BBLink" child={<BBLink {...stateBBLink} />} stateObject={stateBBLink} setStateObject={setStateBBLink} />
         <DemoComponent

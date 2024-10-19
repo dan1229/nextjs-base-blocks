@@ -105,7 +105,7 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
         </BBCard.Header>
         <BBCard.Body className={styles.bodyModal}>{children}</BBCard.Body>
         {showFooter && (
-          <BBCard.Footer>
+          <BBCard.Footer noPadding>
             <div className={styles.containerButtons}>
               {loading ? (
                 <BBLoadingSpinner />
