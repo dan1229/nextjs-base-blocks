@@ -156,18 +156,18 @@ html,
   --text-size-xs: 0.6rem;
   --text-size-s: 0.8rem;
   --text-size-m: 1rem;
-  --text-size-l: 1.8rem;
-  --text-size-xl: 2.2rem;
-  --text-size-xxl: 2.8rem;
+  --text-size-l: 1.6rem;
+  --text-size-xl: 2rem;
+  --text-size-xxl: 2.6rem;
   --text-size-xxxl: 3.2rem;
-  --mobile-text-size-xs: 0.6rem;
-  --mobile-text-size-s: 0.8rem;
-  --mobile-text-size-m: 1rem;
+  --mobile-text-size-xs: 0.4rem;
+  --mobile-text-size-s: 0.6rem;
+  --mobile-text-size-m: 0.8rem;
   --mobile-text-size-l: 1.2rem;
-  --mobile-text-size-xl: 1.6rem;
-  --mobile-text-size-xxl: 2.4rem;
-  --mobile-text-size-xxxl: 2.8rem;
-  // font family
+  --mobile-text-size-xl: 1.8rem;
+  --mobile-text-size-xxl: 2.2rem;
+  --mobile-text-size-xxxl: 2.6rem;
+  // font family - page router font usage
   --font-family-main: 'Josefin Sans';  // Used for main text
   --font-family-header: 'Montserrat';  // Used for larger fonts/headers
   --font-family-navbar-header: 'Montserrat';  // Used for navbar headers

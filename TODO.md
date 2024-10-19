@@ -247,7 +247,7 @@ TODO - write specific test cases to write
 
 
 
-### [1.3.0] - 2024-10-DD
+### [1.3.0] - 2024-10-19
 - Variable updates
   - `--grey-light-dark` renamed to `--grey-light`
   - `--grey-light` renamed to `--grey-lightest`

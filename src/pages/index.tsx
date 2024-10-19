@@ -85,8 +85,8 @@ const DemoPage = () => {
     className: '',
     href: '',
     isExpandedInitial: false,
-    onExpanded: (isExpanded: boolean) => alert(`Collapsible expanded: ${isExpanded}`),
-    onCollapsed: () => alert('Collapsible collapsed'),
+    onExpanded: () => {},
+    onCollapsed: () => {},
   });
   // BB Divider
   const [stateBBDivider, setStateBBDivider] = useState<IPropsBBDivider>({
