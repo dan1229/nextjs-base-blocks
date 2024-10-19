@@ -83,7 +83,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     disabled = false,
     hover = true,
     focus = false,
-    icon,
+    icon = { icon: null, align: 'left', color: 'white' },
     idForm,
     className,
     onClick,
@@ -183,9 +183,46 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     }
   };
 
+  const getIconColor = (color?: TBBTextColor) => {
+    switch (color) {
+      case 'white':
+        return styles.iconWhite;
+      case 'black':
+        return styles.iconBlack;
+      case 'primary':
+        return styles.iconPrimary;
+      case 'primary_dark':
+        return styles.iconPrimaryDark;
+      case 'primary_light':
+        return styles.iconPrimaryLight;
+      case 'secondary':
+        return styles.iconSecondary;
+      case 'secondary_dark':
+        return styles.iconSecondaryDark;
+      case 'secondary_light':
+        return styles.iconSecondaryLight;
+      case 'accent':
+        return styles.iconAccent;
+      case 'accent_dark':
+        return styles.iconAccentDark;
+      case 'accent_light':
+        return styles.iconAccentLight;
+      case 'danger':
+        return styles.iconDanger;
+      case 'success':
+        return styles.iconSuccess;
+      case 'warning':
+        return styles.iconWarning;
+      case 'info':
+        return styles.iconInfo;
+      default:
+        return 'white';
+    }
+  };
+
   const renderIcon = (currSide: TBBButtonIconAlign, icon?: IPropsBBButtonIcon) => {
     if (!icon || !icon.icon) return null;
-    const element = <span className={styles.containerIcon}>{icon.icon}</span>;
+    const element = <span className={classNames(styles.containerIcon, getIconColor(icon.color))}>{icon.icon}</span>;
     if (align === 'left' && currSide === 'left') {
       return element;
     } else if (align === 'right' && currSide === 'right') {

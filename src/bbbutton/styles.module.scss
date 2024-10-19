@@ -693,3 +693,111 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
     border: 2px solid $warning-dark-color;
   }
 }
+
+/**
+* ICON COLORS
+*/
+.iconBlack {
+  color: $black;
+  * {
+    color: $black;
+  }
+}
+
+.iconWhite {
+  color: $white;
+  * {
+    color: $white;
+  }
+}
+
+.iconPrimary {
+  color: $primary-color;
+  * {
+    color: $primary-color;
+  }
+}
+
+.iconPrimaryLight {
+  color: $primary-light-color;
+  * {
+    color: $primary-light-color;
+  }
+}
+
+.iconPrimaryDark {
+  color: $primary-dark-color;
+  * {
+    color: $primary-dark-color;
+  }
+}
+
+.iconSecondary {
+  color: $secondary-color;
+  * {
+    color: $secondary-color;
+  }
+}
+
+.iconSecondaryLight {
+  color: $secondary-light-color;
+  * {
+    color: $secondary-light-color;
+  }
+}
+
+.iconSecondaryDark {
+  color: $secondary-dark-color;
+  * {
+    color: $secondary-dark-color;
+  }
+}
+
+.iconAccent {
+  color: $accent-color;
+  * {
+    color: $accent-color;
+  }
+}
+
+.iconAccentLight {
+  color: $accent-light-color;
+  * {
+    color: $accent-light-color;
+  }
+}
+
+.iconAccentDark {
+  color: $accent-dark-color;
+  * {
+    color: $accent-dark-color;
+  }
+}
+
+.iconDanger {
+  color: $danger-color;
+  * {
+    color: $danger-color;
+  }
+}
+
+.iconSuccess {
+  color: $success-color;
+  * {
+    color: $success-color;
+  }
+}
+
+.iconWarning {
+  color: $warning-color;
+  * {
+    color: $warning-color;
+  }
+}
+
+.iconInfo {
+  color: $info-color;
+  * {
+    color: $info-color;
+  }
+}
