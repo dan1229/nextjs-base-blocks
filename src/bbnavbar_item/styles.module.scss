@@ -9,6 +9,7 @@ $navbar-item-text-color: var(--navbar-item-text-color, #ffffff);
 // colors
 $white: var(--white, #ffffff);
 $white-dark: var(--white-dark, #f5f5f5);
+$grey-lightest: var(--grey-lightest, #a9bcde);
 $grey-light: var(--grey-light, #9daeca);
 $grey-dark: var(--grey-dark, #58647a);
 $black: var(--black, #232323);
@@ -36,6 +37,7 @@ $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
 // variables
 $border-radius: var(--navbar-item-border-radius, 8px);
 $border-thickness: var(--navbar-item-border-thickness, 2px);
+$border-default-color: var(--navbar-item-border-default-color, #e0e0e0);
 
 .active {
   background-color: $navbar-item-text-color;
@@ -50,6 +52,7 @@ $border-thickness: var(--navbar-item-border-thickness, 2px);
 .navbarItemBase {
   list-style-type: none;
   margin: 0 0.15rem;
+  border-radius: $border-radius;
 
   a {
     text-align: center;
@@ -172,7 +175,7 @@ $border-thickness: var(--navbar-item-border-thickness, 2px);
 * BORDERS
 */
 .border_default {
-  border: $border-thickness solid $card-border-default-color;
+  border: $border-thickness solid $border-default-color;
 }
 
 .border_transparent {
@@ -251,11 +254,17 @@ $border-thickness: var(--navbar-item-border-thickness, 2px);
 
   .navbarItemBase {
     width: 100% !important;
+    border-radius: 0;
     margin: 0;
 
     &:first-child {
-      border-top-left-radius: $border-radius;
-      border-top-right-radius: $border-radius;
+      border-top-left-radius: $border-radius !important;
+      border-top-right-radius: $border-radius !important;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: $border-radius !important;
+      border-bottom-right-radius: $border-radius !important;
     }
 
     a {
