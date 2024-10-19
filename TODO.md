@@ -115,6 +115,15 @@ TODO - write specific test cases to write
 ### 1.4.0
 
 
+#### default theme colors?
+- update defaults in readme
+  - sync with bootstrapper
+
+
+
+
+
+
 
 
 #### cypress testing
@@ -232,21 +241,6 @@ TODO - write specific test cases to write
 ### 1.3.0
 
 
-#### default theme colors?
-- update
-- have to find and replace lots of defaults sadly
--
-- update defaults in readme
-  - sync with bootstrapper
-  - improve defaults for scss variables - namely mobile text sizes
-    - same with dark theme stuff and comments - check get twenty
-
-
-
-
-
-
-
 
 
 
@@ -298,6 +292,7 @@ TODO - write specific test cases to write
   - `--navbar-item-border-radius` variable added
   - `--navbar-item-border-default-color` variable added
   - Hover state border radius issue fixed
+- Default theme colors updated
 
 -------------------------------------------------------
 
