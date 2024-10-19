@@ -280,15 +280,6 @@ TODO - write specific test cases to write
 
 
 
-#### bbbutton - icon color prop
-- add prop for icon for colors
-  - aggressive css lol
-
-
-
-
-
-
 ### [1.3.0] - 2024-10-DD
 - Variable updates
   - `--grey-light-dark` renamed to `--grey-light`
@@ -299,6 +290,8 @@ TODO - write specific test cases to write
   - Added new component!
   - Lots of props for styling
   - Added to demo page
+- `BBButton`
+  - Added `iconColor` prop
 - `BBCard`
   - Added `default` elevation prop and SCSS variable
   - `href` cards made external links to open in new tab
