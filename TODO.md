@@ -180,6 +180,12 @@ TODO - write specific test cases to write
 
 
 #### bb navbar
+- add 'max width'
+  - i.e., like how the page content is sometimes limited, navbar should be too
+  - scss variable
+-
+- wider button action components?
+-
 - add divider between brand and items
   - horizontal and vertical
   - any props for this?
@@ -187,7 +193,6 @@ TODO - write specific test cases to write
     - color
     - padding?
     - classname?
-
 
 
 #### bb tooltips - NEW COMPONENT
@@ -259,13 +264,7 @@ TODO - write specific test cases to write
 - weird padding issue on when bitwarden alert for password shows up
   - something to do with positioning and the size variable
 -
-- add 'max width'
-  - i.e., like how the page content is sometimes limited, navbar should be too
-  - scss variable
--
 - make navbar items aligned center vertically
--
-- wider button action components?
 -
 - issue with centering on mobile
   - check danielnazarian.com
