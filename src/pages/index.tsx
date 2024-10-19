@@ -21,6 +21,7 @@ import type { IPropsBBModal } from '../bbmodal';
 import type { IPropsBBNavbar } from '../bbnavbar';
 import type { IPropsBBNavbarItem } from '../bbnavbar_item';
 import type { IPropsBBText } from '../bbtext';
+import BBDivider, { IPropsBBDivider } from 'src/bbdivider';
 
 /**
  * DEMO PAGE
@@ -85,6 +86,16 @@ const DemoPage = () => {
     isExpandedInitial: false,
     onExpanded: (isExpanded: boolean) => alert(`Collapsible expanded: ${isExpanded}`),
     onCollapsed: () => alert('Collapsible collapsed'),
+  });
+  // BB Divider
+  const [stateBBDivider, setStateBBDivider] = useState<IPropsBBDivider>({
+    color: 'black',
+    thickness: 'xs',
+    orientation: 'horizontal',
+    styleType: 'solid',
+    className: '',
+    length: 'full',
+    margin: 'none',
   });
   // BB Link
   const [stateBBLink, setStateBBLink] = useState<IPropsBBLink>({
@@ -197,6 +208,12 @@ const DemoPage = () => {
           }
           stateObject={stateBBCollapsible}
           setStateObject={setStateBBCollapsible}
+        />
+        <DemoComponent
+          name="BBDivider"
+          child={<BBDivider {...stateBBDivider} />}
+          stateObject={stateBBDivider}
+          setStateObject={setStateBBDivider}
         />
         <DemoComponent name="BBLink" child={<BBLink {...stateBBLink} />} stateObject={stateBBLink} setStateObject={setStateBBLink} />
         <DemoComponent

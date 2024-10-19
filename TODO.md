@@ -310,6 +310,7 @@ TODO - write specific test cases to write
 - `BBDivider`
   - Added new component!
   - Lots of props for styling
+  - Added to demo page
 - `BBCard`
   - Added `default` elevation prop and SCSS variable
   - `href` cards made external links to open in new tab
