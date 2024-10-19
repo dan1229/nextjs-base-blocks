@@ -1,16 +1,16 @@
 'use client';
 
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
 import styles from './styles.module.scss';
-import {
+import type {
   TBBDividerColor,
   TBBDividerOrientation,
   TBBDividerStyle,
   TBBDividerThickness,
   TBBDividerLength,
   TBBDividerMargin,
-} from 'src/types';
+} from '../types';
 
 /**
  * PROPS
@@ -46,8 +46,6 @@ export default function BBDivider(Props: IPropsBBDivider): React.ReactElement {
     margin = 'xs',
     className,
   } = Props;
-
-  console.log('styles', styles, margin, styles[`margin${margin}`]);
 
   const dividerClass = classNames(
     styles.divider,

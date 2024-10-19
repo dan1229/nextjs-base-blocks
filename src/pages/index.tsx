@@ -3,6 +3,7 @@ import BBAlert from '../bbalert';
 import BBButton from '../bbbutton';
 import BBCard from '../bbcard';
 import BBCollapsible from '../bbcollapsible';
+import BBDivider from '../bbdivider';
 import BBLink from '../bblink';
 import BBLoadingSpinner from '../bbloading_spinner';
 import BBModal from '../bbmodal';
@@ -15,13 +16,13 @@ import type { IPropsBBAlert } from '../bbalert';
 import type { IPropsBBButton } from '../bbbutton';
 import type { IPropsBBCard } from '../bbcard';
 import type { IPropsBBCollapsible } from '../bbcollapsible';
+import type { IPropsBBDivider } from '../bbdivider';
 import type { IPropsBBLink } from '../bblink';
 import type { IPropsBBLoadingSpinner } from '../bbloading_spinner';
 import type { IPropsBBModal } from '../bbmodal';
 import type { IPropsBBNavbar } from '../bbnavbar';
 import type { IPropsBBNavbarItem } from '../bbnavbar_item';
 import type { IPropsBBText } from '../bbtext';
-import BBDivider, { IPropsBBDivider } from 'src/bbdivider';
 
 /**
  * DEMO PAGE
