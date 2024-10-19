@@ -311,6 +311,8 @@ TODO - write specific test cases to write
 - `BBModal`
   - Improved general styling and feel
   - Added `colorBorder` prop
+- `BBNavbar`
+  - Removed `navbar-horizontal-height` variable
 
 -------------------------------------------------------
 
