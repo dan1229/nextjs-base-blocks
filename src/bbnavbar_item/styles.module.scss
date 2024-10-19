@@ -67,11 +67,15 @@ $border-thickness: var(--navbar-item-border-thickness, 2px);
   &:hover {
     cursor: pointer;
     background-color: $navbar-item-bg-color-hover;
-    border-radius: $border-radius !important;
 
     // handle elements in the dropdown
     li {
       border-radius: 0;
+      // handle first child of the dropdown
+      &:first-child {
+        border-top-left-radius: $border-radius !important;
+        border-top-right-radius: $border-radius !important;
+      }
 
       // handle last child of the dropdown
       &:last-child {
