@@ -133,7 +133,6 @@ TODO - write specific test cases to write
   - set min width somehow?
 
 
-
 #### bbnavbar - vertical mobile styling
 - emulate styling from flutter navbars a bit
   - i.e., always slide out kinda thing

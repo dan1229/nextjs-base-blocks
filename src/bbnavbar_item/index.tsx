@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import BBLink from '../bblink';
 import styles from './styles.module.scss';
-import { TBBNavbarItemColorBorder } from 'src/types';
+import type { TBBNavbarItemColorBorder } from '../types';
 
 function removeSlashes(str: string | undefined) {
   if (!str) return '';
