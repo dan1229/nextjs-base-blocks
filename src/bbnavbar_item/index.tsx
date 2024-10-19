@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import BBLink from '../bblink';
 import styles from './styles.module.scss';
+import { TBBNavbarItemColorBorder } from 'src/types';
 
 function removeSlashes(str: string | undefined) {
   if (!str) return '';
@@ -13,26 +14,51 @@ function removeSlashes(str: string | undefined) {
   return res.startsWith('/') ? res.slice(1) : res;
 }
 
+const getClassColorBorder = (colorBorder: TBBNavbarItemColorBorder): string => {
+  switch (colorBorder) {
+    case 'default':
+      return styles.border_default;
+    case 'transparent':
+      return styles.border_transparent;
+    case 'white':
+      return styles.border_white;
+    case 'grey_light':
+      return styles.border_grey_light;
+    case 'grey_dark':
+      return styles.border_grey_dark;
+    case 'black':
+      return styles.border_black;
+    case 'primary':
+      return styles.border_primary;
+    case 'secondary':
+      return styles.border_secondary;
+    case 'accent':
+      return styles.border_accent;
+  }
+};
+
 /**
  * PROPS
  *
  * @param {string} title - Title to use for item.
+ * @param {React.ReactElement=} children - Children to render.
  * @param {string} href - Href to use for item.
  * @param {string=} className - Any class name to add.
- * @param {React.ReactElement=} children - Children to render.
+ * @param {TBBNavbarItemColorBorder=} colorBorder - Color of the border.
  */
 export interface IPropsBBNavbarItem {
   title: string;
+  children?: React.ReactElement[];
   href: string;
   className?: string;
-  children?: React.ReactElement[];
+  colorBorder?: TBBNavbarItemColorBorder;
 }
 
 /**
  * BBNAVBAR ITEM
  */
 export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElement {
-  const { title, href, className, children } = Props;
+  const { title, href, className, children, colorBorder = 'default' } = Props;
   const [isActiveInDropdown, setIsActiveInDropdown] = useState(false);
   const [currentPath, setCurrentPath] = useState<string>('');
 
@@ -66,6 +92,7 @@ export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElem
       className={classnames(
         styles.navbarItemBase,
         styles.dropdownContainer,
+        getClassColorBorder(colorBorder),
         { [styles.active]: isActive, [styles.hasChildren]: !!children?.length },
         className
       )}

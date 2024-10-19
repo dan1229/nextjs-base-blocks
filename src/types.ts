@@ -51,32 +51,6 @@ export type TBBButtonElevation = 'none' | 'low' | 'medium' | 'high';
 export type TBBButtonIconAlign = 'left' | 'right' | 'above' | 'below' | 'space-between';
 
 /**
- * BBDivider
- */
-// types.ts
-export type TBBDividerColor =
-  | 'default'
-  | 'white'
-  | 'grey_light'
-  | 'grey_dark'
-  | 'black'
-  | 'primary'
-  | 'primary_light'
-  | 'primary_dark'
-  | 'secondary'
-  | 'secondary_light'
-  | 'secondary_dark'
-  | 'accent'
-  | 'accent_light'
-  | 'accent_dark';
-
-export type TBBDividerOrientation = 'horizontal' | 'vertical';
-export type TBBDividerStyle = 'solid' | 'dashed' | 'dotted';
-export type TBBDividerThickness = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl';
-export type TBBDividerLength = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl' | 'full';
-export type TBBDividerMargin = 'none' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl';
-
-/**
  * BBCard
  */
 export type TBBCardColorBackground =
@@ -102,9 +76,48 @@ export type TBBCardColorBorder =
 export type TBBCardElevation = 'none' | 'low' | 'med' | 'high' | 'default';
 
 /**
+ * BBDivider
+ */
+export type TBBDividerColor =
+  | 'default'
+  | 'white'
+  | 'grey_light'
+  | 'grey_dark'
+  | 'black'
+  | 'primary'
+  | 'primary_light'
+  | 'primary_dark'
+  | 'secondary'
+  | 'secondary_light'
+  | 'secondary_dark'
+  | 'accent'
+  | 'accent_light'
+  | 'accent_dark';
+
+export type TBBDividerOrientation = 'horizontal' | 'vertical';
+export type TBBDividerStyle = 'solid' | 'dashed' | 'dotted';
+export type TBBDividerThickness = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl';
+export type TBBDividerLength = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl' | 'full';
+export type TBBDividerMargin = 'none' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl';
+
+/**
  * BBModal
  */
 export type TBBModalWidth = 'sm' | 'md' | 'lg' | 'full';
+
+/**
+ * BBNavbarItem
+ */
+export type TBBNavbarItemColorBorder =
+  | 'default'
+  | 'transparent'
+  | 'white'
+  | 'grey_light'
+  | 'grey_dark'
+  | 'black'
+  | 'primary'
+  | 'secondary'
+  | 'accent';
 
 /**
  * BBText

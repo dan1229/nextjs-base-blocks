@@ -6,6 +6,16 @@ $bg-light-color: var(--bg-light-color, #303030);
 
 $navbar-item-text-color: var(--navbar-item-text-color, #ffffff);
 
+// colors
+$white: var(--white, #ffffff);
+$white-dark: var(--white-dark, #f5f5f5);
+$grey-light: var(--grey-light, #9daeca);
+$grey-dark: var(--grey-dark, #58647a);
+$black: var(--black, #232323);
+$primary-color: var(--primary-color, #3f51b5);
+$secondary-color: var(--secondary-color, #f50057);
+$accent-color: var(--accent-color, #ebeb30);
+
 // this is intended to go like this:
 // 1. use '--navbar-item-text-color' if it is defined
 // 2. if not, use '--primary-color' if it is defined
@@ -22,6 +32,10 @@ $navbar-item-bg-color-active: var(--navbar-item-bg-color-active, $bg-dark-color)
 
 // same with --navbar-item-text-color-hover and --bg-color
 $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
+
+// variables
+$border-radius: var(--navbar-item-border-radius, 8px);
+$border-thickness: var(--navbar-item-border-thickness, 2px);
 
 .active {
   background-color: $navbar-item-text-color;
@@ -148,6 +162,45 @@ $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
 
 .dropdownContainer:hover .dropdownContent {
   display: block !important;
+}
+
+/*
+* BORDERS
+*/
+.border_default {
+  border: $border-thickness solid $card-border-default-color;
+}
+
+.border_transparent {
+  border: $border-thickness solid transparent;
+}
+
+.border_white {
+  border: $border-thickness solid $white;
+}
+
+.border_grey_light {
+  border: $border-thickness solid $grey-lightest;
+}
+
+.border_grey_dark {
+  border: $border-thickness solid $grey-dark;
+}
+
+.border_black {
+  border: $border-thickness solid $black;
+}
+
+.border_primary {
+  border: $border-thickness solid $primary-color;
+}
+
+.border_secondary {
+  border: $border-thickness solid $secondary-color;
+}
+
+.border_accent {
+  border: $border-thickness solid $accent-color;
 }
 
 /**

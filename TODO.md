@@ -246,10 +246,6 @@ TODO - write specific test cases to write
 
 
 #### bbnavbar item
-- borders
-  - make optional?  
-    - copy set up from bbcard? i.e., noBorder prop OR scss variable?
--
 - width?
   - set min width somehow?
 -
@@ -301,6 +297,10 @@ TODO - write specific test cases to write
   - Mobile styling alignment fixed
   - Vertical navbar styling improved
   - Vertical navbar mobile styling improved
+- `BBNavbarItem`
+  - `colorBorder` prop added along with type and styles
+  - `--navbar-item-border-thickness` variable added
+  - `--navbar-item-border-radius` variable added
 
 -------------------------------------------------------
 
