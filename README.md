@@ -94,7 +94,6 @@ html,
   --accent-light-color: #{lighten($accent-color, 10%)};
   // general colors
   --white: #fff;
-  --white-dark: #f5f5f5;
   --black: rgb(35, 35, 35);
   --grey-lightest: #8199c2;
   --grey-light: #9daeca;

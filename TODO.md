@@ -253,6 +253,7 @@ TODO - write specific test cases to write
   - `--grey-light` renamed to `--grey-lightest`
   - `--card-elevation-default` variable added
   - `--card-border-thickness` variable added
+  - `--white-dark` variable removed
 - `BBDivider`
   - Added new component!
   - Lots of props for styling
