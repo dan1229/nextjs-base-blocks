@@ -302,6 +302,8 @@ TODO - write specific test cases to write
   - Removed `navbar-horizontal-height` variable
   - Weird alignment issues fixed with pop ups
   - Mobile styling alignment fixed
+  - Vertical navbar styling improved
+  - Vertical navbar mobile styling improved
 
 -------------------------------------------------------
 
