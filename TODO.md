@@ -196,7 +196,11 @@ TODO - write specific test cases to write
 
 
 
-
+#### bb card
+- header border radius no bueno
+  - check <CardMeetingInstace.cardYourStatusForm> to see the hack
+  - try to fix this
+  - check footer
 
 
 #### bb navbar
