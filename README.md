@@ -133,7 +133,7 @@ html,
   // bb divider
   --divider-color-default: rgb(221, 221, 221);
   // bb navbar
-  --navbar-border-radius: 8px;
+  --navbar-mobile-border-radius: 1rem;
   --navbar-background-color: rgb(221, 221, 221);
   --navbar-title-color: #{$primary-color};
   --navbar-brand-padding: 0rem;
@@ -194,7 +194,6 @@ Add overrides for dark themes like so:
   --bg-light-color: rgb(60, 60, 60);
   --bg-dark-color: rgb(39, 39, 39);
   // bb navbar
-  --navbar-border-radius: 8px;
   --navbar-background-color: rgb(54, 54, 54);
   --navbar-title-color: rgb(255, 255, 255);
   // bb card

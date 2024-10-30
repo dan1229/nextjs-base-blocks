@@ -1,4 +1,4 @@
-$border-radius: var(--navbar-border-radius, 8px);
+$mobile-border-radius: var(--navbar-mobile-border-radius, 8px);
 $background-color: var(--navbar-background-color, #dddddd);
 $brand-padding: var(--navbar-brand-padding, 0.5rem);
 $container-brand-margin: var(--navbar-container-brand-margin, 0 0.75rem);
@@ -114,7 +114,7 @@ $navbar-vertical-width: 10%; /**
   width: $container-brand-width;
 
   cursor: pointer;
-  border-radius: $border-radius;
+  border-radius: 1rem;
   padding: $brand-padding;
   height: 100%;
 
@@ -204,7 +204,7 @@ $navbar-vertical-width: 10%; /**
   cursor: pointer;
   color: $navbar-icon-mobile-color !important;
   padding: 0.5rem;
-  border-radius: $border-radius;
+  border-radius: 1rem;
 
   &:hover {
     background-color: color-mix(in srgb, $background-color, #000 20%) !important;
@@ -259,7 +259,7 @@ $navbar-vertical-width: 10%; /**
     box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
     z-index: 11;
     background: red;
-    border-radius: $border-radius !important;
+    border-radius: $mobile-border-radius !important;
   }
 
   .navigationMenu.expanded ul {
