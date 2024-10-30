@@ -14,6 +14,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [1.3.1] - 2024-10-29
+- `BBNavbar`
+  - Mobile styling clean up
+  - Removed `navbar-border-radius`
+  - Added `--navbar-item-background-color`
+  - Improved mobile styling
+
+  
 ### [1.3.0] - 2024-10-19
 - Variable updates
   - `--grey-light-dark` renamed to `--grey-light`
