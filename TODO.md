@@ -256,7 +256,9 @@ TODO
 ### [1.3.1] - 2024-10-29
 - `BBNavbar`
   - Mobile styling clean up
-  - Renamed `navbar-border-radius` to `navbar-mobile-border-radius`
+  - Removed `navbar-border-radius`
+  - Added `--navbar-item-background-color`
+  - Improved mobile styling
 
 -------------------------------------------------------
 
