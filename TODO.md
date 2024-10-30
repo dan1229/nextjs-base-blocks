@@ -253,8 +253,12 @@ TODO
 
 
 
-### [1.3.1] - 2024-MM-DD
-- todo
+### [1.3.1] - 2024-10-29
+- `BBNavbar`
+  - Mobile styling clean up
+  - Removed `navbar-border-radius`
+  - Added `--navbar-item-background-color`
+  - Improved mobile styling
 
 -------------------------------------------------------
 
