@@ -242,6 +242,10 @@ TODO - write specific test cases to write
   - ensure backgrounds dont scroll EVER
 
 
+#### bbnavbar
+- dropdown menus look weird
+  - check out bootstrapper
+
 
 ----
 ### 1.3.2
