@@ -206,9 +206,11 @@ TODO - write specific test cases to write
 #### bb navbar
 - add 'max width'
   - i.e., like how the page content is sometimes limited, navbar should be too
-  - scss variable
+    - scss variable
+  - is this just for vertical navbar?
 -
 - wider button action components?
+  - could this just use better handling?
 -
 - add divider between brand and items
   - horizontal and vertical
@@ -242,18 +244,27 @@ TODO - write specific test cases to write
   - ensure backgrounds dont scroll EVER
 
 
-#### bbnavbar
-- dropdown menus look weird
-  - check out bootstrapper
-
-
 ----
 ### 1.3.2
 
 
 
 
-TODO
+#### bbnavbar
+- dropdown menus look weird
+  - check out bootstrapper
+-
+- make navbar generally slimmer
+  - allow for this to be customized more
+  - probably navbar item padding / margin variable work
+- 
+- add ability to right align navbar items?
+-
+- bbnavbar item - allow these to just be components?
+  - i.e., let me pass a button to a navbar as a child component?
+
+
+
 
 
 
