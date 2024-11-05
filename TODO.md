@@ -111,6 +111,18 @@ TODO - write specific test cases to write
 
 
 
+
+
+#### bbnavbar 
+- vertical mobile styling
+  - emulate styling from flutter navbars a bit
+    - i.e., always slide out kinda thing
+
+
+
+
+
+
 ----
 ### 1.4.0
 
@@ -140,13 +152,15 @@ TODO - write specific test cases to write
 #### bbnavbar item
 - width?
   - set min width somehow?
+-
+- bbnavbar item - allow these to just be components?
+  - i.e., let me pass a button to a navbar as a child component?
 
 
-#### bbnavbar - vertical mobile styling
-- emulate styling from flutter navbars a bit
-  - i.e., always slide out kinda thing
 
 
+#### improve actual defaults in each component
+- try on an app with no global vars and try to make it look good / sensical
 
 
 
@@ -221,6 +235,8 @@ TODO - write specific test cases to write
     - classname?
 -
 - add back 'sticky' prop
+-
+- add ability to right align navbar items?
 
 
 
@@ -239,9 +255,15 @@ TODO - write specific test cases to write
 - container icon looks weird with margin sometimes?
   - look at <InputMeetingMemberStatus> in get twenty - there's a hakc for margin-bottom
 
+
+
 #### bbmodal
 - background scrolling
   - ensure backgrounds dont scroll EVER
+
+
+### [1.4.0] - 2024-11-DD
+- TODO
 
 
 ----
@@ -250,26 +272,18 @@ TODO - write specific test cases to write
 
 
 
-#### bbnavbar
-- dropdown menus look weird
-  - check out bootstrapper
--
-- make navbar generally slimmer
-  - allow for this to be customized more
-  - probably navbar item padding / margin variable work
-- 
-- add ability to right align navbar items?
--
-- bbnavbar item - allow these to just be components?
-  - i.e., let me pass a button to a navbar as a child component?
 
 
 
 
-
-
-### [1.3.2] - 2024-MM-DD
-- TODO
+### [1.3.2] - 2024-11-DD
+- `BBNavbar`
+  - Modernization and styling improvements
+  - `--navbar-transition` variable added
+  - `brandHorizontal` prop added
+- `BBNavbarItem`
+  - SCSS clean up
+  - Fix border radius on dropdown issues
 
 -------------------------------------------------------
 

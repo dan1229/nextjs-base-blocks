@@ -3,7 +3,8 @@ $brand-padding: var(--navbar-brand-padding, 0.5rem);
 $navbar-item-border-radius: var(--navbar-item-border-radius, 1rem);
 
 $bg-dark-color: var(--bg-dark-color, #000);
-$container-brand-margin: var(--navbar-container-brand-margin, 0 0.75rem);
+// $container-brand-margin: var(--navbar-container-brand-margin, 0 0.75rem);
+$container-brand-margin: 0rem;
 $container-brand-width: var(--navbar-container-brand-width, 10%);
 
 // Font family fallback strategy
@@ -21,7 +22,12 @@ $primary-color: var(--primary-color, #78cdd7);
 $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
 
 // navbar vertical width
-$navbar-vertical-width: 10%; /**
+$navbar-vertical-width: 10%;
+
+// New variables to add
+$navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
+
+/**
  * ELEVATION
  */
 .elevation_none {
@@ -68,6 +74,9 @@ $navbar-vertical-width: 10%; /**
   justify-content: space-between;
   background-color: $background-color;
   overflow: visible;
+  padding: 0.25rem;
+  transition: $navbar-transition;
+  backdrop-filter: blur(8px);
 
   &.vertical {
     height: 100vh;
@@ -91,7 +100,9 @@ $navbar-vertical-width: 10%; /**
   }
 
   &:not(.vertical) {
-    width: 100vw;
+    width: 100%;
+    position: sticky;
+    top: 0;
   }
 }
 
@@ -104,29 +115,37 @@ $navbar-vertical-width: 10%; /**
   text-align: center; // Ensure text is centered
   width: 100%;
   height: 100%;
-  padding: 0.25rem;
+  padding: 0.15rem;
 }
 
 .brand {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: $container-brand-margin;
   width: $container-brand-width;
-
   cursor: pointer;
-  border-radius: 1rem;
-  padding: $brand-padding;
+  border-radius: 0.5rem;
+  padding: 0.15rem;
   height: 100%;
+  transition: $navbar-transition;
 
   &:hover {
-    background-color: color-mix(in srgb, $background-color, #fff 20%);
+    background-color: color-mix(in srgb, $background-color, #fff 10%);
+    transform: translateY(-1px);
   }
 }
 
 .textTitle {
   font-family: $font-family-navbar-header;
+}
+
+.brandHorizontal {
+  flex-direction: row;
+}
+
+.brandVertical {
+  flex-direction: column;
 }
 
 /**
@@ -160,6 +179,7 @@ $navbar-vertical-width: 10%; /**
   z-index: 10;
   display: flex;
   padding: 0;
+  gap: 0.25rem;
 }
 
 .containerButtonsAction {
@@ -252,7 +272,7 @@ $navbar-vertical-width: 10%; /**
 
   .navigationMenuList {
     position: absolute;
-    top: 50px;
+    top: 4rem;
     left: 5px;
     min-width: 30vw;
     display: none;
@@ -264,6 +284,10 @@ $navbar-vertical-width: 10%; /**
     z-index: 11;
     background-color: transparent;
     border: 1px solid $bg-dark-color;
+    padding: 0rem;
+    gap: 0;
+    backdrop-filter: blur(8px);
+    animation: slideIn 0.2s ease-out;
   }
 
   .navigationMenu.expanded ul {
@@ -289,5 +313,17 @@ $navbar-vertical-width: 10%; /**
   .navigationMenuList {
     top: 25px;
     min-width: 75vw;
+  }
+}
+
+// Add animation keyframes
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
