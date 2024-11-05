@@ -5,6 +5,9 @@ $bg-dark-color: var(--bg-dark-color, #1c1c1c);
 $bg-color: var(--bg-color, #303030);
 $bg-light-color: var(--bg-light-color, #303030);
 
+$border-thickness: var(--navbar-item-border-thickness, 2px);
+$border-default-color: var(--navbar-item-border-default-color, #e0e0e0);
+
 $navbar-item-text-color: var(--navbar-item-text-color, #ffffff);
 
 // colors
@@ -33,11 +36,6 @@ $navbar-item-bg-color-active: var(--navbar-item-bg-color-active, $bg-dark-color)
 
 // same with --navbar-item-text-color-hover and --bg-color
 $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
-
-// variables
-$border-radius: var(--navbar-item-border-radius, 8px);
-$border-thickness: var(--navbar-item-border-thickness, 2px);
-$border-default-color: var(--navbar-item-border-default-color, #e0e0e0);
 
 .active {
   background-color: $navbar-item-text-color;
@@ -75,11 +73,6 @@ $border-default-color: var(--navbar-item-border-default-color, #e0e0e0);
     // handle elements in the dropdown
     li {
       border-radius: 0;
-      // handle first child of the dropdown
-      &:first-child {
-        border-top-left-radius: $border-radius !important;
-        border-top-right-radius: $border-radius !important;
-      }
 
       // handle last child of the dropdown
       &:last-child {

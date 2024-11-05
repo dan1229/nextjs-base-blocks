@@ -255,20 +255,21 @@ TODO - write specific test cases to write
 - container icon looks weird with margin sometimes?
   - look at <InputMeetingMemberStatus> in get twenty - there's a hakc for margin-bottom
 
+
+
 #### bbmodal
 - background scrolling
   - ensure backgrounds dont scroll EVER
+
+
+### [1.4.0] - 2024-11-DD
+- TODO
 
 
 ----
 ### 1.3.2
 
 
-
-
-#### bbnavbar
-- dropdown menus look weird
-  - check out bootstrapper
 
 
 
@@ -280,6 +281,9 @@ TODO - write specific test cases to write
   - Modernization and styling improvements
   - `--navbar-transition` variable added
   - `brandHorizontal` prop added
+- `BBNavbarItem`
+  - SCSS clean up
+  - Fix border radius on dropdown issues
 
 -------------------------------------------------------
 
