@@ -3,7 +3,8 @@ $brand-padding: var(--navbar-brand-padding, 0.5rem);
 $navbar-item-border-radius: var(--navbar-item-border-radius, 1rem);
 
 $bg-dark-color: var(--bg-dark-color, #000);
-$container-brand-margin: var(--navbar-container-brand-margin, 0 0.75rem);
+// $container-brand-margin: var(--navbar-container-brand-margin, 0 0.75rem);
+$container-brand-margin: 0rem;
 $container-brand-width: var(--navbar-container-brand-width, 10%);
 
 // Font family fallback strategy

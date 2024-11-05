@@ -271,6 +271,7 @@ TODO - write specific test cases to write
 ### [1.3.2] - 2024-11-DD
 - `BBNavbar`
   - Modernization and styling improvements
+  - `--navbar-transition` variable added
 - `BBNavbarItem`
   - TODO
 
