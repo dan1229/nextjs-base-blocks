@@ -21,7 +21,12 @@ $primary-color: var(--primary-color, #78cdd7);
 $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
 
 // navbar vertical width
-$navbar-vertical-width: 10%; /**
+$navbar-vertical-width: 10%;
+
+// New variables to add
+$navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
+
+/**
  * ELEVATION
  */
 .elevation_none {
@@ -68,6 +73,10 @@ $navbar-vertical-width: 10%; /**
   justify-content: space-between;
   background-color: $background-color;
   overflow: visible;
+  padding: 0.25rem 1rem;
+  height: 3rem;
+  transition: $navbar-transition;
+  backdrop-filter: blur(8px);
 
   &.vertical {
     height: 100vh;
@@ -91,7 +100,9 @@ $navbar-vertical-width: 10%; /**
   }
 
   &:not(.vertical) {
-    width: 100vw;
+    width: 100%;
+    position: sticky;
+    top: 0;
   }
 }
 
@@ -109,19 +120,21 @@ $navbar-vertical-width: 10%; /**
 
 .brand {
   display: flex;
-  flex-direction: column;
+  flex-direction: row; // Changed to row for better alignment
+  gap: 0.5rem; // Added gap between image and text
   justify-content: center;
   align-items: center;
   margin: $container-brand-margin;
   width: $container-brand-width;
-
   cursor: pointer;
-  border-radius: 1rem;
-  padding: $brand-padding;
+  border-radius: 0.5rem; // Reduced border radius
+  padding: 0.25rem;
   height: 100%;
+  transition: $navbar-transition;
 
   &:hover {
-    background-color: color-mix(in srgb, $background-color, #fff 20%);
+    background-color: color-mix(in srgb, $background-color, #fff 10%);
+    transform: translateY(-1px);
   }
 }
 
@@ -160,6 +173,7 @@ $navbar-vertical-width: 10%; /**
   z-index: 10;
   display: flex;
   padding: 0;
+  gap: 0.25rem;
 }
 
 .containerButtonsAction {
@@ -252,7 +266,7 @@ $navbar-vertical-width: 10%; /**
 
   .navigationMenuList {
     position: absolute;
-    top: 50px;
+    top: 4rem;
     left: 5px;
     min-width: 30vw;
     display: none;
@@ -264,6 +278,9 @@ $navbar-vertical-width: 10%; /**
     z-index: 11;
     background-color: transparent;
     border: 1px solid $bg-dark-color;
+    padding: 0.5rem;
+    backdrop-filter: blur(8px);
+    animation: slideIn 0.2s ease-out;
   }
 
   .navigationMenu.expanded ul {
@@ -289,5 +306,17 @@ $navbar-vertical-width: 10%; /**
   .navigationMenuList {
     top: 25px;
     min-width: 75vw;
+  }
+}
+
+// Add animation keyframes
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
