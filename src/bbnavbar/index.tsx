@@ -29,6 +29,8 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
  * @param {number=} imageWidth - Width of the image
  * @param {number=} imageHeight - Height of the image
  * @param {string=} classNameWrapper - Custom class name for the wrapper. Doesn't really apply with vertical.
+ * @param {boolean=} brandHorizontal - Whether the brand is horizontal
+ * @param {boolean=} boldTitle - Whether the title is bold
  */
 export interface IPropsBBNavbar {
   children: React.ReactNode;
@@ -45,6 +47,8 @@ export interface IPropsBBNavbar {
   imageHeight?: number;
   vertical?: boolean;
   classNameWrapper?: string;
+  brandHorizontal?: boolean;
+  boldTitle?: boolean;
 }
 
 /**
@@ -66,6 +70,8 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
     imageHeight = 60,
     vertical = false,
     classNameWrapper,
+    brandHorizontal = false,
+    boldTitle = false,
   } = props;
 
   const [showNavExpanded, setShowNavExpanded] = useState(false);
@@ -107,10 +113,10 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
             />
           </div>
           <div className={styles.containerBrand} onClick={async () => router.push(routeBrand)}>
-            <div className={styles.brand}>
+            <div className={classNames(styles.brand, brandHorizontal ? styles.brandHorizontal : styles.brandVertical)}>
               {!!imageSrc && <Image src={imageSrc} alt="" height={imageHeight} width={imageWidth} />}
               {!!title && title.length && (
-                <BBText className={styles.textTitle} color={colorTitle} size={textSizeTitle} asSpan>
+                <BBText className={styles.textTitle} color={colorTitle} size={textSizeTitle} bold={boldTitle} asSpan>
                   {title}
                 </BBText>
               )}

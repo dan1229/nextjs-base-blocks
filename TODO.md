@@ -142,11 +142,17 @@ TODO - write specific test cases to write
   - set min width somehow?
 
 
-#### bbnavbar - vertical mobile styling
-- emulate styling from flutter navbars a bit
-  - i.e., always slide out kinda thing
+#### bbnavbar 
+- vertical mobile styling
+  - emulate styling from flutter navbars a bit
+    - i.e., always slide out kinda thing
+-
+- add ability to right align navbar items?
 
 
+
+#### improve actual defaults in each component
+- try on an app with no global vars and try to make it look good / sensical
 
 
 
@@ -253,13 +259,7 @@ TODO - write specific test cases to write
 #### bbnavbar
 - dropdown menus look weird
   - check out bootstrapper
--
-- make navbar generally slimmer
-  - allow for this to be customized more
-  - probably navbar item padding / margin variable work
 - 
-- add ability to right align navbar items?
--
 - bbnavbar item - allow these to just be components?
   - i.e., let me pass a button to a navbar as a child component?
 
@@ -272,6 +272,7 @@ TODO - write specific test cases to write
 - `BBNavbar`
   - Modernization and styling improvements
   - `--navbar-transition` variable added
+  - `brandHorizontal` prop added
 - `BBNavbarItem`
   - TODO
 
