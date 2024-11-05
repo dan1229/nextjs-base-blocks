@@ -14,6 +14,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [1.3.2] - 2024-11-05
+- `BBNavbar`
+  - Modernization and styling improvements
+  - `--navbar-transition` variable added
+  - `brandHorizontal` prop added
+- `BBNavbarItem`
+  - SCSS clean up
+  - Fix border radius on dropdown issues
+
+  
 ### [1.3.1] - 2024-10-29
 - `BBNavbar`
   - Mobile styling clean up

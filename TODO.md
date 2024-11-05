@@ -266,25 +266,6 @@ TODO - write specific test cases to write
 - TODO
 
 
-----
-### 1.3.2
-
-
-
-
-
-
-
-
-### [1.3.2] - 2024-11-DD
-- `BBNavbar`
-  - Modernization and styling improvements
-  - `--navbar-transition` variable added
-  - `brandHorizontal` prop added
-- `BBNavbarItem`
-  - SCSS clean up
-  - Fix border radius on dropdown issues
-
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)
