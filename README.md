@@ -143,7 +143,7 @@ html,
   // bb navbar item
   --navbar-item-border-radius: 8px;
   --navbar-item-padding: 12px;
-  --navbar-item-background-color: #{lighten($primary-color, 10%)};
+  --navbar-item-background-color: #{$primary-color};
   --navbar-item-text-color: #{$primary-color};
   --navbar-item-text-color-hover: #{darken($secondary-color, 20%)};
   --navbar-item-bg-color-active: #{lighten($primary-color, 45%)};
