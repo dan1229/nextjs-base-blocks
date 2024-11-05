@@ -111,6 +111,18 @@ TODO - write specific test cases to write
 
 
 
+
+
+#### bbnavbar 
+- vertical mobile styling
+  - emulate styling from flutter navbars a bit
+    - i.e., always slide out kinda thing
+
+
+
+
+
+
 ----
 ### 1.4.0
 
@@ -140,14 +152,10 @@ TODO - write specific test cases to write
 #### bbnavbar item
 - width?
   - set min width somehow?
-
-
-#### bbnavbar 
-- vertical mobile styling
-  - emulate styling from flutter navbars a bit
-    - i.e., always slide out kinda thing
 -
-- add ability to right align navbar items?
+- bbnavbar item - allow these to just be components?
+  - i.e., let me pass a button to a navbar as a child component?
+
 
 
 
@@ -227,6 +235,8 @@ TODO - write specific test cases to write
     - classname?
 -
 - add back 'sticky' prop
+-
+- add ability to right align navbar items?
 
 
 
@@ -259,9 +269,6 @@ TODO - write specific test cases to write
 #### bbnavbar
 - dropdown menus look weird
   - check out bootstrapper
-- 
-- bbnavbar item - allow these to just be components?
-  - i.e., let me pass a button to a navbar as a child component?
 
 
 
@@ -273,8 +280,6 @@ TODO - write specific test cases to write
   - Modernization and styling improvements
   - `--navbar-transition` variable added
   - `brandHorizontal` prop added
-- `BBNavbarItem`
-  - TODO
 
 -------------------------------------------------------
 
