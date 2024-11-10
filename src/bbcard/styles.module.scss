@@ -47,7 +47,7 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
   &:hover {
     cursor: pointer;
     transform: translateY(-1%);
-    box-shadow: rgba(0, 0, 0, 0.12) 10px 15px 20px;
+    box-shadow: rgba(0, 0, 0, 0.08) 5px 8px 12px;
   }
 }
 
