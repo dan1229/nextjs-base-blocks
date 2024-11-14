@@ -263,9 +263,7 @@ TODO - write specific test cases to write
 
 
 ### [1.4.0] - 2024-11-DD
-- `BBNavbar`
-  - Removed `--navbar-vertical-width`
-  - Hover shadow improved visually
+- TODO
 
 -------------------------------------------------------
 
