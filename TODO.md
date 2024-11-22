@@ -262,6 +262,13 @@ TODO - write specific test cases to write
   - ensure backgrounds dont scroll EVER
 
 
+
+--navbar-container-brand-width
+- what to do about this?
+- default to 'auto'?
+- can i remove it?
+- how to handle situations like get twenty where we have both vertical and horizontal navbars?
+
 ### [1.4.0] - 2024-11-DD
 - TODO
 
