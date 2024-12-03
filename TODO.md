@@ -262,6 +262,9 @@ TODO - write specific test cases to write
   - ensure backgrounds dont scroll EVER
 
 
+remove navbar vetical 10% width
+- just remove it altogethere?
+
 
 --navbar-container-brand-width
 - what to do about this?
