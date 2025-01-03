@@ -282,6 +282,7 @@ TODO - write specific test cases to write
 ### [1.3.2] - 2025-01-04
 - Fix `BBNavbar` vertical width issues
 - Fix `BBNavbar` centering on 'regular' navbar issues
+- Removed `--navbar-container-brand-width` variable
 
                                             
 -------------------------------------------------------
