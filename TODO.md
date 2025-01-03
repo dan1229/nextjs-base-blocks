@@ -262,8 +262,13 @@ TODO - write specific test cases to write
   - ensure backgrounds dont scroll EVER
 
 
-remove navbar vetical 10% width
-- just remove it altogethere?
+
+### [1.4.0] - 2024-11-DD
+- TODO
+
+--
+1.3.3
+
 
 
 --navbar-container-brand-width
@@ -271,12 +276,6 @@ remove navbar vetical 10% width
 - default to 'auto'?
 - can i remove it?
 - how to handle situations like get twenty where we have both vertical and horizontal navbars?
-
-### [1.4.0] - 2024-11-DD
-- TODO
-
---
-1.3.3
 
 
 

@@ -5,7 +5,7 @@ $navbar-item-border-radius: var(--navbar-item-border-radius, 1rem);
 $bg-dark-color: var(--bg-dark-color, #000);
 // $container-brand-margin: var(--navbar-container-brand-margin, 0 0.75rem);
 $container-brand-margin: 0rem;
-$container-brand-width: var(--navbar-container-brand-width, 10%);
+$container-brand-width: var(--navbar-container-brand-width, auto);
 
 // Font family fallback strategy
 // this is intended to go like this:
@@ -14,10 +14,7 @@ $container-brand-width: var(--navbar-container-brand-width, 10%);
 // 3. if not, use sans-serif
 $default-font-family-header: sans-serif;
 $font-family-header: var(--font-family-header, #{$default-font-family-header});
-$font-family-navbar-header: var(
-  --font-family-navbar-header,
-  $font-family-header
-);
+$font-family-navbar-header: var(--font-family-navbar-header, $font-family-header);
 
 // same with --navbar-icon-mobile-color and --primary-color
 // if neither is defined, use default primary color
@@ -38,24 +35,16 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
 }
 
 .elevation_low {
-  box-shadow:
-    rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 .elevation_high {
-  box-shadow:
-    rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .elevation_rainbow {
-  box-shadow:
-    rgb(85, 91, 255) 0px 0px 0px 3px,
-    rgb(31, 193, 27) 0px 0px 0px 6px,
-    rgb(255, 217, 19) 0px 0px 0px 9px,
-    rgb(255, 156, 85) 0px 0px 0px 12px,
-    rgb(255, 85, 85) 0px 0px 0px 15px;
+  box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px,
+    rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
 }
 
 /**
@@ -134,7 +123,7 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
   justify-content: center;
   align-items: center;
   margin: $container-brand-margin;
-  width: $container-brand-width;
+  width: auto;
   cursor: pointer;
   border-radius: 0.5rem;
   padding: 0.15rem;
@@ -240,11 +229,7 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
   border-radius: 1rem;
 
   &:hover {
-    background-color: color-mix(
-      in srgb,
-      $background-color,
-      #000 20%
-    ) !important;
+    background-color: color-mix(in srgb, $background-color, #000 20%) !important;
   }
 }
 
