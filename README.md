@@ -136,7 +136,6 @@ html,
   --navbar-background-color: rgb(221, 221, 221);
   --navbar-brand-padding: 0rem;
   --navbar-container-brand-margin: 0.25rem;
-  --navbar-container-brand-width: 10%;
   --navbar-icon-mobile-color: #{$primary-color};
   --navbar-transition: all 0.2s ease-in-out;
   // bb navbar item
