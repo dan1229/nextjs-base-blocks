@@ -138,17 +138,15 @@ html,
   --navbar-container-brand-margin: 0.25rem;
   --navbar-container-brand-width: 10%;
   --navbar-icon-mobile-color: #{$primary-color};
-  --navbar-vertical-width: 132px;
   --navbar-transition: all 0.2s ease-in-out;
   // bb navbar item
-  --navbar-item-border-radius: 8px;
-  --navbar-item-padding: 12px;
+  --navbar-item-border-radius: 1rem;
+  --navbar-item-padding: 1rem;
   --navbar-item-background-color: #{$primary-color};
   --navbar-item-text-color: #{$primary-color};
   --navbar-item-text-color-hover: #{darken($secondary-color, 20%)};
   --navbar-item-bg-color-active: #{lighten($primary-color, 45%)};
   --navbar-item-bg-color-hover: #{lighten($secondary-color, 20%)};
-  --navbar-item-border-radius: 8px;
   --navbar-item-border-thickness: 2px;
   --navbar-item-border-default-color: #{$primary-color};
   // bb text

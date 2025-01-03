@@ -14,6 +14,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [1.3.3] - 2024-11-13
+- `BBNavbar`
+  - Removed `--navbar-vertical-width`
+  - Hover shadow improved visually
+
+  
 ### [1.3.2] - 2024-11-05
 - `BBNavbar`
   - Modernization and styling improvements
