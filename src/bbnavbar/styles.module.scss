@@ -14,7 +14,10 @@ $container-brand-width: var(--navbar-container-brand-width, 10%);
 // 3. if not, use sans-serif
 $default-font-family-header: sans-serif;
 $font-family-header: var(--font-family-header, #{$default-font-family-header});
-$font-family-navbar-header: var(--font-family-navbar-header, $font-family-header);
+$font-family-navbar-header: var(
+  --font-family-navbar-header,
+  $font-family-header
+);
 
 // same with --navbar-icon-mobile-color and --primary-color
 // if neither is defined, use default primary color
@@ -22,7 +25,7 @@ $primary-color: var(--primary-color, #78cdd7);
 $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
 
 // navbar vertical width
-$navbar-vertical-width: 10%;
+$navbar-vertical-width: auto;
 
 // New variables to add
 $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
@@ -35,16 +38,24 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
 }
 
 .elevation_low {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 .elevation_high {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .elevation_rainbow {
-  box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px,
-    rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+  box-shadow:
+    rgb(85, 91, 255) 0px 0px 0px 3px,
+    rgb(31, 193, 27) 0px 0px 0px 6px,
+    rgb(255, 217, 19) 0px 0px 0px 9px,
+    rgb(255, 156, 85) 0px 0px 0px 12px,
+    rgb(255, 85, 85) 0px 0px 0px 15px;
 }
 
 /**
@@ -155,10 +166,10 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  height: 100%;
 
   &.vertical {
     align-items: flex-start !important;
+    width: auto;
   }
 
   &:not(.vertical) {
@@ -229,7 +240,11 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
   border-radius: 1rem;
 
   &:hover {
-    background-color: color-mix(in srgb, $background-color, #000 20%) !important;
+    background-color: color-mix(
+      in srgb,
+      $background-color,
+      #000 20%
+    ) !important;
   }
 }
 

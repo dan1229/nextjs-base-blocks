@@ -275,6 +275,16 @@ remove navbar vetical 10% width
 ### [1.4.0] - 2024-11-DD
 - TODO
 
+--
+1.3.3
+
+
+
+### [1.3.2] - 2025-01-04
+- Fix `BBNavbar` vertical width issues
+- Fix `BBNavbar` centering on 'regular' navbar issues
+
+                                            
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)
