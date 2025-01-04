@@ -14,6 +14,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [1.3.4] - 2025-01-04
+- Fix `BBNavbar` vertical width issues
+- Fix `BBNavbar` centering on 'regular' navbar issues
+- Removed `--navbar-container-brand-width` variable
+
+
 ### [1.3.3] - 2024-11-13
 - `BBNavbar`
   - Removed `--navbar-vertical-width`
