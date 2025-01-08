@@ -96,6 +96,10 @@
 }
 
 // prevent background scrolling
-:global(body.modal-open) {
-  overflow: hidden;
+.containerModal {
+  &:global(.modal-active) {
+    & ~ :global(body) {
+      overflow: hidden;
+    }
+  }
 }
