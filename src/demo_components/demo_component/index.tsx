@@ -41,8 +41,28 @@ export default function DemoComponent(Props: IPropsDemoComponent): React.ReactEl
     <div className={styles.containerDemoComponent}>
       <BBText size="large">{name}</BBText>
       <div>
-        {showComponent && <div className={styles.containerComponent}>{child}</div>}
-        {isBBModal && <BBButton onClick={() => setShowComponent(!showComponent)} text={showComponent ? 'Hide' : 'Show'} />}
+        {showComponent &&
+          (isBBModal ? (
+            React.cloneElement(
+              child as React.ReactElement,
+              {
+                ...stateObject,
+                onConfirm: () => setShowComponent(false),
+                onDismiss: () => setShowComponent(false),
+              },
+              <BBText>Test</BBText>
+            )
+          ) : (
+            <div className={styles.containerComponent}>{child}</div>
+          ))}
+        {isBBModal && (
+          <BBButton
+            onClick={() => {
+              setShowComponent(!showComponent);
+            }}
+            text={showComponent ? 'Hide' : 'Show'}
+          />
+        )}
         <hr />
         <StateEditor state={stateObject} setState={setStateObject} />
       </div>

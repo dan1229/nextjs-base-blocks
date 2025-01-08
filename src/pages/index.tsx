@@ -131,6 +131,7 @@ const DemoPage = () => {
     headerTextSize: 'medium',
     showButtonCancel: true,
     loading: false,
+    // the onConfirm and onDismiss are handled by the DemoComponent
   });
   // BB Navbar
   const [stateBBNavbar, setStateBBNavbar] = useState<IPropsBBNavbar>({
