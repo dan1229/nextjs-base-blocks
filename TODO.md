@@ -123,6 +123,17 @@ TODO - write specific test cases to write
 
 
 
+---
+### 1.4.1
+
+
+
+#### bbbutton
+- container icon looks weird with margin sometimes?
+  - look at <InputMeetingMemberStatus> in get twenty - there's a hakc for margin-bottom
+
+
+
 ----
 ### 1.4.0
 
@@ -251,20 +262,9 @@ TODO - write specific test cases to write
     - TODO
 
 
-#### bbbutton
-- container icon looks weird with margin sometimes?
-  - look at <InputMeetingMemberStatus> in get twenty - there's a hakc for margin-bottom
-
-
-
-#### bbmodal
-- background scrolling
-  - ensure backgrounds dont scroll EVER
-
-
 
 ### [1.4.0] - 2024-11-DD
-- TODO
+- Fix (attempted) for `BBModal` background scrolling
                                             
 -------------------------------------------------------
 

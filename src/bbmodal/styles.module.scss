@@ -94,3 +94,12 @@
     width: 100%;
   }
 }
+
+// prevent background scrolling
+.containerModal {
+  &:global(.modal-active) {
+    & ~ :global(body) {
+      overflow: hidden;
+    }
+  }
+}
