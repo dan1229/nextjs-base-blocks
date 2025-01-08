@@ -258,7 +258,7 @@ TODO - write specific test cases to write
 
 
 ### [1.4.0] - 2024-11-DD
-- TODO
+- Fix (attempted) for `BBModal` background scrolling
                                             
 -------------------------------------------------------
 
