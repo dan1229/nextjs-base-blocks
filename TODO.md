@@ -260,12 +260,16 @@ TODO - write specific test cases to write
     - all?
 
 
+background scrolling for bbmodal pls fix
+
 
 ### [1.4.0] - 2024-11-DD
 - `BBTooltip` component added!
   - Able to pass text or custom content
   - Demo components added too
-- Fix (attempted) for `BBModal` background scrolling
+- `BBModal`
+  - Fix (attempted) for `BBModal` background scrolling
+  - Improved demo component state
                                             
 -------------------------------------------------------
 
