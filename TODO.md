@@ -253,8 +253,13 @@ TODO - write specific test cases to write
 
 
 #### bb tooltips - NEW COMPONENT
-- add tooltip functionality
-- improve styling
+- add variants / colors
+- borders
+- elevation
+- border radius
+  - maybe make this a css var
+_
+- improve styling generally
 - make default just a "?" icon
 -
 - add to other components
