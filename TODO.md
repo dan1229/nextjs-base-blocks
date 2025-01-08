@@ -110,6 +110,8 @@ TODO - write specific test cases to write
 
 
 
+#### convert to app router
+- yup
 
 
 
@@ -117,8 +119,6 @@ TODO - write specific test cases to write
 - vertical mobile styling
   - emulate styling from flutter navbars a bit
     - i.e., always slide out kinda thing
-
-
 
 
 
@@ -263,7 +263,8 @@ TODO - write specific test cases to write
 
 ### [1.4.0] - 2024-11-DD
 - `BBTooltip` component added!
-  - TODO
+  - Able to pass text or custom content
+  - Demo components added too
 - Fix (attempted) for `BBModal` background scrolling
                                             
 -------------------------------------------------------

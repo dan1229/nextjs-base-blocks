@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
 import classnames from 'classnames';
+import React, { useState } from 'react';
 import BBText from '../bbtext';
 import styles from './styles.module.scss';
 
