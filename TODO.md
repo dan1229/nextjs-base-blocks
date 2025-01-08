@@ -257,12 +257,6 @@ TODO - write specific test cases to write
 
 
 
-#### bbmodal
-- background scrolling
-  - ensure backgrounds dont scroll EVER
-
-
-
 ### [1.4.0] - 2024-11-DD
 - TODO
                                             
