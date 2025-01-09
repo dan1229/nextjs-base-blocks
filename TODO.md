@@ -263,7 +263,8 @@ TODO - write specific test cases to write
 
 
 
-background scrolling for bbmodal pls fix
+divider thickness
+
 
 
 ### [1.4.0] - 2025-01-DD
