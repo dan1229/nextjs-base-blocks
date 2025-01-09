@@ -238,10 +238,7 @@ TODO - write specific test cases to write
   - i.e., let me pass a button to a navbar as a child component?
 
 
-#### bb navbar
-- wider button action components?
-  - could this just use better handling?
--
+
 
 
 ### [1.4.0] - 2025-01-DD
@@ -251,6 +248,7 @@ TODO - write specific test cases to write
   - `--navbar-max-width` variable added
   - `--navbar-vertical-width` variable added back lol
   - `menuAlignment` prop added
+  - Action button sizing improved / more dynamic
 - `BBTooltip` component added!
   - Able to pass text or custom content
   - Some props - `variant`, TODO
