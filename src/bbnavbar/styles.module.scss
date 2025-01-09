@@ -23,11 +23,8 @@ $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
 // navbar vertical width
 $navbar-vertical-width: auto;
 
-// navbar transition
+// New variables to add
 $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
-
-// navbar max width
-$navbar-max-width: var(--navbar-max-width, 100%);
 
 /**
  * ELEVATION
@@ -105,15 +102,20 @@ $navbar-max-width: var(--navbar-max-width, 100%);
     width: 100%;
     position: sticky;
     top: 0;
-
-    // Add these lines
-    > div {
-      max-width: $navbar-max-width;
-      margin: 0 auto;
-      width: 100%;
-    }
   }
 }
+
+// .containerBrand {
+//   margin-left: auto;
+//   margin-right: auto;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   text-align: center; // Ensure text is centered
+//   width: 100%;
+//   height: 100%;
+//   padding: 0.15rem;
+// }
 
 .containerBrand {
   margin: 0 auto;
@@ -166,6 +168,7 @@ $navbar-max-width: var(--navbar-max-width, 100%);
 .navigationMenu {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 
   &.vertical {
     align-items: flex-start !important;
@@ -175,7 +178,6 @@ $navbar-max-width: var(--navbar-max-width, 100%);
   &:not(.vertical) {
     width: 100%;
   }
-
   // alignment classes
   &.align_left {
     justify-content: flex-start;
@@ -191,6 +193,11 @@ $navbar-max-width: var(--navbar-max-width, 100%);
 
   * {
     text-decoration: none;
+  }
+
+  // Align navbar item text to the start
+  ul > li > div > div > a > * {
+    text-align: start;
   }
 }
 
@@ -212,20 +219,6 @@ $navbar-max-width: var(--navbar-max-width, 100%);
     align-items: flex-start;
     width: auto; /* Adjust width based on content */
   }
-
-  // @media (max-width: 768px) {
-  //   width: 100%;
-  //   justify-content: center;
-  //   padding: 1rem;
-
-  //   &.expanded {
-  //     display: flex;
-  //   }
-
-  //   &:not(.expanded) {
-  //     display: none;
-  //   }
-  // }
 }
 
 /**
@@ -235,11 +228,9 @@ $navbar-max-width: var(--navbar-max-width, 100%);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
 
   &:not(.verticalWrapper) {
     flex-direction: row;
-    position: relative;
   }
 
   &.verticalWrapper {
@@ -255,9 +246,6 @@ $navbar-max-width: var(--navbar-max-width, 100%);
   transition: background-color 0.2s ease-in-out;
   display: none;
   margin: 0 0.75rem;
-  position: absolute;
-  left: 0.75rem;
-  z-index: 1;
 }
 
 .iconHamburger {
