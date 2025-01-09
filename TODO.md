@@ -258,13 +258,6 @@ TODO - write specific test cases to write
 
 
 
-#### bb tooltips - NEW COMPONENT
-
-
-
-
-divider thickness
-
 
 
 ### [1.4.0] - 2025-01-DD
@@ -275,6 +268,8 @@ divider thickness
 - `BBModal`
   - Fix (attempted) for `BBModal` background scrolling
   - Improved demo component state
+- `BBDivider`
+  - Thickness and minimum thickness improvements
                                             
 -------------------------------------------------------
 

@@ -23,7 +23,6 @@ $accent-dark-color: var(--accent-dark-color, darken(#ff6b6c, 10%));
 // Base divider styles
 .divider {
   box-sizing: border-box;
-  background-color: transparent;
   margin: 0;
   padding: 0;
 }
@@ -31,35 +30,61 @@ $accent-dark-color: var(--accent-dark-color, darken(#ff6b6c, 10%));
 // Orientation styles
 .horizontal {
   width: 100%;
-  height: 0;
+  height: auto;
 }
 
 .vertical {
   height: 100%;
-  width: 0;
+  width: auto;
 }
 
 // Style types
 .styleSolid {
-  border-style: solid;
+  // Border style removed
 }
 
 .styleDashed {
-  border-style: dashed;
+  background-image: linear-gradient(to right, currentColor 50%, transparent 50%);
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
 }
 
 .styleDotted {
-  border-style: dotted;
+  background-image: radial-gradient(circle, currentColor 50%, transparent 50%);
+  background-size: 4px 4px;
+  background-repeat: repeat-x;
 }
 
 // Thickness variants
 @each $size, $value in ('xs': 1px, 's': 2px, 'm': 3px, 'l': 4px, 'xl': 6px, 'xxl': 8px, 'xxxl': 10px) {
   .thickness#{$size} {
     &.horizontal {
-      border-bottom-width: $value;
+      height: $value;
+      background-color: currentColor;
+
+      &.styleDashed {
+        background-size: 8px $value;
+      }
+
+      &.styleDotted {
+        background-size: $value $value;
+      }
     }
+
     &.vertical {
-      border-right-width: $value;
+      width: $value;
+      background-color: currentColor;
+
+      &.styleDashed {
+        background-image: linear-gradient(to bottom, currentColor 50%, transparent 50%);
+        background-size: $value 8px;
+      }
+
+      &.styleDotted {
+        background-image: radial-gradient(circle, currentColor 50%, transparent 50%);
+        background-size: $value $value;
+        background-repeat: repeat-y;
+      }
     }
   }
 }
