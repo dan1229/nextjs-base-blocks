@@ -252,24 +252,12 @@ TODO - write specific test cases to write
   - any align, make it a var somehow
 
 
-#### bb card
-- header border radius no bueno
-  - check <CardMeetingInstance.cardYourStatusForm> to see the hack
-  - try to fix this
-  - check footer
-
-
-  * {
-    // this is to override a weird border-radius in nextjs base blocks
-    // seems to be an issue with the bottom left/right borders not being rounded on the card header
-    // when just the header is rendered
-    border-radius: 2rem !important;
-  }
-
 
 
 
 ### [1.4.0] - 2025-01-DD
+- `BBCard`
+  - Header, Body, and Footer border radius improvements
 - `BBTooltip` component added!
   - Able to pass text or custom content
   - Some props - `variant`, TODO

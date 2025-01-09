@@ -33,6 +33,7 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
   flex-direction: column;
   align-items: stretch;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .no_border {
@@ -60,11 +61,10 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 */
 .header {
   padding: 1rem;
-  border-radius: $border-radius $border-radius 0 0;
+  border-radius: 0;
 
   &:only-child {
-    // if ONLY header, round ALL corners
-    border-radius: $border-radius;
+    border-radius: 0;
     border-bottom: none !important;
   }
 }
@@ -85,7 +85,7 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 
 .footer {
   padding: 1rem;
-  border-radius: 0 0 $border-radius $border-radius;
+  border-radius: 0;
 }
 
 .footer:only-child {
@@ -114,21 +114,21 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 /* If header is followed by footer */
 .header + .footer {
   .header {
-    border-radius: $border-radius $border-radius 0 0;
+    border-radius: 0;
   }
   .footer {
-    border-radius: 0 0 $border-radius $border-radius;
+    border-radius: 0;
   }
 }
 
 /* If only header and footer */
 .header:only-child + .footer:only-child {
   .header {
-    border-radius: $border-radius $border-radius 0 0;
+    border-radius: 0;
     border-bottom: none !important;
   }
   .footer {
-    border-radius: 0 0 $border-radius $border-radius;
+    border-radius: 0;
     border-top: none !important;
   }
 }
@@ -141,13 +141,13 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 /* If header, body, and footer are all present */
 .header + .body + .footer {
   .header {
-    border-radius: $border-radius $border-radius 0 0;
+    border-radius: 0;
   }
   .body {
     border-radius: 0;
   }
   .footer {
-    border-radius: 0 0 $border-radius $border-radius;
+    border-radius: 0;
   }
 }
 
