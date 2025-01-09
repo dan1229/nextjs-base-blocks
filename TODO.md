@@ -152,6 +152,17 @@ TODO - write specific test cases to write
 
 
 
+#### bbnavbar item
+- width?
+  - set min width somehow?
+-
+- bbnavbar item - allow these to just be components?
+  - i.e., let me pass a button to a navbar as a child component?
+
+
+
+
+
 ---
 ### 1.4.1
 
@@ -224,18 +235,6 @@ TODO - write specific test cases to write
 
 
 
-
-
-
-
-
-
-#### bbnavbar item
-- width?
-  - set min width somehow?
--
-- bbnavbar item - allow these to just be components?
-  - i.e., let me pass a button to a navbar as a child component?
 
 
 
