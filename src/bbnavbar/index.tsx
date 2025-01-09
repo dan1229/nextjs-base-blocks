@@ -8,7 +8,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import BBText from '../bbtext';
 import useOutsideClick from '../utils/hooks/UseOutsideClick';
 import styles from './styles.module.scss';
-import type { IPropsBBBase, TBBTextColor, TBBTextSize } from '../types';
+import type { IPropsBBBase, TBBTextColor, TBBTextSize, TBBNavbarAlignment } from '../types';
 
 type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
 
@@ -31,6 +31,7 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
  * @param {string=} classNameWrapper - Custom class name for the wrapper. Doesn't really apply with vertical.
  * @param {boolean=} brandHorizontal - Whether the brand is horizontal
  * @param {boolean=} boldTitle - Whether the title is bold
+ * @param {string=} menuAlignment - Alignment of the menu items
  */
 export interface IPropsBBNavbar {
   children: React.ReactNode;
@@ -49,6 +50,7 @@ export interface IPropsBBNavbar {
   classNameWrapper?: string;
   brandHorizontal?: boolean;
   boldTitle?: boolean;
+  menuAlignment?: TBBNavbarAlignment;
 }
 
 /**
@@ -72,6 +74,7 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
     classNameWrapper,
     brandHorizontal = false,
     boldTitle = false,
+    menuAlignment = 'left',
   } = props;
 
   const [showNavExpanded, setShowNavExpanded] = useState(false);
@@ -123,10 +126,19 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
             </div>
           </div>
         </div>
-        <div className={classNames(styles.navigationMenu, showNavExpanded && styles.expanded, vertical && styles.vertical)}>
+        <div
+          className={classNames(
+            styles.navigationMenu,
+            showNavExpanded && styles.expanded,
+            vertical && styles.vertical,
+            styles[`align_${menuAlignment}`]
+          )}
+        >
           <ul className={styles.navigationMenuList}>{children}</ul>
         </div>
-        <div className={styles.containerButtonsAction}>{showButtonsAction && buttonsAction}</div>
+        <div className={classNames(styles.containerButtonsAction, showNavExpanded && styles.expanded)}>
+          {showButtonsAction && buttonsAction}
+        </div>
       </nav>
       <div className={classNames(styles.content, vertical && styles.vertical)}>{mainContent}</div>
     </div>

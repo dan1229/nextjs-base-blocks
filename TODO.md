@@ -84,8 +84,15 @@
 
 
 
-
 ----
+### 1.6.0
+
+DEMO PAGE IMPROVEMENTS!!! MAKE IT GREAT!!!
+
+
+---
+### 1.5.0
+
 #### Cypress Testing
 
 
@@ -102,15 +109,6 @@ TODO - write specific test cases to write
 - hook up code cov and coverage
 
 
----
-### 1.5.0
-
-#### demo page stuff?
-- see above TODOs
-
-
-
-
 
 #### cypress testing
 - install
@@ -123,6 +121,7 @@ TODO - write specific test cases to write
 - add TODOs for future tests
 
 
+----
 
 #### convert to app router
 - yup
@@ -141,6 +140,9 @@ TODO - write specific test cases to write
     - color
     - padding?
     - classname?
+-
+- add back 'sticky' prop
+  - is it working?
 
 
 #### add bbtooltip to other components
@@ -236,28 +238,17 @@ TODO - write specific test cases to write
   - i.e., let me pass a button to a navbar as a child component?
 
 
-#### bb navbar
-- add 'max width'
-  - i.e., like how the page content is sometimes limited, navbar should be too
-    - scss variable
-    - max_height too?
--
-- wider button action components?
-  - could this just use better handling?
--
-- add back 'sticky' prop
-  - is it working?
--
-- add ability to right align navbar items?
-  - any align, make it a var somehow
-
-
 
 
 
 ### [1.4.0] - 2025-01-DD
 - `BBCard`
   - Header, Body, and Footer border radius improvements
+- `BBNavbar`
+  - `--navbar-max-width` variable added
+  - `--navbar-vertical-width` variable added back lol
+  - `menuAlignment` prop added
+  - Action button sizing improved / more dynamic
 - `BBTooltip` component added!
   - Able to pass text or custom content
   - Some props - `variant`, TODO
