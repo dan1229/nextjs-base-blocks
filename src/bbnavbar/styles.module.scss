@@ -123,11 +123,11 @@ $navbar-max-width: var(--navbar-max-width, 100%);
   width: auto;
   padding: 0.15rem;
 
-  @media (max-width: 768px) {
-    position: relative;
-    transform: none;
-    left: auto;
-  }
+  // @media (max-width: 768px) {
+  //   position: relative;
+  //   transform: none;
+  //   left: auto;
+  // }
 }
 
 .brand {
@@ -176,7 +176,7 @@ $navbar-max-width: var(--navbar-max-width, 100%);
     width: 100%;
   }
 
-  // Add these alignment classes
+  // alignment classes
   &.align_left {
     justify-content: flex-start;
   }
@@ -208,19 +208,24 @@ $navbar-max-width: var(--navbar-max-width, 100%);
   min-width: fit-content;
   padding: 0 1rem;
 
-  @media (max-width: 768px) {
-    width: 100%;
-    justify-content: center;
-    padding: 1rem;
-
-    &.expanded {
-      display: flex;
-    }
-
-    &:not(.expanded) {
-      display: none;
-    }
+  &.vertical {
+    align-items: flex-start;
+    width: auto; /* Adjust width based on content */
   }
+
+  // @media (max-width: 768px) {
+  //   width: 100%;
+  //   justify-content: center;
+  //   padding: 1rem;
+
+  //   &.expanded {
+  //     display: flex;
+  //   }
+
+  //   &:not(.expanded) {
+  //     display: none;
+  //   }
+  // }
 }
 
 /**

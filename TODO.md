@@ -84,8 +84,15 @@
 
 
 
-
 ----
+### 1.6.0
+
+DEMO PAGE IMPROVEMENTS!!! MAKE IT GREAT!!!
+
+
+---
+### 1.5.0
+
 #### Cypress Testing
 
 
@@ -102,15 +109,6 @@ TODO - write specific test cases to write
 - hook up code cov and coverage
 
 
----
-### 1.5.0
-
-#### demo page stuff?
-- see above TODOs
-
-
-
-
 
 #### cypress testing
 - install
@@ -123,6 +121,7 @@ TODO - write specific test cases to write
 - add TODOs for future tests
 
 
+----
 
 #### convert to app router
 - yup

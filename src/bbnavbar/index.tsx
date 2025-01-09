@@ -74,7 +74,7 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
     classNameWrapper,
     brandHorizontal = false,
     boldTitle = false,
-    menuAlignment = 'left',
+    menuAlignment = 'center',
   } = props;
 
   const [showNavExpanded, setShowNavExpanded] = useState(false);
