@@ -23,8 +23,11 @@ $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
 // navbar vertical width
 $navbar-vertical-width: auto;
 
-// New variables to add
+// navbar transition
 $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
+
+// navbar max width
+$navbar-max-width: var(--navbar-max-width, 100%);
 
 /**
  * ELEVATION
@@ -102,6 +105,13 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
     width: 100%;
     position: sticky;
     top: 0;
+
+    // Add these lines
+    > div {
+      max-width: $navbar-max-width;
+      margin: 0 auto;
+      width: 100%;
+    }
   }
 }
 

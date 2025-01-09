@@ -237,11 +237,6 @@ TODO - write specific test cases to write
 
 
 #### bb navbar
-- add 'max width'
-  - i.e., like how the page content is sometimes limited, navbar should be too
-    - scss variable
-    - max_height too?
--
 - wider button action components?
   - could this just use better handling?
 -
@@ -258,6 +253,8 @@ TODO - write specific test cases to write
 ### [1.4.0] - 2025-01-DD
 - `BBCard`
   - Header, Body, and Footer border radius improvements
+- `BBNavbar`
+  - `--navbar-max-width` variable added
 - `BBTooltip` component added!
   - Able to pass text or custom content
   - Some props - `variant`, TODO
