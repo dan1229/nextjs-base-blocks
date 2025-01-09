@@ -120,6 +120,11 @@ export type TBBNavbarItemColorBorder =
   | 'accent';
 
 /**
+ * BBTooltip
+ */
+// TODO
+
+/**
  * BBText
  */
 export type TBBTextSize = 'tiny' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge' | 'xxxlarge';

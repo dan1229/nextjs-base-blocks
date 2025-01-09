@@ -166,8 +166,8 @@ const DemoPage = () => {
   });
   // BB Tooltip
   const [stateBBTooltip, setStateBBTooltip] = useState<IPropsBBTooltip>({
-    text: 'This is a tooltip',
-    position: 'top',
+    text: 'Hover Me!',
+    content: 'This is a tooltip',
     className: '',
   });
 
@@ -248,11 +248,7 @@ const DemoPage = () => {
         <DemoComponent name="BBText" child={<BBText {...stateBBText} />} stateObject={stateBBText} setStateObject={setStateBBText} />
         <DemoComponent
           name="BBTooltip"
-          child={
-            <BBTooltip {...stateBBTooltip}>
-              <BBButton text="Hover me!" />
-            </BBTooltip>
-          }
+          child={<BBTooltip {...stateBBTooltip} />}
           stateObject={stateBBTooltip}
           setStateObject={setStateBBTooltip}
         />

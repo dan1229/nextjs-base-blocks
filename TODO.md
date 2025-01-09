@@ -143,6 +143,12 @@ TODO - write specific test cases to write
     - classname?
 
 
+#### add bbtooltip to other components
+- button
+- fields
+  - all?
+
+
 
 ---
 ### 1.4.1
@@ -253,19 +259,8 @@ TODO - write specific test cases to write
 
 
 #### bb tooltips - NEW COMPONENT
-- add variants / colors
-- borders
-- elevation
-- border radius
-  - maybe make this a css var
-_
-- improve styling generally
-- make default just a "?" icon
--
-- add to other components
-  - button
-  - fields
-    - all?
+
+
 
 
 background scrolling for bbmodal pls fix
@@ -274,6 +269,7 @@ background scrolling for bbmodal pls fix
 ### [1.4.0] - 2025-01-DD
 - `BBTooltip` component added!
   - Able to pass text or custom content
+  - Some props - `variant`, TODO
   - Demo components added too
 - `BBModal`
   - Fix (attempted) for `BBModal` background scrolling
