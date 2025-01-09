@@ -141,6 +141,9 @@ TODO - write specific test cases to write
     - color
     - padding?
     - classname?
+-
+- add back 'sticky' prop
+  - is it working?
 
 
 #### add bbtooltip to other components
@@ -240,9 +243,6 @@ TODO - write specific test cases to write
 - wider button action components?
   - could this just use better handling?
 -
-- add back 'sticky' prop
-  - is it working?
-
 
 
 ### [1.4.0] - 2025-01-DD

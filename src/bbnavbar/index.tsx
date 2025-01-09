@@ -136,7 +136,9 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
         >
           <ul className={styles.navigationMenuList}>{children}</ul>
         </div>
-        <div className={styles.containerButtonsAction}>{showButtonsAction && buttonsAction}</div>
+        <div className={classNames(styles.containerButtonsAction, showNavExpanded && styles.expanded)}>
+          {showButtonsAction && buttonsAction}
+        </div>
       </nav>
       <div className={classNames(styles.content, vertical && styles.vertical)}>{mainContent}</div>
     </div>
