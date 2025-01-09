@@ -106,6 +106,11 @@ export type TBBDividerMargin = 'none' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 
 export type TBBModalWidth = 'sm' | 'md' | 'lg' | 'full';
 
 /**
+ * BBNavbar
+ */
+export type TBBNavbarAlignment = 'left' | 'center' | 'right';
+
+/**
  * BBNavbarItem
  */
 export type TBBNavbarItemColorBorder =

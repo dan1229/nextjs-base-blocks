@@ -163,7 +163,6 @@ $navbar-max-width: var(--navbar-max-width, 100%);
 .navigationMenu {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
 
   &.vertical {
     align-items: flex-start !important;
@@ -174,13 +173,21 @@ $navbar-max-width: var(--navbar-max-width, 100%);
     width: 100%;
   }
 
-  * {
-    text-decoration: none;
+  // Add these alignment classes
+  &.align_left {
+    justify-content: flex-start;
   }
 
-  // Align navbar item text to the start
-  ul > li > div > div > a > * {
-    text-align: start;
+  &.align_center {
+    justify-content: center;
+  }
+
+  &.align_right {
+    justify-content: flex-end;
+  }
+
+  * {
+    text-decoration: none;
   }
 }
 

@@ -242,11 +242,6 @@ TODO - write specific test cases to write
 -
 - add back 'sticky' prop
   - is it working?
--
-- add ability to right align navbar items?
-  - any align, make it a var somehow
-
-
 
 
 
@@ -255,6 +250,7 @@ TODO - write specific test cases to write
   - Header, Body, and Footer border radius improvements
 - `BBNavbar`
   - `--navbar-max-width` variable added
+  - `menuAlignment` prop added
 - `BBTooltip` component added!
   - Able to pass text or custom content
   - Some props - `variant`, TODO
