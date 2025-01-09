@@ -30,9 +30,9 @@ import type { TBBCardColorBorder, TBBModalWidth, TBBTextSize } from '../types';
 export interface IPropsBBModal {
   children: React.ReactNode;
   title: string;
-  onDismiss?: (args?: any) => void; // eslint-disable-line @typescript-eslint/no-explicit-any
+  onDismiss?: (args?: unknown) => void;
   textDismiss?: string;
-  onConfirm?: (args?: any) => void; // eslint-disable-line @typescript-eslint/no-explicit-any
+  onConfirm?: (args?: unknown) => void;
   textConfirm?: string;
   extraFooter?: React.ReactNode;
   confirmCancel?: boolean;
@@ -86,6 +86,19 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
       }
     }
   };
+
+  React.useEffect(() => {
+    // Store the original overflow style
+    const originalStyle = window.getComputedStyle(document.body).overflow;
+    // Set overflow to hidden
+    document.body.style.overflow = 'hidden';
+
+    // Cleanup function
+    return () => {
+      // Restore the original overflow style
+      document.body.style.overflow = originalStyle;
+    };
+  }, []);
 
   /**
    * RENDER

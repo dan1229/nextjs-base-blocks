@@ -10,6 +10,7 @@ import BBModal from '../bbmodal';
 import BBNavbar from '../bbnavbar';
 import BBNavbarItem from '../bbnavbar_item';
 import BBText from '../bbtext';
+import BBTooltip from '../bbtooltip';
 import DemoComponent from '../demo_components/demo_component';
 import BBFieldCheckbox from '../form_components/bbfield_checkbox';
 import type { IPropsBBAlert } from '../bbalert';
@@ -23,6 +24,7 @@ import type { IPropsBBModal } from '../bbmodal';
 import type { IPropsBBNavbar } from '../bbnavbar';
 import type { IPropsBBNavbarItem } from '../bbnavbar_item';
 import type { IPropsBBText } from '../bbtext';
+import type { IPropsBBTooltip } from '../bbtooltip';
 
 /**
  * DEMO PAGE
@@ -129,6 +131,7 @@ const DemoPage = () => {
     headerTextSize: 'medium',
     showButtonCancel: true,
     loading: false,
+    // the onConfirm and onDismiss are handled by the DemoComponent
   });
   // BB Navbar
   const [stateBBNavbar, setStateBBNavbar] = useState<IPropsBBNavbar>({
@@ -160,6 +163,12 @@ const DemoPage = () => {
     color: 'primary',
     className: '',
     onClick: () => alert('You clicked the text!'),
+  });
+  // BB Tooltip
+  const [stateBBTooltip, setStateBBTooltip] = useState<IPropsBBTooltip>({
+    text: 'Hover Me!',
+    content: 'This is a tooltip',
+    className: '',
   });
 
   return (
@@ -237,6 +246,12 @@ const DemoPage = () => {
           setStateObject={setStateBBNavbarItem}
         />
         <DemoComponent name="BBText" child={<BBText {...stateBBText} />} stateObject={stateBBText} setStateObject={setStateBBText} />
+        <DemoComponent
+          name="BBTooltip"
+          child={<BBTooltip {...stateBBTooltip} />}
+          stateObject={stateBBTooltip}
+          setStateObject={setStateBBTooltip}
+        />
       </div>
       <div>
         <h2>BB Form Components</h2>

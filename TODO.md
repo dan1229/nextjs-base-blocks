@@ -112,19 +112,58 @@ TODO - write specific test cases to write
 
 
 
+#### cypress testing
+- install
+  - write basic components tests
+  - should / could these use the demo page?
+    - are those just separate tests?
+- coverage
+  - add codecov
+-
+- add TODOs for future tests
+
+
+
+#### convert to app router
+- yup
+
+
 
 #### bbnavbar 
 - vertical mobile styling
   - emulate styling from flutter navbars a bit
     - i.e., always slide out kinda thing
+-
+- add divider between brand and items
+  - horizontal and vertical
+  - any props for this?
+    - thickness
+    - color
+    - padding?
+    - classname?
 
 
-
+#### add bbtooltip to other components
+- button
+- fields
+  - all?
 
 
 
 ---
 ### 1.4.1
+
+
+#### improve actual defaults in each component
+- try on an app with no global vars and try to make it look good / sensical
+
+
+
+
+#### default theme colors?
+- update defaults in readme
+  - sync with bootstrapper
+
 
 
 
@@ -138,48 +177,14 @@ TODO - write specific test cases to write
 ### 1.4.0
 
 
-#### default theme colors?
-- update defaults in readme
-  - sync with bootstrapper
 
 
 
-
-
-
-
-
-#### cypress testing
-- install
-  - write basic components tests
-  - should / could these use the demo page?
-    - are those just separate tests?
-- coverage
-  - add codecov
--
-- add TODOs for future tests
-
-
-#### bbnavbar item
-- width?
-  - set min width somehow?
--
-- bbnavbar item - allow these to just be components?
-  - i.e., let me pass a button to a navbar as a child component?
-
-
-
-
-#### improve actual defaults in each component
-- try on an app with no global vars and try to make it look good / sensical
-
-
-
-
-
-
-
-
+#### bbform fields - demo components
+- add them!
+  - different / new page? 
+  
+  
 
 #### bbform fields - sizes
 - add size options
@@ -201,7 +206,6 @@ TODO - write specific test cases to write
 - wait until form css is figured out
 
 
-
 #### bb form components - basic style variables
 - add variables for colors and all that
   - border color
@@ -221,50 +225,60 @@ TODO - write specific test cases to write
 
 
 
-#### bb card
-- header border radius no bueno
-  - check <CardMeetingInstace.cardYourStatusForm> to see the hack
-  - try to fix this
-  - check footer
+
+
+
+#### bbnavbar item
+- width?
+  - set min width somehow?
+-
+- bbnavbar item - allow these to just be components?
+  - i.e., let me pass a button to a navbar as a child component?
 
 
 #### bb navbar
 - add 'max width'
   - i.e., like how the page content is sometimes limited, navbar should be too
     - scss variable
-  - is this just for vertical navbar?
+    - max_height too?
 -
 - wider button action components?
   - could this just use better handling?
 -
-- add divider between brand and items
-  - horizontal and vertical
-  - any props for this?
-    - thickness
-    - color
-    - padding?
-    - classname?
--
 - add back 'sticky' prop
+  - is it working?
 -
 - add ability to right align navbar items?
+  - any align, make it a var somehow
+
+
+#### bb card
+- header border radius no bueno
+  - check <CardMeetingInstance.cardYourStatusForm> to see the hack
+  - try to fix this
+  - check footer
+
+
+  * {
+    // this is to override a weird border-radius in nextjs base blocks
+    // seems to be an issue with the bottom left/right borders not being rounded on the card header
+    // when just the header is rendered
+    border-radius: 2rem !important;
+  }
 
 
 
-#### bb tooltips - NEW COMPONENT
-- add tooltip functionality
-  - BBToolTip components?
-- add to other components
-  - button
-  - link?
-  - TODO
-  - fields?
-    - TODO
 
-
-
-### [1.4.0] - 2024-11-DD
-- Fix (attempted) for `BBModal` background scrolling
+### [1.4.0] - 2025-01-DD
+- `BBTooltip` component added!
+  - Able to pass text or custom content
+  - Some props - `variant`, TODO
+  - Demo components added too
+- `BBModal`
+  - Fix (attempted) for `BBModal` background scrolling
+  - Improved demo component state
+- `BBDivider`
+  - Thickness and minimum thickness improvements
                                             
 -------------------------------------------------------
 
