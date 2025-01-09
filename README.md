@@ -139,6 +139,7 @@ html,
   --navbar-icon-mobile-color: #{$primary-color};
   --navbar-transition: all 0.2s ease-in-out;
   --navbar-max-width: 100%;
+  --navbar-vertical-width: 16rem;
   // bb navbar item
   --navbar-item-border-radius: 1rem;
   --navbar-item-padding: 1rem;

@@ -249,6 +249,7 @@ TODO - write specific test cases to write
   - Header, Body, and Footer border radius improvements
 - `BBNavbar`
   - `--navbar-max-width` variable added
+  - `--navbar-vertical-width` variable added back lol
   - `menuAlignment` prop added
 - `BBTooltip` component added!
   - Able to pass text or custom content
