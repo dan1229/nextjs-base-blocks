@@ -108,8 +108,6 @@ $navbar-max-width: var(--navbar-max-width, 100%);
 
     > div {
       max-width: $navbar-max-width;
-      margin: 0 auto;
-      // width: 100%;
     }
   }
 }
@@ -124,15 +122,6 @@ $navbar-max-width: var(--navbar-max-width, 100%);
   padding: 0.15rem;
 }
 
-// .containerBrand {
-//   margin: 0 auto;
-//   position: absolute;
-//   left: 50%;
-//   transform: translateX(-50%);
-//   width: auto;
-//   padding: 0.15rem;
-// }
-
 .brand {
   display: flex;
   justify-content: center;
@@ -144,6 +133,7 @@ $navbar-max-width: var(--navbar-max-width, 100%);
   padding: 0.15rem;
   height: 100%;
   transition: $navbar-transition;
+  white-space: nowrap;
 
   &:hover {
     background-color: color-mix(in srgb, $background-color, #fff 10%);
