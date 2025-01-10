@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useState } from 'react';
 import BBAlert from '../bbalert';
 import BBButton from '../bbbutton';
@@ -191,7 +192,7 @@ const DemoPage = () => {
       <div>
         <h3>BB Form Components</h3>
         <p>
-          View <a href="/form-components">form components</a> for more demo!
+          View <Link href="/form-components">form components</Link> for more demo!
         </p>
       </div>
       <hr />
