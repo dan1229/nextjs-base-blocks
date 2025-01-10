@@ -229,6 +229,8 @@ npm run dev
 
 Then navigate to [http://localhost:3000](http://localhost:3000) to see the demo of the components.
 
+Form Components Demo are available at [http://localhost:3000/form-components](http://localhost:3000/form-components).
+
 **Please not this is a work in progress.**
 
 -------------------------------------------------------

@@ -70,17 +70,12 @@
 
 
 
-#### demo page - form components
-- just add them
-- probably in a different page
-- make sections expandable
--
-- ensure all entries options are up to date!
--
-- make home page a real home page
-  - links to:
-  - `/components`
-  - `/components/forms`
+
+
+#### bb form demo components
+- fix the broken one
+- add any missing ones
+- generally improve
 
 
 
@@ -192,6 +187,7 @@ TODO - write specific test cases to write
 ### 1.4.1
 
 
+
 #### improve actual defaults in each component
 - try on an app with no global vars and try to make it look good / sensical
 
@@ -216,21 +212,13 @@ TODO - write specific test cases to write
 
 
 
-#### bbform fields - demo components
-- add them!
-  - different / new page? 
-  
-  
-
-
-
-
 
 
 ### [1.4.0] - 2025-01-DD
 - `BBFormComponents`
   - Added color and style variables!
     - View `README.md` for more info but over 10 new variables added
+  - Added basic demo page at `/form-components`
 - `BBCard`
   - Header, Body, and Footer border radius improvements
 - `BBNavbar`
