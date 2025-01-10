@@ -7,7 +7,13 @@
 * We're using these to globally style forms and inputs
 * via (primarily) the 'form_control' and `form_group` class
 */
+$bg-color: var(--bg-color, #fff) !default;
+$text-color-default: var(--text-color-default, #000) !default;
+$secondary-color: var(--secondary-color, #ff0000) !default;
+$grey-lightest: var(--grey-lightest, #acacac) !default;
+$grey-dark: var(--grey-dark, #979797) !default;
 
+// form variables
 $font-size-base: 1.5rem !default;
 $font-size-sm: 0.875rem !default;
 $font-size-lg: 2rem !default;
@@ -18,16 +24,19 @@ $input-border-radius: 0.25rem !default;
 $input-font-family: inherit !default;
 $input-font-weight: 400 !default;
 $input-line-height: 1.5 !default;
-$input-bg: var(--bg-color) !default;
-$input-border-color: var(--bg-color) !default;
-$input-color: var(--text-color-default) !default;
-$input-focus-color: var(--secondary-color) !default;
-$input-focus-bg: var(--bg-color) !default;
-$input-focus-border-color: $input-focus-color !default;
-$input-placeholder-color: var(--grey-lightest) !default;
-$input-disabled-color: var(--grey-lightest) !default;
-$input-disabled-bg: var(--bg-color) !default;
-$input-disabled-border-color: var(--grey-dark) !default;
+// form input variables
+// these are customizable via the --form-input- prefix
+$input-bg: var(--form-input-bg, $bg-color) !default;
+$input-border-color: var(--form-input-border-color, $input-bg) !default;
+$input-color: var(--form-input-color, $text-color-default) !default;
+$input-focus-color: var(--form-input-focus-color, $secondary-color) !default;
+$input-focus-bg: var(--form-input-focus-bg, $bg-color) !default;
+$input-focus-border-color: var(--form-input-focus-border-color, $input-focus-color) !default;
+$input-placeholder-color: var(--form-input-placeholder-color, $grey-lightest) !default;
+$input-disabled-color: var(--form-input-disabled-color, $grey-lightest) !default;
+$input-disabled-bg: var(--form-input-disabled-bg, $bg-color) !default;
+$input-disabled-border-color: var(--form-input-disabled-border-color, $grey-dark) !default;
+// form input padding / margin / size variables
 $input-padding-x-sm: ($input-padding-x * 0.75) !default;
 $input-padding-x: $input-padding-x !default;
 $input-padding-x-lg: ($input-padding-x * 1.5) !default;

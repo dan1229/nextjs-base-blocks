@@ -163,6 +163,31 @@ TODO - write specific test cases to write
 
 
 
+
+
+
+
+#### bbform fields - sizes
+- add size options
+  - small, normal, large
+  - does this work with most?
+    - doesnt work well with checkbox
+-
+- can i add this to the base component/props?
+  - already is...?
+  
+
+#### bb form fields - helper text
+- can this be handled by BBToolTip?
+
+
+#### bb field dropdown styling
+- add arrow or something
+  - add to global styling
+- wait until form css is figured out
+
+
+
 ---
 ### 1.4.1
 
@@ -173,10 +198,8 @@ TODO - write specific test cases to write
 
 
 
-#### default theme colors?
+#### "default" theme colors?
 - update defaults in readme
-  - sync with bootstrapper
-
 
 
 
@@ -199,48 +222,15 @@ TODO - write specific test cases to write
   
   
 
-#### bbform fields - sizes
-- add size options
-  - small, normal, large
-  - does this work with most?
-    - doesnt work well with checkbox
--
-- can i add this to the base component/props?
-  - already is...?
-  
-
-#### bb form fields - helper text
-- can this be handled by BBToolTip?
-
-
-#### bb field dropdown styling
-- add arrow or something
-  - add to global styling
-- wait until form css is figured out
-
-
-#### bb form components - basic style variables
-- add variables for colors and all that
-  - border color
-  - border thickness
-    - when focussed
-  - border radius
-  - background color
-  - text color
-    - when focussed
-  - placeholder color
--
-- are these handled by scss variables well enough?
-
-
-
-
 
 
 
 
 
 ### [1.4.0] - 2025-01-DD
+- `BBFormComponents`
+  - Added color and style variables!
+    - View `README.md` for more info but over 10 new variables added
 - `BBCard`
   - Header, Body, and Footer border radius improvements
 - `BBNavbar`
