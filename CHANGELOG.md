@@ -14,6 +14,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [1.4.0] - 2025-01-09
+- `BBFormComponents`
+  - Added color and style variables!
+    - View `README.md` for more info but over 10 new variables added
+  - Added basic demo page at `/form-components`
+- `BBCard`
+  - Header, Body, and Footer border radius improvements
+- `BBNavbar`
+  - `--navbar-max-width` variable added
+  - `--navbar-vertical-width` variable added back lol
+  - `menuAlignment` prop added
+  - Action button sizing improved / more dynamic
+- `BBTooltip` component added!
+  - Able to pass text or custom content
+  - Some props - `variant`, TODO
+  - Demo components added too
+- `BBModal`
+  - Fix (attempted) for `BBModal` background scrolling
+  - Improved demo component state
+- `BBDivider`
+  - Thickness and minimum thickness improvements
+  
+
 ### [1.3.4] - 2025-01-04
 - Fix `BBNavbar` vertical width issues
 - Fix `BBNavbar` centering on 'regular' navbar issues
