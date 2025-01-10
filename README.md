@@ -166,6 +166,17 @@ html,
   --mobile-text-size-xl: 1.8rem;
   --mobile-text-size-xxl: 2.2rem;
   --mobile-text-size-xxxl: 2.6rem;
+  // bb form components
+  --form-input-bg: var(--bg-color);
+  --form-input-border-color: var(--bg-color);
+  --form-input-color: var(--text-color-default);
+  --form-input-focus-color: var(--secondary-color);
+  --form-input-focus-bg: var(--bg-color);
+  --form-input-focus-border-color: var(--secondary-color);
+  --form-input-placeholder-color: var(--grey-lightest);
+  --form-input-disabled-color: var(--grey-lightest);
+  --form-input-disabled-bg: var(--bg-color);
+  --form-input-disabled-border-color: var(--grey-dark);
   // font family - page router font usage
   --font-family-main: 'Josefin Sans';  // Used for main text
   --font-family-header: 'Montserrat';  // Used for larger fonts/headers
