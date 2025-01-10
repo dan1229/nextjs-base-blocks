@@ -1,11 +1,9 @@
-import Link from 'next/link';
 import React, { useState } from 'react';
 import BBLink from '../../bblink';
 import BBText from '../../bbtext';
 import DemoComponent from '../../demo_components/demo_component';
 import BBFieldCheckbox from '../../form_components/bbfield_checkbox';
 import BBFieldFile from '../../form_components/bbfield_file';
-import BBFieldSelectMultiple from '../../form_components/bbfield_select_multiple';
 import BBFieldText from '../../form_components/bbfield_text';
 import type { IPropsBBFieldCheckbox } from '../../form_components/bbfield_checkbox';
 import type { IPropsBBFieldSelectMultiple } from '../../form_components/bbfield_select_multiple';
@@ -82,10 +80,14 @@ const FormComponentsPage = () => {
         properties can be modified in real-time.
       </BBText>
       <div>
-        <h3>BB Components</h3>
-        <p>
-          View <Link href="/">regular components</Link> for more demos!
-        </p>
+        <BBText size="large">BB Components</BBText>
+        <BBText>
+          View{' '}
+          <BBLink asSpan href="/">
+            regular components
+          </BBLink>{' '}
+          for more demos!
+        </BBText>
       </div>
       <hr />
       <div>
@@ -112,12 +114,13 @@ const FormComponentsPage = () => {
           setStateObject={setStateBBFieldFile}
         />
 
-        <DemoComponent
+        {/* TODO not working for some reason */}
+        {/* <DemoComponent
           name="BBFieldSelectMultiple"
           child={<BBFieldSelectMultiple {...stateBBFieldSelectMultiple} />}
           stateObject={stateBBFieldSelectMultiple}
           setStateObject={setStateBBFieldSelectMultiple}
-        />
+        /> */}
       </div>
     </div>
   );

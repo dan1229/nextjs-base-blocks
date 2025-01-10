@@ -190,10 +190,14 @@ const DemoPage = () => {
         visual representation of how these components look and function in a real-world scenario.
       </BBText>
       <div>
-        <h3>BB Form Components</h3>
-        <p>
-          View <Link href="/form-components">form components</Link> for more demo!
-        </p>
+        <BBText size="large">BB Form Components</BBText>
+        <BBText>
+          View{' '}
+          <BBLink asSpan href="/form-components">
+            form components
+          </BBLink>{' '}
+          for more demo!
+        </BBText>
       </div>
       <hr />
       <div>
