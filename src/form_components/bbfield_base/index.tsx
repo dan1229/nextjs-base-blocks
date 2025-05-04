@@ -3,6 +3,7 @@ import React from 'react';
 import InputWrapper from '../input_wrapper';
 import styles from '../styles.module.scss';
 import type { IPropsBBBaseForm, TBBFieldBaseSize, TBBFieldBaseTypes } from '../../types';
+import { FieldError } from 'react-hook-form';
 
 /**
  * PROPS
@@ -13,6 +14,7 @@ import type { IPropsBBBaseForm, TBBFieldBaseSize, TBBFieldBaseTypes } from '../.
 export interface IPropsBBFieldBase {
   type: TBBFieldBaseTypes;
   size?: TBBFieldBaseSize;
+  error?: FieldError;
 }
 
 /**

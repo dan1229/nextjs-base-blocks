@@ -183,9 +183,9 @@ TODO - write specific test cases to write
 
 
 
----
-### 1.4.1
 
+---
+### 1.4.2
 
 
 #### improve actual defaults in each component
@@ -208,10 +208,19 @@ add font variable for form fields
 - mainly the wrapper
 
 
-bbdivider just not working at all sometimes?
+
+#### field specific errors
+- i.e., highlight particular fields if there is an issue with it
+
+
+---
+### 1.4.1
+
+
+
 
 ### [1.4.1] - 2025-02-DD
-- TODO
+- `BBFieldSelectMultiple` - added support for field specific errors
                                             
 -------------------------------------------------------
 

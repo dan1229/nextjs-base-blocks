@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { type Control, Controller, type FieldValues } from 'react-hook-form';
+import { type Control, Controller, type FieldValues, type FieldError } from 'react-hook-form';
 import BBCard from '../../bbcard';
 import BBText from '../../bbtext';
 import InputWrapper from '../input_wrapper';
@@ -68,8 +68,8 @@ export default function BBFieldSelectMultiple(Props: IPropsBBFieldSelectMultiple
         name={fieldName}
         defaultValue={selectedInitial}
         rules={{
-          required: required,
-          validate: (value) => (value && value.length > 0) || 'Please select at least one option',
+          required: { value: !!required, message: 'Please select at least one location preference.' },
+          validate: (value) => (value && value.length > 0) || 'Please select at least one location preference.',
         }}
         render={({ field: { onChange, ref } }) => {
           return (
