@@ -221,17 +221,8 @@ TODO - write specific test cases to write
 - to autorelease when commit matches format
 
 
-
----
-### 1.4.1
-
-
-
-
-### [1.4.1] - 2025-02-DD
-- `BBFieldSelectMultiple` - added support for field specific errors
-  - `InputWrapper` also supports displaying errors now
-- CI pipeline fixes
+### [1.4.2] - 2025-05-DD
+- TODO
                                             
 -------------------------------------------------------
 
