@@ -216,6 +216,12 @@ TODO - write specific test cases to write
 - i.e., highlight particular fields if there is an issue with it
 
 
+
+#### add 'detect version' workflow
+- to autorelease when commit matches format
+
+
+
 ---
 ### 1.4.1
 
