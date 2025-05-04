@@ -68,8 +68,8 @@ export default function BBFieldSelectMultiple(Props: IPropsBBFieldSelectMultiple
         name={fieldName}
         defaultValue={selectedInitial}
         rules={{
-          required: required,
-          validate: (value) => (value && value.length > 0) || 'Please select at least one option',
+          required: { value: !!required, message: 'Please select at least one location preference.' },
+          validate: (value) => (value && value.length > 0) || 'Please select at least one location preference.',
         }}
         render={({ field: { onChange, ref } }) => {
           return (

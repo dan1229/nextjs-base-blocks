@@ -12,13 +12,13 @@ jobs:
           submodules: recursive
 
       - name: Setup Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '18'
           cache: 'npm'
 
       - name: Install Dependencies
-        run: npm install --include='dev' --no-optional
+        run: npm ci
 
       - name: Build client
         run: npm run build
