@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { type Control, Controller, type FieldValues, type FieldError } from 'react-hook-form';
+import { type Control, Controller, type FieldValues } from 'react-hook-form';
 import BBCard from '../../bbcard';
 import BBText from '../../bbtext';
 import InputWrapper from '../input_wrapper';

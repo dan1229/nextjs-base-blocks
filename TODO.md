@@ -221,6 +221,7 @@ add font variable for form fields
 
 ### [1.4.1] - 2025-02-DD
 - `BBFieldSelectMultiple` - added support for field specific errors
+  - `InputWrapper` also supports displaying errors now
                                             
 -------------------------------------------------------
 

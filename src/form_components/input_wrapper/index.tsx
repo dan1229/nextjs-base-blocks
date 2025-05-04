@@ -3,6 +3,7 @@ import React from 'react';
 import BBText from '../../bbtext';
 import styles from '../styles.module.scss';
 import type { IPropsBBBaseForm } from '../../types';
+import type { FieldError } from 'react-hook-form';
 
 export const getLabel = (label: string | undefined, fieldName: string): string => {
   if (!!label && label.length) return label;
@@ -17,13 +18,14 @@ export const getLabel = (label: string | undefined, fieldName: string): string =
  */
 export interface IPropsInputWrapper {
   children: React.ReactElement;
+  error?: FieldError;
 }
 
 /**
  * INPUT WRAPPER
  */
 export default function InputWrapper(props: IPropsInputWrapper & IPropsBBBaseForm): React.ReactElement {
-  const { label, className, fieldName, showLabel = true, children, helperText, helperTextColor = 'secondary' } = props;
+  const { label, className, fieldName, showLabel = true, children, helperText, helperTextColor = 'secondary', error } = props;
 
   /**
    * RENDER
@@ -32,6 +34,11 @@ export default function InputWrapper(props: IPropsInputWrapper & IPropsBBBaseFor
     <div className={classnames(styles.form_group, className)}>
       {showLabel && <label htmlFor={fieldName}>{getLabel(label, fieldName)}</label>}
       {children}
+      {error && error.message && (
+        <BBText size="small" color="danger">
+          {error.message}
+        </BBText>
+      )}
       {helperText && (
         <BBText size="small" color={helperTextColor}>
           {helperText}
