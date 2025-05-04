@@ -82,11 +82,14 @@
 ----
 ### 1.6.0
 
-DEMO PAGE IMPROVEMENTS!!! MAKE IT GREAT!!!
+
+#### DEMO PAGE IMPROVEMENTS!!! MAKE IT GREAT!!!
+- see above
+
 
 
 ---
-### 1.5.0
+
 
 #### Cypress Testing
 
@@ -116,7 +119,10 @@ TODO - write specific test cases to write
 - add TODOs for future tests
 
 
-----
+
+---
+### 1.5.0
+
 
 #### convert to app router
 - yup
@@ -182,12 +188,6 @@ TODO - write specific test cases to write
 - wait until form css is figured out
 
 
-
-
----
-### 1.4.2
-
-
 #### improve actual defaults in each component
 - try on an app with no global vars and try to make it look good / sensical
 
@@ -199,13 +199,16 @@ TODO - write specific test cases to write
 
 
 
-#### bbbutton
-- container icon looks weird with margin sometimes?
-  - look at <InputMeetingMemberStatus> in get twenty - there's a hakc for margin-bottom
+
+---
+### 1.4.2
 
 
-add font variable for form fields
+
+
+#### add font variable for form fields
 - mainly the wrapper
+- somewhere in the base props
 
 
 
