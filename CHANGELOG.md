@@ -14,6 +14,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [1.4.2] - 2025-05-07
+- Typo with `BBText` variable sizes
+
+
+### [1.4.1] - 2025-05-04
+May 4, 2025
+- `BBFieldSelectMultiple` - added support for field specific errors
+  - `InputWrapper` also supports displaying errors now
+- CI pipeline fixes
+
+
 ### [1.4.0] - 2025-01-09
 - `BBFormComponents`
   - Added color and style variables!
