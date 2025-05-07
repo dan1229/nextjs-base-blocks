@@ -201,7 +201,7 @@ TODO - write specific test cases to write
 
 
 ---
-### 1.4.2
+### 1.4.X
 
 
 
@@ -221,8 +221,18 @@ TODO - write specific test cases to write
 - to autorelease when commit matches format
 
 
-### [1.4.2] - 2025-05-DD
-- TODO
+---
+### 1.4.2
+
+
+
+bbcard
+- add better media responsiveness for padding
+
+
+
+### [1.4.2] - 2025-05-07
+- Typo with `BBText` variable sizes
                                             
 -------------------------------------------------------
 
