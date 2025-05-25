@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 import React from 'react';
 import BBText from '../../bbtext';
+import BBTooltip from '../../bbtooltip';
 import styles from '../styles.module.scss';
 import type { IPropsBBBaseForm } from '../../types';
 import type { FieldError } from 'react-hook-form';
@@ -25,7 +26,17 @@ export interface IPropsInputWrapper {
  * INPUT WRAPPER
  */
 export default function InputWrapper(props: IPropsInputWrapper & IPropsBBBaseForm): React.ReactElement {
-  const { label, className, fieldName, showLabel = true, children, helperText, helperTextColor = 'secondary', error } = props;
+  const {
+    label,
+    className,
+    fieldName,
+    showLabel = true,
+    children,
+    helperText,
+    helperTextColor = 'secondary',
+    error,
+    helperTextType = 'text',
+  } = props;
 
   /**
    * RENDER
@@ -39,11 +50,12 @@ export default function InputWrapper(props: IPropsInputWrapper & IPropsBBBaseFor
           {error.message}
         </BBText>
       )}
-      {helperText && (
+      {helperText && helperTextType === 'text' && (
         <BBText size="small" color={helperTextColor}>
           {helperText}
         </BBText>
       )}
+      {helperText && helperTextType === 'tooltip' && <BBTooltip content={helperText} />}
     </div>
   );
 }

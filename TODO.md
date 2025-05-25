@@ -211,14 +211,13 @@ TODO - write specific test cases to write
 
 
 
-#### bb form fields - helper text
-- can this be handled by BBToolTip?
-  - add option to do via tooltip
+
 
 
 
 
 ### [1.5.0] - 2025-05-DD
+- Added `helperTextType` to allow for helper text in forms in tooltips
 - Added SCSS vars for font of form field labels
   - `form-input-font-family`
   - `form-label-font-family`

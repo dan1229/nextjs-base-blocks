@@ -23,6 +23,8 @@ const FormComponentsPage = () => {
     placeholder: 'Enter text...',
     className: '',
     onChange: () => {},
+    helperText: 'This is some helper text!',
+    helperTextType: 'text',
   });
 
   // BB Field Checkbox
@@ -97,6 +99,13 @@ const FormComponentsPage = () => {
           name="BBFieldText"
           child={<BBFieldText {...stateBBFieldText} />}
           stateObject={stateBBFieldText}
+          setStateObject={setStateBBFieldText}
+        />
+
+        <DemoComponent
+          name="BBFieldText (Tooltip Helper)"
+          child={<BBFieldText {...{ ...stateBBFieldText, helperTextType: 'tooltip', helperText: 'This helper text is a tooltip!' }} />}
+          stateObject={{ ...stateBBFieldText, helperTextType: 'tooltip', helperText: 'This helper text is a tooltip!' }}
           setStateObject={setStateBBFieldText}
         />
 
