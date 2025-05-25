@@ -168,7 +168,7 @@ html,
   --mobile-text-size-xxxl: 2.6rem;
   // bb form components
   --form-input-bg: var(--bg-color);
-  --form-input-border-color: var(--bg-color);
+  --form-input-border-color: var(--bg-dark-color);
   --form-input-color: var(--text-color-default);
   --form-input-focus-color: var(--secondary-color);
   --form-input-focus-bg: var(--bg-color);
@@ -193,7 +193,6 @@ html,
 While none of these variables are required, it definitely will help make your app look and feel more custom.
 
 It is recommended to copy and paste this whole block into your `globals.scss` file and then edit the variables as needed.
-
 
 #### Dark Mode / Themes
 
@@ -239,5 +238,5 @@ Form Components Demo are available at [http://localhost:3000/form-components](ht
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)
 
-##### Copyright 2024 © Daniel Nazarian.
+##### Copyright 2025 © Daniel Nazarian.
 

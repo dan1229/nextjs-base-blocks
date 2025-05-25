@@ -35,6 +35,7 @@ const FormComponentsPage = () => {
     className: '',
     onChange: () => {},
     colorCheckbox: 'secondary',
+    size: 'md',
   });
 
   // BB Field File
@@ -44,6 +45,7 @@ const FormComponentsPage = () => {
     label: 'Demo File Upload',
     className: '',
     onChange: () => {},
+    size: 'md',
   });
 
   // BB Field Select Multiple

@@ -79,16 +79,20 @@
 
 
 
+
 ----
-### 1.6.0
+### 1.7.0
+
 
 
 #### DEMO PAGE IMPROVEMENTS!!! MAKE IT GREAT!!!
 - see above
+- overall get it working a bit better though
 
 
+----
+### 1.6.0
 
----
 
 
 #### Cypress Testing
@@ -128,8 +132,11 @@ TODO - write specific test cases to write
 
 
 
-#### "default" theme colors
-- update defaults in readme
+
+#### improve actual defaults in each component
+- try on an app with no global variables set and try to make it look good
+-
+- update defaults in readme as well
 
 
 
@@ -196,27 +203,10 @@ TODO - write specific test cases to write
 
 
 
-#### bbform fields - sizes
-- add size options
-  - small, normal, large
-  - does this work with most?
-    - doesnt work well with checkbox
--
-- can i add this to the base component/props?
-  - already is...?
-
-
-#### improve actual defaults in each component
-- try on an app with no global vars and try to make it look good / sensical
-
-
-
-
-
-
-
-
 ### [1.5.0] - 2025-05-DD
+- Fixes for form field sizing options
+  - Added sizing options prompt
+  - 
 - Added `helperTextType` to allow for helper text in forms in tooltips
 - Added SCSS vars for font of form field labels
   - `form-input-font-family`
@@ -226,4 +216,4 @@ TODO - write specific test cases to write
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)
-##### Copyright 2024 © Daniel Nazarian.
+##### Copyright 2025 © Daniel Nazarian.
