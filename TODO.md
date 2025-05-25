@@ -199,13 +199,6 @@ TODO - write specific test cases to write
 
 
 
-
----
-### 1.4.X
-
-
-
-
 #### add font variable for form fields
 - mainly the wrapper
 - somewhere in the base props
@@ -217,14 +210,10 @@ TODO - write specific test cases to write
 
 
 
-#### add 'detect version' workflow
-- to autorelease when commit matches format
 
 
-
-
-### [1.4.] - 2025-05-DD
-- TODO
+### [1.5.0] - 2025-05-DD
+- Auto release CD configs
                                             
 -------------------------------------------------------
 
