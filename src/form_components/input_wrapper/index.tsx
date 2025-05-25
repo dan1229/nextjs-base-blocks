@@ -4,6 +4,7 @@ import BBText from '../../bbtext';
 import styles from '../styles.module.scss';
 import type { IPropsBBBaseForm } from '../../types';
 import type { FieldError } from 'react-hook-form';
+import BBTooltip from '../../bbtooltip';
 
 export const getLabel = (label: string | undefined, fieldName: string): string => {
   if (!!label && label.length) return label;
@@ -25,7 +26,17 @@ export interface IPropsInputWrapper {
  * INPUT WRAPPER
  */
 export default function InputWrapper(props: IPropsInputWrapper & IPropsBBBaseForm): React.ReactElement {
-  const { label, className, fieldName, showLabel = true, children, helperText, helperTextColor = 'secondary', error } = props;
+  const {
+    label,
+    className,
+    fieldName,
+    showLabel = true,
+    children,
+    helperText,
+    helperTextColor = 'secondary',
+    error,
+    helperTextType = 'text',
+  } = props;
 
   /**
    * RENDER
@@ -39,10 +50,15 @@ export default function InputWrapper(props: IPropsInputWrapper & IPropsBBBaseFor
           {error.message}
         </BBText>
       )}
-      {helperText && (
+      {helperText && helperTextType === 'text' && (
         <BBText size="small" color={helperTextColor}>
           {helperText}
         </BBText>
+      )}
+      {helperText && helperTextType === 'tooltip' && (
+        <BBTooltip content={helperText}>
+          <span style={{ marginLeft: 6, cursor: 'pointer' }}>?</span>
+        </BBTooltip>
       )}
     </div>
   );
