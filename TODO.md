@@ -217,6 +217,8 @@ TODO - write specific test cases to write
 
 
 ### [1.5.0] - 2025-05-DD
+- Fixes for form field sizing options
+  - TODO
 - Added `helperTextType` to allow for helper text in forms in tooltips
 - Added SCSS vars for font of form field labels
   - `form-input-font-family`
