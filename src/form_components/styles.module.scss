@@ -31,7 +31,7 @@ $input-color: var(--form-input-color, $text-color-default) !default;
 $input-focus-color: var(--form-input-focus-color, $secondary-color) !default;
 $input-focus-bg: var(--form-input-focus-bg, $bg-color) !default;
 $input-border-color: var(--form-input-border-color, $input-focus-color) !default;
-$input-focus-border-color: var(--form-input-focus-border-color, $input-focus-color) !default;
+$input-focus-border-color: var(--form-input-focus-border-color, $grey-dark) !default;
 $input-placeholder-color: var(--form-input-placeholder-color, $grey-lightest) !default;
 $input-disabled-color: var(--form-input-disabled-color, $grey-lightest) !default;
 $input-disabled-bg: var(--form-input-disabled-bg, $bg-color) !default;
@@ -92,8 +92,6 @@ $form-label-font-family: var(--form-label-font-family, var(--font-family-main, i
   // Checkbox styles
   &[type='checkbox'] {
     cursor: pointer;
-    max-width: 2rem;
-    min-height: 2rem;
   }
 
   // Customize the `:focus` state to imitate native WebKit styles.
@@ -268,6 +266,16 @@ textarea {
   &.lg {
     height: $input-height-lg;
   }
+}
+
+// Default to md if no size class is present
+.form_control[type='checkbox']:not(.sm):not(.lg) {
+  width: $input-height;
+  height: $input-height;
+  min-width: $input-height;
+  min-height: $input-height;
+  max-width: $input-height;
+  max-height: $input-height;
 }
 
 .form_control[type='checkbox'].sm {

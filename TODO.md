@@ -203,21 +203,6 @@ TODO - write specific test cases to write
 
 
 
-#### bbform fields - sizes
-- add size options
-  - small, normal, large
-  - does this work with most?
-    - doesnt work well with checkbox
--
-- can i add this to the base component/props?
-  - already is...?
-
-
-
-
-
-
-
 ### [1.5.0] - 2025-05-DD
 - Fixes for form field sizing options
   - Added sizing options prompt

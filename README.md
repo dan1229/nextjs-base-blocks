@@ -194,7 +194,6 @@ While none of these variables are required, it definitely will help make your ap
 
 It is recommended to copy and paste this whole block into your `globals.scss` file and then edit the variables as needed.
 
-
 #### Dark Mode / Themes
 
 Add overrides for dark themes like so:
