@@ -120,12 +120,46 @@ TODO - write specific test cases to write
 
 
 
+#### add bbtooltip to other components
+- button
+- fields
+  - all?
+
+
+
+
+#### "default" theme colors
+- update defaults in readme
+
+
+
+
 ---
 ### 1.5.0
 
 
 #### convert to app router
 - yup
+
+
+
+
+#### bb field dropdown styling
+- add arrow or something
+  - add to global styling
+- wait until form css is figured out
+
+
+
+
+
+#### field specific errors
+- i.e., highlight particular fields if there is an issue with it
+
+
+
+
+
 
 
 
@@ -146,19 +180,13 @@ TODO - write specific test cases to write
   - is it working?
 
 
-#### add bbtooltip to other components
-- button
-- fields
-  - all?
-
-
-
 #### bbnavbar item
 - width?
   - set min width somehow?
 -
 - bbnavbar item - allow these to just be components?
   - i.e., let me pass a button to a navbar as a child component?
+
 
 
 
@@ -176,16 +204,6 @@ TODO - write specific test cases to write
 -
 - can i add this to the base component/props?
   - already is...?
-  
-
-#### bb form fields - helper text
-- can this be handled by BBToolTip?
-
-
-#### bb field dropdown styling
-- add arrow or something
-  - add to global styling
-- wait until form css is figured out
 
 
 #### improve actual defaults in each component
@@ -193,20 +211,10 @@ TODO - write specific test cases to write
 
 
 
+#### bb form fields - helper text
+- can this be handled by BBToolTip?
+  - add option to do via tooltip
 
-#### "default" theme colors?
-- update defaults in readme
-
-
-
-#### add font variable for form fields
-- mainly the wrapper
-- somewhere in the base props
-
-
-
-#### field specific errors
-- i.e., highlight particular fields if there is an issue with it
 
 
 
