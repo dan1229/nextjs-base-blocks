@@ -170,6 +170,7 @@ export type TBBTextColor =
  * @param {boolean=} showLabel - Whether to show the label
  * @param {string=} helperText - Helper text to show below the field
  * @param {TBBTextColor=} helperTextColor - Color of the helper text
+ * @param {string=} fontFamily - Font family for the form field (overrides default)
  */
 interface IPropsBBBaseFormBase {
   register?: Object;
@@ -183,6 +184,10 @@ interface IPropsBBBaseFormBase {
   showLabel?: boolean;
   helperText?: string;
   helperTextColor?: TBBTextColor;
+  /**
+   * Font family for the form field (overrides default)
+   */
+  fontFamily?: string;
 }
 export type IPropsBBBaseForm = IPropsBBBase & IPropsBBBaseFormBase;
 

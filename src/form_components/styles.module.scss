@@ -21,7 +21,7 @@ $input-padding-x: 0.25rem !default;
 $input-padding-y: 0.5rem !default;
 $input-border-width: 0.2rem !default;
 $input-border-radius: 0.25rem !default;
-$input-font-family: inherit !default;
+$input-font-family: var(--form-input-font-family, var(--font-family-main, inherit)) !default;
 $input-font-weight: 400 !default;
 $input-line-height: 1.5 !default;
 // form input variables
@@ -52,6 +52,7 @@ $form-color-width: 0.25rem !default;
 $form-file-button-color: var(--white) !default;
 $form-file-button-hover-bg: var(--primary-color) !default;
 $input-plaintext-color: var(--white) !default;
+$form-label-font-family: var(--form-label-font-family, var(--font-family-main, inherit)) !default;
 
 .form_group {
   width: 100%;
@@ -60,6 +61,7 @@ $input-plaintext-color: var(--white) !default;
   label {
     display: flex;
     align-self: flex-start;
+    font-family: $form-label-font-family;
   }
 }
 
