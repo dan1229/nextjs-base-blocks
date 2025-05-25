@@ -79,16 +79,20 @@
 
 
 
+
 ----
-### 1.6.0
+### 1.7.0
+
 
 
 #### DEMO PAGE IMPROVEMENTS!!! MAKE IT GREAT!!!
 - see above
+- overall get it working a bit better though
 
 
+----
+### 1.6.0
 
----
 
 
 #### Cypress Testing
@@ -227,4 +231,4 @@ TODO - write specific test cases to write
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)
-##### Copyright 2024 © Daniel Nazarian.
+##### Copyright 2025 © Daniel Nazarian.

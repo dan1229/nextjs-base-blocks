@@ -113,24 +113,7 @@ const FormComponentsPage = () => {
 
         <DemoComponent
           name="BBFieldCheckbox"
-          child={
-            <>
-              <div style={{ marginBottom: 8 }}>
-                <label htmlFor="checkbox-size-select">Size: </label>
-                <select
-                  id="checkbox-size-select"
-                  value={stateBBFieldCheckbox.size}
-                  onChange={(e) => setStateBBFieldCheckbox((s) => ({ ...s, size: e.target.value as 'sm' | 'md' | 'lg' }))}
-                  style={{ marginRight: 12 }}
-                >
-                  <option value="sm">Small</option>
-                  <option value="md">Medium</option>
-                  <option value="lg">Large</option>
-                </select>
-              </div>
-              <BBFieldCheckbox {...stateBBFieldCheckbox} />
-            </>
-          }
+          child={<BBFieldCheckbox {...stateBBFieldCheckbox} />}
           stateObject={stateBBFieldCheckbox}
           setStateObject={setStateBBFieldCheckbox}
         />

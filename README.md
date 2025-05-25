@@ -239,5 +239,5 @@ Form Components Demo are available at [http://localhost:3000/form-components](ht
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)
 
-##### Copyright 2024 © Daniel Nazarian.
+##### Copyright 2025 © Daniel Nazarian.
 
