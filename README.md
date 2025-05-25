@@ -168,7 +168,7 @@ html,
   --mobile-text-size-xxxl: 2.6rem;
   // bb form components
   --form-input-bg: var(--bg-color);
-  --form-input-border-color: var(--bg-color);
+  --form-input-border-color: var(--bg-dark-color);
   --form-input-color: var(--text-color-default);
   --form-input-focus-color: var(--secondary-color);
   --form-input-focus-bg: var(--bg-color);
