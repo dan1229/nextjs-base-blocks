@@ -276,3 +276,30 @@ textarea {
     height: $input-height-lg;
   }
 }
+
+.form_control[type='checkbox'].sm {
+  width: $input-height-sm;
+  height: $input-height-sm;
+  min-width: $input-height-sm;
+  min-height: $input-height-sm;
+  max-width: $input-height-sm;
+  max-height: $input-height-sm;
+}
+
+.form_control[type='checkbox'].md {
+  width: $input-height;
+  height: $input-height;
+  min-width: $input-height;
+  min-height: $input-height;
+  max-width: $input-height;
+  max-height: $input-height;
+}
+
+.form_control[type='checkbox'].lg {
+  width: $input-height-lg;
+  height: $input-height-lg;
+  min-width: $input-height-lg;
+  min-height: $input-height-lg;
+  max-width: $input-height-lg;
+  max-height: $input-height-lg;
+}

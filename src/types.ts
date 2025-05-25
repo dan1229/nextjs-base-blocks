@@ -195,6 +195,12 @@ export type TBBFieldBaseSize = 'sm' | 'md' | 'lg';
 
 // TBBFieldCheckbox
 export type TBBFieldCheckboxColor = 'primary' | 'secondary' | 'accent';
+export type TBBFieldCheckboxSize = 'sm' | 'md' | 'lg';
+
+export interface IPropsBBFieldCheckbox {
+  colorCheckbox?: TBBFieldCheckboxColor;
+  size?: TBBFieldCheckboxSize;
+}
 
 // TBBFieldDropdown
 export interface IBBFieldDropdownOptions {
