@@ -268,39 +268,29 @@ textarea {
   }
 }
 
+// Mixin to handle checkbox size rules
+@mixin checkbox-size($size) {
+  width: $size;
+  height: $size;
+  min-width: $size;
+  min-height: $size;
+  max-width: $size;
+  max-height: $size;
+}
+
 // Default to md if no size class is present
 .form_control[type='checkbox']:not(.sm):not(.lg) {
-  width: $input-height;
-  height: $input-height;
-  min-width: $input-height;
-  min-height: $input-height;
-  max-width: $input-height;
-  max-height: $input-height;
+  @include checkbox-size($input-height);
 }
 
 .form_control[type='checkbox'].sm {
-  width: $input-height-sm;
-  height: $input-height-sm;
-  min-width: $input-height-sm;
-  min-height: $input-height-sm;
-  max-width: $input-height-sm;
-  max-height: $input-height-sm;
+  @include checkbox-size($input-height-sm);
 }
 
 .form_control[type='checkbox'].md {
-  width: $input-height;
-  height: $input-height;
-  min-width: $input-height;
-  min-height: $input-height;
-  max-width: $input-height;
-  max-height: $input-height;
+  @include checkbox-size($input-height);
 }
 
 .form_control[type='checkbox'].lg {
-  width: $input-height-lg;
-  height: $input-height-lg;
-  min-width: $input-height-lg;
-  min-height: $input-height-lg;
-  max-width: $input-height-lg;
-  max-height: $input-height-lg;
+  @include checkbox-size($input-height-lg);
 }
