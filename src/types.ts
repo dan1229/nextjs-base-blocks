@@ -170,7 +170,7 @@ export type TBBTextColor =
  * @param {boolean=} showLabel - Whether to show the label
  * @param {string=} helperText - Helper text to show below the field
  * @param {TBBTextColor=} helperTextColor - Color of the helper text
- * @param {string=} helperTextType - How to display the helper text: as inline text or as a tooltip
+ * @param {'text' | 'tooltip'=} helperTextType - How to display the helper text: as inline text or as a tooltip
  */
 interface IPropsBBBaseFormBase {
   register?: Object;
