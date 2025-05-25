@@ -34,7 +34,6 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
     placeholder: placeholder,
     onChange: onChange,
     value: value,
-    style: undefined,
   };
 
   /**
