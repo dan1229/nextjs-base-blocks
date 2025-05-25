@@ -1,10 +1,10 @@
 import classnames from 'classnames';
 import React from 'react';
 import BBText from '../../bbtext';
+import BBTooltip from '../../bbtooltip';
 import styles from '../styles.module.scss';
 import type { IPropsBBBaseForm } from '../../types';
 import type { FieldError } from 'react-hook-form';
-import BBTooltip from '../../bbtooltip';
 
 export const getLabel = (label: string | undefined, fieldName: string): string => {
   if (!!label && label.length) return label;
@@ -55,11 +55,7 @@ export default function InputWrapper(props: IPropsInputWrapper & IPropsBBBaseFor
           {helperText}
         </BBText>
       )}
-      {helperText && helperTextType === 'tooltip' && (
-        <BBTooltip content={helperText}>
-          <span style={{ marginLeft: 6, cursor: 'pointer' }}>?</span>
-        </BBTooltip>
-      )}
+      {helperText && helperTextType === 'tooltip' && <BBTooltip content={helperText} />}
     </div>
   );
 }
