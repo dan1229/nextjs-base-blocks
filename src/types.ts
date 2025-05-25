@@ -185,6 +185,7 @@ interface IPropsBBBaseFormBase {
   helperText?: string;
   helperTextColor?: TBBTextColor;
   helperTextType?: 'text' | 'tooltip';
+  size?: TBBFieldBaseSize;
 }
 export type IPropsBBBaseForm = IPropsBBBase & IPropsBBBaseFormBase;
 

@@ -45,6 +45,7 @@ const FormComponentsPage = () => {
     label: 'Demo File Upload',
     className: '',
     onChange: () => {},
+    size: 'md',
   });
 
   // BB Field Select Multiple

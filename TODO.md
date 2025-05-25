@@ -128,8 +128,11 @@ TODO - write specific test cases to write
 
 
 
-#### "default" theme colors
-- update defaults in readme
+
+#### improve actual defaults in each component
+- try on an app with no global variables set and try to make it look good
+-
+- update defaults in readme as well
 
 
 
@@ -206,11 +209,6 @@ TODO - write specific test cases to write
   - already is...?
 
 
-#### improve actual defaults in each component
-- try on an app with no global vars and try to make it look good / sensical
-
-
-
 
 
 
@@ -218,7 +216,8 @@ TODO - write specific test cases to write
 
 ### [1.5.0] - 2025-05-DD
 - Fixes for form field sizing options
-  - TODO
+  - Added sizing options prompt
+  - 
 - Added `helperTextType` to allow for helper text in forms in tooltips
 - Added SCSS vars for font of form field labels
   - `form-input-font-family`
