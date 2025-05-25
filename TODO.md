@@ -212,12 +212,6 @@ TODO - write specific test cases to write
 
 
 
-#### add 'detect version' workflow
-- to autorelease when commit matches format
-
-
-
-
 ### [1.5.0] - 2025-05-DD
 - Auto release CD configs
                                             
