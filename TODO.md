@@ -131,6 +131,34 @@ TODO - write specific test cases to write
 
 
 
+#### bb tooltip style improvements
+- looks meh
+
+
+
+#### bbnavbar item
+- width?
+  - set min width somehow?
+-
+- bbnavbar item - allow these to just be components?
+  - i.e., let me pass a button to a navbar as a child component?
+
+
+
+
+
+#### bbnavbar 
+- vertical mobile styling
+  - emulate styling from flutter navbars a bit
+    - i.e., always slide out kinda thing
+-
+- add back 'sticky' prop
+  - is it working?
+
+
+
+
+
 
 
 #### improve actual defaults in each component
@@ -162,39 +190,6 @@ TODO - write specific test cases to write
 
 #### field specific errors
 - i.e., highlight particular fields if there is an issue with it
-
-
-
-
-
-
-
-
-#### bbnavbar 
-- vertical mobile styling
-  - emulate styling from flutter navbars a bit
-    - i.e., always slide out kinda thing
--
-- add divider between brand and items
-  - horizontal and vertical
-  - any props for this?
-    - thickness
-    - color
-    - padding?
-    - classname?
--
-- add back 'sticky' prop
-  - is it working?
-
-
-#### bbnavbar item
-- width?
-  - set min width somehow?
--
-- bbnavbar item - allow these to just be components?
-  - i.e., let me pass a button to a navbar as a child component?
-
-
 
 
 
