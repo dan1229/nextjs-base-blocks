@@ -52,8 +52,8 @@ jobs:
           script: |
             await github.rest.actions.createWorkflowDispatch({
               owner: context.repo.owner,
-              repo: 'get-twenty',
-              workflow_id: 'deploy-aws.yml',
+              repo: context.repo.repo,
+              workflow_id: 'deploy-branch.yml',
               ref: 'main',
               inputs: {
                 version: '${{ steps.get_version.outputs.version }}'
