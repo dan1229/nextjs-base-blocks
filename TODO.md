@@ -210,10 +210,10 @@ TODO - write specific test cases to write
 
 
 
-
-
 ### [1.5.0] - 2025-05-DD
-- Added `TODO` for font of form field labels
+- Added SCSS vars for font of form field labels
+  - `form-input-font-family`
+  - `form-label-font-family`
 - Auto release CD configs
                                             
 -------------------------------------------------------

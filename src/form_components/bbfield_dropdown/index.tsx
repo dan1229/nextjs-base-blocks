@@ -13,14 +13,13 @@ import type { IBBFieldDropdownOptions, IPropsBBBaseForm, TBBFieldBaseSize } from
 export interface IPropsBBFieldDropdown {
   options: IBBFieldDropdownOptions[];
   size?: TBBFieldBaseSize;
-  fontFamily?: string;
 }
 
 /**
  * BBFIELD DROPDOWN
  */
 export default function BBFieldDropdown(Props: IPropsBBFieldDropdown & IPropsBBBaseForm): React.ReactElement {
-  const { register, options, fieldName, required, autocomplete, onChange, size = 'md', fontFamily } = Props;
+  const { register, options, fieldName, required, autocomplete, onChange, size = 'md' } = Props;
 
   const getAutoComplete = (): string => {
     if (autocomplete) return autocomplete;
@@ -39,7 +38,6 @@ export default function BBFieldDropdown(Props: IPropsBBFieldDropdown & IPropsBBB
         onChange={onChange}
         autoComplete={getAutoComplete()}
         {...register}
-        style={fontFamily ? { fontFamily } : undefined}
       >
         {options.map((val: IBBFieldDropdownOptions) => (
           <option key={val.value} value={val.value}>

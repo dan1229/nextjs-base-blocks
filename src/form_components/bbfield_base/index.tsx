@@ -15,14 +15,13 @@ export interface IPropsBBFieldBase {
   type: TBBFieldBaseTypes;
   size?: TBBFieldBaseSize;
   error?: FieldError;
-  fontFamily?: string;
 }
 
 /**
  * BBFIELD BASE
  */
 export default function BBFieldBase(Props: IPropsBBFieldBase & IPropsBBBaseForm): React.ReactElement {
-  const { register, fieldName, type, required = false, autocomplete, onChange, value, size = 'md', className, fontFamily } = Props;
+  const { register, fieldName, type, required = false, autocomplete, onChange, value, size = 'md', className } = Props;
 
   const getAutoComplete = (): string => {
     if (autocomplete) return autocomplete;
@@ -43,7 +42,6 @@ export default function BBFieldBase(Props: IPropsBBFieldBase & IPropsBBBaseForm)
         onChange={onChange}
         value={value}
         {...register}
-        style={fontFamily ? { fontFamily } : undefined}
       />
     </InputWrapper>
   );
