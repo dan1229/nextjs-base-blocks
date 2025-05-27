@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { type Control, Controller, type FieldValues } from 'react-hook-form';
+import { type Control, Controller, type FieldValues, type FieldError } from 'react-hook-form';
 import BBCard from '../../bbcard';
 import BBText from '../../bbtext';
 import InputWrapper from '../input_wrapper';
@@ -14,18 +14,20 @@ import type { IBBFieldSelectMultipleOptions, IPropsBBBaseForm } from '../../type
  * @param {unknown} control - The control object from react-hook-form.
  * @param {IBBFieldSelectMultipleOptions[]} options - Options to display.
  * @param {string[] | undefined} selectedInitial - Initial selected options.
+ * @param {FieldError | undefined} error - Error object from react-hook-form.
  */
 export interface IPropsBBFieldSelectMultiple {
   control: unknown;
   options: IBBFieldSelectMultipleOptions[];
   selectedInitial: string[] | undefined;
+  error?: FieldError;
 }
 
 /**
  * BBFIELD SELECT MULTIPLE
  */
 export default function BBFieldSelectMultiple(Props: IPropsBBFieldSelectMultiple & Omit<IPropsBBBaseForm, 'register'>): React.ReactElement {
-  const { control, options, fieldName, selectedInitial, required, className } = Props;
+  const { control, options, fieldName, selectedInitial, required, className, error } = Props;
   const [selectedOptions, setSelectedOptions] = useState<IBBFieldSelectMultipleOptions[]>([]);
 
   // handle initial selected options
@@ -62,7 +64,7 @@ export default function BBFieldSelectMultiple(Props: IPropsBBFieldSelectMultiple
    * RENDER
    */
   return (
-    <InputWrapper {...Props}>
+    <InputWrapper {...Props} error={error}>
       <Controller
         control={control as Control<FieldValues>}
         name={fieldName}

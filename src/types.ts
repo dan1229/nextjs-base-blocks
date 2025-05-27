@@ -1,4 +1,5 @@
 import type React from 'react';
+import type { FieldError } from 'react-hook-form';
 
 /**
  * ALL TYPES
@@ -186,6 +187,7 @@ interface IPropsBBBaseFormBase {
   helperTextColor?: TBBTextColor;
   helperTextType?: 'text' | 'tooltip';
   size?: TBBFieldBaseSize;
+  error?: FieldError;
 }
 export type IPropsBBBaseForm = IPropsBBBase & IPropsBBBaseFormBase;
 
