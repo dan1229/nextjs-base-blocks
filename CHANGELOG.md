@@ -14,6 +14,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [1.5.0] - 2025-05-27
+- Support for field specific errors
+  - Typing and props for field specific errors
+  - Ref props supported as well
+- Fixes for form field sizing options
+  - Added sizing options prompt
+- Added `helperTextType` to allow for helper text in forms in tooltips
+- Added SCSS vars for font of form field labels
+  - `form-input-font-family`
+  - `form-label-font-family`
+- Auto release CD configs
+
+
 ### [1.4.2] - 2025-05-07
 - Typo with `BBText` variable sizes
 
