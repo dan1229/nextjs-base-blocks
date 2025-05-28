@@ -37,14 +37,14 @@ export default function InputWrapper(props: IPropsInputWrapper & IPropsBBBaseFor
     helperTextColor = 'secondary',
     error,
     helperTextType = 'text',
-    ref,
+    inputRef,
   } = props;
 
   /**
    * RENDER
    */
   return (
-    <div className={classnames(styles.form_group, className)} ref={ref}>
+    <div className={classnames(styles.form_group, className)} ref={inputRef}>
       {showLabel && <label htmlFor={fieldName}>{getLabel(label, fieldName)}</label>}
       {children}
       {error && error.message && <BBAlert variant="danger">{error.message}</BBAlert>}
