@@ -191,7 +191,7 @@ interface IPropsBBBaseFormBase {
   helperTextType?: 'text' | 'tooltip';
   size?: TBBFieldBaseSize;
   error?: FieldError;
-  ref?: React.RefObject<HTMLInputElement>;
+  inputRef?: React.RefObject<HTMLInputElement>;
 }
 export type IPropsBBBaseForm = IPropsBBBase & IPropsBBBaseFormBase;
 
