@@ -9,17 +9,30 @@ import type { IPropsBBBaseForm, TBBFieldBaseSize, TBBFieldTextType } from '../..
  *
  * @param {TBBFieldTextType=} type - Type of input. Think 'text' or 'textarea'
  * @param {string=} size - Size of the input. Think 'sm', 'md', or 'lg'.
+ * @param {React.KeyboardEventHandler<HTMLInputElement | HTMLTextAreaElement> | undefined} onKeyDown - Optional keyboard event handler for input or textarea
  */
 export interface IPropsBBFieldText {
   type?: TBBFieldTextType;
   size?: TBBFieldBaseSize;
+  onKeyDown?: React.KeyboardEventHandler<HTMLInputElement | HTMLTextAreaElement>;
 }
 
 /**
  * BBFIELD TEXT
  */
 export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm): React.ReactElement {
-  const { register, fieldName, required = false, type = 'text', placeholder, autocomplete, onChange, size = 'md', value } = Props;
+  const {
+    register,
+    fieldName,
+    required = false,
+    type = 'text',
+    placeholder,
+    autocomplete,
+    onChange,
+    size = 'md',
+    value,
+    onKeyDown,
+  } = Props;
 
   const getAutoComplete = (): string => {
     if (autocomplete) return autocomplete;
@@ -34,6 +47,7 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
     placeholder: placeholder,
     onChange: onChange,
     value: value,
+    onKeyDown: onKeyDown,
   };
 
   /**
