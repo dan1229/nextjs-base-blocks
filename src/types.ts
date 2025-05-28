@@ -174,7 +174,7 @@ export type TBBTextColor =
  * @param {'text' | 'tooltip'=} helperTextType - How to display the helper text: as inline text or as a tooltip
  * @param {TBBFieldBaseSize=} size - Size of the field
  * @param {FieldError=} error - Error for the field
- * @param {React.RefObject<HTMLInputElement>=} ref - Ref for the input
+ * @param {React.RefObject<HTMLInputElement>=} inputRef - Ref for the input
  */
 interface IPropsBBBaseFormBase {
   register?: Object;
