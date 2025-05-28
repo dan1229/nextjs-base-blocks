@@ -27,7 +27,7 @@ export interface IPropsBBFieldSelectMultiple {
  * BBFIELD SELECT MULTIPLE
  */
 export default function BBFieldSelectMultiple(Props: IPropsBBFieldSelectMultiple & Omit<IPropsBBBaseForm, 'register'>): React.ReactElement {
-  const { control, options, fieldName, selectedInitial, required, className, error } = Props;
+  const { control, options, fieldName, selectedInitial, required, className } = Props;
   const [selectedOptions, setSelectedOptions] = useState<IBBFieldSelectMultipleOptions[]>([]);
 
   // handle initial selected options
