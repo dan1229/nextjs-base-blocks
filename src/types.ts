@@ -1,4 +1,5 @@
 import type React from 'react';
+import type { FieldError } from 'react-hook-form';
 
 /**
  * ALL TYPES
@@ -171,6 +172,9 @@ export type TBBTextColor =
  * @param {string=} helperText - Helper text to show below the field
  * @param {TBBTextColor=} helperTextColor - Color of the helper text
  * @param {'text' | 'tooltip'=} helperTextType - How to display the helper text: as inline text or as a tooltip
+ * @param {TBBFieldBaseSize=} size - Size of the field
+ * @param {FieldError=} error - Error for the field
+ * @param {React.RefObject<HTMLInputElement>=} inputRef - Ref for the input
  */
 interface IPropsBBBaseFormBase {
   register?: Object;
@@ -186,6 +190,8 @@ interface IPropsBBBaseFormBase {
   helperTextColor?: TBBTextColor;
   helperTextType?: 'text' | 'tooltip';
   size?: TBBFieldBaseSize;
+  error?: FieldError;
+  inputRef?: React.RefObject<HTMLInputElement>;
 }
 export type IPropsBBBaseForm = IPropsBBBase & IPropsBBBaseFormBase;
 

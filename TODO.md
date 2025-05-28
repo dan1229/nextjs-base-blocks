@@ -168,9 +168,11 @@ TODO - write specific test cases to write
 
 
 
+#### bb field dropdown styling
+- add arrow or something
+  - add to global styling
+- wait until form css is figured out
 
----
-### 1.5.0
 
 
 #### convert to app router
@@ -179,17 +181,9 @@ TODO - write specific test cases to write
 
 
 
-#### bb field dropdown styling
-- add arrow or something
-  - add to global styling
-- wait until form css is figured out
 
-
-
-
-
-#### field specific errors
-- i.e., highlight particular fields if there is an issue with it
+---
+### 1.5.0
 
 
 
@@ -199,9 +193,10 @@ TODO - write specific test cases to write
 
 
 ### [1.5.0] - 2025-05-DD
+- Support for field specific errors
+  - TODO
 - Fixes for form field sizing options
   - Added sizing options prompt
-  - 
 - Added `helperTextType` to allow for helper text in forms in tooltips
 - Added SCSS vars for font of form field labels
   - `form-input-font-family`
