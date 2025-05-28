@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
+import BBAlert from '../../bbalert';
 import BBText from '../../bbtext';
 import BBTooltip from '../../bbtooltip';
 import styles from '../styles.module.scss';
@@ -36,20 +37,17 @@ export default function InputWrapper(props: IPropsInputWrapper & IPropsBBBaseFor
     helperTextColor = 'secondary',
     error,
     helperTextType = 'text',
+    ref,
   } = props;
 
   /**
    * RENDER
    */
   return (
-    <div className={classnames(styles.form_group, className)}>
+    <div className={classnames(styles.form_group, className)} ref={ref}>
       {showLabel && <label htmlFor={fieldName}>{getLabel(label, fieldName)}</label>}
       {children}
-      {error && error.message && (
-        <BBText size="small" color="danger">
-          {error.message}
-        </BBText>
-      )}
+      {error && error.message && <BBAlert variant="danger">{error.message}</BBAlert>}
       {helperText && helperTextType === 'text' && (
         <BBText size="small" color={helperTextColor}>
           {helperText}
