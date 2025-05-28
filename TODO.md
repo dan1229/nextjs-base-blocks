@@ -168,9 +168,11 @@ TODO - write specific test cases to write
 
 
 
+#### bb field dropdown styling
+- add arrow or something
+  - add to global styling
+- wait until form css is figured out
 
----
-### 1.5.0
 
 
 #### convert to app router
@@ -179,11 +181,9 @@ TODO - write specific test cases to write
 
 
 
-#### bb field dropdown styling
-- add arrow or something
-  - add to global styling
-- wait until form css is figured out
 
+---
+### 1.5.0
 
 
 
