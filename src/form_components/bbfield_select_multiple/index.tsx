@@ -64,7 +64,7 @@ export default function BBFieldSelectMultiple(Props: IPropsBBFieldSelectMultiple
    * RENDER
    */
   return (
-    <InputWrapper fieldName={fieldName} label={Props.label} error={error} className={className} {...rest}>
+    <InputWrapper {...Props}>
       <Controller
         control={control as Control<FieldValues>}
         name={fieldName}
