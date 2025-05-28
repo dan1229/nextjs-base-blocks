@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [1.5.1] - 2025-05-28
+- Added keydown events for `BBFieldText`
+
+
 ### [1.5.0] - 2025-05-27
 - Support for field specific errors
   - Typing and props for field specific errors

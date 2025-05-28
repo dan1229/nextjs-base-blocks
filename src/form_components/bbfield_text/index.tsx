@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import React from 'react';
 import InputWrapper from '../input_wrapper';
 import styles from '../styles.module.scss';
-import type { IPropsBBBaseForm, TBBFieldBaseSize, TBBFieldTextType } from '../../types';
+import type { IPropsBBBaseForm, TBBFieldTextType } from '../../types';
 
 /**
  * PROPS
