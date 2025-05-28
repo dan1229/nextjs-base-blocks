@@ -8,12 +8,10 @@ import type { IPropsBBBaseForm, TBBFieldBaseSize, TBBFieldTextType } from '../..
  * PROPS
  *
  * @param {TBBFieldTextType=} type - Type of input. Think 'text' or 'textarea'
- * @param {string=} size - Size of the input. Think 'sm', 'md', or 'lg'.
  * @param {React.KeyboardEventHandler<HTMLInputElement | HTMLTextAreaElement> | undefined} onKeyDown - Optional keyboard event handler for input or textarea
  */
 export interface IPropsBBFieldText {
   type?: TBBFieldTextType;
-  size?: TBBFieldBaseSize;
   onKeyDown?: React.KeyboardEventHandler<HTMLInputElement | HTMLTextAreaElement>;
 }
 
