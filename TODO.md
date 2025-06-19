@@ -186,6 +186,13 @@ raise z index of modal container
 - it's only 5 lol
 
 
+
+file upload doesnt look great in light Mode
+- change 'browse' text color
+- try to add a border for the button it looks meh
+
+
+
 ### [1.6.0] - 2025-MM-DD
 - TODO
                                             
