@@ -192,6 +192,10 @@ file upload doesnt look great in light Mode
 - try to add a border for the button it looks meh
 
 
+bb loading spinner
+- add way to change color
+  - prop over a css var most likely
+
 
 ### [1.6.0] - 2025-MM-DD
 - TODO
