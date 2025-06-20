@@ -26,9 +26,7 @@ The goal here is to provide consistent and easy to use components that can be us
 You must have the following installed to use this submodule
 - [React Hook Forms](https://react-hook-form.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
-- [Recoil](https://recoiljs.org/)
 - [Sass](https://sass-lang.com/)
-- [Node Sass](https://www.npmjs.com/package/node-sass)
 - [classnames](https://www.npmjs.com/package/classnames)
 - [UseHooks TS](https://usehooks-typescript.com/)
 
@@ -181,16 +179,11 @@ html,
   --form-input-disabled-border-color: var(--grey-dark);
   --form-input-font-family: var(--font-family-main); // Font family for all form fields
   --form-label-font-family: var(--font-family-main); // Font family for all form field labels
-  // font family - page router font usage
-  --font-family-main: 'Josefin Sans';  // Used for main text
-  --font-family-header: 'Montserrat';  // Used for larger fonts/headers
-  --font-family-navbar-header: 'Montserrat';  // Used for navbar headers
   // font family - app router font usage
   --font-family-main: var(--font-lexend);
   --font-family-header: var(--font-lexend);
   --font-family-navbar-header: var(--font-lexend);
 }
-```
 
 While none of these variables are required, it definitely will help make your app look and feel more custom.
 
