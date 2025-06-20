@@ -1,5 +1,3 @@
-$primary_color: var(--primary-color, #78cdd7);
-
 .containerLoading {
   display: flex;
   flex-direction: row;
@@ -26,11 +24,47 @@ $primary_color: var(--primary-color, #78cdd7);
   height: 64px;
 }
 
+.primary {
+  --loader-color: var(--primary-color);
+}
+
+.secondary {
+  --loader-color: var(--secondary-color);
+}
+
+.accent {
+  --loader-color: var(--accent-color);
+}
+
+.danger {
+  --loader-color: var(--danger-color);
+}
+
+.success {
+  --loader-color: var(--success-color);
+}
+
+.warning {
+  --loader-color: var(--warning-color);
+}
+
+.info {
+  --loader-color: var(--info-color);
+}
+
+.black {
+  --loader-color: var(--black);
+}
+
+.white {
+  --loader-color: var(--white);
+}
+
 /**
 * DEFAULT
 */
 .loader_default {
-  border: 2px solid $primary_color;
+  border: 2px solid var(--loader-color, #78cdd7);
   border-radius: 50%;
   border-top-color: white;
   animation: rotationSpinner 1s linear infinite;
@@ -66,7 +100,7 @@ $primary_color: var(--primary-color, #78cdd7);
   top: 0;
   bottom: 0;
   margin: auto;
-  border: 3px dotted $primary_color;
+  border: 3px dotted var(--loader-color, #78cdd7);
   border-style: solid solid dotted;
   width: 24px;
   height: 24px;
@@ -96,7 +130,7 @@ $primary_color: var(--primary-color, #78cdd7);
 * CIRCLE BOUNCE
 */
 .loader_circle_bounce {
-  border: 4px solid $primary_color;
+  border: 4px solid var(--loader-color, #78cdd7);
   border-radius: 50%;
   animation: circleBounceSpinner 1s ease-in-out infinite;
 }
@@ -117,7 +151,7 @@ $primary_color: var(--primary-color, #78cdd7);
 * SPINNING SQUARE
 */
 .loader_spinning_square {
-  border: 4px solid $primary_color;
+  border: 4px solid var(--loader-color, #78cdd7);
   animation: spinningSquareSpinner 3s linear infinite;
 }
 

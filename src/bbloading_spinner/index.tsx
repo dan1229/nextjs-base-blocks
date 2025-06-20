@@ -1,18 +1,17 @@
 import classNames from 'classnames';
 import React from 'react';
 import styles from './styles.module.scss';
-
-export type TBBLoadingSpinnerVariants = 'default' | 'double circle' | 'circle bounce' | 'spinning square';
-export type TBBLoadingSpinnerSizes = 'sm' | 'md' | 'lg';
+import type { TBBLoadingSpinnerColor, TBBLoadingSpinnerSizes, TBBLoadingSpinnerVariants } from '../types';
 
 export interface IPropsBBLoadingSpinner {
   variant?: TBBLoadingSpinnerVariants;
-  className?: string;
   size?: TBBLoadingSpinnerSizes;
+  color?: TBBLoadingSpinnerColor;
+  className?: string;
 }
 
 export default function BBLoadingSpinner(Props: IPropsBBLoadingSpinner): React.ReactElement {
-  const { variant = 'default', className, size = 'md' } = Props; // Added size destructuring
+  const { variant = 'default', className, size = 'md', color } = Props;
 
   const getLoadingSpinnerClassName = () => {
     switch (variant) {
@@ -39,9 +38,44 @@ export default function BBLoadingSpinner(Props: IPropsBBLoadingSpinner): React.R
     }
   };
 
+  const getColorClassName = () => {
+    if (!color) return '';
+
+    switch (color) {
+      case 'primary':
+        return styles.primary;
+      case 'secondary':
+        return styles.secondary;
+      case 'accent':
+        return styles.accent;
+      case 'danger':
+        return styles.danger;
+      case 'success':
+        return styles.success;
+      case 'warning':
+        return styles.warning;
+      case 'info':
+        return styles.info;
+      case 'black':
+        return styles.black;
+      case 'white':
+        return styles.white;
+      default:
+        return '';
+    }
+  };
+
+  const style =
+    color && !['primary', 'secondary', 'accent', 'danger', 'success', 'warning', 'info', 'black', 'white'].includes(color)
+      ? ({ '--loader-color': color } as React.CSSProperties)
+      : {};
+
   return (
     <div className={styles.containerLoading}>
-      <span className={classNames(getLoadingSpinnerClassName(), getLoadingSpinnerSizeClassName(), className)} />
+      <span
+        className={classNames(getLoadingSpinnerClassName(), getLoadingSpinnerSizeClassName(), getColorClassName(), className)}
+        style={style}
+      />
     </div>
   );
 }

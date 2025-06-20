@@ -126,6 +126,13 @@ export type TBBNavbarItemColorBorder =
   | 'accent';
 
 /**
+ * BBLoadingSpinner
+ */
+export type TBBLoadingSpinnerVariants = 'default' | 'double circle' | 'circle bounce' | 'spinning square';
+export type TBBLoadingSpinnerSizes = 'sm' | 'md' | 'lg';
+export type TBBLoadingSpinnerColor = 'primary' | 'secondary' | 'accent' | 'danger' | 'success' | 'warning' | 'info' | 'black' | 'white';
+
+/**
  * BBTooltip
  */
 // TODO
