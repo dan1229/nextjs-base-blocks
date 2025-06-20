@@ -89,13 +89,8 @@
 - see above
 - overall get it working a bit better though
 
-
-----
-### 1.6.0
-
-
-
-#### Cypress Testing
+---
+lue e#### Cypress Testing
 
 
 TODO - write specific test cases to write
@@ -121,6 +116,11 @@ TODO - write specific test cases to write
   - add codecov
 -
 - add TODOs for future tests
+
+
+----
+### 1.6.0
+
 
 
 
@@ -182,11 +182,6 @@ TODO - write specific test cases to write
 
 
 
-raise z index of modal container
-- it's only 5 lol
-
-
-
 file upload doesnt look great in light Mode
 - change 'browse' text color
 - try to add a border for the button it looks meh
@@ -195,6 +190,8 @@ file upload doesnt look great in light Mode
 ### [1.6.0] - 2025-MM-DD
 - `BBLoadingSpinner`
   - Added `color` prop to allow for custom colors.
+- `BBModal`
+  - `z-index` increased default and set as a variable: `--modal-z-index`.
                                             
 -------------------------------------------------------
 
