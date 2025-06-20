@@ -4,10 +4,14 @@ import type { RefObject } from 'react';
 type Handler = (event: MouseEvent) => void;
 
 function useOutsideClick<T extends HTMLElement = HTMLElement>(
-  ref: RefObject<T>,
+  ref: RefObject<T | null>,
   handler: Handler,
   mouseEvent: 'mousedown' | 'mouseup' = 'mousedown'
 ): void {
+  if (!ref) {
+    return;
+  }
+
   useEventListener(mouseEvent, (event) => {
     const el = ref.current;
 

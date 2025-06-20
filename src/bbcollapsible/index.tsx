@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import React, { useState, Children, cloneElement, useEffect } from 'react';
+import React, { useState, Children, cloneElement, useEffect, isValidElement } from 'react';
 import BBButton from '../bbbutton';
 import BBCard from '../bbcard';
 import styles from './styles.module.scss';
@@ -37,14 +37,21 @@ const BBCollapsible = (props: IPropsBBCollapsible) => {
     }
   }, [isExpanded, onExpanded, onCollapsed]);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const header = Children.toArray(children).find((child: any) => child.type.displayName === 'Header');
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const content = Children.toArray(children).find((child: any) => child.type.displayName === 'Content');
+  const header = Children.toArray(children).find((child): child is React.ReactElement<IPropsBBCollapsibleSection> => {
+    return isValidElement(child) && (child.type as any).displayName === 'Header';
+  });
+
+  const content = Children.toArray(children).find((child): child is React.ReactElement<IPropsBBCollapsibleContent> => {
+    return isValidElement(child) && (child.type as any).displayName === 'Content';
+  });
+
+  if (!header) {
+    return null;
+  }
 
   return (
     <BBCard {...props}>
-      {cloneElement(header as React.ReactElement, { onClick: toggleExpand, showButtonUp: isExpanded })}
+      {cloneElement(header, { onClick: toggleExpand, showButtonUp: isExpanded })}
       {isExpanded && content}
     </BBCard>
   );

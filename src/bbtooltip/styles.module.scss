@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 // color redefinitions to standardize across this file/component
 //
 $white: var(--white, #ffffff);
@@ -8,32 +10,32 @@ $grey-dark: var(--grey-dark, #58647a);
 $grey-darkest: var(--grey-darkest, #2f3542);
 
 $info-color: var(--info-color, #ffc800);
-$info-light-color: var(--info-light-color, lighten(#ffc800, 10%));
-$info-dark-color: var(--info-dark-color, darken(#ffc800, 10%));
+$info-light-color: var(--info-light-color, color.adjust(#ffc800, $lightness: 10%));
+$info-dark-color: var(--info-dark-color, color.adjust(#ffc800, $lightness: -10%));
 
 $primary-color: var(--primary-color, #78cdd7);
-$primary-light-color: var(--primary-light-color, lighten(#78cdd7, 10%));
-$primary-dark-color: var(--primary-dark-color, darken(#78cdd7, 10%));
+$primary-light-color: var(--primary-light-color, color.adjust(#78cdd7, $lightness: 10%));
+$primary-dark-color: var(--primary-dark-color, color.adjust(#78cdd7, $lightness: -10%));
 
 $secondary-color: var(--secondary-color, #ffc800);
-$secondary-light-color: var(--secondary-light-color, lighten(#ffc800, 10%));
-$secondary-dark-color: var(--secondary-dark-color, darken(#ffc800, 10%));
+$secondary-light-color: var(--secondary-light-color, color.adjust(#ffc800, $lightness: 10%));
+$secondary-dark-color: var(--secondary-dark-color, color.adjust(#ffc800, $lightness: -10%));
 
 $accent-color: var(--accent-color, #ff6b6c);
-$accent-light-color: var(--accent-light-color, lighten(#ff6b6c, 10%));
-$accent-dark-color: var(--accent-dark-color, darken(#ff6b6c, 10%));
+$accent-light-color: var(--accent-light-color, color.adjust(#ff6b6c, $lightness: 10%));
+$accent-dark-color: var(--accent-dark-color, color.adjust(#ff6b6c, $lightness: -10%));
 
 $danger-color: var(--danger-color, #78cdd7);
-$danger-light-color: var(--danger-light-color, lighten(#78cdd7, 10%));
-$danger-dark-color: var(--danger-dark-color, darken(#78cdd7, 10%));
+$danger-light-color: var(--danger-light-color, color.adjust(#78cdd7, $lightness: 10%));
+$danger-dark-color: var(--danger-dark-color, color.adjust(#78cdd7, $lightness: -10%));
 
 $success-color: var(--success-color, #50c758);
-$success-light-color: var(--success-light-color, lighten(#50c758, 10%));
-$success-dark-color: var(--success-dark-color, darken(#50c758, 10%));
+$success-light-color: var(--success-light-color, color.adjust(#50c758, $lightness: 10%));
+$success-dark-color: var(--success-dark-color, color.adjust(#50c758, $lightness: -10%));
 
 $warning-color: var(--warning-color, #f1c500);
-$warning-light-color: var(--warning-light-color, lighten(#f1c500, 10%));
-$warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
+$warning-light-color: var(--warning-light-color, color.adjust(#f1c500, $lightness: 10%));
+$warning-dark-color: var(--warning-dark-color, color.adjust(#f1c500, $lightness: -10%));
 
 .tooltipContainer {
   position: relative;

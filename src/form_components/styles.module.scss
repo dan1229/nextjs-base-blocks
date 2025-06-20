@@ -47,12 +47,15 @@ $input-font-size-sm: ($font-size-base * $font-size-sm) !default;
 $input-height-sm: ($font-size-sm + $input-padding-y * 2 + $input-border-width * 2) !default;
 $input-height: ($font-size-base + $input-padding-y * 2 + $input-border-width * 2) !default;
 $input-height-lg: ($font-size-lg + $input-padding-y * 2 + $input-border-width * 2) !default;
-$input-height: ($font-size-base + $input-padding-y * 2 + $input-border-width * 2) !default;
 $form-color-width: 0.25rem !default;
 $form-file-button-color: var(--white) !default;
 $form-file-button-hover-bg: var(--primary-color) !default;
 $input-plaintext-color: var(--white) !default;
 $form-label-font-family: var(--form-label-font-family, var(--font-family-main, inherit)) !default;
+$input-font-size: $font-size-base !default;
+$input-focus-box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.25);
+
+@use 'sass:math';
 
 .form_group {
   width: 100%;
@@ -106,7 +109,7 @@ $form-label-font-family: var(--form-label-font-family, var(--font-family-main, i
   // https://github.com/twbs/bootstrap/issues/23307
   &::-webkit-date-and-time-value {
     // Multiply line-height by 1em if it has no unit
-    height: if(unit($input-line-height) == '', $input-line-height * 1em, $input-line-height);
+    height: if(math.is-unitless($input-line-height), $input-line-height * 1em, $input-line-height);
   }
 
   // Prevent excessive date input height in Webkit
@@ -294,4 +297,56 @@ textarea {
 
 .form_control[type='checkbox'].lg {
   @include checkbox-size($input-height-lg);
+}
+
+.form_field {
+  width: 100%;
+  font-size: $input-font-size;
+  font-weight: $input-font-weight;
+  line-height: $input-line-height;
+  color: var(--form-input-color, $input-color);
+  background-color: transparent;
+  background-clip: padding-box;
+  border: $input-border-width solid var(--form-input-border-color, $input-border-color);
+  appearance: none;
+  border-radius: $input-border-radius;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  // rtl
+  [dir='rtl'] & {
+    text-align: right;
+  }
+
+  &[type='file'] {
+    overflow: hidden;
+
+    &:not(:disabled):not([readonly]) {
+      cursor: pointer;
+    }
+  }
+
+  &:focus {
+    color: var(--form-input-focus-color, $input-focus-color);
+    background-color: var(--form-input-focus-bg, $input-focus-bg);
+    border-color: var(--form-input-focus-border-color, $input-focus-border-color);
+    outline: 0;
+    box-shadow: $input-focus-box-shadow;
+  }
+
+  &::placeholder {
+    color: var(--form-input-placeholder-color, $input-placeholder-color);
+    opacity: 1;
+  }
+
+  &:disabled,
+  &[readonly] {
+    background-color: var(--form-input-disabled-bg, $input-disabled-bg);
+    border-color: var(--form-input-disabled-border-color, $input-disabled-border-color);
+    opacity: 1;
+  }
+
+  //
+  // &:not(textarea) {
+  //   height: if(unit($input-line-height) == '', $input-line-height * 1em, $input-line-height);
+  // }
 }

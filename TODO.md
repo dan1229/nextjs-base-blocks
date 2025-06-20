@@ -91,7 +91,7 @@
 
 
 ----
-### 1.7.0
+### 2.1.0
 
 
 
@@ -101,7 +101,7 @@
 
 
 ----
-### 1.6.0
+### 2.0.0
 
 
 
@@ -167,9 +167,10 @@
 
 
 
-### [1.6.0] - 2025-MM-DD
+### [2.0.0] - 2025-06-DD
 - Converted demo app to use the app router!
 - Upgraded to Next.js 15 and React 19.
+  - LOTS of package updates
 - `BBLoadingSpinner`
   - Added `color` prop to allow for custom colors.
 - `BBModal`

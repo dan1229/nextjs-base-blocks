@@ -81,7 +81,7 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
   const router = useRouter();
 
   // outside click for detecting when to close the expanded nav
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement>(null);
   useOutsideClick(ref, () => {
     setShowNavExpanded(false);
   });
