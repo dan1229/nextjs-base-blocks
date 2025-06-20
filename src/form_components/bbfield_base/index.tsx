@@ -1,13 +1,9 @@
 import classnames from 'classnames';
 import React from 'react';
+import { Controller, FieldError } from 'react-hook-form';
 import InputWrapper from '../input_wrapper';
 import styles from '../styles.module.scss';
-import type {
-  IPropsBBBaseForm,
-  TBBFieldBaseSize,
-  TBBFieldBaseTypes
-} from '../../types';
-import type { FieldError } from 'react-hook-form';
+import type { IPropsBBBaseForm, TBBFieldBaseSize, TBBFieldBaseTypes } from '../../types';
 
 /**
  * PROPS
@@ -26,10 +22,8 @@ export interface IPropsBBFieldBase {
 /**
  * BBFIELD BASE
  */
-export default function BBFieldBase(
-  Props: IPropsBBFieldBase & IPropsBBBaseForm
-): React.ReactElement {
-  const { register, type, autocomplete, value, size = 'md', className } = Props;
+export default function BBFieldBase(Props: IPropsBBFieldBase & IPropsBBBaseForm): React.ReactElement {
+  const { control, fieldName, type, autocomplete, value, size = 'md', className } = Props;
 
   const getAutoComplete = (): string => {
     switch (autocomplete) {
@@ -38,7 +32,7 @@ export default function BBFieldBase(
       case 'off':
         return 'off';
       default:
-        return 'off';
+        return fieldName;
     }
   };
 
@@ -47,18 +41,19 @@ export default function BBFieldBase(
    */
   return (
     <InputWrapper {...Props}>
-      <input
-        className={classnames(styles.form_control, styles[size], className)}
-        type={type}
-        autoComplete={getAutoComplete()}
-        defaultValue={
-          typeof value === 'string' ||
-          typeof value === 'number' ||
-          Array.isArray(value)
-            ? value
-            : undefined
-        }
-        {...(register || {})}
+      <Controller
+        id={fieldName}
+        name={fieldName}
+        control={control}
+        defaultValue={typeof value === 'string' || typeof value === 'number' || Array.isArray(value) ? value : undefined}
+        render={({ field }) => (
+          <input
+            {...field}
+            className={classnames(styles.form_control, styles[size], className)}
+            type={type}
+            autoComplete={getAutoComplete()}
+          />
+        )}
       />
     </InputWrapper>
   );

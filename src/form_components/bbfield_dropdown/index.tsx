@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
+import { Controller } from 'react-hook-form';
 import InputWrapper from '../input_wrapper';
 import styles from '../styles.module.scss';
 import type { IBBFieldDropdownOptions, IPropsBBBaseForm, TBBFieldBaseSize } from '../../types';
@@ -19,7 +20,7 @@ export interface IPropsBBFieldDropdown {
  * BBFIELD DROPDOWN
  */
 export default function BBFieldDropdown(Props: IPropsBBFieldDropdown & IPropsBBBaseForm): React.ReactElement {
-  const { register, options, fieldName, required, autocomplete, onChange, size = 'md' } = Props;
+  const { options, fieldName, required, autocomplete, onChange, size = 'md', control, value } = Props;
 
   const getAutoComplete = (): string => {
     if (autocomplete) return autocomplete;
@@ -31,21 +32,30 @@ export default function BBFieldDropdown(Props: IPropsBBFieldDropdown & IPropsBBB
    */
   return (
     <InputWrapper {...Props}>
-      <select
-        className={classnames(styles.form_control, styles[size])}
-        id={fieldName}
-        autoComplete={getAutoComplete()}
-        required={required}
-        onChange={onChange}
+      <Controller
         name={fieldName}
-        {...register}
-      >
-        {options.map((val: IBBFieldDropdownOptions) => (
-          <option key={val.value} value={val.value}>
-            {val.label}
-          </option>
-        ))}
-      </select>
+        control={control}
+        defaultValue={value || ''}
+        render={({ field }) => (
+          <select
+            {...field}
+            className={classnames(styles.form_control, styles[size])}
+            id={fieldName}
+            autoComplete={getAutoComplete()}
+            required={required}
+            onChange={(e) => {
+              field.onChange(e);
+              if (onChange) onChange(e);
+            }}
+          >
+            {options.map((val: IBBFieldDropdownOptions) => (
+              <option key={val.value} value={val.value}>
+                {val.label}
+              </option>
+            ))}
+          </select>
+        )}
+      />
     </InputWrapper>
   );
 }

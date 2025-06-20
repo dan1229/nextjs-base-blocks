@@ -89,6 +89,9 @@
   - add codecov
 
 
+#### test for hooks
+- add cypress tests for hooks like use outside click
+
 
 ----
 ### 2.1.0

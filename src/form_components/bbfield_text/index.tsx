@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
+import { Controller } from 'react-hook-form';
 import InputWrapper from '../input_wrapper';
 import styles from '../styles.module.scss';
 import type { IPropsBBBaseForm, TBBFieldTextType } from '../../types';
@@ -20,7 +21,7 @@ export interface IPropsBBFieldText {
  */
 export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm): React.ReactElement {
   const {
-    register,
+    control,
     fieldName,
     type = 'text',
     required = false,
@@ -38,23 +39,32 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
     return fieldName;
   };
 
-  const sharedProps = {
-    className: classnames(styles.form_control, styles[size], className),
-    id: fieldName,
-    autoComplete: getAutoComplete(),
-    required: required,
-    placeholder: placeholder,
-    onChange: onChange,
-    value: value,
-    onKeyDown: onKeyDown,
-  };
-
   /**
    * RENDER
    */
   return (
     <InputWrapper {...Props}>
-      {type == 'textarea' ? <textarea {...sharedProps} {...register} /> : <input {...sharedProps} type={type} {...register} />}
+      <Controller
+        name={fieldName}
+        control={control}
+        defaultValue={value || ''}
+        render={({ field }) => {
+          const sharedProps = {
+            ...field,
+            className: classnames(styles.form_control, styles[size], className),
+            id: fieldName,
+            autoComplete: getAutoComplete(),
+            required: required,
+            placeholder: placeholder,
+            onKeyDown: onKeyDown,
+          };
+
+          if (type === 'textarea') {
+            return <textarea {...sharedProps} />;
+          }
+          return <input {...sharedProps} type={type} />;
+        }}
+      />
     </InputWrapper>
   );
 }

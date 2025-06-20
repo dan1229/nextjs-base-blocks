@@ -6,7 +6,6 @@ import BBText from '../../bbtext';
 import InputWrapper from '../input_wrapper';
 import styles from './styles.module.scss';
 import type { IBBFieldSelectCardOptions, IPropsBBBaseForm } from '../../types';
-import type { Control, FieldValues } from 'react-hook-form';
 
 /**
  * PROPS
@@ -18,7 +17,6 @@ import type { Control, FieldValues } from 'react-hook-form';
  * @param {boolean=} showSelected - Whether to show the selected option.
  */
 export interface IPropsBBFieldSelectCard {
-  control: unknown;
   options: IBBFieldSelectCardOptions[];
   selectedInitial?: string;
   showTitleOptions?: boolean;
@@ -28,13 +26,13 @@ export interface IPropsBBFieldSelectCard {
 /**
  * BBFIELD SELECT CARD
  */
-export default function BBFieldSelectCard(props: IPropsBBFieldSelectCard & Omit<IPropsBBBaseForm, 'register'>): React.ReactElement {
+export default function BBFieldSelectCard(props: IPropsBBFieldSelectCard & IPropsBBBaseForm): React.ReactElement {
   const { control, options, fieldName, selectedInitial, showTitleOptions = true, showSelected = true } = props;
 
   return (
     <InputWrapper {...props}>
       <Controller
-        control={control as Control<FieldValues>}
+        control={control}
         name={fieldName}
         defaultValue={selectedInitial || ''}
         render={({ field: { onChange, value } }) => (
