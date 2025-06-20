@@ -23,7 +23,7 @@ const FormComponentsPage = () => {
     size: 'md',
     placeholder: 'Enter text...',
     className: '',
-    onChange: () => {},
+    onChange: undefined,
     helperText: 'This is some helper text!',
     helperTextType: 'text',
   });
@@ -34,7 +34,7 @@ const FormComponentsPage = () => {
     required: false,
     label: 'Demo Checkbox',
     className: '',
-    onChange: () => {},
+    onChange: undefined,
     colorCheckbox: 'secondary',
     size: 'md',
   });
@@ -45,7 +45,7 @@ const FormComponentsPage = () => {
     required: false,
     label: 'Demo File Upload',
     className: '',
-    onChange: () => {},
+    onChange: undefined,
     size: 'md',
   });
 

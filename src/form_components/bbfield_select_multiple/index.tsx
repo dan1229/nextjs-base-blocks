@@ -1,6 +1,5 @@
 import classnames from 'classnames';
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { type Control, Controller, type FieldValues } from 'react-hook-form';
 import BBCard from '../../bbcard';
 import BBText from '../../bbtext';
@@ -10,13 +9,12 @@ import type { IBBFieldSelectMultipleOptions, IPropsBBBaseForm } from '../../type
 
 /**
  * PROPS
- *
  * @param {unknown} control - The control object from react-hook-form.
- * @param {IBBFieldSelectMultipleOptions[]} options - Options to display.
+ * @param {IBBFieldSelectMultipleOptions[]} options - The options to display.
  * @param {string[] | undefined} selectedInitial - Initial selected options.
  */
 export interface IPropsBBFieldSelectMultiple {
-  control: unknown;
+  control: Control<FieldValues>;
   options: IBBFieldSelectMultipleOptions[];
   selectedInitial: string[] | undefined;
 }
@@ -49,7 +47,7 @@ export default function BBFieldSelectMultiple(Props: IPropsBBFieldSelectMultiple
     });
   };
 
-  const onClickOption = (option: IBBFieldSelectMultipleOptions, onChange: Function) => {
+  const onClickOption = (option: IBBFieldSelectMultipleOptions, onChange: (value: string[]) => void) => {
     const found = selectedOptions.find((selectedOption) => selectedOption.value === option.value);
     const newList = found
       ? selectedOptions.filter((selectedOption) => selectedOption.value !== option.value)
@@ -64,64 +62,52 @@ export default function BBFieldSelectMultiple(Props: IPropsBBFieldSelectMultiple
   return (
     <InputWrapper {...Props}>
       <Controller
-        control={control as Control<FieldValues>}
         name={fieldName}
-        defaultValue={selectedInitial}
-        rules={{
-          required: { value: !!required, message: 'Please select at least one location preference.' },
-          validate: (value) => (value && value.length > 0) || 'Please select at least one location preference.',
-        }}
-        render={({ field: { onChange, ref } }) => {
-          return (
-            <div ref={ref} className={classnames(styles.containerSelectMultiple, className)}>
-              {/* ALL OPTIONS */}
-              <div className={styles.containerSelectWindow}>
-                <BBText bold>Options</BBText>
-                {options.map((option) => (
-                  <CardOption
-                    key={`${option.value}-option`}
-                    option={option}
-                    selected={selectedOptions.some((selectedOption) => selectedOption.value === option.value)}
-                    onChange={onChange}
-                    onClick={onClickOption}
-                  />
-                ))}
-              </div>
-              {/* SELECTED */}
-              <div className={styles.containerSelectWindow}>
-                <BBText bold>Selected</BBText>
-                {selectedOptions.length ? (
-                  selectedOptions.map((option) => {
-                    return (
-                      <CardOption
-                        key={`${option.value}-selected`}
-                        option={option}
-                        selected={true}
-                        onChange={onChange}
-                        onClick={onClickOption}
-                      />
-                    );
-                  })
-                ) : (
-                  <BBText color="secondary">No options selected</BBText>
-                )}
-              </div>
+        control={control}
+        rules={{ required }}
+        render={({ field: { onChange, ref } }) => (
+          <div ref={ref} className={classnames(styles.containerSelectMultiple, className)}>
+            {/* ALL OPTIONS */}
+            <div className={styles.containerSelectWindow}>
+              <BBText bold>Options</BBText>
+              {options.map((option) => (
+                <CardOption
+                  key={`${option.value}-option`}
+                  option={option}
+                  selected={selectedOptions.some((selectedOption) => selectedOption.value === option.value)}
+                  onChange={onChange}
+                  onClick={onClickOption}
+                />
+              ))}
             </div>
-          );
-        }}
+            {/* SELECTED OPTIONS */}
+            <div className={styles.containerSelectWindow}>
+              <BBText bold>Selected</BBText>
+              {selectedOptions.length === 0 && <BBText>No options selected</BBText>}
+              {selectedOptions.map((option) => (
+                <CardOption key={`${option.value}-selected`} option={option} selected={true} onChange={onChange} onClick={onClickOption} />
+              ))}
+            </div>
+          </div>
+        )}
       />
     </InputWrapper>
   );
 }
 
-function CardOption(props: { option: IBBFieldSelectMultipleOptions; selected: boolean; onChange: Function; onClick: Function }) {
-  const { option, selected, onClick, onChange } = props;
+interface ICardOptionProps {
+  option: IBBFieldSelectMultipleOptions;
+  selected: boolean;
+  onChange: (value: string[]) => void;
+  onClick: (option: IBBFieldSelectMultipleOptions, onChange: (value: string[]) => void) => void;
+}
+
+function CardOption(Props: ICardOptionProps) {
+  const { option, selected, onChange, onClick } = Props;
 
   return (
-    <BBCard className={classnames(styles.cardOption, selected ? styles.cardOptionSelected : '')} onClick={() => onClick(option, onChange)}>
-      <BBCard.Body>
-        <BBText size="small">{option.label}</BBText>
-      </BBCard.Body>
+    <BBCard className={classnames(styles.option, selected ? styles.optionSelected : null)} onClick={() => onClick(option, onChange)}>
+      <BBText>{option.label}</BBText>
     </BBCard>
   );
 }

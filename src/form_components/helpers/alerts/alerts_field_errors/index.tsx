@@ -54,7 +54,7 @@ export function AlertsFieldErrors(props: IPropsAlertsFieldErrors): React.ReactEl
 
         if (!finalMessage) {
           try {
-            finalMessage = `Error - ${type} '${(ref as Ref).name.replace(/_/g, ' ').replace(/-/g, ' ')}'`;
+            finalMessage = `Error - ${String(type)} '${(ref as Ref).name.replace(/_/g, ' ').replace(/-/g, ' ')}'`;
           } catch (error) {
             console.error(error);
           }

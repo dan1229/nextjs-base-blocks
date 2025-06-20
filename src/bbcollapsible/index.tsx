@@ -37,13 +37,15 @@ const BBCollapsible = (props: IPropsBBCollapsible) => {
     }
   }, [isExpanded, onExpanded, onCollapsed]);
 
-  const header = Children.toArray(children).find((child): child is React.ReactElement<IPropsBBCollapsibleSection> => {
-    return isValidElement(child) && (child.type as any).displayName === 'Header';
-  });
+  const header = Children.toArray(children).find(
+    (child): child is React.ReactElement<IPropsBBCollapsibleSection> =>
+      isValidElement(child) && (child.type as React.FunctionComponent).displayName === 'Header'
+  );
 
-  const content = Children.toArray(children).find((child): child is React.ReactElement<IPropsBBCollapsibleContent> => {
-    return isValidElement(child) && (child.type as any).displayName === 'Content';
-  });
+  const content = Children.toArray(children).find(
+    (child): child is React.ReactElement<IPropsBBCollapsibleContent> =>
+      isValidElement(child) && (child.type as React.FunctionComponent).displayName === 'Content'
+  );
 
   if (!header) {
     return null;
@@ -102,7 +104,6 @@ const Header = (props: IPropsBBCollapsibleSection) => {
           // on click is necessary to un-disable the button
           variant={buttonVariant}
           transparent={buttonTransparent}
-          onClick={() => {}}
           icon={{ icon: showButtonUp ? arrowUp : arrowDown }}
           className={classnames(styles.buttonArrow, classNameButton)}
         />
@@ -115,7 +116,7 @@ Header.displayName = 'Header';
 /**
  * PROPS
  */
-export interface IPropsBBCollapsibleContent extends IPropsBBCard {}
+export type IPropsBBCollapsibleContent = IPropsBBCard;
 
 /**
  * BBCollapsible.Content

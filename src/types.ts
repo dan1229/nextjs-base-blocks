@@ -170,8 +170,8 @@ export type TBBTextColor =
  * @prop {Object} register - React Hook Form register object.
  * @prop {string} fieldName - Name of the field, used for ID for form submission
  * @prop {string=} label - Label for the component
- * @prop {(value: any) => void} onChange - Change handler
- * @prop {any} value - Value of the field
+ * @prop {(value: unknown) => void} onChange - Change handler
+ * @prop {unknown} value - Value of the field
  * @prop {boolean=} required - Whether the field is required
  * @param {string=} autocomplete - Autocomplete value for the input.
  * @param {string=} placeholder - Placeholder text
@@ -184,11 +184,19 @@ export type TBBTextColor =
  * @param {React.RefObject<HTMLInputElement>=} inputRef - Ref for the input
  */
 interface IPropsBBBaseFormBase {
-  register?: Object;
+  register?: (
+    name: string,
+    options?: object
+  ) => {
+    onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
+    onBlur: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
+    ref: (instance: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | null) => void;
+    name: string;
+  };
   fieldName: string;
   label?: string;
-  onChange?: (value: any) => void; // eslint-disable-line @typescript-eslint/no-explicit-any
-  value?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+  onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
+  value?: string | number | string[];
   required?: boolean;
   autocomplete?: string;
   placeholder?: string;

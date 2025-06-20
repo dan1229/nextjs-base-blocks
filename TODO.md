@@ -127,6 +127,9 @@
 - looks meh
 
 
+#### bbmodal
+- just doesnt look great
+- header color is a bit similar?
 
 #### bbnavbar item
 - width?

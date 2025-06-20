@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import React, { useState, useRef } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import BBText from '../bbtext';
-import useOutsideClick from '../utils/hooks/UseOutsideClick';
+import { useOutsideClick } from '../utils/hooks/UseOutsideClick';
 import styles from './styles.module.scss';
 import type { IPropsBBBase, TBBTextColor, TBBTextSize, TBBNavbarAlignment } from '../types';
 
@@ -115,7 +115,7 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
               }}
             />
           </div>
-          <div className={styles.containerBrand} onClick={async () => router.push(routeBrand)}>
+          <div className={styles.containerBrand} onClick={() => router.push(routeBrand)}>
             <div className={classNames(styles.brand, brandHorizontal ? styles.brandHorizontal : styles.brandVertical)}>
               {!!imageSrc && <Image src={imageSrc} alt="" height={imageHeight} width={imageWidth} />}
               {!!title && title.length && (

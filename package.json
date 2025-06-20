@@ -7,24 +7,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix"
-  },
-  "eslintConfig": {
-    "extends": "next/core-web-vitals",
-    "overrides": [
-      {
-        "files": [
-          "src/app/form-components/page.tsx"
-        ],
-        "rules": {
-          "@next/next/no-html-link-for-pages": "off"
-        }
-      }
-    ]
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix"
   },
   "dependencies": {
-    "classnames": "^2.5.1",
+    "classnames": "2.5.1",
     "js-cookie": "^3.0.5",
     "next": "15.3.4",
     "react": "19.1.0",

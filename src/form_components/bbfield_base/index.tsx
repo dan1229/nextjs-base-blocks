@@ -12,7 +12,9 @@ import type { FieldError } from 'react-hook-form';
  * @param {string=} size - Size of the input. Think 'sm', 'md', or 'lg'.
  */
 export interface IPropsBBFieldBase {
-  type: TBBFieldBaseTypes;
+  type?: TBBFieldBaseTypes;
+  autocomplete?: string;
+  value?: string | number | string[] | HTMLInputElement | undefined;
   size?: TBBFieldBaseSize;
   error?: FieldError;
 }
@@ -24,8 +26,14 @@ export default function BBFieldBase(Props: IPropsBBFieldBase & IPropsBBBaseForm)
   const { register, fieldName, type, required = false, autocomplete, onChange, value, size = 'md', className } = Props;
 
   const getAutoComplete = (): string => {
-    if (autocomplete) return autocomplete;
-    return fieldName;
+    switch (autocomplete) {
+      case 'on':
+        return 'on';
+      case 'off':
+        return 'off';
+      default:
+        return 'off';
+    }
   };
 
   /**
@@ -35,13 +43,10 @@ export default function BBFieldBase(Props: IPropsBBFieldBase & IPropsBBBaseForm)
     <InputWrapper {...Props}>
       <input
         className={classnames(styles.form_control, styles[size], className)}
-        id={fieldName}
         type={type}
         autoComplete={getAutoComplete()}
-        required={required}
-        onChange={onChange}
-        value={value}
-        {...register}
+        defaultValue={typeof value === 'string' || typeof value === 'number' || Array.isArray(value) ? value : undefined}
+        {...(register && register(fieldName, { required, onChange }))}
       />
     </InputWrapper>
   );

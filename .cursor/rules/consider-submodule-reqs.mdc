@@ -1,0 +1,6 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+This repo is a submodule and is used in many other projects. Please consider that when making changes and think about backwards compatibility.

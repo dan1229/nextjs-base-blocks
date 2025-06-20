@@ -1,6 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
+import Link from 'next/link';
 import React, { useState, useRef } from 'react';
 import BBText from '../bbtext';
 import styles from './styles.module.scss';
@@ -300,14 +301,14 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     baseClassNames += ` ${styles.link}`;
     if (onClick) console.warn('BBButton: Both onClick and href are defined. onClick will be ignored.');
     return (
-      <a
+      <Link
         href={href}
         className={baseClassNames}
         target={openInNewTab ? '_blank' : '_self'}
         rel={openInNewTab ? 'noreferrer noopener' : undefined}
       >
         {mainComponent}
-      </a>
+      </Link>
     );
   }
 

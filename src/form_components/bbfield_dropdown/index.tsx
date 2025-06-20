@@ -34,10 +34,8 @@ export default function BBFieldDropdown(Props: IPropsBBFieldDropdown & IPropsBBB
       <select
         className={classnames(styles.form_control, styles[size])}
         id={fieldName}
-        required={required}
-        onChange={onChange}
         autoComplete={getAutoComplete()}
-        {...register}
+        {...(register ? register(fieldName, { required, onChange }) : { required, onChange, name: fieldName })}
       >
         {options.map((val: IBBFieldDropdownOptions) => (
           <option key={val.value} value={val.value}>

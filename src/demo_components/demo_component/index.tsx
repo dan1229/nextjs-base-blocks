@@ -1,71 +1,64 @@
-import React, { useEffect, useState } from 'react';
-import BBButton from '../../bbbutton';
-import BBText from '../../bbtext';
+import React, { useState } from 'react';
 import StateEditor from '../state_editor';
 import styles from './styles.module.scss';
-import type { Dispatch, SetStateAction } from 'react';
+import type { IPropsBBBase } from '../../types';
 
 /**
- * IPropsDemoComponent
+ * PROPS
+ *
  * @param {string} name - The name of the component
- * @param {React.ReactNode} child - The component to demo
- * @param {Record<string, any>} stateObject - The state of the component
- * @param {Dispatch<SetStateAction<Record<string, any>>>} setStateObject - The function to set the state of the component
+ * @param {React.ReactElement} child - The component to render
+ * @param {T} stateObject - The state object of the component
+ * @param {React.Dispatch<React.SetStateAction<T>>} setStateObject - The state setter of the component
  */
-interface IPropsDemoComponent {
+export interface IPropsDemoComponent<T> extends IPropsBBBase {
   name: string;
-  child: React.ReactElement<any>;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  stateObject: Record<string, any>;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  setStateObject: Dispatch<SetStateAction<any>>;
+  child: React.ReactElement;
+  stateObject: T;
+  setStateObject: React.Dispatch<React.SetStateAction<T>>;
 }
 
 /**
  * DemoComponent
- * A basic component to help demo components
+ * Renders a component with its state editor
  */
-export default function DemoComponent(Props: IPropsDemoComponent): React.ReactElement | null {
-  const { name, child, stateObject, setStateObject } = Props;
-  const [showComponent, setShowComponent] = useState<boolean>(true);
+export default function DemoComponent<T extends object>({
+  name,
+  child,
+  stateObject,
+  setStateObject,
+}: IPropsDemoComponent<T>): React.ReactElement {
+  const [showState, setShowState] = useState(false);
   const isBBModal = name === 'BBModal';
 
-  useEffect(() => {
-    // if modal, hide by default
-    if (isBBModal) {
-      setShowComponent(false);
-    }
-  }, [name, isBBModal]);
-
   return (
-    <div className={styles.containerDemoComponent}>
-      <BBText size="large">{name}</BBText>
-      <div>
-        {showComponent &&
-          (isBBModal ? (
-            React.cloneElement(
-              child,
-              {
-                ...stateObject,
-                onConfirm: () => setShowComponent(false),
-                onDismiss: () => setShowComponent(false),
-              },
-              <BBText>Test</BBText>
-            )
-          ) : (
-            <div className={styles.containerComponent}>{child}</div>
-          ))}
-        {isBBModal && (
-          <BBButton
-            onClick={() => {
-              setShowComponent(!showComponent);
-            }}
-            text={showComponent ? 'Hide' : 'Show'}
-          />
-        )}
-        <hr />
-        <StateEditor state={stateObject} setState={setStateObject} />
+    <div className={styles.container}>
+      <div className={styles.containerTopRow}>
+        <div className={styles.containerName}>{name}</div>
+        <button onClick={() => setShowState(!showState)} className={styles.buttonShowState}>
+          {showState ? 'Hide' : 'Show'} State
+        </button>
       </div>
+      <div className={styles.containerComponent}>
+        {isBBModal
+          ? React.cloneElement(child, {
+              ...stateObject,
+              onConfirm: () => alert('Confirmed!'),
+              onDismiss: () => {
+                const props = child.props as { onDismiss?: () => void };
+                if (props.onDismiss && typeof props.onDismiss === 'function') {
+                  props.onDismiss();
+                }
+              },
+            })
+          : child}
+      </div>
+
+      {showState && (
+        <div className={styles.containerState}>
+          <StateEditor stateObject={stateObject} setStateObject={setStateObject} />
+        </div>
+      )}
     </div>
   );
 }

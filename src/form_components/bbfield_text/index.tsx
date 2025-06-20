@@ -22,13 +22,14 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
   const {
     register,
     fieldName,
+    type,
     required = false,
-    type = 'text',
-    placeholder,
     autocomplete,
     onChange,
-    size = 'md',
     value,
+    size = 'md',
+    className,
+    placeholder,
     onKeyDown,
   } = Props;
 
@@ -38,7 +39,7 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
   };
 
   const sharedProps = {
-    className: classnames(styles.form_control, styles[size]),
+    className: classnames(styles.form_control, styles[size], className),
     id: fieldName,
     autoComplete: getAutoComplete(),
     required: required,

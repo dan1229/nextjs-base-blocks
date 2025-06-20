@@ -13,7 +13,6 @@ import BBNavbarItem from '../bbnavbar_item';
 import BBText from '../bbtext';
 import BBTooltip from '../bbtooltip';
 import DemoComponent from '../demo_components/demo_component';
-import BBFieldCheckbox from '../form_components/bbfield_checkbox';
 import type { IPropsBBAlert } from '../bbalert';
 import type { IPropsBBButton } from '../bbbutton';
 import type { IPropsBBCard } from '../bbcard';
@@ -77,19 +76,11 @@ const DemoPage = () => {
     href: '',
   });
   // BB Collapsible
-  // TODO (DN 4/2024) - the types for the props here is a bit of a workaround, colorArrow should be a prop of the header
   const [stateBBCollapsible, setStateBBCollapsible] = useState<IPropsBBCollapsible>({
-    colorBackground: 'primary',
-    colorBorder: 'transparent',
-    elevation: 'none',
-    onClick: () => alert('You clicked the collapsible!'),
-    noBorder: false,
-    children: 'TODO - fix collapsible implementation',
-    className: '',
-    href: '',
-    isExpandedInitial: false,
-    onExpanded: () => {},
-    onCollapsed: () => {},
+    isExpandedInitial: true,
+    onExpanded: undefined,
+    onCollapsed: undefined,
+    children: '',
   });
   // BB Divider
   const [stateBBDivider, setStateBBDivider] = useState<IPropsBBDivider>({
@@ -225,8 +216,8 @@ const DemoPage = () => {
           name="BBCollapsible"
           child={
             <BBCollapsible {...stateBBCollapsible}>
-              <BBCollapsible.Header {...stateBBCollapsible} />
-              <BBCollapsible.Content {...stateBBCollapsible} />
+              <BBCollapsible.Header>Header</BBCollapsible.Header>
+              <BBCollapsible.Content>Content</BBCollapsible.Content>
             </BBCollapsible>
           }
           stateObject={stateBBCollapsible}

@@ -1,64 +1,51 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import styles from './styles.module.scss';
-import type { Dispatch, SetStateAction } from 'react';
-
-const BlacklistProps = ['onClick', 'idForm', 'extraFooter', 'children'];
 
 /**
- * IPropsStateEditor
- * @param {Record<string, any>} state - The state to display
- * @param {Dispatch<SetStateAction<Record<string, any>>>} setState - The function to set the state
+ * PROPS
+ *
+ * @param {object} stateObject - The state object of the component
+ * @param {React.Dispatch<React.SetStateAction<any>>} setStateObject - The state setter of the component
  */
-interface IPropsStateEditor {
-  state: Record<string, any> | undefined;
-  setState: Dispatch<SetStateAction<any>>;
+export interface IPropsStateEditor<T> {
+  stateObject: T;
+  setStateObject: React.Dispatch<React.SetStateAction<T>>;
 }
 
 /**
  * StateEditor
- * A basic component to help edit state of a component
- * allows for simple CRUD of said props - no validation or anything
+ * @param {object} stateObject - The state object of the component
+ * @param {function} setStateObject - The state setter of the component
+ * @returns {React.ReactElement} - The state editor component
  */
-export default function StateEditor(Props: IPropsStateEditor): React.ReactElement | null {
-  const { state, setState } = Props;
-  const handleChange = (key: string, value: any) => {
-    setState((prevState: any) => ({ ...prevState, [key]: value }));
+export default function StateEditor<T extends object>({ stateObject, setStateObject }: IPropsStateEditor<T>): React.ReactElement {
+  const handleStateChange = (key: keyof T, value: T[keyof T]) => {
+    setStateObject((prevState) => ({
+      ...prevState,
+      [key]: value,
+    }));
   };
-  if (!state) return null;
+
+  const renderValue = (key: keyof T, value: T[keyof T]) => {
+    if (typeof value === 'boolean') {
+      return <input type="checkbox" checked={value} onChange={(e) => handleStateChange(key, e.target.checked as T[keyof T])} />;
+    }
+    // For other primitive types, use a text input.
+    return <input type="text" value={String(value)} onChange={(e) => handleStateChange(key, e.target.value as T[keyof T])} />;
+  };
 
   return (
-    <div className={styles.containerStateEditor}>
-      {Object.entries(state).map(([key, value]) => {
-        if (BlacklistProps.includes(key)) return null;
+    <div className={styles.container}>
+      {Object.keys(stateObject).map((key) => {
+        // A simple blacklist for props that are complex objects or not meant to be edited here.
+        if (key === 'children' || key === 'icon' || key === 'extraFooter') return null;
 
+        const value = stateObject[key as keyof T];
         return (
-          <div key={key} className={styles.containerField}>
-            <label htmlFor={key} className={styles.containerLabel}>
-              {key}
-            </label>
-            {typeof value === 'object' ? (
-              <div className={styles.containerObjectInputs}>
-                {Object.keys(value).map((subKey) => {
-                  const combinedKey = `${key}.${subKey}`;
-                  return (
-                    <div key={combinedKey} className={styles.containerObjectFieldInput}>
-                      <label htmlFor={subKey} className={styles.containerLabel}>
-                        {subKey}
-                      </label>
-                      <input
-                        id={combinedKey}
-                        type="text"
-                        value={value[subKey]}
-                        onChange={(e) => handleChange(key, { ...value, [subKey]: e.target.value })}
-                      />
-                    </div>
-                  );
-                })}
-              </div>
-            ) : (
-              <input id={key} type="text" value={value} onChange={(e) => handleChange(key, e.target.value)} />
-            )}
+          <div key={key} className={styles.row}>
+            <div className={styles.key}>{key}</div>
+            <div className={styles.value}>{renderValue(key as keyof T, value)}</div>
           </div>
         );
       })}
