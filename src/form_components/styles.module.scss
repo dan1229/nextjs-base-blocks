@@ -51,7 +51,7 @@ $form-color-width: 0.25rem !default;
 $form-file-button-color: var(--white) !default;
 $form-file-button-border-color: var(--form-file-button-border-color, $grey-dark) !default;
 $form-file-button-hover-bg: var(--primary-color) !default;
-$form-file-button-hover-color: var(--form-file-button-hover-color, var(--text-color-default)) !default;
+$form-file-button-hover-color: var(--form-file-button-hover-color, $text-color-default) !default;
 $input-plaintext-color: var(--white) !default;
 $form-label-font-family: var(--form-label-font-family, var(--font-family-main, inherit)) !default;
 $input-font-size: $font-size-base !default;
