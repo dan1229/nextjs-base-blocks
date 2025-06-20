@@ -1,9 +1,10 @@
 import classnames from 'classnames';
 import React from 'react';
-import { Controller, FieldError } from 'react-hook-form';
+import { Controller } from 'react-hook-form';
 import InputWrapper from '../input_wrapper';
 import styles from '../styles.module.scss';
 import type { IPropsBBBaseForm, TBBFieldBaseSize, TBBFieldBaseTypes } from '../../types';
+import type { FieldError } from 'react-hook-form';
 
 /**
  * PROPS

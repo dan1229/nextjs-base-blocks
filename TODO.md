@@ -93,6 +93,7 @@
 - add cypress tests for hooks like use outside click
 
 
+
 ----
 ### 2.1.0
 
@@ -101,6 +102,17 @@
 #### DEMO PAGE IMPROVEMENTS!!! MAKE IT GREAT!!!
 - see above
 - overall get it working a bit better though
+
+
+
+
+
+
+
+#### improve actual defaults in each component
+- try on an app with no global variables set and try to make it look good
+-
+- update defaults in readme as well
 
 
 ----
@@ -152,17 +164,6 @@
 -
 - add back 'sticky' prop
   - is it working?
-
-
-
-
-
-
-
-#### improve actual defaults in each component
-- try on an app with no global variables set and try to make it look good
--
-- update defaults in readme as well
 
 
 

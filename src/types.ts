@@ -1,5 +1,5 @@
 import type React from 'react';
-import type { Control, FieldError } from 'react-hook-form';
+import type { Control, FieldError, FieldValues } from 'react-hook-form';
 
 /**
  * ALL TYPES
@@ -184,7 +184,7 @@ export type TBBTextColor =
  * @param {React.RefObject<HTMLInputElement>=} inputRef - Ref for the input
  */
 interface IPropsBBBaseFormBase {
-  control?: Control<any>;
+  control?: Control<FieldValues>;
   fieldName: string;
   label?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;

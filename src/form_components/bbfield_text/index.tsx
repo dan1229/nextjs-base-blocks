@@ -60,9 +60,9 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
           };
 
           if (type === 'textarea') {
-            return <textarea {...sharedProps} />;
+            return <textarea {...sharedProps} onChange={onChange} />;
           }
-          return <input {...sharedProps} type={type} />;
+          return <input {...sharedProps} type={type} onChange={onChange} />;
         }}
       />
     </InputWrapper>
