@@ -1,9 +1,13 @@
 import classnames from 'classnames';
 import React from 'react';
+import type { FieldError } from 'react-hook-form';
+import type {
+  IPropsBBBaseForm,
+  TBBFieldBaseSize,
+  TBBFieldBaseTypes
+} from '../../types';
 import InputWrapper from '../input_wrapper';
 import styles from '../styles.module.scss';
-import type { IPropsBBBaseForm, TBBFieldBaseSize, TBBFieldBaseTypes } from '../../types';
-import type { FieldError } from 'react-hook-form';
 
 /**
  * PROPS
@@ -22,8 +26,10 @@ export interface IPropsBBFieldBase {
 /**
  * BBFIELD BASE
  */
-export default function BBFieldBase(Props: IPropsBBFieldBase & IPropsBBBaseForm): React.ReactElement {
-  const { register, fieldName, type, required = false, autocomplete, onChange, value, size = 'md', className } = Props;
+export default function BBFieldBase(
+  Props: IPropsBBFieldBase & IPropsBBBaseForm
+): React.ReactElement {
+  const { register, type, autocomplete, value, size = 'md', className } = Props;
 
   const getAutoComplete = (): string => {
     switch (autocomplete) {
@@ -45,8 +51,14 @@ export default function BBFieldBase(Props: IPropsBBFieldBase & IPropsBBBaseForm)
         className={classnames(styles.form_control, styles[size], className)}
         type={type}
         autoComplete={getAutoComplete()}
-        defaultValue={typeof value === 'string' || typeof value === 'number' || Array.isArray(value) ? value : undefined}
-        {...(register && register(fieldName, { required, onChange }))}
+        defaultValue={
+          typeof value === 'string' ||
+          typeof value === 'number' ||
+          Array.isArray(value)
+            ? value
+            : undefined
+        }
+        {...(register || {})}
       />
     </InputWrapper>
   );
