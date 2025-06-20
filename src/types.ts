@@ -49,7 +49,12 @@ export type TBBButtonVariant =
   | 'transparent-accent';
 export type TBBButtonSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 export type TBBButtonElevation = 'none' | 'low' | 'medium' | 'high';
-export type TBBButtonIconAlign = 'left' | 'right' | 'above' | 'below' | 'space-between';
+export type TBBButtonIconAlign =
+  | 'left'
+  | 'right'
+  | 'above'
+  | 'below'
+  | 'space-between';
 
 /**
  * BBCard
@@ -97,9 +102,32 @@ export type TBBDividerColor =
 
 export type TBBDividerOrientation = 'horizontal' | 'vertical';
 export type TBBDividerStyle = 'solid' | 'dashed' | 'dotted';
-export type TBBDividerThickness = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl';
-export type TBBDividerLength = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl' | 'full';
-export type TBBDividerMargin = 'none' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl';
+export type TBBDividerThickness =
+  | 'xs'
+  | 's'
+  | 'm'
+  | 'l'
+  | 'xl'
+  | 'xxl'
+  | 'xxxl';
+export type TBBDividerLength =
+  | 'xs'
+  | 's'
+  | 'm'
+  | 'l'
+  | 'xl'
+  | 'xxl'
+  | 'xxxl'
+  | 'full';
+export type TBBDividerMargin =
+  | 'none'
+  | 'xs'
+  | 's'
+  | 'm'
+  | 'l'
+  | 'xl'
+  | 'xxl'
+  | 'xxxl';
 
 /**
  * BBModal
@@ -128,9 +156,22 @@ export type TBBNavbarItemColorBorder =
 /**
  * BBLoadingSpinner
  */
-export type TBBLoadingSpinnerVariants = 'default' | 'double circle' | 'circle bounce' | 'spinning square';
+export type TBBLoadingSpinnerVariants =
+  | 'default'
+  | 'double circle'
+  | 'circle bounce'
+  | 'spinning square';
 export type TBBLoadingSpinnerSizes = 'sm' | 'md' | 'lg';
-export type TBBLoadingSpinnerColor = 'primary' | 'secondary' | 'accent' | 'danger' | 'success' | 'warning' | 'info' | 'black' | 'white';
+export type TBBLoadingSpinnerColor =
+  | 'primary'
+  | 'secondary'
+  | 'accent'
+  | 'danger'
+  | 'success'
+  | 'warning'
+  | 'info'
+  | 'black'
+  | 'white';
 
 /**
  * BBTooltip
@@ -140,7 +181,14 @@ export type TBBLoadingSpinnerColor = 'primary' | 'secondary' | 'accent' | 'dange
 /**
  * BBText
  */
-export type TBBTextSize = 'tiny' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge' | 'xxxlarge';
+export type TBBTextSize =
+  | 'tiny'
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'xlarge'
+  | 'xxlarge'
+  | 'xxxlarge';
 export type TBBTextColor =
   | 'grey_light'
   | 'grey_dark'
@@ -188,7 +236,11 @@ interface IPropsBBBaseFormBase {
   control?: Control<any>;
   fieldName: string;
   label?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
+  onChange?: (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => void;
   value?: string | number | string[];
   required?: boolean;
   autocomplete?: string;

@@ -1,9 +1,13 @@
 import classnames from 'classnames';
 import React from 'react';
 import { Controller } from 'react-hook-form';
+import type {
+  IBBFieldDropdownOptions,
+  IPropsBBBaseForm,
+  TBBFieldBaseSize
+} from '../../types';
 import InputWrapper from '../input_wrapper';
 import styles from '../styles.module.scss';
-import type { IBBFieldDropdownOptions, IPropsBBBaseForm, TBBFieldBaseSize } from '../../types';
 
 /**
  * PROPS
@@ -19,8 +23,19 @@ export interface IPropsBBFieldDropdown {
 /**
  * BBFIELD DROPDOWN
  */
-export default function BBFieldDropdown(Props: IPropsBBFieldDropdown & IPropsBBBaseForm): React.ReactElement {
-  const { options, fieldName, required, autocomplete, onChange, size = 'md', control, value } = Props;
+export default function BBFieldDropdown(
+  Props: IPropsBBFieldDropdown & IPropsBBBaseForm
+): React.ReactElement {
+  const {
+    options,
+    fieldName,
+    required,
+    autocomplete,
+    onChange,
+    size = 'md',
+    control,
+    value
+  } = Props;
 
   const getAutoComplete = (): string => {
     if (autocomplete) return autocomplete;
