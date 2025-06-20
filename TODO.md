@@ -78,10 +78,8 @@
 - generally improve
 
 
-----
+---
 ## Coming soon!?
-
-
 #### add tests for demo page(s)?
 - is that redundant? whats coverage at?
 
