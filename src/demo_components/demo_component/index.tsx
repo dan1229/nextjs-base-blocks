@@ -14,7 +14,7 @@ import type { Dispatch, SetStateAction } from 'react';
  */
 interface IPropsDemoComponent {
   name: string;
-  child: React.ReactNode;
+  child: React.ReactElement<any>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   stateObject: Record<string, any>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -44,7 +44,7 @@ export default function DemoComponent(Props: IPropsDemoComponent): React.ReactEl
         {showComponent &&
           (isBBModal ? (
             React.cloneElement(
-              child as React.ReactElement,
+              child,
               {
                 ...stateObject,
                 onConfirm: () => setShowComponent(false),

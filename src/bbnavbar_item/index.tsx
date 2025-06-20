@@ -80,7 +80,7 @@ export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElem
   useEffect(() => {
     let found = false;
     children?.forEach((child) => {
-      if (removeSlashes(currentPath) === removeSlashes(child.props.href)) {
+      if (removeSlashes(currentPath) === removeSlashes((child.props as { href: string }).href)) {
         found = true;
       }
     });

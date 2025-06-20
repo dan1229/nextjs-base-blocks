@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { JSX } from 'react';
 import styles from './styles.module.scss';
 import type { TBBTextSize, TBBTextColor } from '../types';
 

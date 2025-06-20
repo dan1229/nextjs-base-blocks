@@ -1,6 +1,11 @@
 {
   "extends": "next/core-web-vitals",
-  "rules": {
-    "@next/next/no-html-link-for-pages": ["error", "src/app/"]
-  }
-} 
+  "overrides": [
+    {
+      "files": ["src/app/form-components/page.tsx"],
+      "rules": {
+        "@next/next/no-html-link-for-pages": "off"
+      }
+    }
+  ]
+}
