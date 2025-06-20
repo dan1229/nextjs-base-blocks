@@ -22,7 +22,7 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
   const {
     register,
     fieldName,
-    type,
+    type = 'text',
     required = false,
     autocomplete,
     onChange,
