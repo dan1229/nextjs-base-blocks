@@ -104,6 +104,7 @@ const FormComponentsPage = () => {
           child={<BBFieldText {...stateBBFieldText} />}
           stateObject={stateBBFieldText}
           setStateObject={setStateBBFieldText}
+          control={control}
         />
 
         <DemoComponent
@@ -111,6 +112,7 @@ const FormComponentsPage = () => {
           child={<BBFieldText {...{ ...stateBBFieldText, helperTextType: 'tooltip', helperText: 'This helper text is a tooltip!' }} />}
           stateObject={{ ...stateBBFieldText, helperTextType: 'tooltip', helperText: 'This helper text is a tooltip!' }}
           setStateObject={setStateBBFieldText}
+          control={control}
         />
 
         <DemoComponent
@@ -118,6 +120,7 @@ const FormComponentsPage = () => {
           child={<BBFieldCheckbox {...stateBBFieldCheckbox} />}
           stateObject={stateBBFieldCheckbox}
           setStateObject={setStateBBFieldCheckbox}
+          control={control}
         />
 
         <DemoComponent
@@ -125,6 +128,7 @@ const FormComponentsPage = () => {
           child={<BBFieldFile {...stateBBFieldFile} />}
           stateObject={stateBBFieldFile}
           setStateObject={setStateBBFieldFile}
+          control={control}
         />
 
         <DemoComponent
@@ -132,6 +136,7 @@ const FormComponentsPage = () => {
           child={<BBFieldSelectMultiple {...stateBBFieldSelectMultiple} />}
           stateObject={stateBBFieldSelectMultiple}
           setStateObject={setStateBBFieldSelectMultiple}
+          control={control}
         />
       </div>
     </div>

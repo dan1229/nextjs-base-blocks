@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Control } from 'react-hook-form';
 import StateEditor from '../state_editor';
 import styles from './styles.module.scss';
 import type { IPropsBBBase } from '../../types';
@@ -10,12 +11,14 @@ import type { IPropsBBBase } from '../../types';
  * @param {React.ReactElement} child - The component to render
  * @param {T} stateObject - The state object of the component
  * @param {React.Dispatch<React.SetStateAction<T>>} setStateObject - The state setter of the component
+ * @param {React.Dispatch<React.SetStateAction<T>>} control - The control object of the component
  */
 export interface IPropsDemoComponent<T> extends IPropsBBBase {
   name: string;
   child: React.ReactElement;
   stateObject: T;
   setStateObject: React.Dispatch<React.SetStateAction<T>>;
+  control?: Control<any>;
 }
 
 /**
@@ -27,6 +30,7 @@ export default function DemoComponent<T extends object>({
   child,
   stateObject,
   setStateObject,
+  control,
 }: IPropsDemoComponent<T>): React.ReactElement {
   const [showState, setShowState] = useState(false);
   const isBBModal = name === 'BBModal';
@@ -56,7 +60,14 @@ export default function DemoComponent<T extends object>({
 
       {showState && (
         <div className={styles.containerState}>
-          <StateEditor stateObject={stateObject} setStateObject={setStateObject} />
+          <StateEditor
+            stateObject={stateObject}
+            setStateObject={(newState) =>
+              setStateObject(
+                typeof newState === 'function' ? (prevState) => ({ ...newState(prevState), control }) : { ...newState, control }
+              )
+            }
+          />
         </div>
       )}
     </div>

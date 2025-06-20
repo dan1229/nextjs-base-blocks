@@ -1,9 +1,9 @@
 import classnames from 'classnames';
 import React from 'react';
 import { Controller } from 'react-hook-form';
-import type { IPropsBBBaseForm, TBBFieldTextType } from '../../types';
 import InputWrapper from '../input_wrapper';
 import styles from '../styles.module.scss';
+import type { IPropsBBBaseForm, TBBFieldTextType } from '../../types';
 
 /**
  * PROPS
@@ -13,17 +13,13 @@ import styles from '../styles.module.scss';
  */
 export interface IPropsBBFieldText {
   type?: TBBFieldTextType;
-  onKeyDown?: React.KeyboardEventHandler<
-    HTMLInputElement | HTMLTextAreaElement
-  >;
+  onKeyDown?: React.KeyboardEventHandler<HTMLInputElement | HTMLTextAreaElement>;
 }
 
 /**
  * BBFIELD TEXT
  */
-export default function BBFieldText(
-  Props: IPropsBBFieldText & IPropsBBBaseForm
-): React.ReactElement {
+export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm): React.ReactElement {
   const {
     control,
     fieldName,
@@ -35,7 +31,7 @@ export default function BBFieldText(
     size = 'md',
     className,
     placeholder,
-    onKeyDown
+    onKeyDown,
   } = Props;
 
   const getAutoComplete = (): string => {
@@ -60,13 +56,30 @@ export default function BBFieldText(
             autoComplete: getAutoComplete(),
             required: required,
             placeholder: placeholder,
-            onKeyDown: onKeyDown
+            onKeyDown: onKeyDown,
           };
 
           if (type === 'textarea') {
-            return <textarea {...sharedProps} onChange={onChange} />;
+            return (
+              <textarea
+                {...sharedProps}
+                onChange={(e) => {
+                  field.onChange(e);
+                  if (onChange) onChange(e);
+                }}
+              />
+            );
           }
-          return <input {...sharedProps} type={type} onChange={onChange} />;
+          return (
+            <input
+              {...sharedProps}
+              type={type}
+              onChange={(e) => {
+                field.onChange(e);
+                if (onChange) onChange(e);
+              }}
+            />
+          );
         }}
       />
     </InputWrapper>
