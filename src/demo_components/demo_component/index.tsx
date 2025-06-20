@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Control } from 'react-hook-form';
 import StateEditor from '../state_editor';
 import styles from './styles.module.scss';
 import type { IPropsBBBase } from '../../types';
+import type { Control } from 'react-hook-form';
 
 /**
  * PROPS

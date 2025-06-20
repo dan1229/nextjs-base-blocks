@@ -3,9 +3,9 @@ import React from 'react';
 import { Controller } from 'react-hook-form';
 import BBCard from '../../bbcard';
 import BBText from '../../bbtext';
-import type { IBBFieldSelectCardOptions, IPropsBBBaseForm } from '../../types';
 import InputWrapper from '../input_wrapper';
 import styles from './styles.module.scss';
+import type { IBBFieldSelectCardOptions, IPropsBBBaseForm } from '../../types';
 
 /**
  * PROPS
