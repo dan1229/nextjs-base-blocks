@@ -182,16 +182,13 @@ TODO - write specific test cases to write
 
 
 
-file upload doesnt look great in light Mode
-- change 'browse' text color
-- try to add a border for the button it looks meh
-
-
 ### [1.6.0] - 2025-MM-DD
 - `BBLoadingSpinner`
   - Added `color` prop to allow for custom colors.
 - `BBModal`
-  - `z-index` increased default and set as a variable: `--modal-z-index`.
+  - `z-index` increased and set as a variable: `--modal-z-index`.
+- `BBFieldFile`
+  - Improved styling for light mode.
                                             
 -------------------------------------------------------
 
