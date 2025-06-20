@@ -39,7 +39,7 @@ export default function StateEditor<T extends object>({ stateObject, setStateObj
     <div className={styles.container}>
       {Object.keys(stateObject).map((key) => {
         // A simple blacklist for props that are complex objects or not meant to be edited here.
-        if (key === 'children' || key === 'icon' || key === 'extraFooter') return null;
+        if (key === 'children' || key === 'icon' || key === 'extraFooter' || key === 'control') return null;
 
         const value = stateObject[key as keyof T];
         return (
