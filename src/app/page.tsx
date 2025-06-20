@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import BBAlert from '../bbalert';
 import BBButton from '../bbbutton';
@@ -201,7 +202,6 @@ const DemoPage = () => {
       <hr />
       <div>
         <BBText size="xlarge">BB Components</BBText>
-        <BBFieldCheckbox fieldName="test" required={false} />
         <DemoComponent name="BBAlert" child={<BBAlert {...stateBBAlert} />} stateObject={stateBBAlert} setStateObject={setStateBBAlert} />
         <DemoComponent
           name="BBButton"

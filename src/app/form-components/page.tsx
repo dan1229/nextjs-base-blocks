@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import BBLink from '../../bblink';
 import BBText from '../../bbtext';

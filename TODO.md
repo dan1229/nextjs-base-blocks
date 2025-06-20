@@ -78,6 +78,18 @@
 - generally improve
 
 
+----
+## Coming soon!?
+
+
+#### add tests for demo page(s)?
+- is that redundant? whats coverage at?
+
+
+#### add support for coverage for cypress tests
+- coverage
+  - add codecov
+
 
 
 ----
@@ -89,37 +101,19 @@
 - see above
 - overall get it working a bit better though
 
----
-lue e#### Cypress Testing
 
+----
+### 1.6.0
 
-TODO - write specific test cases to write
-- e.g., for each base blocks component
-
-
-##### cypress tests
-- add cypress component testing
-
-
-
-##### code cov
-- hook up code cov and coverage
 
 
 
 #### cypress testing
 - install
-  - write basic components tests
-  - should / could these use the demo page?
-    - are those just separate tests?
-- coverage
-  - add codecov
+  - write basic components tests for every single components
 -
-- add TODOs for future tests
-
-
-----
-### 1.6.0
+- write basic tests for each component
+- TODOs to flesh out?
 
 
 
@@ -183,6 +177,7 @@ TODO - write specific test cases to write
 
 
 ### [1.6.0] - 2025-MM-DD
+- Converted demo  app to use the app router!
 - `BBLoadingSpinner`
   - Added `color` prop to allow for custom colors.
 - `BBModal`
