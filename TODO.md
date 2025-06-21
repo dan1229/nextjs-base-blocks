@@ -179,13 +179,6 @@
 
 
 
-#### bb tooltip style improvements
-- looks meh
--
-- button
-- fields
-  - all?
-
 ### [2.0.0] - 2025-06-DD
 - `BBModal`
   - Improved overall styling for a more modern look and feel.

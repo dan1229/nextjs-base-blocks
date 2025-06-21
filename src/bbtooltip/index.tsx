@@ -2,11 +2,11 @@
 
 import classnames from 'classnames';
 import React, { useState } from 'react';
+import { AiOutlineQuestion } from 'react-icons/ai';
 import BBButton from '../bbbutton';
 import BBText from '../bbtext';
 import styles from './styles.module.scss';
 import type { TBBButtonVariant } from '../types';
-import { AiOutlineQuestion } from 'react-icons/ai';
 
 /**
  * PROPS
@@ -41,11 +41,7 @@ export default function BBTooltip(Props: IPropsBBTooltip): React.ReactElement {
       onMouseLeave={() => setIsVisible(false)}
     >
       {/* actual button displayed */}
-      <BBButton
-        variant={variant}
-        text={text}
-        icon={showIcon ? { icon: <AiOutlineQuestion />, align: 'right', size: 'small' } : undefined}
-      />
+      <BBButton variant={variant} text={text} icon={showIcon ? { icon: <AiOutlineQuestion />, align: 'right' } : undefined} />
 
       {/* tooltip content */}
       <div
