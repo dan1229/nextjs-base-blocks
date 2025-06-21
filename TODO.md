@@ -169,6 +169,8 @@
 #### cypress testing
 - install
 
+on build
+Type error: 'bbbutton.cy.tsx' cannot be compiled under '--isolatedModules' because it is considered a global script file. Add an import, export, or an empty 'export {}' statement to make it a module.
 
 make sure deps are good
 - used --legacy-peer-deps
