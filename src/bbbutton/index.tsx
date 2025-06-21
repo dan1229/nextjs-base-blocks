@@ -49,6 +49,7 @@ interface IPropsBBButtonIcon {
  * @param {boolean=} openInNewTab - Whether to open the link in a new tab
  * @param {string=} helperTextOnHover - The helper text to display on hover
  * @param {string=} classNameHelperText - Extra class name for the helper text
+ * @param {boolean=} noBorder - Whether to remove the border of the button
  */
 export interface IPropsBBButton {
   text?: string;
@@ -69,6 +70,7 @@ export interface IPropsBBButton {
   openInNewTab?: boolean;
   helperTextOnHover?: string;
   classNameHelperText?: string;
+  noBorder?: boolean;
 }
 
 /**
@@ -94,6 +96,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     openInNewTab = false,
     helperTextOnHover,
     classNameHelperText,
+    noBorder = false,
   } = Props;
 
   // set button disabling if appropriate
@@ -277,6 +280,8 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     styles.base,
     getClassVariant(),
     getClassElevation(),
+    // if no border, show no border
+    noBorder ? styles.noBorder : null,
     // if disabled, show disabled
     disabledRes ? styles.disabled : null,
     // if transparent, show transparent

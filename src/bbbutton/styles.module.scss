@@ -23,9 +23,9 @@ $accent-color: var(--accent-color, #ff6b6c);
 $accent-light-color: var(--accent-light-color, lighten(#ff6b6c, 10%));
 $accent-dark-color: var(--accent-dark-color, darken(#ff6b6c, 10%));
 
-$danger-color: var(--danger-color, #78cdd7);
-$danger-light-color: var(--danger-light-color, lighten(#78cdd7, 10%));
-$danger-dark-color: var(--danger-dark-color, darken(#78cdd7, 10%));
+$danger-color: var(--danger-color, #da2f2f);
+$danger-light-color: var(--danger-light-color, lighten(#da2f2f, 10%));
+$danger-dark-color: var(--danger-dark-color, darken(#da2f2f, 10%));
 
 $success-color: var(--success-color, #50c758);
 $success-light-color: var(--success-light-color, lighten(#50c758, 10%));
@@ -44,6 +44,10 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   }
 }
 
+.noBorder {
+  border: none !important;
+}
+
 //container main with hover classes
 .containerMain {
   width: 100%;
@@ -60,14 +64,14 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   }
 }
 
-// vertical for content i.e., if icons and text are in a column
-.contentVertical {
-  flex-direction: column;
-}
-
 // transparent
 .transparent {
   background-color: transparent !important;
+}
+
+// vertical for content i.e., if icons and text are in a column
+.contentVertical {
+  flex-direction: column;
 }
 
 // base space between
