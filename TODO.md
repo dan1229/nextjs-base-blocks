@@ -168,14 +168,17 @@
 
 #### cypress testing
 - install
-  - write basic components tests for every single components
--
+
+
+make sure deps are good
+- used --legacy-peer-deps
+
+add to ci
+
 - write basic tests for each component
+
+
 - TODOs to flesh out?
-
-
-
-
 
 
 
@@ -200,6 +203,8 @@
   - Visual clean up
   - Fixed mis-alignment of full text bubble
   - `showIcon` prop can now be used to hide the icon and wrap `children` elements.
+- Installed Cypress component testing
+  - TODO
 - Package version updates
 
 -------------------------------------------------------
