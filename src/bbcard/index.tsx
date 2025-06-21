@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import styles from './styles.module.scss';
 import type { IPropsBBBase, TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation } from '../types';
+import Link from 'next/link';
 
 const getClassColorBackgroundCard = (colorBackground: string | null): string | undefined => {
   if (!colorBackground) {
@@ -180,9 +181,9 @@ const BBCard = (Props: IPropsBBBase & IPropsBBCard) => {
       )}
     >
       {href ? (
-        <a href={href} className={styles.linkCard} target="_blank" rel="noopener noreferrer">
+        <Link href={href} className={styles.linkCard} target="_blank" rel="noopener noreferrer">
           {children}
-        </a>
+        </Link>
       ) : (
         children
       )}

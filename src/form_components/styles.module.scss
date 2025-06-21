@@ -50,6 +50,8 @@ $input-height-lg: ($font-size-lg + $input-padding-y * 2 + $input-border-width * 
 $input-height: ($font-size-base + $input-padding-y * 2 + $input-border-width * 2) !default;
 $form-color-width: 0.25rem !default;
 $form-file-button-color: var(--white) !default;
+$form-file-button-border-color: var(--form-file-button-border-color, $grey-dark) !default;
+$form-file-button-hover-color: var(--form-file-button-hover-color, $text-color-default) !default;
 $form-file-button-hover-bg: var(--primary-color) !default;
 $input-plaintext-color: var(--white) !default;
 $form-label-font-family: var(--form-label-font-family, var(--font-family-main, inherit)) !default;
@@ -151,6 +153,7 @@ $form-label-font-family: var(--form-label-font-family, var(--font-family-main, i
     background-color: $input-bg;
     pointer-events: none;
     border-color: inherit;
+    border-color: $form-file-button-border-color;
     border-style: solid;
     border-width: 0;
     border-inline-end-width: $input-border-width;
@@ -159,6 +162,7 @@ $form-label-font-family: var(--form-label-font-family, var(--font-family-main, i
 
   &:hover:not(:disabled):not([readonly])::file-selector-button {
     background-color: $form-file-button-hover-bg;
+    color: $form-file-button-hover-color;
   }
 }
 

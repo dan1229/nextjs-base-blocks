@@ -13,6 +13,7 @@ import type {
   TBBTextSize,
   TBBTextColor,
 } from '../types';
+import Link from 'next/link';
 
 /**
  * ICON PROPS
@@ -300,14 +301,14 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     baseClassNames += ` ${styles.link}`;
     if (onClick) console.warn('BBButton: Both onClick and href are defined. onClick will be ignored.');
     return (
-      <a
+      <Link
         href={href}
         className={baseClassNames}
         target={openInNewTab ? '_blank' : '_self'}
         rel={openInNewTab ? 'noreferrer noopener' : undefined}
       >
         {mainComponent}
-      </a>
+      </Link>
     );
   }
 
