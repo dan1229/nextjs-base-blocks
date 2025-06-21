@@ -78,10 +78,26 @@
 - generally improve
 
 
+---
+### Coming soon!!
+
+
+#### add tests for demo page(s)?
+- is that redundant? whats coverage at?
+
+
+#### add support for coverage for cypress tests
+- coverage
+  - add codecov
+
+
+#### test for hooks
+- add cypress tests for hooks like use outside click
+
 
 
 ----
-### 1.7.0
+### 2.1.0
 
 
 
@@ -89,37 +105,34 @@
 - see above
 - overall get it working a bit better though
 
+
+
+#### convert to app router
+- yup
+
 ---
-lue e#### Cypress Testing
-
-
-TODO - write specific test cases to write
-- e.g., for each base blocks component
-
-
-##### cypress tests
-- add cypress component testing
 
 
 
-##### code cov
-- hook up code cov and coverage
+
+#### improve actual defaults in each component
+- try on an app with no global variables set and try to make it look good
+-
+- update defaults in readme as well
+
+
+----
+### 2.0.0
+
 
 
 
 #### cypress testing
 - install
-  - write basic components tests
-  - should / could these use the demo page?
-    - are those just separate tests?
-- coverage
-  - add codecov
+  - write basic components tests for every single components
 -
-- add TODOs for future tests
-
-
-----
-### 1.6.0
+- write basic tests for each component
+- TODOs to flesh out?
 
 
 
@@ -135,6 +148,9 @@ TODO - write specific test cases to write
 - looks meh
 
 
+#### bbmodal
+- just doesnt look great
+- header color is a bit similar?
 
 #### bbnavbar item
 - width?
@@ -157,17 +173,6 @@ TODO - write specific test cases to write
 
 
 
-
-
-
-
-#### improve actual defaults in each component
-- try on an app with no global variables set and try to make it look good
--
-- update defaults in readme as well
-
-
-
 #### bb field dropdown styling
 - add arrow or something
   - add to global styling
@@ -175,14 +180,7 @@ TODO - write specific test cases to write
 
 
 
-#### convert to app router
-- yup
-
-
-
-
-
-### [1.6.0] - 2025-MM-DD
+### [2.0.0] - 2025-06-DD
 - `BBLoadingSpinner`
   - Added `color` prop to allow for custom colors.
 - `BBModal`

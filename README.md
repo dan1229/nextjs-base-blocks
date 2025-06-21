@@ -26,7 +26,6 @@ The goal here is to provide consistent and easy to use components that can be us
 You must have the following installed to use this submodule
 - [React Hook Forms](https://react-hook-form.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
-- [Recoil](https://recoiljs.org/)
 - [Sass](https://sass-lang.com/)
 - [Node Sass](https://www.npmjs.com/package/node-sass)
 - [classnames](https://www.npmjs.com/package/classnames)
