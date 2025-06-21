@@ -40,7 +40,7 @@ $tooltip-padding: var(--tooltip-padding, 0.5rem 1rem);
 $tooltip-border-radius: var(--tooltip-border-radius, 8px);
 $tooltip-z-index: var(--tooltip-z-index, 1070);
 $tooltip-box-shadow: var(--tooltip-box-shadow, 0 4px 6px rgba(0, 0, 0, 0.1));
-$tooltip-arrow-size: var(--tooltip-arrow-size, 8px);
+$tooltip-arrow-size: var(--tooltip-arrow-size, 4px);
 $tooltip-transition-duration: 0.2s;
 
 .tooltipContainer {
@@ -50,9 +50,9 @@ $tooltip-transition-duration: 0.2s;
 
 .tooltip {
   position: absolute;
-  bottom: calc(100% + #{$tooltip-arrow-size});
-  left: 50%;
-  transform: translateX(-50%);
+  // bottom: calc(100% + #{$tooltip-arrow-size});
+  // left: 50%;
+  // transform: translateX(-50%);
   z-index: $tooltip-z-index;
   padding: $tooltip-padding;
   background-color: $grey-darkest;
@@ -68,11 +68,12 @@ $tooltip-transition-duration: 0.2s;
     visibility: visible;
   }
 
+  // arrow part of speech bubble
   &::after {
     content: '';
     position: absolute;
     top: 100%;
-    left: 50%;
+    left: 12%;
     transform: translateX(-50%);
     border-width: $tooltip-arrow-size;
     border-style: solid;

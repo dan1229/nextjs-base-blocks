@@ -186,6 +186,8 @@
 - fields
   - all?
 
+tooltip icon
+- can show or hide via `showIcon` prop
 
 
 ### [2.0.0] - 2025-06-DD
@@ -207,6 +209,8 @@
   - Added theming variables for file input button.
 - `BBTooltip`
   - Visual clean up
+  - Fixed mis-alignment of full text bubble
+  - Added `showIcon` prop for a question mark icon
 - Package version updates
 
 -------------------------------------------------------
