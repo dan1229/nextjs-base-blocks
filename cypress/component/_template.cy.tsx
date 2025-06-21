@@ -6,6 +6,20 @@
 // import type { IPropsComponentName } from '../../src/component-folder';
 import { testResponsiveViewports, createTestData } from '../support/test-helpers';
 
+// TODO replace these with actual components
+interface IPropsComponentName {
+  children: React.ReactNode;
+  onClick?: () => void;
+  className?: string;
+  variant?: string;
+  size?: string;
+  disabled?: boolean;
+}
+
+const ComponentName = ({ children }: IPropsComponentName) => {
+  return <div>{children}</div>;
+};
+
 describe('ComponentName Component Tests', () => {
   const defaultProps: IPropsComponentName = {
     // Add required props here

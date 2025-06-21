@@ -182,7 +182,7 @@
 - 🔄 TODO: Add tests for remaining components (use template in cypress/component/_template.cy.tsx)
 - 🔄 TODO: Fix dependency conflicts (may need to update React types)
 - 🔄 TODO: Add visual regression testing
-- 🔄 TODO: Add to CI/CD pipeline
+- ✅ DONE: Added CI/CD pipeline with GitHub Actions
 
 
 - install
@@ -227,6 +227,7 @@ add to ci
   - Created test framework with custom commands and utilities
   - Added documentation and template for easy test creation
   - Implemented example tests for BBButton, BBAlert, and BBCard
+  - Added CI/CD pipeline with GitHub Actions for automated testing
 - Package version updates
 
 -------------------------------------------------------
