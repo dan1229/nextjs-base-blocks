@@ -44,6 +44,10 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   }
 }
 
+.noBorder {
+  border: none !important;
+}
+
 //container main with hover classes
 .containerMain {
   width: 100%;
@@ -63,11 +67,6 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
 // vertical for content i.e., if icons and text are in a column
 .contentVertical {
   flex-direction: column;
-}
-
-// transparent
-.transparent {
-  background-color: transparent !important;
 }
 
 // base space between
@@ -755,4 +754,13 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
 
 .iconInfo {
   color: $info-color;
+}
+
+.focus {
+  // ... existing code ...
+}
+
+.inverse-warning {
+  background-color: variables.$white;
+  // ... existing code ...
 }

@@ -1,4 +1,5 @@
 $grey-light: var(--grey-light, #8199c2);
+$modal-z-index: var(--modal-z-index, 9999);
 
 .containerModal {
   position: fixed;
@@ -6,7 +7,7 @@ $grey-light: var(--grey-light, #8199c2);
   height: 100%;
   top: 0;
   left: 0;
-  z-index: var(--modal-z-index, 9999);
+  z-index: $modal-z-index;
   padding: 2rem;
   display: flex;
   flex-direction: column;

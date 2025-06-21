@@ -191,6 +191,8 @@
 - `BBModal`
   - Improved overall styling for a more modern look and feel.
   - `z-index` is now set via a variable: `--modal-z-index`.
+- `BBButton`
+  - `noBorder` prop added
 - `BBNavbarItem`
   - added `navbar-item-min-width` to set min width
 - `BBFieldDropdown`

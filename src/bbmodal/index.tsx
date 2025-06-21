@@ -110,7 +110,12 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
           <div className={styles.headerRow}>
             <BBText size={headerTextSize}>{title}</BBText>
             {!!onDismissRes && (
-              <BBButton onClick={onDismissRes} variant="secondary" icon={{ icon: <AiOutlineClose size={20} />, color: 'grey_dark' }} />
+              <BBButton
+                onClick={onDismissRes}
+                transparent
+                borderColor="transparent"
+                icon={{ icon: <AiOutlineClose size={20} />, color: 'grey_dark' }}
+              />
             )}
           </div>
         </BBCard.Header>
