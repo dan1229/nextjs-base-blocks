@@ -176,15 +176,16 @@
 
 
 
-#### add bbtooltip to other components
-- button
-- fields
-  - all?
 
 
 
 #### bb tooltip style improvements
 - looks meh
+-
+- button
+- fields
+  - all?
+
 
 
 ### [2.0.0] - 2025-06-DD

@@ -29,7 +29,7 @@ $danger-dark-color: var(--danger-dark-color, darken(#da2f2f, 10%));
 
 $success-color: var(--success-color, #50c758);
 $success-light-color: var(--success-light-color, lighten(#50c758, 10%));
-$success-dark-color: var(--success-dark-color, darken($success-color, 10%));
+$success-dark-color: var(--success-dark-color, darken(#50c758, 10%));
 
 $warning-color: var(--warning-color, #f1c500);
 $warning-light-color: var(--warning-light-color, lighten(#f1c500, 10%));
