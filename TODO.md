@@ -191,6 +191,8 @@
 
 
 ### [2.0.0] - 2025-06-DD
+- `BBNavbarItem`
+  - added `navbar-item-min-width` to set min width
 - `BBFieldDropdown`
   - Improved styling by adding a custom dropdown arrow.
 - `BBLoadingSpinner`
