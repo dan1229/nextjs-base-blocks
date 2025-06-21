@@ -188,6 +188,7 @@
 - `BBFieldFile`
   - Improved styling for light mode.
   - Added theming variables for file input button.
+- Package version updates
                                             
 -------------------------------------------------------
 
