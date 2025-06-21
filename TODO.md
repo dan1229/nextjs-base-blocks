@@ -96,6 +96,10 @@
 
 
 
+#### aria labels
+- for accessibility support
+
+
 ----
 ### 2.1.0
 
