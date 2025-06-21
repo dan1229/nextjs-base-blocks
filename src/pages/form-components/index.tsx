@@ -3,13 +3,13 @@ import BBLink from '../../bblink';
 import BBText from '../../bbtext';
 import DemoComponent from '../../demo_components/demo_component';
 import BBFieldCheckbox from '../../form_components/bbfield_checkbox';
+import BBFieldDropdown from '../../form_components/bbfield_dropdown';
 import BBFieldFile from '../../form_components/bbfield_file';
 import BBFieldText from '../../form_components/bbfield_text';
-import BBFieldDropdown from '../../form_components/bbfield_dropdown';
 import type { IPropsBBFieldCheckbox } from '../../form_components/bbfield_checkbox';
+import type { IPropsBBFieldDropdown } from '../../form_components/bbfield_dropdown';
 import type { IPropsBBFieldText } from '../../form_components/bbfield_text';
 import type { IPropsBBBaseForm } from '../../types';
-import { IPropsBBFieldDropdown } from '../../form_components/bbfield_dropdown';
 
 /**
  * FORM COMPONENTS DEMO PAGE
