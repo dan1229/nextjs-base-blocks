@@ -113,7 +113,16 @@
 ---
 
 
+#### work on defaults / variables system
+- should defaults rely on other vars?
+  - should / could the defaults in general be better? theyre awful right now
+-
+- more broadly what's the deal with these scss variables?
+  - there's a lot which is fine
+  - need to mark which are 'required'
+    - are any other than the 'big colors'?
 
+    
 
 #### improve actual defaults in each component
 - try on an app with no global variables set and try to make it look good
@@ -189,7 +198,7 @@
   - Improved styling for light mode.
   - Added theming variables for file input button.
 - Package version updates
-                                            
+
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)

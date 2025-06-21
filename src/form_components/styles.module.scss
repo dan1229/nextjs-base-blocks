@@ -49,11 +49,11 @@ $input-height: ($font-size-base + $input-padding-y * 2 + $input-border-width * 2
 $input-height-lg: ($font-size-lg + $input-padding-y * 2 + $input-border-width * 2) !default;
 $input-height: ($font-size-base + $input-padding-y * 2 + $input-border-width * 2) !default;
 $form-color-width: 0.25rem !default;
-$form-file-button-color: var(--white) !default;
+$form-file-button-color: var(--form-file-button-color, white) !default;
 $form-file-button-border-color: var(--form-file-button-border-color, $grey-dark) !default;
 $form-file-button-hover-color: var(--form-file-button-hover-color, $text-color-default) !default;
-$form-file-button-hover-bg: var(--primary-color) !default;
-$input-plaintext-color: var(--white) !default;
+$form-file-button-hover-bg: var(--form-file-button-hover-bg, var(--primary-color)) !default;
+$input-plaintext-color: var(--form-input-plaintext-color, white) !default;
 $form-label-font-family: var(--form-label-font-family, var(--font-family-main, inherit)) !default;
 
 .form_group {
@@ -149,7 +149,7 @@ $form-label-font-family: var(--form-label-font-family, var(--font-family-main, i
     padding: $input-padding-y $input-padding-x;
     margin: (-$input-padding-y) (-$input-padding-x);
     margin-inline-end: $input-padding-x;
-    color: var(--text-color-default);
+    color: $form-file-button-color;
     background-color: $input-bg;
     pointer-events: none;
     border-color: inherit;
@@ -255,11 +255,21 @@ textarea {
 
 .form_control_color {
   width: $form-color-width;
-  height: $input-height;
+  height: auto;
   padding: $input-padding-y;
 
   &:not(:disabled):not([readonly]) {
     cursor: pointer;
+  }
+
+  &::-moz-color-swatch {
+    border: 0 !important; // stylelint-disable-line declaration-no-important
+    border-radius: $input-border-radius;
+  }
+
+  &::-webkit-color-swatch {
+    border: 0 !important; // stylelint-disable-line declaration-no-important
+    border-radius: $input-border-radius;
   }
 
   &.sm {

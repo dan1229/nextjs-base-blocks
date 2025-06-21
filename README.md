@@ -91,6 +91,9 @@ html,
   --accent-color: #{$accent-color};
   --accent-dark-color: #{darken($accent-color, 10%)};
   --accent-light-color: #{lighten($accent-color, 10%)};
+  --primary-darkest-color: #{darken($primary-color, 20%)};
+  --secondary-darkest-color: #{darken($secondary-color, 20%)};
+  --accent-darkest-color: #{darken($accent-color, 20%)};
   // general colors
   --white: #fff;
   --black: rgb(35, 35, 35);
@@ -164,6 +167,9 @@ html,
   --form-input-disabled-border-color: var(--grey-dark);
   --form-file-button-border-color: var(--grey-dark);
   --form-file-button-hover-color: var(--text-color-default);
+  --form-file-button-color: var(--text-color-default);
+  --form-file-button-hover-bg: var(--primary-color);
+  --form-input-plaintext-color: var(--white);
   // bb text
   --text-color-default: rgb(24, 24, 24);
   --text-size-xs: 0.6rem;
