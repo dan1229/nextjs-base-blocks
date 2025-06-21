@@ -31,20 +31,22 @@ export default function BBFieldDropdown(Props: IPropsBBFieldDropdown & IPropsBBB
    */
   return (
     <InputWrapper {...Props}>
-      <select
-        className={classnames(styles.form_control, styles[size])}
-        id={fieldName}
-        required={required}
-        onChange={onChange}
-        autoComplete={getAutoComplete()}
-        {...register}
-      >
-        {options.map((val: IBBFieldDropdownOptions) => (
-          <option key={val.value} value={val.value}>
-            {val.label}
-          </option>
-        ))}
-      </select>
+      <div className={styles.dropdown_wrapper}>
+        <select
+          className={classnames(styles.form_control, styles[size])}
+          id={fieldName}
+          required={required}
+          onChange={onChange}
+          autoComplete={getAutoComplete()}
+          {...register}
+        >
+          {options.map((val: IBBFieldDropdownOptions) => (
+            <option key={val.value} value={val.value}>
+              {val.label}
+            </option>
+          ))}
+        </select>
+      </div>
     </InputWrapper>
   );
 }
