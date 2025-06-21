@@ -5,6 +5,32 @@ export default defineConfig({
     devServer: {
       framework: 'next',
       bundler: 'webpack',
+      webpackConfig: {
+        module: {
+          rules: [
+            {
+              test: /\.module\.(scss|sass)$/,
+              use: [
+                'style-loader',
+                {
+                  loader: 'css-loader',
+                  options: {
+                    modules: {
+                      localIdentName: '[name]__[local]___[hash:base64:5]',
+                    },
+                  },
+                },
+                'sass-loader',
+              ],
+            },
+            {
+              test: /\.(scss|sass)$/,
+              exclude: /\.module\.(scss|sass)$/,
+              use: ['style-loader', 'css-loader', 'sass-loader'],
+            },
+          ],
+        },
+      },
     },
     specPattern: 'cypress/component/**/*.cy.{js,jsx,ts,tsx}',
     indexHtmlFile: 'cypress/support/component-index.html',
