@@ -1,3 +1,4 @@
+import React from 'react';
 import BBCard from '../../src/bbcard';
 import type { IPropsBBCard } from '../../src/bbcard';
 import { testResponsiveViewports, createTestData } from '../support/test-helpers';

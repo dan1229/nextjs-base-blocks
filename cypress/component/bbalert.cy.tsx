@@ -1,3 +1,4 @@
+import React from 'react';
 import BBAlert from '../../src/bbalert';
 import type { IPropsBBAlert } from '../../src/bbalert';
 

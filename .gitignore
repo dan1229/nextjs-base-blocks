@@ -13,3 +13,8 @@ node_modules/
 
 
 .cursor/
+
+
+# cypress
+cypress/screenshots/
+cypress/videos/

@@ -170,35 +170,31 @@
 
 
 
-### Immediate Tasks
 
-
-
-- [ ] Add tests for remaining components (use template):
-  - BBModal, BBNavbar, BBNavbarItem, BBTooltip, BBDivider
-  - BBLoadingSpinner, BBCollapsible, BBLink
-  - Form components (BBField*, input wrappers)
-- [ ] Resolve dependency conflicts (React type versions)
-- 🔄 TODO: Add tests for remaining components (use template in cypress/component/_template.cy.tsx)
-- 🔄 TODO: Fix dependency conflicts (may need to update React types)
-- 🔄 TODO: Add visual regression testing
-- ✅ DONE: Added CI/CD pipeline with GitHub Actions
-
-
-- install
 
 on build
 Type error: 'bbbutton.cy.tsx' cannot be compiled under '--isolatedModules' because it is considered a global script file. Add an import, export, or an empty 'export {}' statement to make it a module.
 
 make sure deps are good
 - used --legacy-peer-deps
+- [ ] Resolve dependency conflicts (React type versions)
 
-add to ci
+
+dont test the template lol
+
+clean up ci?
+
+do we need cypress/tsconfig?
+
+
+
+
 
 - write basic tests for each component
-
-
-- TODOs to flesh out?
+- [ ] Add tests for remaining components (use template):
+  - BBModal, BBNavbar, BBNavbarItem, BBTooltip, BBDivider
+  - BBLoadingSpinner, BBCollapsible, BBLink
+  - Form components (BBField*, input wrappers)
 
 
 

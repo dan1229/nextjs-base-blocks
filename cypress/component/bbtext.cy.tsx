@@ -1,3 +1,4 @@
+import React from 'react';
 import BBText from '../../src/bbtext';
 import type { IPropsBBText } from '../../src/bbtext';
 import { testResponsiveViewports, createTestData } from '../support/test-helpers';
@@ -127,4 +128,3 @@ describe('BBText Component Tests', () => {
     });
   });
 });
-export {};
