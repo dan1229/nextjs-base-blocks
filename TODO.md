@@ -141,6 +141,16 @@
 
 
 
+#### bbnavbar 
+- vertical mobile styling
+  - emulate styling from flutter navbars a bit
+    - i.e., always slide out kinda thing
+-
+- add back 'sticky' prop
+  - is it working?
+
+
+
 #### bbnavbar item - allow these to just be components instead of strings
 - i.e., let me pass a button to a navbar as a child component?
 
@@ -176,27 +186,6 @@
 #### bbmodal
 - just doesnt look great
 - header color is a bit similar?
-
-#### bbnavbar item
-- width?
-  - set min width somehow?
--
-
-
-
-#### bbnavbar 
-- vertical mobile styling
-  - emulate styling from flutter navbars a bit
-    - i.e., always slide out kinda thing
--
-- add back 'sticky' prop
-  - is it working?
-
-
-
-#### bb field dropdown styling
-- add arrow or something
-  - add to global styling
 
 
 

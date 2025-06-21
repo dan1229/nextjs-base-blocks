@@ -48,6 +48,7 @@ $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
 }
 
 .navbarItemBase {
+  min-width: var(--navbar-item-min-width);
   list-style-type: none;
   margin: 0 0.15rem;
   border-radius: $border-radius;
