@@ -36,6 +36,7 @@ $input-placeholder-color: var(--form-input-placeholder-color, $grey-lightest) !d
 $input-disabled-color: var(--form-input-disabled-color, $grey-lightest) !default;
 $input-disabled-bg: var(--form-input-disabled-bg, $bg-color) !default;
 $input-disabled-border-color: var(--form-input-disabled-border-color, $grey-dark) !default;
+$form-select-arrow-color: var(--form-select-arrow-color, #{$input-color}) !default;
 // form input padding / margin / size variables
 $input-padding-x-sm: ($input-padding-x * 0.75) !default;
 $input-padding-x: $input-padding-x !default;
@@ -163,6 +164,37 @@ $form-label-font-family: var(--form-label-font-family, var(--font-family-main, i
   &:hover:not(:disabled):not([readonly])::file-selector-button {
     background-color: $form-file-button-hover-bg;
     color: $form-file-button-hover-color;
+  }
+}
+
+.dropdown_wrapper {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 12px;
+    background-color: $form-select-arrow-color;
+    mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    pointer-events: none;
+  }
+}
+
+// stylelint-disable-next-line selector-no-qualifying-type
+select.form_control {
+  padding-right: 2.5rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &::-ms-expand {
+    display: none;
   }
 }
 

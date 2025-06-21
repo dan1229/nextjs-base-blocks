@@ -3,9 +3,11 @@ import BBLink from '../../bblink';
 import BBText from '../../bbtext';
 import DemoComponent from '../../demo_components/demo_component';
 import BBFieldCheckbox from '../../form_components/bbfield_checkbox';
+import BBFieldDropdown from '../../form_components/bbfield_dropdown';
 import BBFieldFile from '../../form_components/bbfield_file';
 import BBFieldText from '../../form_components/bbfield_text';
 import type { IPropsBBFieldCheckbox } from '../../form_components/bbfield_checkbox';
+import type { IPropsBBFieldDropdown } from '../../form_components/bbfield_dropdown';
 import type { IPropsBBFieldText } from '../../form_components/bbfield_text';
 import type { IPropsBBBaseForm } from '../../types';
 
@@ -45,6 +47,27 @@ const FormComponentsPage = () => {
     label: 'Demo File Upload',
     className: '',
     onChange: () => {},
+    size: 'md',
+  });
+
+  // BB Field Dropdown
+  const [stateBBFieldDropdown, setStateBBFieldDropdown] = useState<IPropsBBFieldDropdown & IPropsBBBaseForm>({
+    fieldName: 'demo-dropdown',
+    required: false,
+    label: 'Demo Dropdown',
+    className: '',
+    onChange: (event) => {
+      const selectedValue = event.target.value;
+      setStateBBFieldDropdown((prevState) => ({
+        ...prevState,
+        value: selectedValue,
+      }));
+    },
+    options: [
+      { value: '1', label: 'Option 1' },
+      { value: '2', label: 'Option 2' },
+      { value: '3', label: 'Option 3' },
+    ],
     size: 'md',
   });
 
@@ -123,6 +146,13 @@ const FormComponentsPage = () => {
           child={<BBFieldFile {...stateBBFieldFile} />}
           stateObject={stateBBFieldFile}
           setStateObject={setStateBBFieldFile}
+        />
+
+        <DemoComponent
+          name="BBFieldDropdown"
+          child={<BBFieldDropdown {...stateBBFieldDropdown} />}
+          stateObject={stateBBFieldDropdown}
+          setStateObject={setStateBBFieldDropdown}
         />
 
         {/* TODO not working for some reason */}

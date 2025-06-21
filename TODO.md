@@ -113,6 +113,12 @@
 ---
 
 
+#### rename bb dropdown to bb select?
+- is that more appropriate
+  - def more common name
+- then could merge with bb select multiple
+
+
 #### work on defaults / variables system
 - should defaults rely on other vars?
   - should / could the defaults in general be better? theyre awful right now
@@ -185,11 +191,13 @@
 #### bb field dropdown styling
 - add arrow or something
   - add to global styling
-- wait until form css is figured out
+
 
 
 
 ### [2.0.0] - 2025-06-DD
+- `BBFieldDropdown`
+  - Improved styling by adding a custom dropdown arrow.
 - `BBLoadingSpinner`
   - Added `color` prop to allow for custom colors.
 - `BBModal`

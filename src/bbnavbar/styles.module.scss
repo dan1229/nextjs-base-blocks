@@ -25,9 +25,6 @@ $navbar-vertical-width: var(--navbar-vertical-width, 8rem);
 // navbar transition
 $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
 
-// navbar max width
-$navbar-max-width: var(--navbar-max-width, 100%);
-
 /**
  * ELEVATION
  */
@@ -106,7 +103,7 @@ $navbar-max-width: var(--navbar-max-width, 100%);
     top: 0;
 
     > div {
-      max-width: $navbar-max-width;
+      max-width: 100%;
     }
   }
 }
