@@ -121,6 +121,7 @@ html,
   // bb alert
   --alert-border-radius: 8px;
   // bb button
+  --button-base-padding: 0.6rem;
   --button-border-radius: 8px;
   // bb card
   --card-background-default-color: rgb(255, 255, 255);

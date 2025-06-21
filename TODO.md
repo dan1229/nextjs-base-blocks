@@ -194,6 +194,8 @@
   - `z-index` is now set via a variable: `--modal-z-index`.
 - `BBButton`
   - `noBorder` prop added
+  - `--button-base-padding` variable added
+  - Fixed `transparentPrimary`, `transparentSecondary` and `transparentAccent` variants
 - `BBNavbarItem`
   - added `navbar-item-min-width` to set min width
 - `BBFieldDropdown`

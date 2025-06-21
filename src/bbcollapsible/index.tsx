@@ -83,7 +83,7 @@ const Header = (props: IPropsBBCollapsibleSection) => {
     showButtonUp,
     arrowUp = '▲',
     arrowDown = '▼',
-    buttonVariant = 'inverse-primary',
+    buttonVariant = 'transparent-primary',
     buttonTransparent,
     classNameButton,
   } = props;

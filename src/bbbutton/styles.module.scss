@@ -35,9 +35,12 @@ $warning-color: var(--warning-color, #f1c500);
 $warning-light-color: var(--warning-light-color, lighten(#f1c500, 10%));
 $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
 
+$button-base-padding: var(--button-base-padding, 0.6rem);
+$button-base-border-radius: var(--button-base-border-radius, 4px);
+
 // base
 .base {
-  padding: 0.6rem;
+  padding: $button-base-padding;
   border-radius: var(--button-border-radius, 4px);
   &:hover {
     cursor: pointer;
@@ -695,6 +698,93 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
   &:active {
     background-color: $warning-dark-color;
     border: 2px solid $warning-dark-color;
+  }
+}
+
+// TRANSPARENT PRIMARY
+.transparentPrimary {
+  background-color: transparent;
+  border: 1px solid $primary-color;
+
+  * {
+    color: $primary-color;
+  }
+
+  &:hover {
+    background-color: $primary-light-color;
+    border: 1px solid $primary-dark-color;
+
+    * {
+      color: $primary-dark-color;
+    }
+  }
+
+  &:focus {
+    background-color: $primary-dark-color;
+    border: 1px solid $primary-dark-color;
+  }
+
+  &:active {
+    background-color: $primary-dark-color;
+    border: 1px solid $primary-dark-color;
+  }
+}
+
+// TRANSPARENT SECONDARY
+.transparentSecondary {
+  background-color: transparent;
+  border: 1px solid $secondary-color;
+
+  * {
+    color: $secondary-color;
+  }
+
+  &:hover {
+    background-color: $secondary-light-color;
+    border: 1px solid $secondary-dark-color;
+
+    * {
+      color: $secondary-dark-color;
+    }
+  }
+
+  &:focus {
+    background-color: $secondary-dark-color;
+    border: 1px solid $secondary-dark-color;
+  }
+
+  &:active {
+    background-color: $secondary-dark-color;
+    border: 1px solid $secondary-dark-color;
+  }
+}
+
+// TRANSPARENT ACCENT
+.transparentAccent {
+  background-color: transparent;
+  border: 1px solid $accent-color;
+
+  * {
+    color: $accent-color;
+  }
+
+  &:hover {
+    background-color: $accent-light-color;
+    border: 1px solid $accent-dark-color;
+
+    * {
+      color: $accent-dark-color;
+    }
+  }
+
+  &:focus {
+    background-color: $accent-dark-color;
+    border: 1px solid $accent-dark-color;
+  }
+
+  &:active {
+    background-color: $accent-dark-color;
+    border: 1px solid $accent-dark-color;
   }
 }
 
