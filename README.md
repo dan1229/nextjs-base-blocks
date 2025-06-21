@@ -138,10 +138,9 @@ html,
   --modal-z-index: 9999;
   // bb navbar
   --navbar-background-color: rgb(221, 221, 221);
-  --navbar-brand-padding: 0rem;
-  --navbar-icon-mobile-color: #{$primary-color};
+  --navbar-brand-padding: 0;
+  --navbar-icon-mobile-color: var(--primary-color);
   --navbar-transition: all 0.2s ease-in-out;
-  --navbar-max-width: 100%;
   --navbar-vertical-width: 8rem;
   // bb navbar item
   --navbar-item-border-radius: 1rem;
@@ -152,7 +151,7 @@ html,
   --navbar-item-bg-color-active: #{lighten($primary-color, 45%)};
   --navbar-item-bg-color-hover: #{lighten($secondary-color, 20%)};
   --navbar-item-border-thickness: 2px;
-  --navbar-item-border-default-color: #{$primary-color};
+  --navbar-item-border-default-color: var(--primary-color);
   // bb form components
   --form-input-bg: var(--bg-color);
   --form-input-border-color: var(--bg-dark-color);
