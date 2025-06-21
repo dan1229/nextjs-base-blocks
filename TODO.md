@@ -186,10 +186,6 @@
 - fields
   - all?
 
-tooltip icon
-- can show or hide via `showIcon` prop
-
-
 ### [2.0.0] - 2025-06-DD
 - `BBModal`
   - Improved overall styling for a more modern look and feel.
@@ -210,7 +206,7 @@ tooltip icon
 - `BBTooltip`
   - Visual clean up
   - Fixed mis-alignment of full text bubble
-  - Added `showIcon` prop for a question mark icon
+  - `showIcon` prop can now be used to hide the icon and wrap `children` elements.
 - Package version updates
 
 -------------------------------------------------------

@@ -169,6 +169,7 @@ const DemoPage = () => {
     text: 'Hover!',
     content: 'This is a tooltip',
     className: '',
+    showIcon: true,
   });
 
   /**
@@ -265,6 +266,9 @@ const DemoPage = () => {
           stateObject={stateBBTooltip}
           setStateObject={setStateBBTooltip}
         />
+      </div>
+      <div>
+        <BBText size="large">Footer</BBText>
       </div>
     </div>
   );

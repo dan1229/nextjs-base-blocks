@@ -6,6 +6,7 @@ import BBButton from '../bbbutton';
 import BBText from '../bbtext';
 import styles from './styles.module.scss';
 import type { TBBButtonVariant } from '../types';
+import { AiOutlineQuestion } from 'react-icons/ai';
 
 /**
  * PROPS
@@ -15,6 +16,7 @@ import type { TBBButtonVariant } from '../types';
  * @param {string=} content - Custom content to display in tooltip
  * @param {string=} className - Additional classes to apply to tooltip
  * @param {BBTooltipVariant=} variant - Variant of the tooltip
+ * @param {boolean=} showIcon - Show the tooltip icon, default true. If false, wraps children.
  */
 export interface IPropsBBTooltip {
   text?: string;
@@ -22,13 +24,14 @@ export interface IPropsBBTooltip {
   content?: string;
   className?: string;
   variant?: TBBButtonVariant;
+  showIcon?: boolean;
 }
 
 /**
  * BBTooltip
  */
 export default function BBTooltip(Props: IPropsBBTooltip): React.ReactElement {
-  const { text = '?', children, content, className, variant = 'primary' } = Props;
+  const { text = '', children, content, className, variant = 'primary', showIcon = true } = Props;
   const [isVisible, setIsVisible] = useState(false);
 
   return (
@@ -38,7 +41,11 @@ export default function BBTooltip(Props: IPropsBBTooltip): React.ReactElement {
       onMouseLeave={() => setIsVisible(false)}
     >
       {/* actual button displayed */}
-      <BBButton variant={variant} text={text} />
+      <BBButton
+        variant={variant}
+        text={text}
+        icon={showIcon ? { icon: <AiOutlineQuestion />, align: 'right', size: 'small' } : undefined}
+      />
 
       {/* tooltip content */}
       <div
