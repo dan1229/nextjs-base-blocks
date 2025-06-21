@@ -202,6 +202,8 @@
 - `BBFieldFile`
   - Improved styling for light mode.
   - Added theming variables for file input button.
+- `BBTooltip`
+  - Visual clean up
 - Package version updates
 
 -------------------------------------------------------
