@@ -36,6 +36,7 @@
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
     "@typescript-eslint/eslint-plugin": "5.53.0",
+    "css-loader": "7.1.2",
     "cypress": "^14.5.0",
     "eslint": "8.34.0",
     "eslint-config-next": "13.2.3",
@@ -45,6 +46,8 @@
     "eslint-plugin-promise": "6.1.1",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-unused-imports": "2.0.0",
+    "sass-loader": "16.0.5",
+    "style-loader": "4.0.0",
     "typescript": "4.9.5"
   }
 }

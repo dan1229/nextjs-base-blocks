@@ -57,6 +57,16 @@
         --navbar-item-min-width: 120px;
       }
     </style>
+    <!-- Make sure head is available for dynamic style injection -->
+    <script>
+      // Ensure head element is available for CSS injection
+      if (!document.head) {
+        document.head = document.getElementsByTagName('head')[0] || document.createElement('head');
+        if (!document.head.parentNode) {
+          document.documentElement.insertBefore(document.head, document.body);
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="root" data-cy-root></div>
