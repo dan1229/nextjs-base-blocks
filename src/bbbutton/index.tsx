@@ -1,6 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
+import Link from 'next/link';
 import React, { useState, useRef } from 'react';
 import BBText from '../bbtext';
 import styles from './styles.module.scss';
@@ -13,7 +14,6 @@ import type {
   TBBTextSize,
   TBBTextColor,
 } from '../types';
-import Link from 'next/link';
 
 /**
  * ICON PROPS
