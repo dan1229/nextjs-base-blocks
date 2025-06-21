@@ -1,4 +1,3 @@
-$black: var(--black, #000000);
 $grey-light: var(--grey-light, #8199c2);
 
 .containerModal {
@@ -13,7 +12,7 @@ $grey-light: var(--grey-light, #8199c2);
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba($black, 0.6);
+  background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(5px);
 }
 
@@ -37,7 +36,7 @@ $grey-light: var(--grey-light, #8199c2);
   transition: background-color 0.2s;
 
   &:hover {
-    background-color: rgba($black, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
   }
 }
 
