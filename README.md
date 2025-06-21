@@ -151,6 +151,19 @@ html,
   --navbar-item-bg-color-hover: #{lighten($secondary-color, 20%)};
   --navbar-item-border-thickness: 2px;
   --navbar-item-border-default-color: #{$primary-color};
+  // bb form components
+  --form-input-bg: var(--bg-color);
+  --form-input-border-color: var(--bg-dark-color);
+  --form-input-color: var(--text-color-default);
+  --form-input-focus-color: var(--secondary-color);
+  --form-input-focus-bg: var(--bg-color);
+  --form-input-focus-border-color: var(--secondary-color);
+  --form-input-placeholder-color: var(--grey-lightest);
+  --form-input-disabled-color: var(--grey-lightest);
+  --form-input-disabled-bg: var(--bg-color);
+  --form-input-disabled-border-color: var(--grey-dark);
+  --form-file-button-border-color: var(--grey-dark);
+  --form-file-button-hover-color: var(--text-color-default);
   // bb text
   --text-color-default: rgb(24, 24, 24);
   --text-size-xs: 0.6rem;
@@ -167,29 +180,18 @@ html,
   --mobile-text-size-xl: 1.8rem;
   --mobile-text-size-xxl: 2.2rem;
   --mobile-text-size-xxxl: 2.6rem;
-  // bb form components
-  --form-input-bg: var(--bg-color);
-  --form-input-border-color: var(--bg-dark-color);
-  --form-input-color: var(--text-color-default);
-  --form-input-focus-color: var(--secondary-color);
-  --form-input-focus-bg: var(--bg-color);
-  --form-input-focus-border-color: var(--secondary-color);
-  --form-input-placeholder-color: var(--grey-lightest);
-  --form-input-disabled-color: var(--grey-lightest);
-  --form-input-disabled-bg: var(--bg-color);
-  --form-input-disabled-border-color: var(--grey-dark);
-  --form-input-font-family: var(--font-family-main); // Font family for all form fields
-  --form-label-font-family: var(--font-family-main); // Font family for all form field labels
-  --form-file-button-border-color: var(--grey-dark);
-  --form-file-button-hover-color: var(--text-color-default);
   // font family - page router font usage
   --font-family-main: 'Josefin Sans';  // Used for main text
   --font-family-header: 'Montserrat';  // Used for larger fonts/headers
   --font-family-navbar-header: 'Montserrat';  // Used for navbar headers
+  --form-input-font-family: 'Montserrat' // Font family for all form fields
+  --form-label-font-family: 'Montserrat' // Font family for all form field labels
   // font family - app router font usage
   --font-family-main: var(--font-lexend);
   --font-family-header: var(--font-lexend);
   --font-family-navbar-header: var(--font-lexend);
+  --form-input-font-family: var(--font-family-main); // Font family for all form fields
+  --form-label-font-family: var(--font-family-main); // Font family for all form field labels
 }
 ```
 
