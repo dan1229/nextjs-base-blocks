@@ -755,12 +755,3 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
 .iconInfo {
   color: $info-color;
 }
-
-.focus {
-  // ... existing code ...
-}
-
-.inverse-warning {
-  background-color: variables.$white;
-  // ... existing code ...
-}
