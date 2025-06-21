@@ -56,7 +56,13 @@ const FormComponentsPage = () => {
     required: false,
     label: 'Demo Dropdown',
     className: '',
-    onChange: () => {},
+    onChange: (event) => {
+      const selectedValue = event.target.value;
+      setStateBBFieldDropdown((prevState) => ({
+        ...prevState,
+        value: selectedValue,
+      }));
+    },
     options: [
       { value: '1', label: 'Option 1' },
       { value: '2', label: 'Option 2' },
