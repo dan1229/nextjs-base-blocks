@@ -153,6 +153,13 @@ html,
   --navbar-item-bg-color-hover: #{lighten($secondary-color, 20%)};
   --navbar-item-border-thickness: 2px;
   --navbar-item-border-default-color: var(--primary-color);
+  // bb tooltip
+  --tooltip-padding: 0.5rem 1rem;
+  --tooltip-border-radius: 8px;
+  --tooltip-z-index: 1070;
+  --tooltip-transition-duration: 0.2s;
+  --tooltip-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --tooltip-arrow-size: 8px;
   // bb form components
   --form-input-bg: var(--bg-color);
   --form-input-border-color: var(--bg-dark-color);

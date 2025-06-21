@@ -23,9 +23,9 @@ $accent-color: var(--accent-color, #ff6b6c);
 $accent-light-color: var(--accent-light-color, lighten(#ff6b6c, 10%));
 $accent-dark-color: var(--accent-dark-color, darken(#ff6b6c, 10%));
 
-$danger-color: var(--danger-color, #78cdd7);
-$danger-light-color: var(--danger-light-color, lighten(#78cdd7, 10%));
-$danger-dark-color: var(--danger-dark-color, darken(#78cdd7, 10%));
+$danger-color: var(--danger-color, #da2f2f);
+$danger-light-color: var(--danger-light-color, lighten(#da2f2f, 10%));
+$danger-dark-color: var(--danger-dark-color, darken(#da2f2f, 10%));
 
 $success-color: var(--success-color, #50c758);
 $success-light-color: var(--success-light-color, lighten(#50c758, 10%));
@@ -35,6 +35,14 @@ $warning-color: var(--warning-color, #f1c500);
 $warning-light-color: var(--warning-light-color, lighten(#f1c500, 10%));
 $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
 
+// tooltip variables
+$tooltip-padding: 0.5rem 1rem;
+$tooltip-border-radius: 8px;
+$tooltip-z-index: 1070;
+$tooltip-transition-duration: 0.2s;
+$tooltip-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$tooltip-arrow-size: 8px;
+
 .tooltipContainer {
   position: relative;
   display: inline-block;
@@ -42,18 +50,34 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
 
 .tooltip {
   position: absolute;
-  z-index: 1000;
-  padding: 0.5rem 1rem;
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 4px;
+  bottom: calc(100% + #{$tooltip-arrow-size});
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: $tooltip-z-index;
+  padding: $tooltip-padding;
+  background-color: $grey-darkest;
+  border-radius: $tooltip-border-radius;
+  box-shadow: $tooltip-box-shadow;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+  transition: opacity $tooltip-transition-duration ease-in-out, visibility $tooltip-transition-duration ease-in-out;
   white-space: nowrap;
 
   &.visible {
     opacity: 1;
     visibility: visible;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: $tooltip-arrow-size;
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: $grey-darkest;
   }
 }
 
@@ -62,20 +86,38 @@ $warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
  */
 .primary {
   background-color: $primary-color;
+  &::after {
+    border-top-color: $primary-color;
+  }
 }
 
 .secondary {
   background-color: $secondary-color;
+  &::after {
+    border-top-color: $secondary-color;
+  }
 }
 .accent {
   background-color: $accent-color;
+  &::after {
+    border-top-color: $accent-color;
+  }
 }
 .success {
   background-color: $success-color;
+  &::after {
+    border-top-color: $success-color;
+  }
 }
 .warning {
   background-color: $warning-color;
+  &::after {
+    border-top-color: $warning-color;
+  }
 }
 .error {
   background-color: $danger-color;
+  &::after {
+    border-top-color: $danger-color;
+  }
 }
