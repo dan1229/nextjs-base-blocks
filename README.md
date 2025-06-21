@@ -180,6 +180,8 @@ html,
   --form-input-disabled-border-color: var(--grey-dark);
   --form-input-font-family: var(--font-family-main); // Font family for all form fields
   --form-label-font-family: var(--font-family-main); // Font family for all form field labels
+  --form-file-button-border-color: var(--grey-dark);
+  --form-file-button-hover-color: var(--text-color-default);
   // font family - page router font usage
   --font-family-main: 'Josefin Sans';  // Used for main text
   --font-family-header: 'Montserrat';  // Used for larger fonts/headers

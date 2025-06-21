@@ -187,6 +187,7 @@
   - `z-index` increased and set as a variable: `--modal-z-index`.
 - `BBFieldFile`
   - Improved styling for light mode.
+  - Added theming variables for file input button.
                                             
 -------------------------------------------------------
 
