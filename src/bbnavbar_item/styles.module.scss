@@ -37,6 +37,9 @@ $navbar-item-bg-color-active: var(--navbar-item-bg-color-active, $bg-dark-color)
 // same with --navbar-item-text-color-hover and --bg-color
 $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
 
+// set min width
+$navbar-item-min-width: var(--navbar-item-min-width, unset);
+
 .active {
   background-color: $navbar-item-text-color;
   background-color: $navbar-item-bg-color-active;
@@ -48,6 +51,7 @@ $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
 }
 
 .navbarItemBase {
+  min-width: $navbar-item-min-width;
   list-style-type: none;
   margin: 0 0.15rem;
   border-radius: $border-radius;
