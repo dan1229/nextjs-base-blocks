@@ -166,9 +166,10 @@ const DemoPage = () => {
   });
   // BB Tooltip
   const [stateBBTooltip, setStateBBTooltip] = useState<IPropsBBTooltip>({
-    text: 'Hover Me!',
+    text: 'Hover!',
     content: 'This is a tooltip',
     className: '',
+    showIcon: true,
   });
 
   /**
@@ -265,6 +266,9 @@ const DemoPage = () => {
           stateObject={stateBBTooltip}
           setStateObject={setStateBBTooltip}
         />
+      </div>
+      <div>
+        <BBText size="large">Footer</BBText>
       </div>
     </div>
   );

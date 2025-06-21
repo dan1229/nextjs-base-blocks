@@ -176,15 +176,7 @@
 
 
 
-#### add bbtooltip to other components
-- button
-- fields
-  - all?
 
-
-
-#### bb tooltip style improvements
-- looks meh
 
 
 ### [2.0.0] - 2025-06-DD
@@ -193,6 +185,8 @@
   - `z-index` is now set via a variable: `--modal-z-index`.
 - `BBButton`
   - `noBorder` prop added
+  - `--button-base-padding` variable added
+  - Fixed `transparentPrimary`, `transparentSecondary` and `transparentAccent` variants
 - `BBNavbarItem`
   - added `navbar-item-min-width` to set min width
 - `BBFieldDropdown`
@@ -202,6 +196,10 @@
 - `BBFieldFile`
   - Improved styling for light mode.
   - Added theming variables for file input button.
+- `BBTooltip`
+  - Visual clean up
+  - Fixed mis-alignment of full text bubble
+  - `showIcon` prop can now be used to hide the icon and wrap `children` elements.
 - Package version updates
 
 -------------------------------------------------------

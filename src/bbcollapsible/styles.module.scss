@@ -27,4 +27,7 @@ $grey-lightest: var(--grey-lightest, #f5f5f5);
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
+  // override button padding
+  padding: 0.25rem !important;
 }
