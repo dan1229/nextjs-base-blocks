@@ -183,22 +183,16 @@
 - looks meh
 
 
-#### bbmodal
-- just doesnt look great
-- header color is a bit similar?
-
-
-
-
 ### [2.0.0] - 2025-06-DD
+- `BBModal`
+  - Improved overall styling for a more modern look and feel.
+  - `z-index` is now set via a variable: `--modal-z-index`.
 - `BBNavbarItem`
   - added `navbar-item-min-width` to set min width
 - `BBFieldDropdown`
   - Improved styling by adding a custom dropdown arrow.
 - `BBLoadingSpinner`
   - Added `color` prop to allow for custom colors.
-- `BBModal`
-  - `z-index` increased and set as a variable: `--modal-z-index`.
 - `BBFieldFile`
   - Improved styling for light mode.
   - Added theming variables for file input button.

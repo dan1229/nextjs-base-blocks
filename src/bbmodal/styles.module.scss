@@ -10,7 +10,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(82, 86, 105, 0.6);
+  background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(5px);
 }
 
@@ -19,30 +19,44 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
+  padding: 1rem 1.5rem;
 }
 
-.containerHeaderButton {
+.closeButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 }
 
 .modal {
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
 }
 
 .bodyModal {
   overflow-y: auto;
+  padding: 1.5rem;
 }
 
 .containerButtons {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  gap: 4px;
-  padding: 0.5rem;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--grey-light, #eee);
 }
 
 /**
