@@ -136,6 +136,16 @@
 - update defaults in readme as well
 
 
+
+
+
+
+
+#### bbnavbar item - allow these to just be components instead of strings
+- i.e., let me pass a button to a navbar as a child component?
+
+
+
 ----
 ### 2.0.0
 
@@ -171,10 +181,6 @@
 - width?
   - set min width somehow?
 -
-- bbnavbar item - allow these to just be components?
-  - i.e., let me pass a button to a navbar as a child component?
-
-
 
 
 
