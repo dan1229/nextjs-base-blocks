@@ -86,6 +86,11 @@
 - is that redundant? whats coverage at?
 
 
+### Cypress enhancements
+- [ ] Visual regression testing with screenshot comparison
+- [ ] Performance benchmarking for component rendering
+
+
 #### add support for coverage for cypress tests
 - coverage
   - add codecov
@@ -165,8 +170,21 @@
 
 
 
+### Immediate Tasks
 
-#### cypress testing
+
+
+- [ ] Add tests for remaining components (use template):
+  - BBModal, BBNavbar, BBNavbarItem, BBTooltip, BBDivider
+  - BBLoadingSpinner, BBCollapsible, BBLink
+  - Form components (BBField*, input wrappers)
+- [ ] Resolve dependency conflicts (React type versions)
+- 🔄 TODO: Add tests for remaining components (use template in cypress/component/_template.cy.tsx)
+- 🔄 TODO: Fix dependency conflicts (may need to update React types)
+- 🔄 TODO: Add visual regression testing
+- 🔄 TODO: Add to CI/CD pipeline
+
+
 - install
 
 on build
@@ -205,8 +223,10 @@ add to ci
   - Visual clean up
   - Fixed mis-alignment of full text bubble
   - `showIcon` prop can now be used to hide the icon and wrap `children` elements.
-- Installed Cypress component testing
-  - TODO
+- Installed Cypress component testing with comprehensive setup
+  - Created test framework with custom commands and utilities
+  - Added documentation and template for easy test creation
+  - Implemented example tests for BBButton, BBAlert, and BBCard
 - Package version updates
 
 -------------------------------------------------------

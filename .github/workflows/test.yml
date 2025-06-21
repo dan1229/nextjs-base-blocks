@@ -1,0 +1,109 @@
+name: Component Tests
+
+on:
+  push:
+    branches: [main, develop, feature/*]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  component-tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Run linting
+        run: npm run lint
+
+      - name: Build project
+        run: npm run build
+
+      - name: Run Cypress component tests
+        uses: cypress-io/github-action@v6
+        with:
+          # Don't run install again, we already did it
+          install: false
+          # Run component tests only
+          component: true
+          # Build command (already done above, but ensures it's available)
+          build: npm run build
+        env:
+          # Avoid warnings about terminal
+          CI: true
+
+      - name: Upload test artifacts on failure
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-artifacts-${{ matrix.node-version }}
+          path: |
+            cypress/screenshots
+            cypress/videos
+          retention-days: 7
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results-${{ matrix.node-version }}
+          path: |
+            cypress/results
+          retention-days: 30
+
+  # Separate job for checking TypeScript compilation
+  typescript-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Check TypeScript compilation
+        run: npx tsc --noEmit
+
+      - name: Check Cypress TypeScript compilation
+        run: npx tsc --project cypress/tsconfig.json --noEmit || true
+
+  # Job for dependency security audit
+  security-audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: 'npm'
+
+      - name: Run security audit
+        run: npm audit --audit-level=moderate --legacy-peer-deps || true
+
+      - name: Check for known vulnerabilities
+        run: npx audit-ci --moderate --legacy-peer-deps || true

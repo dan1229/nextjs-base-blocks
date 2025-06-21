@@ -2,8 +2,8 @@
 // Template for creating new component tests
 // Copy this file and rename it to match your component
 
-import ComponentName from '../../src/component-folder';
-import type { IPropsComponentName } from '../../src/component-folder';
+// import ComponentName from '../../src/component-folder';
+// import type { IPropsComponentName } from '../../src/component-folder';
 import { testResponsiveViewports, createTestData } from '../support/test-helpers';
 
 describe('ComponentName Component Tests', () => {
