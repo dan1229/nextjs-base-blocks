@@ -46,7 +46,8 @@ export type TBBButtonVariant =
   | 'inverse-warning'
   | 'transparent-primary'
   | 'transparent-secondary'
-  | 'transparent-accent';
+  | 'transparent-accent'
+  | 'text';
 export type TBBButtonSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 export type TBBButtonElevation = 'none' | 'low' | 'medium' | 'high';
 export type TBBButtonIconAlign = 'left' | 'right' | 'above' | 'below' | 'space-between';
