@@ -78,10 +78,26 @@
 - generally improve
 
 
+---
+### Coming soon!!
+
+
+#### add tests for demo page(s)?
+- is that redundant? whats coverage at?
+
+
+#### add support for coverage for cypress tests
+- coverage
+  - add codecov
+
+
+#### test for hooks
+- add cypress tests for hooks like use outside click
+
 
 
 ----
-### 1.7.0
+### 2.1.0
 
 
 
@@ -89,37 +105,43 @@
 - see above
 - overall get it working a bit better though
 
+
+
+#### convert to app router
+- yup
+
 ---
-lue e#### Cypress Testing
 
 
-TODO - write specific test cases to write
-- e.g., for each base blocks component
+#### work on defaults / variables system
+- should defaults rely on other vars?
+  - should / could the defaults in general be better? theyre awful right now
+-
+- more broadly what's the deal with these scss variables?
+  - there's a lot which is fine
+  - need to mark which are 'required'
+    - are any other than the 'big colors'?
+
+    
+
+#### improve actual defaults in each component
+- try on an app with no global variables set and try to make it look good
+-
+- update defaults in readme as well
 
 
-##### cypress tests
-- add cypress component testing
+----
+### 2.0.0
 
-
-
-##### code cov
-- hook up code cov and coverage
 
 
 
 #### cypress testing
 - install
-  - write basic components tests
-  - should / could these use the demo page?
-    - are those just separate tests?
-- coverage
-  - add codecov
+  - write basic components tests for every single components
 -
-- add TODOs for future tests
-
-
-----
-### 1.6.0
+- write basic tests for each component
+- TODOs to flesh out?
 
 
 
@@ -135,6 +157,9 @@ TODO - write specific test cases to write
 - looks meh
 
 
+#### bbmodal
+- just doesnt look great
+- header color is a bit similar?
 
 #### bbnavbar item
 - width?
@@ -157,17 +182,6 @@ TODO - write specific test cases to write
 
 
 
-
-
-
-
-#### improve actual defaults in each component
-- try on an app with no global variables set and try to make it look good
--
-- update defaults in readme as well
-
-
-
 #### bb field dropdown styling
 - add arrow or something
   - add to global styling
@@ -175,21 +189,16 @@ TODO - write specific test cases to write
 
 
 
-#### convert to app router
-- yup
-
-
-
-
-
-### [1.6.0] - 2025-MM-DD
+### [2.0.0] - 2025-06-DD
 - `BBLoadingSpinner`
   - Added `color` prop to allow for custom colors.
 - `BBModal`
   - `z-index` increased and set as a variable: `--modal-z-index`.
 - `BBFieldFile`
   - Improved styling for light mode.
-                                            
+  - Added theming variables for file input button.
+- Package version updates
+
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)

@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import Link from 'next/link';
 import React from 'react';
 import styles from './styles.module.scss';
 import type { IPropsBBBase, TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation } from '../types';
@@ -180,9 +181,9 @@ const BBCard = (Props: IPropsBBBase & IPropsBBCard) => {
       )}
     >
       {href ? (
-        <a href={href} className={styles.linkCard} target="_blank" rel="noopener noreferrer">
+        <Link href={href} className={styles.linkCard} target="_blank" rel="noopener noreferrer">
           {children}
-        </a>
+        </Link>
       ) : (
         children
       )}

@@ -26,7 +26,6 @@ The goal here is to provide consistent and easy to use components that can be us
 You must have the following installed to use this submodule
 - [React Hook Forms](https://react-hook-form.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
-- [Recoil](https://recoiljs.org/)
 - [Sass](https://sass-lang.com/)
 - [Node Sass](https://www.npmjs.com/package/node-sass)
 - [classnames](https://www.npmjs.com/package/classnames)
@@ -92,6 +91,9 @@ html,
   --accent-color: #{$accent-color};
   --accent-dark-color: #{darken($accent-color, 10%)};
   --accent-light-color: #{lighten($accent-color, 10%)};
+  --primary-darkest-color: #{darken($primary-color, 20%)};
+  --secondary-darkest-color: #{darken($secondary-color, 20%)};
+  --accent-darkest-color: #{darken($accent-color, 20%)};
   // general colors
   --white: #fff;
   --black: rgb(35, 35, 35);
@@ -137,7 +139,6 @@ html,
   // bb navbar
   --navbar-background-color: rgb(221, 221, 221);
   --navbar-brand-padding: 0rem;
-  --navbar-container-brand-margin: 0.25rem;
   --navbar-icon-mobile-color: #{$primary-color};
   --navbar-transition: all 0.2s ease-in-out;
   --navbar-max-width: 100%;
@@ -152,6 +153,22 @@ html,
   --navbar-item-bg-color-hover: #{lighten($secondary-color, 20%)};
   --navbar-item-border-thickness: 2px;
   --navbar-item-border-default-color: #{$primary-color};
+  // bb form components
+  --form-input-bg: var(--bg-color);
+  --form-input-border-color: var(--bg-dark-color);
+  --form-input-color: var(--text-color-default);
+  --form-input-focus-color: var(--secondary-color);
+  --form-input-focus-bg: var(--bg-color);
+  --form-input-focus-border-color: var(--secondary-color);
+  --form-input-placeholder-color: var(--grey-lightest);
+  --form-input-disabled-color: var(--grey-lightest);
+  --form-input-disabled-bg: var(--bg-color);
+  --form-input-disabled-border-color: var(--grey-dark);
+  --form-file-button-border-color: var(--grey-dark);
+  --form-file-button-hover-color: var(--text-color-default);
+  --form-file-button-color: var(--text-color-default);
+  --form-file-button-hover-bg: var(--primary-color);
+  --form-input-plaintext-color: var(--white);
   // bb text
   --text-color-default: rgb(24, 24, 24);
   --text-size-xs: 0.6rem;
@@ -168,27 +185,18 @@ html,
   --mobile-text-size-xl: 1.8rem;
   --mobile-text-size-xxl: 2.2rem;
   --mobile-text-size-xxxl: 2.6rem;
-  // bb form components
-  --form-input-bg: var(--bg-color);
-  --form-input-border-color: var(--bg-dark-color);
-  --form-input-color: var(--text-color-default);
-  --form-input-focus-color: var(--secondary-color);
-  --form-input-focus-bg: var(--bg-color);
-  --form-input-focus-border-color: var(--secondary-color);
-  --form-input-placeholder-color: var(--grey-lightest);
-  --form-input-disabled-color: var(--grey-lightest);
-  --form-input-disabled-bg: var(--bg-color);
-  --form-input-disabled-border-color: var(--grey-dark);
-  --form-input-font-family: var(--font-family-main); // Font family for all form fields
-  --form-label-font-family: var(--font-family-main); // Font family for all form field labels
   // font family - page router font usage
   --font-family-main: 'Josefin Sans';  // Used for main text
   --font-family-header: 'Montserrat';  // Used for larger fonts/headers
   --font-family-navbar-header: 'Montserrat';  // Used for navbar headers
+  --form-input-font-family: 'Montserrat' // Font family for all form fields
+  --form-label-font-family: 'Montserrat' // Font family for all form field labels
   // font family - app router font usage
   --font-family-main: var(--font-lexend);
   --font-family-header: var(--font-lexend);
   --font-family-navbar-header: var(--font-lexend);
+  --form-input-font-family: var(--font-family-main); // Font family for all form fields
+  --form-label-font-family: var(--font-family-main); // Font family for all form field labels
 }
 ```
 
