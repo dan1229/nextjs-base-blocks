@@ -159,7 +159,7 @@ html,
   --tooltip-border-radius: 8px;
   --tooltip-z-index: 1070;
   --tooltip-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --tooltip-arrow-size: 8px;
+  --tooltip-arrow-size: 4px;
   // bb form components
   --form-input-bg: var(--bg-color);
   --form-input-border-color: var(--bg-dark-color);

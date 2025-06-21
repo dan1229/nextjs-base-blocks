@@ -149,7 +149,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
       case 'inverse-success':
         return styles.inverseSuccess;
       case 'inverse-warning':
-        return styles.transparentPrimary;
+        return styles.inverseWarning;
       case 'transparent-primary':
         return styles.transparentPrimary;
       case 'transparent-secondary':
