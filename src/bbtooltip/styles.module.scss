@@ -50,9 +50,9 @@ $tooltip-transition-duration: 0.2s;
 
 .tooltip {
   position: absolute;
-  // bottom: calc(100% + #{$tooltip-arrow-size});
-  // left: 50%;
-  // transform: translateX(-50%);
+  bottom: calc(100% + #{$tooltip-arrow-size} + 1px);
+  left: 1rem;
+  transform: translateX(-12%);
   z-index: $tooltip-z-index;
   padding: $tooltip-padding;
   background-color: $grey-darkest;
@@ -61,7 +61,8 @@ $tooltip-transition-duration: 0.2s;
   opacity: 0;
   visibility: hidden;
   transition: opacity $tooltip-transition-duration ease-in-out, visibility $tooltip-transition-duration ease-in-out;
-  white-space: nowrap;
+  max-width: 300px;
+  text-align: center;
 
   &.visible {
     opacity: 1;
