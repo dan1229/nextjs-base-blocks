@@ -12,7 +12,8 @@
         "**/node_modules/**",
         "**/*.config.*",
         "**/pages/**",
-        "**/next-env.d.ts"
+        "**/next-env.d.ts",
+        "**/demo_components/**"
       ]
     }]
   ]

@@ -24,7 +24,15 @@ export default defineConfig({
                     [
                       'babel-plugin-istanbul',
                       {
-                        exclude: ['**/*.cy.*', '**/cypress/**', '**/node_modules/**', '**/*.config.*', '**/pages/**', '**/next-env.d.ts'],
+                        exclude: [
+                          '**/*.cy.*',
+                          '**/cypress/**',
+                          '**/node_modules/**',
+                          '**/*.config.*',
+                          '**/pages/**',
+                          '**/next-env.d.ts',
+                          '**/demo_components/**',
+                        ],
                       },
                     ],
                   ],

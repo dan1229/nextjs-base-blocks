@@ -85,6 +85,11 @@
 #### add tests for demo page(s)?
 - is that redundant? whats coverage at?
 
+#### add tests for demo components
+- demo components are currently excluded from coverage
+- not high priority since they're just for demo purposes
+- if they break it's not critical to the library functionality
+
 
 ### Cypress enhancements
 - [ ] Visual regression testing with screenshot comparison
