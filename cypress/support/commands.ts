@@ -59,10 +59,32 @@ Cypress.Commands.add('testVariants', (Component: any, variants: string[], propNa
   });
 });
 
+/**
+ * Mock Next.js router for testing
+ */
+Cypress.Commands.add('mockRouter', (overrides = {}) => {
+  const mockRouter = {
+    push: cy.stub().as('routerPush'),
+    replace: cy.stub().as('routerReplace'),
+    back: cy.stub().as('routerBack'),
+    forward: cy.stub().as('routerForward'),
+    refresh: cy.stub().as('routerRefresh'),
+    pathname: '/',
+    query: {},
+    asPath: '/',
+    ...overrides,
+  };
+
+  cy.window().then((win) => {
+    (win as any).__NEXT_ROUTER__ = mockRouter;
+  });
+});
+
 declare global {
   namespace Cypress {
     interface Chainable {
       testVariants(Component: any, variants: string[], propName: string): Chainable<void>;
+      mockRouter(overrides?: any): Chainable<void>;
     }
   }
 }

@@ -119,6 +119,13 @@
 #### convert to app router
 - yup
 
+
+#### cypress tests - fill in rest of tests
+- components left
+  - button? collapsible, divider, link, loading spinner, modal, navbar, navbar item, tooltip
+  - form components
+
+
 ---
 
 
@@ -173,15 +180,9 @@
 
 
 - write skeleton tests for each component
-- [x] ~~Add tests for remaining components (use template):~~ - **PROGRESS MADE**
-  - [x] ~~BBModal, BBNavbar, BBNavbarItem, BBTooltip, BBDivider~~
-  - [x] ~~BBLoadingSpinner, BBCollapsible, BBLink~~
-  - [ ] Form components (BBField*, input wrappers) - **Still needed**
-- add TODO in this file for each one individually to actually flesh out
+- [ ] Form components (BBField*, input wrappers) - **Still needed**
 
 
-
-- [x] ~~Update all CI files to be consistent versions and configuration~~ - **DONE** - Updated all workflows to use Node 20.x, actions/checkout@v4, actions/setup-node@v4, and --legacy-peer-deps flag consistently
 
 
 

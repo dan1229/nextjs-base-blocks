@@ -20,15 +20,15 @@ describe('BBTooltip Component Tests', () => {
 
     it('renders tooltip text on hover', () => {
       cy.mount(<BBTooltip {...defaultProps} />);
-      cy.get('[data-testid*="tooltip"]').first().trigger('mouseenter');
+      cy.get('.tooltipContainer').trigger('mouseenter');
       cy.contains('This is a tooltip').should('exist');
     });
 
     it('hides tooltip when not hovering', () => {
       cy.mount(<BBTooltip {...defaultProps} />);
-      cy.get('[data-testid*="tooltip"]').first().trigger('mouseenter');
+      cy.get('.tooltipContainer').trigger('mouseenter');
       cy.contains('This is a tooltip').should('exist');
-      cy.get('[data-testid*="tooltip"]').first().trigger('mouseleave');
+      cy.get('.tooltipContainer').trigger('mouseleave');
       cy.contains('This is a tooltip').should('not.exist');
     });
   });
@@ -36,7 +36,7 @@ describe('BBTooltip Component Tests', () => {
   describe('Props Testing', () => {
     it('renders with showIcon prop', () => {
       cy.mount(<BBTooltip {...defaultProps} showIcon />);
-      cy.get('[data-testid*="tooltip"]').should('exist');
+      cy.get('.tooltipContainer').should('exist');
     });
 
     it('renders without showIcon prop', () => {
@@ -53,7 +53,7 @@ describe('BBTooltip Component Tests', () => {
       const longText =
         'This is a very long tooltip text that should wrap properly and display correctly even with multiple lines of content.';
       cy.mount(<BBTooltip {...defaultProps} text={longText} />);
-      cy.get('[data-testid*="tooltip"]').first().trigger('mouseenter');
+      cy.get('.tooltipContainer').trigger('mouseenter');
       cy.contains(longText).should('exist');
     });
   });
