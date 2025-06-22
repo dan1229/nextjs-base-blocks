@@ -182,14 +182,10 @@
 
 
 
+review mr one last time
 
 
-
-triple check every test
-
-
-
-### [2.0.0] - 2025-06-21
+### [2.0.0] - 2025-06-22
 - `BBModal`
   - Improved overall styling for a more modern look and feel.
   - `z-index` is now set via a variable: `--modal-z-index`.
