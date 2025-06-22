@@ -21,6 +21,9 @@ npx cypress run --component --spec "cypress/component/bbbutton.cy.tsx"
 
 - `npm run test:open` - Opens Cypress UI for interactive component testing
 - `npm run test` - Runs all component tests headlessly
+- `npm run test:coverage` - Runs tests with code coverage report
+- `npm run coverage:report` - Generate coverage reports (text, HTML, LCOV)
+- `npm run coverage:open` - Generate HTML coverage report and open in browser
 - `npm run cy:open:component` - Alternative command to open component testing UI
 - `npm run cy:run:component` - Alternative command to run component tests headlessly
 
@@ -183,6 +186,39 @@ For each component, ensure you test:
 - [ ] **Accessibility**: Keyboard navigation, ARIA attributes
 - [ ] **Edge Cases**: Empty content, very long content, special characters
 
+## 📊 Code Coverage
+
+This project includes comprehensive code coverage reporting using Istanbul/NYC and Cypress Code Coverage.
+
+### Coverage Reports
+
+Coverage data is automatically collected during test runs and reports are generated in multiple formats:
+
+- **Text Summary**: Console output during test runs
+- **HTML Report**: Interactive web interface at `coverage/index.html`
+- **LCOV Report**: For integration with code coverage services like Codecov
+
+### Viewing Coverage
+
+```bash
+# Run tests with coverage
+npm run test:coverage
+
+# Generate and view HTML report
+npm run coverage:open
+
+# Generate all report formats
+npm run coverage:report
+```
+
+### Coverage Configuration
+
+- **NYC Config**: `.nyc.config.js` - Controls coverage collection and reporting
+- **Babel Config**: `.babelrc` - Includes Istanbul instrumentation
+- **Cypress Config**: `cypress.config.ts` - Enables coverage collection for component tests
+
+Coverage excludes test files, configuration files, and non-source code to focus on actual component code quality.
+
 ## 🔧 Configuration
 
 ### Cypress Config (`cypress.config.ts`)
@@ -190,9 +226,10 @@ For each component, ensure you test:
 - Viewport: 1280x720 (configurable per test)
 - Video recording: Disabled for faster runs
 - Screenshots: On failure only
+- Code Coverage: Enabled with Istanbul instrumentation
 
 ### Support Files
-- `component.ts`: Main component testing setup
+- `component.ts`: Main component testing setup with coverage support
 - `component-index.html`: HTML template with CSS variables
 - `commands.ts`: Custom Cypress commands
 

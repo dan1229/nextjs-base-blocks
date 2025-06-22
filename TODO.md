@@ -91,9 +91,6 @@
 - [ ] Performance benchmarking for component rendering
 
 
-#### add support for coverage for cypress tests
-- coverage
-  - add codecov
 
 
 #### test for hooks
@@ -185,6 +182,12 @@
 review mr one last time
 
 
+try to install coverage....
+
+codecov and badges
+
+
+
 ### [2.0.0] - 2025-06-22
 - `BBModal`
   - Improved overall styling for a more modern look and feel.
@@ -213,6 +216,7 @@ review mr one last time
   - Added CI/CD pipeline with GitHub Actions for automated testing
   - Over 200 test cases to start
     - Only regular components for now, no form components yet
+  - Coverage and CodeCov support!
 - Package version updates
 
 -------------------------------------------------------

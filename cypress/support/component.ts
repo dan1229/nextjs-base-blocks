@@ -21,6 +21,9 @@ import './commands';
 
 import { mount } from '@cypress/react';
 
+// Import code coverage support
+import '@cypress/code-coverage/support';
+
 // Mock CSS modules to return class names that match the actual styles
 const createCSSModuleMock = (moduleName: string) => {
   const classNames: Record<string, string> = {};

@@ -18,3 +18,7 @@ node_modules/
 # cypress
 cypress/screenshots/
 cypress/videos/
+
+# coverage
+coverage/
+.nyc_output/

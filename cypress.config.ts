@@ -7,6 +7,32 @@ export default defineConfig({
       framework: 'next',
       bundler: 'webpack',
       webpackConfig: {
+        module: {
+          rules: [
+            {
+              test: /\.(js|jsx|ts|tsx)$/,
+              exclude: /node_modules/,
+              use: {
+                loader: 'babel-loader',
+                options: {
+                  presets: [
+                    ['@babel/preset-env', { targets: { node: 'current' } }],
+                    ['@babel/preset-react', { runtime: 'automatic' }],
+                    '@babel/preset-typescript',
+                  ],
+                  plugins: [
+                    [
+                      'babel-plugin-istanbul',
+                      {
+                        exclude: ['**/*.cy.*', '**/cypress/**', '**/node_modules/**', '**/*.config.*', '**/pages/**', '**/next-env.d.ts'],
+                      },
+                    ],
+                  ],
+                },
+              },
+            },
+          ],
+        },
         plugins: [
           new webpack.NormalModuleReplacementPlugin(/\.module\.(scss|sass|css)$/, (resource: any) => {
             resource.request = 'data:text/javascript,export default new Proxy({}, { get: () => "" });';
@@ -45,14 +71,19 @@ export default defineConfig({
     viewportHeight: 720,
     video: false,
     screenshotOnRunFailure: true,
+    setupNodeEvents(on, config) {
+      // Enable code coverage for component tests
+      require('@cypress/code-coverage/task')(on, config);
+      return config;
+    },
   },
   e2e: {
     baseUrl: 'http://localhost:3000',
     pageLoadTimeout: 120000,
     setupNodeEvents(on, config) {
-      // TODO fix code coverage
-      // require('@cypress/code-coverage/task')(on, config);
-      // on('file:preprocessor', require('@cypress/code-coverage/use-babelrc'));
+      // Enable code coverage
+      require('@cypress/code-coverage/task')(on, config);
+      on('file:preprocessor', require('@cypress/code-coverage/use-babelrc'));
 
       return config;
     },
