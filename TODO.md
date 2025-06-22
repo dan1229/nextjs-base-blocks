@@ -172,8 +172,6 @@
 
 clean up ci for tests
 
-do we need cypress/tsconfig?
-
 
 - write skeleton tests for each component
 - [ ] Add tests for remaining components (use template):
