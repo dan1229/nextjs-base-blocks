@@ -198,7 +198,7 @@ declare global {
        */
       checkA11y(): Chainable<void>;
       /**
-       * Custom command to test component responsive behavior
+       * Custom command to test responsive behavior
        * @example cy.testResponsive()
        */
       testResponsive(): Chainable<void>;
@@ -207,11 +207,36 @@ declare global {
        * @example cy.checkStyles()
        */
       checkStyles(element: string, expectedClass: string): Chainable<void>;
+      /**
+       * Custom command to wait for animations to complete
+       * @example cy.waitForAnimations()
+       */
+      waitForAnimations(): Chainable<void>;
+      /**
+       * Custom command to test component with different themes
+       * @example cy.testThemes(['light', 'dark'])
+       */
+      testThemes(themes: string[]): Chainable<void>;
     }
   }
 }
 
 Cypress.Commands.add('mount', mount);
+
+// Additional custom commands
+Cypress.Commands.add('waitForAnimations', () => {
+  // Wait for CSS transitions/animations to complete
+  cy.wait(300);
+});
+
+Cypress.Commands.add('testThemes', (themes: string[]) => {
+  themes.forEach((theme) => {
+    cy.get('body').invoke('attr', 'data-theme', theme);
+    cy.wait(100); // Allow theme to apply
+  });
+});
+
+export {};
 
 // Example usage:
 // cy.mount(<MyComponent />)
