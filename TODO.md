@@ -123,7 +123,9 @@
 #### cypress tests - fill in rest of tests
 - components left
   - button? collapsible, divider, link, loading spinner, modal, navbar, navbar item, tooltip
+    - double check these / all existing tests
   - form components
+    - dont exist yet
 
 
 ---
@@ -176,11 +178,6 @@
 ### 2.0.0
 
 
-
-
-
-- write skeleton tests for each component
-- [ ] Form components (BBField*, input wrappers) - **Still needed**
 
 
 
