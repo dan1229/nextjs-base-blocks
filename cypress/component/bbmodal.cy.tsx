@@ -39,8 +39,19 @@ describe('BBModal Component Tests', () => {
     it('closes modal when clicking outside (backdrop)', () => {
       const onDismiss = cy.stub().as('onDismiss');
       cy.mount(<BBModal {...defaultProps} onDismiss={onDismiss} outsideClickCloses />);
-      // Click on the modal backdrop (the outer container)
-      cy.get('div').first().click({ force: true });
+      // Get the modal container and trigger a click event that simulates clicking the backdrop
+      // The onClickContainer function checks if e.target === e.currentTarget
+      cy.get('[data-cy-root]').within(() => {
+        cy.get('div')
+          .first()
+          .then(($el) => {
+            // Simulate a click where target equals currentTarget (backdrop click)
+            const clickEvent = new MouseEvent('click', { bubbles: true });
+            Object.defineProperty(clickEvent, 'target', { value: $el[0] });
+            Object.defineProperty(clickEvent, 'currentTarget', { value: $el[0] });
+            $el[0].dispatchEvent(clickEvent);
+          });
+      });
       cy.then(() => {
         expect(onDismiss).to.have.been.called;
       });

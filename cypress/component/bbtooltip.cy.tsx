@@ -30,8 +30,9 @@ describe('BBTooltip Component Tests', () => {
       cy.get('div').first().trigger('mouseenter');
       cy.contains('This is a tooltip').should('exist');
       cy.get('div').first().trigger('mouseleave');
-      cy.wait(100); // Small wait for state update
-      cy.contains('This is a tooltip').should('not.exist');
+      cy.wait(300); // Wait for CSS transition (0.2s + buffer)
+      // Check that the tooltip no longer has the 'visible' class
+      cy.get('div').contains('This is a tooltip').parent().should('not.have.class', 'visible');
     });
   });
 
@@ -77,7 +78,8 @@ describe('BBTooltip Component Tests', () => {
       cy.get('div').first().trigger('mouseenter');
       cy.contains('This is a tooltip').should('exist');
       cy.get('div').first().trigger('mouseleave');
-      cy.contains('This is a tooltip').should('not.exist');
+      cy.wait(300); // Wait for CSS transition
+      cy.get('div').contains('This is a tooltip').parent().should('not.have.class', 'visible');
     });
   });
 
