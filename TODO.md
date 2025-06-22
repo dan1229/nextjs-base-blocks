@@ -168,9 +168,38 @@
 ----
 ### 2.0.0
 
+#### Cypress Component Testing - BLOCKED by SCSS Modules Issue
+**Status**: ❌ Components with SCSS modules fail, ✅ Template tests work (17/21 passing)
 
+**Current Issue**: Next.js CSS modules don't work in Cypress component testing environment
+- Error: `Cannot read properties of null (reading 'parentNode')` during CSS injection
+- Next.js style-loader expects specific DOM structure that doesn't exist in Cypress test runner
+- All components importing `.module.scss` files fail to mount
 
+**Working**: 
+- ✅ Template tests (`_template.cy.tsx`): 17/21 tests passing
+- ✅ Basic Cypress setup functional
+- ✅ Component mounting works for non-SCSS components
 
+**Failing**:
+- ❌ BBAlert, BBButton, BBCard, BBText (all use SCSS modules)
+- ❌ All real component tests fail during import/mount phase
+
+**Attempted Solutions**:
+1. ❌ Custom webpack configurations (multiple approaches)
+2. ❌ Style-loader insert function modifications
+3. ❌ CSS module mocking approaches
+
+**Next Steps**:
+- Consider testing components without styles (functionality only)
+- Investigate Cypress + Next.js CSS module compatibility solutions
+- Alternative: Use Storybook for component testing instead
+- Or: Convert components to use regular CSS imports for testing
+
+**Files Ready**:
+- `cypress.config.ts` - Basic configuration working
+- `cypress/support/component-index.html` - Proper mount point
+- Test files created for BBAlert, BBButton (ready when CSS issue resolved)
 
 on build
 Type error: 'bbbutton.cy.tsx' cannot be compiled under '--isolatedModules' because it is considered a global script file. Add an import, export, or an empty 'export {}' statement to make it a module.

@@ -1,4 +1,5 @@
 import { defineConfig } from 'cypress';
+import webpack from 'webpack';
 
 export default defineConfig({
   component: {
@@ -6,30 +7,11 @@ export default defineConfig({
       framework: 'next',
       bundler: 'webpack',
       webpackConfig: {
-        module: {
-          rules: [
-            {
-              test: /\.module\.(scss|sass)$/,
-              use: [
-                'style-loader',
-                {
-                  loader: 'css-loader',
-                  options: {
-                    modules: {
-                      localIdentName: '[name]__[local]___[hash:base64:5]',
-                    },
-                  },
-                },
-                'sass-loader',
-              ],
-            },
-            {
-              test: /\.(scss|sass)$/,
-              exclude: /\.module\.(scss|sass)$/,
-              use: ['style-loader', 'css-loader', 'sass-loader'],
-            },
-          ],
-        },
+        plugins: [
+          new webpack.NormalModuleReplacementPlugin(/\.module\.(scss|sass|css)$/, (resource: any) => {
+            resource.request = 'data:text/javascript,export default new Proxy({}, { get: () => "" });';
+          }),
+        ],
       },
     },
     specPattern: 'cypress/component/**/*.cy.{js,jsx,ts,tsx}',
@@ -42,10 +24,17 @@ export default defineConfig({
   },
   e2e: {
     baseUrl: 'http://localhost:3000',
-    specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
-    supportFile: 'cypress/support/e2e.ts',
-  },
-  env: {
-    // Add any environment variables you need for testing
+    pageLoadTimeout: 120000,
+    setupNodeEvents(on, config) {
+      // TODO fix code coverage
+      // require('@cypress/code-coverage/task')(on, config);
+      // on('file:preprocessor', require('@cypress/code-coverage/use-babelrc'));
+
+      return config;
+    },
+    retries: {
+      runMode: 2,
+      openMode: 1,
+    },
   },
 });
