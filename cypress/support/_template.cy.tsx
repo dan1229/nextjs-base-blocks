@@ -1,10 +1,10 @@
-// cypress/component/_template.cy.tsx
+// cypress/support/_template.cy.tsx
 // Template for creating new component tests
 // Copy this file and rename it to match your component
 
 // import ComponentName from '../../src/component-folder';
 // import type { IPropsComponentName } from '../../src/component-folder';
-import { testResponsiveViewports, createTestData } from '../support/test-helpers';
+import { testResponsiveViewports, createTestData } from './test-helpers';
 
 // TODO replace these with actual components
 interface IPropsComponentName {
