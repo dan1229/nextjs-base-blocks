@@ -11,6 +11,30 @@ export default defineConfig({
           new webpack.NormalModuleReplacementPlugin(/\.module\.(scss|sass|css)$/, (resource: any) => {
             resource.request = 'data:text/javascript,export default new Proxy({}, { get: () => "" });';
           }),
+          // Mock next/navigation for component testing
+          new webpack.NormalModuleReplacementPlugin(/^next\/navigation$/, (resource: any) => {
+            resource.request =
+              'data:text/javascript,' +
+              encodeURIComponent(`
+              const mockRouter = {
+                push: () => Promise.resolve(true),
+                replace: () => Promise.resolve(true),
+                back: () => {},
+                forward: () => {},
+                refresh: () => {},
+                pathname: '/',
+                query: {},
+                asPath: '/',
+              };
+              
+              export const useRouter = () => mockRouter;
+              export const usePathname = () => '/';
+              export const useSearchParams = () => new URLSearchParams();
+              export const redirect = () => {};
+              export const permanentRedirect = () => {};
+              export const notFound = () => {};
+            `);
+          }),
         ],
       },
     },
