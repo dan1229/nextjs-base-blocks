@@ -183,6 +183,10 @@ do we need cypress/tsconfig?
 - add TODO in this file for each one individually to actually flesh out
 
 
+triple check every test
+
+
+
 ### [2.0.0] - 2025-06-21
 - `BBModal`
   - Improved overall styling for a more modern look and feel.
