@@ -31,8 +31,11 @@ Cypress.Commands.add('testResponsive', () => {
 
   viewports.forEach((viewport) => {
     cy.viewport(viewport.width, viewport.height);
-    cy.wait(100); // Small delay for rendering
-    // Add specific responsive checks here
+    // Wait for viewport change to take effect by checking the window size
+    cy.window().its('innerWidth').should('eq', viewport.width);
+    cy.window().its('innerHeight').should('eq', viewport.height);
+    // Ensure the root element is visible and rendered
+    cy.get('[data-cy-root]').should('be.visible');
   });
 });
 

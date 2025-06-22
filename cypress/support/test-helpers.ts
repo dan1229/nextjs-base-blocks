@@ -17,8 +17,16 @@ export const testResponsiveViewports = (mountCallback: () => void) => {
   Object.entries(VIEWPORTS).forEach(([name, viewport]) => {
     it(`renders correctly on ${name} (${viewport.width}x${viewport.height})`, () => {
       cy.viewport(viewport.width, viewport.height);
+      // Wait for viewport change to take effect
+      cy.window().its('innerWidth').should('eq', viewport.width);
+      cy.window().its('innerHeight').should('eq', viewport.height);
+
       mountCallback();
-      cy.get('div').should('be.visible');
+
+      // Wait for component to be rendered and visible
+      cy.get('[data-cy-root]').should('be.visible');
+      // Ensure the component itself is rendered (check for any child element)
+      cy.get('[data-cy-root]').children().should('have.length.at.least', 1);
     });
   });
 };
