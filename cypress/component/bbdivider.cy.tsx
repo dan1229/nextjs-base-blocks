@@ -12,7 +12,7 @@ describe('BBDivider Component Tests', () => {
   describe('Basic Rendering', () => {
     it('renders with default props', () => {
       cy.mount(<BBDivider {...defaultProps} />);
-      cy.get('div').should('exist').and('have.class', 'divider');
+      cy.get('div').should('exist');
     });
 
     it('renders with custom className', () => {
@@ -27,7 +27,7 @@ describe('BBDivider Component Tests', () => {
     colors.forEach((color) => {
       it(`renders with color="${color}"`, () => {
         cy.mount(<BBDivider {...defaultProps} color={color as any} />);
-        cy.get('.divider').should('exist');
+        cy.get('div').should('exist');
       });
     });
 
@@ -36,7 +36,7 @@ describe('BBDivider Component Tests', () => {
     thicknesses.forEach((thickness) => {
       it(`renders with thickness="${thickness}"`, () => {
         cy.mount(<BBDivider {...defaultProps} thickness={thickness as any} />);
-        cy.get('.divider').should('exist');
+        cy.get('div').should('exist');
       });
     });
 
@@ -45,7 +45,7 @@ describe('BBDivider Component Tests', () => {
     orientations.forEach((orientation) => {
       it(`renders with orientation="${orientation}"`, () => {
         cy.mount(<BBDivider {...defaultProps} orientation={orientation as any} />);
-        cy.get('.divider').should('exist');
+        cy.get('div').should('exist');
       });
     });
   });

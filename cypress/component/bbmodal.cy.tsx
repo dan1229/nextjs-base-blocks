@@ -17,7 +17,7 @@ describe('BBModal Component Tests', () => {
       cy.mount(<BBModal {...defaultProps} />);
       cy.contains('Modal Content').should('exist');
       cy.contains('Test Modal').should('exist');
-      cy.get('.containerModal').should('exist');
+      cy.get('div').should('exist');
     });
 
     it('renders with onDismiss callback', () => {

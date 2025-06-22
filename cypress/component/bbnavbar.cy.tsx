@@ -3,20 +3,22 @@ import BBNavbarItem from '../../src/bbnavbar_item';
 import type { IPropsBBNavbar } from '../../src/bbnavbar';
 import { testResponsiveViewports } from '../support/test-helpers';
 
-// Mock Next.js router
-const mockRouter = {
-  push: cy.stub(),
-  replace: cy.stub(),
-  back: cy.stub(),
-  forward: cy.stub(),
-  refresh: cy.stub(),
-  pathname: '/',
-  query: {},
-  asPath: '/',
-};
+// Mock Next.js router - will be initialized in beforeEach
+let mockRouter: any;
 
 // Mock useRouter hook
-before(() => {
+beforeEach(() => {
+  mockRouter = {
+    push: cy.stub(),
+    replace: cy.stub(),
+    back: cy.stub(),
+    forward: cy.stub(),
+    refresh: cy.stub(),
+    pathname: '/',
+    query: {},
+    asPath: '/',
+  };
+
   cy.window().then((win) => {
     (win as any).__NEXT_ROUTER__ = mockRouter;
   });
