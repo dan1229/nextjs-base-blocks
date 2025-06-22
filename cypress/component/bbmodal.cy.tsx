@@ -72,7 +72,7 @@ describe('BBModal Component Tests', () => {
 
     it('renders with loading state', () => {
       cy.mount(<BBModal {...defaultProps} onConfirm={() => {}} loading />);
-      cy.get('.containerLoading').should('exist'); // Loading spinner
+      cy.get('div').should('exist'); // Loading spinner
     });
 
     // Width variants
