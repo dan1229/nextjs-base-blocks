@@ -170,7 +170,7 @@
 
 
 
-clean up ci?
+clean up ci for tests
 
 do we need cypress/tsconfig?
 
@@ -181,6 +181,13 @@ do we need cypress/tsconfig?
   - BBLoadingSpinner, BBCollapsible, BBLink
   - Form components (BBField*, input wrappers)
 - add TODO in this file for each one individually to actually flesh out
+
+
+
+
+
+
+
 
 
 triple check every test

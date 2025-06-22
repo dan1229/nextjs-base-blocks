@@ -21,9 +21,6 @@ import './commands';
 
 import { mount } from '@cypress/react';
 
-// Override module resolution for CSS modules
-const originalRequire = (globalThis as any).require;
-
 // Mock CSS modules to return class names that match the actual styles
 const createCSSModuleMock = (moduleName: string) => {
   const classNames: Record<string, string> = {};

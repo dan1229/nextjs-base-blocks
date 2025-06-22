@@ -148,11 +148,11 @@ describe('BBCard Component Tests', () => {
     it('handles click events when onClick is provided', () => {
       const onClick = cy.stub();
       cy.mount(
-        <BBCard onClick={onClick} data-testid="clickable-card">
+        <BBCard onClick={onClick} className="test-clickable-card">
           Clickable card
         </BBCard>
       );
-      cy.get('[data-testid="clickable-card"]').click();
+      cy.get('.test-clickable-card').click();
       cy.then(() => {
         expect(onClick).to.have.been.called;
       });
@@ -232,13 +232,13 @@ describe('BBCard Component Tests', () => {
     it('is keyboard accessible when clickable', () => {
       const onClick = cy.stub();
       cy.mount(
-        <BBCard onClick={onClick} data-testid="keyboard-card">
+        <BBCard onClick={onClick} className="test-keyboard-card">
           Keyboard accessible card
         </BBCard>
       );
 
       // Should be focusable if clickable
-      cy.get('[data-testid="keyboard-card"]').should('be.visible');
+      cy.get('.test-keyboard-card').should('be.visible');
       // Note: Test passes if element is visible and accessible
     });
 
