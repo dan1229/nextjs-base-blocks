@@ -170,19 +170,18 @@
 
 
 
-clean up ci for tests
 
 
 - write skeleton tests for each component
-- [ ] Add tests for remaining components (use template):
-  - BBModal, BBNavbar, BBNavbarItem, BBTooltip, BBDivider
-  - BBLoadingSpinner, BBCollapsible, BBLink
-  - Form components (BBField*, input wrappers)
+- [x] ~~Add tests for remaining components (use template):~~ - **PROGRESS MADE**
+  - [x] ~~BBModal, BBNavbar, BBNavbarItem, BBTooltip, BBDivider~~
+  - [x] ~~BBLoadingSpinner, BBCollapsible, BBLink~~
+  - [ ] Form components (BBField*, input wrappers) - **Still needed**
 - add TODO in this file for each one individually to actually flesh out
 
 
 
-
+- [x] ~~Update all CI files to be consistent versions and configuration~~ - **DONE** - Updated all workflows to use Node 20.x, actions/checkout@v4, actions/setup-node@v4, and --legacy-peer-deps flag consistently
 
 
 
