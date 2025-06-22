@@ -212,6 +212,7 @@ review mr one last time
   - Implemented example tests for BBButton, BBAlert, and BBCard
   - Added CI/CD pipeline with GitHub Actions for automated testing
   - Over 200 test cases to start
+    - Only regular components for now, no form components yet
 - Package version updates
 
 -------------------------------------------------------
