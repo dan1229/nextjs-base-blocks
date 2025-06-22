@@ -5,7 +5,7 @@ import { testResponsiveViewports } from '../support/test-helpers';
 describe('BBModal Component Tests', () => {
   const defaultProps: IPropsBBModal = {
     children: <div>Modal Content</div>,
-    isOpen: true,
+    title: 'Test Modal',
   };
 
   beforeEach(() => {
@@ -20,7 +20,7 @@ describe('BBModal Component Tests', () => {
 
     it('renders with onDismiss callback', () => {
       const onDismiss = cy.stub().as('onDismiss');
-      cy.mount(<BBModal {...defaultProps} onDismiss={onDismiss} />);
+      cy.mount(<BBModal {...defaultProps} onDismiss={onDismiss} showButtonCancel />);
       cy.contains('Modal Content').should('exist');
       cy.get('button').contains('Cancel').click();
       cy.get('@onDismiss').should('have.been.called');
@@ -39,7 +39,8 @@ describe('BBModal Component Tests', () => {
     it('closes modal when clicking outside (backdrop)', () => {
       const onDismiss = cy.stub().as('onDismiss');
       cy.mount(<BBModal {...defaultProps} onDismiss={onDismiss} outsideClickCloses />);
-      cy.get('body').click(0, 0); // Click outside modal
+      // Click on the modal backdrop (the outer container)
+      cy.get('div').first().click({ force: true });
       cy.then(() => {
         expect(onDismiss).to.have.been.called;
       });
@@ -57,13 +58,15 @@ describe('BBModal Component Tests', () => {
 
   describe('Props Testing', () => {
     it('renders with custom button text', () => {
-      cy.mount(<BBModal {...defaultProps} textButtonCancel="Close" textButtonConfirm="Save" />);
+      cy.mount(
+        <BBModal {...defaultProps} textDismiss="Close" textConfirm="Save" onConfirm={() => {}} onDismiss={() => {}} showButtonCancel />
+      );
       cy.contains('Close').should('exist');
       cy.contains('Save').should('exist');
     });
 
     it('renders with showButtonCancel', () => {
-      cy.mount(<BBModal {...defaultProps} showButtonCancel />);
+      cy.mount(<BBModal {...defaultProps} onDismiss={() => {}} showButtonCancel />);
       cy.contains('Cancel').should('exist');
     });
 

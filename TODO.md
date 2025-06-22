@@ -215,6 +215,7 @@ triple check every test
   - Added documentation and template for easy test creation
   - Implemented example tests for BBButton, BBAlert, and BBCard
   - Added CI/CD pipeline with GitHub Actions for automated testing
+  - Over 200 test cases to start
 - Package version updates
 
 -------------------------------------------------------
