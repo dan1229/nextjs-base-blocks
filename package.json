@@ -16,7 +16,7 @@
     "test": "cypress run --component",
     "test:open": "cypress open --component",
     "test:ci": "./scripts/test-ci.sh",
-    "test:coverage": "cypress run --component && nyc report",
+    "test:coverage": "nyc cypress run --component",
     "coverage:open": "nyc report --reporter=html && open coverage/index.html",
     "coverage:report": "nyc report --reporter=text --reporter=html --reporter=lcov"
   },
