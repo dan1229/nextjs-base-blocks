@@ -3,10 +3,6 @@ name: Component Tests
 on:
   push:
     paths:
-      - 'src/**'
-  pull_request:
-    paths:
-      - 'src/**'
 
 # Cancel previous runs when a new commit is pushed
 concurrency:
