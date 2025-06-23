@@ -85,10 +85,17 @@
 #### add tests for demo page(s)?
 - is that redundant? whats coverage at?
 
+#### add tests for demo components
+- demo components are currently excluded from coverage
+- not high priority since they're just for demo purposes
+- if they break it's not critical to the library functionality
 
-#### add support for coverage for cypress tests
-- coverage
-  - add codecov
+
+### Cypress enhancements
+- [ ] Visual regression testing with screenshot comparison
+- [ ] Performance benchmarking for component rendering
+
+
 
 
 #### test for hooks
@@ -113,6 +120,15 @@
 
 #### convert to app router
 - yup
+
+
+#### cypress tests - fill in rest of tests
+- components left
+  - button? collapsible, divider, link, loading spinner, modal, navbar, navbar item, tooltip
+    - double check these / all existing tests
+  - form components
+    - dont exist yet
+
 
 ---
 
@@ -166,20 +182,18 @@
 
 
 
-#### cypress testing
-- install
-  - write basic components tests for every single components
--
-- write basic tests for each component
-- TODOs to flesh out?
+
+
+review mr one last time
+
+
+try to install coverage....
+
+codecov and badges
 
 
 
-
-
-
-
-### [2.0.0] - 2025-06-DD
+### [2.0.0] - 2025-06-22
 - `BBModal`
   - Improved overall styling for a more modern look and feel.
   - `z-index` is now set via a variable: `--modal-z-index`.
@@ -200,6 +214,14 @@
   - Visual clean up
   - Fixed mis-alignment of full text bubble
   - `showIcon` prop can now be used to hide the icon and wrap `children` elements.
+- Installed Cypress component testing with comprehensive setup
+  - Created test framework with custom commands and utilities
+  - Added documentation and template for easy test creation
+  - Implemented example tests for BBButton, BBAlert, and BBCard
+  - Added CI/CD pipeline with GitHub Actions for automated testing
+  - Over 200 test cases to start
+    - Only regular components for now, no form components yet
+  - Coverage and CodeCov support!
 - Package version updates
 
 -------------------------------------------------------

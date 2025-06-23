@@ -1,6 +1,8 @@
 # NextJS Base Blocks
 [![Lint](https://github.com/dan1229/nextjs-base-blocks/actions/workflows/lint.yml/badge.svg)](https://github.com/dan1229/nextjs-base-blocks/actions/workflows/lint.yml)
 [![Build](https://github.com/dan1229/nextjs-base-blocks/actions/workflows/build.yml/badge.svg)](https://github.com/dan1229/nextjs-base-blocks/actions/workflows/build.yml)
+[![Component Tests](https://github.com/dan1229/nextjs-base-blocks/actions/workflows/test.yml/badge.svg)](https://github.com/dan1229/nextjs-base-blocks/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/dan1229/nextjs-base-blocks/branch/main/graph/badge.svg)](https://codecov.io/gh/dan1229/nextjs-base-blocks)
 
 #### By: [Daniel Nazarian](https://danielnazarian) 🐧👹
 ##### Contact me at <dnaz@danielnazarian.com>
@@ -236,6 +238,46 @@ Add overrides for dark themes like so:
 ```
 
 
+## Testing
+
+This project includes comprehensive testing with Cypress component testing and code coverage.
+
+### Running Tests
+
+```bash
+# Run all component tests
+npm run test
+
+# Run tests with coverage report
+npm run test:coverage
+
+# Open Cypress GUI for component testing
+npm run test:open
+
+# Generate coverage reports
+npm run coverage:report
+
+# Open HTML coverage report in browser
+npm run coverage:open
+```
+
+### Test Structure
+
+- **Component Tests**: Located in `cypress/component/` directory
+- **Test Utilities**: Custom commands and helpers in `cypress/support/`
+- **Coverage Reports**: Generated in `coverage/` directory
+
+All base components have comprehensive test coverage including:
+- Rendering tests for all prop variations
+- Interaction testing (clicks, hovers, form inputs)
+- Responsive behavior testing
+- Accessibility testing
+- Edge case handling
+
+### Writing New Tests
+
+To create a new test file, use the template in `cypress/support/_template.cy.tsx` or follow the existing test patterns. All tests should follow the established naming convention: `componentname.cy.tsx`.
+
 ## Demo
 
 This project is also a standalone NextJS project that you can run to see the components in action.
@@ -250,7 +292,7 @@ Then navigate to [http://localhost:3000](http://localhost:3000) to see the demo 
 
 Form Components Demo are available at [http://localhost:3000/form-components](http://localhost:3000/form-components).
 
-**Please not this is a work in progress.**
+**Please note this is a work in progress.**
 
 -------------------------------------------------------
 

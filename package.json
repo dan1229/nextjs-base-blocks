@@ -8,7 +8,17 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "next lint --fix",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run:component": "cypress run --component",
+    "cy:open:component": "cypress open --component",
+    "test": "cypress run --component",
+    "test:open": "cypress open --component",
+    "test:ci": "./scripts/test-ci.sh",
+    "test:coverage": "cypress run --component && nyc report",
+    "coverage:open": "nyc report --reporter=html && open coverage/index.html",
+    "coverage:report": "nyc report --reporter=text --reporter=html --reporter=lcov"
   },
   "dependencies": {
     "classnames": "2.3.2",
@@ -22,10 +32,23 @@
     "usehooks-ts": "2.9.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.27.4",
+    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-react": "^7.27.1",
+    "@babel/preset-typescript": "^7.27.1",
+    "@cypress/code-coverage": "^3.14.4",
+    "@cypress/react": "^9.0.1",
+    "@cypress/webpack-dev-server": "^4.1.0",
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
     "@types/js-cookie": "3.0.3",
     "@types/node": "20.2.3",
     "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
     "@typescript-eslint/eslint-plugin": "5.53.0",
+    "babel-loader": "^10.0.0",
+    "babel-plugin-istanbul": "^7.0.0",
+    "css-loader": "7.1.2",
+    "cypress": "^14.5.0",
     "eslint": "8.34.0",
     "eslint-config-next": "13.2.3",
     "eslint-config-standard-with-typescript": "34.0.0",
@@ -34,6 +57,10 @@
     "eslint-plugin-promise": "6.1.1",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-unused-imports": "2.0.0",
+    "nyc": "^17.1.0",
+    "sass-loader": "16.0.5",
+    "style-loader": "4.0.0",
+    "ts-node": "^10.9.2",
     "typescript": "4.9.5"
   }
 }
