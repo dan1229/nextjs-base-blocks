@@ -14,6 +14,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [2.0.0] - 2025-06-22
+- `BBModal`
+  - Improved overall styling for a more modern look and feel.
+  - `z-index` is now set via a variable: `--modal-z-index`.
+- `BBButton`
+  - `noBorder` prop added
+  - `--button-base-padding` variable added
+  - Fixed `transparentPrimary`, `transparentSecondary` and `transparentAccent` variants
+- `BBNavbarItem`
+  - added `navbar-item-min-width` to set min width
+- `BBFieldDropdown`
+  - Improved styling by adding a custom dropdown arrow.
+- `BBLoadingSpinner`
+  - Added `color` prop to allow for custom colors.
+- `BBFieldFile`
+  - Improved styling for light mode.
+  - Added theming variables for file input button.
+- `BBTooltip`
+  - Visual clean up
+  - Fixed mis-alignment of full text bubble
+  - `showIcon` prop can now be used to hide the icon and wrap `children` elements.
+- Installed Cypress component testing with comprehensive setup
+  - Created test framework with custom commands and utilities
+  - Added documentation and template for easy test creation
+  - Implemented example tests for BBButton, BBAlert, and BBCard
+  - Added CI/CD pipeline with GitHub Actions for automated testing
+  - Over 200 test cases to start
+    - Only regular components for now, no form components yet
+  - Coverage and CodeCov support!
+- Package version updates
+
+
 ### [1.5.1] - 2025-05-28
 - Added keydown events for `BBFieldText`
 
