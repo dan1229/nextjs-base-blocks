@@ -77,24 +77,157 @@
 - add any missing ones
 - generally improve
 
+---
+
+### AI Suggestions
+- need to sort through these
+
+
+##### CSS-in-JS investigation
+- research styled-components or emotion integration
+- better runtime theming support
+- improved tree-shaking
+- dynamic theme switching
+
+##### Tailwind CSS integration
+- hybrid approach: tailwind utilities + bb components
+- allow className passthrough for tailwind classes
+- maybe BBButton variant="primary" className="hover:scale-105"
+- investigate tailwind plugin for bb design tokens
+
+##### Design tokens system
+- structured approach to design variables
+- json/js export of tokens for other tools
+- better organization of color palettes, spacing scales, etc.
+- figma/design tool integration considerations
+
+##### Enhanced dark mode
+- smoother transitions between themes
+- system preference detection
+- per-component theme overrides
+- better contrast ratios and accessibility
+
+#### Developer Experience
+
+##### Storybook integration
+- replace demo pages with proper storybook
+- better component documentation
+- interactive prop controls
+- design system documentation
+
+##### CLI tool for component generation
+- scaffold new components with proper structure
+- auto-generate tests, stories, and types
+- consistency across new components
+
+##### Better TypeScript support
+- stricter prop validation
+- better autocomplete for variant/size props
+- generic component patterns
+
+##### Bundle optimization
+- per-component builds for better tree-shaking
+- css extraction and purging
+- runtime performance monitoring
+
+#### Advanced Features
+
+##### Animation system
+- consistent motion design language
+- enter/exit animations for all components
+- spring-based animations investigation
+- reduced motion preference support
+
+##### Advanced accessibility
+- comprehensive aria-label automation
+- keyboard navigation improvements
+- screen reader testing and optimization
+- color contrast validation tools
+
+##### Internationalization (i18n)
+- RTL language support
+- text direction handling in components
+- locale-aware formatting (dates, numbers)
+
+##### Performance optimizations
+- virtual scrolling for large lists/tables
+- lazy loading patterns
+- memoization strategies
+- bundle size monitoring
 
 ---
-### Coming soon!!
 
+### Cypress
 
-#### add tests for demo page(s)?
-- is that redundant? whats coverage at?
+#### Visual regression testing
+- automated screenshot comparison
+- cross-browser testing setup
+- responsive design validation
 
-#### add tests for demo components
-- demo components are currently excluded from coverage
-- not high priority since they're just for demo purposes
-- if they break it's not critical to the library functionality
+#### Performance testing
+- rendering benchmarks
+- memory usage monitoring
+- bundle size tracking over time
 
 
 ### Cypress enhancements
 - [ ] Visual regression testing with screenshot comparison
 - [ ] Performance benchmarking for component rendering
 
+
+
+
+#### add tests for demo components
+- demo components are currently excluded from coverage
+- not high priority since they're just for demo purposes
+- if they break it's not critical to the library functionality
+- is that redundant? whats coverage at?
+
+
+---
+### New Components
+
+#### BBDatePicker / BBTimePicker
+- integrate with react-hook-form
+- customizable date formats
+- range selection support
+- timezone support considerations
+
+
+#### BBTabs
+- accessible tab interface
+- lazy loading of tab content
+- vertical/horizontal orientations
+
+
+#### BBTable component
+- data table with sorting, filtering, pagination
+- responsive mobile view (cards on small screens)
+- customizable column definitions
+- built-in loading states
+- support for row selection/actions
+- integrate with existing theming system
+
+
+#### BBLayout components
+- BBGrid - css grid wrapper with responsive breakpoints
+- BBStack - vertical/horizontal spacing component
+- BBContainer - max-width wrapper with responsive padding
+- BBSpacer - flexible spacing component
+
+
+#### BBDrawer / BBSidebar
+- slide-out panel component
+- overlay or push content modes
+- responsive behavior
+
+#### BBSkeleton
+- loading skeleton placeholders
+- auto-generate from existing components
+- customizable shapes and animations
+
+---
+### Coming soon!!
 
 
 
@@ -173,8 +306,6 @@
 
 #### bbnavbar item - allow these to just be components instead of strings
 - i.e., let me pass a button to a navbar as a child component?
-
-
 
 
 
