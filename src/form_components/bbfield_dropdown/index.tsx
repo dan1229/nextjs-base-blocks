@@ -1,8 +1,12 @@
 import classnames from 'classnames';
 import React from 'react';
+import type {
+  IBBFieldDropdownOptions,
+  IPropsBBBaseForm,
+  TBBFieldBaseSize
+} from '../../types';
 import InputWrapper from '../input_wrapper';
 import styles from '../styles.module.scss';
-import type { IBBFieldDropdownOptions, IPropsBBBaseForm, TBBFieldBaseSize } from '../../types';
 
 /**
  * PROPS
@@ -18,8 +22,18 @@ export interface IPropsBBFieldDropdown {
 /**
  * BBFIELD DROPDOWN
  */
-export default function BBFieldDropdown(Props: IPropsBBFieldDropdown & IPropsBBBaseForm): React.ReactElement {
-  const { register, options, fieldName, required, autocomplete, onChange, size = 'md' } = Props;
+export default function BBFieldDropdown(
+  Props: IPropsBBFieldDropdown & IPropsBBBaseForm
+): React.ReactElement {
+  const {
+    register,
+    options,
+    fieldName,
+    required,
+    autocomplete,
+    onChange,
+    size = 'md'
+  } = Props;
 
   const getAutoComplete = (): string => {
     if (autocomplete) return autocomplete;
@@ -38,7 +52,7 @@ export default function BBFieldDropdown(Props: IPropsBBFieldDropdown & IPropsBBB
           required={required}
           onChange={onChange}
           autoComplete={getAutoComplete()}
-          {...register}
+          {...(register ? register(fieldName) : {})}
         >
           {options.map((val: IBBFieldDropdownOptions) => (
             <option key={val.value} value={val.value}>

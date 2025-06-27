@@ -50,7 +50,12 @@ export type TBBButtonVariant =
   | 'text';
 export type TBBButtonSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 export type TBBButtonElevation = 'none' | 'low' | 'medium' | 'high';
-export type TBBButtonIconAlign = 'left' | 'right' | 'above' | 'below' | 'space-between';
+export type TBBButtonIconAlign =
+  | 'left'
+  | 'right'
+  | 'above'
+  | 'below'
+  | 'space-between';
 
 /**
  * BBCard
@@ -98,9 +103,32 @@ export type TBBDividerColor =
 
 export type TBBDividerOrientation = 'horizontal' | 'vertical';
 export type TBBDividerStyle = 'solid' | 'dashed' | 'dotted';
-export type TBBDividerThickness = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl';
-export type TBBDividerLength = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl' | 'full';
-export type TBBDividerMargin = 'none' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl';
+export type TBBDividerThickness =
+  | 'xs'
+  | 's'
+  | 'm'
+  | 'l'
+  | 'xl'
+  | 'xxl'
+  | 'xxxl';
+export type TBBDividerLength =
+  | 'xs'
+  | 's'
+  | 'm'
+  | 'l'
+  | 'xl'
+  | 'xxl'
+  | 'xxxl'
+  | 'full';
+export type TBBDividerMargin =
+  | 'none'
+  | 'xs'
+  | 's'
+  | 'm'
+  | 'l'
+  | 'xl'
+  | 'xxl'
+  | 'xxxl';
 
 /**
  * BBModal
@@ -129,9 +157,22 @@ export type TBBNavbarItemColorBorder =
 /**
  * BBLoadingSpinner
  */
-export type TBBLoadingSpinnerVariants = 'default' | 'double circle' | 'circle bounce' | 'spinning square';
+export type TBBLoadingSpinnerVariants =
+  | 'default'
+  | 'double circle'
+  | 'circle bounce'
+  | 'spinning square';
 export type TBBLoadingSpinnerSizes = 'sm' | 'md' | 'lg';
-export type TBBLoadingSpinnerColor = 'primary' | 'secondary' | 'accent' | 'danger' | 'success' | 'warning' | 'info' | 'black' | 'white';
+export type TBBLoadingSpinnerColor =
+  | 'primary'
+  | 'secondary'
+  | 'accent'
+  | 'danger'
+  | 'success'
+  | 'warning'
+  | 'info'
+  | 'black'
+  | 'white';
 
 /**
  * BBTooltip
@@ -141,7 +182,14 @@ export type TBBLoadingSpinnerColor = 'primary' | 'secondary' | 'accent' | 'dange
 /**
  * BBText
  */
-export type TBBTextSize = 'tiny' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge' | 'xxxlarge';
+export type TBBTextSize =
+  | 'tiny'
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'xlarge'
+  | 'xxlarge'
+  | 'xxxlarge';
 export type TBBTextColor =
   | 'grey_light'
   | 'grey_dark'
@@ -168,7 +216,7 @@ export type TBBTextColor =
 /**
  * Base props for all Base Blocks FORM components
  *
- * @prop {Object} register - React Hook Form register object.
+ * @prop {Function} register - React Hook Form register function.
  * @prop {string} fieldName - Name of the field, used for ID for form submission
  * @prop {string=} label - Label for the component
  * @prop {(value: any) => void} onChange - Change handler
@@ -185,7 +233,7 @@ export type TBBTextColor =
  * @param {React.RefObject<HTMLInputElement>=} inputRef - Ref for the input
  */
 interface IPropsBBBaseFormBase {
-  register?: Object;
+  register?: (name: string) => any;
   fieldName: string;
   label?: string;
   onChange?: (value: any) => void; // eslint-disable-line @typescript-eslint/no-explicit-any

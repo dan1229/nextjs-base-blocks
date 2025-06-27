@@ -1,8 +1,8 @@
 import classnames from 'classnames';
 import React from 'react';
+import type { IPropsBBBaseForm, TBBFieldTextType } from '../../types';
 import InputWrapper from '../input_wrapper';
 import styles from '../styles.module.scss';
-import type { IPropsBBBaseForm, TBBFieldTextType } from '../../types';
 
 /**
  * PROPS
@@ -12,13 +12,17 @@ import type { IPropsBBBaseForm, TBBFieldTextType } from '../../types';
  */
 export interface IPropsBBFieldText {
   type?: TBBFieldTextType;
-  onKeyDown?: React.KeyboardEventHandler<HTMLInputElement | HTMLTextAreaElement>;
+  onKeyDown?: React.KeyboardEventHandler<
+    HTMLInputElement | HTMLTextAreaElement
+  >;
 }
 
 /**
  * BBFIELD TEXT
  */
-export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm): React.ReactElement {
+export default function BBFieldText(
+  Props: IPropsBBFieldText & IPropsBBBaseForm
+): React.ReactElement {
   const {
     register,
     fieldName,
@@ -29,7 +33,7 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
     onChange,
     size = 'md',
     value,
-    onKeyDown,
+    onKeyDown
   } = Props;
 
   const getAutoComplete = (): string => {
@@ -45,7 +49,7 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
     placeholder: placeholder,
     onChange: onChange,
     value: value,
-    onKeyDown: onKeyDown,
+    onKeyDown: onKeyDown
   };
 
   /**
@@ -53,7 +57,15 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
    */
   return (
     <InputWrapper {...Props}>
-      {type == 'textarea' ? <textarea {...sharedProps} {...register} /> : <input {...sharedProps} type={type} {...register} />}
+      {type == 'textarea' ? (
+        <textarea {...sharedProps} {...(register ? register(fieldName) : {})} />
+      ) : (
+        <input
+          {...sharedProps}
+          type={type}
+          {...(register ? register(fieldName) : {})}
+        />
+      )}
     </InputWrapper>
   );
 }
