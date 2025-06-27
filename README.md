@@ -86,23 +86,23 @@ html,
   // app theme
   --primary-color: #{$primary-color};
   --primary-dark-color: #{darken($primary-color, 10%)};
+  --primary-darkest-color: #{darken($primary-color, 20%)};
   --primary-light-color: #{lighten($primary-color, 10%)};
   --secondary-color: #{$secondary-color};
   --secondary-dark-color: #{darken($secondary-color, 10%)};
+  --secondary-darkest-color: #{darken($secondary-color, 20%)};
   --secondary-light-color: #{lighten($secondary-color, 10%)};
   --accent-color: #{$accent-color};
   --accent-dark-color: #{darken($accent-color, 10%)};
   --accent-light-color: #{lighten($accent-color, 10%)};
-  --primary-darkest-color: #{darken($primary-color, 20%)};
-  --secondary-darkest-color: #{darken($secondary-color, 20%)};
   --accent-darkest-color: #{darken($accent-color, 20%)};
   // general colors
   --white: #fff;
   --black: rgb(35, 35, 35);
-  --grey-lightest: #8199c2;
-  --grey-light: #9daeca;
-  --grey-dark: #58647a;
-  --grey-darkest: #606775;
+  --grey-lightest: #abb3c0;
+  --grey-light: #b1bfd5;
+  --grey-dark: #969dac;
+  --grey-darkest: #6f7e9d;
   // theme colors
   --info-color: #{$info-color};
   --info-dark-color: #{darken($info-color, 10%)};
@@ -117,20 +117,20 @@ html,
   --danger-dark-color: #{darken($danger-color, 10%)};
   --danger-light-color: #{lighten($danger-color, 10%)};
   // bg theme colors
-  --bg-color: rgb(221, 221, 221);
-  --bg-light-color: rgb(255, 255, 255);
-  --bg-dark-color: rgb(177, 177, 177);
+  --bg-color: rgb(210, 210, 210);
+  --bg-light-color: rgb(230, 230, 230);
+  --bg-dark-color: rgb(189, 189, 189);
   // bb alert
-  --alert-border-radius: 8px;
+  --alert-border-radius: 1rem;
   // bb button
   --button-base-padding: 0.6rem;
-  --button-border-radius: 8px;
+  --button-border-radius: 1rem;
   // bb card
-  --card-background-default-color: rgb(255, 255, 255);
-  --card-darken-default-color: rgb(237, 237, 237);
-  --card-border-default-color: rgb(221, 221, 221);
-  --card-border-radius: 8px;
-  --card-border-thickness: 1px;
+  --card-background-default-color: rgb(250, 250, 250);
+  --card-darken-default-color: rgb(220, 220, 220);
+  --card-border-default-color: rgb(230, 230, 230);
+  --card-border-radius: 1rem;
+  --card-border-thickness: 2px;
   --card-elevation-default: rgba(0, 0, 0, 0.12) 0px 1px 1px, rgba(0, 0, 0, 0.24) 0px 1px 1px;
   --card-elevation-low: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   --card-elevation-med: rgba(0, 0, 0, 0.12) 0px 3px 6px, rgba(0, 0, 0, 0.24) 0px 3px 6px;
@@ -140,20 +140,21 @@ html,
   // bb modal
   --modal-z-index: 9999;
   // bb navbar
-  --navbar-background-color: rgb(221, 221, 221);
+  --navbar-background-color: var(--primary-color);
   --navbar-brand-padding: 0;
   --navbar-icon-mobile-color: var(--primary-color);
   --navbar-transition: all 0.2s ease-in-out;
-  --navbar-vertical-width: 8rem;
+  // if using vertical navbar, uncomment this
+  // --navbar-vertical-width: 8rem;
   // bb navbar item
   --navbar-item-border-radius: 1rem;
-  --navbar-item-padding: 1rem;
+  --navbar-item-padding: 0.5rem;
   --navbar-item-min-width: unset;
-  --navbar-item-background-color: #{$primary-color};
-  --navbar-item-text-color: #{$primary-color};
-  --navbar-item-text-color-hover: #{darken($secondary-color, 20%)};
+  --navbar-item-background-color: transparent;
+  --navbar-item-text-color: var(--accent-color);
+  --navbar-item-text-color-hover: #{darken($accent-color, 20%)};
   --navbar-item-bg-color-active: #{lighten($primary-color, 45%)};
-  --navbar-item-bg-color-hover: #{lighten($secondary-color, 20%)};
+  --navbar-item-bg-color-hover: #{lighten($accent-color, 20%)};
   --navbar-item-border-thickness: 2px;
   --navbar-item-border-default-color: var(--primary-color);
   // bb tooltip
@@ -181,20 +182,20 @@ html,
   --form-select-arrow-color: var(--form-input-color);
   // bb text
   --text-color-default: rgb(24, 24, 24);
-  --text-size-xs: 0.6rem;
-  --text-size-s: 0.8rem;
+  --text-size-xs: 0.5rem;
+  --text-size-s: 0.75rem;
   --text-size-m: 1rem;
-  --text-size-l: 1.6rem;
+  --text-size-l: 1.5rem;
   --text-size-xl: 2rem;
-  --text-size-xxl: 2.6rem;
-  --text-size-xxxl: 3.2rem;
-  --mobile-text-size-xs: 0.4rem;
-  --mobile-text-size-s: 0.6rem;
-  --mobile-text-size-m: 0.8rem;
+  --text-size-xxl: 2.5rem;
+  --text-size-xxxl: 3rem;
+  --mobile-text-size-xs: 0.6rem;
+  --mobile-text-size-s: 0.8rem;
+  --mobile-text-size-m: 1rem;
   --mobile-text-size-l: 1.2rem;
-  --mobile-text-size-xl: 1.8rem;
-  --mobile-text-size-xxl: 2.2rem;
-  --mobile-text-size-xxxl: 2.6rem;
+  --mobile-text-size-xl: 1.6rem;
+  --mobile-text-size-xxl: 2rem;
+  --mobile-text-size-xxxl: 2.5rem;
   // font family - page router font usage
   --font-family-main: 'Josefin Sans';  // Used for main text
   --font-family-header: 'Montserrat';  // Used for larger fonts/headers

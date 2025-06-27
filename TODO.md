@@ -306,8 +306,9 @@
 
 #### bbnavbar item - allow these to just be components instead of strings
 - i.e., let me pass a button to a navbar as a child component?
-
-
+-
+- min-width var isn't working super well
+  - doesnt center the text and seems somewhat misaligned (try like 6/8rem)
 
 
 ### [2.1.0] - 2025-MM-DD
