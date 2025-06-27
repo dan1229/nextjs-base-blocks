@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [2.0.1] - 2025-06-27
+- Fix issue with form component `register` syntax
+
+
 ### [2.0.0] - 2025-06-22
 - `BBModal`
   - Improved overall styling for a more modern look and feel.
