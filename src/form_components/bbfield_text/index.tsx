@@ -1,8 +1,8 @@
 import classnames from 'classnames';
 import React from 'react';
-import type { IPropsBBBaseForm, TBBFieldTextType } from '../../types';
 import InputWrapper from '../input_wrapper';
 import styles from '../styles.module.scss';
+import type { IPropsBBBaseForm, TBBFieldTextType } from '../../types';
 
 /**
  * PROPS

@@ -1,12 +1,12 @@
 import classnames from 'classnames';
 import React from 'react';
+import InputWrapper from '../input_wrapper';
+import styles from '../styles.module.scss';
 import type {
   IBBFieldDropdownOptions,
   IPropsBBBaseForm,
   TBBFieldBaseSize
 } from '../../types';
-import InputWrapper from '../input_wrapper';
-import styles from '../styles.module.scss';
 
 /**
  * PROPS
