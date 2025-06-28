@@ -1,5 +1,5 @@
 import type React from 'react';
-import type { FieldError } from 'react-hook-form';
+import type { FieldError, UseFormRegister } from 'react-hook-form';
 
 /**
  * ALL TYPES
@@ -233,7 +233,7 @@ export type TBBTextColor =
  * @param {React.RefObject<HTMLInputElement>=} inputRef - Ref for the input
  */
 interface IPropsBBBaseFormBase {
-  register?: (name: string) => any;
+  register?: UseFormRegister<any>; // eslint-disable-line @typescript-eslint/no-explicit-any
   fieldName: string;
   label?: string;
   onChange?: (value: any) => void; // eslint-disable-line @typescript-eslint/no-explicit-any
