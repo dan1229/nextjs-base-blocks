@@ -12,17 +12,13 @@ import type { IPropsBBBaseForm, TBBFieldTextType } from '../../types';
  */
 export interface IPropsBBFieldText {
   type?: TBBFieldTextType;
-  onKeyDown?: React.KeyboardEventHandler<
-    HTMLInputElement | HTMLTextAreaElement
-  >;
+  onKeyDown?: React.KeyboardEventHandler<HTMLInputElement | HTMLTextAreaElement>;
 }
 
 /**
  * BBFIELD TEXT
  */
-export default function BBFieldText(
-  Props: IPropsBBFieldText & IPropsBBBaseForm
-): React.ReactElement {
+export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm): React.ReactElement {
   const {
     register,
     fieldName,
@@ -33,7 +29,7 @@ export default function BBFieldText(
     onChange,
     size = 'md',
     value,
-    onKeyDown
+    onKeyDown,
   } = Props;
 
   const getAutoComplete = (): string => {
@@ -47,9 +43,11 @@ export default function BBFieldText(
     autoComplete: getAutoComplete(),
     required: required,
     placeholder: placeholder,
-    onChange: onChange,
-    value: value,
-    onKeyDown: onKeyDown
+    onKeyDown: onKeyDown,
+    // if register is not used, apply onChange and value props
+    // if register is used, let react-hook-form handle all input state via register()
+    ...(!register && onChange ? { onChange } : {}),
+    ...(!register && value !== undefined ? { value } : {}),
   };
 
   /**
@@ -60,11 +58,7 @@ export default function BBFieldText(
       {type == 'textarea' ? (
         <textarea {...sharedProps} {...(register ? register(fieldName) : {})} />
       ) : (
-        <input
-          {...sharedProps}
-          type={type}
-          {...(register ? register(fieldName) : {})}
-        />
+        <input {...sharedProps} type={type} {...(register ? register(fieldName) : {})} />
       )}
     </InputWrapper>
   );
