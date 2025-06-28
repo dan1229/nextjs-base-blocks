@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [2.0.2] - 2025-06-27
+- `register` type fix
+
+
 ### [2.0.1] - 2025-06-27
 - Fix issue with form component `register` syntax
 
