@@ -39,11 +39,9 @@ export default function BBFieldBase(Props: IPropsBBFieldBase & IPropsBBBaseForm)
         type={type}
         autoComplete={getAutoComplete()}
         required={required}
-        // if register is not used, apply onChange and value props
-        // if register is used, let react-hook-form handle all input state via register()
-        {...(!register && onChange ? { onChange } : {})}
-        {...(!register && value !== undefined ? { value } : {})}
-        {...(register ? register(fieldName) : {})}
+        onChange={onChange}
+        value={value}
+        {...register}
       />
     </InputWrapper>
   );

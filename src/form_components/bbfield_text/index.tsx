@@ -55,11 +55,7 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
    */
   return (
     <InputWrapper {...Props}>
-      {type == 'textarea' ? (
-        <textarea {...sharedProps} {...(register ? register(fieldName) : {})} />
-      ) : (
-        <input {...sharedProps} type={type} {...(register ? register(fieldName) : {})} />
-      )}
+      {type == 'textarea' ? <textarea {...sharedProps} {...register} /> : <input {...sharedProps} type={type} {...register} />}
     </InputWrapper>
   );
 }

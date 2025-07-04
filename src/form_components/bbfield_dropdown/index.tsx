@@ -36,11 +36,9 @@ export default function BBFieldDropdown(Props: IPropsBBFieldDropdown & IPropsBBB
           className={classnames(styles.form_control, styles[size])}
           id={fieldName}
           required={required}
+          onChange={onChange}
           autoComplete={getAutoComplete()}
-          // if register is not used, apply onChange prop
-          // if register is used, let react-hook-form handle all input state via register()
-          {...(!register && onChange ? { onChange } : {})}
-          {...(register ? register(fieldName) : {})}
+          {...register}
         >
           {options.map((val: IBBFieldDropdownOptions) => (
             <option key={val.value} value={val.value}>
