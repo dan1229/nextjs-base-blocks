@@ -309,6 +309,9 @@
 -
 - min-width var isn't working super well
   - doesnt center the text and seems somewhat misaligned (try like 6/8rem)
+-
+- add white-space: nowrap
+  - force it to be one line
 
 
 ### [2.1.0] - 2025-MM-DD
