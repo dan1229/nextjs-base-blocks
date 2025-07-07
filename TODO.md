@@ -255,6 +255,7 @@
 - yup
 
 
+
 #### cypress tests - fill in rest of tests
 - components left
   - button? collapsible, divider, link, loading spinner, modal, navbar, navbar item, tooltip
@@ -312,6 +313,14 @@
 -
 - add white-space: nowrap
   - force it to be one line
+
+
+
+#### form components - indicate when required
+- if passing required - either through the prop or `reigster` - add visual indicator
+  - a "*" is classic
+  - make the color of the asterisk an scss variable?
+
 
 
 ### [2.1.0] - 2025-MM-DD
