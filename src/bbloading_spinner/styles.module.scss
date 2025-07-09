@@ -64,7 +64,7 @@
 * DEFAULT
 */
 .loader_default {
-  border: 2px solid var(--loader-color, #78cdd7);
+  border: 2px solid var(--loader-color, #4a69bd);
   border-radius: 50%;
   border-top-color: white;
   animation: rotationSpinner 1s linear infinite;
@@ -74,6 +74,7 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -91,6 +92,7 @@
   box-sizing: border-box;
   animation: rotationDoubleSpinner 2s linear infinite;
 }
+
 .loader_double_circle::after {
   content: '';
   box-sizing: border-box;
@@ -100,7 +102,7 @@
   top: 0;
   bottom: 0;
   margin: auto;
-  border: 3px dotted var(--loader-color, #78cdd7);
+  border: 3px dotted var(--loader-color, #4a69bd);
   border-style: solid solid dotted;
   width: 24px;
   height: 24px;
@@ -113,14 +115,17 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
+
 @keyframes rotationBackDoubleSpinner {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(-360deg);
   }
@@ -130,7 +135,7 @@
 * CIRCLE BOUNCE
 */
 .loader_circle_bounce {
-  border: 4px solid var(--loader-color, #78cdd7);
+  border: 4px solid var(--loader-color, #4a69bd);
   border-radius: 50%;
   animation: circleBounceSpinner 1s ease-in-out infinite;
 }
@@ -139,9 +144,11 @@
   0% {
     transform: scale(0.5);
   }
+
   50% {
     transform: scale(1.2);
   }
+
   100% {
     transform: scale(0.5);
   }
@@ -151,7 +158,7 @@
 * SPINNING SQUARE
 */
 .loader_spinning_square {
-  border: 4px solid var(--loader-color, #78cdd7);
+  border: 4px solid var(--loader-color, #4a69bd);
   animation: spinningSquareSpinner 3s linear infinite;
 }
 
@@ -159,15 +166,19 @@
   0% {
     transform: rotate(0deg);
   }
+
   25% {
     transform: rotate(90deg);
   }
+
   50% {
     transform: rotate(180deg);
   }
+
   75% {
     transform: rotate(270deg);
   }
+
   100% {
     transform: rotate(360deg);
   }

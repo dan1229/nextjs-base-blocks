@@ -73,13 +73,13 @@ The list of available options is here:
 // keep these variables separate to allow for dynamic lighten/darken usage
 // NOTE: these are not required but it is highly recommended to at least
 // set these theme colors
-$primary-color: #5a65ff;
-$secondary-color: #45b689;
-$accent-color: #FF6B6C;
-$info-color: #FFC800;
-$warning-color: #f1c500;
-$success-color: #50c758;
-$danger-color: #78CDD7;
+$primary-color: #4a69bd;
+$secondary-color: #00b894;
+$accent-color: #e17055;
+$info-color: #3498db;
+$warning-color: #f39c12;
+$success-color: #27ae60;
+$danger-color: #e74c3c;
 
 html,
 :root {
@@ -97,12 +97,12 @@ html,
   --accent-light-color: #{lighten($accent-color, 10%)};
   --accent-darkest-color: #{darken($accent-color, 20%)};
   // general colors
-  --white: #fff;
-  --black: rgb(35, 35, 35);
-  --grey-lightest: #abb3c0;
-  --grey-light: #b1bfd5;
-  --grey-dark: #969dac;
-  --grey-darkest: #6f7e9d;
+  --white: #ffffff;
+  --black: #1a1a1a;
+  --grey-lightest: #e8e8e8;
+  --grey-light: #d0d0d0;
+  --grey-dark: #6b6b6b;
+  --grey-darkest: #3a3a3a;
   // theme colors
   --info-color: #{$info-color};
   --info-dark-color: #{darken($info-color, 10%)};
@@ -117,49 +117,49 @@ html,
   --danger-dark-color: #{darken($danger-color, 10%)};
   --danger-light-color: #{lighten($danger-color, 10%)};
   // bg theme colors
-  --bg-color: rgb(210, 210, 210);
-  --bg-light-color: rgb(230, 230, 230);
-  --bg-dark-color: rgb(189, 189, 189);
+  --bg-color: #f5f5f5;
+  --bg-light-color: #fafafa;
+  --bg-dark-color: #e0e0e0;
   // bb alert
-  --alert-border-radius: 1rem;
+  --alert-border-radius: 0.5rem;
   // bb button
-  --button-base-padding: 0.6rem;
-  --button-border-radius: 1rem;
+  --button-base-padding: 0.75rem 1.5rem;
+  --button-border-radius: 0.5rem;
   // bb card
-  --card-background-default-color: rgb(250, 250, 250);
-  --card-darken-default-color: rgb(220, 220, 220);
-  --card-border-default-color: rgb(230, 230, 230);
-  --card-border-radius: 1rem;
-  --card-border-thickness: 2px;
-  --card-elevation-default: rgba(0, 0, 0, 0.12) 0px 1px 1px, rgba(0, 0, 0, 0.24) 0px 1px 1px;
-  --card-elevation-low: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-  --card-elevation-med: rgba(0, 0, 0, 0.12) 0px 3px 6px, rgba(0, 0, 0, 0.24) 0px 3px 6px;
-  --card-elevation-high: rgba(0, 0, 0, 0.12) 0px 10px 20px, rgba(0, 0, 0, 0.24) 0px 6px 6px;
+  --card-background-default-color: #ffffff;
+  --card-darken-default-color: #f8f9fa;
+  --card-border-default-color: #e9ecef;
+  --card-border-radius: 0.75rem;
+  --card-border-thickness: 1px;
+  --card-elevation-default: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --card-elevation-low: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --card-elevation-med: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --card-elevation-high: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   // bb divider
-  --divider-color-default: rgb(221, 221, 221);
+  --divider-color-default: #e0e0e0;
   // bb modal
   --modal-z-index: 9999;
   // bb navbar
   --navbar-background-color: var(--primary-color);
-  --navbar-brand-padding: 0;
+  --navbar-brand-padding: 0.5rem;
   --navbar-icon-mobile-color: var(--primary-color);
   --navbar-transition: all 0.2s ease-in-out;
   // if using vertical navbar, uncomment this
   // --navbar-vertical-width: 8rem;
   // bb navbar item
-  --navbar-item-border-radius: 1rem;
-  --navbar-item-padding: 0.5rem;
+  --navbar-item-border-radius: 0.5rem;
+  --navbar-item-padding: 0.5rem 1rem;
   --navbar-item-min-width: unset;
   --navbar-item-background-color: transparent;
-  --navbar-item-text-color: var(--accent-color);
-  --navbar-item-text-color-hover: #{darken($accent-color, 20%)};
-  --navbar-item-bg-color-active: #{lighten($primary-color, 45%)};
-  --navbar-item-bg-color-hover: #{lighten($accent-color, 20%)};
+  --navbar-item-text-color: #ffffff;
+  --navbar-item-text-color-hover: #e0e0e0;
+  --navbar-item-bg-color-active: rgba(255, 255, 255, 0.15);
+  --navbar-item-bg-color-hover: rgba(255, 255, 255, 0.1);
   --navbar-item-border-thickness: 2px;
-  --navbar-item-border-default-color: var(--primary-color);
+  --navbar-item-border-default-color: transparent;
   // bb tooltip
   --tooltip-padding: 0.5rem 1rem;
-  --tooltip-border-radius: 8px;
+  --tooltip-border-radius: 0.5rem;
   --tooltip-z-index: 1070;
   --tooltip-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --tooltip-arrow-size: 4px;
@@ -181,27 +181,27 @@ html,
   --form-input-plaintext-color: var(--white);
   --form-select-arrow-color: var(--form-input-color);
   // bb text
-  --text-color-default: rgb(24, 24, 24);
-  --text-size-xs: 0.5rem;
-  --text-size-s: 0.75rem;
+  --text-color-default: #1a1a1a;
+  --text-size-xs: 0.75rem;
+  --text-size-s: 0.875rem;
   --text-size-m: 1rem;
-  --text-size-l: 1.5rem;
-  --text-size-xl: 2rem;
-  --text-size-xxl: 2.5rem;
+  --text-size-l: 1.25rem;
+  --text-size-xl: 1.75rem;
+  --text-size-xxl: 2.25rem;
   --text-size-xxxl: 3rem;
-  --mobile-text-size-xs: 0.6rem;
+  --mobile-text-size-xs: 0.7rem;
   --mobile-text-size-s: 0.8rem;
-  --mobile-text-size-m: 1rem;
-  --mobile-text-size-l: 1.2rem;
-  --mobile-text-size-xl: 1.6rem;
-  --mobile-text-size-xxl: 2rem;
-  --mobile-text-size-xxxl: 2.5rem;
+  --mobile-text-size-m: 0.9rem;
+  --mobile-text-size-l: 1.1rem;
+  --mobile-text-size-xl: 1.5rem;
+  --mobile-text-size-xxl: 1.875rem;
+  --mobile-text-size-xxxl: 2.25rem;
   // font family - page router font usage
-  --font-family-main: 'Josefin Sans';  // Used for main text
-  --font-family-header: 'Montserrat';  // Used for larger fonts/headers
-  --font-family-navbar-header: 'Montserrat';  // Used for navbar headers
-  --form-input-font-family: 'Montserrat' // Font family for all form fields
-  --form-label-font-family: 'Montserrat' // Font family for all form field labels
+  --font-family-main: 'Inter', system-ui, -apple-system, sans-serif;  // Used for main text
+  --font-family-header: 'Inter', system-ui, -apple-system, sans-serif;  // Used for larger fonts/headers
+  --font-family-navbar-header: 'Inter', system-ui, -apple-system, sans-serif;  // Used for navbar headers
+  --form-input-font-family: 'Inter', system-ui, -apple-system, sans-serif; // Font family for all form fields
+  --form-label-font-family: 'Inter', system-ui, -apple-system, sans-serif; // Font family for all form field labels
   // font family - app router font usage
   --font-family-main: var(--font-lexend);
   --font-family-header: var(--font-lexend);
@@ -222,19 +222,24 @@ Add overrides for dark themes like so:
 ```scss
 [data-theme='dark'] {
   // override any of the above variables
-  --bg-color: rgb(25, 25, 25);
-  --bg-light-color: rgb(60, 60, 60);
-  --bg-dark-color: rgb(39, 39, 39);
+  --bg-color: #1a1a1a;
+  --bg-light-color: #2d2d2d;
+  --bg-dark-color: #0f0f0f;
+  // general colors
+  --grey-lightest: #424242;
+  --grey-light: #616161;
+  --grey-dark: #9e9e9e;
+  --grey-darkest: #e0e0e0;
   // bb navbar
-  --navbar-background-color: rgb(54, 54, 54);
+  --navbar-background-color: #2d3748;
   // bb card
-  --card-background-default-color: rgb(77, 77, 77);
-  --card-darken-default-color: rgb(39, 39, 39);
-  --card-border-default-color: rgb(77, 77, 77);
+  --card-background-default-color: #2d2d2d;
+  --card-darken-default-color: #1a1a1a;
+  --card-border-default-color: #3a3a3a;
   // bb divider
-  --divider-color-default: rgb(77, 77, 77);
+  --divider-color-default: #3a3a3a;
   // bb text
-  --text-color-default: rgb(255, 255, 255);
+  --text-color-default: #f5f5f5;
 }
 ```
 

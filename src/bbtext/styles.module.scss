@@ -1,16 +1,16 @@
-$font-family-header: var(--font-family-header, 'Helvetica'), Helvetica, Arial, Helvetica, sans-serif;
-$font-family-main: var(--font-family-main, 'Helvetica'), Helvetica, Arial, Helvetica, sans-serif;
+$font-family-header: var(--font-family-header, 'Inter'), system-ui, -apple-system, sans-serif;
+$font-family-main: var(--font-family-main, 'Inter'), system-ui, -apple-system, sans-serif;
 
-$text-size-xs: var(--text-size-xs, 0.6rem);
-$text-size-s: var(--text-size-s, 0.8rem);
+$text-size-xs: var(--text-size-xs, 0.75rem);
+$text-size-s: var(--text-size-s, 0.875rem);
 $text-size-m: var(--text-size-m, 1rem);
-$text-size-l: var(--text-size-l, 1.6rem);
-$text-size-xl: var(--text-size-xl, 2.2rem);
-$text-size-xxl: var(--text-size-xxl, 2.8rem);
-$text-size-xxxl: var(--text-size-xxxl, 3.2rem);
+$text-size-l: var(--text-size-l, 1.25rem);
+$text-size-xl: var(--text-size-xl, 1.75rem);
+$text-size-xxl: var(--text-size-xxl, 2.25rem);
+$text-size-xxxl: var(--text-size-xxxl, 3rem);
 
 .base {
-  font-weight: 300;
+  font-weight: 400;
   font-family: $font-family-main;
 }
 
@@ -39,38 +39,39 @@ $text-size-xxxl: var(--text-size-xxxl, 3.2rem);
 
 // DEFAULT
 .color_default {
-  color: var(--text-color-default, #000000);
+  color: var(--text-color-default, #1a1a1a);
 }
 
 // GREY LIGHT
 .grey_light {
-  color: var(--grey-lightest, #8199c2);
+  color: var(--grey-lightest, #9e9e9e);
 }
 
 .grey_light.hover {
   &:hover {
-    color: var(--grey-dark, #58647a);
+    color: var(--grey-dark, #616161);
   }
 }
 
 // GREY DARK
 .grey_dark {
-  color: var(--grey-dark, #58647a);
+  color: var(--grey-dark, #616161);
 }
 
 .grey_dark.hover {
   &:hover {
-    color: var(--grey-darkest, #2d3a4f);
+    color: var(--grey-darkest, #424242);
   }
 }
 
 // BLACK
 .black {
-  color: var(--black, #232323);
+  color: var(--black, #1a1a1a);
 }
+
 .black.hover {
   &:hover {
-    color: var(--grey-darkest, #2d3a4f);
+    color: var(--grey-darkest, #424242);
   }
 }
 
@@ -87,144 +88,145 @@ $text-size-xxxl: var(--text-size-xxxl, 3.2rem);
 
 // PRIMARy
 .primary {
-  color: var(--primary-color, #78cdd7);
+  color: var(--primary-color, #4a69bd);
 }
 
 .primary.hover {
   &:hover {
-    color: var(--primary-dark-color, #89130f);
+    color: var(--primary-dark-color, #3c5aa6);
   }
 }
 
 // PRIMARY DARK
 .primary_dark {
-  color: var(--primary-dark-color, #89130f);
+  color: var(--primary-dark-color, #3c5aa6);
 }
 
 .primary_dark.hover {
   &:hover {
-    color: var(--primary-darkest-color, #5c0d0a);
+    color: var(--primary-darkest-color, #2e4b8f);
   }
 }
 
 // PRIMARY LIGHT
 .primary_light {
-  color: var(--primary-light-color, #f2b7b5);
+  color: var(--primary-light-color, #5e7fd4);
 }
 
 .primary_light.hover {
   &:hover {
-    color: var(--primary-color, #78cdd7);
+    color: var(--primary-color, #4a69bd);
   }
 }
 
 // SECONDARY
 .secondary {
-  color: var(--secondary-color, #ffc800);
+  color: var(--secondary-color, #00b894);
 }
 
 .secondary.hover {
   &:hover {
-    color: var(--secondary-dark-color, #0f1a89);
+    color: var(--secondary-dark-color, #00a07c);
   }
 }
 
 // SECONDARY DARK
 .secondary_dark {
-  color: var(--secondary-dark-color, #0f1a89);
+  color: var(--secondary-dark-color, #00a07c);
 }
 
 .secondary_dark.hover {
   &:hover {
-    color: var(--secondary-darkest-color, #0f1a89);
+    color: var(--secondary-darkest-color, #008865);
   }
 }
 
 // SECONDARY LIGHT
 .secondary_light {
-  color: var(--secondary-light-color, #b7c7f2);
+  color: var(--secondary-light-color, #00d0ac);
 }
 
 .secondary_light.hover {
   &:hover {
-    color: var(--secondary-color, #ffc800);
+    color: var(--secondary-color, #00b894);
   }
 }
 
 // ACCENT
 .accent {
-  color: var(--accent-color, #f1c500);
+  color: var(--accent-color, #e17055);
 }
 
 .accent.hover {
   &:hover {
-    color: var(--accent-dark-color, #b89e00);
+    color: var(--accent-dark-color, #cd5e45);
   }
 }
 
 // ACCENT DARK
 .accent_dark {
-  color: var(--accent-dark-color, #b89e00);
+  color: var(--accent-dark-color, #cd5e45);
 }
 
 .accent_dark.hover {
   &:hover {
-    color: var(--accent-darkest-color, #b89e00);
+    color: var(--accent-darkest-color, #b84c35);
   }
 }
 
 // ACCENT LIGHT
 .accent_light {
-  color: var(--accent-light-color, #f2e7b5);
+  color: var(--accent-light-color, #e98265);
 }
 
 .accent_light.hover {
   &:hover {
-    color: var(--accent-color, #f1c500);
+    color: var(--accent-color, #e17055);
   }
 }
 
 // WARNING
 .warning {
-  color: var(--warning-color, #f1c500);
+  color: var(--warning-color, #f39c12);
 }
+
 .warning.hover {
   &:hover {
-    color: var(--warning-dark-color, #b89e00);
+    color: var(--warning-dark-color, #e08a00);
   }
 }
 
 // SUCCESS
 .success {
-  color: var(--success-color, #50c758);
+  color: var(--success-color, #27ae60);
 }
 
 .success.hover {
   &:hover {
-    color: var(--success-dark-color, #2e9e3a);
+    color: var(--success-dark-color, #229954);
   }
 }
 
 // DANGER
 .danger {
-  color: var(--danger-color, #78cdd7);
+  color: var(--danger-color, #e74c3c);
 }
 
 .danger.hover {
   &:hover {
-    color: var(--danger-dark-color, #a71813);
+    color: var(--danger-dark-color, #d32f2f);
   }
 }
 
 // INFO
 
 .info {
-  color: var(--info-color, #ffc800);
+  color: var(--info-color, #3498db);
 }
 
 .info.hover {
   &:hover {
-    color: var(--info-dark-color, #0f1a89);
+    color: var(--info-dark-color, #2980b9);
   }
 }
 
@@ -264,19 +266,19 @@ $text-size-xxxl: var(--text-size-xxxl, 3.2rem);
 }
 
 .xxxlarge {
-  font-size: $text-size-xxl;
+  font-size: $text-size-xxxl;
   font-family: $font-family-header;
   margin: 1.2rem 0.2rem;
 }
 
 // MOBILE
-$mobile-text-size-xs: var(--mobile-text-size-xs, 0.4rem);
-$mobile-text-size-s: var(--mobile-text-size-s, 0.6rem);
-$mobile-text-size-m: var(--mobile-text-size-m, 0.8rem);
-$mobile-text-size-l: var(--mobile-text-size-l, 1.2rem);
-$mobile-text-size-xl: var(--mobile-text-size-xl, 1.6rem);
-$mobile-text-size-xxl: var(--mobile-text-size-xxl, 2rem);
-$mobile-text-size-xxxl: var(--mobile-text-size-xxxl, 2.5rem);
+$mobile-text-size-xs: var(--mobile-text-size-xs, 0.7rem);
+$mobile-text-size-s: var(--mobile-text-size-s, 0.8rem);
+$mobile-text-size-m: var(--mobile-text-size-m, 0.9rem);
+$mobile-text-size-l: var(--mobile-text-size-l, 1.1rem);
+$mobile-text-size-xl: var(--mobile-text-size-xl, 1.5rem);
+$mobile-text-size-xxl: var(--mobile-text-size-xxl, 1.875rem);
+$mobile-text-size-xxxl: var(--mobile-text-size-xxxl, 2.25rem);
 
 @media all and (max-width: 900px) {
   .tiny {

@@ -1,41 +1,41 @@
-$border-radius: var(--navbar-item-border-radius, 8px);
-$navbar-item-color: var(--navbar-item-background-color, #303030);
-$navbar-item-padding: var(--navbar-item-padding, 0.5rem);
-$bg-dark-color: var(--bg-dark-color, #1c1c1c);
-$bg-color: var(--bg-color, #303030);
-$bg-light-color: var(--bg-light-color, #303030);
+$border-radius: var(--navbar-item-border-radius, 0.5rem);
+$navbar-item-color: var(--navbar-item-background-color, transparent);
+$navbar-item-padding: var(--navbar-item-padding, 0.5rem 1rem);
+$bg-dark-color: var(--bg-dark-color, #2d2d2d);
+$bg-color: var(--bg-color, #3a3a3a);
+$bg-light-color: var(--bg-light-color, #4a4a4a);
 
 $border-thickness: var(--navbar-item-border-thickness, 2px);
-$border-default-color: var(--navbar-item-border-default-color, #e0e0e0);
+$border-default-color: var(--navbar-item-border-default-color, transparent);
 
 $navbar-item-text-color: var(--navbar-item-text-color, #ffffff);
 
 // colors
 $white: var(--white, #ffffff);
-$grey-lightest: var(--grey-lightest, #a9bcde);
-$grey-light: var(--grey-light, #9daeca);
-$grey-dark: var(--grey-dark, #58647a);
-$black: var(--black, #232323);
-$primary-color: var(--primary-color, #3f51b5);
-$secondary-color: var(--secondary-color, #f50057);
-$accent-color: var(--accent-color, #ff6b6c);
+$grey-lightest: var(--grey-lightest, #e0e0e0);
+$grey-light: var(--grey-light, #bdbdbd);
+$grey-dark: var(--grey-dark, #757575);
+$black: var(--black, #1a1a1a);
+$primary-color: var(--primary-color, #4a69bd);
+$secondary-color: var(--secondary-color, #00b894);
+$accent-color: var(--accent-color, #e17055);
 
 // this is intended to go like this:
 // 1. use '--navbar-item-text-color' if it is defined
 // 2. if not, use '--primary-color' if it is defined
 // 3. if not, use default primary color
-$primary-color: var(--primary-color, #78cdd7);
-$navbar-item-text-color: var(--navbar-item-text-color, $primary-color);
+$primary-color: var(--primary-color, #4a69bd);
+$navbar-item-text-color: var(--navbar-item-text-color, #ffffff);
 
 // same with --navbar-item-text-color-hover and --primary-dark-color
-$primary-dark-color: var(--primary-dark-color, darken(#78cdd7, 10%));
-$navbar-item-text-color-hover: var(--navbar-item-text-color-hover, $primary-dark-color);
+$primary-dark-color: var(--primary-dark-color, #3c5aa6);
+$navbar-item-text-color-hover: var(--navbar-item-text-color-hover, #e0e0e0);
 
 // same with --navbar-item-bg-color-active and --bg-dark-color
-$navbar-item-bg-color-active: var(--navbar-item-bg-color-active, $bg-dark-color);
+$navbar-item-bg-color-active: var(--navbar-item-bg-color-active, rgba(255, 255, 255, 0.15));
 
 // same with --navbar-item-text-color-hover and --bg-color
-$navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
+$navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, rgba(255, 255, 255, 0.1));
 
 // set min width
 $navbar-item-min-width: var(--navbar-item-min-width, unset);
@@ -61,6 +61,7 @@ $navbar-item-min-width: var(--navbar-item-min-width, unset);
     text-align: center;
     text-decoration: none;
     width: 100%;
+
     * {
       padding: $navbar-item-padding;
     }
@@ -100,12 +101,13 @@ $navbar-item-min-width: var(--navbar-item-min-width, unset);
 
 // TODO find a better selector than these two
 // this is for the text
-.navbarItemBase:hover > div > div > a > * {
+.navbarItemBase:hover>div>div>a>* {
   // need the !important to override the default color / active color
   color: $navbar-item-text-color-hover !important;
 }
+
 // this is for the icon
-.navbarItemBase:hover > div > div > .iconDropdown {
+.navbarItemBase:hover>div>div>.iconDropdown {
   // need the !important to override the default color / active color
   color: $navbar-item-text-color-hover !important;
 }

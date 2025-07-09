@@ -1,8 +1,8 @@
-$background-color: var(--navbar-background-color, #dddddd);
+$background-color: var(--navbar-background-color, #4a69bd);
 $brand-padding: var(--navbar-brand-padding, 0.5rem);
-$navbar-item-border-radius: var(--navbar-item-border-radius, 1rem);
+$navbar-item-border-radius: var(--navbar-item-border-radius, 0.5rem);
 
-$bg-dark-color: var(--bg-dark-color, #000);
+$bg-dark-color: var(--bg-dark-color, #1a1a1a);
 $container-brand-margin: 0rem;
 
 // Font family fallback strategy
@@ -10,13 +10,13 @@ $container-brand-margin: 0rem;
 // 1. use 'font-family-navbar-header' if it is defined
 // 2. if not, use 'font-family-header' if it is defined
 // 3. if not, use sans-serif
-$default-font-family-header: sans-serif;
+$default-font-family-header: system-ui, -apple-system, sans-serif;
 $font-family-header: var(--font-family-header, #{$default-font-family-header});
 $font-family-navbar-header: var(--font-family-navbar-header, $font-family-header);
 
 // same with --navbar-icon-mobile-color and --primary-color
 // if neither is defined, use default primary color
-$primary-color: var(--primary-color, #78cdd7);
+$primary-color: var(--primary-color, #4a69bd);
 $navbar-icon-mobile-color: var(--navbar-icon-mobile-color, $primary-color);
 
 // navbar vertical width
@@ -33,16 +33,16 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
 }
 
 .elevation_low {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.06);
 }
 
 .elevation_high {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .elevation_rainbow {
-  box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px,
-    rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+  box-shadow: rgb(74, 105, 189) 0px 0px 0px 3px, rgb(0, 184, 148) 0px 0px 0px 6px, rgb(225, 112, 85) 0px 0px 0px 9px,
+    rgb(243, 156, 18) 0px 0px 0px 12px, rgb(231, 76, 60) 0px 0px 0px 15px;
 }
 
 /**
@@ -50,14 +50,16 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
  */
 .wrapper {
   display: flex;
-  flex-direction: column; /* Ensure that content stacks below the navbar */
+  flex-direction: column;
+  /* Ensure that content stacks below the navbar */
 }
 
 .content {
   width: 100%;
   display: flex;
   flex-direction: column;
-  position: relative; /* Allow content to adjust based on its container */
+  position: relative;
+  /* Allow content to adjust based on its container */
   margin-top: 0px !important;
 
   &.vertical {
@@ -102,7 +104,7 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
     position: sticky;
     top: 0;
 
-    > div {
+    >div {
       max-width: 100%;
     }
   }
@@ -186,7 +188,7 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
   }
 
   // Align navbar item text to the start
-  ul > li > div > div > a > * {
+  ul>li>div>div>a>* {
     text-align: start;
   }
 }
@@ -207,7 +209,8 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
 
   &.vertical {
     align-items: flex-start;
-    width: auto; /* Adjust width based on content */
+    width: auto;
+    /* Adjust width based on content */
   }
 }
 
@@ -229,7 +232,8 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
 }
 
 .hamburger {
-  width: auto; /* Adjust width based on content */
+  width: auto;
+  /* Adjust width based on content */
   padding: 0.25rem;
   border: none;
   background-color: transparent;
@@ -340,6 +344,7 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

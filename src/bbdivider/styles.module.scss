@@ -2,23 +2,23 @@
 
 // Color redefinitions to standardize across this file/component
 //
-$default: var(--divider-color-default, #000000);
+$default: var(--divider-color-default, #e0e0e0);
 $white: var(--white, #ffffff);
-$black: var(--black, #000000);
-$grey-light: var(--grey-light, #8199c2);
-$grey-dark: var(--grey-dark, #58647a);
+$black: var(--black, #1a1a1a);
+$grey-light: var(--grey-light, #e0e0e0);
+$grey-dark: var(--grey-dark, #757575);
 
-$primary-color: var(--primary-color, #78cdd7);
-$primary-light-color: var(--primary-light-color, lighten(#78cdd7, 10%));
-$primary-dark-color: var(--primary-dark-color, darken(#78cdd7, 10%));
+$primary-color: var(--primary-color, #4a69bd);
+$primary-light-color: var(--primary-light-color, lighten(#4a69bd, 10%));
+$primary-dark-color: var(--primary-dark-color, darken(#4a69bd, 10%));
 
-$secondary-color: var(--secondary-color, #ffc800);
-$secondary-light-color: var(--secondary-light-color, lighten(#ffc800, 10%));
-$secondary-dark-color: var(--secondary-dark-color, darken(#ffc800, 10%));
+$secondary-color: var(--secondary-color, #00b894);
+$secondary-light-color: var(--secondary-light-color, lighten(#00b894, 10%));
+$secondary-dark-color: var(--secondary-dark-color, darken(#00b894, 10%));
 
-$accent-color: var(--accent-color, #ff6b6c);
-$accent-light-color: var(--accent-light-color, lighten(#ff6b6c, 10%));
-$accent-dark-color: var(--accent-dark-color, darken(#ff6b6c, 10%));
+$accent-color: var(--accent-color, #e17055);
+$accent-light-color: var(--accent-light-color, lighten(#e17055, 10%));
+$accent-dark-color: var(--accent-dark-color, darken(#e17055, 10%));
 
 // Base divider styles
 .divider {
@@ -95,6 +95,7 @@ $accent-dark-color: var(--accent-dark-color, darken(#ff6b6c, 10%));
     &.horizontal {
       width: $value;
     }
+
     &.vertical {
       height: $value;
     }
@@ -107,6 +108,7 @@ $accent-dark-color: var(--accent-dark-color, darken(#ff6b6c, 10%));
     &.horizontal {
       margin: #{$value} 0;
     }
+
     &.vertical {
       margin: 0 #{$value};
     }
@@ -115,24 +117,20 @@ $accent-dark-color: var(--accent-dark-color, darken(#ff6b6c, 10%));
 
 // Color variants
 @each $name,
-  $color
-    in (
-      'default': $black,
-      'white': $white,
-      'grey_light': $grey-light,
-      'grey_dark': $grey-dark,
-      'black': $black,
-      'primary': $primary-color,
-      'primary_light': $primary-light-color,
-      'primary_dark': $primary-dark-color,
-      'secondary': $secondary-color,
-      'secondary_light': $secondary-light-color,
-      'secondary_dark': $secondary-dark-color,
-      'accent': $accent-color,
-      'accent_light': $accent-light-color,
-      'accent_dark': $accent-dark-color
-    )
-{
+$color in ('default': $default,
+  'white': $white,
+  'grey_light': $grey-light,
+  'grey_dark': $grey-dark,
+  'black': $black,
+  'primary': $primary-color,
+  'primary_light': $primary-light-color,
+  'primary_dark': $primary-dark-color,
+  'secondary': $secondary-color,
+  'secondary_light': $secondary-light-color,
+  'secondary_dark': $secondary-dark-color,
+  'accent': $accent-color,
+  'accent_light': $accent-light-color,
+  'accent_dark': $accent-dark-color ) {
   .color#{$name} {
     color: $color;
   }
