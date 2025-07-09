@@ -54,7 +54,7 @@ At the moment, the following components are available:
 As well as the following 'Form Components':
 - `BBFieldBase`
 - `BBFieldCheckbox`
-- `BBFieldDropdown`
+- `BBFieldSelect`
 - `BBFieldFile`
 - `BBFieldNumber`
 - `BBFieldSelectCard`

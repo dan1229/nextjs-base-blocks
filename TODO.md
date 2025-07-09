@@ -267,7 +267,7 @@
 ---
 
 
-#### rename bb dropdown to bb select?
+#### ✅ DONE: renamed bb dropdown to bb select
 - is that more appropriate
   - def more common name
 - then could merge with bb select multiple
