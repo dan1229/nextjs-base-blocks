@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import BBLink from '../../bblink';
 import BBText from '../../bbtext';
@@ -14,7 +16,7 @@ import type { IPropsBBBaseForm } from '../../types';
 /**
  * FORM COMPONENTS DEMO PAGE
  */
-const FormComponentsPage = () => {
+export default function FormComponentsPage() {
   // BB Field Text
   const [stateBBFieldText, setStateBBFieldText] = useState<IPropsBBFieldText & IPropsBBBaseForm>({
     fieldName: 'demo-text',
@@ -165,6 +167,4 @@ const FormComponentsPage = () => {
       </div>
     </div>
   );
-};
-
-export default FormComponentsPage;
+}

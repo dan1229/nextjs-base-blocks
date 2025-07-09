@@ -313,7 +313,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     if (onClick) console.warn('BBButton: Both onClick and href are defined. onClick will be ignored.');
     return (
       <Link
-        href={href}
+        href={href as any}
         className={baseClassNames}
         target={openInNewTab ? '_blank' : '_self'}
         rel={openInNewTab ? 'noreferrer noopener' : undefined}

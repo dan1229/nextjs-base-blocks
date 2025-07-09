@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import BBAlert from '../bbalert';
 import BBButton from '../bbbutton';
@@ -29,7 +31,7 @@ import type { IPropsBBTooltip } from '../bbtooltip';
 /**
  * DEMO PAGE
  */
-const DemoPage = () => {
+export default function DemoPage() {
   //
   // REGULAR COMPONENTS
   //
@@ -272,6 +274,4 @@ const DemoPage = () => {
       </div>
     </div>
   );
-};
-
-export default DemoPage;
+}

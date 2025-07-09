@@ -12,6 +12,7 @@ module.exports = {
     project: './tsconfig.json',
   },
   rules: {
+    '@next/next/no-html-link-for-pages': 'off',
     'no-console': ['warn', { allow: ['warn', 'error'] }],
     'react-hooks/rules-of-hooks': 'warn',
     'react-hooks/exhaustive-deps': 'error',

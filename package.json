@@ -2,7 +2,7 @@
   "name": "nextjs-base-blocks",
   "version": "2.0.0",
   "description": "A component library for Next.js",
-  "main": "app/page.tsx",
+  "main": "src/app/page.tsx",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

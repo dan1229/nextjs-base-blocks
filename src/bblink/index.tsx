@@ -50,7 +50,7 @@ export default function BBLink(Props: IPropsBBLink & IPropsBBBase): React.ReactE
 
   return (
     <Link
-      href={href}
+      href={href as any}
       target={external ? '_blank' : ''}
       rel={external ? 'noreferrer noopener' : ''}
       className={underline ? styles.underline : styles.no_underline}

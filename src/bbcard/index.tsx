@@ -181,7 +181,7 @@ const BBCard = (Props: IPropsBBBase & IPropsBBCard) => {
       )}
     >
       {href ? (
-        <Link href={href} className={styles.linkCard} target="_blank" rel="noopener noreferrer">
+        <Link href={href as any} className={styles.linkCard} target="_blank" rel="noopener noreferrer">
           {children}
         </Link>
       ) : (

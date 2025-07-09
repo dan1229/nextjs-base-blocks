@@ -115,7 +115,7 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
               }}
             />
           </div>
-          <div className={styles.containerBrand} onClick={async () => router.push(routeBrand)}>
+          <div className={styles.containerBrand} onClick={async () => router.push(routeBrand as any)}>
             <div className={classNames(styles.brand, brandHorizontal ? styles.brandHorizontal : styles.brandVertical)}>
               {!!imageSrc && <Image src={imageSrc} alt="" height={imageHeight} width={imageWidth} />}
               {!!title && title.length && (
