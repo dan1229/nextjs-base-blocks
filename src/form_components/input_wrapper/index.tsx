@@ -38,14 +38,24 @@ export default function InputWrapper(props: IPropsInputWrapper & IPropsBBBaseFor
     error,
     helperTextType = 'text',
     inputRef,
+    required,
+    register,
   } = props;
+
+  // Determine if the field is required either from prop or register
+  const isRequired = required || register?.required;
 
   /**
    * RENDER
    */
   return (
     <div className={classnames(styles.form_group, className)} ref={inputRef}>
-      {showLabel && <label htmlFor={fieldName}>{getLabel(label, fieldName)}</label>}
+      {showLabel && (
+        <label htmlFor={fieldName}>
+          {getLabel(label, fieldName)}
+          {isRequired && <span className={styles.required_indicator}>*</span>}
+        </label>
+      )}
       {children}
       {error && error.message && <BBAlert variant="danger">{error.message}</BBAlert>}
       {helperText && helperTextType === 'text' && (

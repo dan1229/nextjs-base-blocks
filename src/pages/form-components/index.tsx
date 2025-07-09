@@ -18,7 +18,7 @@ const FormComponentsPage = () => {
   // BB Field Text
   const [stateBBFieldText, setStateBBFieldText] = useState<IPropsBBFieldText & IPropsBBBaseForm>({
     fieldName: 'demo-text',
-    required: false,
+    required: true,
     label: 'Demo Text Input',
     type: 'text',
     size: 'md',
@@ -53,7 +53,7 @@ const FormComponentsPage = () => {
   // BB Field Dropdown
   const [stateBBFieldDropdown, setStateBBFieldDropdown] = useState<IPropsBBFieldDropdown & IPropsBBBaseForm>({
     fieldName: 'demo-dropdown',
-    required: false,
+    required: true,
     label: 'Demo Dropdown',
     className: '',
     onChange: (event) => {
