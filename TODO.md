@@ -251,8 +251,8 @@
 
 
 
-#### convert to app router
-- yup
+#### convert demo pages to app router
+- probably lots of package and lint updates
 
 
 
