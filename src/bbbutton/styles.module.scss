@@ -1,47 +1,51 @@
 // color redefinitions to standardize across this file/component
 //
 $white: var(--white, #ffffff);
-$black: var(--black, #000000);
-$grey-lightest: var(--grey-lightest, #8199c2);
-$grey-light: var(--grey-light, #8199c2);
-$grey-dark: var(--grey-dark, #58647a);
-$grey-darkest: var(--grey-darkest, #2f3542);
+$black: var(--black, #1f2937);
+$grey-lightest: var(--grey-lightest, #f9fafb);
+$grey-light: var(--grey-light, #e5e7eb);
+$grey-dark: var(--grey-dark, #6b7280);
+$grey-darkest: var(--grey-darkest, #374151);
 
-$info-color: var(--info-color, #ffc800);
-$info-light-color: var(--info-light-color, lighten(#ffc800, 10%));
-$info-dark-color: var(--info-dark-color, darken(#ffc800, 10%));
+$info-color: var(--info-color, #3b82f6);
+$info-light-color: var(--info-light-color, lighten(#3b82f6, 10%));
+$info-dark-color: var(--info-dark-color, darken(#3b82f6, 10%));
 
-$primary-color: var(--primary-color, #78cdd7);
-$primary-light-color: var(--primary-light-color, lighten(#78cdd7, 10%));
-$primary-dark-color: var(--primary-dark-color, darken(#78cdd7, 10%));
+$primary-color: var(--primary-color, #6366f1);
+$primary-light-color: var(--primary-light-color, lighten(#6366f1, 10%));
+$primary-dark-color: var(--primary-dark-color, darken(#6366f1, 10%));
 
-$secondary-color: var(--secondary-color, #ffc800);
-$secondary-light-color: var(--secondary-light-color, lighten(#ffc800, 10%));
-$secondary-dark-color: var(--secondary-dark-color, darken(#ffc800, 10%));
+$secondary-color: var(--secondary-color, #10b981);
+$secondary-light-color: var(--secondary-light-color, lighten(#10b981, 10%));
+$secondary-dark-color: var(--secondary-dark-color, darken(#10b981, 10%));
 
-$accent-color: var(--accent-color, #ff6b6c);
-$accent-light-color: var(--accent-light-color, lighten(#ff6b6c, 10%));
-$accent-dark-color: var(--accent-dark-color, darken(#ff6b6c, 10%));
+$accent-color: var(--accent-color, #f59e0b);
+$accent-light-color: var(--accent-light-color, lighten(#f59e0b, 10%));
+$accent-dark-color: var(--accent-dark-color, darken(#f59e0b, 10%));
 
-$danger-color: var(--danger-color, #da2f2f);
-$danger-light-color: var(--danger-light-color, lighten(#da2f2f, 10%));
-$danger-dark-color: var(--danger-dark-color, darken(#da2f2f, 10%));
+$danger-color: var(--danger-color, #ef4444);
+$danger-light-color: var(--danger-light-color, lighten(#ef4444, 10%));
+$danger-dark-color: var(--danger-dark-color, darken(#ef4444, 10%));
 
-$success-color: var(--success-color, #50c758);
-$success-light-color: var(--success-light-color, lighten(#50c758, 10%));
-$success-dark-color: var(--success-dark-color, darken(#50c758, 10%));
+$success-color: var(--success-color, #10b981);
+$success-light-color: var(--success-light-color, lighten(#10b981, 10%));
+$success-dark-color: var(--success-dark-color, darken(#10b981, 10%));
 
-$warning-color: var(--warning-color, #f1c500);
-$warning-light-color: var(--warning-light-color, lighten(#f1c500, 10%));
-$warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
+$warning-color: var(--warning-color, #f59e0b);
+$warning-light-color: var(--warning-light-color, lighten(#f59e0b, 10%));
+$warning-dark-color: var(--warning-dark-color, darken(#f59e0b, 10%));
 
-$button-base-padding: var(--button-base-padding, 0.6rem);
-$button-base-border-radius: var(--button-base-border-radius, 4px);
+$button-base-padding: var(--button-base-padding, 0.75rem 1.25rem);
+$button-base-border-radius: var(--button-base-border-radius, 0.5rem);
 
 // base
 .base {
   padding: $button-base-padding;
-  border-radius: var(--button-border-radius, 4px);
+  border-radius: var(--button-border-radius, 0.5rem);
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid transparent;
+
   &:hover {
     cursor: pointer;
   }
@@ -126,7 +130,7 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
     color: inherit;
   }
 
-  &:hover > * {
+  &:hover>* {
     color: $primary-light-color !important;
   }
 }
@@ -204,11 +208,12 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
   color: $white;
 
   &:hover {
-    color: $grey-lightest;
-    background-color: $primary-light-color;
+    color: $white;
+    background-color: $primary-dark-color;
+    transform: translateY(-1px);
 
     * {
-      color: $grey-lightest;
+      color: $white;
     }
   }
 

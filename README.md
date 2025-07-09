@@ -73,13 +73,13 @@ The list of available options is here:
 // keep these variables separate to allow for dynamic lighten/darken usage
 // NOTE: these are not required but it is highly recommended to at least
 // set these theme colors
-$primary-color: #5a65ff;
-$secondary-color: #45b689;
-$accent-color: #FF6B6C;
-$info-color: #FFC800;
-$warning-color: #f1c500;
-$success-color: #50c758;
-$danger-color: #78CDD7;
+$primary-color: #6366f1;
+$secondary-color: #10b981;
+$accent-color: #f59e0b;
+$info-color: #3b82f6;
+$warning-color: #f59e0b;
+$success-color: #10b981;
+$danger-color: #ef4444;
 
 html,
 :root {
@@ -97,12 +97,12 @@ html,
   --accent-light-color: #{lighten($accent-color, 10%)};
   --accent-darkest-color: #{darken($accent-color, 20%)};
   // general colors
-  --white: #fff;
-  --black: rgb(35, 35, 35);
-  --grey-lightest: #abb3c0;
-  --grey-light: #b1bfd5;
-  --grey-dark: #969dac;
-  --grey-darkest: #6f7e9d;
+  --white: #ffffff;
+  --black: #1f2937;
+  --grey-lightest: #f9fafb;
+  --grey-light: #e5e7eb;
+  --grey-dark: #6b7280;
+  --grey-darkest: #374151;
   // theme colors
   --info-color: #{$info-color};
   --info-dark-color: #{darken($info-color, 10%)};
@@ -117,85 +117,85 @@ html,
   --danger-dark-color: #{darken($danger-color, 10%)};
   --danger-light-color: #{lighten($danger-color, 10%)};
   // bg theme colors
-  --bg-color: rgb(210, 210, 210);
-  --bg-light-color: rgb(230, 230, 230);
-  --bg-dark-color: rgb(189, 189, 189);
+  --bg-color: #f8fafc;
+  --bg-light-color: #ffffff;
+  --bg-dark-color: #e2e8f0;
   // bb alert
-  --alert-border-radius: 1rem;
+  --alert-border-radius: 0.75rem;
   // bb button
-  --button-base-padding: 0.6rem;
-  --button-border-radius: 1rem;
+  --button-base-padding: 0.75rem 1.25rem;
+  --button-border-radius: 0.5rem;
   // bb card
-  --card-background-default-color: rgb(250, 250, 250);
-  --card-darken-default-color: rgb(220, 220, 220);
-  --card-border-default-color: rgb(230, 230, 230);
-  --card-border-radius: 1rem;
-  --card-border-thickness: 2px;
-  --card-elevation-default: rgba(0, 0, 0, 0.12) 0px 1px 1px, rgba(0, 0, 0, 0.24) 0px 1px 1px;
-  --card-elevation-low: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-  --card-elevation-med: rgba(0, 0, 0, 0.12) 0px 3px 6px, rgba(0, 0, 0, 0.24) 0px 3px 6px;
-  --card-elevation-high: rgba(0, 0, 0, 0.12) 0px 10px 20px, rgba(0, 0, 0, 0.24) 0px 6px 6px;
+  --card-background-default-color: #ffffff;
+  --card-darken-default-color: #f8fafc;
+  --card-border-default-color: #e2e8f0;
+  --card-border-radius: 0.75rem;
+  --card-border-thickness: 1px;
+  --card-elevation-default: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --card-elevation-low: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --card-elevation-med: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --card-elevation-high: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   // bb divider
-  --divider-color-default: rgb(221, 221, 221);
+  --divider-color-default: #e2e8f0;
   // bb modal
   --modal-z-index: 9999;
   // bb navbar
-  --navbar-background-color: var(--primary-color);
-  --navbar-brand-padding: 0;
+  --navbar-background-color: var(--white);
+  --navbar-brand-padding: 0.5rem;
   --navbar-icon-mobile-color: var(--primary-color);
-  --navbar-transition: all 0.2s ease-in-out;
+  --navbar-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   // if using vertical navbar, uncomment this
   // --navbar-vertical-width: 8rem;
   // bb navbar item
-  --navbar-item-border-radius: 1rem;
-  --navbar-item-padding: 0.5rem;
+  --navbar-item-border-radius: 0.5rem;
+  --navbar-item-padding: 0.75rem 1rem;
   --navbar-item-min-width: unset;
   --navbar-item-background-color: transparent;
-  --navbar-item-text-color: var(--accent-color);
-  --navbar-item-text-color-hover: #{darken($accent-color, 20%)};
+  --navbar-item-text-color: var(--grey-darkest);
+  --navbar-item-text-color-hover: var(--primary-color);
   --navbar-item-bg-color-active: #{lighten($primary-color, 45%)};
-  --navbar-item-bg-color-hover: #{lighten($accent-color, 20%)};
-  --navbar-item-border-thickness: 2px;
-  --navbar-item-border-default-color: var(--primary-color);
+  --navbar-item-bg-color-hover: var(--grey-lightest);
+  --navbar-item-border-thickness: 1px;
+  --navbar-item-border-default-color: transparent;
   // bb tooltip
-  --tooltip-padding: 0.5rem 1rem;
-  --tooltip-border-radius: 8px;
+  --tooltip-padding: 0.75rem 1rem;
+  --tooltip-border-radius: 0.5rem;
   --tooltip-z-index: 1070;
-  --tooltip-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --tooltip-arrow-size: 4px;
+  --tooltip-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --tooltip-arrow-size: 6px;
   // bb form components
-  --form-input-bg: var(--bg-color);
-  --form-input-border-color: var(--bg-dark-color);
-  --form-input-color: var(--text-color-default);
-  --form-input-focus-color: var(--secondary-color);
-  --form-input-focus-bg: var(--bg-color);
-  --form-input-focus-border-color: var(--secondary-color);
-  --form-input-placeholder-color: var(--grey-lightest);
-  --form-input-disabled-color: var(--grey-lightest);
-  --form-input-disabled-bg: var(--bg-color);
-  --form-input-disabled-border-color: var(--grey-dark);
-  --form-file-button-border-color: var(--grey-dark);
-  --form-file-button-hover-color: var(--text-color-default);
-  --form-file-button-color: var(--text-color-default);
+  --form-input-bg: var(--white);
+  --form-input-border-color: var(--grey-light);
+  --form-input-color: var(--grey-darkest);
+  --form-input-focus-color: var(--primary-color);
+  --form-input-focus-bg: var(--white);
+  --form-input-focus-border-color: var(--primary-color);
+  --form-input-placeholder-color: var(--grey-dark);
+  --form-input-disabled-color: var(--grey-dark);
+  --form-input-disabled-bg: var(--grey-lightest);
+  --form-input-disabled-border-color: var(--grey-light);
+  --form-file-button-border-color: var(--grey-light);
+  --form-file-button-hover-color: var(--white);
+  --form-file-button-color: var(--grey-darkest);
   --form-file-button-hover-bg: var(--primary-color);
-  --form-input-plaintext-color: var(--white);
-  --form-select-arrow-color: var(--form-input-color);
+  --form-input-plaintext-color: var(--grey-darkest);
+  --form-select-arrow-color: var(--grey-dark);
   // bb text
-  --text-color-default: rgb(24, 24, 24);
-  --text-size-xs: 0.5rem;
-  --text-size-s: 0.75rem;
+  --text-color-default: #1f2937;
+  --text-size-xs: 0.75rem;
+  --text-size-s: 0.875rem;
   --text-size-m: 1rem;
-  --text-size-l: 1.5rem;
-  --text-size-xl: 2rem;
-  --text-size-xxl: 2.5rem;
+  --text-size-l: 1.125rem;
+  --text-size-xl: 1.25rem;
+  --text-size-xxl: 1.875rem;
   --text-size-xxxl: 3rem;
-  --mobile-text-size-xs: 0.6rem;
-  --mobile-text-size-s: 0.8rem;
+  --mobile-text-size-xs: 0.75rem;
+  --mobile-text-size-s: 0.875rem;
   --mobile-text-size-m: 1rem;
-  --mobile-text-size-l: 1.2rem;
-  --mobile-text-size-xl: 1.6rem;
-  --mobile-text-size-xxl: 2rem;
-  --mobile-text-size-xxxl: 2.5rem;
+  --mobile-text-size-l: 1.125rem;
+  --mobile-text-size-xl: 1.25rem;
+  --mobile-text-size-xxl: 1.5rem;
+  --mobile-text-size-xxxl: 2.25rem;
   // font family - page router font usage
   --font-family-main: 'Josefin Sans';  // Used for main text
   --font-family-header: 'Montserrat';  // Used for larger fonts/headers
@@ -222,19 +222,30 @@ Add overrides for dark themes like so:
 ```scss
 [data-theme='dark'] {
   // override any of the above variables
-  --bg-color: rgb(25, 25, 25);
-  --bg-light-color: rgb(60, 60, 60);
-  --bg-dark-color: rgb(39, 39, 39);
+  --bg-color: #0f172a;
+  --bg-light-color: #1e293b;
+  --bg-dark-color: #334155;
+  --grey-lightest: #1e293b;
+  --grey-light: #334155;
+  --grey-dark: #64748b;
+  --grey-darkest: #cbd5e1;
   // bb navbar
-  --navbar-background-color: rgb(54, 54, 54);
+  --navbar-background-color: #1e293b;
+  --navbar-item-text-color: #cbd5e1;
+  --navbar-item-bg-color-hover: #334155;
   // bb card
-  --card-background-default-color: rgb(77, 77, 77);
-  --card-darken-default-color: rgb(39, 39, 39);
-  --card-border-default-color: rgb(77, 77, 77);
+  --card-background-default-color: #1e293b;
+  --card-darken-default-color: #0f172a;
+  --card-border-default-color: #334155;
   // bb divider
-  --divider-color-default: rgb(77, 77, 77);
+  --divider-color-default: #334155;
   // bb text
-  --text-color-default: rgb(255, 255, 255);
+  --text-color-default: #f1f5f9;
+  // bb form components
+  --form-input-bg: #1e293b;
+  --form-input-border-color: #334155;
+  --form-input-color: #f1f5f9;
+  --form-input-disabled-bg: #0f172a;
 }
 ```
 

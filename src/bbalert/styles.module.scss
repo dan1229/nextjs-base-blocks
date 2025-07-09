@@ -1,17 +1,18 @@
 .base {
-  padding: 12px;
-  margin: 12px 0px;
-  border-radius: var(--alert-border-radius, 4px);
+  padding: 16px;
+  margin: 16px 0px;
+  border-radius: var(--alert-border-radius, 0.75rem);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  border: 1px solid transparent;
 
-  & > * {
+  &>* {
     color: var(--white, #ffffff) !important;
   }
 
-  & > h1,
+  &>h1,
   h2,
   h3,
   h4,
@@ -33,7 +34,7 @@
   height: 20px;
 
   &:hover {
-    color: var(--danger-color, #78cdd7);
+    color: var(--danger-color, #ef4444);
   }
 }
 
@@ -41,22 +42,23 @@
   * COLOR
   */
 .color_success {
-  background-color: var(--success-light-color, #50c758);
+  background-color: var(--success-color, #10b981);
 }
 
 .color_warning {
-  background-color: var(--warning-color, #f1c500);
-  & > div {
-    color: var(--black, #232323) !important;
+  background-color: var(--warning-color, #f59e0b);
+
+  &>div {
+    color: var(--black, #1f2937) !important;
   }
 }
 
 .color_danger {
-  background-color: var(--danger-light-color, #78cdd7);
+  background-color: var(--danger-color, #ef4444);
 }
 
 .color_info {
-  background-color: var(--info-light-color, #ffc800);
+  background-color: var(--info-color, #3b82f6);
 }
 
 /**

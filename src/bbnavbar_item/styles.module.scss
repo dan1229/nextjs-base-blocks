@@ -1,14 +1,14 @@
-$border-radius: var(--navbar-item-border-radius, 8px);
-$navbar-item-color: var(--navbar-item-background-color, #303030);
-$navbar-item-padding: var(--navbar-item-padding, 0.5rem);
-$bg-dark-color: var(--bg-dark-color, #1c1c1c);
-$bg-color: var(--bg-color, #303030);
-$bg-light-color: var(--bg-light-color, #303030);
+$border-radius: var(--navbar-item-border-radius, 0.5rem);
+$navbar-item-color: var(--navbar-item-background-color, transparent);
+$navbar-item-padding: var(--navbar-item-padding, 0.75rem 1rem);
+$bg-dark-color: var(--bg-dark-color, #e2e8f0);
+$bg-color: var(--bg-color, #f8fafc);
+$bg-light-color: var(--bg-light-color, #ffffff);
 
-$border-thickness: var(--navbar-item-border-thickness, 2px);
-$border-default-color: var(--navbar-item-border-default-color, #e0e0e0);
+$border-thickness: var(--navbar-item-border-thickness, 1px);
+$border-default-color: var(--navbar-item-border-default-color, transparent);
 
-$navbar-item-text-color: var(--navbar-item-text-color, #ffffff);
+$navbar-item-text-color: var(--navbar-item-text-color, #374151);
 
 // colors
 $white: var(--white, #ffffff);
@@ -24,12 +24,12 @@ $accent-color: var(--accent-color, #ff6b6c);
 // 1. use '--navbar-item-text-color' if it is defined
 // 2. if not, use '--primary-color' if it is defined
 // 3. if not, use default primary color
-$primary-color: var(--primary-color, #78cdd7);
-$navbar-item-text-color: var(--navbar-item-text-color, $primary-color);
+$primary-color: var(--primary-color, #6366f1);
+$navbar-item-text-color: var(--navbar-item-text-color, #374151);
 
 // same with --navbar-item-text-color-hover and --primary-dark-color
-$primary-dark-color: var(--primary-dark-color, darken(#78cdd7, 10%));
-$navbar-item-text-color-hover: var(--navbar-item-text-color-hover, $primary-dark-color);
+$primary-dark-color: var(--primary-dark-color, darken(#6366f1, 10%));
+$navbar-item-text-color-hover: var(--navbar-item-text-color-hover, $primary-color);
 
 // same with --navbar-item-bg-color-active and --bg-dark-color
 $navbar-item-bg-color-active: var(--navbar-item-bg-color-active, $bg-dark-color);
@@ -61,6 +61,7 @@ $navbar-item-min-width: var(--navbar-item-min-width, unset);
     text-align: center;
     text-decoration: none;
     width: 100%;
+
     * {
       padding: $navbar-item-padding;
     }
@@ -100,12 +101,13 @@ $navbar-item-min-width: var(--navbar-item-min-width, unset);
 
 // TODO find a better selector than these two
 // this is for the text
-.navbarItemBase:hover > div > div > a > * {
+.navbarItemBase:hover>div>div>a>* {
   // need the !important to override the default color / active color
   color: $navbar-item-text-color-hover !important;
 }
+
 // this is for the icon
-.navbarItemBase:hover > div > div > .iconDropdown {
+.navbarItemBase:hover>div>div>.iconDropdown {
   // need the !important to override the default color / active color
   color: $navbar-item-text-color-hover !important;
 }
