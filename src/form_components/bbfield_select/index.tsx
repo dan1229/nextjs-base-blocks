@@ -2,23 +2,23 @@ import classnames from 'classnames';
 import React from 'react';
 import InputWrapper from '../input_wrapper';
 import styles from '../styles.module.scss';
-import type { IBBFieldDropdownOptions, IPropsBBBaseForm, TBBFieldBaseSize } from '../../types';
+import type { IBBFieldSelectOptions, IPropsBBBaseForm, TBBFieldBaseSize } from '../../types';
 
 /**
  * PROPS
  *
- * @param {IBBFieldSelectMultipleOptions[]} options - Options to display.
+ * @param {IBBFieldSelectOptions[]} options - Options to display.
  * @param {string=} size - Size of the input. Think 'sm', 'md', or 'lg'.
  */
-export interface IPropsBBFieldDropdown {
-  options: IBBFieldDropdownOptions[];
+export interface IPropsBBFieldSelect {
+  options: IBBFieldSelectOptions[];
   size?: TBBFieldBaseSize;
 }
 
 /**
- * BBFIELD DROPDOWN
+ * BBFIELD SELECT
  */
-export default function BBFieldDropdown(Props: IPropsBBFieldDropdown & IPropsBBBaseForm): React.ReactElement {
+export default function BBFieldSelect(Props: IPropsBBFieldSelect & IPropsBBBaseForm): React.ReactElement {
   const { register, options, fieldName, required, autocomplete, onChange, size = 'md' } = Props;
 
   const getAutoComplete = (): string => {
@@ -40,7 +40,7 @@ export default function BBFieldDropdown(Props: IPropsBBFieldDropdown & IPropsBBB
           autoComplete={getAutoComplete()}
           {...register}
         >
-          {options.map((val: IBBFieldDropdownOptions) => (
+          {options.map((val: IBBFieldSelectOptions) => (
             <option key={val.value} value={val.value}>
               {val.label}
             </option>

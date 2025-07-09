@@ -267,10 +267,11 @@
 ---
 
 
-#### rename bb dropdown to bb select?
+#### rename bb dropdown to bb select? ✅ COMPLETED
 - is that more appropriate
   - def more common name
 - then could merge with bb select multiple
+- **COMPLETED**: Renamed BBFieldDropdown to BBFieldSelect throughout the codebase
 
 
 #### work on defaults / variables system

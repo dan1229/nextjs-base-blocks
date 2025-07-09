@@ -40,8 +40,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Fixed `transparentPrimary`, `transparentSecondary` and `transparentAccent` variants
 - `BBNavbarItem`
   - added `navbar-item-min-width` to set min width
-- `BBFieldDropdown`
-  - Improved styling by adding a custom dropdown arrow.
+- `BBFieldSelect`
+- Improved styling by adding a custom dropdown arrow.
 - `BBLoadingSpinner`
   - Added `color` prop to allow for custom colors.
 - `BBFieldFile`
