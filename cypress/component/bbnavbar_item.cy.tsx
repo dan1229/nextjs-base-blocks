@@ -25,9 +25,15 @@ describe('BBNavbarItem Component Tests', () => {
     });
 
     it('renders with dropdown children', () => {
-      const children = [<BBNavbarItem key="1" title="Sub Item 1" href="/sub1" />, <BBNavbarItem key="2" title="Sub Item 2" href="/sub2" />];
-      cy.mount(<BBNavbarItem {...defaultProps} children={children} />);
+      const dropdownChildren = [<BBNavbarItem key="1" title="Sub Item 1" href="/sub1" />, <BBNavbarItem key="2" title="Sub Item 2" href="/sub2" />];
+      cy.mount(<BBNavbarItem {...defaultProps} dropdownChildren={dropdownChildren} />);
       cy.get('li').should('exist'); // Dropdown container exists
+    });
+
+    it('renders with children component instead of title', () => {
+      const buttonComponent = <button>Custom Button</button>;
+      cy.mount(<BBNavbarItem href="/test" children={buttonComponent} />);
+      cy.contains('Custom Button').should('exist');
     });
   });
 
@@ -60,8 +66,8 @@ describe('BBNavbarItem Component Tests', () => {
 
   describe('Dropdown Behavior', () => {
     it('shows dropdown content when hovering over item with children', () => {
-      const children = [<BBNavbarItem key="1" title="Sub Item" href="/sub" />];
-      cy.mount(<BBNavbarItem {...defaultProps} children={children} />);
+      const dropdownChildren = [<BBNavbarItem key="1" title="Sub Item" href="/sub" />];
+      cy.mount(<BBNavbarItem {...defaultProps} dropdownChildren={dropdownChildren} />);
       cy.get('li').first().trigger('mouseenter');
       cy.contains('Sub Item').should('exist');
     });

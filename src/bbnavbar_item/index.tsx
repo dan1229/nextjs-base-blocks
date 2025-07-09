@@ -40,8 +40,9 @@ const getClassColorBorder = (colorBorder: TBBNavbarItemColorBorder): string => {
 /**
  * PROPS
  *
- * @param {string} title - Title to use for item.
- * @param {React.ReactElement=} children - Children to render.
+ * @param {string=} title - Title to use for item (optional if children provided).
+ * @param {React.ReactNode=} children - Children to render instead of title text, or dropdown children.
+ * @param {React.ReactElement[]=} dropdownChildren - Dropdown children to render.
  * @param {string} href - Href to use for item.
  * @param {string=} className - Any class name to add.
  * @param {TBBNavbarItemColorBorder=} colorBorder - Color of the border.
@@ -49,8 +50,9 @@ const getClassColorBorder = (colorBorder: TBBNavbarItemColorBorder): string => {
  * @param {string[]=} activePaths - Paths to consider as active. Consider this an override to the current path. Do not include the base path.
  */
 export interface IPropsBBNavbarItem {
-  title: string;
-  children?: React.ReactElement[];
+  title?: string;
+  children?: React.ReactNode;
+  dropdownChildren?: React.ReactElement[];
   href: string;
   className?: string;
   colorBorder?: TBBNavbarItemColorBorder;
@@ -62,7 +64,7 @@ export interface IPropsBBNavbarItem {
  * BBNAVBAR ITEM
  */
 export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElement {
-  const { title, href, className, children, colorBorder = 'default', noBorder = false, activePaths } = Props;
+  const { title, href, className, children, dropdownChildren, colorBorder = 'default', noBorder = false, activePaths } = Props;
   const [isActiveInDropdown, setIsActiveInDropdown] = useState(false);
   const [currentPath, setCurrentPath] = useState<string>('');
 
@@ -79,7 +81,7 @@ export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElem
 
   useEffect(() => {
     let found = false;
-    children?.forEach((child) => {
+    dropdownChildren?.forEach((child: React.ReactElement) => {
       if (removeSlashes(currentPath) === removeSlashes(child.props.href)) {
         found = true;
       }
@@ -95,20 +97,20 @@ export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElem
     }
 
     setIsActiveInDropdown(found);
-  }, [children, currentPath, activePaths]);
+  }, [dropdownChildren, currentPath, activePaths]);
 
   const urlMatch = !!currentPath.length && !!href.length && removeSlashes(currentPath) === removeSlashes(href);
   const isActive = urlMatch || isActiveInDropdown;
 
   return (
     <li
-      id={`nav-item-${title.toLowerCase()}`}
+      id={`nav-item-${title?.toLowerCase() || 'item'}`}
       className={classnames(
         styles.navbarItemBase,
         styles.dropdownContainer,
         noBorder ? styles.noBorder : '',
         getClassColorBorder(colorBorder),
-        { [styles.active]: isActive, [styles.hasChildren]: !!children?.length },
+        { [styles.active]: isActive, [styles.hasChildren]: !!dropdownChildren?.length },
         className
       )}
     >
@@ -120,11 +122,11 @@ export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElem
             // hover is handled by this BBNavbarItem component
             hover={false}
           >
-            {title}
+            {children || title}
           </BBLink>
-          {!!children?.length && <IoMdArrowDropdown size={30} className={styles.iconDropdown} />}
+          {!!dropdownChildren?.length && <IoMdArrowDropdown size={30} className={styles.iconDropdown} />}
         </div>
-        {!!children?.length && <ul className={styles.dropdownContent}>{children}</ul>}
+        {!!dropdownChildren?.length && <ul className={styles.dropdownContent}>{dropdownChildren}</ul>}
       </div>
     </li>
   );
