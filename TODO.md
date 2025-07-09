@@ -287,7 +287,8 @@
 #### improve actual defaults in each component
 - try on an app with no global variables set and try to make it look good
 -
-- update defaults in readme as well
+- update defaults in readme as well to be more reasonable / stylish
+  - they should be okay
 
 
 
