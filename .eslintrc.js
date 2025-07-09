@@ -2,9 +2,11 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    node: true,
   },
-  extends: ['next', 'next/core-web-vitals', 'eslint:recommended', 'plugin:react/recommended'],
+  extends: ['next', 'next/core-web-vitals', 'eslint:recommended', 'plugin:react/recommended', 'plugin:@typescript-eslint/recommended'],
   plugins: ['react', 'unused-imports', '@typescript-eslint'],
+  parser: '@typescript-eslint/parser',
   overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
@@ -16,13 +18,15 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'warn',
     'react-hooks/exhaustive-deps': 'error',
     'unused-imports/no-unused-imports': 'error',
-    'no-unused-vars': ['warn', { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' }],
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': ['warn', { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' }],
     '@next/next/no-img-element': 'off',
     '@typescript-eslint/no-unnecessary-condition': 'warn',
     '@typescript-eslint/no-explicit-any': 'warn',
     '@typescript-eslint/consistent-type-imports': ['warn', { prefer: 'type-imports' }],
     'no-underscore-dangle': 'warn',
     'react/self-closing-comp': ['error', { component: true, html: true }],
+    'react/react-in-jsx-scope': 'off',
     'import/order': [
       'error',
       {
