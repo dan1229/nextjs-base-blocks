@@ -240,6 +240,13 @@
 - for accessibility support
 
 
+---
+### 2.2.0
+
+
+#### consolidate bb field select and bb field select multiple
+- ya
+
 ----
 ### 2.1.0
 
@@ -265,12 +272,6 @@
 
 
 ---
-
-
-#### rename bb dropdown to bb select?
-- is that more appropriate
-  - def more common name
-- then could merge with bb select multiple
 
 
 #### work on defaults / variables system
@@ -318,6 +319,8 @@ NEED TO TEST
 
 
 ### [2.1.0] - 2025-MM-DD
+- Breaking Change!
+  - `BBFieldDropdown` -> `BBFieldSelect`
 - `BBNavbarItem`
   - `title` now accepts components and `string`s
   - Better text wrapping (or lack thereof)
