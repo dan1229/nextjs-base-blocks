@@ -247,31 +247,23 @@
 #### consolidate bb field select and bb field select multiple
 - ya
 
-----
-### 2.1.0
+
+#### bbnavbar 
+- vertical mobile styling
+  - emulate styling from flutter navbars a bit
+    - i.e., always slide out kinda thing
+-
+- add back 'sticky' prop
+  - is it working?
 
 
 
 #### DEMO PAGE IMPROVEMENTS!!! MAKE IT GREAT!!!
 - see above
 - overall get it working a bit better though
+- TODO list them out
 
 
-
-#### convert demo pages to app router
-- probably lots of package and lint updates
-
-
-
-#### cypress tests - fill in rest of tests
-- components left
-  - button? collapsible, divider, link, loading spinner, modal, navbar, navbar item, tooltip
-    - double check these / all existing tests
-  - form components
-    - dont exist yet
-
-
----
 
 
 #### work on defaults / variables system
@@ -285,6 +277,20 @@
 
     
 
+
+----
+### 2.1.0
+
+
+
+
+#### convert demo pages to app router
+- probably lots of package and lint updates
+
+
+
+
+
 #### improve actual defaults in each component
 - try on an app with no global variables set and try to make it look good
 -
@@ -294,16 +300,14 @@
 
 
 
+#### cypress tests - fill in rest of tests
+- components left
+  - button? collapsible, divider, link, loading spinner, modal, navbar, navbar item, tooltip
+    - double check these / all existing tests
+  - form components
+    - dont exist yet
 
 
-
-#### bbnavbar 
-- vertical mobile styling
-  - emulate styling from flutter navbars a bit
-    - i.e., always slide out kinda thing
--
-- add back 'sticky' prop
-  - is it working?
 
 
 NEED TO TEST
