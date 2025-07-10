@@ -305,6 +305,9 @@
   - is it working?
 
 
+NEED TO TEST
+- navbar item - children as title
+
 
 
 #### form components - indicate when required
