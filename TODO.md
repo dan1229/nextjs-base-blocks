@@ -251,8 +251,8 @@
 
 
 
-#### convert to app router
-- yup
+#### convert demo pages to app router
+- probably lots of package and lint updates
 
 
 
@@ -287,7 +287,8 @@
 #### improve actual defaults in each component
 - try on an app with no global variables set and try to make it look good
 -
-- update defaults in readme as well
+- update defaults in readme as well to be more reasonable / stylish
+  - they should be okay
 
 
 
@@ -304,15 +305,8 @@
   - is it working?
 
 
-
-#### bbnavbar item - allow these to just be components instead of strings
-- i.e., let me pass a button to a navbar as a child component?
--
-- min-width var isn't working super well
-  - doesnt center the text and seems somewhat misaligned (try like 6/8rem)
--
-- add white-space: nowrap
-  - force it to be one line
+NEED TO TEST
+- navbar item - children as title
 
 
 
@@ -324,7 +318,10 @@
 
 
 ### [2.1.0] - 2025-MM-DD
-- TODO
+- `BBNavbarItem`
+  - `title` now accepts components and `string`s
+  - Better text wrapping (or lack thereof)
+
 
 -------------------------------------------------------
 
