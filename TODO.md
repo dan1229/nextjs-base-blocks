@@ -251,8 +251,8 @@
 
 
 
-#### convert to app router
-- yup
+#### convert demo pages to app router
+- probably lots of package and lint updates
 
 
 
@@ -306,16 +306,6 @@
 
 
 
-#### bbnavbar item - allow these to just be components instead of strings
-- i.e., let me pass a button to a navbar as a child component?
--
-- min-width var isn't working super well
-  - doesnt center the text and seems somewhat misaligned (try like 6/8rem)
--
-- add white-space: nowrap
-  - force it to be one line
-
-
 
 #### form components - indicate when required
 - if passing required - either through the prop or `reigster` - add visual indicator
@@ -325,7 +315,10 @@
 
 
 ### [2.1.0] - 2025-MM-DD
-- TODO
+- `BBNavbarItem`
+  - `title` now accepts components and `string`s
+  - Better text wrapping (or lack thereof)
+
 
 -------------------------------------------------------
 

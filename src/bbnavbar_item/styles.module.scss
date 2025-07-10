@@ -57,6 +57,8 @@ $navbar-item-min-width: var(--navbar-item-min-width, 6rem);
   margin: 0 0.15rem;
   border-radius: $border-radius;
   background-color: $navbar-item-color;
+  // this is to prevent the text from wrapping to the next line
+  white-space: nowrap;
 
   a {
     text-align: center;
@@ -105,13 +107,13 @@ $navbar-item-min-width: var(--navbar-item-min-width, 6rem);
 
 // TODO find a better selector than these two
 // this is for the text
-.navbarItemBase:hover>div>div>a>* {
+.navbarItemBase:hover > div > div > a > * {
   // need the !important to override the default color / active color
   color: $navbar-item-text-color-hover !important;
 }
 
 // this is for the icon
-.navbarItemBase:hover>div>div>.iconDropdown {
+.navbarItemBase:hover > div > div > .iconDropdown {
   // need the !important to override the default color / active color
   color: $navbar-item-text-color-hover !important;
 }
