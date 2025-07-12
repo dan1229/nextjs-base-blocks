@@ -42,7 +42,7 @@ export default function InputWrapper(props: IPropsInputWrapper & IPropsBBBaseFor
     register,
   } = props;
 
-  // Determine if the field is required either from prop or register
+  // Determine if the field is required from the required prop only
   const isRequired = required || register?.required;
 
   /**
