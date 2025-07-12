@@ -38,26 +38,17 @@ $input-disabled-bg: var(--form-input-disabled-bg, $bg-color) !default;
 $input-disabled-border-color: var(--form-input-disabled-border-color, $grey-dark) !default;
 $form-select-arrow-color: var(--form-select-arrow-color, #{$input-color}) !default;
 // form input padding / margin / size variables
-$input-padding-x-sm: (
-  $input-padding-x * 0.75) !default;
+$input-padding-x-sm: ($input-padding-x * 0.75) !default;
 $input-padding-x: $input-padding-x !default;
-$input-padding-x-lg: (
-  $input-padding-x * 1.5) !default;
-$input-padding-y-sm: (
-  $input-padding-y * 0.75) !default;
+$input-padding-x-lg: ($input-padding-x * 1.5) !default;
+$input-padding-y-sm: ($input-padding-y * 0.75) !default;
 $input-padding-y: $input-padding-y !default;
-$input-padding-y-lg: (
-  $input-padding-y * 1.5) !default;
-$input-font-size-sm: (
-  $font-size-base * $font-size-sm) !default;
-$input-height-sm: (
-  $font-size-sm + $input-padding-y * 2 + $input-border-width * 2) !default;
-$input-height: (
-  $font-size-base + $input-padding-y * 2 + $input-border-width * 2) !default;
-$input-height-lg: (
-  $font-size-lg + $input-padding-y * 2 + $input-border-width * 2) !default;
-$input-height: (
-  $font-size-base + $input-padding-y * 2 + $input-border-width * 2) !default;
+$input-padding-y-lg: ($input-padding-y * 1.5) !default;
+$input-font-size-sm: ($font-size-base * $font-size-sm) !default;
+$input-height-sm: ($font-size-sm + $input-padding-y * 2 + $input-border-width * 2) !default;
+$input-height: ($font-size-base + $input-padding-y * 2 + $input-border-width * 2) !default;
+$input-height-lg: ($font-size-lg + $input-padding-y * 2 + $input-border-width * 2) !default;
+$input-height: ($font-size-base + $input-padding-y * 2 + $input-border-width * 2) !default;
 $form-color-width: 0.25rem !default;
 $form-file-button-color: var(--form-file-button-color, white) !default;
 $form-file-button-border-color: var(--form-file-button-border-color, $grey-dark) !default;
@@ -124,66 +115,65 @@ $form-required-indicator-color: var(--form-required-indicator-color, $secondary-
   // https://github.com/twbs/bootstrap/issues/23307
   &::-webkit-date-and-time-value {
     // Multiply line-height by 1em if it has no unit
-    height: if(unit($input-line-height)=='', $input-line-height * 1em, $input-line-height
-    );
-}
+    height: if(unit($input-line-height) == '', $input-line-height * 1em, $input-line-height);
+  }
 
-// Prevent excessive date input height in Webkit
-// https://github.com/twbs/bootstrap/issues/34433
-&::-webkit-datetime-edit {
-  display: block;
-  padding: 0;
-}
+  // Prevent excessive date input height in Webkit
+  // https://github.com/twbs/bootstrap/issues/34433
+  &::-webkit-datetime-edit {
+    display: block;
+    padding: 0;
+  }
 
-// Placeholder
-&::placeholder {
-  color: $input-placeholder-color;
-  // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
-  opacity: 1;
-}
+  // Placeholder
+  &::placeholder {
+    color: $input-placeholder-color;
+    // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+    opacity: 1;
+  }
 
-// Disabled inputs
-//
-// HTML5 says that controls under a fieldset > legend:first-child won't be
-// disabled if the fieldset is disabled. Due to implementation difficulty, we
-// don't honor that edge case; we style them as disabled anyway.
-&:disabled {
-  cursor: not-allowed;
-  color: $input-disabled-color;
-  background-color: $input-disabled-bg;
-  border-color: $input-disabled-border-color;
-  // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
-  opacity: 1;
+  // Disabled inputs
+  //
+  // HTML5 says that controls under a fieldset > legend:first-child won't be
+  // disabled if the fieldset is disabled. Due to implementation difficulty, we
+  // don't honor that edge case; we style them as disabled anyway.
+  &:disabled {
+    cursor: not-allowed;
+    color: $input-disabled-color;
+    background-color: $input-disabled-bg;
+    border-color: $input-disabled-border-color;
+    // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+    opacity: 1;
 
-  &[type='checkbox'] {
-    background-color: $input-disabled-color;
-    border-color: $input-disabled-color;
+    &[type='checkbox'] {
+      background-color: $input-disabled-color;
+      border-color: $input-disabled-color;
+    }
+  }
+
+  // File input buttons theming
+  &::file-selector-button {
+    padding: $input-padding-y $input-padding-x;
+    margin: (-$input-padding-y) (-$input-padding-x);
+    margin-inline-end: $input-padding-x;
+    color: $form-file-button-color;
+    background-color: $input-bg;
+    pointer-events: none;
+    border-color: inherit;
+    border-color: $form-file-button-border-color;
+    border-style: solid;
+    border-width: 0;
+    border-inline-end-width: $input-border-width;
+    border-radius: 0; // stylelint-disable-line property-disallowed-list
+  }
+
+  &:hover:not(:disabled):not([readonly])::file-selector-button {
+    background-color: $form-file-button-hover-bg;
+    color: $form-file-button-hover-color;
   }
 }
 
-// File input buttons theming
-&::file-selector-button {
-  padding: $input-padding-y $input-padding-x;
-  margin: (-$input-padding-y) (-$input-padding-x);
-  margin-inline-end: $input-padding-x;
-  color: $form-file-button-color;
-  background-color: $input-bg;
-  pointer-events: none;
-  border-color: inherit;
-  border-color: $form-file-button-border-color;
-  border-style: solid;
-  border-width: 0;
-  border-inline-end-width: $input-border-width;
-  border-radius: 0; // stylelint-disable-line property-disallowed-list
-}
-
-&:hover:not(:disabled):not([readonly])::file-selector-button {
-  background-color: $form-file-button-hover-bg;
-  color: $form-file-button-hover-color;
-}
-}
-
-.dropdown_wrapper {
+.select_wrapper {
   position: relative;
 
   &::after {

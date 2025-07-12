@@ -40,7 +40,7 @@ const getClassColorBorder = (colorBorder: TBBNavbarItemColorBorder): string => {
 /**
  * PROPS
  *
- * @param {string} title - Title to use for item.
+ * @param {React.ReactNode} title - Title to use for item. Can be a string or a React component.
  * @param {React.ReactElement=} children - Children to render.
  * @param {string} href - Href to use for item.
  * @param {string=} className - Any class name to add.
@@ -49,7 +49,7 @@ const getClassColorBorder = (colorBorder: TBBNavbarItemColorBorder): string => {
  * @param {string[]=} activePaths - Paths to consider as active. Consider this an override to the current path. Do not include the base path.
  */
 export interface IPropsBBNavbarItem {
-  title: string;
+  title: React.ReactNode;
   children?: React.ReactElement[];
   href: string;
   className?: string;
@@ -100,9 +100,12 @@ export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElem
   const urlMatch = !!currentPath.length && !!href.length && removeSlashes(currentPath) === removeSlashes(href);
   const isActive = urlMatch || isActiveInDropdown;
 
+  // Generate ID from title if it's a string, otherwise use a generic ID
+  const itemId = typeof title === 'string' ? `nav-item-${title.toLowerCase()}` : 'nav-item';
+
   return (
     <li
-      id={`nav-item-${title.toLowerCase()}`}
+      id={itemId}
       className={classnames(
         styles.navbarItemBase,
         styles.dropdownContainer,

@@ -3,11 +3,11 @@ import BBLink from '../../bblink';
 import BBText from '../../bbtext';
 import DemoComponent from '../../demo_components/demo_component';
 import BBFieldCheckbox from '../../form_components/bbfield_checkbox';
-import BBFieldDropdown from '../../form_components/bbfield_dropdown';
 import BBFieldFile from '../../form_components/bbfield_file';
+import BBFieldSelect from '../../form_components/bbfield_select';
 import BBFieldText from '../../form_components/bbfield_text';
 import type { IPropsBBFieldCheckbox } from '../../form_components/bbfield_checkbox';
-import type { IPropsBBFieldDropdown } from '../../form_components/bbfield_dropdown';
+import type { IPropsBBFieldSelect } from '../../form_components/bbfield_select';
 import type { IPropsBBFieldText } from '../../form_components/bbfield_text';
 import type { IPropsBBBaseForm } from '../../types';
 
@@ -50,15 +50,15 @@ const FormComponentsPage = () => {
     size: 'md',
   });
 
-  // BB Field Dropdown
-  const [stateBBFieldDropdown, setStateBBFieldDropdown] = useState<IPropsBBFieldDropdown & IPropsBBBaseForm>({
-    fieldName: 'demo-dropdown',
+  // BB Field Select
+  const [stateBBFieldSelect, setStateBBFieldSelect] = useState<IPropsBBFieldSelect & IPropsBBBaseForm>({
+    fieldName: 'demo-select',
     required: false,
-    label: 'Demo Dropdown',
+    label: 'Demo Select',
     className: '',
     onChange: (event) => {
       const selectedValue = event.target.value;
-      setStateBBFieldDropdown((prevState) => ({
+      setStateBBFieldSelect((prevState) => ({
         ...prevState,
         value: selectedValue,
       }));
@@ -129,7 +129,9 @@ const FormComponentsPage = () => {
 
         <DemoComponent
           name="BBFieldText (Required)"
-          child={<BBFieldText {...{ ...stateBBFieldText, fieldName: 'demo-text-required', required: true, label: 'Required Text Input' }} />}
+          child={
+            <BBFieldText {...{ ...stateBBFieldText, fieldName: 'demo-text-required', required: true, label: 'Required Text Input' }} />
+          }
           stateObject={{ ...stateBBFieldText, fieldName: 'demo-text-required', required: true, label: 'Required Text Input' }}
           setStateObject={setStateBBFieldText}
         />
@@ -150,7 +152,11 @@ const FormComponentsPage = () => {
 
         <DemoComponent
           name="BBFieldCheckbox (Required)"
-          child={<BBFieldCheckbox {...{ ...stateBBFieldCheckbox, fieldName: 'demo-checkbox-required', required: true, label: 'Required Checkbox' }} />}
+          child={
+            <BBFieldCheckbox
+              {...{ ...stateBBFieldCheckbox, fieldName: 'demo-checkbox-required', required: true, label: 'Required Checkbox' }}
+            />
+          }
           stateObject={{ ...stateBBFieldCheckbox, fieldName: 'demo-checkbox-required', required: true, label: 'Required Checkbox' }}
           setStateObject={setStateBBFieldCheckbox}
         />
@@ -164,23 +170,27 @@ const FormComponentsPage = () => {
 
         <DemoComponent
           name="BBFieldFile (Required)"
-          child={<BBFieldFile {...{ ...stateBBFieldFile, fieldName: 'demo-file-required', required: true, label: 'Required File Upload' }} />}
+          child={
+            <BBFieldFile {...{ ...stateBBFieldFile, fieldName: 'demo-file-required', required: true, label: 'Required File Upload' }} />
+          }
           stateObject={{ ...stateBBFieldFile, fieldName: 'demo-file-required', required: true, label: 'Required File Upload' }}
           setStateObject={setStateBBFieldFile}
         />
 
         <DemoComponent
-          name="BBFieldDropdown"
-          child={<BBFieldDropdown {...stateBBFieldDropdown} />}
-          stateObject={stateBBFieldDropdown}
-          setStateObject={setStateBBFieldDropdown}
+          name="BBFieldSelect"
+          child={<BBFieldSelect {...stateBBFieldSelect} />}
+          stateObject={stateBBFieldSelect}
+          setStateObject={setStateBBFieldSelect}
         />
 
         <DemoComponent
-          name="BBFieldDropdown (Required)"
-          child={<BBFieldDropdown {...{ ...stateBBFieldDropdown, fieldName: 'demo-dropdown-required', required: true, label: 'Required Dropdown' }} />}
-          stateObject={{ ...stateBBFieldDropdown, fieldName: 'demo-dropdown-required', required: true, label: 'Required Dropdown' }}
-          setStateObject={setStateBBFieldDropdown}
+          name="BBFieldSelect (Required)"
+          child={
+            <BBFieldSelect {...{ ...stateBBFieldSelect, fieldName: 'demo-select-required', required: true, label: 'Required Select' }} />
+          }
+          stateObject={{ ...stateBBFieldSelect, fieldName: 'demo-select-required', required: true, label: 'Required Select' }}
+          setStateObject={setStateBBFieldSelect}
         />
 
         {/* TODO not working for some reason */}
