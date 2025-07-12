@@ -65,46 +65,46 @@ $navbar-transition: var(--navbar-transition, all 0.3s cubic-bezier(0.4, 0, 0.2, 
   &.vertical {
     padding-left: $navbar-vertical-width;
   }
-}
 
-.navigation {
-  z-index: 10;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: $background-color;
-  overflow: visible;
-  padding: 0.25rem;
-  transition: $navbar-transition;
-  backdrop-filter: blur(8px);
+  .navigation {
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: $background-color;
+    overflow: visible;
+    padding: 0.25rem;
+    transition: $navbar-transition;
+    backdrop-filter: blur(8px);
 
-  &.vertical {
-    height: 100vh;
-    width: $navbar-vertical-width;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 1rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    .navigationMenuList {
+    &.vertical {
+      height: 100vh;
+      width: $navbar-vertical-width;
       flex-direction: column;
-      align-items: flex-start;
-      margin: 0;
+      align-items: center;
+      padding-bottom: 1rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      .navigationMenuList {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
+      }
+
+      .containerButtonsAction {
+        align-items: flex-start;
+      }
     }
 
-    .containerButtonsAction {
-      align-items: flex-start;
+    &:not(.vertical) {
+      width: 100%;
+      position: sticky;
+      top: 0;
     }
-  }
 
-  &:not(.vertical) {
-    width: 100%;
-    position: sticky;
-    top: 0;
-
-    >div {
+    > div {
       max-width: 100%;
     }
   }
@@ -188,7 +188,7 @@ $navbar-transition: var(--navbar-transition, all 0.3s cubic-bezier(0.4, 0, 0.2, 
   }
 
   // Align navbar item text to the start
-  ul>li>div>div>a>* {
+  ul > li > div > div > a > * {
     text-align: start;
   }
 }

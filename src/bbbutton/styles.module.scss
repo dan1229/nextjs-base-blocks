@@ -42,9 +42,7 @@ $button-base-border-radius: var(--button-base-border-radius, 0.5rem);
 .base {
   padding: $button-base-padding;
   border-radius: var(--button-border-radius, 0.5rem);
-  font-weight: 500;
   transition: all 0.2s ease-in-out;
-  border: 1px solid transparent;
 
   &:hover {
     cursor: pointer;
@@ -130,7 +128,7 @@ $button-base-border-radius: var(--button-base-border-radius, 0.5rem);
     color: inherit;
   }
 
-  &:hover>* {
+  &:hover > * {
     color: $primary-light-color !important;
   }
 }
