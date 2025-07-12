@@ -278,11 +278,6 @@
     
 
 
-----
-### 2.1.0
-
-
-
 
 #### convert demo pages to app router
 - probably lots of package and lint updates
@@ -296,6 +291,16 @@
 -
 - update defaults in readme as well to be more reasonable / stylish
   - they should be okay
+-
+- add some 'variables/styles' or something so we can set them normally for the project itself
+  - then we can get rid of readme docs
+- ideally people dont need to set most of these honestly it should look good out of the box
+
+
+----
+### 2.1.0
+
+
 
 
 
@@ -312,23 +317,11 @@
 
 NEED TO TEST
 - navbar item - children as title
-
-### [Unreleased]
-#### Breaking Changes
-- **Renamed `BBFieldDropdown` to `BBFieldSelect`** for better naming consistency
-  - Component name changed from `BBFieldDropdown` to `BBFieldSelect`
-  - Interface `IPropsBBFieldDropdown` renamed to `IPropsBBFieldSelect`
-  - Interface `IBBFieldDropdownOptions` renamed to `IBBFieldSelectOptions`
-  - CSS class `.dropdown_wrapper` renamed to `.select_wrapper`
-  - Import path changed from `bbfield_dropdown` to `bbfield_select`
-  - This aligns better with common naming conventions and prepares for merging with `BBFieldSelectMultiple`
+- required fields stuff
+  - all form components
+  - register and via prop
 
 
-
-#### form components - indicate when required
-- if passing required - either through the prop or `reigster` - add visual indicator
-  - a "*" is classic
-  - make the color of the asterisk an scss variable?
 
 
 
@@ -338,8 +331,10 @@ NEED TO TEST
 - `BBNavbarItem`
   - `title` now accepts components and `string`s
   - Better text wrapping (or lack thereof)
-- TODO required field indicators
-
+- Form components now show a `required` indicator
+  - Based on `required` prop or passing `required` through `register`
+  - variable to set indicator color
+  
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)
