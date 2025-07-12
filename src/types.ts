@@ -217,8 +217,8 @@ export interface IPropsBBFieldCheckbox {
   size?: TBBFieldCheckboxSize;
 }
 
-// TBBFieldDropdown
-export interface IBBFieldDropdownOptions {
+// TBBFieldSelect
+export interface IBBFieldSelectOptions {
   value: string;
   label: string;
 }
