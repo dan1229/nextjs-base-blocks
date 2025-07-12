@@ -313,6 +313,16 @@
 NEED TO TEST
 - navbar item - children as title
 
+### [Unreleased]
+#### Breaking Changes
+- **Renamed `BBFieldDropdown` to `BBFieldSelect`** for better naming consistency
+  - Component name changed from `BBFieldDropdown` to `BBFieldSelect`
+  - Interface `IPropsBBFieldDropdown` renamed to `IPropsBBFieldSelect`
+  - Interface `IBBFieldDropdownOptions` renamed to `IBBFieldSelectOptions`
+  - CSS class `.dropdown_wrapper` renamed to `.select_wrapper`
+  - Import path changed from `bbfield_dropdown` to `bbfield_select`
+  - This aligns better with common naming conventions and prepares for merging with `BBFieldSelectMultiple`
+
 
 
 #### form components - indicate when required
@@ -328,7 +338,7 @@ NEED TO TEST
 - `BBNavbarItem`
   - `title` now accepts components and `string`s
   - Better text wrapping (or lack thereof)
-
+- TODO required field indicators
 
 -------------------------------------------------------
 

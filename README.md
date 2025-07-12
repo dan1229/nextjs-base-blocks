@@ -180,6 +180,7 @@ html,
   --form-file-button-hover-bg: var(--primary-color);
   --form-input-plaintext-color: var(--white);
   --form-select-arrow-color: var(--form-input-color);
+  --form-required-indicator-color: var(--danger-color);
   // bb text
   --text-color-default: rgb(24, 24, 24);
   --text-size-xs: 0.5rem;

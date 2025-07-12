@@ -14,16 +14,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
-### [Unreleased]
-#### Breaking Changes
-- **Renamed `BBFieldDropdown` to `BBFieldSelect`** for better naming consistency
-  - Component name changed from `BBFieldDropdown` to `BBFieldSelect`
-  - Interface `IPropsBBFieldDropdown` renamed to `IPropsBBFieldSelect`
-  - Interface `IBBFieldDropdownOptions` renamed to `IBBFieldSelectOptions`
-  - CSS class `.dropdown_wrapper` renamed to `.select_wrapper`
-  - Import path changed from `bbfield_dropdown` to `bbfield_select`
-  - This aligns better with common naming conventions and prepares for merging with `BBFieldSelectMultiple`
-
 ### [2.0.4] - 2025-07-03
 - `register` type issues in legacy projects
 

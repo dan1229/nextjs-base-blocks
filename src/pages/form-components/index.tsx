@@ -18,7 +18,7 @@ const FormComponentsPage = () => {
   // BB Field Text
   const [stateBBFieldText, setStateBBFieldText] = useState<IPropsBBFieldText & IPropsBBBaseForm>({
     fieldName: 'demo-text',
-    required: false,
+    required: true,
     label: 'Demo Text Input',
     type: 'text',
     size: 'md',
