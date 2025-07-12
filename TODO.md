@@ -240,37 +240,30 @@
 - for accessibility support
 
 
-----
-### 2.1.0
+---
+### 2.2.0
+
+
+#### consolidate bb field select and bb field select multiple
+- ya
+
+
+#### bbnavbar 
+- vertical mobile styling
+  - emulate styling from flutter navbars a bit
+    - i.e., always slide out kinda thing
+-
+- add back 'sticky' prop
+  - is it working?
 
 
 
 #### DEMO PAGE IMPROVEMENTS!!! MAKE IT GREAT!!!
 - see above
 - overall get it working a bit better though
+- TODO list them out
 
 
-
-#### convert to app router
-- yup
-
-
-
-#### cypress tests - fill in rest of tests
-- components left
-  - button? collapsible, divider, link, loading spinner, modal, navbar, navbar item, tooltip
-    - double check these / all existing tests
-  - form components
-    - dont exist yet
-
-
----
-
-
-#### rename bb dropdown to bb select?
-- is that more appropriate
-  - def more common name
-- then could merge with bb select multiple
 
 
 #### work on defaults / variables system
@@ -284,6 +277,20 @@
 
     
 
+
+----
+### 2.1.0
+
+
+
+
+#### convert demo pages to app router
+- probably lots of package and lint updates
+
+
+
+
+
 #### improve actual defaults in each component
 - try on an app with no global variables set and try to make it look good
 -
@@ -293,27 +300,28 @@
 
 
 
+#### cypress tests - fill in rest of tests
+- components left
+  - button? collapsible, divider, link, loading spinner, modal, navbar, navbar item, tooltip
+    - double check these / all existing tests
+  - form components
+    - dont exist yet
 
 
 
-#### bbnavbar 
-- vertical mobile styling
-  - emulate styling from flutter navbars a bit
-    - i.e., always slide out kinda thing
--
-- add back 'sticky' prop
-  - is it working?
 
+NEED TO TEST
+- navbar item - children as title
 
-
-#### bbnavbar item - allow these to just be components instead of strings
-- i.e., let me pass a button to a navbar as a child component?
--
-- min-width var isn't working super well
-  - doesnt center the text and seems somewhat misaligned (try like 6/8rem)
--
-- add white-space: nowrap
-  - force it to be one line
+### [Unreleased]
+#### Breaking Changes
+- **Renamed `BBFieldDropdown` to `BBFieldSelect`** for better naming consistency
+  - Component name changed from `BBFieldDropdown` to `BBFieldSelect`
+  - Interface `IPropsBBFieldDropdown` renamed to `IPropsBBFieldSelect`
+  - Interface `IBBFieldDropdownOptions` renamed to `IBBFieldSelectOptions`
+  - CSS class `.dropdown_wrapper` renamed to `.select_wrapper`
+  - Import path changed from `bbfield_dropdown` to `bbfield_select`
+  - This aligns better with common naming conventions and prepares for merging with `BBFieldSelectMultiple`
 
 
 
@@ -325,7 +333,12 @@
 
 
 ### [2.1.0] - 2025-MM-DD
-- TODO
+- Breaking Change!
+  - `BBFieldDropdown` -> `BBFieldSelect`
+- `BBNavbarItem`
+  - `title` now accepts components and `string`s
+  - Better text wrapping (or lack thereof)
+- TODO required field indicators
 
 -------------------------------------------------------
 
