@@ -102,10 +102,25 @@ $navbar-transition: var(--navbar-transition, all 0.3s cubic-bezier(0.4, 0, 0.2, 
       width: 100%;
       position: sticky;
       top: 0;
+
+      > div {
+        max-width: 100%;
+      }
     }
 
-    > div {
-      max-width: 100%;
+    .brand {
+      cursor: pointer;
+      border-radius: $border-radius;
+      padding: $brand-padding;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        background-color: color-mix(in srgb, $background-color, #fff 20%);
+      }
     }
   }
 }
