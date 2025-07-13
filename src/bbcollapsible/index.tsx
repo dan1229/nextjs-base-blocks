@@ -95,7 +95,9 @@ const Header = (props: IPropsBBCollapsibleSection) => {
           // on click is necessary to un-disable the button
           variant={buttonVariant}
           transparent={buttonTransparent}
-          onClick={() => {}}
+          onClick={() => {
+            // Button click handled by parent component
+          }}
           icon={{ icon: showButtonUp ? arrowUp : arrowDown }}
           className={classnames(styles.buttonArrow, classNameButton)}
         />
@@ -108,7 +110,7 @@ Header.displayName = 'Header';
 /**
  * PROPS
  */
-export interface IPropsBBCollapsibleContent extends IPropsBBCard {}
+export type IPropsBBCollapsibleContent = IPropsBBCard;
 
 /**
  * BBCollapsible.Content

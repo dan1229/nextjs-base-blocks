@@ -26,7 +26,9 @@ export default function FormComponentsPage() {
     size: 'md',
     placeholder: 'Enter text...',
     className: '',
-    onChange: () => {},
+    onChange: () => {
+      // Demo onChange handler - no action needed
+    },
     helperText: 'This is some helper text!',
     helperTextType: 'text',
   });
@@ -37,7 +39,9 @@ export default function FormComponentsPage() {
     required: false,
     label: 'Demo Checkbox',
     className: '',
-    onChange: () => {},
+    onChange: () => {
+      // Demo onChange handler - no action needed
+    },
     colorCheckbox: 'secondary',
     size: 'md',
   });
@@ -48,7 +52,9 @@ export default function FormComponentsPage() {
     required: false,
     label: 'Demo File Upload',
     className: '',
-    onChange: () => {},
+    onChange: () => {
+      // Demo onChange handler - no action needed
+    },
     size: 'md',
   });
 

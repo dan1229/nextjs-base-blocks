@@ -89,8 +89,12 @@ export default function DemoPage() {
     className: '',
     href: '',
     isExpandedInitial: false,
-    onExpanded: () => {},
-    onCollapsed: () => {},
+    onExpanded: () => {
+      // Demo onExpanded handler - no action needed
+    },
+    onCollapsed: () => {
+      // Demo onCollapsed handler - no action needed
+    },
   });
   // BB Divider
   const [stateBBDivider, setStateBBDivider] = useState<IPropsBBDivider>({

@@ -49,7 +49,7 @@ export default function BBFieldSelectMultiple(Props: IPropsBBFieldSelectMultiple
     });
   };
 
-  const onClickOption = (option: IBBFieldSelectMultipleOptions, onChange: Function) => {
+  const onClickOption = (option: IBBFieldSelectMultipleOptions, onChange: (value: string[]) => void) => {
     const found = selectedOptions.find((selectedOption) => selectedOption.value === option.value);
     const newList = found
       ? selectedOptions.filter((selectedOption) => selectedOption.value !== option.value)
@@ -114,7 +114,12 @@ export default function BBFieldSelectMultiple(Props: IPropsBBFieldSelectMultiple
   );
 }
 
-function CardOption(props: { option: IBBFieldSelectMultipleOptions; selected: boolean; onChange: Function; onClick: Function }) {
+function CardOption(props: {
+  option: IBBFieldSelectMultipleOptions;
+  selected: boolean;
+  onChange: (value: string[]) => void;
+  onClick: (option: IBBFieldSelectMultipleOptions, onChange: (value: string[]) => void) => void;
+}) {
   const { option, selected, onClick, onChange } = props;
 
   return (
