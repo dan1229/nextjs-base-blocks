@@ -38,7 +38,7 @@ $navbar-item-bg-color-active: var(--navbar-item-bg-color-active, $bg-dark-color)
 $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
 
 // set min width
-$navbar-item-min-width: var(--navbar-item-min-width, unset);
+$navbar-item-min-width: var(--navbar-item-min-width, 6rem);
 
 .active {
   background-color: $navbar-item-text-color;
@@ -48,6 +48,7 @@ $navbar-item-min-width: var(--navbar-item-min-width, unset);
 
 .textLink {
   color: $navbar-item-text-color;
+  white-space: nowrap;
 }
 
 .navbarItemBase {
@@ -56,11 +57,17 @@ $navbar-item-min-width: var(--navbar-item-min-width, unset);
   margin: 0 0.15rem;
   border-radius: $border-radius;
   background-color: $navbar-item-color;
+  // this is to prevent the text from wrapping to the next line
+  white-space: nowrap;
 
   a {
     text-align: center;
     text-decoration: none;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     * {
       padding: $navbar-item-padding;
     }
@@ -104,6 +111,7 @@ $navbar-item-min-width: var(--navbar-item-min-width, unset);
   // need the !important to override the default color / active color
   color: $navbar-item-text-color-hover !important;
 }
+
 // this is for the icon
 .navbarItemBase:hover > div > div > .iconDropdown {
   // need the !important to override the default color / active color

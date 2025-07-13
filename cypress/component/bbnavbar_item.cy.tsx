@@ -29,6 +29,26 @@ describe('BBNavbarItem Component Tests', () => {
       cy.mount(<BBNavbarItem {...defaultProps} children={children} />);
       cy.get('li').should('exist'); // Dropdown container exists
     });
+
+    it('renders with component as title', () => {
+      const buttonTitle = <button data-testid="custom-button">Click Me</button>;
+      cy.mount(<BBNavbarItem title={buttonTitle} href="/test" />);
+      cy.get('[data-testid="custom-button"]').should('exist');
+      cy.get('[data-testid="custom-button"]').should('contain', 'Click Me');
+    });
+
+    it('renders with complex component as title', () => {
+      const complexTitle = (
+        <div data-testid="complex-title">
+          <span>Icon</span>
+          <span>Text</span>
+        </div>
+      );
+      cy.mount(<BBNavbarItem title={complexTitle} href="/test" />);
+      cy.get('[data-testid="complex-title"]').should('exist');
+      cy.get('[data-testid="complex-title"]').should('contain', 'Icon');
+      cy.get('[data-testid="complex-title"]').should('contain', 'Text');
+    });
   });
 
   describe('Active State Detection', () => {

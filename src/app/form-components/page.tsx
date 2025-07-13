@@ -5,11 +5,11 @@ import BBLink from '../../bblink';
 import BBText from '../../bbtext';
 import DemoComponent from '../../demo_components/demo_component';
 import BBFieldCheckbox from '../../form_components/bbfield_checkbox';
-import BBFieldDropdown from '../../form_components/bbfield_dropdown';
 import BBFieldFile from '../../form_components/bbfield_file';
+import BBFieldSelect from '../../form_components/bbfield_select';
 import BBFieldText from '../../form_components/bbfield_text';
 import type { IPropsBBFieldCheckbox } from '../../form_components/bbfield_checkbox';
-import type { IPropsBBFieldDropdown } from '../../form_components/bbfield_dropdown';
+import type { IPropsBBFieldSelect } from '../../form_components/bbfield_select';
 import type { IPropsBBFieldText } from '../../form_components/bbfield_text';
 import type { IPropsBBBaseForm } from '../../types';
 
@@ -20,7 +20,7 @@ export default function FormComponentsPage() {
   // BB Field Text
   const [stateBBFieldText, setStateBBFieldText] = useState<IPropsBBFieldText & IPropsBBBaseForm>({
     fieldName: 'demo-text',
-    required: false,
+    required: true,
     label: 'Demo Text Input',
     type: 'text',
     size: 'md',
@@ -52,15 +52,15 @@ export default function FormComponentsPage() {
     size: 'md',
   });
 
-  // BB Field Dropdown
-  const [stateBBFieldDropdown, setStateBBFieldDropdown] = useState<IPropsBBFieldDropdown & IPropsBBBaseForm>({
-    fieldName: 'demo-dropdown',
+  // BB Field Select
+  const [stateBBFieldSelect, setStateBBFieldSelect] = useState<IPropsBBFieldSelect & IPropsBBBaseForm>({
+    fieldName: 'demo-select',
     required: false,
-    label: 'Demo Dropdown',
+    label: 'Demo Select',
     className: '',
     onChange: (event) => {
       const selectedValue = event.target.value;
-      setStateBBFieldDropdown((prevState) => ({
+      setStateBBFieldSelect((prevState) => ({
         ...prevState,
         value: selectedValue,
       }));
@@ -151,10 +151,10 @@ export default function FormComponentsPage() {
         />
 
         <DemoComponent
-          name="BBFieldDropdown"
-          child={<BBFieldDropdown {...stateBBFieldDropdown} />}
-          stateObject={stateBBFieldDropdown}
-          setStateObject={setStateBBFieldDropdown}
+          name="BBFieldSelect"
+          child={<BBFieldSelect {...stateBBFieldSelect} />}
+          stateObject={stateBBFieldSelect}
+          setStateObject={setStateBBFieldSelect}
         />
 
         {/* TODO not working for some reason */}

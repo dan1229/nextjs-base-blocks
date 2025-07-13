@@ -240,37 +240,30 @@
 - for accessibility support
 
 
-----
-### 2.1.0
+---
+### 2.2.0
+
+
+#### consolidate bb field select and bb field select multiple
+- ya
+
+
+#### bbnavbar 
+- vertical mobile styling
+  - emulate styling from flutter navbars a bit
+    - i.e., always slide out kinda thing
+-
+- add back 'sticky' prop
+  - is it working?
 
 
 
 #### DEMO PAGE IMPROVEMENTS!!! MAKE IT GREAT!!!
 - see above
 - overall get it working a bit better though
+- TODO list them out
 
 
-
-#### convert demo pages to app router
-- probably lots of package and lint updates
-
-
-
-#### cypress tests - fill in rest of tests
-- components left
-  - button? collapsible, divider, link, loading spinner, modal, navbar, navbar item, tooltip
-    - double check these / all existing tests
-  - form components
-    - dont exist yet
-
-
----
-
-
-#### rename bb dropdown to bb select?
-- is that more appropriate
-  - def more common name
-- then could merge with bb select multiple
 
 
 #### work on defaults / variables system
@@ -284,49 +277,64 @@
 
     
 
+
+
+#### convert demo pages to app router
+- probably lots of package and lint updates
+
+
+
+
+
 #### improve actual defaults in each component
 - try on an app with no global variables set and try to make it look good
 -
 - update defaults in readme as well to be more reasonable / stylish
   - they should be okay
-
-
-
-
-
-
-
-#### bbnavbar 
-- vertical mobile styling
-  - emulate styling from flutter navbars a bit
-    - i.e., always slide out kinda thing
 -
-- add back 'sticky' prop
-  - is it working?
+- add some 'variables/styles' or something so we can set them normally for the project itself
+  - then we can get rid of readme docs
+- ideally people dont need to set most of these honestly it should look good out of the box
+
+
+----
+### 2.1.0
 
 
 
-#### bbnavbar item - allow these to just be components instead of strings
-- i.e., let me pass a button to a navbar as a child component?
--
-- min-width var isn't working super well
-  - doesnt center the text and seems somewhat misaligned (try like 6/8rem)
--
-- add white-space: nowrap
-  - force it to be one line
 
 
 
-#### form components - indicate when required
-- if passing required - either through the prop or `reigster` - add visual indicator
-  - a "*" is classic
-  - make the color of the asterisk an scss variable?
+#### cypress tests - fill in rest of tests
+- components left
+  - button? collapsible, divider, link, loading spinner, modal, navbar, navbar item, tooltip
+    - double check these / all existing tests
+  - form components
+    - dont exist yet
+
+
+
+
+NEED TO TEST
+- navbar item - children as title
+- required fields stuff
+  - all form components
+  - register and via prop
+
+
 
 
 
 ### [2.1.0] - 2025-MM-DD
-- TODO
-
+- Breaking Change!
+  - `BBFieldDropdown` -> `BBFieldSelect`
+- `BBNavbarItem`
+  - `title` now accepts components and `string`s
+  - Better text wrapping (or lack thereof)
+- Form components now show a `required` indicator
+  - Based on `required` prop or passing `required` through `register`
+  - variable to set indicator color
+  
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)
