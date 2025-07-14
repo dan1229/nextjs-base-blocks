@@ -334,7 +334,9 @@ NEED TO TEST
 - Form components now show a `required` indicator
   - Based on `required` prop or passing `required` through `register`
   - variable to set indicator color
-  
+- Converted demo pages to use app router
+  - Updated lots of packages
+
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)

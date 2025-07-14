@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import BBLink from '../../bblink';
 import BBText from '../../bbtext';
@@ -14,7 +16,7 @@ import type { IPropsBBBaseForm } from '../../types';
 /**
  * FORM COMPONENTS DEMO PAGE
  */
-const FormComponentsPage = () => {
+export default function FormComponentsPage() {
   // BB Field Text
   const [stateBBFieldText, setStateBBFieldText] = useState<IPropsBBFieldText & IPropsBBBaseForm>({
     fieldName: 'demo-text',
@@ -24,7 +26,9 @@ const FormComponentsPage = () => {
     size: 'md',
     placeholder: 'Enter text...',
     className: '',
-    onChange: () => {},
+    onChange: () => {
+      // Demo onChange handler - no action needed
+    },
     helperText: 'This is some helper text!',
     helperTextType: 'text',
   });
@@ -35,7 +39,9 @@ const FormComponentsPage = () => {
     required: false,
     label: 'Demo Checkbox',
     className: '',
-    onChange: () => {},
+    onChange: () => {
+      // Demo onChange handler - no action needed
+    },
     colorCheckbox: 'secondary',
     size: 'md',
   });
@@ -46,7 +52,9 @@ const FormComponentsPage = () => {
     required: false,
     label: 'Demo File Upload',
     className: '',
-    onChange: () => {},
+    onChange: () => {
+      // Demo onChange handler - no action needed
+    },
     size: 'md',
   });
 
@@ -165,6 +173,4 @@ const FormComponentsPage = () => {
       </div>
     </div>
   );
-};
-
-export default FormComponentsPage;
+}

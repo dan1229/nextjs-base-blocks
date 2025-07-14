@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import BBAlert from '../bbalert';
 import BBButton from '../bbbutton';
@@ -29,7 +31,7 @@ import type { IPropsBBTooltip } from '../bbtooltip';
 /**
  * DEMO PAGE
  */
-const DemoPage = () => {
+export default function DemoPage() {
   //
   // REGULAR COMPONENTS
   //
@@ -87,8 +89,12 @@ const DemoPage = () => {
     className: '',
     href: '',
     isExpandedInitial: false,
-    onExpanded: () => {},
-    onCollapsed: () => {},
+    onExpanded: () => {
+      // Demo onExpanded handler - no action needed
+    },
+    onCollapsed: () => {
+      // Demo onCollapsed handler - no action needed
+    },
   });
   // BB Divider
   const [stateBBDivider, setStateBBDivider] = useState<IPropsBBDivider>({
@@ -272,6 +278,4 @@ const DemoPage = () => {
       </div>
     </div>
   );
-};
-
-export default DemoPage;
+}
