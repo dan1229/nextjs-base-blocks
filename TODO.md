@@ -297,20 +297,31 @@
 - ideally people dont need to set most of these honestly it should look good out of the box
 
 
-----
-### 2.1.0
-
-
-
-
-
-
 #### cypress tests - fill in rest of tests
 - components left
   - button? collapsible, divider, link, loading spinner, modal, navbar, navbar item, tooltip
     - double check these / all existing tests
   - form components
     - dont exist yet
+
+
+### [2.2.0] - 2025-MM-DD
+- TODO
+
+
+----
+### 2.1.1
+
+
+TODO
+
+
+### [2.1.1] - 2025-MM-DD
+- TODO
+
+----
+### 2.1.0
+
 
 
 
