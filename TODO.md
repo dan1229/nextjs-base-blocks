@@ -328,6 +328,7 @@ default required indicator should match label text
 navbar item
   - left align items in mobile - looks weird centered
   - the mobile menu is now a row
+  - does this support children that arent navbar items?
 
 
 
