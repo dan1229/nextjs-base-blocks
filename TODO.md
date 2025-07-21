@@ -323,6 +323,12 @@ TODO
 ### 2.1.0
 
 
+default required indicator should match label text
+
+navbar item
+  - left align items in mobile - looks weird centered
+  - the mobile menu is now a row
+
 
 
 
