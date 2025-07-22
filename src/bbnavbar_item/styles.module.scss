@@ -171,7 +171,8 @@ $navbar-item-min-width: var(--navbar-item-min-width, 6rem);
 }
 
 .dropdownContainer:hover .dropdownContent {
-  display: block !important;
+  display: flex !important;
+  flex-direction: column;
 }
 
 /*
