@@ -14,6 +14,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [2.1.0] - 2025-07-21
+- Breaking Change!
+  - `BBFieldDropdown` -> `BBFieldSelect`
+- `BBNavbarItem`
+  - `title` now accepts components and `string`s
+  - Better text wrapping (or lack thereof)
+- Form components now show a `required` indicator
+  - Based on `required` prop or passing `required` through `register`
+  - variable to set indicator color
+- Converted demo pages to use app router
+  - Updated lots of packages
+
+
 ### [2.0.4] - 2025-07-03
 - `register` type issues in legacy projects
 

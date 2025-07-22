@@ -319,41 +319,6 @@ TODO
 ### [2.1.1] - 2025-MM-DD
 - TODO
 
-----
-### 2.1.0
-
-
-default required indicator should match label text
-
-navbar item
-  - left align items in mobile - looks weird centered
-  - the mobile menu is now a row
-  - does this support children that arent navbar items?
-
-
-
-
-NEED TO TEST
-- navbar item - children as title
-- required fields stuff
-  - all form components
-  - register and via prop
-
-
-
-
-
-### [2.1.0] - 2025-MM-DD
-- Breaking Change!
-  - `BBFieldDropdown` -> `BBFieldSelect`
-- `BBNavbarItem`
-  - `title` now accepts components and `string`s
-  - Better text wrapping (or lack thereof)
-- Form components now show a `required` indicator
-  - Based on `required` prop or passing `required` through `register`
-  - variable to set indicator color
-- Converted demo pages to use app router
-  - Updated lots of packages
 
 -------------------------------------------------------
 
