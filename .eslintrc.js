@@ -21,6 +21,7 @@ module.exports = {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['warn', { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' }],
     '@next/next/no-img-element': 'off',
+    '@next/next/no-html-link-for-pages': 'off',
     '@typescript-eslint/no-unnecessary-condition': 'warn',
     '@typescript-eslint/no-explicit-any': 'warn',
     '@typescript-eslint/consistent-type-imports': ['warn', { prefer: 'type-imports' }],

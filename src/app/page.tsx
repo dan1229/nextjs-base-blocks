@@ -14,7 +14,6 @@ import BBNavbarItem from '../bbnavbar_item';
 import BBText from '../bbtext';
 import BBTooltip from '../bbtooltip';
 import DemoComponent from '../demo_components/demo_component';
-import BBFieldCheckbox from '../form_components/bbfield_checkbox';
 import type { IPropsBBAlert } from '../bbalert';
 import type { IPropsBBButton } from '../bbbutton';
 import type { IPropsBBCard } from '../bbcard';

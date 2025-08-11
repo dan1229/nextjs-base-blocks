@@ -30,6 +30,7 @@ export default defineConfig({
                           '**/node_modules/**',
                           '**/*.config.*',
                           '**/pages/**',
+                          '**/app/**',
                           '**/next-env.d.ts',
                           '**/demo_components/**',
                         ],
