@@ -313,7 +313,38 @@
 ### 2.1.1
 
 
-TODO
+#### navbar item not centering longer text
+- i.e., 'dashboard' button in g20 is clearly not centered when hovering
+  - removing `width: 100%;` in `.dropdownContainer` seems to fix it though unclear if that's the right solution
+
+
+  
+
+#### some field labels are not created properly
+- for example 'fieldName="location_preference_names"' sets as 'Location preference_names' which is incorrect
+  - Should be "Location Preference Names"
+  - this is a bb select multiple if that matters
+
+
+
+
+#### bbcard colors overiding children
+- if i set colorBackground on a 'top level' bbcard, it will color the children footers and headers e.g.,
+
+```
+<BBCard colorBackground='blue'>
+  <BBCard.Body>
+    <BBCard>...</BBCard>
+    <BBCard>...</BBCard>
+    <BBCard>...</BBCard>
+  </BBCard.Body>
+...
+```
+  - all the children bbcards will have the header / footer the same color as the parent which is not correct
+  - bad / lazy css selector most likely
+- add more color options as well - cover them all why not
+
+
 
 
 ### [2.1.1] - 2025-MM-DD
