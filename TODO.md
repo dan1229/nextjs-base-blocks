@@ -305,12 +305,20 @@
     - dont exist yet
 
 
-### [2.2.0] - 2025-MM-DD
-- TODO
+
+#### add support for media sizing vars
+- in projects i use:
+```
+  --media-screen-width-xs: 480px; // Extra small devices (phones)
+  --media-screen-width-sm: 576px; // Small devices (large phones)
+  --media-screen-width-md: 768px; // Medium devices (tablets)
+  --media-screen-width-lg: 992px; // Large devices (small desktops)
+  --media-screen-width-xl: 1200px; // Extra large devices (desktops)
+  --media-screen-width-xxl: 1400px; // Extra extra large devices (large desktops)
+```
+- use throughout app and add docs
 
 
-----
-### 2.1.1
 
 
 #### navbar item not centering longer text
@@ -347,8 +355,11 @@
 
 
 
-### [2.1.1] - 2025-MM-DD
+
+### [2.2.0] - 2025-MM-DD
 - TODO
+
+
 
 
 -------------------------------------------------------
