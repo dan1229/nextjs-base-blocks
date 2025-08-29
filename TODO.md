@@ -241,11 +241,11 @@
 
 
 ---
-### 2.2.0
+### 2.3.0
 
 
 #### consolidate bb field select and bb field select multiple
-- ya
+- is this a good move?
 
 
 #### bbnavbar 
@@ -277,15 +277,6 @@
 
     
 
-
-
-#### convert demo pages to app router
-- probably lots of package and lint updates
-
-
-
-
-
 #### improve actual defaults in each component
 - try on an app with no global variables set and try to make it look good
 -
@@ -303,6 +294,14 @@
     - double check these / all existing tests
   - form components
     - dont exist yet
+
+
+
+
+
+---
+### 2.2.0
+
 
 
 
@@ -334,6 +333,11 @@
   - this is a bb select multiple if that matters
 
 
+
+#### vertical navbar improvements
+- generally style better
+- should offer ability to top align the items
+- should offer ability to left align the text as well
 
 
 #### bbcard colors overiding children
