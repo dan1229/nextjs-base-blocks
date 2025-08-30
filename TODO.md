@@ -296,7 +296,7 @@ make sure cypress/readme is up to date
   - update media usages throughout app
 
 
-
+update changelog below with all the above
 
 
 
