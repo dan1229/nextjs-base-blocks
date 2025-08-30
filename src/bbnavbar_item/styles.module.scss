@@ -175,7 +175,7 @@ $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
   position: relative;
   display: inline-block;
   width: auto;
-  height: 100%;
+  // height: 100%;
 
   // When inside vertical navbar, don't fill height and allow width expansion
   .vertical & {
