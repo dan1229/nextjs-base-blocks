@@ -342,6 +342,10 @@
 
 
 **DOUBLE CHECK THE FOLLOWING**
+- make sure they work
+- big review
+  - claude and copilot
+- add claude.md
 
 
 
