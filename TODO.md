@@ -265,12 +265,6 @@
 
   
 
-#### some field labels are not created properly
-- for example 'fieldName="location_preference_names"' sets as 'Location preference_names' which is incorrect
-  - Should be "Location Preference Names"
-  - this is a bb select multiple if that matters
-
-
 
 #### test for hooks
 
@@ -299,6 +293,7 @@ update changelog below with all the above
   - Many more options for `colorBackground` as well!
   - Removed auto darkening of header / footer
 - Cypress tests for hooks
+- `BBForm` components fix related to breaking up multi word labels
 
 -------------------------------------------------------
 
