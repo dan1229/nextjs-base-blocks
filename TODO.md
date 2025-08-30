@@ -176,15 +176,6 @@
 ### 2.3.0
 
 
-#### standardize how we do the class name assigns
-- i.e., some places there are swtich functions
-- some are more manual `textAlign{textAlignment.strip}
-  - bbcard, bbbutton also great examples
-- a mess and a half
-  - standardize this / the class names somehow
-    - could cut down code a ton
-  - maybe some utility component?
-
 
 #### improve actual defaults in each component
 - try on an app with no global variables set and try to make it look good
@@ -205,6 +196,16 @@
       - are any other than the 'big colors'?
 
 
+#### standardize how we do the class name assigns
+- i.e., some places there are swtich functions
+- some are more manual `textAlign{textAlignment.strip}
+  - bbcard, bbbutton also great examples
+- a mess and a half
+  - standardize this / the class names somehow
+    - could cut down code a ton
+  - maybe some utility component?
+
+
 
 
 
@@ -223,6 +224,7 @@
 
 
 #### cypress tests - fill in rest of tests
+- get coverage higher!
 - components left
   - button? collapsible, divider, link, loading spinner, modal, navbar, navbar item, tooltip
     - double check these / all existing tests
