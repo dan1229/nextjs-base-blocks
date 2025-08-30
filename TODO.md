@@ -69,45 +69,8 @@
     - i.e., bbcard has elevation and border thickness
 
 
-
-
-
-#### bb form demo components
-- fix the broken one
-- add any missing ones
-- generally improve
-
 ---
 
-### AI Suggestions
-- need to sort through these
-
-
-##### CSS-in-JS investigation
-- research styled-components or emotion integration
-- better runtime theming support
-- improved tree-shaking
-- dynamic theme switching
-
-##### Tailwind CSS integration
-- hybrid approach: tailwind utilities + bb components
-- allow className passthrough for tailwind classes
-- maybe BBButton variant="primary" className="hover:scale-105"
-- investigate tailwind plugin for bb design tokens
-
-##### Design tokens system
-- structured approach to design variables
-- json/js export of tokens for other tools
-- better organization of color palettes, spacing scales, etc.
-- figma/design tool integration considerations
-
-##### Enhanced dark mode
-- smoother transitions between themes
-- system preference detection
-- per-component theme overrides
-- better contrast ratios and accessibility
-
-#### Developer Experience
 
 ##### Storybook integration
 - replace demo pages with proper storybook
@@ -115,22 +78,6 @@
 - interactive prop controls
 - design system documentation
 
-##### CLI tool for component generation
-- scaffold new components with proper structure
-- auto-generate tests, stories, and types
-- consistency across new components
-
-##### Better TypeScript support
-- stricter prop validation
-- better autocomplete for variant/size props
-- generic component patterns
-
-##### Bundle optimization
-- per-component builds for better tree-shaking
-- css extraction and purging
-- runtime performance monitoring
-
-#### Advanced Features
 
 ##### Animation system
 - consistent motion design language
@@ -173,8 +120,6 @@
 ### Cypress enhancements
 - [ ] Visual regression testing with screenshot comparison
 - [ ] Performance benchmarking for component rendering
-
-
 
 
 #### add tests for demo components
@@ -226,66 +171,55 @@
 - auto-generate from existing components
 - customizable shapes and animations
 
----
-### Coming soon!!
-
-
-
-#### test for hooks
-- add cypress tests for hooks like use outside click
-
-
-
-#### aria labels
-- for accessibility support
-
 
 ---
 ### 2.3.0
 
 
-#### consolidate bb field select and bb field select multiple
-- is this a good move?
+#### standardize how we do the class name assigns
+- i.e., some places there are swtich functions
+- some are more manual `textAlign{textAlignment.strip}
+  - bbcard, bbbutton also great examples
+- a mess and a half
+  - standardize this / the class names somehow
+    - could cut down code a ton
+  - maybe some utility component?
 
-
-#### bbnavbar 
-- vertical mobile styling
-  - emulate styling from flutter navbars a bit
-    - i.e., always slide out kinda thing
--
-- add back 'sticky' prop
-  - is it working?
-
-
-
-#### DEMO PAGE IMPROVEMENTS!!! MAKE IT GREAT!!!
-- see above
-- overall get it working a bit better though
-- TODO list them out
-
-
-
-
-#### work on defaults / variables system
-- should defaults rely on other vars?
-  - should / could the defaults in general be better? theyre awful right now
--
-- more broadly what's the deal with these scss variables?
-  - there's a lot which is fine
-  - need to mark which are 'required'
-    - are any other than the 'big colors'?
-
-    
 
 #### improve actual defaults in each component
 - try on an app with no global variables set and try to make it look good
+  - should defaults rely on other vars?
+    - should / could the defaults in general be better? theyre awful right now
 -
 - update defaults in readme as well to be more reasonable / stylish
   - they should be okay
 -
 - add some 'variables/styles' or something so we can set them normally for the project itself
   - then we can get rid of readme docs
+  - globals.scss? would that work with minimal config / non conflicting with downstream projects?
+-
 - ideally people dont need to set most of these honestly it should look good out of the box
+  - more broadly what's the deal with these scss variables?
+    - there's a lot which is fine
+    - need to mark which are 'required'
+      - are any other than the 'big colors'?
+
+
+
+
+
+
+#### bb form demo components get functional
+- OR switch to storybook - see if that's easier at this point
+-
+- fix the broken ones
+  - TODO
+- add any missing ones
+  - form components might be missing?
+  - TODO
+- generally improve
+  - make sure that all props are used
+    - find a way to auto detect these so we dont need to manually add
 
 
 #### cypress tests - fill in rest of tests
@@ -299,8 +233,36 @@
 
 
 
+
+
+
+
+
+
+
+
+#### consolidate bb field select and bb field select multiple
+- is this a good move?
+
+
+#### bbnavbar - mobile styling and sticky option
+- vertical mobile styling
+  - emulate styling from flutter navbars a bit
+    - i.e., always slide out kinda thing
+  - even if a million navbar items make the mobile menu scrollable
+    - overflow-y?
+-
+- add back 'sticky' prop
+  - is it working?
+
+
+
 ---
 ### 2.2.0
+
+
+#### test for hooks
+- add cypress tests for hooks like use outside click
 
 
 
@@ -316,13 +278,10 @@
   --media-screen-width-xxl: 1400px; // Extra extra large devices (large desktops)
 ```
 - use throughout app and add docs
+  - update readme
+  - update media usages throughout app
 
 
-
-
-#### navbar item not centering longer text
-- i.e., 'dashboard' button in g20 is clearly not centered when hovering
-  - removing `width: 100%;` in `.dropdownContainer` seems to fix it though unclear if that's the right solution
 
 
   
@@ -334,37 +293,39 @@
 
 
 
-#### vertical navbar improvements
-- generally style better
-- should offer ability to top align the items
-- should offer ability to left align the text as well
+make sure cypress/readme is up to date
 
 
-#### bbcard colors overiding children
-- if i set colorBackground on a 'top level' bbcard, it will color the children footers and headers e.g.,
-
-```
-<BBCard colorBackground='blue'>
-  <BBCard.Body>
-    <BBCard>...</BBCard>
-    <BBCard>...</BBCard>
-    <BBCard>...</BBCard>
-  </BBCard.Body>
-...
-```
-  - all the children bbcards will have the header / footer the same color as the parent which is not correct
-  - bad / lazy css selector most likely
-- add more color options as well - cover them all why not
 
 
+
+
+
+
+
+
+**DOUBLE CHECK THE FOLLOWING**
+- make sure they work
+- big review
+  - claude and copilot
+  - myself too
+- add tests?
+  - is there anything novel here worth testing?
 
 
 
 ### [2.2.0] - 2025-MM-DD
-- TODO
-
-
-
+- `BBNavbar`
+  - vertical styling improvements
+  - `navbar-item-min-width` removed
+  - `textAlignment` prop added to allow aligning text
+  - `verticalAlignment` prop added to allow for aligning items within a vertical nav
+- `BBNavbarItem`
+  - Fixed width / alignment issues
+- `BBCard`
+  - Fixed issue with nested `BBCard` components that have differing `colorBackground`s
+  - Many more options for `colorBackground` as well!
+  - Removed auto darkening of header / footer
 
 -------------------------------------------------------
 

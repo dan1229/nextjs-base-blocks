@@ -61,20 +61,60 @@ export type TBBCardColorBackground =
   | 'white'
   | 'grey_light'
   | 'grey_dark'
+  | 'grey_lightest'
+  | 'grey_darkest'
   | 'black'
   | 'primary'
+  | 'primary_light'
+  | 'primary_dark'
   | 'secondary'
-  | 'accent';
+  | 'secondary_light'
+  | 'secondary_dark'
+  | 'accent'
+  | 'accent_light'
+  | 'accent_dark'
+  | 'success'
+  | 'success_light'
+  | 'success_dark'
+  | 'warning'
+  | 'warning_light'
+  | 'warning_dark'
+  | 'danger'
+  | 'danger_light'
+  | 'danger_dark'
+  | 'info'
+  | 'info_light'
+  | 'info_dark';
 export type TBBCardColorBorder =
   | 'default'
   | 'transparent'
   | 'white'
   | 'grey_light'
   | 'grey_dark'
+  | 'grey_lightest'
+  | 'grey_darkest'
   | 'black'
   | 'primary'
+  | 'primary_light'
+  | 'primary_dark'
   | 'secondary'
-  | 'accent';
+  | 'secondary_light'
+  | 'secondary_dark'
+  | 'accent'
+  | 'accent_light'
+  | 'accent_dark'
+  | 'success'
+  | 'success_light'
+  | 'success_dark'
+  | 'warning'
+  | 'warning_light'
+  | 'warning_dark'
+  | 'danger'
+  | 'danger_light'
+  | 'danger_dark'
+  | 'info'
+  | 'info_light'
+  | 'info_dark';
 export type TBBCardElevation = 'none' | 'low' | 'med' | 'high' | 'default';
 
 /**
@@ -111,6 +151,9 @@ export type TBBModalWidth = 'sm' | 'md' | 'lg' | 'full';
  * BBNavbar
  */
 export type TBBNavbarAlignment = 'left' | 'center' | 'right';
+export type TBBNavbarVerticalAlignment = 'top' | 'center' | 'bottom';
+export type TBBNavbarTextAlignment = 'left' | 'center';
+export type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
 
 /**
  * BBNavbarItem

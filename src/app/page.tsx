@@ -149,6 +149,9 @@ export default function DemoPage() {
     showButtonsAction: true,
     children: <></>,
     mainContent: <></>,
+    verticalAlignment: 'top',
+    textAlignment: 'center',
+    vertical: false,
   });
   // BB Navbar Item
   const [stateBBNavbarItem, setStateBBNavbarItem] = useState<IPropsBBNavbarItem>({

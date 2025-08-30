@@ -37,9 +37,6 @@ $navbar-item-bg-color-active: var(--navbar-item-bg-color-active, $bg-dark-color)
 // same with --navbar-item-text-color-hover and --bg-color
 $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
 
-// set min width
-$navbar-item-min-width: var(--navbar-item-min-width, 6rem);
-
 .active {
   background-color: $navbar-item-text-color;
   background-color: $navbar-item-bg-color-active;
@@ -52,22 +49,48 @@ $navbar-item-min-width: var(--navbar-item-min-width, 6rem);
 }
 
 .navbarItemBase {
-  min-width: $navbar-item-min-width;
   list-style-type: none;
   margin: 0 0.15rem;
   border-radius: $border-radius;
   background-color: $navbar-item-color;
   // this is to prevent the text from wrapping to the next line
   white-space: nowrap;
+  // ensure content fits properly and centers correctly
+  width: fit-content;
+
+  // When inside vertical navbar, make items fill full width
+  .vertical & {
+    width: 100% !important;
+    min-width: unset !important;
+    margin: 0 0 0.25rem 0;
+  }
 
   a {
     text-align: center;
     text-decoration: none;
     width: 100%;
+    display: block;
 
     * {
       padding: $navbar-item-padding;
     }
+  }
+
+  // In vertical navbar, ensure items respond to alignment
+  .vertical & a {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+  }
+
+  // Text alignment for vertical navbar items
+  .vertical .textAlignLeft & a {
+    justify-content: flex-start;
+  }
+
+  .vertical .textAlignCenter & a {
+    justify-content: center;
   }
 
   ul {
@@ -162,7 +185,11 @@ $navbar-item-min-width: var(--navbar-item-min-width, 6rem);
   position: relative;
   display: inline-block;
   width: 100%;
-  height: 100%;
+
+  // When inside vertical navbar, don't fill height
+  .vertical & {
+    height: fit-content;
+  }
 
   ol,
   ul {
@@ -258,6 +285,10 @@ $navbar-item-min-width: var(--navbar-item-min-width, 6rem);
 
   .iconDropdown {
     transform: rotate(-90deg);
+  }
+
+  .dropdownContainer {
+    width: 100% !important;
   }
 
   .navbarItemBase {

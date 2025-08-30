@@ -8,9 +8,14 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import BBText from '../bbtext';
 import useOutsideClick from '../utils/hooks/UseOutsideClick';
 import styles from './styles.module.scss';
-import type { IPropsBBBase, TBBTextColor, TBBTextSize, TBBNavbarAlignment } from '../types';
-
-type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
+import type {
+  IPropsBBBase,
+  TBBNavbarElevation,
+  TBBNavbarTextAlignment,
+  TBBNavbarVerticalAlignment,
+  TBBTextColor,
+  TBBTextSize,
+} from '../types';
 
 /**
  * PROPS
@@ -31,7 +36,9 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
  * @param {string=} classNameWrapper - Custom class name for the wrapper. Doesn't really apply with vertical.
  * @param {boolean=} brandHorizontal - Whether the brand is horizontal
  * @param {boolean=} boldTitle - Whether the title is bold
- * @param {string=} menuAlignment - Alignment of the menu items
+ * @param {TBBNavbarTextAlignment=} textAlignment - Text alignment for vertical navbar items (left/center)
+ * @param {TBBNavbarVerticalAlignment=} verticalAlignment - Vertical alignment for vertical navbar items (top/center/bottom)
+ * @param {string=} menuAlignment - [DEPRECATED] Use horizontalAlignment instead
  */
 export interface IPropsBBNavbar {
   children: React.ReactNode;
@@ -50,7 +57,8 @@ export interface IPropsBBNavbar {
   classNameWrapper?: string;
   brandHorizontal?: boolean;
   boldTitle?: boolean;
-  menuAlignment?: TBBNavbarAlignment;
+  textAlignment?: TBBNavbarTextAlignment;
+  verticalAlignment?: TBBNavbarVerticalAlignment;
 }
 
 /**
@@ -74,7 +82,8 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
     classNameWrapper,
     brandHorizontal = false,
     boldTitle = false,
-    menuAlignment = 'left',
+    textAlignment = 'left',
+    verticalAlignment = 'top',
   } = props;
 
   const [showNavExpanded, setShowNavExpanded] = useState(false);
@@ -131,7 +140,8 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
             styles.navigationMenu,
             showNavExpanded && styles.expanded,
             vertical && styles.vertical,
-            styles[`align_${menuAlignment}`]
+            vertical && styles[`textAlign${textAlignment.charAt(0).toUpperCase() + textAlignment.slice(1)}`],
+            vertical && styles[`verticalAlign${verticalAlignment.charAt(0).toUpperCase() + verticalAlignment.slice(1)}`]
           )}
         >
           <ul className={styles.navigationMenuList}>{children}</ul>
