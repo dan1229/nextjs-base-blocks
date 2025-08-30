@@ -273,10 +273,6 @@
 
 
 #### test for hooks
-- add cypress tests for hooks like use outside click
-- make sure cypress/readme is up to date!
-
-
 
 #### add support for media sizing vars
 
