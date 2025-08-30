@@ -355,27 +355,7 @@
 - should offer ability to top align the items
 - should offer ability to left align the text as well
 
-#### navbar item not centering longer text
-- i.e., 'dashboard' button in g20 is clearly not centered when hovering
-  - removing `width: 100%;` in `.dropdownContainer` seems to fix it though unclear if that's the right solution
 
-
-
-#### bbcard colors overiding children
-- if i set colorBackground on a 'top level' bbcard, it will color the children footers and headers e.g.,
-
-```
-<BBCard colorBackground='blue'>
-  <BBCard.Body>
-    <BBCard>...</BBCard>
-    <BBCard>...</BBCard>
-    <BBCard>...</BBCard>
-  </BBCard.Body>
-...
-```
-  - all the children bbcards will have the header / footer the same color as the parent which is not correct
-  - bad / lazy css selector most likely
-- add more color options as well - cover them all why not
 
 
 
