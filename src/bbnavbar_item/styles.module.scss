@@ -62,11 +62,12 @@ $navbar-item-min-width: var(--navbar-item-min-width, 6rem);
   // ensure content fits properly and centers correctly
   width: fit-content;
 
-  // In vertical navbars, items should fill the full width
-  :global(.vertical) & {
+  // When inside vertical navbar, make items fill full width
+  .vertical & {
     width: 100%;
-    margin: 0 0 0.15rem 0;
+    margin: 0 0 0.25rem 0;
   }
+
 
   a {
     text-align: center;
@@ -77,6 +78,13 @@ $navbar-item-min-width: var(--navbar-item-min-width, 6rem);
     * {
       padding: $navbar-item-padding;
     }
+  }
+
+  // In vertical navbar, ensure items respond to alignment
+  .vertical & a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   ul {
@@ -173,10 +181,12 @@ $navbar-item-min-width: var(--navbar-item-min-width, 6rem);
   width: auto;
   height: 100%;
 
-  // In vertical navbars, containers should not fill full height
-  :global(.vertical) & {
+  // When inside vertical navbar, don't fill height and allow width expansion
+  .vertical & {
     height: auto;
+    width: 100%;
   }
+
 
   ol,
   ul {
