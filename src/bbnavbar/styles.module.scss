@@ -81,19 +81,26 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
     width: $navbar-vertical-width;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 1rem;
+    padding: 1rem 0.5rem;
     position: fixed;
     top: 0;
     left: 0;
+    justify-content: flex-start;
+    gap: 1rem;
 
     .navigationMenuList {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: stretch;
       margin: 0;
+      width: 100%;
+      flex-grow: 1;
     }
 
     .containerButtonsAction {
-      align-items: flex-start;
+      align-items: center;
+      width: 100%;
+      margin: 0;
+      margin-top: auto;
     }
   }
 
@@ -161,14 +168,21 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
 
   &.vertical {
     align-items: flex-start !important;
-    width: auto;
+    width: 100%;
+    flex-direction: column;
+    height: 100%;
+    
+    ul {
+      width: 100%;
+      flex-direction: column;
+    }
   }
 
   &:not(.vertical) {
     width: 100%;
   }
 
-  // alignment classes
+  // horizontal alignment classes
   &.align_left {
     justify-content: flex-start;
   }
@@ -179,6 +193,44 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
 
   &.align_right {
     justify-content: flex-end;
+  }
+
+  // vertical alignment classes (for vertical navbar)
+  &.vertical.vertical_align_top {
+    justify-content: flex-start;
+    
+    ul {
+      justify-content: flex-start;
+    }
+  }
+
+  &.vertical.vertical_align_center {
+    justify-content: center;
+    
+    ul {
+      justify-content: center;
+    }
+  }
+
+  &.vertical.vertical_align_bottom {
+    justify-content: flex-end;
+    
+    ul {
+      justify-content: flex-end;
+    }
+  }
+
+  // text alignment classes
+  &.text_align_left {
+    ul > li > div > div > a {
+      text-align: left !important;
+    }
+  }
+
+  &.text_align_center {
+    ul > li > div > div > a {
+      text-align: center !important;
+    }
   }
 
   * {
@@ -196,6 +248,13 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
   display: flex;
   padding: 0;
   gap: 0.25rem;
+  
+  // When in vertical navbar, make the list flexible to support alignment
+  .vertical & {
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .containerButtonsAction {

@@ -64,6 +64,7 @@ $navbar-item-min-width: var(--navbar-item-min-width, 6rem);
     text-align: center;
     text-decoration: none;
     width: 100%;
+    display: block;
 
     * {
       padding: $navbar-item-padding;

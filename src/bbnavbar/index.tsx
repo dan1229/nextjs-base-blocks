@@ -8,7 +8,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import BBText from '../bbtext';
 import useOutsideClick from '../utils/hooks/UseOutsideClick';
 import styles from './styles.module.scss';
-import type { IPropsBBBase, TBBTextColor, TBBTextSize, TBBNavbarAlignment } from '../types';
+import type { IPropsBBBase, TBBTextColor, TBBTextSize, TBBNavbarAlignment, TBBNavbarVerticalAlignment, TBBNavbarTextAlignment } from '../types';
 
 type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
 
@@ -32,6 +32,8 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
  * @param {boolean=} brandHorizontal - Whether the brand is horizontal
  * @param {boolean=} boldTitle - Whether the title is bold
  * @param {string=} menuAlignment - Alignment of the menu items
+ * @param {TBBNavbarVerticalAlignment=} verticalAlignment - Vertical alignment of navbar items when vertical=true
+ * @param {TBBNavbarTextAlignment=} textAlignment - Text alignment of navbar items
  */
 export interface IPropsBBNavbar {
   children: React.ReactNode;
@@ -51,6 +53,8 @@ export interface IPropsBBNavbar {
   brandHorizontal?: boolean;
   boldTitle?: boolean;
   menuAlignment?: TBBNavbarAlignment;
+  verticalAlignment?: TBBNavbarVerticalAlignment;
+  textAlignment?: TBBNavbarTextAlignment;
 }
 
 /**
@@ -75,6 +79,8 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
     brandHorizontal = false,
     boldTitle = false,
     menuAlignment = 'left',
+    verticalAlignment = 'center',
+    textAlignment = 'center',
   } = props;
 
   const [showNavExpanded, setShowNavExpanded] = useState(false);
@@ -131,7 +137,9 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
             styles.navigationMenu,
             showNavExpanded && styles.expanded,
             vertical && styles.vertical,
-            styles[`align_${menuAlignment}`]
+            styles[`align_${menuAlignment}`],
+            vertical && styles[`vertical_align_${verticalAlignment}`],
+            styles[`text_align_${textAlignment}`]
           )}
         >
           <ul className={styles.navigationMenuList}>{children}</ul>

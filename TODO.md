@@ -316,13 +316,10 @@
   --media-screen-width-xxl: 1400px; // Extra extra large devices (large desktops)
 ```
 - use throughout app and add docs
+  - update readme
+  - update media usages throughout app
 
 
-
-
-#### navbar item not centering longer text
-- i.e., 'dashboard' button in g20 is clearly not centered when hovering
-  - removing `width: 100%;` in `.dropdownContainer` seems to fix it though unclear if that's the right solution
 
 
   
@@ -334,10 +331,23 @@
 
 
 
+
+
+
+
+
+
+
+
 #### vertical navbar improvements
 - generally style better
 - should offer ability to top align the items
 - should offer ability to left align the text as well
+
+#### navbar item not centering longer text
+- i.e., 'dashboard' button in g20 is clearly not centered when hovering
+  - removing `width: 100%;` in `.dropdownContainer` seems to fix it though unclear if that's the right solution
+
 
 
 #### bbcard colors overiding children
@@ -361,7 +371,8 @@
 
 
 ### [2.2.0] - 2025-MM-DD
-- TODO
+- `BBNavbar`
+  - vertical styling improvements
 
 
 
