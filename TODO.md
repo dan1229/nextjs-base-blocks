@@ -345,8 +345,9 @@
 - make sure they work
 - big review
   - claude and copilot
-- add claude.md
-
+  - myself too
+- add tests?
+  - is there anything novel here worth testing?
 
 
 #### vertical navbar improvements
