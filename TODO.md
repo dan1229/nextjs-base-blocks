@@ -248,15 +248,6 @@
 - is this a good move?
 
 
-#### bbnavbar 
-- vertical mobile styling
-  - emulate styling from flutter navbars a bit
-    - i.e., always slide out kinda thing
--
-- add back 'sticky' prop
-  - is it working?
-
-
 
 #### DEMO PAGE IMPROVEMENTS!!! MAKE IT GREAT!!!
 - see above
@@ -296,6 +287,17 @@
     - dont exist yet
 
 
+
+
+#### bbnavbar - mobile styling and sticky option
+- vertical mobile styling
+  - emulate styling from flutter navbars a bit
+    - i.e., always slide out kinda thing
+  - even if a million navbar items make the mobile menu scrollable
+    - overflow-y?
+-
+- add back 'sticky' prop
+  - is it working?
 
 
 
