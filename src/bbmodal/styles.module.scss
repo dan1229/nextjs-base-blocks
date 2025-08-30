@@ -82,7 +82,7 @@ $modal-z-index: var(--modal-z-index, 9999);
 /**
 * MOBILE
 */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: var(--media-screen-width-lg)) {
   .sm {
     width: 50%;
   }

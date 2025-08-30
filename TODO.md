@@ -302,6 +302,7 @@ update changelog below with all the above
   - Fixed issue with nested `BBCard` components that have differing `colorBackground`s
   - Many more options for `colorBackground` as well!
   - Removed auto darkening of header / footer
+- Cypress tests for hooks
 
 -------------------------------------------------------
 
