@@ -63,6 +63,11 @@ $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
     width: 100% !important;
     min-width: unset !important;
     margin: 0 0 0.25rem 0;
+    
+    a {
+      width: 100%;
+      display: flex;
+    }
   }
 
   a {
@@ -78,9 +83,10 @@ $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
 
   // In vertical navbar, ensure items respond to alignment
   .vertical & a {
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
+    width: 100% !important;
   }
 
   // Text alignment for vertical navbar items
