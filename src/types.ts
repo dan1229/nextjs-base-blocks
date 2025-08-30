@@ -153,6 +153,7 @@ export type TBBModalWidth = 'sm' | 'md' | 'lg' | 'full';
 export type TBBNavbarAlignment = 'left' | 'center' | 'right';
 export type TBBNavbarVerticalAlignment = 'top' | 'center' | 'bottom';
 export type TBBNavbarTextAlignment = 'left' | 'center';
+export type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
 
 /**
  * BBNavbarItem

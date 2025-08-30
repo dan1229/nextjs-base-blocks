@@ -176,6 +176,32 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
       width: 100%;
       flex-direction: column;
     }
+
+    // Text alignment for vertical layout
+    &.textAlignLeft {
+      ul {
+        align-items: flex-start;
+      }
+    }
+
+    &.textAlignCenter {
+      ul {
+        align-items: center;
+      }
+    }
+
+    // Vertical alignment for vertical layout
+    &.verticalAlignTop {
+      justify-content: flex-start;
+    }
+
+    &.verticalAlignCenter {
+      justify-content: center;
+    }
+
+    &.verticalAlignBottom {
+      justify-content: flex-end;
+    }
   }
 
   &:not(.vertical) {

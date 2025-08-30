@@ -353,20 +353,12 @@
 
 
 #### vertical navbar improvements
-- generally style better
-- should offer ability to top align the items
-- should offer ability to left align the text as well
 
 
-
-
-
-
-
-add back some kind of alignment?
+add back some kind of alignment props / types
 - left / right aligntmnet of text
   - center or left really
-  - applies to vertical and horizontal
+  - really just applies in vertical
 - top / center / bottom
   - just vertical
 
