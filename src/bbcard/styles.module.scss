@@ -77,6 +77,7 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 .header {
   padding: 1rem;
   border-radius: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
   &:only-child {
     border-radius: 0;
@@ -101,6 +102,7 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 .footer {
   padding: 1rem;
   border-radius: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .footer:only-child {
@@ -171,129 +173,38 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 */
 .background_card_default {
   background-color: $card-background-default-color !important;
-
-  // Only style direct child headers/footers when they don't have explicit color classes
-  > .footer:not([class*="background_footer_"]) {
-    border-top: 1px solid $card-darken-default-color;
-    background-color: $card-darken-default-color;
-  }
-
-  > .header:not([class*="background_header_"]) {
-    border-bottom: 1px solid $card-darken-default-color;
-    background-color: $card-darken-default-color;
-  }
 }
 
 .background_card_transparent {
   background-color: transparent !important;
-
-  > .footer:not([class*="background_footer_"]) {
-    border-top: 1px solid transparent;
-    background-color: transparent;
-  }
-
-  > .header:not([class*="background_header_"]) {
-    border-bottom: 1px solid transparent;
-    background-color: transparent;
-  }
 }
 
 .background_card_white {
   background-color: $white !important;
-
-  > .footer:not([class*="background_footer_"]) {
-    border-top: 1px solid $grey-lightest;
-    background-color: $grey-lightest;
-  }
-
-  > .header:not([class*="background_header_"]) {
-    border-bottom: 1px solid $grey-lightest;
-    background-color: $grey-lightest;
-  }
 }
 
 .background_card_grey_light {
   background-color: $grey-lightest !important;
-
-  > .footer:not([class*="background_footer_"]) {
-    border-top: 1px solid $grey-light;
-    background-color: $grey-light;
-  }
-
-  > .header:not([class*="background_header_"]) {
-    border-bottom: 1px solid $grey-light;
-    background-color: $grey-light;
-  }
 }
 
 .background_card_grey_dark {
   background-color: $grey-dark !important;
-
-  > .footer:not([class*="background_footer_"]) {
-    border-top: 1px solid $grey-darkest;
-    background-color: $grey-darkest;
-  }
-
-  > .header:not([class*="background_header_"]) {
-    border-bottom: 1px solid $grey-darkest;
-    background-color: $grey-darkest;
-  }
 }
 
 .background_card_black {
   background-color: $black !important;
-
-  > .footer:not([class*="background_footer_"]) {
-    border-top: 1px solid $black;
-    background-color: $black;
-  }
-
-  > .header:not([class*="background_header_"]) {
-    border-bottom: 1px solid $black;
-    background-color: $black;
-  }
 }
 
 .background_card_primary {
   background-color: $primary-color !important;
-
-  > .footer:not([class*="background_footer_"]) {
-    border-top: 1px solid $primary-dark-color;
-    background-color: $primary-dark-color;
-  }
-
-  > .header:not([class*="background_header_"]) {
-    border-bottom: 1px solid $primary-dark-color;
-    background-color: $primary-dark-color;
-  }
 }
 
 .background_card_secondary {
   background-color: $secondary-color !important;
-
-  > .footer:not([class*="background_footer_"]) {
-    border-top: 1px solid $secondary-dark-color;
-    background-color: $secondary-dark-color;
-  }
-
-  > .header:not([class*="background_header_"]) {
-    border-bottom: 1px solid $secondary-dark-color;
-    background-color: $secondary-dark-color;
-  }
 }
 
 .background_card_accent {
   background-color: $accent-color !important;
-
-  > .footer:not([class*="background_footer_"]) {
-    border-top: 1px solid $accent-dark-color;
-    background-color: $accent-dark-color;
-  }
-
-  > .header:not([class*="background_header_"]) {
-    border-bottom: 1px solid $accent-dark-color;
-    background-color: $accent-dark-color;
-  }
 }
 
 // Additional grey colors
