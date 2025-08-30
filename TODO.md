@@ -337,7 +337,7 @@
 
 
 
-
+DOUBLE CHECK THE FOLLOWING
 
 #### vertical navbar improvements
 - generally style better
@@ -373,9 +373,8 @@
 ### [2.2.0] - 2025-MM-DD
 - `BBNavbar`
   - vertical styling improvements
-
-
-
+- `BBNavbarItem`
+  - Fixed width / alignment issues
 
 -------------------------------------------------------
 

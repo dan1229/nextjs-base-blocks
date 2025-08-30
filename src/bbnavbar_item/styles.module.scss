@@ -162,7 +162,7 @@ $navbar-item-min-width: var(--navbar-item-min-width, 6rem);
 .dropdownContainer {
   position: relative;
   display: inline-block;
-  width: 100%;
+  width: auto;
   height: 100%;
 
   ol,
@@ -259,6 +259,10 @@ $navbar-item-min-width: var(--navbar-item-min-width, 6rem);
 
   .iconDropdown {
     transform: rotate(-90deg);
+  }
+
+  .dropdownContainer {
+    width: 100% !important;
   }
 
   .navbarItemBase {
