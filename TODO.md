@@ -261,13 +261,6 @@
 ### 2.2.0
 
 
-#### test for hooks
-- add cypress tests for hooks like use outside click
-
-make sure cypress/readme is up to date
-
-
-
 
 
   
@@ -279,23 +272,13 @@ make sure cypress/readme is up to date
 
 
 
+#### test for hooks
+- add cypress tests for hooks like use outside click
+- make sure cypress/readme is up to date!
+
 
 
 #### add support for media sizing vars
-- in projects i use:
-```
-  --media-screen-width-xs: 480px; // Extra small devices (phones)
-  --media-screen-width-sm: 576px; // Small devices (large phones)
-  --media-screen-width-md: 768px; // Medium devices (tablets)
-  --media-screen-width-lg: 992px; // Large devices (small desktops)
-  --media-screen-width-xl: 1200px; // Extra large devices (desktops)
-  --media-screen-width-xxl: 1400px; // Extra extra large devices (large desktops)
-```
-- use throughout app and add docs
-  - update readme
-  - update media usages throughout app
-
-
 
 
 
@@ -305,6 +288,9 @@ update changelog below with all the above
 
 
 ### [2.2.0] - 2025-MM-DD
+- Added support for media sizing variables
+  - `--media-screen-width-xs/xxl` variables added
+  - Media queries updated to use these variables
 - `BBNavbar`
   - vertical styling improvements
   - `navbar-item-min-width` removed

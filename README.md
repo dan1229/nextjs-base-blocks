@@ -196,6 +196,13 @@ html,
   --mobile-text-size-xl: 1.6rem;
   --mobile-text-size-xxl: 2rem;
   --mobile-text-size-xxxl: 2.5rem;
+  // media sizing - responsive breakpoints
+  --media-screen-width-xs: 480px; // Extra small devices (phones)
+  --media-screen-width-sm: 576px; // Small devices (large phones)
+  --media-screen-width-md: 768px; // Medium devices (tablets)
+  --media-screen-width-lg: 992px; // Large devices (small desktops)
+  --media-screen-width-xl: 1200px; // Extra large devices (desktops)
+  --media-screen-width-xxl: 1400px; // Extra extra large devices (large desktops)
   // font family - page router font usage
   --font-family-main: 'Josefin Sans';  // Used for main text
   --font-family-header: 'Montserrat';  // Used for larger fonts/headers
@@ -214,6 +221,29 @@ html,
 While none of these variables are required, it definitely will help make your app look and feel more custom.
 
 It is recommended to copy and paste this whole block into your `globals.scss` file and then edit the variables as needed.
+
+#### Media Sizing Variables
+
+The media sizing variables provide consistent responsive breakpoints throughout your application:
+
+- `--media-screen-width-xs: 480px` - Extra small devices (phones)
+- `--media-screen-width-sm: 576px` - Small devices (large phones)  
+- `--media-screen-width-md: 768px` - Medium devices (tablets)
+- `--media-screen-width-lg: 992px` - Large devices (small desktops)
+- `--media-screen-width-xl: 1200px` - Extra large devices (desktops)
+- `--media-screen-width-xxl: 1400px` - Extra extra large devices (large desktops)
+
+Use these in your media queries for consistent responsive design:
+
+```scss
+@media (max-width: var(--media-screen-width-md)) {
+  // Tablet and below styles
+}
+
+@media (max-width: var(--media-screen-width-sm)) {
+  // Mobile styles
+}
+```
 
 #### Dark Mode / Themes
 

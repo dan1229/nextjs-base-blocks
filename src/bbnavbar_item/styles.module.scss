@@ -248,7 +248,7 @@ $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
 /**
 * MOBILE
 */
-@media (max-width: 1200px) {
+@media (max-width: var(--media-screen-width-xl)) {
   .active {
     border-radius: 0;
 
