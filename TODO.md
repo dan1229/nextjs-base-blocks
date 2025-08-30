@@ -176,6 +176,14 @@
 ### 2.3.0
 
 
+#### standardize how we do the class name assigns
+- i.e., some places there are swtich functions
+- some are more manual `textAlign{textAlignment.strip}
+- a mess and a half
+  - standardize this / the class names somehow
+    - could cut down code a ton
+  - maybe some utility component?
+
 
 #### improve actual defaults in each component
 - try on an app with no global variables set and try to make it look good

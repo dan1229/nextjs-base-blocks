@@ -340,6 +340,114 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
   background-color: $accent-dark-color !important;
 }
 
+// Additional grey colors
+.background_footer_grey_lightest {
+  border-top: 1px solid $grey-light !important;
+  background-color: $grey-light !important;
+}
+
+.background_footer_grey_darkest {
+  border-top: 1px solid $black !important;
+  background-color: $black !important;
+}
+
+// Primary color variations
+.background_footer_primary_light {
+  border-top: 1px solid $primary-color !important;
+  background-color: $primary-color !important;
+}
+
+.background_footer_primary_dark {
+  border-top: 1px solid $primary-dark-color !important;
+  background-color: $primary-dark-color !important;
+}
+
+// Secondary color variations
+.background_footer_secondary_light {
+  border-top: 1px solid $secondary-color !important;
+  background-color: $secondary-color !important;
+}
+
+.background_footer_secondary_dark {
+  border-top: 1px solid $secondary-dark-color !important;
+  background-color: $secondary-dark-color !important;
+}
+
+// Accent color variations
+.background_footer_accent_light {
+  border-top: 1px solid $accent-color !important;
+  background-color: $accent-color !important;
+}
+
+.background_footer_accent_dark {
+  border-top: 1px solid $accent-dark-color !important;
+  background-color: $accent-dark-color !important;
+}
+
+// Success colors
+.background_footer_success {
+  border-top: 1px solid $success-dark-color !important;
+  background-color: $success-dark-color !important;
+}
+
+.background_footer_success_light {
+  border-top: 1px solid $success-color !important;
+  background-color: $success-color !important;
+}
+
+.background_footer_success_dark {
+  border-top: 1px solid $success-dark-color !important;
+  background-color: $success-dark-color !important;
+}
+
+// Warning colors
+.background_footer_warning {
+  border-top: 1px solid $warning-dark-color !important;
+  background-color: $warning-dark-color !important;
+}
+
+.background_footer_warning_light {
+  border-top: 1px solid $warning-color !important;
+  background-color: $warning-color !important;
+}
+
+.background_footer_warning_dark {
+  border-top: 1px solid $warning-dark-color !important;
+  background-color: $warning-dark-color !important;
+}
+
+// Danger colors
+.background_footer_danger {
+  border-top: 1px solid $danger-dark-color !important;
+  background-color: $danger-dark-color !important;
+}
+
+.background_footer_danger_light {
+  border-top: 1px solid $danger-color !important;
+  background-color: $danger-color !important;
+}
+
+.background_footer_danger_dark {
+  border-top: 1px solid $danger-dark-color !important;
+  background-color: $danger-dark-color !important;
+}
+
+// Info colors
+.background_footer_info {
+  border-top: 1px solid $info-dark-color !important;
+  background-color: $info-dark-color !important;
+}
+
+.background_footer_info_light {
+  border-top: 1px solid $info-color !important;
+  background-color: $info-color !important;
+}
+
+.background_footer_info_dark {
+  border-top: 1px solid $info-dark-color !important;
+  background-color: $info-dark-color !important;
+}
+
 .background_header_default {
   border-bottom: 1px solid $card-darken-default-color !important;
   background-color: $card-darken-default-color !important;
@@ -383,6 +491,114 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 .background_header_accent {
   border-bottom: 1px solid $accent-dark-color !important;
   background-color: $accent-dark-color !important;
+}
+
+// Additional grey colors
+.background_header_grey_lightest {
+  border-bottom: 1px solid $grey-light !important;
+  background-color: $grey-light !important;
+}
+
+.background_header_grey_darkest {
+  border-bottom: 1px solid $black !important;
+  background-color: $black !important;
+}
+
+// Primary color variations
+.background_header_primary_light {
+  border-bottom: 1px solid $primary-color !important;
+  background-color: $primary-color !important;
+}
+
+.background_header_primary_dark {
+  border-bottom: 1px solid $primary-dark-color !important;
+  background-color: $primary-dark-color !important;
+}
+
+// Secondary color variations
+.background_header_secondary_light {
+  border-bottom: 1px solid $secondary-color !important;
+  background-color: $secondary-color !important;
+}
+
+.background_header_secondary_dark {
+  border-bottom: 1px solid $secondary-dark-color !important;
+  background-color: $secondary-dark-color !important;
+}
+
+// Accent color variations
+.background_header_accent_light {
+  border-bottom: 1px solid $accent-color !important;
+  background-color: $accent-color !important;
+}
+
+.background_header_accent_dark {
+  border-bottom: 1px solid $accent-dark-color !important;
+  background-color: $accent-dark-color !important;
+}
+
+// Success colors
+.background_header_success {
+  border-bottom: 1px solid $success-dark-color !important;
+  background-color: $success-dark-color !important;
+}
+
+.background_header_success_light {
+  border-bottom: 1px solid $success-color !important;
+  background-color: $success-color !important;
+}
+
+.background_header_success_dark {
+  border-bottom: 1px solid $success-dark-color !important;
+  background-color: $success-dark-color !important;
+}
+
+// Warning colors
+.background_header_warning {
+  border-bottom: 1px solid $warning-dark-color !important;
+  background-color: $warning-dark-color !important;
+}
+
+.background_header_warning_light {
+  border-bottom: 1px solid $warning-color !important;
+  background-color: $warning-color !important;
+}
+
+.background_header_warning_dark {
+  border-bottom: 1px solid $warning-dark-color !important;
+  background-color: $warning-dark-color !important;
+}
+
+// Danger colors
+.background_header_danger {
+  border-bottom: 1px solid $danger-dark-color !important;
+  background-color: $danger-dark-color !important;
+}
+
+.background_header_danger_light {
+  border-bottom: 1px solid $danger-color !important;
+  background-color: $danger-color !important;
+}
+
+.background_header_danger_dark {
+  border-bottom: 1px solid $danger-dark-color !important;
+  background-color: $danger-dark-color !important;
+}
+
+// Info colors
+.background_header_info {
+  border-bottom: 1px solid $info-dark-color !important;
+  background-color: $info-dark-color !important;
+}
+
+.background_header_info_light {
+  border-bottom: 1px solid $info-color !important;
+  background-color: $info-color !important;
+}
+
+.background_header_info_dark {
+  border-bottom: 1px solid $info-dark-color !important;
+  background-color: $info-dark-color !important;
 }
 
 /*
