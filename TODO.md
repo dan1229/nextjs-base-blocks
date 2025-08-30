@@ -359,7 +359,9 @@
 
 
 
+maybe remove navbar-item-min-width
 
+make sure cypress/readme is up to date
 
 
 

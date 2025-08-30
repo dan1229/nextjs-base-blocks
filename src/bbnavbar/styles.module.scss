@@ -171,7 +171,7 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
     width: 100%;
     flex-direction: column;
     height: 100%;
-    
+
     ul {
       width: 100%;
       flex-direction: column;
@@ -198,7 +198,7 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
   // horizontal alignment classes for vertical navbar (affects ul positioning)
   &.vertical.align_left {
     align-items: flex-start;
-    
+
     ul {
       align-items: flex-start;
     }
@@ -206,7 +206,7 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
 
   &.vertical.align_center {
     align-items: center;
-    
+
     ul {
       align-items: center;
     }
@@ -214,7 +214,7 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
 
   &.vertical.align_right {
     align-items: flex-end;
-    
+
     ul {
       align-items: flex-end;
     }
@@ -223,7 +223,7 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
   // vertical alignment classes (for vertical navbar)
   &.vertical.vertical_align_top {
     justify-content: flex-start;
-    
+
     .navigationMenuList {
       justify-content: flex-start;
     }
@@ -231,7 +231,7 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
 
   &.vertical.vertical_align_center {
     justify-content: center;
-    
+
     .navigationMenuList {
       justify-content: center;
     }
@@ -239,7 +239,7 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
 
   &.vertical.vertical_align_bottom {
     justify-content: flex-end;
-    
+
     .navigationMenuList {
       justify-content: flex-end;
     }
@@ -250,7 +250,7 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
     ul > li > div > div > a {
       text-align: left !important;
     }
-    
+
     ul > li > div > div > a > * {
       text-align: left !important;
     }
@@ -260,7 +260,7 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
     ul > li > div > div > a {
       text-align: center !important;
     }
-    
+
     ul > li > div > div > a > * {
       text-align: center !important;
     }
@@ -281,7 +281,7 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
   display: flex;
   padding: 0;
   gap: 0.25rem;
-  
+
   // When in vertical navbar, make the list flexible to support alignment
   .vertical & {
     flex-direction: column;
