@@ -149,7 +149,6 @@ html,
   // bb navbar item
   --navbar-item-border-radius: 1rem;
   --navbar-item-padding: 0.5rem;
-  --navbar-item-min-width: unset;
   --navbar-item-background-color: transparent;
   --navbar-item-text-color: var(--accent-color);
   --navbar-item-text-color-hover: #{darken($accent-color, 20%)};
