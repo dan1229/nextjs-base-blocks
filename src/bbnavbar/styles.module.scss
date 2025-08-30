@@ -179,14 +179,14 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
 
     // Text alignment for vertical layout
     &.textAlignLeft {
-      ul {
-        align-items: flex-start;
+      * * {
+        text-align: start;
       }
     }
 
     &.textAlignCenter {
-      ul {
-        align-items: center;
+      * * {
+        text-align: center;
       }
     }
 
@@ -222,8 +222,6 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
   &:not(.vertical) {
     width: 100%;
   }
-
-
 
   * {
     text-decoration: none;
