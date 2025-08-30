@@ -63,11 +63,6 @@ $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
     width: 100% !important;
     min-width: unset !important;
     margin: 0 0 0.25rem 0;
-
-    * {
-      width: 100%;
-      display: flex;
-    }
   }
 
   a {
