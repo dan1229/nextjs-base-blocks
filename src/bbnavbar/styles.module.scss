@@ -182,97 +182,10 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
     width: 100%;
   }
 
-  // horizontal alignment classes (for horizontal navbar only)
-  &:not(.vertical).align_left {
-    justify-content: flex-start;
-  }
 
-  &:not(.vertical).align_center {
-    justify-content: center;
-  }
-
-  &:not(.vertical).align_right {
-    justify-content: flex-end;
-  }
-
-  // horizontal alignment classes for vertical navbar (affects ul positioning)
-  &.vertical.align_left {
-    align-items: flex-start;
-
-    ul {
-      align-items: flex-start;
-    }
-  }
-
-  &.vertical.align_center {
-    align-items: center;
-
-    ul {
-      align-items: center;
-    }
-  }
-
-  &.vertical.align_right {
-    align-items: flex-end;
-
-    ul {
-      align-items: flex-end;
-    }
-  }
-
-  // vertical alignment classes (for vertical navbar)
-  &.vertical.vertical_align_top {
-    justify-content: flex-start;
-
-    .navigationMenuList {
-      justify-content: flex-start;
-    }
-  }
-
-  &.vertical.vertical_align_center {
-    justify-content: center;
-
-    .navigationMenuList {
-      justify-content: center;
-    }
-  }
-
-  &.vertical.vertical_align_bottom {
-    justify-content: flex-end;
-
-    .navigationMenuList {
-      justify-content: flex-end;
-    }
-  }
-
-  // text alignment classes
-  &.text_align_left {
-    ul > li > div > div > a {
-      text-align: left !important;
-    }
-
-    ul > li > div > div > a > * {
-      text-align: left !important;
-    }
-  }
-
-  &.text_align_center {
-    ul > li > div > div > a {
-      text-align: center !important;
-    }
-
-    ul > li > div > div > a > * {
-      text-align: center !important;
-    }
-  }
 
   * {
     text-decoration: none;
-  }
-
-  // Default navbar item text alignment (only when no text_align class is set)
-  &:not(.text_align_left):not(.text_align_center) ul > li > div > div > a > * {
-    text-align: start;
   }
 }
 

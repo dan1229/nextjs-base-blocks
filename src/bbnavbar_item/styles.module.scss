@@ -60,7 +60,8 @@ $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
 
   // When inside vertical navbar, make items fill full width
   .vertical & {
-    width: 100%;
+    width: 100% !important;
+    min-width: unset !important;
     margin: 0 0 0.25rem 0;
   }
 

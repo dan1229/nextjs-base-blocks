@@ -8,7 +8,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import BBText from '../bbtext';
 import useOutsideClick from '../utils/hooks/UseOutsideClick';
 import styles from './styles.module.scss';
-import type { IPropsBBBase, TBBTextColor, TBBTextSize, TBBNavbarAlignment, TBBNavbarVerticalAlignment, TBBNavbarTextAlignment } from '../types';
+import type { IPropsBBBase, TBBTextColor, TBBTextSize } from '../types';
 
 type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
 
@@ -31,10 +31,7 @@ type TBBNavbarElevation = 'none' | 'low' | 'high' | 'rainbow';
  * @param {string=} classNameWrapper - Custom class name for the wrapper. Doesn't really apply with vertical.
  * @param {boolean=} brandHorizontal - Whether the brand is horizontal
  * @param {boolean=} boldTitle - Whether the title is bold
- * @param {string=} horizontalAlignment - Horizontal alignment of the menu items
  * @param {string=} menuAlignment - [DEPRECATED] Use horizontalAlignment instead
- * @param {TBBNavbarVerticalAlignment=} verticalAlignment - Vertical alignment of navbar items when vertical=true
- * @param {TBBNavbarTextAlignment=} textAlignment - Text alignment of navbar items
  */
 export interface IPropsBBNavbar {
   children: React.ReactNode;
@@ -53,11 +50,6 @@ export interface IPropsBBNavbar {
   classNameWrapper?: string;
   brandHorizontal?: boolean;
   boldTitle?: boolean;
-  horizontalAlignment?: TBBNavbarAlignment;
-  /** @deprecated Use horizontalAlignment instead */
-  menuAlignment?: TBBNavbarAlignment;
-  verticalAlignment?: TBBNavbarVerticalAlignment;
-  textAlignment?: TBBNavbarTextAlignment;
 }
 
 /**
@@ -81,17 +73,10 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
     classNameWrapper,
     brandHorizontal = false,
     boldTitle = false,
-    horizontalAlignment,
-    menuAlignment, // deprecated
-    verticalAlignment = 'center',
-    textAlignment = 'center',
   } = props;
 
   const [showNavExpanded, setShowNavExpanded] = useState(false);
   const router = useRouter();
-
-  // Handle backward compatibility for menuAlignment -> horizontalAlignment
-  const resolvedHorizontalAlignment = horizontalAlignment ?? menuAlignment ?? 'left';
 
   // outside click for detecting when to close the expanded nav
   const ref = useRef<HTMLDivElement>(null);
@@ -139,16 +124,7 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
             </div>
           </div>
         </div>
-        <div
-          className={classNames(
-            styles.navigationMenu,
-            showNavExpanded && styles.expanded,
-            vertical && styles.vertical,
-            styles[`align_${resolvedHorizontalAlignment}`],
-            vertical && styles[`vertical_align_${verticalAlignment}`],
-            styles[`text_align_${textAlignment}`]
-          )}
-        >
+        <div className={classNames(styles.navigationMenu, showNavExpanded && styles.expanded, vertical && styles.vertical)}>
           <ul className={styles.navigationMenuList}>{children}</ul>
         </div>
         <div className={classNames(styles.containerButtonsAction, showNavExpanded && styles.expanded)}>

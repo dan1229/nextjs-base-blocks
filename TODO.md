@@ -359,7 +359,20 @@
 
 
 
-maybe remove navbar-item-min-width
+
+
+
+
+add back some kind of alignment?
+- left / right aligntmnet of text
+  - center or left really
+  - applies to vertical and horizontal
+- top / center / bottom
+  - just vertical
+
+
+maybe remove navbar-item-min-width?
+- update docs and TODO below if so
 
 make sure cypress/readme is up to date
 
