@@ -59,6 +59,8 @@ $navbar-item-min-width: var(--navbar-item-min-width, 6rem);
   background-color: $navbar-item-color;
   // this is to prevent the text from wrapping to the next line
   white-space: nowrap;
+  // ensure content fits properly and centers correctly
+  width: fit-content;
 
   a {
     text-align: center;
