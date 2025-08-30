@@ -83,6 +83,15 @@ $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
     justify-content: center;
   }
 
+  // Text alignment for vertical navbar items
+  .vertical .textAlignLeft & a {
+    justify-content: flex-start;
+  }
+
+  .vertical .textAlignCenter & a {
+    justify-content: center;
+  }
+
   ul {
     background-color: $bg-light-color;
   }
@@ -175,7 +184,6 @@ $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
   position: relative;
   display: inline-block;
   width: auto;
-  // height: 100%;
 
   // When inside vertical navbar, don't fill height and allow width expansion
   .vertical & {

@@ -193,14 +193,29 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
     // Vertical alignment for vertical layout
     &.verticalAlignTop {
       justify-content: flex-start;
+
+      ul {
+        margin-top: 0;
+        margin-bottom: auto;
+      }
     }
 
     &.verticalAlignCenter {
       justify-content: center;
+
+      ul {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
     }
 
     &.verticalAlignBottom {
       justify-content: flex-end;
+
+      ul {
+        margin-top: auto;
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -224,8 +239,9 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
   // When in vertical navbar, make the list flexible to support alignment
   .vertical & {
     flex-direction: column;
-    height: 100%;
+    height: auto;
     width: 100%;
+    flex: 0 0 auto;
   }
 }
 
