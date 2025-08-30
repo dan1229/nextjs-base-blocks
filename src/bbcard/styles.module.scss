@@ -6,11 +6,26 @@ $grey-dark: var(--grey-dark, #58647a);
 $grey-darkest: var(--grey-darkest, #606775);
 $black: var(--black, #232323);
 $primary-color: var(--primary-color, #3f51b5);
+$primary-light-color: var(--primary-light-color, #6573c3);
 $primary-dark-color: var(--primary-dark-color, #303f9f);
 $secondary-color: var(--secondary-color, #f50057);
+$secondary-light-color: var(--secondary-light-color, #f73378);
 $secondary-dark-color: var(--secondary-dark-color, #c51162);
 $accent-color: var(--accent-color, #ff6b6c);
+$accent-light-color: var(--accent-light-color, #ff8a8b);
 $accent-dark-color: var(--accent-dark-color, #c3c328);
+$success-color: var(--success-color, #4caf50);
+$success-light-color: var(--success-light-color, #81c784);
+$success-dark-color: var(--success-dark-color, #388e3c);
+$warning-color: var(--warning-color, #ff9800);
+$warning-light-color: var(--warning-light-color, #ffb74d);
+$warning-dark-color: var(--warning-dark-color, #f57c00);
+$danger-color: var(--danger-color, #f44336);
+$danger-light-color: var(--danger-light-color, #e57373);
+$danger-dark-color: var(--danger-dark-color, #d32f2f);
+$info-color: var(--info-color, #2196f3);
+$info-light-color: var(--info-light-color, #64b5f6);
+$info-dark-color: var(--info-dark-color, #1976d2);
 
 // default colors
 $card-background-default-color: var(--card-background-default-color, #ffffff);
@@ -157,12 +172,12 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 .background_card_default {
   background-color: $card-background-default-color !important;
 
-  .footer {
+  > .footer {
     border-top: 1px solid $card-darken-default-color;
     background-color: $card-darken-default-color;
   }
 
-  .header {
+  > .header {
     border-bottom: 1px solid $card-darken-default-color;
     background-color: $card-darken-default-color;
   }
@@ -171,12 +186,12 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 .background_card_transparent {
   background-color: transparent !important;
 
-  .footer {
+  > .footer {
     border-top: 1px solid transparent;
     background-color: transparent;
   }
 
-  .header {
+  > .header {
     border-bottom: 1px solid transparent;
     background-color: transparent;
   }
@@ -185,12 +200,12 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 .background_card_white {
   background-color: $white !important;
 
-  .footer {
+  > .footer {
     border-top: 1px solid $grey-lightest;
     background-color: $grey-lightest;
   }
 
-  .header {
+  > .header {
     border-bottom: 1px solid $grey-lightest;
     background-color: $grey-lightest;
   }
@@ -199,12 +214,12 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 .background_card_grey_light {
   background-color: $grey-lightest !important;
 
-  .footer {
+  > .footer {
     border-top: 1px solid $grey-light;
     background-color: $grey-light;
   }
 
-  .header {
+  > .header {
     border-bottom: 1px solid $grey-light;
     background-color: $grey-light;
   }
@@ -213,12 +228,12 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 .background_card_grey_dark {
   background-color: $grey-dark !important;
 
-  .footer {
+  > .footer {
     border-top: 1px solid $grey-darkest;
     background-color: $grey-darkest;
   }
 
-  .header {
+  > .header {
     border-bottom: 1px solid $grey-darkest;
     background-color: $grey-darkest;
   }
@@ -227,12 +242,12 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 .background_card_black {
   background-color: $black !important;
 
-  .footer {
+  > .footer {
     border-top: 1px solid $black;
     background-color: $black;
   }
 
-  .header {
+  > .header {
     border-bottom: 1px solid $black;
     background-color: $black;
   }
@@ -241,12 +256,12 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 .background_card_primary {
   background-color: $primary-color !important;
 
-  .footer {
+  > .footer {
     border-top: 1px solid $primary-dark-color;
     background-color: $primary-dark-color;
   }
 
-  .header {
+  > .header {
     border-bottom: 1px solid $primary-dark-color;
     background-color: $primary-dark-color;
   }
@@ -255,12 +270,12 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 .background_card_secondary {
   background-color: $secondary-color !important;
 
-  .footer {
+  > .footer {
     border-top: 1px solid $secondary-dark-color;
     background-color: $secondary-dark-color;
   }
 
-  .header {
+  > .header {
     border-bottom: 1px solid $secondary-dark-color;
     background-color: $secondary-dark-color;
   }
@@ -269,14 +284,302 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 .background_card_accent {
   background-color: $accent-color !important;
 
-  .footer {
+  > .footer {
     border-top: 1px solid $accent-dark-color;
     background-color: $accent-dark-color;
   }
 
-  .header {
+  > .header {
     border-bottom: 1px solid $accent-dark-color;
     background-color: $accent-dark-color;
+  }
+}
+
+// Additional grey colors
+.background_card_grey_lightest {
+  background-color: $grey-lightest !important;
+
+  > .footer {
+    border-top: 1px solid $grey-light;
+    background-color: $grey-light;
+  }
+
+  > .header {
+    border-bottom: 1px solid $grey-light;
+    background-color: $grey-light;
+  }
+}
+
+.background_card_grey_darkest {
+  background-color: $grey-darkest !important;
+
+  > .footer {
+    border-top: 1px solid $black;
+    background-color: $black;
+  }
+
+  > .header {
+    border-bottom: 1px solid $black;
+    background-color: $black;
+  }
+}
+
+// Primary color variations
+.background_card_primary_light {
+  background-color: $primary-light-color !important;
+
+  > .footer {
+    border-top: 1px solid $primary-color;
+    background-color: $primary-color;
+  }
+
+  > .header {
+    border-bottom: 1px solid $primary-color;
+    background-color: $primary-color;
+  }
+}
+
+.background_card_primary_dark {
+  background-color: $primary-dark-color !important;
+
+  > .footer {
+    border-top: 1px solid #232e5a;
+    background-color: #232e5a;
+  }
+
+  > .header {
+    border-bottom: 1px solid #232e5a;
+    background-color: #232e5a;
+  }
+}
+
+// Secondary color variations
+.background_card_secondary_light {
+  background-color: $secondary-light-color !important;
+
+  > .footer {
+    border-top: 1px solid $secondary-color;
+    background-color: $secondary-color;
+  }
+
+  > .header {
+    border-bottom: 1px solid $secondary-color;
+    background-color: $secondary-color;
+  }
+}
+
+.background_card_secondary_dark {
+  background-color: $secondary-dark-color !important;
+
+  > .footer {
+    border-top: 1px solid #a00d4a;
+    background-color: #a00d4a;
+  }
+
+  > .header {
+    border-bottom: 1px solid #a00d4a;
+    background-color: #a00d4a;
+  }
+}
+
+// Accent color variations
+.background_card_accent_light {
+  background-color: $accent-light-color !important;
+
+  > .footer {
+    border-top: 1px solid $accent-color;
+    background-color: $accent-color;
+  }
+
+  > .header {
+    border-bottom: 1px solid $accent-color;
+    background-color: $accent-color;
+  }
+}
+
+.background_card_accent_dark {
+  background-color: $accent-dark-color !important;
+
+  > .footer {
+    border-top: 1px solid #a0a31f;
+    background-color: #a0a31f;
+  }
+
+  > .header {
+    border-bottom: 1px solid #a0a31f;
+    background-color: #a0a31f;
+  }
+}
+
+// Success colors
+.background_card_success {
+  background-color: $success-color !important;
+
+  > .footer {
+    border-top: 1px solid $success-dark-color;
+    background-color: $success-dark-color;
+  }
+
+  > .header {
+    border-bottom: 1px solid $success-dark-color;
+    background-color: $success-dark-color;
+  }
+}
+
+.background_card_success_light {
+  background-color: $success-light-color !important;
+
+  > .footer {
+    border-top: 1px solid $success-color;
+    background-color: $success-color;
+  }
+
+  > .header {
+    border-bottom: 1px solid $success-color;
+    background-color: $success-color;
+  }
+}
+
+.background_card_success_dark {
+  background-color: $success-dark-color !important;
+
+  > .footer {
+    border-top: 1px solid #2d6e30;
+    background-color: #2d6e30;
+  }
+
+  > .header {
+    border-bottom: 1px solid #2d6e30;
+    background-color: #2d6e30;
+  }
+}
+
+// Warning colors
+.background_card_warning {
+  background-color: $warning-color !important;
+
+  > .footer {
+    border-top: 1px solid $warning-dark-color;
+    background-color: $warning-dark-color;
+  }
+
+  > .header {
+    border-bottom: 1px solid $warning-dark-color;
+    background-color: $warning-dark-color;
+  }
+}
+
+.background_card_warning_light {
+  background-color: $warning-light-color !important;
+
+  > .footer {
+    border-top: 1px solid $warning-color;
+    background-color: $warning-color;
+  }
+
+  > .header {
+    border-bottom: 1px solid $warning-color;
+    background-color: $warning-color;
+  }
+}
+
+.background_card_warning_dark {
+  background-color: $warning-dark-color !important;
+
+  > .footer {
+    border-top: 1px solid #cc6200;
+    background-color: #cc6200;
+  }
+
+  > .header {
+    border-bottom: 1px solid #cc6200;
+    background-color: #cc6200;
+  }
+}
+
+// Danger colors
+.background_card_danger {
+  background-color: $danger-color !important;
+
+  > .footer {
+    border-top: 1px solid $danger-dark-color;
+    background-color: $danger-dark-color;
+  }
+
+  > .header {
+    border-bottom: 1px solid $danger-dark-color;
+    background-color: $danger-dark-color;
+  }
+}
+
+.background_card_danger_light {
+  background-color: $danger-light-color !important;
+
+  > .footer {
+    border-top: 1px solid $danger-color;
+    background-color: $danger-color;
+  }
+
+  > .header {
+    border-bottom: 1px solid $danger-color;
+    background-color: $danger-color;
+  }
+}
+
+.background_card_danger_dark {
+  background-color: $danger-dark-color !important;
+
+  > .footer {
+    border-top: 1px solid #a92319;
+    background-color: #a92319;
+  }
+
+  > .header {
+    border-bottom: 1px solid #a92319;
+    background-color: #a92319;
+  }
+}
+
+// Info colors
+.background_card_info {
+  background-color: $info-color !important;
+
+  > .footer {
+    border-top: 1px solid $info-dark-color;
+    background-color: $info-dark-color;
+  }
+
+  > .header {
+    border-bottom: 1px solid $info-dark-color;
+    background-color: $info-dark-color;
+  }
+}
+
+.background_card_info_light {
+  background-color: $info-light-color !important;
+
+  > .footer {
+    border-top: 1px solid $info-color;
+    background-color: $info-color;
+  }
+
+  > .header {
+    border-bottom: 1px solid $info-color;
+    background-color: $info-color;
+  }
+}
+
+.background_card_info_dark {
+  background-color: $info-dark-color !important;
+
+  > .footer {
+    border-top: 1px solid #135ba8;
+    background-color: #135ba8;
+  }
+
+  > .header {
+    border-bottom: 1px solid #135ba8;
+    background-color: #135ba8;
   }
 }
 

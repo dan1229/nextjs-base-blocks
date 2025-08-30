@@ -337,7 +337,13 @@
 
 
 
-DOUBLE CHECK THE FOLLOWING
+
+
+
+
+**DOUBLE CHECK THE FOLLOWING**
+
+
 
 #### vertical navbar improvements
 - generally style better
@@ -375,6 +381,9 @@ DOUBLE CHECK THE FOLLOWING
   - vertical styling improvements
 - `BBNavbarItem`
   - Fixed width / alignment issues
+- `BBCard`
+  - Fixed issue with nested `BBCard` components that have differing `colorBackground`s
+  - Many more options for `colorBackground` as well!
 
 -------------------------------------------------------
 
