@@ -264,6 +264,20 @@
 #### test for hooks
 - add cypress tests for hooks like use outside click
 
+make sure cypress/readme is up to date
+
+
+
+
+
+  
+
+#### some field labels are not created properly
+- for example 'fieldName="location_preference_names"' sets as 'Location preference_names' which is incorrect
+  - Should be "Location Preference Names"
+  - this is a bb select multiple if that matters
+
+
 
 
 
@@ -283,34 +297,6 @@
 
 
 
-
-  
-
-#### some field labels are not created properly
-- for example 'fieldName="location_preference_names"' sets as 'Location preference_names' which is incorrect
-  - Should be "Location Preference Names"
-  - this is a bb select multiple if that matters
-
-
-
-make sure cypress/readme is up to date
-
-
-
-
-
-
-
-
-
-
-**DOUBLE CHECK THE FOLLOWING**
-- make sure they work
-- big review
-  - claude and copilot
-  - myself too
-- add tests?
-  - is there anything novel here worth testing?
 
 
 
