@@ -179,6 +179,7 @@
 #### standardize how we do the class name assigns
 - i.e., some places there are swtich functions
 - some are more manual `textAlign{textAlignment.strip}
+  - bbcard, bbbutton also great examples
 - a mess and a half
   - standardize this / the class names somehow
     - could cut down code a ton
