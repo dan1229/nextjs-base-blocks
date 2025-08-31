@@ -226,6 +226,7 @@ The responsive mixins provide consistent breakpoints and utilities throughout yo
 const { configureSubmoduleSass } = require('./base_blocks/mixins');
 
 const nextConfig = {
+  // configure sass for this project and nextjs base blocks
   sassOptions: configureSubmoduleSass(__dirname),
   // ... rest of your config
 };
