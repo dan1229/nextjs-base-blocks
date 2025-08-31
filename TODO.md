@@ -79,12 +79,6 @@
 - design system documentation
 
 
-##### Animation system
-- consistent motion design language
-- enter/exit animations for all components
-- spring-based animations investigation
-- reduced motion preference support
-
 ##### Advanced accessibility
 - comprehensive aria-label automation
 - keyboard navigation improvements
@@ -106,24 +100,17 @@
 
 ### Cypress
 
-#### Visual regression testing
-- automated screenshot comparison
-- cross-browser testing setup
-- responsive design validation
-
 #### Performance testing
 - rendering benchmarks
 - memory usage monitoring
 - bundle size tracking over time
-
-
-### Cypress enhancements
-- [ ] Visual regression testing with screenshot comparison
-- [ ] Performance benchmarking for component rendering
+-
+- likely not necessary but maybe worth trying
 
 
 #### add tests for demo components
 - demo components are currently excluded from coverage
+  - thats probably fine honestly
 - not high priority since they're just for demo purposes
 - if they break it's not critical to the library functionality
 - is that redundant? whats coverage at?
@@ -139,26 +126,19 @@
 - timezone support considerations
 
 
+#### BBSkeleton
+- loading skeleton placeholders
+- auto-generate from existing components
+- customizable shapes and animations
+
+
+
+
+
 #### BBTabs
 - accessible tab interface
 - lazy loading of tab content
 - vertical/horizontal orientations
-
-
-#### BBTable component
-- data table with sorting, filtering, pagination
-- responsive mobile view (cards on small screens)
-- customizable column definitions
-- built-in loading states
-- support for row selection/actions
-- integrate with existing theming system
-
-
-#### BBLayout components
-- BBGrid - css grid wrapper with responsive breakpoints
-- BBStack - vertical/horizontal spacing component
-- BBContainer - max-width wrapper with responsive padding
-- BBSpacer - flexible spacing component
 
 
 #### BBDrawer / BBSidebar
@@ -166,14 +146,9 @@
 - overlay or push content modes
 - responsive behavior
 
-#### BBSkeleton
-- loading skeleton placeholders
-- auto-generate from existing components
-- customizable shapes and animations
-
 
 ---
-### 2.3.0
+### Soon?
 
 
 
@@ -196,6 +171,37 @@
       - are any other than the 'big colors'?
 
 
+---
+### 2.4.0
+
+
+
+### Cypress enhancements
+- [ ] Visual regression testing with screenshot comparison
+  - automated screenshot comparison
+  - cross-browser testing setup
+  - responsive design validation
+- [ ] Performance benchmarking for component rendering
+
+
+##### Animation system
+- consistent motion design language
+- enter/exit animations for all components
+- spring-based animations investigation
+- reduced motion preference support
+-
+- at the very very least, add some super simple animations
+  - i.e., translate on hover, fade in, etc.
+  - stuff that's unopinionated if it can't be turned off
+
+
+
+---
+### 2.3.0
+
+
+
+
 #### standardize how we do the class name assigns
 - i.e., some places there are swtich functions
 - some are more manual `textAlign{textAlignment.strip}
@@ -204,14 +210,16 @@
   - standardize this / the class names somehow
     - could cut down code a ton
   - maybe some utility component?
+-
+- really really really test this to make sure nothings broken!
 
 
 
 
 
-
-#### bb form demo components get functional
-- OR switch to storybook - see if that's easier at this point
+#### bb form demo components get fully functional
+- OR switch to storybook - see if that's easier at this point idk
+  - the demo components have lots of issues tbh
 -
 - fix the broken ones
   - TODO
@@ -240,13 +248,6 @@
 
 
 
-
-
-
-#### consolidate bb field select and bb field select multiple
-- is this a good move?
-
-
 #### bbnavbar - mobile styling and sticky option
 - vertical mobile styling
   - emulate styling from flutter navbars a bit
@@ -256,6 +257,34 @@
 -
 - add back 'sticky' prop
   - is it working?
+
+
+
+
+
+
+
+#### BBTable component
+- data table with sorting, filtering, pagination
+  - look at twineline
+- responsive mobile view (cards on small screens)
+- customizable column definitions
+- built-in loading states
+- support for row selection/actions
+- integrate with existing theming system
+
+
+#### BBLayout components
+- BBGrid - css grid wrapper with responsive breakpoints
+- BBStack - vertical/horizontal spacing component
+- BBContainer - max-width wrapper with responsive padding
+- BBSpacer - flexible spacing component
+
+
+#### consolidate bb field select and bb field select multiple
+- e.g., could just add a `multiple` prop to the select field
+- is this a good move?
+- is it easily do-able
 
 
 
