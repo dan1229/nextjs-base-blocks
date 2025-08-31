@@ -230,8 +230,8 @@
     - double check these / all existing tests
   - form components
     - dont exist yet
-
-
+-
+- update docs again - theyre quite long
 
 
 
@@ -267,7 +267,8 @@
 
   
 test on g20 to finalize
-
+- validate breakpoints work
+- validate use outside click works
 
 
 
