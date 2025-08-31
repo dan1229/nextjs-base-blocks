@@ -14,6 +14,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [2.2.0] - 2025-08-30
+- **BREAKING** Added support for media sizing variables
+  - `mixins.scss` added for improved and standardized media sizing
+  - Support for mixins in client projects
+  - NEW SET UP REQUIRED - build will fail with clear instructions if not configured
+  - Simple one-line setup in next.config.js
+- `BBNavbar`
+  - vertical styling improvements
+  - `navbar-item-min-width` removed
+  - `textAlignment` prop added to allow aligning text
+  - `verticalAlignment` prop added to allow for aligning items within a vertical nav
+- `BBNavbarItem`
+  - Fixed width / alignment issues
+- `BBCard`
+  - Fixed issue with nested `BBCard` components that have differing `colorBackground`s
+  - Many more options for `colorBackground` as well!
+  - Removed auto darkening of header / footer
+- Cypress tests for hooks
+- `BBForm` components fix related to breaking up multi word labels
+
+
 ### [2.1.0] - 2025-07-21
 - Breaking Change!
   - `BBFieldDropdown` -> `BBFieldSelect`
