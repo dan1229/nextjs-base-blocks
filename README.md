@@ -221,7 +221,6 @@ The responsive mixins provide consistent breakpoints and utilities throughout yo
 
 ##### Setup (Required - One-time breaking change in v2.2.0)
 
-
 Add this to your `next.config.js`:
 
 ```ts
@@ -240,7 +239,7 @@ module.exports = nextConfig;
 
 ##### Usage
 
-After setup, these mixins are automatically available in all your `.scss` files:
+After setup, these mixins are automatically available in all your `.scss` files to use as so:
 
 **Responsive Breakpoints:**
 ```scss
@@ -252,6 +251,8 @@ After setup, these mixins are automatically available in all your `.scss` files:
   ...
 }
 ```
+
+`BB` components will automatically use these breakpoints to be mobile friendly.
 
 See `mixins.scss` for the specific breakpoints and mixins available.
 
