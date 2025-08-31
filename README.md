@@ -236,12 +236,12 @@ The media sizing variables provide consistent responsive breakpoints throughout 
 Use these in your media queries for consistent responsive design:
 
 ```scss
-@media (max-width: var(--media-screen-width-md)) {
-  // Tablet and below styles
+@include media-xl {
+  ...
 }
 
-@media (max-width: var(--media-screen-width-sm)) {
-  // Mobile styles
+@include media-lg {
+  ...
 }
 ```
 
