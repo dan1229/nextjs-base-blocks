@@ -224,7 +224,7 @@ The media sizing variables provide consistent responsive breakpoints throughout 
 **Submodule Usage (Recommended)**
 In your `next.config.js`:
 ```js
-const { configureSubmoduleSass } = require('./nextjs-base-blocks/mixins');
+const { configureSubmoduleSass } = require('./base_blocks/mixins');
 
 const nextConfig = {
   sassOptions: configureSubmoduleSass(__dirname),
