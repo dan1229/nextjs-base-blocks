@@ -1,10 +1,11 @@
+const path = require('path');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // only needed to get local nextjs base blocks builds working
   sassOptions: {
-    includePaths: [path.join(__dirname, 'styles')],
-    // Automatically import mixins.scss into all SCSS files
-    // This makes responsive mixins available globally without manual imports
+    includePaths: [path.join(__dirname, 'src/styles')],
     additionalData: `@import "mixins.scss";`,
   },
 };
