@@ -1,10 +1,13 @@
+const path = require('path');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: {
-    // The App Router is stable in Next.js 14, but keeping this for compatibility
-    appDir: true,
+  // only needed to get local nextjs base blocks builds working
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'src/styles')],
+    additionalData: `@import "mixins.scss";`,
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

@@ -9,8 +9,20 @@ import type { FieldError } from 'react-hook-form';
 
 export const getLabel = (label: string | undefined, fieldName: string): string => {
   if (!!label && label.length) return label;
-  const fieldNameRes = fieldName.includes('_') ? fieldName.replace('_', ' ') : fieldName;
-  return fieldNameRes.charAt(0).toUpperCase() + fieldNameRes.slice(1);
+  
+  // Handle empty fieldName
+  if (!fieldName) return '';
+  
+  // Replace all underscores with spaces and split into words
+  const words = fieldName.replace(/_/g, ' ').split(' ');
+  
+  // Capitalize the first letter of each word (handle empty words)
+  const capitalizedWords = words.map(word => {
+    if (!word) return '';
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  });
+  
+  return capitalizedWords.join(' ');
 };
 
 /**

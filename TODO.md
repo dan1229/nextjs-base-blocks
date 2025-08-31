@@ -176,15 +176,6 @@
 ### 2.3.0
 
 
-#### standardize how we do the class name assigns
-- i.e., some places there are swtich functions
-- some are more manual `textAlign{textAlignment.strip}
-  - bbcard, bbbutton also great examples
-- a mess and a half
-  - standardize this / the class names somehow
-    - could cut down code a ton
-  - maybe some utility component?
-
 
 #### improve actual defaults in each component
 - try on an app with no global variables set and try to make it look good
@@ -205,6 +196,16 @@
       - are any other than the 'big colors'?
 
 
+#### standardize how we do the class name assigns
+- i.e., some places there are swtich functions
+- some are more manual `textAlign{textAlignment.strip}
+  - bbcard, bbbutton also great examples
+- a mess and a half
+  - standardize this / the class names somehow
+    - could cut down code a ton
+  - maybe some utility component?
+
+
 
 
 
@@ -223,13 +224,14 @@
 
 
 #### cypress tests - fill in rest of tests
+- get coverage higher!
 - components left
   - button? collapsible, divider, link, loading spinner, modal, navbar, navbar item, tooltip
     - double check these / all existing tests
   - form components
     - dont exist yet
-
-
+-
+- update docs again - theyre quite long
 
 
 
@@ -261,60 +263,21 @@
 ### 2.2.0
 
 
-#### test for hooks
-- add cypress tests for hooks like use outside click
-
-
-
-
-#### add support for media sizing vars
-- in projects i use:
-```
-  --media-screen-width-xs: 480px; // Extra small devices (phones)
-  --media-screen-width-sm: 576px; // Small devices (large phones)
-  --media-screen-width-md: 768px; // Medium devices (tablets)
-  --media-screen-width-lg: 992px; // Large devices (small desktops)
-  --media-screen-width-xl: 1200px; // Extra large devices (desktops)
-  --media-screen-width-xxl: 1400px; // Extra extra large devices (large desktops)
-```
-- use throughout app and add docs
-  - update readme
-  - update media usages throughout app
-
-
 
 
   
-
-#### some field labels are not created properly
-- for example 'fieldName="location_preference_names"' sets as 'Location preference_names' which is incorrect
-  - Should be "Location Preference Names"
-  - this is a bb select multiple if that matters
+test on g20 to finalize
+- validate breakpoints work
+- validate use outside click works
 
 
 
-make sure cypress/readme is up to date
-
-
-
-
-
-
-
-
-
-
-**DOUBLE CHECK THE FOLLOWING**
-- make sure they work
-- big review
-  - claude and copilot
-  - myself too
-- add tests?
-  - is there anything novel here worth testing?
-
-
-
-### [2.2.0] - 2025-MM-DD
+### [2.2.0] - 2025-08-30
+- **BREAKING** Added support for media sizing variables
+  - `mixins.scss` added for improved and standardized media sizing
+  - Support for mixins in client projects
+  - NEW SET UP REQUIRED - build will fail with clear instructions if not configured
+  - Simple one-line setup in next.config.js
 - `BBNavbar`
   - vertical styling improvements
   - `navbar-item-min-width` removed
@@ -326,6 +289,8 @@ make sure cypress/readme is up to date
   - Fixed issue with nested `BBCard` components that have differing `colorBackground`s
   - Many more options for `colorBackground` as well!
   - Removed auto darkening of header / footer
+- Cypress tests for hooks
+- `BBForm` components fix related to breaking up multi word labels
 
 -------------------------------------------------------
 

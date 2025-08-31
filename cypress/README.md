@@ -35,6 +35,7 @@ cypress/
 │   ├── bbbutton.cy.tsx
 │   ├── bbalert.cy.tsx
 │   ├── bbcard.cy.tsx
+│   ├── useOutsideClick.cy.tsx  # Hook tests
 │   └── ...
 ├── support/            # Support files and utilities
 │   ├── component.ts    # Component testing setup
@@ -186,6 +187,18 @@ For each component, ensure you test:
 - [ ] **Accessibility**: Keyboard navigation, ARIA attributes
 - [ ] **Edge Cases**: Empty content, very long content, special characters
 
+## 📋 Hook Testing Checklist
+
+For each custom hook, ensure you test:
+
+- [ ] **Basic Functionality**: Core hook behavior works as expected
+- [ ] **Edge Cases**: Null refs, invalid parameters, boundary conditions
+- [ ] **Multiple Scenarios**: Different parameter combinations
+- [ ] **Event Handling**: Proper event listener behavior
+- [ ] **Responsive**: Works across different viewport sizes
+- [ ] **Performance**: Multiple rapid calls, cleanup behavior
+- [ ] **Integration**: Hook works properly with React lifecycle
+
 ## 📊 Code Coverage
 
 This project includes comprehensive code coverage reporting using Istanbul/NYC and Cypress Code Coverage.
@@ -288,6 +301,62 @@ cy.get('.element').then($el => {
 // Take screenshot for debugging
 cy.screenshot('debug-screenshot');
 ```
+
+## 🪝 Testing Custom Hooks
+
+Custom hooks like `useOutsideClick` can be tested by creating wrapper components that use the hooks. This approach allows you to test hook behavior through component interactions.
+
+### Hook Testing Pattern
+
+```typescript
+import useOutsideClick from '../../src/utils/hooks/UseOutsideClick';
+
+// Create a test component that uses the hook
+const TestComponent: React.FC = () => {
+  const [triggered, setTriggered] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useOutsideClick(ref, () => {
+    setTriggered(true);
+  });
+
+  return (
+    <div>
+      <div ref={ref} data-testid="inside">Inside Element</div>
+      <div data-testid="outside">Outside Element</div>
+      <div data-testid="status">Triggered: {triggered ? 'Yes' : 'No'}</div>
+    </div>
+  );
+};
+
+describe('useOutsideClick Hook Tests', () => {
+  it('should trigger callback when clicking outside', () => {
+    cy.mount(<TestComponent />);
+    
+    cy.get('[data-testid="outside"]').click();
+    cy.get('[data-testid="status"]').should('contain', 'Triggered: Yes');
+  });
+
+  it('should NOT trigger when clicking inside', () => {
+    cy.mount(<TestComponent />);
+    
+    cy.get('[data-testid="inside"]').click();
+    cy.get('[data-testid="status"]').should('contain', 'Triggered: No');
+  });
+});
+```
+
+### Hook Testing Guidelines
+
+1. **Create Wrapper Components**: Always test hooks through components that use them
+2. **Test All Scenarios**: Cover both success and failure cases
+3. **Test Edge Cases**: Handle null refs, rapid clicks, nested elements
+4. **Use Stubs**: Mock external dependencies when needed
+5. **Responsive Testing**: Ensure hooks work across different viewport sizes
+
+### Available Hook Tests
+
+- `useOutsideClick.cy.tsx` - Tests for the outside click detection hook
 
 ## 🚀 Next Steps
 

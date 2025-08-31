@@ -215,6 +215,47 @@ While none of these variables are required, it definitely will help make your ap
 
 It is recommended to copy and paste this whole block into your `globals.scss` file and then edit the variables as needed.
 
+#### Responsive Breakpoints & SCSS Mixins
+
+The responsive mixins provide consistent breakpoints and utilities throughout your application.
+
+##### Setup (Required - One-time breaking change in v2.2.0)
+
+Add this to your `next.config.js`:
+
+```ts
+const { configureSubmoduleSass } = require('./base_blocks/mixins');
+
+const nextConfig = {
+  // configure sass for this project and nextjs base blocks
+  sassOptions: configureSubmoduleSass(__dirname),
+  // ... rest of your config
+};
+
+module.exports = nextConfig;
+```
+
+> ⚠️ **Your build will fail without this setup** - the error message should guide you here.
+
+##### Usage
+
+After setup, these mixins are automatically available in all your `.scss` files to use as so:
+
+**Responsive Breakpoints:**
+```scss
+@include media-lg {
+  ...
+}
+
+@include media-sm {
+  ...
+}
+```
+
+`BB` components will automatically use these breakpoints to be mobile friendly.
+
+See `mixins.scss` for the specific breakpoints and mixins available.
+
 #### Dark Mode / Themes
 
 Add overrides for dark themes like so:

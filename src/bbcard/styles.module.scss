@@ -666,7 +666,7 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 /**
 * MEDIA QUERIES
 */
-@media (max-width: 992px) {
+@include media-lg {
   .header {
     padding: 0.75rem;
   }
@@ -680,7 +680,7 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
   }
 }
 
-@media (max-width: 768px) {
+@include media-md {
   .header {
     padding: 0.5rem;
   }
@@ -694,7 +694,7 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
   }
 }
 
-@media (max-width: 576px) {
+@include media-sm {
   .header {
     padding: 0.25rem;
   }

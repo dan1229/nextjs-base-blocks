@@ -278,7 +278,7 @@ $mobile-text-size-xl: var(--mobile-text-size-xl, 1.6rem);
 $mobile-text-size-xxl: var(--mobile-text-size-xxl, 2rem);
 $mobile-text-size-xxxl: var(--mobile-text-size-xxxl, 2.5rem);
 
-@media all and (max-width: 900px) {
+@include media-lg {
   .tiny {
     font-size: $mobile-text-size-xs;
   }
