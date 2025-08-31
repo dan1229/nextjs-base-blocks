@@ -273,9 +273,10 @@ test on g20 to finalize
 
 
 ### [2.2.0] - 2025-08-30
-- Added support for media sizing variables
-  - `--media-screen-width-xs/xxl` variables added
-  - Media queries updated to use these variables
+- **BREAKING** Added support for media sizing variables
+  - `mixins.scss` added for improved and standardized media sizing
+  - Support for mixins in client projects
+  - NEW SET UP REQUIRED - see `README.md` for more
 - `BBNavbar`
   - vertical styling improvements
   - `navbar-item-min-width` removed

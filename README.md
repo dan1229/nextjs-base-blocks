@@ -215,13 +215,13 @@ While none of these variables are required, it definitely will help make your ap
 
 It is recommended to copy and paste this whole block into your `globals.scss` file and then edit the variables as needed.
 
-#### Media Sizing Variables
+#### Responsive Breakpoints & SCSS Mixins
 
-This one's important!
+The responsive mixins provide consistent breakpoints and utilities throughout your application.
 
-The media sizing variables provide consistent responsive breakpoints throughout your application.
+##### Setup (Required)
 
-**Submodule Usage (Recommended)**
+**Step 1: Configure Next.js (Recommended)**
 In your `next.config.js`:
 ```js
 const { configureSubmoduleSass } = require('./base_blocks/mixins');
@@ -230,34 +230,48 @@ const nextConfig = {
   sassOptions: configureSubmoduleSass(__dirname),
   // ... rest of your config
 };
+
+module.exports = nextConfig;
 ```
 
-**Manual Configuration**
-In your `next.config.js`:
+**Alternative: Manual Configuration**
+
+If you don't want to / can't use this function, you can also set it up manually something like:
+
 ```js
 const path = require('path');
 
 const nextConfig = {
   sassOptions: {
-    includePaths: [path.join(__dirname, 'nextjs-base-blocks/src/styles')],
+    includePaths: [
+      path.join(__dirname, 'styles'),
+      path.join(__dirname, 'base_blocks/src/styles')
+    ],
     additionalData: `@import "mixins.scss";`,
   },
 };
 ```
 
+##### Usage
 
-Use these in your media queries for consistent responsive design:
+After setup, these mixins are automatically available in all your `.scss` files:
 
+**Responsive Breakpoints:**
 ```scss
-@include media-xl {
-  ...
-}
-
-@include media-lg {
-  ...
+.my-component {
+  padding: 2rem;
+  
+  @include media-lg {
+    padding: 1rem;  // Tablets and below
+  }
+  
+  @include media-sm {
+    padding: 0.5rem;  // Mobile
+  }
 }
 ```
 
+See `mixins.scss` for the specific breakpoints and mixins available.
 
 #### Dark Mode / Themes
 
