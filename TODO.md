@@ -276,7 +276,8 @@ test on g20 to finalize
 - **BREAKING** Added support for media sizing variables
   - `mixins.scss` added for improved and standardized media sizing
   - Support for mixins in client projects
-  - NEW SET UP REQUIRED - see `README.md` for more
+  - NEW SET UP REQUIRED - build will fail with clear instructions if not configured
+  - Simple one-line setup in next.config.js
 - `BBNavbar`
   - vertical styling improvements
   - `navbar-item-min-width` removed

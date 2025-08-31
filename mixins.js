@@ -28,8 +28,20 @@ function configureSubmoduleSass(
   stylesDir = 'styles',
   submodulePath = 'base_blocks'
 ) {
+  const fs = require('fs');
   const clientStylesPath = path.join(projectDir, stylesDir);
   const baseBlocksPath = path.join(projectDir, submodulePath, 'src', 'styles');
+  const mixinsPath = path.join(baseBlocksPath, 'mixins.scss');
+
+  // Verify the mixins file exists
+  if (!fs.existsSync(mixinsPath)) {
+    console.error('🚨 Base Blocks Setup Error');
+    console.error('============================');
+    console.error(`❌ Could not find mixins.scss at: ${mixinsPath}`);
+    console.error(`💡 Make sure base_blocks is installed in: ${path.join(projectDir, submodulePath)}`);
+    console.error('📖 For setup help, see: base_blocks/README.md');
+    console.error('');
+  }
 
   return {
     includePaths: [clientStylesPath, baseBlocksPath],

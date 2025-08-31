@@ -1,3 +1,6 @@
+// Check if mixins are properly configured (will break build if not)
+@import "mixins-check.scss";
+
 // color redefinitions to standardize across this file/component
 //
 $white: var(--white, #ffffff);

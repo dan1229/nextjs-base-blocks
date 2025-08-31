@@ -219,10 +219,9 @@ It is recommended to copy and paste this whole block into your `globals.scss` fi
 
 The responsive mixins provide consistent breakpoints and utilities throughout your application.
 
-##### Setup (Required)
+##### Setup (Required - One-time breaking change in v2.2.0)
 
-**Step 1: Configure Next.js (Recommended)**
-In your `next.config.js`:
+**Add this to your `next.config.js`:**
 ```js
 const { configureSubmoduleSass } = require('./base_blocks/mixins');
 
@@ -234,23 +233,7 @@ const nextConfig = {
 module.exports = nextConfig;
 ```
 
-**Alternative: Manual Configuration**
-
-If you don't want to / can't use this function, you can also set it up manually something like:
-
-```js
-const path = require('path');
-
-const nextConfig = {
-  sassOptions: {
-    includePaths: [
-      path.join(__dirname, 'styles'),
-      path.join(__dirname, 'base_blocks/src/styles')
-    ],
-    additionalData: `@import "mixins.scss";`,
-  },
-};
-```
+> ⚠️ **Your build will fail without this setup** - the error message should guide you here.
 
 ##### Usage
 
