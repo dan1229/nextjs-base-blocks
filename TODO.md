@@ -230,8 +230,8 @@
     - double check these / all existing tests
   - form components
     - dont exist yet
-
-
+-
+- update docs again - theyre quite long
 
 
 
@@ -266,20 +266,13 @@
 
 
   
-
-
-#### test for hooks
-
-#### add support for media sizing vars
-
-
-
-update changelog below with all the above
+test on g20 to finalize
+- validate breakpoints work
+- validate use outside click works
 
 
 
-
-### [2.2.0] - 2025-MM-DD
+### [2.2.0] - 2025-08-30
 - Added support for media sizing variables
   - `--media-screen-width-xs/xxl` variables added
   - Media queries updated to use these variables

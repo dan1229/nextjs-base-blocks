@@ -298,7 +298,7 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
 /**
  * MEDIA QUERIES
  */
-@media screen and (max-width: var(--media-screen-width-xl)) {
+@include media-xl {
   .wrapperBrandAndHamburger {
     &.verticalWrapper {
       flex-direction: column-reverse;
@@ -358,21 +358,21 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
   }
 }
 
-@media screen and (max-width: var(--media-screen-width-lg)) {
+@include media-lg {
   .navigationMenuList {
     top: 40px;
     min-width: 40vw;
   }
 }
 
-@media screen and (max-width: var(--media-screen-width-md)) {
+@include media-md {
   .navigationMenuList {
     top: 30px;
     min-width: 50vw;
   }
 }
 
-@media screen and (max-width: var(--media-screen-width-xs)) {
+@include media-xs {
   .navigationMenuList {
     top: 25px;
     min-width: 75vw;

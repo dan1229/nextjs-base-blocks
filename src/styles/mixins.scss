@@ -1,0 +1,47 @@
+// Global SCSS Mixins - automatically imported via next.config.js
+// No manual imports needed in .module.scss files
+
+// Breakpoints
+$media-screen-width-xs: 480px;
+$media-screen-width-sm: 576px;
+$media-screen-width-md: 768px;
+$media-screen-width-lg: 992px;
+$media-screen-width-xl: 1200px;
+$media-screen-width-xxl: 1400px;
+
+// Max-width media query mixins (Desktop-first approach)
+@mixin media-xs {
+  @media (max-width: $media-screen-width-xs) {
+    @content;
+  }
+}
+
+@mixin media-sm {
+  @media (max-width: $media-screen-width-sm) {
+    @content;
+  }
+}
+
+@mixin media-md {
+  @media (max-width: $media-screen-width-md) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media (max-width: $media-screen-width-lg) {
+    @content;
+  }
+}
+
+@mixin media-xl {
+  @media (max-width: $media-screen-width-xl) {
+    @content;
+  }
+}
+
+@mixin media-xxl {
+  @media (max-width: $media-screen-width-xxl) {
+    @content;
+  }
+}

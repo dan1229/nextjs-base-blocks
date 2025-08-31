@@ -196,13 +196,6 @@ html,
   --mobile-text-size-xl: 1.6rem;
   --mobile-text-size-xxl: 2rem;
   --mobile-text-size-xxxl: 2.5rem;
-  // media sizing - responsive breakpoints
-  --media-screen-width-xs: 480px; // Extra small devices (phones)
-  --media-screen-width-sm: 576px; // Small devices (large phones)
-  --media-screen-width-md: 768px; // Medium devices (tablets)
-  --media-screen-width-lg: 992px; // Large devices (small desktops)
-  --media-screen-width-xl: 1200px; // Extra large devices (desktops)
-  --media-screen-width-xxl: 1400px; // Extra extra large devices (large desktops)
   // font family - page router font usage
   --font-family-main: 'Josefin Sans';  // Used for main text
   --font-family-header: 'Montserrat';  // Used for larger fonts/headers
@@ -224,14 +217,23 @@ It is recommended to copy and paste this whole block into your `globals.scss` fi
 
 #### Media Sizing Variables
 
-The media sizing variables provide consistent responsive breakpoints throughout your application:
+This one's important!
 
-- `--media-screen-width-xs: 480px` - Extra small devices (phones)
-- `--media-screen-width-sm: 576px` - Small devices (large phones)  
-- `--media-screen-width-md: 768px` - Medium devices (tablets)
-- `--media-screen-width-lg: 992px` - Large devices (small desktops)
-- `--media-screen-width-xl: 1200px` - Extra large devices (desktops)
-- `--media-screen-width-xxl: 1400px` - Extra extra large devices (large desktops)
+The media sizing variables provide consistent responsive breakpoints throughout your application.
+
+To use these in NextJS, check `src/styles/mixins.scss` and copy that to your projects `styles/mixins.scss`.
+
+I prefer to do these in `styles/mixins.scss`. Then in your `next.config.js` define the following:
+
+```
+sassOptions: {
+  includePaths: [path.join(__dirname, 'styles')],
+  // Automatically import mixins.scss into all SCSS files
+  // This makes responsive mixins available globally without manual imports
+  additionalData: `@import "mixins.scss";`
+},
+```
+
 
 Use these in your media queries for consistent responsive design:
 
@@ -244,6 +246,7 @@ Use these in your media queries for consistent responsive design:
   ...
 }
 ```
+
 
 #### Dark Mode / Themes
 
