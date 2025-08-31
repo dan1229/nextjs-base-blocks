@@ -23,6 +23,16 @@ If you ever want to move away or edit the base components, you can easily remove
 
 The goal here is to provide consistent and easy to use components that can be used in any project, helping you get a project off the ground quickly or to improve an existing project.
 
+### Why A Submodule?
+
+One of the most common questions about this project - it could easily be an NPM package like [Tailwind](https://www.npmjs.com/package/tailwindcss) or similar.
+
+While true and this package is meant to serve a similar purpose, the reality is this is just maintained by myself ([Daniel Nazarian](https://DanielNazarian.com)). So, sadly, this project is far more likely to have bugs or just generally not fit every edge case its end users may be searching for.
+
+To that end, I chose to make it a submodule so client projects could easily directly implement fixes, improvements and even fork it themselves if they choose to go a completely different direction.
+
+**While I love contributions to the repo directly** I didn't want to force people to do that should they run into a bug or something like that.
+
 ## Requirements
 
 You must have the following installed to use this submodule
