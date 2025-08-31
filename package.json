@@ -2,7 +2,11 @@
   "name": "nextjs-base-blocks",
   "version": "2.2.0",
   "description": "A component library for Next.js",
-  "main": "app/page.tsx",
+  "main": "mixins.js",
+  "files": [
+    "src/",
+    "mixins.js"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",

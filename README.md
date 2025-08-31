@@ -221,17 +221,28 @@ This one's important!
 
 The media sizing variables provide consistent responsive breakpoints throughout your application.
 
-To use these in NextJS, check `src/styles/mixins.scss` and copy that to your projects `styles/mixins.scss`.
+**Submodule Usage (Recommended)**
+In your `next.config.js`:
+```js
+const { configureSubmoduleSass } = require('./nextjs-base-blocks/mixins');
 
-I prefer to do these in `styles/mixins.scss`. Then in your `next.config.js` define the following:
-
+const nextConfig = {
+  sassOptions: configureSubmoduleSass(__dirname),
+  // ... rest of your config
+};
 ```
-sassOptions: {
-  includePaths: [path.join(__dirname, 'styles')],
-  // Automatically import mixins.scss into all SCSS files
-  // This makes responsive mixins available globally without manual imports
-  additionalData: `@import "mixins.scss";`
-},
+
+**Manual Configuration**
+In your `next.config.js`:
+```js
+const path = require('path');
+
+const nextConfig = {
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'nextjs-base-blocks/src/styles')],
+    additionalData: `@import "mixins.scss";`,
+  },
+};
 ```
 
 
