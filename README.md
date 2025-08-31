@@ -221,8 +221,10 @@ The responsive mixins provide consistent breakpoints and utilities throughout yo
 
 ##### Setup (Required - One-time breaking change in v2.2.0)
 
-**Add this to your `next.config.js`:**
-```js
+
+Add this to your `next.config.js`:
+
+```ts
 const { configureSubmoduleSass } = require('./base_blocks/mixins');
 
 const nextConfig = {
@@ -241,16 +243,12 @@ After setup, these mixins are automatically available in all your `.scss` files:
 
 **Responsive Breakpoints:**
 ```scss
-.my-component {
-  padding: 2rem;
-  
-  @include media-lg {
-    padding: 1rem;  // Tablets and below
-  }
-  
-  @include media-sm {
-    padding: 0.5rem;  // Mobile
-  }
+@include media-lg {
+  ...
+}
+
+@include media-sm {
+  ...
 }
 ```
 
