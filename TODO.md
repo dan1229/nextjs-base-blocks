@@ -257,7 +257,13 @@
 -
 - add back 'sticky' prop
   - is it working?
-
+-
+- vertical nav not fitting width of wide action buttons
+  - i.e., management button
+  - is this expected behavior? if auto setting the width, then it should fit
+    - if hardcoding / adjusting the width then it should listen to that
+  - similarly we should auto adjust the width at different media sizes?
+    - g20 does this - should this be this projects responsibility or the users?
 
 
 
