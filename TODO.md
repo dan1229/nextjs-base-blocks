@@ -262,8 +262,10 @@
   - i.e., management button
   - is this expected behavior? if auto setting the width, then it should fit
     - if hardcoding / adjusting the width then it should listen to that
-  - similarly we should auto adjust the width at different media sizes?
-    - g20 does this - should this be this projects responsibility or the users?
+- similarly we should auto adjust the width at different media sizes?
+  - g20 does this - should this be this projects responsibility or the users?
+  - probably should tbh it looks weird to not change
+    - at the very least make it min-width so when it switches to mobile it takes up less space
 -
 - navbar 'active' not working
   - i.e., active tab / page should be highlighted
