@@ -264,7 +264,9 @@
     - if hardcoding / adjusting the width then it should listen to that
   - similarly we should auto adjust the width at different media sizes?
     - g20 does this - should this be this projects responsibility or the users?
-
+-
+- navbar 'active' not working
+  - i.e., active tab / page should be highlighted
 
 
 
