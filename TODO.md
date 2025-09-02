@@ -297,6 +297,13 @@
 - is it easily do-able
 
 
+#### bbloading spinner colors broken
+- the way it handles the colors classes is weird
+  - the `const style` is very odd and `--loader-color` is weird it's not a real scss variabel
+- should have a better default - i.e., primary
+
+
+
 
 ### [2.3.0] - 2025-MM-DD
 - TODO
