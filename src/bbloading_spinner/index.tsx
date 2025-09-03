@@ -11,7 +11,7 @@ export interface IPropsBBLoadingSpinner {
 }
 
 export default function BBLoadingSpinner(Props: IPropsBBLoadingSpinner): React.ReactElement {
-  const { variant = 'default', className, size = 'md', color } = Props;
+  const { variant = 'default', className, size = 'md', color = 'primary' } = Props;
 
   const getLoadingSpinnerClassName = () => {
     switch (variant) {
@@ -39,8 +39,6 @@ export default function BBLoadingSpinner(Props: IPropsBBLoadingSpinner): React.R
   };
 
   const getColorClassName = () => {
-    if (!color) return '';
-
     switch (color) {
       case 'primary':
         return styles.primary;
@@ -61,20 +59,14 @@ export default function BBLoadingSpinner(Props: IPropsBBLoadingSpinner): React.R
       case 'white':
         return styles.white;
       default:
-        return '';
+        return styles.primary;
     }
   };
-
-  const style =
-    color && !['primary', 'secondary', 'accent', 'danger', 'success', 'warning', 'info', 'black', 'white'].includes(color)
-      ? ({ '--loader-color': color } as React.CSSProperties)
-      : {};
 
   return (
     <div className={styles.containerLoading}>
       <span
         className={classNames(getLoadingSpinnerClassName(), getLoadingSpinnerSizeClassName(), getColorClassName(), className)}
-        style={style}
       />
     </div>
   );

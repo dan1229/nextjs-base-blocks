@@ -64,7 +64,7 @@
 * DEFAULT
 */
 .loader_default {
-  border: 2px solid var(--loader-color, #78cdd7);
+  border: 2px solid var(--loader-color);
   border-radius: 50%;
   border-top-color: white;
   animation: rotationSpinner 1s linear infinite;
@@ -100,7 +100,7 @@
   top: 0;
   bottom: 0;
   margin: auto;
-  border: 3px dotted var(--loader-color, #78cdd7);
+  border: 3px dotted var(--loader-color);
   border-style: solid solid dotted;
   width: 24px;
   height: 24px;
@@ -130,7 +130,7 @@
 * CIRCLE BOUNCE
 */
 .loader_circle_bounce {
-  border: 4px solid var(--loader-color, #78cdd7);
+  border: 4px solid var(--loader-color);
   border-radius: 50%;
   animation: circleBounceSpinner 1s ease-in-out infinite;
 }
@@ -151,7 +151,7 @@
 * SPINNING SQUARE
 */
 .loader_spinning_square {
-  border: 4px solid var(--loader-color, #78cdd7);
+  border: 4px solid var(--loader-color);
   animation: spinningSquareSpinner 3s linear infinite;
 }
 
