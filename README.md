@@ -184,7 +184,7 @@ html,
   --form-input-disabled-bg: var(--bg-color);
   --form-input-disabled-border-color: var(--grey-dark);
   --form-file-button-border-color: var(--grey-dark);
-  --form-file-button-hover-color: var(--text-color-default);
+  --form-file-button-hover-color: var(--white);
   --form-file-button-color: var(--text-color-default);
   --form-file-button-hover-bg: var(--primary-color);
   --form-input-plaintext-color: var(--white);
