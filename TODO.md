@@ -135,11 +135,6 @@
 
 
 
-#### BBTabs
-- accessible tab interface
-- lazy loading of tab content
-- vertical/horizontal orientations
-
 
 #### BBDrawer / BBSidebar
 - slide-out panel component
@@ -173,6 +168,13 @@
 
 ---
 ### 2.4.0
+
+
+#### BBLayout components
+- BBGrid - css grid wrapper with responsive breakpoints
+- BBStack - vertical/horizontal spacing component
+- BBContainer - max-width wrapper with responsive padding
+- BBSpacer - flexible spacing component
 
 
 
@@ -284,11 +286,15 @@
 - integrate with existing theming system
 
 
-#### BBLayout components
-- BBGrid - css grid wrapper with responsive breakpoints
-- BBStack - vertical/horizontal spacing component
-- BBContainer - max-width wrapper with responsive padding
-- BBSpacer - flexible spacing component
+#### BBTabs
+- accessible tab interface
+- lazy loading of tab content
+- vertical/horizontal orientations
+
+
+
+
+
 
 
 #### consolidate bb field select and bb field select multiple
