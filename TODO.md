@@ -297,13 +297,18 @@
 - is it easily do-able
 
 
+#### bb tooltip
+- overflowing in some directions
+  - i.e., going over the top of the window try to do something about that
+
+
 
 #### form sizing vars
 ```
   @include checkbox-size($input-height);
 ```
 does this work? i dont know if includes like that will work...
-
+in general just doesnt seem like its working either
 
 
 
