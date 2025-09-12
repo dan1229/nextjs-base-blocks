@@ -294,6 +294,17 @@
 
 
 
+#### bbcard vars
+
+  --card-darken-default-color: rgb(51, 65, 85);
+are these being used?
+- we're not darkening footers / headers anymore
+
+
+#### bbbutton - icon alignment
+- icon alignment seems to be broken?
+  - right alignment at least - everything goes to the left
+  - at least on href buttons but quick test says all
 
 
 
