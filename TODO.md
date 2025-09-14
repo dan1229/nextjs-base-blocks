@@ -319,7 +319,6 @@ are these being used?
   - i.e., going over the top of the window try to do something about that
 
 
-
 #### form sizing vars
 ```
   @include checkbox-size($input-height);
