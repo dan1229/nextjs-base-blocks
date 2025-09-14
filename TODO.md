@@ -319,19 +319,13 @@ are these being used?
   - i.e., going over the top of the window try to do something about that
 
 
-#### form sizing vars
-```
-  @include checkbox-size($input-height);
-```
-does this work? i dont know if includes like that will work...
-in general just doesnt seem like its working either
-
-
-
 ### [2.3.0] - 2025-MM-DD
 - `BBLoadingSpinner`
   - Set default color
   - Improved status style selection
+- Form sizing variables fixes
+  - Fixed incorrect font size calculation in `$input-font-size-sm`
+  - Updated height calculations to use proper size-specific padding variables
 
 -------------------------------------------------------
 

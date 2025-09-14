@@ -73,6 +73,8 @@ As well as the following 'Form Components':
 
 Also including a number of form helper functions and components.
 
+**Form Components Sizing**: All form components support `sm`, `md`, and `lg` sizing options that maintain proper proportional dimensions. The checkbox sizing system uses SCSS mixins to ensure consistent visual scaling across all size variants.
+
 ### SCSS Variables
 
 You are also able to customize `Base Blocks` via SCSS variables. You typically will want to put these in `globals.scss`.
