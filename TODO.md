@@ -343,31 +343,6 @@ are these being used?
 ### [2.3.0] - 2025-MM-DD
 - TODO
 
-
-----
-### 2.2.1
-
-
-
-
-
-
-
-
-### [2.2.1] - 2025-09-14
-- `BBButton`
-  - Fixed icon alignment issues for all alignment options ('left', 'right', 'space-between', 'above', 'below')
-    - Added some test coverage for icon alignment functionality
-  - Improved space-between layout with proper CSS class application
-- `BBLoadingSpinner`
-  - Set default color
-  - Improved status style selection
-- `BBTooltip`
-  - Improved tooltip positioning and centering, added comprehensive test coverage
-- Form sizing variables fixes
-  - Fixed incorrect font size calculation in `$input-font-size-sm`
-  - Updated height calculations to use proper size-specific padding variables
-
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)

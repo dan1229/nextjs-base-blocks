@@ -14,6 +14,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [2.2.1] - 2025-09-14
+- `BBButton`
+  - Fixed icon alignment issues for all alignment options ('left', 'right', 'space-between', 'above', 'below')
+    - Added some test coverage for icon alignment functionality
+  - Improved space-between layout with proper CSS class application
+- `BBLoadingSpinner`
+  - Set default color
+  - Improved status style selection
+- `BBTooltip`
+  - Improved tooltip positioning and centering, added comprehensive test coverage
+- Form sizing variables fixes
+  - Fixed incorrect font size calculation in `$input-font-size-sm`
+  - Updated height calculations to use proper size-specific padding variables
+
+  
 ### [2.2.0] - 2025-08-30
 - **BREAKING** Added support for media sizing variables
   - `mixins.scss` added for improved and standardized media sizing
