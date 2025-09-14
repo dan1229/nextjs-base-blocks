@@ -69,7 +69,7 @@ $tooltip-transition-duration: 0.2s;
     visibility: visible;
   }
 
-  // Default arrow (pointing down)
+  // arrow part of speech bubble
   &::after {
     content: '';
     position: absolute;
@@ -81,19 +81,6 @@ $tooltip-transition-duration: 0.2s;
     border-color: transparent;
     border-top-color: $grey-darkest;
   }
-
-  // When tooltip appears below button
-  &.bottom {
-    bottom: auto;
-    top: calc(100% + #{$tooltip-arrow-size} + 1px);
-
-    &::after {
-      top: auto;
-      bottom: 100%;
-      border-top-color: transparent;
-      border-bottom-color: $grey-darkest;
-    }
-  }
 }
 
 /**
@@ -101,78 +88,38 @@ $tooltip-transition-duration: 0.2s;
  */
 .primary {
   background-color: $primary-color;
-
   &::after {
     border-top-color: $primary-color;
-  }
-
-  &.bottom::after {
-    border-top-color: transparent;
-    border-bottom-color: $primary-color;
   }
 }
 
 .secondary {
   background-color: $secondary-color;
-
   &::after {
     border-top-color: $secondary-color;
   }
-
-  &.bottom::after {
-    border-top-color: transparent;
-    border-bottom-color: $secondary-color;
-  }
 }
-
 .accent {
   background-color: $accent-color;
-
   &::after {
     border-top-color: $accent-color;
   }
-
-  &.bottom::after {
-    border-top-color: transparent;
-    border-bottom-color: $accent-color;
-  }
 }
-
 .success {
   background-color: $success-color;
-
   &::after {
     border-top-color: $success-color;
   }
-
-  &.bottom::after {
-    border-top-color: transparent;
-    border-bottom-color: $success-color;
-  }
 }
-
 .warning {
   background-color: $warning-color;
-
   &::after {
     border-top-color: $warning-color;
   }
-
-  &.bottom::after {
-    border-top-color: transparent;
-    border-bottom-color: $warning-color;
-  }
 }
-
 .error {
   background-color: $danger-color;
-
   &::after {
     border-top-color: $danger-color;
-  }
-
-  &.bottom::after {
-    border-top-color: transparent;
-    border-bottom-color: $danger-color;
   }
 }

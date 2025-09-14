@@ -1,7 +1,7 @@
 'use client';
 
 import classnames from 'classnames';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { AiOutlineQuestion } from 'react-icons/ai';
 import BBButton from '../bbbutton';
 import BBText from '../bbtext';
@@ -33,23 +33,9 @@ export interface IPropsBBTooltip {
 export default function BBTooltip(Props: IPropsBBTooltip): React.ReactElement {
   const { text = '', children, content, className, variant = 'primary', showIcon = true } = Props;
   const [isVisible, setIsVisible] = useState(false);
-  const [showBelow, setShowBelow] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!isVisible || !containerRef.current) return;
-
-    const container = containerRef.current;
-    const containerRect = container.getBoundingClientRect();
-
-    // If tooltip would go off the top of screen, show below instead
-    const wouldOverflowTop = containerRect.top < 100;
-    setShowBelow(wouldOverflowTop);
-  }, [isVisible]);
 
   return (
     <div
-      ref={containerRef}
       className={classnames(styles.tooltipContainer, className)}
       onMouseEnter={() => setIsVisible(true)}
       onMouseLeave={() => setIsVisible(false)}
@@ -61,7 +47,6 @@ export default function BBTooltip(Props: IPropsBBTooltip): React.ReactElement {
       <div
         className={classnames(styles.tooltip, styles[variant], {
           [styles.visible]: isVisible,
-          [styles.bottom]: showBelow,
         })}
       >
         <BBText color="white">{content}</BBText>
