@@ -252,6 +252,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
       className={classNames(
         styles.containerMain,
         align === 'above' || align === 'below' ? styles.contentVertical : null,
+        align === 'space-between' ? styles.baseSpaceBetween : null,
         isHovered && helperTextOnHover ? styles.showHelperText : null,
         classNameHelperText
       )}

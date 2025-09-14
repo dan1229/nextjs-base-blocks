@@ -330,6 +330,15 @@
 
 
 
+#### bbcard vars
+  --card-darken-default-color: rgb(51, 65, 85);
+are these being used?
+- we're not darkening footers / headers anymore
+
+
+
+
+
 
 ### [2.3.0] - 2025-MM-DD
 - TODO
@@ -341,24 +350,15 @@
 
 
 
-#### bbcard vars
-  --card-darken-default-color: rgb(51, 65, 85);
-are these being used?
-- we're not darkening footers / headers anymore
-
-
-#### bbbutton - icon alignment
-- icon alignment seems to be broken?
-  - right alignment at least - everything goes to the left
-  - at least on href buttons but quick test says all
 
 
 
 
-
-
-
-### [2.2.1] - 2025-MM-DD
+### [2.2.1] - 2025-09-14
+- `BBButton`
+  - Fixed icon alignment issues for all alignment options ('left', 'right', 'space-between', 'above', 'below')
+    - Added some test coverage for icon alignment functionality
+  - Improved space-between layout with proper CSS class application
 - `BBLoadingSpinner`
   - Set default color
   - Improved status style selection
