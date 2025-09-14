@@ -292,10 +292,28 @@
 - vertical/horizontal orientations
 
 
+#### bbloading add variable to set default
+- add --loading-default-state or something so you dont have to make a 'local' component in client projects
+
+
+
+### [2.3.0] - 2025-MM-DD
+- TODO
+
+----
+### 2.2.1
+
+
+
+#### consolidate bb field select and bb field select multiple
+- e.g., could just add a `multiple` prop to the select field
+- is this a good move?
+- is it easily do-able
+
+
 
 
 #### bbcard vars
-
   --card-darken-default-color: rgb(51, 65, 85);
 are these being used?
 - we're not darkening footers / headers anymore
@@ -308,18 +326,17 @@ are these being used?
 
 
 
-#### consolidate bb field select and bb field select multiple
-- e.g., could just add a `multiple` prop to the select field
-- is this a good move?
-- is it easily do-able
-
-
 #### bb tooltip
 - overflowing in some directions
   - i.e., going over the top of the window try to do something about that
 
 
-### [2.3.0] - 2025-MM-DD
+update readme and TODO release notes below
+
+
+
+
+### [2.2.1] - 2025-MM-DD
 - `BBLoadingSpinner`
   - Set default color
   - Improved status style selection
