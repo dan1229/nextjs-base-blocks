@@ -89,9 +89,5 @@ describe('BBTooltip Component Tests', () => {
     });
   });
 
-  // TODO: Add more comprehensive tests for:
-  // - Different variants (primary, secondary, etc.)
-  // - Custom children content
-  // - Tooltip positioning
-  // - Keyboard navigation
+  // TODO: Add overflow prevention tests when a robust solution is implemented
 });

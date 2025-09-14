@@ -197,55 +197,8 @@
   - stuff that's unopinionated if it can't be turned off
 
 
-
 ---
-### 2.3.0
-
-
-
-
-#### standardize how we do the class name assigns
-- i.e., some places there are swtich functions
-- some are more manual `textAlign{textAlignment.strip}
-  - bbcard, bbbutton also great examples
-- a mess and a half
-  - standardize this / the class names somehow
-    - could cut down code a ton
-  - maybe some utility component?
--
-- really really really test this to make sure nothings broken!
-
-
-
-
-
-#### bb form demo components get fully functional
-- OR switch to storybook - see if that's easier at this point idk
-  - the demo components have lots of issues tbh
--
-- fix the broken ones
-  - TODO
-- add any missing ones
-  - form components might be missing?
-  - TODO
-- generally improve
-  - make sure that all props are used
-    - find a way to auto detect these so we dont need to manually add
-
-
-#### cypress tests - fill in rest of tests
-- get coverage higher!
-- components left
-  - button? collapsible, divider, link, loading spinner, modal, navbar, navbar item, tooltip
-    - double check these / all existing tests
-  - form components
-    - dont exist yet
--
-- update docs again - theyre quite long
-
-
-
-
+### 2.4.
 
 
 
@@ -275,6 +228,72 @@
 
 
 
+#### bb form demo components get fully functional
+- OR switch to storybook - see if that's easier at this point idk
+  - the demo components have lots of issues tbh
+-
+- fix the broken ones
+  - TODO
+- add any missing ones
+  - form components might be missing?
+  - TODO
+- generally improve
+  - make sure that all props are used
+    - find a way to auto detect these so we dont need to manually add
+
+
+
+
+
+
+
+
+---
+### 2.3.0
+
+
+
+
+#### standardize how we do the class name assigns
+- i.e., some places there are swtich functions
+- some are more manual `textAlign{textAlignment.strip}
+  - bbcard, bbbutton also great examples
+- a mess and a half
+  - standardize this / the class names somehow
+    - could cut down code a ton
+  - maybe some utility component?
+-
+- really really really test this to make sure nothings broken!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### cypress tests - fill in rest of tests
+- get coverage higher!
+- components left
+  - button? collapsible, divider, link, loading spinner, modal, navbar, navbar item, tooltip
+    - double check these / all existing tests
+  - form components
+    - dont exist yet
+-
+- update docs again - theyre quite long
+
+
+
+
+
+
+
 
 #### BBTable component
 - data table with sorting, filtering, pagination
@@ -294,8 +313,35 @@
 
 
 
-#### bbcard vars
 
+
+
+
+#### consolidate bb field select and bb field select multiple
+- e.g., could just add a `multiple` prop to the select field
+- is this a good move?
+- is it easily do-able
+
+
+
+#### bbloading add variable to set default
+- add --loading-default-state or something so you dont have to make a 'local' component in client projects
+
+
+
+
+
+### [2.3.0] - 2025-MM-DD
+- TODO
+
+
+----
+### 2.2.1
+
+
+
+
+#### bbcard vars
   --card-darken-default-color: rgb(51, 65, 85);
 are these being used?
 - we're not darkening footers / headers anymore
@@ -308,21 +354,16 @@ are these being used?
 
 
 
-#### consolidate bb field select and bb field select multiple
-- e.g., could just add a `multiple` prop to the select field
-- is this a good move?
-- is it easily do-able
 
 
-#### bb tooltip
-- overflowing in some directions
-  - i.e., going over the top of the window try to do something about that
 
 
-### [2.3.0] - 2025-MM-DD
+### [2.2.1] - 2025-MM-DD
 - `BBLoadingSpinner`
   - Set default color
   - Improved status style selection
+- `BBTooltip`
+  - Improved tooltip positioning and centering, added comprehensive test coverage
 - Form sizing variables fixes
   - Fixed incorrect font size calculation in `$input-font-size-sm`
   - Updated height calculations to use proper size-specific padding variables
