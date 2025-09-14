@@ -330,7 +330,7 @@ All base components have comprehensive test coverage including:
 
 ### Writing New Tests
 
-To create a new test file, use the template in `cypress/support/_template.cy.tsx` or follow the existing test patterns. All tests should follow the established naming convention: `componentname.cy.tsx`.
+To create a new test file, use the template in `cypress/support/_template.cy.tsx` or follow the existing test patterns. All tests should follow the established naming convention: `component-name.cy.tsx`.
 
 ## Demo
 
