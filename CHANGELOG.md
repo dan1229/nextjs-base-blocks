@@ -14,6 +14,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [2.2.2] - 2025-09-16
+- `BBTooltip`
+  - Fixed issue with being overlapped by 'normal' UI elements
+
+  
 ### [2.2.1] - 2025-09-14
 - `BBButton`
   - Fixed icon alignment issues for all alignment options ('left', 'right', 'space-between', 'above', 'below')

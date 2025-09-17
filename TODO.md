@@ -344,15 +344,6 @@ are these being used?
 - TODO
 
 
----
-### 2.2.2
-
-
-
-### [2.2.2] - 2025-MM-DD
-- `BBTooltip`
-  - Fixed issue with being overlapped by 'normal' UI elements
-
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)
