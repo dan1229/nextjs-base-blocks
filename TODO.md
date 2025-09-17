@@ -343,6 +343,21 @@ are these being used?
 ### [2.3.0] - 2025-MM-DD
 - TODO
 
+
+---
+### 2.2.2
+
+
+
+#### bb tooltip
+- needs higher z - getting overlapped by like the card it's in
+
+
+
+
+### [2.2.2] - 2025-MM-DD
+- TODO
+
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)
