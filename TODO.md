@@ -343,6 +343,18 @@ are these being used?
 ### [2.3.0] - 2025-MM-DD
 - TODO
 
+
+---
+### 2.2.2
+
+
+
+
+
+### [2.2.2] - 2025-MM-DD
+- `BBTooltip`
+  - Fixed issue with being overlapped by 'normal' UI elements
+
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)
