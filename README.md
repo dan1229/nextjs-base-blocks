@@ -171,7 +171,7 @@ html,
   // bb tooltip
   --tooltip-padding: 0.5rem 1rem;
   --tooltip-border-radius: 8px;
-  --tooltip-z-index: 1070;
+  --tooltip-z-index: 9000;
   --tooltip-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --tooltip-arrow-size: 4px;
   // bb form components
