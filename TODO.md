@@ -349,15 +349,11 @@ are these being used?
 
 
 
-#### bb tooltip
-- needs higher z - getting overlapped by like the card it's in
-
-
 
 
 ### [2.2.2] - 2025-MM-DD
 - `BBTooltip`
-  - TODO
+  - Fixed issue with being overlapped by 'normal' UI elements
 
 -------------------------------------------------------
 
