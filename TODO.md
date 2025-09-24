@@ -346,12 +346,10 @@ are these being used?
 
 
 
-#### bbdivider
-- margin is very tiny often nonexistent
 
-
-### [2.2.3] - 2025-MM-DD
-- TODO
+### [2.2.3] - 2025-09-23
+- `BBDivider`
+  - Default margins improved
 
 -------------------------------------------------------
 

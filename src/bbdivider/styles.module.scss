@@ -97,7 +97,7 @@ $accent-dark-color: var(--accent-dark-color, darken(#ff6b6c, 10%));
 }
 
 // Margin variants
-@each $size, $value in ('none': 0, 'xs': 1px, 's': 0.25rem, 'm': 0.5rem, 'l': 1rem, 'xl': 2rem, 'xxl': 3rem, 'xxxl': 4rem) {
+@each $size, $value in ('none': 0, 'xs': 0.125rem, 's': 0.25rem, 'm': 0.5rem, 'l': 1rem, 'xl': 2rem, 'xxl': 3rem, 'xxxl': 4rem) {
   .margin#{$size} {
     &.horizontal {
       margin: #{$value} 0;

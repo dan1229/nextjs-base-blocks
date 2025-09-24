@@ -43,7 +43,7 @@ export default function BBDivider(Props: IPropsBBDivider): React.ReactElement {
     orientation = 'horizontal',
     styleType = 'solid',
     length = 'full',
-    margin = 'xs',
+    margin = 's',
     className,
   } = Props;
 
