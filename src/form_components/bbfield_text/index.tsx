@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import React from 'react';
+import React, { useState } from 'react';
 import InputWrapper from '../input_wrapper';
 import styles from '../styles.module.scss';
 import type { IPropsBBBaseForm, TBBFieldTextType } from '../../types';
@@ -32,9 +32,22 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
     onKeyDown,
   } = Props;
 
+  const [showPassword, setShowPassword] = useState(false);
+
   const getAutoComplete = (): string => {
     if (autocomplete) return autocomplete;
     return fieldName;
+  };
+
+  const getInputType = (): string => {
+    if (type === 'password') {
+      return showPassword ? 'text' : 'password';
+    }
+    return type;
+  };
+
+  const togglePasswordVisibility = (): void => {
+    setShowPassword(!showPassword);
   };
 
   const sharedProps = {
@@ -55,7 +68,23 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
    */
   return (
     <InputWrapper {...Props}>
-      {type == 'textarea' ? <textarea {...sharedProps} {...register} /> : <input {...sharedProps} type={type} {...register} />}
+      {type == 'textarea' ? (
+        <textarea {...sharedProps} {...register} />
+      ) : (
+        <div className={type === 'password' ? styles.password_wrapper : undefined}>
+          <input {...sharedProps} type={getInputType()} {...register} />
+          {type === 'password' && (
+            <button
+              type="button"
+              className={styles.password_toggle}
+              onClick={togglePasswordVisibility}
+              aria-label={showPassword ? 'Hide password' : 'Show password'}
+            >
+              {showPassword ? '🙈' : '👁️'}
+            </button>
+          )}
+        </div>
+      )}
     </InputWrapper>
   );
 }

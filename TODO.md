@@ -337,8 +337,17 @@ are these being used?
 
 
 
+
 ### [2.3.0] - 2025-MM-DD
 - TODO
+
+
+---
+
+### [2.2.4] - 2025-09-27
+- `BBFieldText`
+  - Enhanced password field functionality with hide/show toggle
+
 
 -------------------------------------------------------
 
