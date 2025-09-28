@@ -198,32 +198,24 @@
 
 
 ---
-### 2.4.
+### 2.4.0
 
 
 
-
-#### bbnavbar - mobile styling and sticky option
-- vertical mobile styling
-  - emulate styling from flutter navbars a bit
-    - i.e., always slide out kinda thing
-  - even if a million navbar items make the mobile menu scrollable
-    - overflow-y?
+#### cypress tests - fill in rest of tests
+- get coverage higher!
+- components left
+  - button? collapsible, divider, link, loading spinner, modal, navbar, navbar item, tooltip
+    - double check these / all existing tests
+  - form components
+    - dont exist yet
 -
-- add back 'sticky' prop
-  - is it working?
--
-- vertical nav not fitting width of wide action buttons
-  - i.e., management button
-  - is this expected behavior? if auto setting the width, then it should fit
-    - if hardcoding / adjusting the width then it should listen to that
-- similarly we should auto adjust the width at different media sizes?
-  - g20 does this - should this be this projects responsibility or the users?
-  - probably should tbh it looks weird to not change
-    - at the very least make it min-width so when it switches to mobile it takes up less space
--
-- navbar 'active' not working
-  - i.e., active tab / page should be highlighted
+- update docs again - theyre quite long
+
+
+
+
+
 
 
 
@@ -243,6 +235,13 @@
 
 
 
+
+
+
+#### BBTabs
+- accessible tab interface
+- lazy loading of tab content
+- vertical/horizontal orientations
 
 
 
@@ -278,23 +277,6 @@
 
 
 
-#### cypress tests - fill in rest of tests
-- get coverage higher!
-- components left
-  - button? collapsible, divider, link, loading spinner, modal, navbar, navbar item, tooltip
-    - double check these / all existing tests
-  - form components
-    - dont exist yet
--
-- update docs again - theyre quite long
-
-
-
-
-
-
-
-
 #### BBTable component
 - data table with sorting, filtering, pagination
   - look at twineline
@@ -305,12 +287,30 @@
 - integrate with existing theming system
 
 
-#### BBTabs
-- accessible tab interface
-- lazy loading of tab content
-- vertical/horizontal orientations
 
 
+
+#### bbnavbar - mobile styling and sticky option
+- vertical mobile styling
+  - emulate styling from flutter navbars a bit
+    - i.e., always slide out kinda thing
+  - even if a million navbar items make the mobile menu scrollable
+    - overflow-y?
+-
+- add back 'sticky' prop
+  - is it working?
+-
+- vertical nav not fitting width of wide action buttons
+  - i.e., management button
+  - is this expected behavior? if auto setting the width, then it should fit
+    - if hardcoding / adjusting the width then it should listen to that
+- similarly we should auto adjust the width at different media sizes?
+  - g20 does this - should this be this projects responsibility or the users?
+  - probably should tbh it looks weird to not change
+    - at the very least make it min-width so when it switches to mobile it takes up less space
+-
+- navbar 'active' not working
+  - i.e., active tab / page should be highlighted
 
 
 
