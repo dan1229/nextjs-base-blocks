@@ -158,13 +158,11 @@ html,
   --navbar-brand-padding: 0;
   --navbar-icon-mobile-color: var(--primary-color);
   --navbar-transition: all 0.2s ease-in-out;
-  // vertical navbar width (responsive / optional)
-  --navbar-vertical-width: fit-content; // Auto-adjust width to fit content
-  --navbar-vertical-min-width: 8rem;
-  --navbar-vertical-max-width: 16rem;
+  // vertical navbar width (responsive)
+  --navbar-vertical-width: 8rem; // Default width for vertical navbar
   // responsive vertical navbar widths for different screen sizes
-  --navbar-vertical-width-xs: 4rem; 
-  --navbar-vertical-width-sm: 6rem; 
+  --navbar-vertical-width-xs: 4rem;
+  --navbar-vertical-width-sm: 6rem;
   --navbar-vertical-width-md: 8rem;
   --navbar-vertical-width-lg: 10rem;
   --navbar-vertical-width-xl: 12rem;

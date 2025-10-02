@@ -326,9 +326,7 @@
 - `BBNavbar`
   - Improved vertical navbar width handling: Now automatically adjusts to fit wide action buttons
   - Added responsive width support: Vertical navbar now adapts to different screen sizes
-    - `--navbar-vertical-width`: Auto-adjust width to fit content (default: fit-content)
-    - `--navbar-vertical-min-width`: Minimum width constraint (default: 8rem)
-    - `--navbar-vertical-max-width`: Maximum width constraint (default: 16rem)
+    - `--navbar-vertical-width`: Default width (8rem)
     - `--navbar-vertical-width-xs/sm/md/lg/xl`: Responsive widths for each breakpoint
   - Improved active state highlighting: Fixed CSS specificity issues that prevented proper active state styling
 

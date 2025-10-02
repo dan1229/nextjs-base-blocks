@@ -25,9 +25,7 @@ $navbar-vertical-width-sm: var(--navbar-vertical-width-sm, 6rem);
 $navbar-vertical-width-md: var(--navbar-vertical-width-md, 8rem);
 $navbar-vertical-width-lg: var(--navbar-vertical-width-lg, 10rem);
 $navbar-vertical-width-xl: var(--navbar-vertical-width-xl, 12rem);
-$navbar-vertical-width: var(--navbar-vertical-width, fit-content);
-$navbar-vertical-min-width: var(--navbar-vertical-min-width, 8rem);
-$navbar-vertical-max-width: var(--navbar-vertical-max-width, 16rem);
+$navbar-vertical-width: var(--navbar-vertical-width, 8rem); // Default fallback for non-responsive
 
 // navbar transition
 $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
@@ -108,8 +106,6 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
   &.vertical {
     height: 100vh;
     width: $navbar-vertical-width;
-    min-width: $navbar-vertical-min-width;
-    max-width: $navbar-vertical-max-width;
     flex-direction: column;
     align-items: stretch; // Allow items to stretch to fill width
     padding: 1rem 0.5rem;
@@ -122,27 +118,22 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
     // Responsive width for different screen sizes
     @include media-xs {
       width: $navbar-vertical-width-xs;
-      min-width: $navbar-vertical-width-xs;
     }
 
     @include media-sm {
       width: $navbar-vertical-width-sm;
-      min-width: $navbar-vertical-width-sm;
     }
 
     @include media-md {
       width: $navbar-vertical-width-md;
-      min-width: $navbar-vertical-width-md;
     }
 
     @include media-lg {
       width: $navbar-vertical-width-lg;
-      min-width: $navbar-vertical-width-lg;
     }
 
     @include media-xl {
       width: $navbar-vertical-width-xl;
-      min-width: $navbar-vertical-width-xl;
     }
 
     .navigationMenuList {
