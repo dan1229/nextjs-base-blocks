@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import React, { useState, useRef } from 'react';
 import BBText from '../bbtext';
+import { createClassHelper, toCamelCase } from '../utils/scss-class-functions';
 import styles from './styles.module.scss';
 import type {
   TBBButtonIconAlign,
@@ -109,57 +110,18 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
   // icon alignment
   const [align] = useState<TBBButtonIconAlign>(icon.align || 'left');
 
+  // Create class helper with standardized patterns
+  const classHelper = createClassHelper(styles, {
+    variant: { transform: toCamelCase },
+    elevation: { prefix: 'elevation', transform: toCamelCase },
+    icon: { prefix: 'icon', transform: toCamelCase },
+  });
+
   // handle hover state
   const [isHovered, setIsHovered] = useState(false);
   const mainWrapperRef = useRef<HTMLDivElement>(null);
   const helperTextRef = useRef<HTMLDivElement>(null);
 
-  // GET CLASS VARIANTS
-  //
-  const getClassVariant = () => {
-    switch (variant) {
-      case 'primary':
-        return styles.primary;
-      case 'secondary':
-        return styles.secondary;
-      case 'accent':
-        return styles.accent;
-      case 'danger':
-        return styles.danger;
-      case 'success':
-        return styles.success;
-      case 'warning':
-        return styles.warning;
-      case 'info':
-        return styles.info;
-      case 'black':
-        return styles.black;
-      case 'white':
-        return styles.white;
-      case 'inverse-info':
-        return styles.inverseInfo;
-      case 'inverse-primary':
-        return styles.inversePrimary;
-      case 'inverse-secondary':
-        return styles.inverseSecondary;
-      case 'inverse-accent':
-        return styles.inverseAccent;
-      case 'inverse-danger':
-        return styles.inverseDanger;
-      case 'inverse-success':
-        return styles.inverseSuccess;
-      case 'inverse-warning':
-        return styles.inverseWarning;
-      case 'transparent-primary':
-        return styles.transparentPrimary;
-      case 'transparent-secondary':
-        return styles.transparentSecondary;
-      case 'transparent-accent':
-        return styles.transparentAccent;
-      default:
-        return '';
-    }
-  };
 
   const getButtonSize = (): TBBTextSize => {
     switch (size) {
@@ -178,56 +140,10 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     }
   };
 
-  const getClassElevation = () => {
-    switch (elevation) {
-      case 'none':
-        return styles.elevationNone;
-      case 'low':
-        return styles.elevationLow;
-      case 'medium':
-        return styles.elevationMedium;
-      case 'high':
-        return styles.elevationHigh;
-      default:
-        return '';
-    }
-  };
 
   const getIconColor = (color?: TBBTextColor) => {
-    switch (color) {
-      case 'white':
-        return styles.iconWhite;
-      case 'black':
-        return styles.iconBlack;
-      case 'primary':
-        return styles.iconPrimary;
-      case 'primary_dark':
-        return styles.iconPrimaryDark;
-      case 'primary_light':
-        return styles.iconPrimaryLight;
-      case 'secondary':
-        return styles.iconSecondary;
-      case 'secondary_dark':
-        return styles.iconSecondaryDark;
-      case 'secondary_light':
-        return styles.iconSecondaryLight;
-      case 'accent':
-        return styles.iconAccent;
-      case 'accent_dark':
-        return styles.iconAccentDark;
-      case 'accent_light':
-        return styles.iconAccentLight;
-      case 'danger':
-        return styles.iconDanger;
-      case 'success':
-        return styles.iconSuccess;
-      case 'warning':
-        return styles.iconWarning;
-      case 'info':
-        return styles.iconInfo;
-      default:
-        return 'white';
-    }
+    if (!color) return 'white';
+    return classHelper.icon(color) || 'white';
   };
 
   const renderIcon = (currSide: TBBButtonIconAlign, icon?: IPropsBBButtonIcon) => {
@@ -285,8 +201,8 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
   // class names for buttons
   let baseClassNames = classNames(
     styles.base,
-    getClassVariant(),
-    getClassElevation(),
+    classHelper.variant(variant),
+    classHelper.elevation(elevation),
     // if no border, show no border
     noBorder ? styles.noBorder : null,
     // if disabled, show disabled

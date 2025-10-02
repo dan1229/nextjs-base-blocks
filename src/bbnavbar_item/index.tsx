@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import BBLink from '../bblink';
+import { createClassHelper } from '../utils/scss-class-functions';
 import styles from './styles.module.scss';
 import type { TBBNavbarItemColorBorder } from '../types';
 
@@ -14,27 +15,13 @@ function removeSlashes(str: string | undefined) {
   return res.startsWith('/') ? res.slice(1) : res;
 }
 
+// Create class helper with standardized patterns
+const classHelper = createClassHelper(styles, {
+  border: { prefix: 'border_' },
+});
+
 const getClassColorBorder = (colorBorder: TBBNavbarItemColorBorder): string => {
-  switch (colorBorder) {
-    case 'default':
-      return styles.border_default;
-    case 'transparent':
-      return styles.border_transparent;
-    case 'white':
-      return styles.border_white;
-    case 'grey_light':
-      return styles.border_grey_light;
-    case 'grey_dark':
-      return styles.border_grey_dark;
-    case 'black':
-      return styles.border_black;
-    case 'primary':
-      return styles.border_primary;
-    case 'secondary':
-      return styles.border_secondary;
-    case 'accent':
-      return styles.border_accent;
-  }
+  return classHelper.border(colorBorder) || '';
 };
 
 /**

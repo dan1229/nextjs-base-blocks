@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
+import { createClassHelper } from '../utils/scss-class-functions';
 import styles from './styles.module.scss';
 import type { TBBLoadingSpinnerColor, TBBLoadingSpinnerSizes, TBBLoadingSpinnerVariants } from '../types';
 
@@ -70,54 +71,29 @@ export default function BBLoadingSpinner(Props: IPropsBBLoadingSpinner): React.R
   const finalSize = size || (getDefaultValue('--bb-loading-default-size', 'md') as TBBLoadingSpinnerSizes);
   const finalColor = color || (getDefaultValue('--bb-loading-default-color', 'primary') as TBBLoadingSpinnerColor);
 
+  // Create class helper with standardized patterns
+  const classHelper = createClassHelper(styles, {
+    variant: {
+      prefix: 'loader_',
+      transform: (value: string) => value.replace(/\s+/g, '_')  // Convert 'double circle' to 'double_circle'
+    },
+    size: { prefix: 'loader_' },
+    color: {},  // Direct mapping for colors
+  });
+
   const getLoadingSpinnerClassName = () => {
-    switch (finalVariant) {
-      case 'double circle':
-        return styles.loader_double_circle; // Two rotating circles, inner and outer
-      case 'circle bounce':
-        return styles.loader_circle_bounce; // Single circle that scales up/down
-      case 'spinning square':
-        return styles.loader_spinning_square; // Square that rotates through 90-degree steps
-      case 'default':
-      default:
-        return classNames(styles.loader_default); // Classic rotating border with transparent top
+    if (finalVariant === 'default') {
+      return classNames(styles.loader_default); // Classic rotating border with transparent top
     }
+    return classHelper.variant(finalVariant) || classNames(styles.loader_default);
   };
 
   const getLoadingSpinnerSizeClassName = () => {
-    switch (finalSize) {
-      case 'sm':
-        return styles.loader_sm;
-      case 'md':
-        return styles.loader_md;
-      case 'lg':
-        return styles.loader_lg;
-    }
+    return classHelper.size(finalSize);
   };
 
   const getColorClassName = () => {
-    switch (finalColor) {
-      case 'primary':
-        return styles.primary;
-      case 'secondary':
-        return styles.secondary;
-      case 'accent':
-        return styles.accent;
-      case 'danger':
-        return styles.danger;
-      case 'success':
-        return styles.success;
-      case 'warning':
-        return styles.warning;
-      case 'info':
-        return styles.info;
-      case 'black':
-        return styles.black;
-      case 'white':
-        return styles.white;
-      default:
-        return styles.primary;
-    }
+    return classHelper.color(finalColor) || styles.primary;
   };
 
   return (

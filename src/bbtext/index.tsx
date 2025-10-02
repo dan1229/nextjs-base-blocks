@@ -1,7 +1,14 @@
 import classNames from 'classnames';
 import React from 'react';
+import { createClassHelper } from '../utils/scss-class-functions';
 import styles from './styles.module.scss';
 import type { TBBTextSize, TBBTextColor } from '../types';
+
+// Create class helper with standardized patterns
+const classHelper = createClassHelper(styles, {
+  color: {},  // Direct mapping for most colors
+  size: {},   // Direct mapping for sizes
+});
 
 /**
  * PROPS
@@ -51,63 +58,11 @@ export default function BBText(Props: IPropsBBText): React.ReactElement {
   } = Props;
 
   const getClassColor = (): string => {
-    switch (color) {
-      case 'grey_light':
-        return styles.grey_light;
-      case 'grey_dark':
-        return styles.grey_dark;
-      case 'black':
-        return styles.black;
-      case 'white':
-        return styles.white;
-      case 'primary':
-        return styles.primary;
-      case 'primary_dark':
-        return styles.primary_dark;
-      case 'primary_light':
-        return styles.primary_light;
-      case 'secondary':
-        return styles.secondary;
-      case 'secondary_dark':
-        return styles.secondary_dark;
-      case 'secondary_light':
-        return styles.secondary_light;
-      case 'accent':
-        return styles.accent;
-      case 'accent_dark':
-        return styles.accent_dark;
-      case 'accent_light':
-        return styles.accent_light;
-      case 'success':
-        return styles.success;
-      case 'warning':
-        return styles.warning;
-      case 'danger':
-        return styles.danger;
-      case 'info':
-        return styles.info;
-      default:
-        return styles.color_default;
-    }
+    return classHelper.color(color) || styles.color_default;
   };
 
   const getClassSize = (): string => {
-    switch (size) {
-      case 'tiny':
-        return styles.tiny;
-      case 'small':
-        return styles.small;
-      case 'medium':
-        return styles.medium;
-      case 'large':
-        return styles.large;
-      case 'xlarge':
-        return styles.xlarge;
-      case 'xxlarge':
-        return styles.xxlarge;
-      case 'xxxlarge':
-        return styles.xxxlarge;
-    }
+    return classHelper.size(size) || '';
   };
 
   const getHtmlTag = (): string => {
