@@ -234,6 +234,15 @@
     - find a way to auto detect these so we dont need to manually add
 
 
+#### flutter esque pullout navbars
+- vertical mobile styling
+  - emulate styling from flutter navbars a bit
+    - i.e., always slide out kinda thing
+  - even if a million navbar items make the mobile menu scrollable
+    - overflow-y?
+
+
+
 
 
 
@@ -245,6 +254,15 @@
 
 
 
+
+#### navbar (horizontal) sticky prop
+- add back 'sticky' prop
+  - is it working?
+
+#### consolidate bb field select and bb field select multiple
+- e.g., could just add a `multiple` prop to the select field
+- is this a good move?
+- is it easily do-able
 
 
 ---
@@ -291,48 +309,36 @@
 
 
 #### bbnavbar - mobile styling and sticky option
-- vertical mobile styling
-  - emulate styling from flutter navbars a bit
-    - i.e., always slide out kinda thing
-  - even if a million navbar items make the mobile menu scrollable
-    - overflow-y?
--
-- add back 'sticky' prop
-  - is it working?
 -
 - vertical nav not fitting width of wide action buttons
   - i.e., management button
   - is this expected behavior? if auto setting the width, then it should fit
     - if hardcoding / adjusting the width then it should listen to that
+-
 - similarly we should auto adjust the width at different media sizes?
   - g20 does this - should this be this projects responsibility or the users?
   - probably should tbh it looks weird to not change
     - at the very least make it min-width so when it switches to mobile it takes up less space
 -
-- navbar 'active' not working
+- navbar 'active' not working?
   - i.e., active tab / page should be highlighted
+  - seems to not work all the time - could we improve at all?
 
 
 
 
 
 
-#### consolidate bb field select and bb field select multiple
-- e.g., could just add a `multiple` prop to the select field
-- is this a good move?
-- is it easily do-able
-
-
-
-#### bbloading add variable to set default
-- add --loading-default-state or something so you dont have to make a 'local' component in client projects
 
 
 
 
-### [2.3.0] - 2025-MM-DD
+### [2.3.0] - 2025-10-DD
 - `BBCard`
   - Removed unused `--card-darken-default-color` CSS variable and updated default header/footer backgrounds to be transparent
+- `BBLoadingSpinner`
+  - Added CSS custom variables for setting global defaults: `--bb-loading-default-variant`, `--bb-loading-default-size`, `--bb-loading-default-color`
+  - Allows users to avoid creating wrapper components for different default configurations
 
 -------------------------------------------------------
 

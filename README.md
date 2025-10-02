@@ -148,6 +148,9 @@ html,
   --card-elevation-high: rgba(0, 0, 0, 0.12) 0px 10px 20px, rgba(0, 0, 0, 0.24) 0px 6px 6px;
   // bb divider
   --divider-color-default: rgb(221, 221, 221);
+  --bb-loading-default-variant: default;
+  --bb-loading-default-size: md; 
+  --bb-loading-default-color: primary; 
   // bb modal
   --modal-z-index: 9999;
   // bb navbar
