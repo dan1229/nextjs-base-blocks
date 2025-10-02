@@ -1,4 +1,5 @@
 import { defineConfig } from 'cypress';
+import webpack from 'webpack';
 
 export default defineConfig({
   component: {
@@ -59,11 +60,11 @@ export default defineConfig({
           ],
         },
         plugins: [
-          new (require('webpack')).NormalModuleReplacementPlugin(/\.module\.(scss|sass|css)$/, (resource: any) => {
+          new webpack.NormalModuleReplacementPlugin(/\.module\.(scss|sass|css)$/, (resource: any) => {
             resource.request = 'data:text/javascript,export default new Proxy({}, { get: () => "" });';
           }),
           // Mock next/navigation for component testing
-          new (require('webpack')).NormalModuleReplacementPlugin(/^next\/navigation$/, (resource: any) => {
+          new webpack.NormalModuleReplacementPlugin(/^next\/navigation$/, (resource: any) => {
             resource.request =
               'data:text/javascript,' +
               encodeURIComponent(`
@@ -77,7 +78,7 @@ export default defineConfig({
                 query: {},
                 asPath: '/',
               };
-              
+
               export const useRouter = () => mockRouter;
               export const usePathname = () => '/';
               export const useSearchParams = () => new URLSearchParams();
@@ -87,30 +88,30 @@ export default defineConfig({
             `);
           }),
           // Mock next/link for component testing
-          new (require('webpack')).NormalModuleReplacementPlugin(/^next\/link$/, (resource: any) => {
+          new webpack.NormalModuleReplacementPlugin(/^next\/link$/, (resource: any) => {
             resource.request =
               'data:text/javascript,' +
               encodeURIComponent(`
               import React from 'react';
-              
+
               const Link = ({ href, children, ...props }) => {
                 return React.createElement('a', { href, ...props }, children);
               };
-              
+
               export default Link;
             `);
           }),
           // Mock next/image for component testing
-          new (require('webpack')).NormalModuleReplacementPlugin(/^next\/image$/, (resource: any) => {
+          new webpack.NormalModuleReplacementPlugin(/^next\/image$/, (resource: any) => {
             resource.request =
               'data:text/javascript,' +
               encodeURIComponent(`
               import React from 'react';
-              
+
               const Image = ({ src, alt, ...props }) => {
                 return React.createElement('img', { src, alt, ...props });
               };
-              
+
               export default Image;
             `);
           }),

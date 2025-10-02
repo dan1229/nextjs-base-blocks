@@ -272,16 +272,22 @@
 
 
 #### standardize how we do the class name assigns
-- i.e., some places there are swtich functions
-- some are more manual `textAlign{textAlignment.strip}
-  - bbcard, bbbutton also great examples
+- i.e., some places there are switch function
+  - some are more manual `textAlign{textAlignment.strip}
+    - bbcard, bbbutton also great examples
+-
 - a mess and a half
   - standardize this / the class names somehow
     - could cut down code a ton
   - maybe some utility component?
+    - whats the 'right' way?
+      - something that makes it hard to forget the class
+      - something that's type checked
+      - ideally short on code or abstractable in some way
 -
 - really really really test this to make sure nothings broken!
-
+  - as thorough as possible
+  - like seriously - go component by component
 
 
 
@@ -298,20 +304,17 @@
 #### BBTable component
 - data table with sorting, filtering, pagination
   - look at twineline
+  - similar to react table
 - responsive mobile view (cards on small screens)
 - customizable column definitions
 - built-in loading states
 - support for row selection/actions
 - integrate with existing theming system
+-
+- add demo component
+- add any necesssary docs?
 
 
-
-
-
-#### bbnavbar - mobile styling and sticky option ✅ COMPLETED
-- ✅ vertical nav not fitting width of wide action buttons - FIXED: Auto-adjusts width with new CSS variables
-- ✅ responsive width adjustments for different media sizes - FIXED: Added responsive breakpoint support
-- ✅ navbar 'active' highlighting issues - FIXED: Improved CSS specificity and active state handling
 
 
 
