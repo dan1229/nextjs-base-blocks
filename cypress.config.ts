@@ -78,7 +78,7 @@ export default defineConfig({
                 query: {},
                 asPath: '/',
               };
-              
+
               export const useRouter = () => mockRouter;
               export const usePathname = () => '/';
               export const useSearchParams = () => new URLSearchParams();
@@ -93,11 +93,11 @@ export default defineConfig({
               'data:text/javascript,' +
               encodeURIComponent(`
               import React from 'react';
-              
+
               const Link = ({ href, children, ...props }) => {
                 return React.createElement('a', { href, ...props }, children);
               };
-              
+
               export default Link;
             `);
           }),
@@ -107,11 +107,11 @@ export default defineConfig({
               'data:text/javascript,' +
               encodeURIComponent(`
               import React from 'react';
-              
+
               const Image = ({ src, alt, ...props }) => {
                 return React.createElement('img', { src, alt, ...props });
               };
-              
+
               export default Image;
             `);
           }),

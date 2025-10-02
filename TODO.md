@@ -272,16 +272,22 @@
 
 
 #### standardize how we do the class name assigns
-- i.e., some places there are swtich functions
-- some are more manual `textAlign{textAlignment.strip}
-  - bbcard, bbbutton also great examples
+- i.e., some places there are switch function
+  - some are more manual `textAlign{textAlignment.strip}
+    - bbcard, bbbutton also great examples
+-
 - a mess and a half
   - standardize this / the class names somehow
     - could cut down code a ton
   - maybe some utility component?
+    - whats the 'right' way?
+      - something that makes it hard to forget the class
+      - something that's type checked
+      - ideally short on code or abstractable in some way
 -
 - really really really test this to make sure nothings broken!
-
+  - as thorough as possible
+  - like seriously - go component by component
 
 
 
@@ -298,35 +304,15 @@
 #### BBTable component
 - data table with sorting, filtering, pagination
   - look at twineline
+  - similar to react table
 - responsive mobile view (cards on small screens)
 - customizable column definitions
 - built-in loading states
 - support for row selection/actions
 - integrate with existing theming system
-
-
-
-
-
-#### bbnavbar - mobile styling and sticky option
 -
-- vertical nav not fitting width of wide action buttons
-  - i.e., management button
-  - is this expected behavior? if auto setting the width, then it should fit
-    - if hardcoding / adjusting the width then it should listen to that
--
-- similarly we should auto adjust the width at different media sizes?
-  - g20 does this - should this be this projects responsibility or the users?
-  - probably should tbh it looks weird to not change
-    - at the very least make it min-width so when it switches to mobile it takes up less space
--
-- navbar 'active' not working?
-  - i.e., active tab / page should be highlighted
-  - seems to not work all the time - could we improve at all?
-
-
-
-
+- add demo component
+- add any necesssary docs?
 
 
 
@@ -339,6 +325,12 @@
 - `BBLoadingSpinner`
   - Added CSS custom variables for setting global defaults: `--bb-loading-default-variant`, `--bb-loading-default-size`, `--bb-loading-default-color`
   - Allows users to avoid creating wrapper components for different default configurations
+- `BBNavbar`
+  - Improved vertical navbar width handling: Now automatically adjusts to fit wide action buttons
+  - Added responsive width support: Vertical navbar now adapts to different screen sizes
+    - `--navbar-vertical-width`: Default width (8rem)
+    - `--navbar-vertical-width-xs/sm/md/lg/xl`: Responsive widths for each breakpoint
+  - Improved active state highlighting: Fixed CSS specificity issues that prevented proper active state styling
 
 -------------------------------------------------------
 
