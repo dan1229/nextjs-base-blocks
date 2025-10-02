@@ -100,6 +100,18 @@ export function capitalize(str: string): string {
 }
 
 /**
+ * Converts any string format to standardized snake_case
+ * Handles kebab-case ('inverse-primary' -> 'inverse_primary') and camelCase ('inversePrimary' -> 'inverse_primary')
+ * This is the recommended transform for consistent SCSS class naming
+ */
+export function toStandardSnakeCase(str: string): string {
+  return str
+    .replace(/-/g, '_')  // Convert kebab-case to snake_case
+    .replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`)  // Convert camelCase to snake_case
+    .replace(/^_/, '');  // Remove leading underscore if any
+}
+
+/**
  * Type-safe variant mapper for common component patterns
  * This is the main utility that most components should use
  *

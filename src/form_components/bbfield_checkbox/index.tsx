@@ -1,4 +1,5 @@
 import React from 'react';
+import { getClassName } from '../../utils/scss-class-functions';
 import BBFieldBase from '../bbfield_base';
 import styles from './styles.module.scss';
 import type { IPropsBBBaseForm, TBBFieldCheckboxColor, TBBFieldCheckboxSize } from '../../types';
@@ -19,5 +20,5 @@ export interface IPropsBBFieldCheckbox {
  */
 export default function BBFieldCheckbox(Props: IPropsBBFieldCheckbox & IPropsBBBaseForm): React.ReactElement {
   const { colorCheckbox = 'secondary', size = 'md' } = Props;
-  return <BBFieldBase {...Props} type="checkbox" className={styles[colorCheckbox]} size={size} />;
+  return <BBFieldBase {...Props} type="checkbox" className={getClassName(styles, colorCheckbox)} size={size} />;
 }

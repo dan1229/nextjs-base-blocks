@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import React, { useState } from 'react';
+import { getClassName } from '../../utils/scss-class-functions';
 import InputWrapper from '../input_wrapper';
 import styles from '../styles.module.scss';
 import type { IPropsBBBaseForm, TBBFieldTextType } from '../../types';
@@ -51,7 +52,7 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
   };
 
   const sharedProps = {
-    className: classnames(styles.form_control, styles[size]),
+    className: classnames(styles.form_control, getClassName(styles, size)),
     id: fieldName,
     autoComplete: getAutoComplete(),
     required: required,

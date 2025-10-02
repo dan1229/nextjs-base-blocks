@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import React, { useState, useRef } from 'react';
 import BBText from '../bbtext';
-import { createClassHelper, toCamelCase } from '../utils/scss-class-functions';
+import { createClassHelper, toStandardSnakeCase } from '../utils/scss-class-functions';
 import styles from './styles.module.scss';
 import type {
   TBBButtonIconAlign,
@@ -112,9 +112,9 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
 
   // Create class helper with standardized patterns
   const classHelper = createClassHelper(styles, {
-    variant: { transform: toCamelCase },
-    elevation: { prefix: 'elevation', transform: toCamelCase },
-    icon: { prefix: 'icon', transform: toCamelCase },
+    variant: { transform: toStandardSnakeCase },
+    elevation: { prefix: 'elevation_' },
+    icon: { prefix: 'icon_', transform: toStandardSnakeCase },
   });
 
   // handle hover state
@@ -148,7 +148,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
 
   const renderIcon = (currSide: TBBButtonIconAlign, icon?: IPropsBBButtonIcon) => {
     if (!icon || !icon.icon) return null;
-    const element = <span className={classNames(styles.containerIcon, getIconColor(icon.color))}>{icon.icon}</span>;
+    const element = <span className={classNames(styles.container_icon, getIconColor(icon.color))}>{icon.icon}</span>;
     if (align === 'left' && currSide === 'left') {
       return element;
     } else if (align === 'right' && currSide === 'right') {
@@ -166,10 +166,9 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
   const mainComponent = (
     <span
       className={classNames(
-        styles.containerMain,
-        align === 'above' || align === 'below' ? styles.contentVertical : null,
-        align === 'space-between' ? styles.baseSpaceBetween : null,
-        isHovered && helperTextOnHover ? styles.showHelperText : null,
+        styles.container_main,
+        align === 'above' || align === 'below' ? styles.content_vertical : null,
+        align === 'space-between' ? styles.base_space_between : null,
         classNameHelperText
       )}
       ref={mainWrapperRef}
@@ -178,7 +177,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     >
       {renderIcon('left', icon)}
       {!!text && (
-        <span className={classNames(styles.containerText)}>
+        <span className={classNames(styles.container_text)}>
           <BBText color={colorText} size={getButtonSize()}>
             {text}
           </BBText>
@@ -186,9 +185,9 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
       )}
       {renderIcon('right', icon)}
       {helperTextOnHover && (
-        <span className={classNames(styles.helperText, isHovered && styles.helperTextVisible)} ref={helperTextRef}>
-          <span className={styles.helperTextContent}>
-            <BBText color="white" size="small" className={styles.helperTextQuestionMark}>
+        <span className={classNames(styles.helper_text, isHovered && styles.helper_text_visible)} ref={helperTextRef}>
+          <span className={styles.helper_text_content}>
+            <BBText color="white" size="small" className={styles.helper_text_question_mark}>
               ?
             </BBText>
             <BBText size="small">{helperTextOnHover}</BBText>
@@ -204,7 +203,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     classHelper.variant(variant),
     classHelper.elevation(elevation),
     // if no border, show no border
-    noBorder ? styles.noBorder : null,
+    noBorder ? styles.no_border : null,
     // if disabled, show disabled
     disabledRes ? styles.disabled : null,
     // if transparent, show transparent

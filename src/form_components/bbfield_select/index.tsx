@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
+import { getClassName } from '../../utils/scss-class-functions';
 import InputWrapper from '../input_wrapper';
 import styles from '../styles.module.scss';
 import type { IBBFieldSelectOptions, IPropsBBBaseForm, TBBFieldBaseSize } from '../../types';
@@ -33,7 +34,7 @@ export default function BBFieldSelect(Props: IPropsBBFieldSelect & IPropsBBBaseF
     <InputWrapper {...Props}>
       <div className={styles.select_wrapper}>
         <select
-          className={classnames(styles.form_control, styles[size])}
+          className={classnames(styles.form_control, getClassName(styles, size))}
           id={fieldName}
           required={required}
           onChange={onChange}

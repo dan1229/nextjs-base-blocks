@@ -312,7 +312,9 @@
 
 
 
-standardize the class naming convention?
+make sure we got all the components / form components
+
+standardize the class naming convention
 - all classes should be "class_name" not "className"
   - choose whichever is the easiest refactor honestl
 - make sure our new methodology works with this

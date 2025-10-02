@@ -12,7 +12,8 @@
       "WebSearch",
       "Bash(npx cypress open:*)",
       "Bash(npm run test:coverage:*)",
-      "Bash(npx cypress:*)"
+      "Bash(npx cypress:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []
