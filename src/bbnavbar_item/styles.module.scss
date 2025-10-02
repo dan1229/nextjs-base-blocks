@@ -38,22 +38,8 @@ $navbar-item-bg-color-active: var(--navbar-item-bg-color-active, $bg-dark-color)
 $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
 
 .active {
-  background-color: $navbar-item-bg-color-active !important;
+  background-color: $navbar-item-bg-color-active;
   border-radius: $border-radius;
-
-  // Ensure active text color is applied properly
-  .textLink {
-    color: $navbar-item-text-color !important;
-  }
-
-  // Ensure active state overrides hover styles
-  &:hover {
-    background-color: $navbar-item-bg-color-active !important;
-
-    .textLink {
-      color: $navbar-item-text-color !important;
-    }
-  }
 }
 
 .textLink {
@@ -138,17 +124,37 @@ $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
   }
 }
 
-// TODO find a better selector than these two
-// this is for the text
+// Hover state selectors
 .navbarItemBase:hover > div > div > a > * {
-  // need the !important to override the default color / active color
-  color: $navbar-item-text-color-hover !important;
+  color: $navbar-item-text-color-hover;
 }
 
-// this is for the icon
 .navbarItemBase:hover > div > div > .iconDropdown {
-  // need the !important to override the default color / active color
-  color: $navbar-item-text-color-hover !important;
+  color: $navbar-item-text-color-hover;
+}
+
+// Active state selectors (must come after hover to have proper precedence)
+.navbarItemBase.active > div > div > a > *,
+.navbarItemBase.active .textLink,
+.navbarItemBase.active .textLink * {
+  color: $navbar-item-text-color;
+}
+
+.navbarItemBase.active > div > div > .iconDropdown,
+.navbarItemBase.active .iconDropdown {
+  color: $navbar-item-text-color;
+}
+
+// Active state should override hover
+.navbarItemBase.active:hover > div > div > a > *,
+.navbarItemBase.active:hover .textLink,
+.navbarItemBase.active:hover .textLink * {
+  color: $navbar-item-text-color;
+}
+
+.navbarItemBase.active:hover > div > div > .iconDropdown,
+.navbarItemBase.active:hover .iconDropdown {
+  color: $navbar-item-text-color;
 }
 
 .navbarContentContainer {
@@ -166,35 +172,6 @@ $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
 .iconDropdown {
   color: $navbar-item-text-color;
   margin-right: 0.2rem;
-}
-
-.active .iconDropdown {
-  color: $navbar-item-text-color !important;
-}
-
-// Ensure active state is properly applied in vertical navbars
-.vertical .active {
-  background-color: $navbar-item-bg-color-active !important;
-
-  .textLink {
-    color: $navbar-item-text-color !important;
-  }
-
-  .iconDropdown {
-    color: $navbar-item-text-color !important;
-  }
-
-  &:hover {
-    background-color: $navbar-item-bg-color-active !important;
-
-    .textLink {
-      color: $navbar-item-text-color !important;
-    }
-
-    .iconDropdown {
-      color: $navbar-item-text-color !important;
-    }
-  }
 }
 
 /**
