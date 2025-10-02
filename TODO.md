@@ -328,11 +328,6 @@
 
 
 
-
-
-
-
-
 ### [2.3.0] - 2025-10-DD
 - `BBCard`
   - Removed unused `--card-darken-default-color` CSS variable and updated default header/footer backgrounds to be transparent
