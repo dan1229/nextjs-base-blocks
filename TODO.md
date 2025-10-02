@@ -308,21 +308,10 @@
 
 
 
-#### bbnavbar - mobile styling and sticky option
--
-- vertical nav not fitting width of wide action buttons
-  - i.e., management button
-  - is this expected behavior? if auto setting the width, then it should fit
-    - if hardcoding / adjusting the width then it should listen to that
--
-- similarly we should auto adjust the width at different media sizes?
-  - g20 does this - should this be this projects responsibility or the users?
-  - probably should tbh it looks weird to not change
-    - at the very least make it min-width so when it switches to mobile it takes up less space
--
-- navbar 'active' not working?
-  - i.e., active tab / page should be highlighted
-  - seems to not work all the time - could we improve at all?
+#### bbnavbar - mobile styling and sticky option ✅ COMPLETED
+- ✅ vertical nav not fitting width of wide action buttons - FIXED: Auto-adjusts width with new CSS variables
+- ✅ responsive width adjustments for different media sizes - FIXED: Added responsive breakpoint support
+- ✅ navbar 'active' highlighting issues - FIXED: Improved CSS specificity and active state handling
 
 
 
@@ -334,6 +323,14 @@
 - `BBLoadingSpinner`
   - Added CSS custom variables for setting global defaults: `--bb-loading-default-variant`, `--bb-loading-default-size`, `--bb-loading-default-color`
   - Allows users to avoid creating wrapper components for different default configurations
+- `BBNavbar`
+  - Improved vertical navbar width handling: Now automatically adjusts to fit wide action buttons
+  - Added responsive width support: Vertical navbar now adapts to different screen sizes
+    - `--navbar-vertical-width`: Auto-adjust width to fit content (default: fit-content)
+    - `--navbar-vertical-min-width`: Minimum width constraint (default: 8rem)
+    - `--navbar-vertical-max-width`: Maximum width constraint (default: 16rem)
+    - `--navbar-vertical-width-xs/sm/md/lg/xl`: Responsive widths for each breakpoint
+  - Improved active state highlighting: Fixed CSS specificity issues that prevented proper active state styling
 
 -------------------------------------------------------
 

@@ -38,9 +38,22 @@ $navbar-item-bg-color-active: var(--navbar-item-bg-color-active, $bg-dark-color)
 $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
 
 .active {
-  background-color: $navbar-item-text-color;
-  background-color: $navbar-item-bg-color-active;
+  background-color: $navbar-item-bg-color-active !important;
   border-radius: $border-radius;
+
+  // Ensure active text color is applied properly
+  .textLink {
+    color: $navbar-item-text-color !important;
+  }
+
+  // Ensure active state overrides hover styles
+  &:hover {
+    background-color: $navbar-item-bg-color-active !important;
+
+    .textLink {
+      color: $navbar-item-text-color !important;
+    }
+  }
 }
 
 .textLink {
@@ -156,7 +169,32 @@ $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
 }
 
 .active .iconDropdown {
-  color: $navbar-item-text-color;
+  color: $navbar-item-text-color !important;
+}
+
+// Ensure active state is properly applied in vertical navbars
+.vertical .active {
+  background-color: $navbar-item-bg-color-active !important;
+
+  .textLink {
+    color: $navbar-item-text-color !important;
+  }
+
+  .iconDropdown {
+    color: $navbar-item-text-color !important;
+  }
+
+  &:hover {
+    background-color: $navbar-item-bg-color-active !important;
+
+    .textLink {
+      color: $navbar-item-text-color !important;
+    }
+
+    .iconDropdown {
+      color: $navbar-item-text-color !important;
+    }
+  }
 }
 
 /**
