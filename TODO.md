@@ -330,16 +330,9 @@
 
 
 
-#### bbcard vars
-  --card-darken-default-color: rgb(51, 65, 85);
-are these being used?
-- we're not darkening footers / headers anymore
-
-
-
-
 ### [2.3.0] - 2025-MM-DD
-- TODO
+- `BBCard`
+  - Removed unused `--card-darken-default-color` CSS variable and updated default header/footer backgrounds to be transparent
 
 -------------------------------------------------------
 

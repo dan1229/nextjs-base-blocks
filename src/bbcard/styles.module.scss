@@ -29,7 +29,6 @@ $info-dark-color: var(--info-dark-color, #1976d2);
 
 // default colors
 $card-background-default-color: var(--card-background-default-color, #ffffff);
-$card-darken-default-color: var(--card-darken-default-color, #e0e0e0);
 $card-border-default-color: var(--card-border-default-color, #e0e0e0);
 
 // variables
@@ -296,8 +295,8 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 }
 
 .background_footer_default {
-  border-top: 1px solid $card-darken-default-color;
-  background-color: $card-darken-default-color;
+  border-top: 1px solid transparent !important;
+  background-color: transparent !important;
 }
 
 .background_footer_transparent {
@@ -449,8 +448,8 @@ $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rg
 }
 
 .background_header_default {
-  border-bottom: 1px solid $card-darken-default-color !important;
-  background-color: $card-darken-default-color !important;
+  border-bottom: 1px solid transparent !important;
+  background-color: transparent !important;
 }
 
 .background_header_transparent {

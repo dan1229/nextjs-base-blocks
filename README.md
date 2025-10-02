@@ -139,7 +139,6 @@ html,
   --button-border-radius: 1rem;
   // bb card
   --card-background-default-color: rgb(250, 250, 250);
-  --card-darken-default-color: rgb(220, 220, 220);
   --card-border-default-color: rgb(230, 230, 230);
   --card-border-radius: 1rem;
   --card-border-thickness: 2px;
@@ -282,7 +281,6 @@ Add overrides for dark themes like so:
   --navbar-background-color: rgb(54, 54, 54);
   // bb card
   --card-background-default-color: rgb(77, 77, 77);
-  --card-darken-default-color: rgb(39, 39, 39);
   --card-border-default-color: rgb(77, 77, 77);
   // bb divider
   --divider-color-default: rgb(77, 77, 77);
