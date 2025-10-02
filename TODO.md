@@ -315,12 +315,6 @@
 
 
 
-✅ cypress tests - FIXED
-- reverted to clean ES6 imports (no requires)
-- restored original Cypress 14.5.0 version
-- config now matches working state
-
-
 
 ### [2.3.0] - 2025-10-DD
 - `BBCard`

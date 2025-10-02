@@ -1,5 +1,4 @@
 import { defineConfig } from 'cypress';
-import webpack from 'webpack';
 
 export default defineConfig({
   component: {
@@ -60,11 +59,11 @@ export default defineConfig({
           ],
         },
         plugins: [
-          new webpack.NormalModuleReplacementPlugin(/\.module\.(scss|sass|css)$/, (resource: any) => {
+          new (require('webpack')).NormalModuleReplacementPlugin(/\.module\.(scss|sass|css)$/, (resource: any) => {
             resource.request = 'data:text/javascript,export default new Proxy({}, { get: () => "" });';
           }),
           // Mock next/navigation for component testing
-          new webpack.NormalModuleReplacementPlugin(/^next\/navigation$/, (resource: any) => {
+          new (require('webpack')).NormalModuleReplacementPlugin(/^next\/navigation$/, (resource: any) => {
             resource.request =
               'data:text/javascript,' +
               encodeURIComponent(`
@@ -88,7 +87,7 @@ export default defineConfig({
             `);
           }),
           // Mock next/link for component testing
-          new webpack.NormalModuleReplacementPlugin(/^next\/link$/, (resource: any) => {
+          new (require('webpack')).NormalModuleReplacementPlugin(/^next\/link$/, (resource: any) => {
             resource.request =
               'data:text/javascript,' +
               encodeURIComponent(`
@@ -102,7 +101,7 @@ export default defineConfig({
             `);
           }),
           // Mock next/image for component testing
-          new webpack.NormalModuleReplacementPlugin(/^next\/image$/, (resource: any) => {
+          new (require('webpack')).NormalModuleReplacementPlugin(/^next\/image$/, (resource: any) => {
             resource.request =
               'data:text/javascript,' +
               encodeURIComponent(`
