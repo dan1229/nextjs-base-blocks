@@ -292,40 +292,6 @@
 
 
 
-#### standardize how we do the class name assigns
-- i.e., some places there are switch function
-  - some are more manual `textAlign{textAlignment.strip}
-    - bbcard, bbbutton also great examples
--
-- a mess and a half
-  - standardize this / the class names somehow
-    - could cut down code a ton
-  - maybe some utility component?
-    - whats the 'right' way?
-      - something that makes it hard to forget the class
-      - something that's type checked
-      - ideally short on code or abstractable in some way
--
-- really really really test this to make sure nothings broken!
-  - as thorough as possible
-  - like seriously - go component by component
-
-
-
-make sure we got all the components / form components
-
-standardize the class naming convention
-- all classes should be "class_name" not "className"
-  - choose whichever is the easiest refactor honestl
-- make sure our new methodology works with this
-  - remove any unecessary code
-- make sure ALL components are updated
-
-
-REALLY REALLY FOCUS ON MAKING SURE THIS IS ALL STILL WORKING. CLASSES SHOULD ALL EXIST AND BE PROPERLY 'MIGRATED'
-
-
-
 
 
 ### [2.3.0] - 2025-10-DD
