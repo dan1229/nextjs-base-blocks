@@ -331,6 +331,7 @@ REALLY REALLY FOCUS ON MAKING SURE THIS IS ALL STILL WORKING. CLASSES SHOULD ALL
 ### [2.3.0] - 2025-10-DD
 - `BBCard`
   - Removed unused `--card-darken-default-color` CSS variable and updated default header/footer backgrounds to be transparent
+  - BREAKING CHANGE: BBCard `elevation` prop standardized from `'med'` to `'medium'` for consistency with other components
 - `BBLoadingSpinner`
   - Added CSS custom variables for setting global defaults: `--bb-loading-default-variant`, `--bb-loading-default-size`, `--bb-loading-default-color`
   - Allows users to avoid creating wrapper components for different default configurations

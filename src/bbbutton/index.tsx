@@ -142,8 +142,8 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
 
 
   const getIconColor = (color?: TBBTextColor) => {
-    if (!color) return 'white';
-    return classHelper.icon(color) || 'white';
+    const defaultIconColor = 'white';
+    return color ? (classHelper.icon(color) || defaultIconColor) : defaultIconColor;
   };
 
   const renderIcon = (currSide: TBBButtonIconAlign, icon?: IPropsBBButtonIcon) => {

@@ -111,10 +111,11 @@ export function createClassHelper<
     [K in keyof TConfig]: <T extends string>(value: T | null | undefined) => string | undefined;
   };
 
-  for (const [key, options] of Object.entries(config)) {
-    helper[key as keyof TConfig] = <T extends string>(value: T | null | undefined) =>
+  (Object.keys(config) as Array<keyof TConfig>).forEach((key) => {
+    const options = config[key];
+    helper[key] = <T extends string>(value: T | null | undefined) =>
       getClassName(styles, value, options.prefix, options.suffix, options.transform);
-  }
+  });
 
   return helper;
 }
