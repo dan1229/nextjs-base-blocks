@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
-import { createClassHelper } from '../utils/scss-class-functions';
+import { createClassHelper, toStandardSnakeCase } from '../utils/scss-class-functions';
 import styles from './styles.module.scss';
 import type { TBBLoadingSpinnerColor, TBBLoadingSpinnerSizes, TBBLoadingSpinnerVariants } from '../types';
 
@@ -75,7 +75,7 @@ export default function BBLoadingSpinner(Props: IPropsBBLoadingSpinner): React.R
   const classHelper = createClassHelper(styles, {
     variant: {
       prefix: 'loader_',
-      transform: (value: string) => value.replace(/\s+/g, '_')  // Convert 'double circle' to 'double_circle'
+      transform: toStandardSnakeCase  // Convert 'double circle' to 'double_circle', handles kebab-case and camelCase too
     },
     size: { prefix: 'loader_' },
     color: {},  // Direct mapping for colors

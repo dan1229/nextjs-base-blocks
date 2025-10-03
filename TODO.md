@@ -322,7 +322,7 @@ standardize the class naming convention
 - make sure ALL components are updated
 
 
-
+REALLY REALLY FOCUS ON MAKING SURE THIS IS ALL STILL WORKING. CLASSES SHOULD ALL EXIST AND BE PROPERLY 'MIGRATED'
 
 
 
@@ -342,6 +342,7 @@ standardize the class naming convention
   - Improved active state highlighting: Fixed CSS specificity issues that prevented proper active state styling
 - Standardized SCSS class selection
   - i.e., SCSS switch statements were all over the place, inconsistent and fragile
+  - Major refactoring
 
 -------------------------------------------------------
 

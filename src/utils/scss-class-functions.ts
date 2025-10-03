@@ -106,11 +106,13 @@ export function createClassHelper<
 ): {
   [K in keyof TConfig]: <T extends string>(value: T | null | undefined) => string | undefined;
 } {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const helper: any = {};
+  // Use a type assertion to ensure helper matches the expected return type
+  const helper = {} as {
+    [K in keyof TConfig]: <T extends string>(value: T | null | undefined) => string | undefined;
+  };
 
   for (const [key, options] of Object.entries(config)) {
-    helper[key] = <T extends string>(value: T | null | undefined) =>
+    helper[key as keyof TConfig] = <T extends string>(value: T | null | undefined) =>
       getClassName(styles, value, options.prefix, options.suffix, options.transform);
   }
 

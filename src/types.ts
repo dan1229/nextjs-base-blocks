@@ -115,7 +115,7 @@ export type TBBCardColorBorder =
   | 'info'
   | 'info_light'
   | 'info_dark';
-export type TBBCardElevation = 'none' | 'low' | 'med' | 'high' | 'default';
+export type TBBCardElevation = 'none' | 'low' | 'medium' | 'high' | 'default';
 
 /**
  * BBDivider

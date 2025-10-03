@@ -57,7 +57,7 @@ const BBCard = (Props: IPropsBBBase & IPropsBBCard) => {
     children,
     colorBackground = 'default',
     colorBorder = 'default',
-    elevation = 'med',
+    elevation = 'medium',
     className,
     onClick,
     href,

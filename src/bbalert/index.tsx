@@ -8,10 +8,7 @@ import type { TBBAlertVariant, TBBAlertElevation, TBBAlertTextAlignment } from '
 // Create class helper with standardized patterns
 const classHelper = createClassHelper(styles, {
   variant: { prefix: 'color_' },
-  elevation: {
-    prefix: 'elevation_',
-    transform: (value: string) => value === 'medium' ? 'med' : value
-  },
+  elevation: { prefix: 'elevation_' },
   textAlignment: { prefix: 'text_' },
 });
 
