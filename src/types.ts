@@ -280,3 +280,27 @@ export interface IBBFieldSelectMultipleOptions {
 
 // TBBFieldText
 export type TBBFieldTextType = 'text' | 'textarea' | 'number' | 'password';
+
+/**
+ * BBTable
+ */
+export type TBBTableVariant = 'default' | 'striped' | 'bordered' | 'hover';
+export type TBBTableSize = 'sm' | 'md' | 'lg';
+export type TBBTableElevation = 'none' | 'low' | 'medium' | 'high' | 'default';
+export type TBBTableSortDirection = 'asc' | 'desc' | null;
+
+export interface IBBTableColumn<T = any> {
+  key: string;
+  header: string;
+  accessor?: keyof T | ((row: T) => any);
+  sortable?: boolean;
+  filterable?: boolean;
+  render?: (value: any, row: T, index: number) => React.ReactNode;
+  width?: string;
+  minWidth?: string;
+  maxWidth?: string;
+}
+
+export interface IBBTableData {
+  [key: string]: any;
+}
