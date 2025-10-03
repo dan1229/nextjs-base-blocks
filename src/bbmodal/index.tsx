@@ -5,6 +5,7 @@ import BBButton from '../bbbutton';
 import BBCard from '../bbcard';
 import BBLoadingSpinner from '../bbloading_spinner';
 import BBText from '../bbtext';
+import { getClassName } from '../utils/scss-class-functions';
 import styles from './styles.module.scss';
 import type { TBBCardColorBorder, TBBModalWidth, TBBTextSize } from '../types';
 
@@ -105,7 +106,7 @@ export default function BBModal(Props: IPropsBBModal): React.ReactElement {
    */
   return (
     <div className={styles.containerModal} onClick={onClickContainer}>
-      <BBCard className={classnames(styles.modal, styles[width])} colorBorder={colorBorder}>
+      <BBCard className={classnames(styles.modal, getClassName(styles, width))} colorBorder={colorBorder}>
         <BBCard.Header noPadding>
           <div className={styles.headerRow}>
             <BBText size={headerTextSize}>{title}</BBText>

@@ -7,6 +7,7 @@ import React, { useState, useRef } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import BBText from '../bbtext';
 import useOutsideClick from '../utils/hooks/UseOutsideClick';
+import { createClassHelper, capitalize } from '../utils/scss-class-functions';
 import styles from './styles.module.scss';
 import type {
   IPropsBBBase,
@@ -86,6 +87,13 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
     verticalAlignment = 'top',
   } = props;
 
+  // Create class helper with standardized patterns
+  const classHelper = createClassHelper(styles, {
+    elevation: { prefix: 'elevation_' },
+    textAlign: { prefix: 'textAlign', transform: capitalize },
+    verticalAlign: { prefix: 'verticalAlign', transform: capitalize },
+  });
+
   const [showNavExpanded, setShowNavExpanded] = useState(false);
   const router = useRouter();
 
@@ -95,25 +103,13 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
     setShowNavExpanded(false);
   });
 
-  const getClassElevation = () => {
-    switch (elevation) {
-      case 'none':
-        return styles.elevation_none;
-      case 'low':
-        return styles.elevation_low;
-      case 'high':
-        return styles.elevation_high;
-      case 'rainbow':
-        return styles.elevation_rainbow;
-    }
-  };
 
   /**
    * RENDER
    */
   return (
     <div className={classNames(styles.wrapper, vertical && styles.vertical, classNameWrapper)}>
-      <nav className={classNames(styles.navigation, getClassElevation(), vertical && styles.vertical)} ref={ref}>
+      <nav className={classNames(styles.navigation, classHelper.elevation(elevation), vertical && styles.vertical)} ref={ref}>
         <div className={classNames(styles.wrapperBrandAndHamburger, vertical && styles.verticalWrapper)}>
           <div className={styles.hamburger}>
             <AiOutlineMenu
@@ -140,8 +136,8 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
             styles.navigationMenu,
             showNavExpanded && styles.expanded,
             vertical && styles.vertical,
-            vertical && styles[`textAlign${textAlignment.charAt(0).toUpperCase() + textAlignment.slice(1)}`],
-            vertical && styles[`verticalAlign${verticalAlignment.charAt(0).toUpperCase() + verticalAlignment.slice(1)}`]
+            vertical && classHelper.textAlign(textAlignment),
+            vertical && classHelper.verticalAlign(verticalAlignment)
           )}
         >
           <ul className={styles.navigationMenuList}>{children}</ul>

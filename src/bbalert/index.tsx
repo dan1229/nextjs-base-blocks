@@ -1,8 +1,16 @@
 import classNames from 'classnames';
 import React, { useState } from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
+import { createClassHelper } from '../utils/scss-class-functions';
 import styles from './styles.module.scss';
 import type { TBBAlertVariant, TBBAlertElevation, TBBAlertTextAlignment } from '../types';
+
+// Create class helper with standardized patterns
+const classHelper = createClassHelper(styles, {
+  variant: { prefix: 'color_' },
+  elevation: { prefix: 'elevation_' },
+  textAlignment: { prefix: 'text_' },
+});
 
 /**
  * PROPS
@@ -47,42 +55,6 @@ export default function BBAlert(Props: IPropsBBAlert): React.ReactElement {
     return <></>;
   }
 
-  const getClassVariant = (): string => {
-    switch (variant) {
-      case 'success':
-        return styles.color_success;
-      case 'warning':
-        return styles.color_warning;
-      case 'danger':
-        return styles.color_danger;
-      case 'info':
-        return styles.color_info;
-    }
-  };
-
-  const getClassElevation = (): string => {
-    switch (elevation) {
-      case 'none':
-        return styles.elevation_none;
-      case 'low':
-        return styles.elevation_low;
-      case 'medium':
-        return styles.elevation_med;
-      case 'high':
-        return styles.elevation_high;
-    }
-  };
-
-  const getClassTextAlignment = (): string => {
-    switch (textAlignment) {
-      case 'left':
-        return styles.text_left;
-      case 'center':
-        return styles.text_center;
-      case 'right':
-        return styles.text_right;
-    }
-  };
 
   const onClickDismiss = (e: React.MouseEvent<SVGSVGElement>): void => {
     setIsDismissed(true);
@@ -102,9 +74,9 @@ export default function BBAlert(Props: IPropsBBAlert): React.ReactElement {
       className={classNames(
         className,
         styles.base,
-        getClassVariant(),
-        getClassElevation(),
-        getClassTextAlignment(),
+        classHelper.variant(variant),
+        classHelper.elevation(elevation),
+        classHelper.textAlignment(textAlignment),
         onClick && styles.clickable
       )}
       onClick={onClick && onClickOverride}

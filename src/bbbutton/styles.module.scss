@@ -47,12 +47,12 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
   }
 }
 
-.noBorder {
+.no_border {
   border: none !important;
 }
 
 //container main with hover classes
-.containerMain {
+.container_main {
   width: 100%;
   height: 100%;
   display: flex;
@@ -61,8 +61,8 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
   gap: 0.5rem;
 
   // Show helper text on hover or focus
-  &:hover .helperText,
-  &:focus .helperText {
+  &:hover .helper_text,
+  &:focus .helper_text {
     display: block;
   }
 }
@@ -73,17 +73,17 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
 }
 
 // vertical for content i.e., if icons and text are in a column
-.contentVertical {
+.content_vertical {
   flex-direction: column;
 }
 
 // base space between
-.baseSpaceBetween {
+.base_space_between {
   justify-content: space-between;
 }
 
 // container text
-.containerText {
+.container_text {
   height: 100%;
   display: flex;
   align-items: center;
@@ -115,7 +115,7 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
 }
 
 // container icon
-.containerIcon {
+.container_icon {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -132,13 +132,13 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
 }
 
 // Adjusts for when icon and text should be vertically aligned
-.contentVertical .containerIcon {
+.content_vertical .container_icon {
   margin-right: 0;
   margin-bottom: 0.4rem; // Adjust for vertical spacing between icon and text
 }
 
 // helper text
-.helperText {
+.helper_text {
   position: absolute;
   max-width: 10rem;
   top: calc(100% + 4px);
@@ -156,13 +156,13 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
   }
 }
 
-.helperTextContent {
+.helper_text_content {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.helperTextQuestionMark {
+.helper_text_question_mark {
   background-color: $grey-light;
   border-radius: 1rem;
   padding: 0.2rem 0.4rem;
@@ -170,26 +170,26 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
 }
 
 // helper text visible
-.helperTextVisible {
+.helper_text_visible {
   display: block !important;
 }
 
 /**
 * ELEVATION
 */
-.elevationNone {
+.elevation_none {
   box-shadow: none;
 }
 
-.elevationLow {
+.elevation_low {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
-.elevationMedium {
+.elevation_medium {
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
-.elevationHigh {
+.elevation_high {
   box-shadow: rgba(0, 0, 0, 0.3) 0px 15px 30px, rgba(0, 0, 0, 0.22) 0px 12px 10px;
 }
 
@@ -499,7 +499,7 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
 }
 
 // INVERSE INFO
-.inverseInfo {
+.inverse_info {
   background-color: $white;
   border: 2px solid $info-color;
 
@@ -528,7 +528,7 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
 }
 
 // INVERSE PRIMARY
-.inversePrimary {
+.inverse_primary {
   background-color: $white;
   border: 2px solid $primary-color;
 
@@ -557,7 +557,7 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
 }
 
 // INVERSE SECONDARY
-.inverseSecondary {
+.inverse_secondary {
   background-color: $white;
   border: 2px solid $secondary-color;
 
@@ -586,7 +586,7 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
 }
 
 // INVERSE ACCENT
-.inverseAccent {
+.inverse_accent {
   background-color: $white;
   border: 2px solid $accent-color;
 
@@ -615,7 +615,7 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
 }
 
 // INVERSE DANGER
-.inverseDanger {
+.inverse_danger {
   background-color: $white;
   border: 2px solid $danger-color;
 
@@ -644,7 +644,7 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
 }
 
 // INVERSE SUCCESS
-.inverseSuccess {
+.inverse_success {
   background-color: $white;
   border: 2px solid $success-color;
 
@@ -673,7 +673,7 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
 }
 
 // INVERSE WARNING
-.inverseWarning {
+.inverse_warning {
   background-color: $white;
   border: 2px solid $warning-color;
 
@@ -702,7 +702,7 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
 }
 
 // TRANSPARENT PRIMARY
-.transparentPrimary {
+.transparent_primary {
   background-color: transparent;
   border: 1px solid $primary-color;
 
@@ -731,7 +731,7 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
 }
 
 // TRANSPARENT SECONDARY
-.transparentSecondary {
+.transparent_secondary {
   background-color: transparent;
   border: 1px solid $secondary-color;
 
@@ -760,7 +760,7 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
 }
 
 // TRANSPARENT ACCENT
-.transparentAccent {
+.transparent_accent {
   background-color: transparent;
   border: 1px solid $accent-color;
 
@@ -791,62 +791,62 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
 /**
 * ICON COLORS
 */
-.iconBlack {
+.icon_black {
   color: $black;
 }
 
-.iconWhite {
+.icon_white {
   color: $white;
 }
 
-.iconPrimary {
+.icon_primary {
   color: $primary-color;
 }
 
-.iconPrimaryLight {
+.icon_primary_light {
   color: $primary-light-color;
 }
 
-.iconPrimaryDark {
+.icon_primary_dark {
   color: $primary-dark-color;
 }
 
-.iconSecondary {
+.icon_secondary {
   color: $secondary-color;
 }
 
-.iconSecondaryLight {
+.icon_secondary_light {
   color: $secondary-light-color;
 }
 
-.iconSecondaryDark {
+.icon_secondary_dark {
   color: $secondary-dark-color;
 }
 
-.iconAccent {
+.icon_accent {
   color: $accent-color;
 }
 
-.iconAccentLight {
+.icon_accent_light {
   color: $accent-light-color;
 }
 
-.iconAccentDark {
+.icon_accent_dark {
   color: $accent-dark-color;
 }
 
-.iconDanger {
+.icon_danger {
   color: $danger-color;
 }
 
-.iconSuccess {
+.icon_success {
   color: $success-color;
 }
 
-.iconWarning {
+.icon_warning {
   color: $warning-color;
 }
 
-.iconInfo {
+.icon_info {
   color: $info-color;
 }

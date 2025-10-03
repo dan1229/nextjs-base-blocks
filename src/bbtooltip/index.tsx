@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import { AiOutlineQuestion } from 'react-icons/ai';
 import BBButton from '../bbbutton';
 import BBText from '../bbtext';
+import { getClassName, toStandardSnakeCase } from '../utils/scss-class-functions';
 import styles from './styles.module.scss';
 import type { TBBButtonVariant } from '../types';
 
@@ -45,7 +46,7 @@ export default function BBTooltip(Props: IPropsBBTooltip): React.ReactElement {
 
       {/* tooltip content */}
       <div
-        className={classnames(styles.tooltip, styles[variant], {
+        className={classnames(styles.tooltip, getClassName(styles, variant, '', '', toStandardSnakeCase), {
           [styles.visible]: isVisible,
         })}
       >

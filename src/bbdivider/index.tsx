@@ -2,6 +2,7 @@
 
 import classNames from 'classnames';
 import React from 'react';
+import { createClassHelper, capitalize } from '../utils/scss-class-functions';
 import styles from './styles.module.scss';
 import type {
   TBBDividerColor,
@@ -47,23 +48,27 @@ export default function BBDivider(Props: IPropsBBDivider): React.ReactElement {
     className,
   } = Props;
 
+  // Create class helper with standardized patterns
+  const classHelper = createClassHelper(styles, {
+    orientation: {},
+    styleType: { prefix: 'style', transform: capitalize },
+    thickness: { prefix: 'thickness' },
+    length: { prefix: 'length' },
+    margin: { prefix: 'margin' },
+    color: { prefix: 'color' },
+  });
+
   const dividerClass = classNames(
     styles.divider,
-    styles[orientation],
-    styles[`style${capitalize(styleType)}`],
-    styles[`thickness${thickness}`],
-    styles[`length${length}`],
-    styles[`margin${margin}`],
-    styles[`color${color}`],
+    classHelper.orientation(orientation),
+    classHelper.styleType(styleType),
+    classHelper.thickness(thickness),
+    classHelper.length(length),
+    classHelper.margin(margin),
+    classHelper.color(color),
     className
   );
 
   return <div className={dividerClass} />;
 }
 
-/**
- * Capitalizes the first letter of a string.
- */
-function capitalize(value: string): string {
-  return value.charAt(0).toUpperCase() + value.slice(1);
-}

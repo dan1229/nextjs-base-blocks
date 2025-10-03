@@ -271,33 +271,6 @@
 
 
 
-#### standardize how we do the class name assigns
-- i.e., some places there are switch function
-  - some are more manual `textAlign{textAlignment.strip}
-    - bbcard, bbbutton also great examples
--
-- a mess and a half
-  - standardize this / the class names somehow
-    - could cut down code a ton
-  - maybe some utility component?
-    - whats the 'right' way?
-      - something that makes it hard to forget the class
-      - something that's type checked
-      - ideally short on code or abstractable in some way
--
-- really really really test this to make sure nothings broken!
-  - as thorough as possible
-  - like seriously - go component by component
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -319,9 +292,46 @@
 
 
 
+#### standardize how we do the class name assigns
+- i.e., some places there are switch function
+  - some are more manual `textAlign{textAlignment.strip}
+    - bbcard, bbbutton also great examples
+-
+- a mess and a half
+  - standardize this / the class names somehow
+    - could cut down code a ton
+  - maybe some utility component?
+    - whats the 'right' way?
+      - something that makes it hard to forget the class
+      - something that's type checked
+      - ideally short on code or abstractable in some way
+-
+- really really really test this to make sure nothings broken!
+  - as thorough as possible
+  - like seriously - go component by component
+
+
+
+make sure we got all the components / form components
+
+standardize the class naming convention
+- all classes should be "class_name" not "className"
+  - choose whichever is the easiest refactor honestl
+- make sure our new methodology works with this
+  - remove any unecessary code
+- make sure ALL components are updated
+
+
+REALLY REALLY FOCUS ON MAKING SURE THIS IS ALL STILL WORKING. CLASSES SHOULD ALL EXIST AND BE PROPERLY 'MIGRATED'
+
+
+
+
+
 ### [2.3.0] - 2025-10-DD
 - `BBCard`
   - Removed unused `--card-darken-default-color` CSS variable and updated default header/footer backgrounds to be transparent
+  - BREAKING CHANGE: BBCard `elevation` prop standardized from `'med'` to `'medium'` for consistency with other components
 - `BBLoadingSpinner`
   - Added CSS custom variables for setting global defaults: `--bb-loading-default-variant`, `--bb-loading-default-size`, `--bb-loading-default-color`
   - Allows users to avoid creating wrapper components for different default configurations
@@ -331,6 +341,9 @@
     - `--navbar-vertical-width`: Default width (8rem)
     - `--navbar-vertical-width-xs/sm/md/lg/xl`: Responsive widths for each breakpoint
   - Improved active state highlighting: Fixed CSS specificity issues that prevented proper active state styling
+- Standardized SCSS class selection
+  - i.e., SCSS switch statements were all over the place, inconsistent and fragile
+  - Major refactoring
 
 -------------------------------------------------------
 
