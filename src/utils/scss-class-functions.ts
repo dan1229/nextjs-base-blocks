@@ -29,8 +29,8 @@
  * getClassName(styles, 'primary', 'background_card_') // returns styles.background_card_primary
  *
  * @example
- * // With transform for camelCase
- * getClassName(styles, 'inverse-primary', '', '', (v) => toCamelCase(v)) // returns styles.inversePrimary
+ * // With transform for snake_case
+ * getClassName(styles, 'inverse-primary', '', '', (v) => toStandardSnakeCase(v)) // returns styles.inverse_primary
  */
 export function getClassName<T extends string>(
   styles: Record<string, string>,
@@ -47,49 +47,6 @@ export function getClassName<T extends string>(
   return styles[className];
 }
 
-/**
- * Maps multiple values to CSS class names and returns them joined
- *
- * @param styles - CSS modules style object
- * @param mappings - Array of value mappings
- * @returns Space-separated CSS class names
- *
- * @example
- * getClassNames(styles, [
- *   { value: 'primary', prefix: 'color_' },
- *   { value: 'lg', prefix: 'size_' }
- * ]) // returns "color_primary size_lg"
- */
-export function getClassNames<T extends string>(
-  styles: Record<string, string>,
-  mappings: Array<{
-    value: T | null | undefined;
-    prefix?: string;
-    suffix?: string;
-    transform?: (value: T) => string;
-  }>
-): string {
-  return mappings
-    .map(({ value, prefix, suffix, transform }) => getClassName(styles, value, prefix, suffix, transform))
-    .filter(Boolean)
-    .join(' ');
-}
-
-/**
- * Converts kebab-case to camelCase
- * Useful for transforming prop values like 'inverse-primary' to 'inversePrimary'
- */
-export function toCamelCase(str: string): string {
-  return str.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
-}
-
-/**
- * Converts camelCase to snake_case
- * Useful for transforming prop values to match SCSS naming conventions
- */
-export function toSnakeCase(str: string): string {
-  return str.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`);
-}
 
 /**
  * Capitalizes the first letter of a string
@@ -121,7 +78,7 @@ export function toStandardSnakeCase(str: string): string {
  *
  * @example
  * const classHelper = createClassHelper(styles, {
- *   variant: { transform: toCamelCase },
+ *   variant: { transform: toStandardSnakeCase },
  *   size: { prefix: 'size_' },
  *   elevation: { prefix: 'elevation_' }
  * });
