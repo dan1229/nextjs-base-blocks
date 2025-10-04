@@ -33,7 +33,7 @@ $border-radius: var(--card-border-radius, 8px);
 $border-thickness: var(--card-border-thickness, 2px);
 $elevation-default: var(--card-elevation-default, rgba(0, 0, 0, 0.2) 0px 2px 4px);
 $elevation-low: var(--card-elevation-low, rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px);
-$elevation-medium: var(--card-elevation-med, rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px);
+$elevation-med: var(--card-elevation-med, rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px);
 $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px);
 
 $table-border-color: var(--table-border-color, $card-border-default-color);
@@ -269,7 +269,7 @@ $table-border-radius: var(--table-border-radius, $border-radius);
 }
 
 .elevation_medium {
-  box-shadow: $elevation-medium;
+  box-shadow: $elevation-med;
 }
 
 .elevation_high {
