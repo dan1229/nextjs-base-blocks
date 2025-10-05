@@ -291,13 +291,15 @@
 
 whats props do we actually want?
 
-
+new scss variables below
 
 
 ### [2.3.0] - 2025-10-DD
 - **New!** - `BBTable`
   - Table component with all the bells and whistles you'd expect
   - Cypress tests for table
+  - New SCSS variables
+    - TODO
 - `BBCard`
   - Removed unused `--card-darken-default-color` CSS variable and updated default header/footer backgrounds to be transparent
   - BREAKING CHANGE: BBCard `elevation` prop standardized from `'med'` to `'medium'` for consistency with other components
