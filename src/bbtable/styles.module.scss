@@ -36,18 +36,17 @@ $elevation-low: var(--card-elevation-low, rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(
 $elevation-med: var(--card-elevation-med, rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px);
 $elevation-high: var(--card-elevation-high, rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px);
 
-$table-border-color: var(--table-border-color, $card-border-default-color);
-$table-header-bg: var(--table-header-bg, #f8f9fa);
-$table-row-hover-bg: var(--table-row-hover-bg, #f5f5f5);
+$table-header-bg: var(--table-header-bg, var(--bg-light-color, #f8f9fa));
+$table-row-hover-bg: var(--table-row-hover-bg, var(--bg-color, #f5f5f5));
 $table-row-selected-bg: var(--table-row-selected-bg, rgba(63, 81, 181, 0.1));
-$table-border-radius: var(--table-border-radius, $border-radius);
 
 // Container
 .table_container {
   width: 100%;
   overflow: hidden;
-  border-radius: $table-border-radius;
-  border: 1px solid $table-border-color;
+  border-radius: $border-radius;
+  border: $border-thickness solid $card-border-default-color;
+  background-color: $card-background-default-color;
 }
 
 // Loading state
@@ -56,6 +55,7 @@ $table-border-radius: var(--table-border-radius, $border-radius);
   justify-content: center;
   align-items: center;
   padding: 3rem;
+  background-color: $card-background-default-color;
   color: $grey-dark;
 }
 
@@ -69,6 +69,7 @@ $table-border-radius: var(--table-border-radius, $border-radius);
   justify-content: center;
   align-items: center;
   padding: 3rem;
+  background-color: $card-background-default-color;
   color: $grey-dark;
 }
 
@@ -100,7 +101,7 @@ $table-border-radius: var(--table-border-radius, $border-radius);
 // Table head
 .thead {
   background-color: $table-header-bg;
-  border-bottom: 2px solid $table-border-color;
+  border-bottom: $border-thickness solid $card-border-default-color;
 }
 
 .th {
@@ -108,7 +109,7 @@ $table-border-radius: var(--table-border-radius, $border-radius);
   text-align: left;
   font-weight: 600;
   color: $grey-darkest;
-  border-bottom: 1px solid $table-border-color;
+  border-bottom: 1px solid $card-border-default-color;
   position: relative;
   vertical-align: top;
 
@@ -152,9 +153,10 @@ $table-border-radius: var(--table-border-radius, $border-radius);
   width: 100%;
   margin-top: 0.5rem;
   padding: 0.25rem;
-  border: 1px solid $table-border-color;
-  border-radius: 4px;
+  border: 1px solid $card-border-default-color;
+  border-radius: $border-radius;
   font-size: 0.75rem;
+  background-color: $white;
 
   &:focus {
     outline: none;
@@ -166,7 +168,7 @@ $table-border-radius: var(--table-border-radius, $border-radius);
 // Table body
 .tbody {
   .tr {
-    border-bottom: 1px solid $table-border-color;
+    border-bottom: 1px solid $card-border-default-color;
     transition: background-color 0.15s ease;
 
     &:last-child {
@@ -209,11 +211,11 @@ $table-border-radius: var(--table-border-radius, $border-radius);
 }
 
 .bordered {
-  border: 2px solid $table-border-color;
+  border: 2px solid $card-border-default-color;
 
   .th,
   .td {
-    border-right: 1px solid $table-border-color;
+    border-right: 1px solid $card-border-default-color;
 
     &:last-child {
       border-right: none;
@@ -292,7 +294,7 @@ $table-border-radius: var(--table-border-radius, $border-radius);
 
 .mobile_card {
   padding: 1rem;
-  border-bottom: 1px solid $table-border-color;
+  border-bottom: 1px solid $card-border-default-color;
   background-color: $white;
   transition: background-color 0.15s ease;
 
@@ -316,7 +318,7 @@ $table-border-radius: var(--table-border-radius, $border-radius);
 .mobile_select {
   margin-bottom: 0.75rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid $table-border-color;
+  border-bottom: 1px solid $card-border-default-color;
 }
 
 .mobile_field {
@@ -327,7 +329,7 @@ $table-border-radius: var(--table-border-radius, $border-radius);
   gap: 1rem;
 
   &:not(:last-child) {
-    border-bottom: 1px solid rgba($table-border-color, 0.5);
+    border-bottom: 1px solid rgba($card-border-default-color, 0.5);
   }
 }
 
@@ -353,12 +355,12 @@ $table-border-radius: var(--table-border-radius, $border-radius);
   gap: 1rem;
   padding: 1rem;
   background-color: $table-header-bg;
-  border-top: 1px solid $table-border-color;
+  border-top: 1px solid $card-border-default-color;
 }
 
 .pagination_button {
   padding: 0.5rem 1rem;
-  border: 1px solid $table-border-color;
+  border: 1px solid $card-border-default-color;
   background-color: $white;
   color: $grey-darkest;
   border-radius: 4px;
