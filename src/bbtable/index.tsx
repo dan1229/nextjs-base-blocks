@@ -81,7 +81,7 @@ const BBTable = <T extends IBBTableData = IBBTableData>(props: IPropsBBBase & IP
 
   // Get cell value using accessor
   const getCellValue = useMemo(() => {
-    return (row: T, column: IBBTableColumn<T>): any => {
+    return (row: T, column: IBBTableColumn<T>): unknown => {
       if (column.accessor) {
         if (typeof column.accessor === 'function') {
           return column.accessor(row);
@@ -334,7 +334,7 @@ const BBTable = <T extends IBBTableData = IBBTableData>(props: IPropsBBBase & IP
                   const cellValue = getCellValue(row, column);
                   const displayValue = column.render
                     ? column.render(cellValue, row, rowIndex)
-                    : cellValue;
+                    : String(cellValue ?? '');
 
                   return (
                     <td key={column.key} className={styles.td}>
@@ -374,7 +374,7 @@ const BBTable = <T extends IBBTableData = IBBTableData>(props: IPropsBBBase & IP
               const cellValue = getCellValue(row, column);
               const displayValue = column.render
                 ? column.render(cellValue, row, rowIndex)
-                : cellValue;
+                : String(cellValue ?? '');
 
               return (
                 <div key={column.key} className={styles.mobile_field}>

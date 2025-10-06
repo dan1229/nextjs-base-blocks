@@ -51,6 +51,25 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
     setShowPassword(!showPassword);
   };
 
+  const handleChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> = (event) => {
+    if (onChange && typeof onChange === 'function') {
+      // If onChange is the simple value function, call it with the value
+      if (onChange.length === 1) {
+        (onChange as (value: string) => void)(event.target.value);
+      } else {
+        // If onChange is the event handler, call it with the event
+        (onChange as React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>)(event);
+      }
+    }
+  };
+
+  const getInputValue = (): string => {
+    if (value === null || value === undefined) return '';
+    if (typeof value === 'boolean') return value ? 'true' : 'false';
+    if (Array.isArray(value)) return value.join(',');
+    return String(value);
+  };
+
   const sharedProps = {
     className: classnames(styles.form_control, getClassName(styles, size)),
     id: fieldName,
@@ -60,8 +79,8 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
     onKeyDown: onKeyDown,
     // if register is not used, apply onChange and value props
     // if register is used, let react-hook-form handle all input state via register()
-    ...(!register && onChange ? { onChange } : {}),
-    ...(!register && value !== undefined ? { value } : {}),
+    ...(!register && onChange ? { onChange: handleChange } : {}),
+    ...(!register && value !== undefined ? { value: getInputValue() } : {}),
   };
 
   /**

@@ -27,6 +27,18 @@ export default function BBFieldSelect(Props: IPropsBBFieldSelect & IPropsBBBaseF
     return fieldName;
   };
 
+  const handleChange: React.ChangeEventHandler<HTMLSelectElement> = (event) => {
+    if (onChange && typeof onChange === 'function') {
+      // If onChange is the simple value function, call it with the value
+      if (onChange.length === 1) {
+        (onChange as (value: string) => void)(event.target.value);
+      } else {
+        // If onChange is the event handler, call it with the event
+        (onChange as React.ChangeEventHandler<HTMLSelectElement>)(event);
+      }
+    }
+  };
+
   /**
    * RENDER
    */
@@ -37,7 +49,7 @@ export default function BBFieldSelect(Props: IPropsBBFieldSelect & IPropsBBBaseF
           className={classnames(styles.form_control, getClassName(styles, size))}
           id={fieldName}
           required={required}
-          onChange={onChange}
+          onChange={handleChange}
           autoComplete={getAutoComplete()}
           {...register}
         >

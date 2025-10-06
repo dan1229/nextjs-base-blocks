@@ -179,17 +179,20 @@ export default function DemoPage() {
         key: 'status',
         header: 'Status',
         sortable: true,
-        render: (value) => (
-          <span style={{
-            padding: '2px 8px',
-            borderRadius: '4px',
-            backgroundColor: value === 'Active' ? '#4caf50' : value === 'Inactive' ? '#f44336' : '#ff9800',
-            color: 'white',
-            fontSize: '0.75rem'
-          }}>
-            {value}
-          </span>
-        )
+        render: (value) => {
+          const status = String(value);
+          return (
+            <span style={{
+              padding: '2px 8px',
+              borderRadius: '4px',
+              backgroundColor: status === 'Active' ? '#4caf50' : status === 'Inactive' ? '#f44336' : '#ff9800',
+              color: 'white',
+              fontSize: '0.75rem'
+            }}>
+              {status}
+            </span>
+          );
+        }
       }
     ],
     variant: 'default',

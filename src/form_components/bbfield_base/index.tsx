@@ -29,6 +29,25 @@ export default function BBFieldBase(Props: IPropsBBFieldBase & IPropsBBBaseForm)
     return fieldName;
   };
 
+  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+    if (onChange && typeof onChange === 'function') {
+      // If onChange is the simple value function, call it with the value
+      if (onChange.length === 1) {
+        (onChange as (value: string) => void)(event.target.value);
+      } else {
+        // If onChange is the event handler, call it with the event
+        (onChange as React.ChangeEventHandler<HTMLInputElement>)(event);
+      }
+    }
+  };
+
+  const getInputValue = (): string => {
+    if (value === null || value === undefined) return '';
+    if (typeof value === 'boolean') return value ? 'true' : 'false';
+    if (Array.isArray(value)) return value.join(',');
+    return String(value);
+  };
+
   /**
    * RENDER
    */
@@ -40,8 +59,8 @@ export default function BBFieldBase(Props: IPropsBBFieldBase & IPropsBBBaseForm)
         type={type}
         autoComplete={getAutoComplete()}
         required={required}
-        onChange={onChange}
-        value={value}
+        onChange={handleChange}
+        value={getInputValue()}
         {...register}
       />
     </InputWrapper>

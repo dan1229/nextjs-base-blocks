@@ -214,8 +214,8 @@ export type TBBTextColor =
  * @prop {Function} register - React Hook Form register function.
  * @prop {string} fieldName - Name of the field, used for ID for form submission
  * @prop {string=} label - Label for the component
- * @prop {(value: any) => void} onChange - Change handler
- * @prop {any} value - Value of the field
+ * @prop {(value: string | number | boolean | string[]) => void} onChange - Change handler
+ * @prop {string | number | boolean | string[]} value - Value of the field
  * @prop {boolean=} required - Whether the field is required
  * @param {string=} autocomplete - Autocomplete value for the input.
  * @param {string=} placeholder - Placeholder text
@@ -231,8 +231,8 @@ interface IPropsBBBaseFormBase {
   register?: UseFormRegisterReturn;
   fieldName: string;
   label?: string;
-  onChange?: (value: any) => void; // eslint-disable-line @typescript-eslint/no-explicit-any
-  value?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+  onChange?: ((value: string | number | boolean | string[]) => void) | React.ChangeEventHandler<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>;
+  value?: string | number | boolean | string[];
   required?: boolean;
   autocomplete?: string;
   placeholder?: string;
@@ -289,18 +289,18 @@ export type TBBTableSize = 'sm' | 'md' | 'lg';
 export type TBBTableElevation = 'none' | 'low' | 'medium' | 'high' | 'default';
 export type TBBTableSortDirection = 'asc' | 'desc' | null;
 
-export interface IBBTableColumn<T = any> {
+export interface IBBTableColumn<T = Record<string, unknown>> {
   key: string;
   header: string;
-  accessor?: keyof T | ((row: T) => any);
+  accessor?: keyof T | ((row: T) => unknown);
   sortable?: boolean;
   filterable?: boolean;
-  render?: (value: any, row: T, index: number) => React.ReactNode;
+  render?: (value: unknown, row: T, index: number) => React.ReactNode;
   width?: string;
   minWidth?: string;
   maxWidth?: string;
 }
 
 export interface IBBTableData {
-  [key: string]: any;
+  [key: string]: unknown;
 }

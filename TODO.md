@@ -289,9 +289,28 @@
 
 
 
-whats props do we actually want?
 
-new scss variables below
+
+
+
+
+
+
+
+
+
+
+
+
+great now can you please triple check this mvp for the bbtable? make sure it's working over adding more stuff, double check all the docs and variables and everything please and thank you!
+
+one addition too - please use bbbutton not button in the table itself - prefer bb compoennts over regular componetns as much as possible
+
+
+
+new scss variables below in release notes
+
+
 
 
 ### [2.3.0] - 2025-10-DD

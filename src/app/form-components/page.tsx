@@ -64,8 +64,7 @@ export default function FormComponentsPage() {
     required: false,
     label: 'Demo Select',
     className: '',
-    onChange: (event) => {
-      const selectedValue = event.target.value;
+    onChange: (selectedValue: string | number | boolean | string[]) => {
       setStateBBFieldSelect((prevState) => ({
         ...prevState,
         value: selectedValue,
