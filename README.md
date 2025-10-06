@@ -200,6 +200,11 @@ html,
   --form-input-plaintext-color: var(--white);
   --form-select-arrow-color: var(--form-input-color);
   --form-required-indicator-color: var(--form-input-color);
+  // bb table
+  --table-cell-bg: var(--card-background-default-color);
+  --table-header-bg: var(--bg-light-color);
+  --table-row-hover-bg: var(--bg-color);
+  --table-row-selected-bg: var(--accent-color);
   // bb text
   --text-color-default: rgb(24, 24, 24);
   --text-size-xs: 0.5rem;

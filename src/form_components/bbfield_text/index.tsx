@@ -1,5 +1,7 @@
 import classnames from 'classnames';
 import React, { useState } from 'react';
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
+import BBButton from '../../bbbutton';
 import { getClassName } from '../../utils/scss-class-functions';
 import InputWrapper from '../input_wrapper';
 import styles from '../styles.module.scss';
@@ -51,6 +53,20 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
     setShowPassword(!showPassword);
   };
 
+  const handleChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> = (event) => {
+    if (onChange && typeof onChange === 'function') {
+      // Always try the value-based onChange first since that's the common use case
+      (onChange as (value: string) => void)(event.target.value);
+    }
+  };
+
+  const getInputValue = (): string => {
+    if (value === undefined) return '';
+    if (typeof value === 'boolean') return value ? 'true' : 'false';
+    if (Array.isArray(value)) return value.join(',');
+    return String(value);
+  };
+
   const sharedProps = {
     className: classnames(styles.form_control, getClassName(styles, size)),
     id: fieldName,
@@ -60,8 +76,8 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
     onKeyDown: onKeyDown,
     // if register is not used, apply onChange and value props
     // if register is used, let react-hook-form handle all input state via register()
-    ...(!register && onChange ? { onChange } : {}),
-    ...(!register && value !== undefined ? { value } : {}),
+    ...(!register && onChange ? { onChange: handleChange } : {}),
+    ...(!register && value !== undefined ? { value: getInputValue() } : {}),
   };
 
   /**
@@ -75,14 +91,17 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
         <div className={type === 'password' ? styles.password_wrapper : undefined}>
           <input {...sharedProps} type={getInputType()} {...register} />
           {type === 'password' && (
-            <button
+            <BBButton
+              icon={{
+                icon: showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />,
+                align: 'left'
+              }}
               type="button"
               className={styles.password_toggle}
               onClick={togglePasswordVisibility}
-              aria-label={showPassword ? 'Hide password' : 'Show password'}
-            >
-              {showPassword ? '🙈' : '👁️'}
-            </button>
+              variant="text"
+              size="sm"
+            />
           )}
         </div>
       )}

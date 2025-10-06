@@ -11,6 +11,7 @@ import BBLoadingSpinner from '../bbloading_spinner';
 import BBModal from '../bbmodal';
 import BBNavbar from '../bbnavbar';
 import BBNavbarItem from '../bbnavbar_item';
+import BBTable from '../bbtable';
 import BBText from '../bbtext';
 import BBTooltip from '../bbtooltip';
 import DemoComponent from '../demo_components/demo_component';
@@ -24,6 +25,7 @@ import type { IPropsBBLoadingSpinner } from '../bbloading_spinner';
 import type { IPropsBBModal } from '../bbmodal';
 import type { IPropsBBNavbar } from '../bbnavbar';
 import type { IPropsBBNavbarItem } from '../bbnavbar_item';
+import type { IPropsBBTable } from '../bbtable';
 import type { IPropsBBText } from '../bbtext';
 import type { IPropsBBTooltip } from '../bbtooltip';
 
@@ -159,6 +161,62 @@ export default function DemoPage() {
     href: 'https://www.google.com',
     className: '',
   });
+  // BB Table
+  const [stateBBTable, setStateBBTable] = useState<IPropsBBTable>({
+    data: [
+      { id: 1, name: 'John Doe', email: 'john@example.com', age: 30, status: 'Active' },
+      { id: 2, name: 'Jane Smith', email: 'jane@example.com', age: 28, status: 'Inactive' },
+      { id: 3, name: 'Bob Johnson', email: 'bob@example.com', age: 35, status: 'Active' },
+      { id: 4, name: 'Alice Brown', email: 'alice@example.com', age: 32, status: 'Pending' },
+      { id: 5, name: 'Charlie Wilson', email: 'charlie@example.com', age: 29, status: 'Active' },
+    ],
+    columns: [
+      { key: 'id', header: 'ID', sortable: true },
+      { key: 'name', header: 'Name', sortable: true, filterable: true },
+      { key: 'email', header: 'Email', sortable: true, filterable: true },
+      { key: 'age', header: 'Age', sortable: true },
+      {
+        key: 'status',
+        header: 'Status',
+        sortable: true,
+        render: (value) => {
+          const status = String(value);
+          return (
+            <span style={{
+              padding: '2px 8px',
+              borderRadius: '4px',
+              backgroundColor: status === 'Active' ? '#4caf50' : status === 'Inactive' ? '#f44336' : '#ff9800',
+              color: 'white',
+              fontSize: '0.75rem'
+            }}>
+              {status}
+            </span>
+          );
+        }
+      }
+    ],
+    variant: 'default',
+    size: 'md',
+    elevation: 'low',
+    loading: false,
+    sortable: true,
+    filterable: true,
+    pagination: true,
+    pageSize: 3,
+    selectable: true,
+    striped: true,
+    bordered: true,
+    hover: true,
+    responsiveBreakpoint: 'md',
+    onRowSelect: (selectedRows) => {
+      // Demo callback - in real usage, handle selected rows here
+      void selectedRows;
+    },
+    onRowClick: (row) => {
+      // Demo callback - in real usage, handle row click here
+      void row;
+    },
+  });
   // BB Text
   const [stateBBText, setStateBBText] = useState<IPropsBBText>({
     children: 'Test',
@@ -265,6 +323,12 @@ export default function DemoPage() {
           child={<BBNavbarItem {...stateBBNavbarItem} />}
           stateObject={stateBBNavbarItem}
           setStateObject={setStateBBNavbarItem}
+        />
+        <DemoComponent
+          name="BBTable"
+          child={<BBTable {...stateBBTable} />}
+          stateObject={stateBBTable}
+          setStateObject={setStateBBTable}
         />
         <DemoComponent name="BBText" child={<BBText {...stateBBText} />} stateObject={stateBBText} setStateObject={setStateBBText} />
         <DemoComponent
