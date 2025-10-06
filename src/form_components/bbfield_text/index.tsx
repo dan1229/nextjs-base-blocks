@@ -1,5 +1,7 @@
 import classnames from 'classnames';
 import React, { useState } from 'react';
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
+import BBButton from '../../bbbutton';
 import { getClassName } from '../../utils/scss-class-functions';
 import InputWrapper from '../input_wrapper';
 import styles from '../styles.module.scss';
@@ -94,14 +96,17 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
         <div className={type === 'password' ? styles.password_wrapper : undefined}>
           <input {...sharedProps} type={getInputType()} {...register} />
           {type === 'password' && (
-            <button
+            <BBButton
+              icon={{
+                icon: showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />,
+                align: 'left'
+              }}
               type="button"
               className={styles.password_toggle}
               onClick={togglePasswordVisibility}
-              aria-label={showPassword ? 'Hide password' : 'Show password'}
-            >
-              {showPassword ? '🙈' : '👁️'}
-            </button>
+              variant="text"
+              size="sm"
+            />
           )}
         </div>
       )}

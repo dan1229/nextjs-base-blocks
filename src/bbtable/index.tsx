@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React, { useState, useMemo } from 'react';
+import BBButton from '../bbbutton';
 import { createClassHelper } from '../utils/scss-class-functions';
 import styles from './styles.module.scss';
 import type {
@@ -390,23 +391,25 @@ const BBTable = <T extends IBBTableData = IBBTableData>(props: IPropsBBBase & IP
       {/* Pagination */}
       {pagination && totalPages > 1 && (
         <div className={styles.pagination}>
-          <button
+          <BBButton
+            text="Previous"
             className={styles.pagination_button}
             disabled={currentPage === 1}
             onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
-          >
-            Previous
-          </button>
+            variant="text"
+            size="sm"
+          />
           <span className={styles.pagination_info}>
             Page {currentPage} of {totalPages}
           </span>
-          <button
+          <BBButton
+            text="Next"
             className={styles.pagination_button}
             disabled={currentPage === totalPages}
             onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
-          >
-            Next
-          </button>
+            variant="text"
+            size="sm"
+          />
         </div>
       )}
     </div>

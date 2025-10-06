@@ -290,21 +290,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### [2.3.0] - 2025-10-DD
+### [2.3.0] - 2025-10-05
 - **New!** - `BBTable`
   - Table component with all the bells and whistles you'd expect
   - Cypress tests for table
@@ -325,6 +311,9 @@
     - `--navbar-vertical-width`: Default width (8rem)
     - `--navbar-vertical-width-xs/sm/md/lg/xl`: Responsive widths for each breakpoint
   - Improved active state highlighting: Fixed CSS specificity issues that prevented proper active state styling
+- `BBFieldText`
+  - Now uses BBButton for password toggle (instead of HTML button)
+  - Using React Icons instead of emoji now too
 - Standardized SCSS class selection
   - i.e., SCSS switch statements were all over the place, inconsistent and fragile
   - Major refactoring
