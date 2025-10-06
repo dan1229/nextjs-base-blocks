@@ -64,7 +64,7 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
   };
 
   const getInputValue = (): string => {
-    if (value === null || value === undefined) return '';
+    if (value === undefined) return '';
     if (typeof value === 'boolean') return value ? 'true' : 'false';
     if (Array.isArray(value)) return value.join(',');
     return String(value);
