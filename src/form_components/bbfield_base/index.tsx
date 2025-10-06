@@ -31,13 +31,8 @@ export default function BBFieldBase(Props: IPropsBBFieldBase & IPropsBBBaseForm)
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     if (onChange && typeof onChange === 'function') {
-      // If onChange is the simple value function, call it with the value
-      if (onChange.length === 1) {
-        (onChange as (value: string) => void)(event.target.value);
-      } else {
-        // If onChange is the event handler, call it with the event
-        (onChange as React.ChangeEventHandler<HTMLInputElement>)(event);
-      }
+      // Always try the value-based onChange first since that's the common use case
+      (onChange as (value: string) => void)(event.target.value);
     }
   };
 

@@ -243,7 +243,7 @@ describe('BBTable Component Tests', () => {
         {
           key: 'status',
           header: 'Status',
-          render: (value) => <span className="custom-status">{value.toUpperCase()}</span>
+          render: (value) => <span className="custom-status">{String(value || '').toUpperCase()}</span>
         }
       ];
 
