@@ -302,23 +302,17 @@
 
 
 
-great now can you please triple check this mvp for the bbtable? make sure it's working over adding more stuff, double check all the docs and variables and everything please and thank you!
-
-one addition too - please use bbbutton not button in the table itself - prefer bb compoennts over regular componetns as much as possible
-
-
-
-new scss variables below in release notes
-
-
 
 
 ### [2.3.0] - 2025-10-DD
 - **New!** - `BBTable`
   - Table component with all the bells and whistles you'd expect
   - Cypress tests for table
-  - New SCSS variables
-    - TODO
+  - New CSS variables for theming:
+    - `--table-cell-bg`: Background color for table cells (defaults to `--bg-dark-color`)
+    - `--table-header-bg`: Background color for table headers (defaults to `--bg-light-color`)
+    - `--table-row-hover-bg`: Background color for table rows on hover (defaults to `--bg-color`)
+    - `--table-row-selected-bg`: Background color for selected table rows
 - `BBCard`
   - Removed unused `--card-darken-default-color` CSS variable and updated default header/footer backgrounds to be transparent
   - BREAKING CHANGE: BBCard `elevation` prop standardized from `'med'` to `'medium'` for consistency with other components
