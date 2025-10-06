@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React, { useState, useMemo } from 'react';
+import { IoChevronUp, IoChevronDown, IoSwapVertical } from 'react-icons/io5';
 import BBButton from '../bbbutton';
 import { createClassHelper } from '../utils/scss-class-functions';
 import styles from './styles.module.scss';
@@ -291,8 +292,8 @@ const BBTable = <T extends IBBTableData = IBBTableData>(props: IPropsBBBase & IP
                     {(column.sortable ?? sortable) && (
                       <span className={styles.sort_icon}>
                         {sortColumn === column.key ? (
-                          sortDirection === 'asc' ? '↑' : '↓'
-                        ) : '↕'}
+                          sortDirection === 'asc' ? <IoChevronUp /> : <IoChevronDown />
+                        ) : <IoSwapVertical />}
                       </span>
                     )}
                   </div>
