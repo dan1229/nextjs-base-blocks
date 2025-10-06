@@ -293,7 +293,7 @@
 ### [2.3.0] - 2025-10-05
 - **New!** - `BBTable`
   - Table component with all the bells and whistles you'd expect
-  - Cypress tests for table
+  - Cypress tests for table with proper type safety in render functions
   - New CSS variables for theming:
     - `--table-cell-bg`: Background color for table cells (defaults to `--bg-dark-color`)
     - `--table-header-bg`: Background color for table headers (defaults to `--bg-light-color`)
@@ -311,9 +311,9 @@
     - `--navbar-vertical-width`: Default width (8rem)
     - `--navbar-vertical-width-xs/sm/md/lg/xl`: Responsive widths for each breakpoint
   - Improved active state highlighting: Fixed CSS specificity issues that prevented proper active state styling
-- `BBFieldText`
-  - Now uses BBButton for password toggle (instead of HTML button)
-  - Using React Icons instead of emoji now too
+- **Form Components**
+  - `BBFieldText`: Now uses BBButton for password toggle (instead of HTML button) with React Icons
+  - Fixed unreliable `onChange.length` detection in form components (addressed PR feedback)
 - Standardized SCSS class selection
   - i.e., SCSS switch statements were all over the place, inconsistent and fragile
   - Major refactoring
