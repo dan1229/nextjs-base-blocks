@@ -265,58 +265,23 @@
 - is it easily do-able
 
 
+
+### [2.4.0] - 2025-MM-DD
+- TODO
+
+
+
 ---
-### 2.3.0
+### 2.3.1
+
+
+TODO
 
 
 
 
-
-
-
-#### BBTable component
-- data table with sorting, filtering, pagination
-  - look at twineline
-  - similar to react table
-- responsive mobile view (cards on small screens)
-- customizable column definitions
-- built-in loading states
-- support for row selection/actions
-- integrate with existing theming system
--
-- add demo component
-- add any necesssary docs?
-
-
-
-
-### [2.3.0] - 2025-10-05
-- **New!** - `BBTable`
-  - Table component with all the bells and whistles you'd expect
-  - Cypress tests for table with proper type safety in render functions
-  - New CSS variables for theming:
-    - `--table-cell-bg`: Background color for table cells (defaults to `--bg-dark-color`)
-    - `--table-header-bg`: Background color for table headers (defaults to `--bg-light-color`)
-    - `--table-row-hover-bg`: Background color for table rows on hover (defaults to `--bg-color`)
-    - `--table-row-selected-bg`: Background color for selected table rows
-- `BBCard`
-  - Removed unused `--card-darken-default-color` CSS variable and updated default header/footer backgrounds to be transparent
-  - BREAKING CHANGE: BBCard `elevation` prop standardized from `'med'` to `'medium'` for consistency with other components
-- `BBLoadingSpinner`
-  - Added CSS custom variables for setting global defaults: `--bb-loading-default-variant`, `--bb-loading-default-size`, `--bb-loading-default-color`
-  - Allows users to avoid creating wrapper components for different default configurations
-- `BBNavbar`
-  - Improved vertical navbar width handling: Now automatically adjusts to fit wide action buttons
-  - Added responsive width support: Vertical navbar now adapts to different screen sizes
-    - `--navbar-vertical-width`: Default width (8rem)
-    - `--navbar-vertical-width-xs/sm/md/lg/xl`: Responsive widths for each breakpoint
-  - Improved active state highlighting: Fixed CSS specificity issues that prevented proper active state styling
-- **Form Components**
-  - `BBFieldText`: Now uses BBButton for password toggle (instead of HTML button) with React Icons
-  - Fixed unreliable `onChange.length` detection in form components (addressed PR feedback)
-- Standardized SCSS class selection
-  - i.e., SCSS switch statements were all over the place, inconsistent and fragile
-  - Major refactoring
+### [2.3.1] - 2025-MM-DD
+- TODO
 
 -------------------------------------------------------
 
