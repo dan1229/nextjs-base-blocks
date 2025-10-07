@@ -27,9 +27,9 @@ export interface IPropsBBLoadingSpinner {
  * Uses CSS custom properties for theming and provides sensible defaults.
  *
  * Supports global default configuration via CSS custom properties:
- * - --bb-loading-default-variant: Sets default animation style
- * - --bb-loading-default-size: Sets default spinner size
- * - --bb-loading-default-color: Sets default color theme
+ * - --loading-default-variant: Sets default animation style
+ * - --loading-default-size: Sets default spinner size
+ * - --loading-default-color: Sets default color theme
  *
  * @example
  * // Basic usage with defaults (default variant, md size, primary color)
@@ -42,9 +42,9 @@ export interface IPropsBBLoadingSpinner {
  * @example
  * // Global defaults via CSS (affects all BBLoadingSpinner instances without explicit props)
  * :root {
- *   --bb-loading-default-variant: "circle bounce";
- *   --bb-loading-default-size: lg;
- *   --bb-loading-default-color: accent;
+ *   --loading-default-variant: "circle bounce";
+ *   --loading-default-size: lg;
+ *   --loading-default-color: accent;
  * }
  *
  * @param {IPropsBBLoadingSpinner} Props - Component props
@@ -67,9 +67,9 @@ export default function BBLoadingSpinner(Props: IPropsBBLoadingSpinner): React.R
 
   // Apply CSS variable defaults or fallback to hardcoded defaults
   // Users can override these by setting CSS custom properties globally
-  const finalVariant = variant || (getDefaultValue('--bb-loading-default-variant', 'default') as TBBLoadingSpinnerVariants);
-  const finalSize = size || (getDefaultValue('--bb-loading-default-size', 'md') as TBBLoadingSpinnerSizes);
-  const finalColor = color || (getDefaultValue('--bb-loading-default-color', 'primary') as TBBLoadingSpinnerColor);
+  const finalVariant = variant || (getDefaultValue('--loading-default-variant', 'default') as TBBLoadingSpinnerVariants);
+  const finalSize = size || (getDefaultValue('--loading-default-size', 'md') as TBBLoadingSpinnerSizes);
+  const finalColor = color || (getDefaultValue('--loading-default-color', 'primary') as TBBLoadingSpinnerColor);
 
   // Create class helper with standardized patterns
   const classHelper = createClassHelper(styles, {

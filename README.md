@@ -149,9 +149,9 @@ html,
   // bb divider
   --divider-color-default: rgb(221, 221, 221);
   // bb loading
-  --bb-loading-default-variant: default;
-  --bb-loading-default-size: md; 
-  --bb-loading-default-color: primary; 
+  --loading-default-variant: default;
+  --loading-default-size: md;
+  --loading-default-color: primary; 
   // bb modal
   --modal-z-index: 9999;
   // bb navbar

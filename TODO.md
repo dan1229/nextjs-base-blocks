@@ -265,10 +265,6 @@
 - is it easily do-able
 
 
-#### bb loading - change var names
-- scss vars are `--bb-loading...`
-  - shouldnt have the 'bb' prefix
-
 
 ### [2.4.0] - 2025-MM-DD
 - TODO
@@ -278,8 +274,6 @@
 ---
 ### 2.3.1
 
-
-TODO
 
 
 ### [2.3.1] - 2025-10-DD
@@ -291,9 +285,13 @@ TODO
     - Title text automatically hides on small navbar widths (≤576px)
     - Brand images scale down progressively
     - Brand container padding adjusts responsively for better spacing
-  - Updated default navbar width values for better real-world usability:
-    - `--navbar-vertical-width-xs`: 4rem → 5rem (more practical minimum width)
-    - `--navbar-vertical-width-xl`: 12rem → 11rem (less excessive maximum width)
+  - Updated default navbar width values for better real-world usability
+  - Enhanced documentation with width size explanations in README
+- `BBLoadingSpinner`
+  - BREAKING CHANGE: Renamed CSS variables to remove 'bb' prefix for consistency:
+    - `--bb-loading-default-variant` → `--loading-default-variant`
+    - `--bb-loading-default-size` → `--loading-default-size`
+    - `--bb-loading-default-color` → `--loading-default-color`
 
 -------------------------------------------------------
 
