@@ -265,6 +265,10 @@
 - is it easily do-able
 
 
+#### bb loading - change var names
+- scss vars are `--bb-loading...`
+  - shouldnt have the 'bb' prefix
+
 
 ### [2.4.0] - 2025-MM-DD
 - TODO
@@ -278,10 +282,9 @@
 TODO
 
 
-
-
-### [2.3.1] - 2025-MM-DD
-- TODO
+### [2.3.1] - 2025-10-DD
+- `BBNavbar`
+  - Fixed issue with vertical responsive width
 
 -------------------------------------------------------
 

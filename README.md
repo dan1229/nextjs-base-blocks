@@ -129,8 +129,8 @@ html,
   --danger-dark-color: #{darken($danger-color, 10%)};
   --danger-light-color: #{lighten($danger-color, 10%)};
   // bg theme colors
-  --bg-color: rgb(210, 210, 210);
-  --bg-light-color: rgb(230, 230, 230);
+  --bg-color: rgb(233, 233, 233);
+  --bg-light-color: rgba(241, 241, 241, 1);
   --bg-dark-color: rgb(189, 189, 189);
   // bb alert
   --alert-border-radius: 1rem;
@@ -148,6 +148,7 @@ html,
   --card-elevation-high: rgba(0, 0, 0, 0.12) 0px 10px 20px, rgba(0, 0, 0, 0.24) 0px 6px 6px;
   // bb divider
   --divider-color-default: rgb(221, 221, 221);
+  // bb loading
   --bb-loading-default-variant: default;
   --bb-loading-default-size: md; 
   --bb-loading-default-color: primary; 
@@ -158,8 +159,6 @@ html,
   --navbar-brand-padding: 0;
   --navbar-icon-mobile-color: var(--primary-color);
   --navbar-transition: all 0.2s ease-in-out;
-  // vertical navbar width (responsive)
-  --navbar-vertical-width: 8rem; // Default width for vertical navbar
   // responsive vertical navbar widths for different screen sizes
   --navbar-vertical-width-xs: 4rem;
   --navbar-vertical-width-sm: 6rem;

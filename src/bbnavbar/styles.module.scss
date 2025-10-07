@@ -25,7 +25,8 @@ $navbar-vertical-width-sm: var(--navbar-vertical-width-sm, 6rem);
 $navbar-vertical-width-md: var(--navbar-vertical-width-md, 8rem);
 $navbar-vertical-width-lg: var(--navbar-vertical-width-lg, 10rem);
 $navbar-vertical-width-xl: var(--navbar-vertical-width-xl, 12rem);
-$navbar-vertical-width: var(--navbar-vertical-width, 8rem); // Default fallback for non-responsive
+// Default width for large screens (when no media query matches)
+$navbar-vertical-width-default: var(--navbar-vertical-width-lg, 10rem);
 
 // navbar transition
 $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
@@ -66,28 +67,28 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
   margin-top: 0px !important;
 
   &.vertical {
-    padding-left: $navbar-vertical-width;
+    padding-left: $navbar-vertical-width-default;
     min-width: 0; // Allow content to shrink if needed
 
-    // Responsive padding for different screen sizes
-    @include media-xs {
-      padding-left: $navbar-vertical-width-xs;
-    }
-
-    @include media-sm {
-      padding-left: $navbar-vertical-width-sm;
-    }
-
-    @include media-md {
-      padding-left: $navbar-vertical-width-md;
+    // Responsive padding for different screen sizes (desktop-first)
+    @include media-xl {
+      padding-left: $navbar-vertical-width-xl;
     }
 
     @include media-lg {
       padding-left: $navbar-vertical-width-lg;
     }
 
-    @include media-xl {
-      padding-left: $navbar-vertical-width-xl;
+    @include media-md {
+      padding-left: $navbar-vertical-width-md;
+    }
+
+    @include media-sm {
+      padding-left: $navbar-vertical-width-sm;
+    }
+
+    @include media-xs {
+      padding-left: $navbar-vertical-width-xs;
     }
   }
 }
@@ -105,7 +106,7 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
 
   &.vertical {
     height: 100vh;
-    width: $navbar-vertical-width;
+    width: $navbar-vertical-width-default;
     flex-direction: column;
     align-items: stretch; // Allow items to stretch to fill width
     padding: 1rem 0.5rem;
@@ -115,25 +116,25 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
     justify-content: flex-start;
     gap: 1rem;
 
-    // Responsive width for different screen sizes
-    @include media-xs {
-      width: $navbar-vertical-width-xs;
-    }
-
-    @include media-sm {
-      width: $navbar-vertical-width-sm;
-    }
-
-    @include media-md {
-      width: $navbar-vertical-width-md;
+    // Responsive width for different screen sizes (desktop-first)
+    @include media-xl {
+      width: $navbar-vertical-width-xl;
     }
 
     @include media-lg {
       width: $navbar-vertical-width-lg;
     }
 
-    @include media-xl {
-      width: $navbar-vertical-width-xl;
+    @include media-md {
+      width: $navbar-vertical-width-md;
+    }
+
+    @include media-sm {
+      width: $navbar-vertical-width-sm;
+    }
+
+    @include media-xs {
+      width: $navbar-vertical-width-xs;
     }
 
     .navigationMenuList {
