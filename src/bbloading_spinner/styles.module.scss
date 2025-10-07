@@ -1,9 +1,23 @@
+// CSS Variables - declared once at the top
+$loader-thickness: var(--loading-thickness, 2px);
+
 .containerLoading {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   margin: 8px;
+}
+
+// Prevents flash of default values during CSS variable loading
+.loaderHidden {
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.loaderVisible {
+  opacity: 1;
+  transition: opacity 0.15s ease-in-out;
 }
 
 /**
@@ -26,54 +40,45 @@
 
 .primary {
   --loader-color: var(--primary-color);
-  --loader-thickness: var(--loading-thickness, 2px);
 }
 
 .secondary {
   --loader-color: var(--secondary-color);
-  --loader-thickness: var(--loading-thickness, 2px);
 }
 
 .accent {
   --loader-color: var(--accent-color);
-  --loader-thickness: var(--loading-thickness, 2px);
 }
 
 .danger {
   --loader-color: var(--danger-color);
-  --loader-thickness: var(--loading-thickness, 2px);
 }
 
 .success {
   --loader-color: var(--success-color);
-  --loader-thickness: var(--loading-thickness, 2px);
 }
 
 .warning {
   --loader-color: var(--warning-color);
-  --loader-thickness: var(--loading-thickness, 2px);
 }
 
 .info {
   --loader-color: var(--info-color);
-  --loader-thickness: var(--loading-thickness, 2px);
 }
 
 .black {
   --loader-color: var(--black);
-  --loader-thickness: var(--loading-thickness, 2px);
 }
 
 .white {
   --loader-color: var(--white);
-  --loader-thickness: var(--loading-thickness, 2px);
 }
 
 /**
 * DEFAULT
 */
 .loader_default {
-  border: var(--loader-thickness) solid var(--loader-color);
+  border: $loader-thickness solid var(--loader-color);
   border-radius: 50%;
   border-top-color: white;
   animation: rotationSpinner 1s linear infinite;
@@ -92,7 +97,7 @@
 * DOUBLE CIRCLE
 */
 .loader_double_circle {
-  border: var(--loader-thickness) dotted #fff;
+  border: $loader-thickness dotted #fff;
   border-style: solid solid dotted dotted;
   border-radius: 50%;
   display: inline-block;
@@ -109,7 +114,7 @@
   top: 0;
   bottom: 0;
   margin: auto;
-  border: var(--loader-thickness) dotted var(--loader-color);
+  border: $loader-thickness dotted var(--loader-color);
   border-style: solid solid dotted;
   width: 24px;
   height: 24px;
@@ -139,7 +144,7 @@
 * CIRCLE BOUNCE
 */
 .loader_circle_bounce {
-  border: var(--loader-thickness) solid var(--loader-color);
+  border: $loader-thickness solid var(--loader-color);
   border-radius: 50%;
   animation: circleBounceSpinner 1s ease-in-out infinite;
 }
@@ -160,7 +165,7 @@
 * SPINNING SQUARE
 */
 .loader_spinning_square {
-  border: var(--loader-thickness) solid var(--loader-color);
+  border: $loader-thickness solid var(--loader-color);
   animation: spinningSquareSpinner 3s linear infinite;
 }
 

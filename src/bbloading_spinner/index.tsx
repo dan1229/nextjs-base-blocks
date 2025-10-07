@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   createClassHelper,
   toStandardSnakeCase
@@ -36,8 +36,16 @@ export default function BBLoadingSpinner(
   // Extract props - defaults will be determined by CSS variables or fallback values
   const { variant, className, size, color } = Props;
 
-  // Get CSS variables immediately if on client side
-  const getCSSDefaults = () => {
+  // State to track CSS variable defaults and loading status
+  const [cssDefaults, setCssDefaults] = useState({
+    variant: 'default',
+    size: 'md',
+    color: 'primary'
+  });
+  const [isClient, setIsClient] = useState(false);
+
+  // Effect to read CSS variables on client side
+  useEffect(() => {
     if (typeof window !== 'undefined') {
       const computedStyle = getComputedStyle(document.documentElement);
 
@@ -47,26 +55,17 @@ export default function BBLoadingSpinner(
         return cleanValue || fallback;
       };
 
-      return {
+      const newDefaults = {
         variant: getCleanCSSValue('--loading-default-variant', 'default'),
         size: getCleanCSSValue('--loading-default-size', 'md'),
         color: getCleanCSSValue('--loading-default-color', 'primary')
       };
+
+
+      setCssDefaults(newDefaults);
+      setIsClient(true);
     }
-
-    return {
-      variant: 'default',
-      size: 'md',
-      color: 'primary'
-    };
-  };
-
-  const cssDefaults = getCSSDefaults();
-
-  // Debug logging for variant testing
-  if (process.env.NODE_ENV === 'development' && typeof window !== 'undefined') {
-    console.log('BBLoadingSpinner CSS values:', cssDefaults);
-  }
+  }, []);
 
   // Apply CSS variable defaults or fallback to hardcoded defaults
   // Users can override these by setting CSS custom properties globally
@@ -108,6 +107,8 @@ export default function BBLoadingSpinner(
           getLoadingSpinnerClassName(),
           getLoadingSpinnerSizeClassName(),
           getColorClassName(),
+          // Prevents flash of default values during CSS variable loading
+          isClient ? styles.loaderVisible : styles.loaderHidden,
           className
         )}
       />
