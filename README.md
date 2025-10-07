@@ -151,7 +151,8 @@ html,
   // bb loading
   --loading-default-variant: default;
   --loading-default-size: md;
-  --loading-default-color: primary; 
+  --loading-default-color: primary;
+  --loading-thickness: 2px; 
   // bb modal
   --modal-z-index: 9999;
   // bb navbar

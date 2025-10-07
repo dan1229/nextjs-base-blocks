@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   createClassHelper,
   toStandardSnakeCase
@@ -36,34 +36,42 @@ export default function BBLoadingSpinner(
   // Extract props - defaults will be determined by CSS variables or fallback values
   const { variant, className, size, color } = Props;
 
-  // Get CSS custom property values as defaults when props aren't provided
-  // This allows users to set global defaults via CSS without creating wrapper components
-  const getDefaultValue = (property: string, fallback: string): string => {
+  // State to track CSS variable defaults and loading status
+  const [cssDefaults, setCssDefaults] = useState({
+    variant: 'default',
+    size: 'md',
+    color: 'primary'
+  });
+  const [isClient, setIsClient] = useState(false);
+
+  // Effect to read CSS variables on client side
+  useEffect(() => {
     if (typeof window !== 'undefined') {
       const computedStyle = getComputedStyle(document.documentElement);
-      const cssValue = computedStyle.getPropertyValue(property).trim();
-      return cssValue || fallback;
+
+      const getCleanCSSValue = (property: string, fallback: string): string => {
+        const cssValue = computedStyle.getPropertyValue(property).trim();
+        const cleanValue = cssValue.replace(/^['"]|['"]$/g, '').trim();
+        return cleanValue || fallback;
+      };
+
+      const newDefaults = {
+        variant: getCleanCSSValue('--loading-default-variant', 'default'),
+        size: getCleanCSSValue('--loading-default-size', 'md'),
+        color: getCleanCSSValue('--loading-default-color', 'primary')
+      };
+
+
+      setCssDefaults(newDefaults);
+      setIsClient(true);
     }
-    return fallback;
-  };
+  }, []);
 
   // Apply CSS variable defaults or fallback to hardcoded defaults
   // Users can override these by setting CSS custom properties globally
-  const finalVariant =
-    variant ||
-    (getDefaultValue(
-      '--loading-default-variant',
-      'default'
-    ) as TBBLoadingSpinnerVariants);
-  const finalSize =
-    size ||
-    (getDefaultValue('--loading-default-size', 'md') as TBBLoadingSpinnerSizes);
-  const finalColor =
-    color ||
-    (getDefaultValue(
-      '--loading-default-color',
-      'primary'
-    ) as TBBLoadingSpinnerColor);
+  const finalVariant = variant || (cssDefaults.variant as TBBLoadingSpinnerVariants);
+  const finalSize = size || (cssDefaults.size as TBBLoadingSpinnerSizes);
+  const finalColor = color || (cssDefaults.color as TBBLoadingSpinnerColor);
 
   // Create class helper with standardized patterns
   const classHelper = createClassHelper(styles, {
@@ -99,6 +107,8 @@ export default function BBLoadingSpinner(
           getLoadingSpinnerClassName(),
           getLoadingSpinnerSizeClassName(),
           getColorClassName(),
+          // Prevents flash of default values during CSS variable loading
+          isClient ? styles.loaderVisible : styles.loaderHidden,
           className
         )}
       />

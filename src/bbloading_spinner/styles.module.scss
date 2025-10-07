@@ -1,9 +1,23 @@
+// CSS Variables - declared once at the top
+$loader-thickness: var(--loading-thickness, 2px);
+
 .containerLoading {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   margin: 8px;
+}
+
+// Prevents flash of default values during CSS variable loading
+.loaderHidden {
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.loaderVisible {
+  opacity: 1;
+  transition: opacity 0.15s ease-in-out;
 }
 
 /**
@@ -64,7 +78,7 @@
 * DEFAULT
 */
 .loader_default {
-  border: 2px solid var(--loader-color);
+  border: $loader-thickness solid var(--loader-color);
   border-radius: 50%;
   border-top-color: white;
   animation: rotationSpinner 1s linear infinite;
@@ -83,7 +97,7 @@
 * DOUBLE CIRCLE
 */
 .loader_double_circle {
-  border: 3px dotted #fff;
+  border: $loader-thickness dotted #fff;
   border-style: solid solid dotted dotted;
   border-radius: 50%;
   display: inline-block;
@@ -100,7 +114,7 @@
   top: 0;
   bottom: 0;
   margin: auto;
-  border: 3px dotted var(--loader-color);
+  border: $loader-thickness dotted var(--loader-color);
   border-style: solid solid dotted;
   width: 24px;
   height: 24px;
@@ -130,7 +144,7 @@
 * CIRCLE BOUNCE
 */
 .loader_circle_bounce {
-  border: 4px solid var(--loader-color);
+  border: $loader-thickness solid var(--loader-color);
   border-radius: 50%;
   animation: circleBounceSpinner 1s ease-in-out infinite;
 }
@@ -151,7 +165,7 @@
 * SPINNING SQUARE
 */
 .loader_spinning_square {
-  border: 4px solid var(--loader-color);
+  border: $loader-thickness solid var(--loader-color);
   animation: spinningSquareSpinner 3s linear infinite;
 }
 
