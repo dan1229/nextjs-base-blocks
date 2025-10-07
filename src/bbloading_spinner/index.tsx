@@ -1,8 +1,15 @@
 import classNames from 'classnames';
 import React from 'react';
-import { createClassHelper, toStandardSnakeCase } from '../utils/scss-class-functions';
+import type {
+  TBBLoadingSpinnerColor,
+  TBBLoadingSpinnerSizes,
+  TBBLoadingSpinnerVariants
+} from '../types';
+import {
+  createClassHelper,
+  toStandardSnakeCase
+} from '../utils/scss-class-functions';
 import styles from './styles.module.scss';
-import type { TBBLoadingSpinnerColor, TBBLoadingSpinnerSizes, TBBLoadingSpinnerVariants } from '../types';
 
 /**
  * Props interface for BBLoadingSpinner component
@@ -21,36 +28,11 @@ export interface IPropsBBLoadingSpinner {
 }
 
 /**
- * BBLoadingSpinner - Animated loading spinner component
- *
- * A flexible loading spinner with multiple animation variants, sizes, and colors.
- * Uses CSS custom properties for theming and provides sensible defaults.
- *
- * Supports global default configuration via CSS custom properties:
- * - --loading-default-variant: Sets default animation style
- * - --loading-default-size: Sets default spinner size
- * - --loading-default-color: Sets default color theme
- *
- * @example
- * // Basic usage with defaults (default variant, md size, primary color)
- * <BBLoadingSpinner />
- *
- * @example
- * // Custom configuration via props (overrides CSS variables)
- * <BBLoadingSpinner variant="circle bounce" size="lg" color="accent" />
- *
- * @example
- * // Global defaults via CSS (affects all BBLoadingSpinner instances without explicit props)
- * :root {
- *   --loading-default-variant: "circle bounce";
- *   --loading-default-size: lg;
- *   --loading-default-color: accent;
- * }
- *
- * @param {IPropsBBLoadingSpinner} Props - Component props
- * @returns {React.ReactElement} Rendered loading spinner
+ * BBLoadingSpinner
  */
-export default function BBLoadingSpinner(Props: IPropsBBLoadingSpinner): React.ReactElement {
+export default function BBLoadingSpinner(
+  Props: IPropsBBLoadingSpinner
+): React.ReactElement {
   // Extract props - defaults will be determined by CSS variables or fallback values
   const { variant, className, size, color } = Props;
 
@@ -67,25 +49,39 @@ export default function BBLoadingSpinner(Props: IPropsBBLoadingSpinner): React.R
 
   // Apply CSS variable defaults or fallback to hardcoded defaults
   // Users can override these by setting CSS custom properties globally
-  const finalVariant = variant || (getDefaultValue('--loading-default-variant', 'default') as TBBLoadingSpinnerVariants);
-  const finalSize = size || (getDefaultValue('--loading-default-size', 'md') as TBBLoadingSpinnerSizes);
-  const finalColor = color || (getDefaultValue('--loading-default-color', 'primary') as TBBLoadingSpinnerColor);
+  const finalVariant =
+    variant ||
+    (getDefaultValue(
+      '--loading-default-variant',
+      'default'
+    ) as TBBLoadingSpinnerVariants);
+  const finalSize =
+    size ||
+    (getDefaultValue('--loading-default-size', 'md') as TBBLoadingSpinnerSizes);
+  const finalColor =
+    color ||
+    (getDefaultValue(
+      '--loading-default-color',
+      'primary'
+    ) as TBBLoadingSpinnerColor);
 
   // Create class helper with standardized patterns
   const classHelper = createClassHelper(styles, {
     variant: {
       prefix: 'loader_',
-      transform: toStandardSnakeCase  // Convert 'double circle' to 'double_circle', handles kebab-case and camelCase too
+      transform: toStandardSnakeCase // Convert 'double circle' to 'double_circle', handles kebab-case and camelCase too
     },
     size: { prefix: 'loader_' },
-    color: {},  // Direct mapping for colors
+    color: {} // Direct mapping for colors
   });
 
   const getLoadingSpinnerClassName = () => {
     if (finalVariant === 'default') {
       return classNames(styles.loader_default); // Classic rotating border with transparent top
     }
-    return classHelper.variant(finalVariant) || classNames(styles.loader_default);
+    return (
+      classHelper.variant(finalVariant) || classNames(styles.loader_default)
+    );
   };
 
   const getLoadingSpinnerSizeClassName = () => {
@@ -98,7 +94,14 @@ export default function BBLoadingSpinner(Props: IPropsBBLoadingSpinner): React.R
 
   return (
     <div className={styles.containerLoading}>
-      <span className={classNames(getLoadingSpinnerClassName(), getLoadingSpinnerSizeClassName(), getColorClassName(), className)} />
+      <span
+        className={classNames(
+          getLoadingSpinnerClassName(),
+          getLoadingSpinnerSizeClassName(),
+          getColorClassName(),
+          className
+        )}
+      />
     </div>
   );
 }
