@@ -14,6 +14,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [2.3.1] - 2025-10-06
+- `BBNavbar`
+  - BREAKING CHANGE: Removed `--navbar-vertical-width` CSS variable - now uses responsive-only approach
+  - BREAKING CHANGE: Removed unused `--navbar-brand-padding` CSS variable (was not functional)
+  - Fixed vertical navbar width responsive behavior - media queries now work correctly
+  - Improved responsive brand styling for vertical navbars:
+    - Title text automatically hides on small navbar widths (≤576px)
+    - Brand images scale down progressively
+    - Brand container padding adjusts responsively for better spacing
+  - Updated default navbar width values for better real-world usability
+  - Enhanced documentation with width size explanations in README
+- `BBLoadingSpinner`
+  - BREAKING CHANGE: Renamed CSS variables to remove 'bb' prefix for consistency:
+    - `--bb-loading-default-variant` → `--loading-default-variant`
+    - `--bb-loading-default-size` → `--loading-default-size`
+    - `--bb-loading-default-color` → `--loading-default-color`
+
+    
 ### [2.3.0] - 2025-10-05
 - **New!** - `BBTable`
   - Table component with all the bells and whistles you'd expect
