@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
 import BBText from '../bbtext';
-import type { IPropsBBBase, TBBTextColor, TBBTextSize } from '../types';
 import styles from './styles.module.scss';
+import type { IPropsBBBase, TBBTextColor, TBBTextSize } from '../types';
 
 /**
  * PROPS

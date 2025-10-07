@@ -1,15 +1,15 @@
 import classNames from 'classnames';
 import React from 'react';
-import type {
-  TBBLoadingSpinnerColor,
-  TBBLoadingSpinnerSizes,
-  TBBLoadingSpinnerVariants
-} from '../types';
 import {
   createClassHelper,
   toStandardSnakeCase
 } from '../utils/scss-class-functions';
 import styles from './styles.module.scss';
+import type {
+  TBBLoadingSpinnerColor,
+  TBBLoadingSpinnerSizes,
+  TBBLoadingSpinnerVariants
+} from '../types';
 
 /**
  * Props interface for BBLoadingSpinner component
