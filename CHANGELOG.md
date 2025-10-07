@@ -14,6 +14,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [2.3.2] - 2025-10-06
+- `BBLoadingSpinner`
+  - Fixed new variables no longer working
+  - `--loading-thickness` variable added
+  - Fixed flashing 'default' spinner on initial load
+
+  
 ### [2.3.1] - 2025-10-06
 - `BBNavbar`
   - BREAKING CHANGE: Removed `--navbar-vertical-width` CSS variable - now uses responsive-only approach

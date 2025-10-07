@@ -269,18 +269,6 @@
 ### [2.4.0] - 2025-MM-DD
 - TODO
 
----
-
-
-
-
-### [2.3.2] - 2025-10-06
-- `BBLoadingSpinner`
-  - Fixed new variables no longer working
-  - `--loading-thickness` variable added
-  - Fixed flashing 'default' spinner on initial load
-
-
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)
