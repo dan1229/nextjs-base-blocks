@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import BBText from '../bbtext';
 import styles from './styles.module.scss';
-import type { TBBTextSize, TBBTextColor, IPropsBBBase } from '../types';
+import type { IPropsBBBase, TBBTextColor, TBBTextSize } from '../types';
 
 /**
  * PROPS
@@ -30,10 +30,13 @@ export interface IPropsBBLink {
   external?: boolean;
   hover?: boolean;
 }
+
 /**
  * BBLink
  */
-export default function BBLink(Props: IPropsBBLink & IPropsBBBase): React.ReactElement {
+export default function BBLink(
+  Props: IPropsBBLink & IPropsBBBase
+): React.ReactElement {
   const {
     children,
     href,
@@ -45,7 +48,7 @@ export default function BBLink(Props: IPropsBBLink & IPropsBBBase): React.ReactE
     asSpan = false,
     external = false,
     hover = true,
-    className,
+    className
   } = Props;
 
   return (
