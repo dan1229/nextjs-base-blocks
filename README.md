@@ -160,11 +160,11 @@ html,
   --navbar-icon-mobile-color: var(--primary-color);
   --navbar-transition: all 0.2s ease-in-out;
   // responsive vertical navbar widths for different screen sizes
-  --navbar-vertical-width-xs: 4rem;
+  --navbar-vertical-width-xs: 5rem;
   --navbar-vertical-width-sm: 6rem;
   --navbar-vertical-width-md: 8rem;
   --navbar-vertical-width-lg: 10rem;
-  --navbar-vertical-width-xl: 12rem;
+  --navbar-vertical-width-xl: 11rem;
   // bb navbar item
   --navbar-item-border-radius: 1rem;
   --navbar-item-padding: 0.5rem;
