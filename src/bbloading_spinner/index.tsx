@@ -63,11 +63,6 @@ export default function BBLoadingSpinner(
         color: getCleanCSSValue('--loading-default-color', 'primary')
       };
 
-      // Debug logging in development
-      if (process.env.NODE_ENV === 'development') {
-        console.log('BBLoadingSpinner CSS defaults loaded:', newDefaults);
-      }
-
       setCssDefaults(newDefaults);
     }
   }, []);
@@ -77,15 +72,6 @@ export default function BBLoadingSpinner(
   const finalVariant = variant || (cssDefaults.variant as TBBLoadingSpinnerVariants);
   const finalSize = size || (cssDefaults.size as TBBLoadingSpinnerSizes);
   const finalColor = color || (cssDefaults.color as TBBLoadingSpinnerColor);
-
-  // Debug logging in development
-  if (process.env.NODE_ENV === 'development' && isClient) {
-    console.log('BBLoadingSpinner final values:', {
-      variant: { prop: variant, cssDefault: cssDefaults.variant, final: finalVariant },
-      size: { prop: size, cssDefault: cssDefaults.size, final: finalSize },
-      color: { prop: color, cssDefault: cssDefaults.color, final: finalColor }
-    });
-  }
 
   // Create class helper with standardized patterns
   const classHelper = createClassHelper(styles, {
