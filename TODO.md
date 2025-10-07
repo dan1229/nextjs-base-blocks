@@ -278,6 +278,7 @@
 - `BBLoadingSpinner`
   - Fixed new variables no longer working
   - `--loading-thickness` variable added
+  - Fixed flashing 'default' spinner on initial load
 
 
 -------------------------------------------------------

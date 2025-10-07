@@ -63,6 +63,11 @@ export default function BBLoadingSpinner(
         color: getCleanCSSValue('--loading-default-color', 'primary')
       };
 
+      // Temporary debug logging for variant testing
+      if (process.env.NODE_ENV === 'development') {
+        console.log('BBLoadingSpinner CSS values:', newDefaults);
+      }
+
       setCssDefaults(newDefaults);
     }
   }, []);
@@ -107,6 +112,9 @@ export default function BBLoadingSpinner(
           getLoadingSpinnerClassName(),
           getLoadingSpinnerSizeClassName(),
           getColorClassName(),
+          // Prevents flash of default values during CSS variable loading
+          // Spinner starts hidden on SSR, then fades in once CSS variables are read on client
+          isClient ? styles.loaderVisible : styles.loaderHidden,
           className
         )}
       />

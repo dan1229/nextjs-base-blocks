@@ -6,6 +6,18 @@
   margin: 8px;
 }
 
+// Prevents flash of default values during CSS variable loading
+// Spinner starts invisible on server-side render, then fades in once CSS variables are read
+.loaderHidden {
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.loaderVisible {
+  opacity: 1;
+  transition: opacity 0.1s ease-in-out;
+}
+
 /**
 * SIZES
 */
