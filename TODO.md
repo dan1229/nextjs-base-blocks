@@ -284,7 +284,16 @@ TODO
 
 ### [2.3.1] - 2025-10-DD
 - `BBNavbar`
-  - Fixed issue with vertical responsive width
+  - BREAKING CHANGE: Removed `--navbar-vertical-width` CSS variable - now uses responsive-only approach
+  - BREAKING CHANGE: Removed unused `--navbar-brand-padding` CSS variable (was not functional)
+  - Fixed vertical navbar width responsive behavior - media queries now work correctly
+  - Improved responsive brand styling for vertical navbars:
+    - Title text automatically hides on small navbar widths (≤576px)
+    - Brand images scale down progressively
+    - Brand container padding adjusts responsively for better spacing
+  - Updated default navbar width values for better real-world usability:
+    - `--navbar-vertical-width-xs`: 4rem → 5rem (more practical minimum width)
+    - `--navbar-vertical-width-xl`: 12rem → 11rem (less excessive maximum width)
 
 -------------------------------------------------------
 

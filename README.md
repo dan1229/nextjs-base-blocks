@@ -156,7 +156,6 @@ html,
   --modal-z-index: 9999;
   // bb navbar
   --navbar-background-color: var(--primary-color);
-  --navbar-brand-padding: 0;
   --navbar-icon-mobile-color: var(--primary-color);
   --navbar-transition: all 0.2s ease-in-out;
   // responsive vertical navbar widths for different screen sizes
