@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
   createClassHelper,
   toStandardSnakeCase
@@ -36,18 +36,8 @@ export default function BBLoadingSpinner(
   // Extract props - defaults will be determined by CSS variables or fallback values
   const { variant, className, size, color } = Props;
 
-  // State to track if we're on client side and CSS variables are available
-  const [isClient, setIsClient] = useState(false);
-  const [cssDefaults, setCssDefaults] = useState({
-    variant: 'default',
-    size: 'md',
-    color: 'primary'
-  });
-
-  // Effect to read CSS variables on client side
-  useEffect(() => {
-    setIsClient(true);
-
+  // Get CSS variables immediately if on client side
+  const getCSSDefaults = () => {
     if (typeof window !== 'undefined') {
       const computedStyle = getComputedStyle(document.documentElement);
 
@@ -57,20 +47,26 @@ export default function BBLoadingSpinner(
         return cleanValue || fallback;
       };
 
-      const newDefaults = {
+      return {
         variant: getCleanCSSValue('--loading-default-variant', 'default'),
         size: getCleanCSSValue('--loading-default-size', 'md'),
         color: getCleanCSSValue('--loading-default-color', 'primary')
       };
-
-      // Temporary debug logging for variant testing
-      if (process.env.NODE_ENV === 'development') {
-        console.log('BBLoadingSpinner CSS values:', newDefaults);
-      }
-
-      setCssDefaults(newDefaults);
     }
-  }, []);
+
+    return {
+      variant: 'default',
+      size: 'md',
+      color: 'primary'
+    };
+  };
+
+  const cssDefaults = getCSSDefaults();
+
+  // Debug logging for variant testing
+  if (process.env.NODE_ENV === 'development' && typeof window !== 'undefined') {
+    console.log('BBLoadingSpinner CSS values:', cssDefaults);
+  }
 
   // Apply CSS variable defaults or fallback to hardcoded defaults
   // Users can override these by setting CSS custom properties globally
@@ -112,9 +108,6 @@ export default function BBLoadingSpinner(
           getLoadingSpinnerClassName(),
           getLoadingSpinnerSizeClassName(),
           getColorClassName(),
-          // Prevents flash of default values during CSS variable loading
-          // Spinner starts hidden on SSR, then fades in once CSS variables are read on client
-          isClient ? styles.loaderVisible : styles.loaderHidden,
           className
         )}
       />
