@@ -277,8 +277,9 @@
 ### [2.3.2] - 2025-10-06
 - `BBLoadingSpinner`
   - Fixed new variables no longer working
+  - `--loading-thickness` variable added
 
-  
+
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)
