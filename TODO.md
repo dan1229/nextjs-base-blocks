@@ -266,6 +266,15 @@
 
 
 
+
+issue with navbar item active color:
+```
+// Active state selectors (must come after hover to have proper precedence)
+...
+```
+- using the text color not the variable?
+  - i.e., --navbar-item-bg-color-active is not being used as it should
+
 ### [2.4.0] - 2025-MM-DD
 - TODO
 
