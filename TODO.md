@@ -197,6 +197,15 @@
   - stuff that's unopinionated if it can't be turned off
 
 
+#### flutter esque pullout navbars
+- vertical mobile styling
+  - emulate styling from flutter navbars a bit
+    - i.e., always slide out kinda thing
+  - even if a million navbar items make the mobile menu scrollable
+    - overflow-y?
+
+
+
 ---
 ### 2.4.0
 
@@ -234,12 +243,15 @@
     - find a way to auto detect these so we dont need to manually add
 
 
-#### flutter esque pullout navbars
-- vertical mobile styling
-  - emulate styling from flutter navbars a bit
-    - i.e., always slide out kinda thing
-  - even if a million navbar items make the mobile menu scrollable
-    - overflow-y?
+
+
+#### consolidate bb field select and bb field select multiple
+- e.g., could just add a `multiple` prop to the select field
+- is this a good move?
+- is it easily do-able
+
+
+
 
 
 
@@ -254,20 +266,19 @@
 
 
 
+#### bbbadge
+- new component!
+  - minimal addition
+- demo page?
+
+
 
 #### navbar (horizontal) sticky prop
 - add back 'sticky' prop
   - is it working?
 
-#### consolidate bb field select and bb field select multiple
-- e.g., could just add a `multiple` prop to the select field
-- is this a good move?
-- is it easily do-able
 
-
-
-
-issue with navbar item active color:
+#### issue with navbar item active color:
 ```
 // Active state selectors (must come after hover to have proper precedence)
 ...
