@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [2.3.3] - 2026-03-17
+- Add smooth transitions and fix hover states for all button variants
+
+
 ### [2.3.2] - 2025-10-06
 - `BBLoadingSpinner`
   - Fixed new variables no longer working
