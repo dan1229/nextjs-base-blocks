@@ -42,8 +42,24 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
 .base {
   padding: $button-base-padding;
   border-radius: var(--button-border-radius, 4px);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+
   &:hover {
     cursor: pointer;
+  }
+
+  &:hover:not(.disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  }
+
+  &:active:not(.disabled) {
+    transform: translateY(0);
+    box-shadow: none;
   }
 }
 
@@ -204,11 +220,11 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
   color: $white;
 
   &:hover {
-    color: $grey-lightest;
+    color: $white;
     background-color: $primary-light-color;
 
     * {
-      color: $grey-lightest;
+      color: $white;
     }
   }
 
@@ -237,11 +253,11 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
   color: $white;
 
   &:hover {
-    color: $grey-lightest;
+    color: $white;
     background-color: $secondary-light-color;
 
     * {
-      color: $grey-lightest;
+      color: $white;
     }
   }
 
@@ -270,11 +286,11 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
   color: $white;
 
   &:hover {
-    color: $grey-lightest;
+    color: $white;
     background-color: $accent-light-color;
 
     * {
-      color: $grey-lightest;
+      color: $white;
     }
   }
 
@@ -303,11 +319,11 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
   color: $white;
 
   &:hover {
-    color: $grey-lightest;
+    color: $white;
     background-color: $danger-light-color;
 
     * {
-      color: $grey-lightest;
+      color: $white;
     }
   }
 
@@ -336,11 +352,11 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
   color: $white;
 
   &:hover {
-    color: $grey-lightest;
+    color: $white;
     background-color: $success-light-color;
 
     * {
-      color: $grey-lightest;
+      color: $white;
     }
   }
 
@@ -369,11 +385,11 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
   color: $white;
 
   &:hover {
-    color: $grey-lightest;
+    color: $white;
     background-color: $warning-light-color;
 
     * {
-      color: $grey-lightest;
+      color: $white;
     }
   }
 
@@ -402,11 +418,11 @@ $button-base-border-radius: var(--button-base-border-radius, 4px);
   color: $white;
 
   &:hover {
-    color: $grey-lightest;
+    color: $white;
     background-color: $info-light-color;
 
     * {
-      color: $grey-lightest;
+      color: $white;
     }
   }
 
