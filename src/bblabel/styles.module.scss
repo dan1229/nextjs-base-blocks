@@ -1,0 +1,17 @@
+/*
+ * BBLabel
+ *
+ * The mono eyebrow treatment. Font family (mono) and weight come through BBText props;
+ * size comes from BBText. The muted ink applies only when no explicit color is set, and
+ * relies on import order (BBText imported before these styles) to win over BBText's
+ * default color.
+ */
+
+.label {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.muted {
+  color: var(--mono-label-color, var(--text-color-default, #000));
+}
