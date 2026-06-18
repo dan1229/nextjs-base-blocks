@@ -14,6 +14,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [2.4.0] - 2026-06-17
+- **`BBText` `weight` prop** - named font weights (`light` 300, `regular` 400, `medium` 500, `semibold` 600, `bold` 700). The existing `bold` boolean stays as a shorthand and is overridden by `weight` when both are set. Non-breaking.
+- **New `BBCode` component** - inline `<code>` (or block `<pre><code>` via `block`) for short code / CLI snippets. Renders monospace + a neutral theme-agnostic chrome and reuses the BBText size/color scale for the text.
+- **New `BBQuote` component** - semantic `<figure>`/`<blockquote>` pull quote with an optional `<figcaption><cite>` attribution, composed from BBText.
+- **New `BBLabel` component** - small uppercase, letter-spaced monospace eyebrow / kicker label, composed from BBText. Muted ink by default, overridable via `color`.
+- **`BBText` `xxxlarge` size fix** - desktop `xxxlarge` now uses `$text-size-xxxl` instead of `$text-size-xxl`, so it is actually larger than `xxlarge` (the two were the same size before). Mobile was already correct.
+- Cypress coverage + README entries for all of the above.
+- Tooling: added `webpack` as a direct devDependency so the Cypress config resolves it on Node 24 / npm 11 (was only present transitively).
+
+
 ### [2.3.3] - 2026-03-17
 - Add smooth transitions and fix hover states for all button variants
 

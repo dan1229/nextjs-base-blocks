@@ -287,13 +287,8 @@
   - i.e., --navbar-item-bg-color-active is not being used as it should
   - `--navbar-item-text-color-active` doesnt seem to exist and maybe should
 
-### [2.4.0] - 2025-MM-DD
-- **`BBText` `weight` prop** - named font weights (`light` 300, `regular` 400, `medium` 500, `semibold` 600, `bold` 700). The existing `bold` boolean stays as a shorthand and is overridden by `weight` when both are set. Non-breaking.
-- **New `BBCode` component** - inline `<code>` (or block `<pre><code>` via `block`) for short code / CLI snippets. Renders monospace + a neutral theme-agnostic chrome and reuses the BBText size/color scale for the text.
-- **New `BBQuote` component** - semantic `<figure>`/`<blockquote>` pull quote with an optional `<figcaption><cite>` attribution, composed from BBText.
-- **New `BBLabel` component** - small uppercase, letter-spaced monospace eyebrow / kicker label, composed from BBText. Muted ink by default, overridable via `color`.
-- **`BBText` `xxxlarge` size fix** - desktop `xxxlarge` now uses `$text-size-xxxl` instead of `$text-size-xxl`, so it is actually larger than `xxlarge` (the two were the same size before). Mobile was already correct.
-- Cypress coverage + README entries for all of the above.
+### [X.X.X] - TBD
+- TODO
 
 -------------------------------------------------------
 
