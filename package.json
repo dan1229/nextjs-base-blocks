@@ -1,6 +1,6 @@
 {
   "name": "nextjs-base-blocks",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "A component library for Next.js",
   "main": "mixins.js",
   "files": [

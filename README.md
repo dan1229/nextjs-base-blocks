@@ -143,6 +143,7 @@ html,
   // bb button
   --button-base-padding: 0.6rem;
   --button-border-radius: 1rem;
+  --button-primary-text-color: #fff; // Text/icon color for the filled primary button. Defaults to white; set to a dark value when the primary color is light.
   // bb card
   --card-background-default-color: rgb(250, 250, 250);
   --card-border-default-color: rgb(230, 230, 230);

@@ -14,6 +14,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [2.4.1] - 2026-06-17
+- **`BBButton` primary text color** - the filled primary button's text/icon color is now themeable via `--button-primary-text-color` (defaults to white), fixing low-contrast white-on-light-primary buttons. The label `BBText` and icon follow the same color via a descendant override. Non-breaking - existing consumers keep white text.
+- README entry for `--button-primary-text-color`.
+
+
 ### [2.4.0] - 2026-06-17
 - **`BBText` `weight` prop** - named font weights (`light` 300, `regular` 400, `medium` 500, `semibold` 600, `bold` 700). The existing `bold` boolean stays as a shorthand and is overridden by `weight` when both are set. Non-breaking.
 - **New `BBCode` component** - inline `<code>` (or block `<pre><code>` via `block`) for short code / CLI snippets. Renders monospace + a neutral theme-agnostic chrome and reuses the BBText size/color scale for the text.
