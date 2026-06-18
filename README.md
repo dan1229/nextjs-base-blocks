@@ -53,12 +53,15 @@ At the moment, the following components are available:
 - `BBAlert`
 - `BBButton`
 - `BBCard`
+- `BBCode`
 - `BBCollapsible`
+- `BBLabel`
 - `BBLink`
 - `BBLoadingSpinner`
 - `BBModal`
 - `BBNavbar`
 - `BBNavbarItem`
+- `BBQuote`
 - `BBText`
 
 As well as the following 'Form Components':

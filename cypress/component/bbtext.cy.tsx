@@ -107,6 +107,40 @@ describe('BBText Component Tests', () => {
     });
   });
 
+  describe('Font Weights', () => {
+    const weights: Array<IPropsBBText['weight']> = [
+      'light',
+      'regular',
+      'medium',
+      'semibold',
+      'bold',
+    ];
+
+    weights.forEach((weight) => {
+      if (weight) {
+        it(`renders with weight="${weight}"`, () => {
+          cy.mount(
+            <BBText weight={weight} asSpan>
+              Weighted text
+            </BBText>
+          );
+          cy.get('span').should('exist');
+          cy.get('span').should('contain.text', 'Weighted text');
+        });
+      }
+    });
+
+    it('renders with both weight and bold set', () => {
+      cy.mount(
+        <BBText weight="medium" bold asSpan>
+          Precedence text
+        </BBText>
+      );
+      cy.get('span').should('exist');
+      cy.get('span').should('contain.text', 'Precedence text');
+    });
+  });
+
   describe('Content Rendering', () => {
     it('renders text content', () => {
       cy.mount(<BBText>Simple text content</BBText>);

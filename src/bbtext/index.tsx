@@ -2,12 +2,13 @@ import classNames from 'classnames';
 import React from 'react';
 import { createClassHelper } from '../utils/scss-class-functions';
 import styles from './styles.module.scss';
-import type { TBBTextSize, TBBTextColor } from '../types';
+import type { TBBTextSize, TBBTextColor, TBBTextWeight } from '../types';
 
 // Create class helper with standardized patterns
 const classHelper = createClassHelper(styles, {
   color: {},  // Direct mapping for most colors
   size: {},   // Direct mapping for sizes
+  weight: { prefix: 'weight_' },  // weight_light, weight_medium, etc.
 });
 
 /**
@@ -16,7 +17,8 @@ const classHelper = createClassHelper(styles, {
  * @param {React.ReactNode} children - The text to display
  * @param {TBBTextSize=} size - the size of text
  * @param {TBBTextColor=} color - the color of the text
- * @param {boolean=} bold - whether the text is bold
+ * @param {boolean=} bold - whether the text is bold (shorthand for weight="bold")
+ * @param {TBBTextWeight=} weight - the font weight; takes precedence over bold when set
  * @param {boolean=} italics - whether the text is italic
  * @param {boolean=} underline - whether the text is underlined
  * @param {boolean=} hover - Whether the text has a hover effect
@@ -30,6 +32,7 @@ export interface IPropsBBText {
   size?: TBBTextSize;
   color?: TBBTextColor;
   bold?: boolean;
+  weight?: TBBTextWeight;
   italics?: boolean;
   underline?: boolean;
   hover?: boolean;
@@ -48,6 +51,7 @@ export default function BBText(Props: IPropsBBText): React.ReactElement {
     size = 'medium',
     color,
     bold = false,
+    weight,
     italics = false,
     underline = false,
     hover = false,
@@ -63,6 +67,13 @@ export default function BBText(Props: IPropsBBText): React.ReactElement {
 
   const getClassSize = (): string => {
     return classHelper.size(size) || '';
+  };
+
+  // weight takes precedence; fall back to the bold shorthand when weight is unset
+  const getClassWeight = (): string => {
+    if (weight) return classHelper.weight(weight) || '';
+    if (bold) return styles.bold;
+    return '';
   };
 
   const getHtmlTag = (): string => {
@@ -101,7 +112,7 @@ export default function BBText(Props: IPropsBBText): React.ReactElement {
         styles.base,
         getClassColor(),
         getClassSize(),
-        bold && styles.bold,
+        getClassWeight(),
         italics && styles.italics,
         underline && styles.underline,
         hover && styles.hover

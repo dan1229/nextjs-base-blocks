@@ -21,6 +21,29 @@ $text-size-xxxl: var(--text-size-xxxl, 3.2rem);
   font-weight: 700;
 }
 
+/*
+  * FONT WEIGHTS
+  */
+.weight_light {
+  font-weight: 300;
+}
+
+.weight_regular {
+  font-weight: 400;
+}
+
+.weight_medium {
+  font-weight: 500;
+}
+
+.weight_semibold {
+  font-weight: 600;
+}
+
+.weight_bold {
+  font-weight: 700;
+}
+
 .italics {
   font-style: italic;
 }
@@ -264,7 +287,7 @@ $text-size-xxxl: var(--text-size-xxxl, 3.2rem);
 }
 
 .xxxlarge {
-  font-size: $text-size-xxl;
+  font-size: $text-size-xxxl;
   font-family: $font-family-header;
   margin: 1.2rem 0.2rem;
 }

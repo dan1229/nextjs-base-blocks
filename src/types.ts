@@ -203,6 +203,7 @@ export type TBBTextColor =
   | 'warning'
   | 'danger'
   | 'info';
+export type TBBTextWeight = 'light' | 'regular' | 'medium' | 'semibold' | 'bold';
 
 /**
  * FORM TYPES

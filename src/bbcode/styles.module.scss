@@ -1,0 +1,28 @@
+/*
+ * BBCode
+ *
+ * Neutral, theme-agnostic chrome: a translucent grey overlay reads correctly on both
+ * light and dark backgrounds without depending on theme variables. The text color comes
+ * from BBText (via the `color` prop / --text-color-default), so it flips with the theme.
+ */
+
+.code {
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  background-color: rgba(128, 128, 128, 0.12);
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  white-space: nowrap;
+}
+
+.pre {
+  margin: 0;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  background-color: rgba(128, 128, 128, 0.15);
+  border: 1px solid rgba(128, 128, 128, 0.25);
+}
+
+.codeBlock {
+  white-space: pre;
+}
