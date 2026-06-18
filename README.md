@@ -55,6 +55,7 @@ At the moment, the following components are available:
 - `BBCard`
 - `BBCode`
 - `BBCollapsible`
+- `BBDivider`
 - `BBLabel`
 - `BBLink`
 - `BBLoadingSpinner`
@@ -62,7 +63,9 @@ At the moment, the following components are available:
 - `BBNavbar`
 - `BBNavbarItem`
 - `BBQuote`
+- `BBTable`
 - `BBText`
+- `BBTooltip`
 
 As well as the following 'Form Components':
 - `BBFieldBase`
@@ -223,18 +226,14 @@ html,
   --mobile-text-size-xl: 1.6rem;
   --mobile-text-size-xxl: 2rem;
   --mobile-text-size-xxxl: 2.5rem;
-  // font family - page router font usage
-  --font-family-main: 'Josefin Sans';  // Used for main text
-  --font-family-header: 'Montserrat';  // Used for larger fonts/headers
-  --font-family-navbar-header: 'Montserrat';  // Used for navbar headers
-  --form-input-font-family: 'Montserrat' // Font family for all form fields
-  --form-label-font-family: 'Montserrat' // Font family for all form field labels
-  // font family - app router font usage
-  --font-family-main: var(--font-lexend);
-  --font-family-header: var(--font-lexend);
-  --font-family-navbar-header: var(--font-lexend);
-  --form-input-font-family: var(--font-family-main); // Font family for all form fields
-  --form-label-font-family: var(--font-family-main); // Font family for all form field labels
+  // font family
+  // Page router: set these to literal font names, e.g. 'Josefin Sans', 'Montserrat'.
+  // App router: point them at the CSS variable(s) exposed by next/font, e.g. var(--font-lexend).
+  --font-family-main: var(--font-lexend);  // Used for main text
+  --font-family-header: var(--font-lexend);  // Used for larger fonts/headers
+  --font-family-navbar-header: var(--font-lexend);  // Used for navbar headers
+  --form-input-font-family: var(--font-family-main);  // Font family for all form fields
+  --form-label-font-family: var(--font-family-main);  // Font family for all form field labels
 }
 ```
 
@@ -366,5 +365,5 @@ Form Components Demo are available at [http://localhost:3000/form-components](ht
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)
 
-##### Copyright 2025 © Daniel Nazarian.
+##### Copyright 2026 © Daniel Nazarian.
 

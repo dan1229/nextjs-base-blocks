@@ -1,6 +1,6 @@
 name: Detect Version
 # This workflow is used to detect the version of the project
-# It is used to trigger the deploy-aws workflow automatically
+# It is used to trigger the deploy-branch workflow automatically
 on:
   push:
     branches:

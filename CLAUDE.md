@@ -16,15 +16,15 @@ This file provides comprehensive guidance for **Claude Code** (`claude.ai/code`)
 - **CSS Variables**: Extensive customization without touching component code
 
 ### Component Inventory
-**Core UI Components (13):**
-- BBAlert, BBButton, BBCard, BBCollapsible, BBDivider, BBLink, BBLoadingSpinner, BBModal, BBNavbar, BBNavbarItem, BBText, BBTooltip
+**Core UI Components (16):**
+- BBAlert, BBButton, BBCard, BBCode, BBCollapsible, BBDivider, BBLabel, BBLink, BBLoadingSpinner, BBModal, BBNavbar, BBNavbarItem, BBQuote, BBTable, BBText, BBTooltip
 
 **Form Components (8):**
 - BBFieldBase, BBFieldCheckbox, BBFieldFile, BBFieldNumber, BBFieldSelect, BBFieldSelectCard, BBFieldSelectMultiple, BBFieldText
 
 **Architecture:**
 - Dependencies: Minimal React ecosystem essentials
-- Test Coverage: Comprehensive Cypress component testing
+- Test Coverage: Comprehensive Cypress component testing (see `cypress/component/`)
 
 ---
 
@@ -41,7 +41,7 @@ This file provides comprehensive guidance for **Claude Code** (`claude.ai/code`)
   - `src/app/` - demo app for this project
 
 - **`cypress/`**  
-  - Contains Cypress E2E tests
+  - Contains Cypress component tests in `cypress/component/` (the `e2e/` directory is currently unused)
 
 - **`.github/`**  
   - GitHub Actions workflows for CI/CD.  
@@ -105,6 +105,22 @@ npm run test:coverage
 We strive to get as close to 100% coverage for this.
 
 Tests are run via Cypress and since this is a submodule, we want to ensure that we are not introducing breaking changes / bugs.
+
+---
+
+## Releasing
+
+Releases are **triggered by the commit message**, not by a manual tag.
+
+- A push to `main` whose commit message contains a bracketed version (`[X.X.X]`, or `[X.X.X.X]`) is detected by `.github/workflows/detect-version.yml`, which dispatches `.github/workflows/deploy-branch.yml`. That workflow cuts a `version/X.X.X` branch and creates a GitHub release tagged `X.X.X` with the commit message as the release body.
+- If the commit message has **no** `[X.X.X]`, nothing deploys. Do **not** hand-create git tags or GitHub releases — let the workflow do it.
+
+The canonical way to cut a release is the `release` skill, which:
+1. Moves the finished `### [X.X.X]` section from the bottom of `TODO.md` into `CHANGELOG.md` (with the final date).
+2. Commits using that section as the commit message (the bracketed `[X.X.X]` is what triggers the deploy).
+3. Pushes to `main` and leaves a fresh placeholder in `TODO.md`.
+
+Before releasing, bump the `version` field in `package.json` to match (this is manual — nothing updates it automatically).
 
 ---
 

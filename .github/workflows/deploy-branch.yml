@@ -2,8 +2,6 @@ name: Deploy Branch
 
 on:
   workflow_dispatch:
-    branches:
-      - 'main'
     inputs:
       version:
         required: true
@@ -14,6 +12,23 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get release notes from commit
+        id: notes
+        run: |
+          # This workflow runs via workflow_dispatch, so there is no
+          # pull_request / head_commit event payload to read - grab the
+          # latest commit message on main directly instead.
+          {
+            echo 'body<<EOF'
+            git log -1 --pretty=%B
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+
       - name: Create release branch
         uses: peterjgrainger/action-create-branch@v2.2.0
         env:
@@ -26,5 +41,5 @@ jobs:
         with:
           tag: ${{ github.event.inputs.version }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit: ${{ github.event.pull_request.head.sha }}
-          body: ${{ github.event.head_commit.message }}
+          commit: ${{ github.sha }}
+          body: ${{ steps.notes.outputs.body }}

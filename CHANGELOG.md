@@ -1,4 +1,4 @@
-# CHANGELOG for TypeScript API Services
+# CHANGELOG for NextJS Base Blocks
 #### By: [Daniel Nazarian](https://danielnazarian) 🐧👹
 ##### Contact me at <dnaz@danielnazarian.com>
 

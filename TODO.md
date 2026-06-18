@@ -167,7 +167,36 @@
 
 
 ---
-### 2.4.0
+### 2.4.1 - fixes
+
+#### issue with navbar item active color
+```
+// Active state selectors (must come after hover to have proper precedence)
+...
+```
+- using the text color not the variable?
+  - i.e., --navbar-item-bg-color-active is not being used as it should
+  - `--navbar-item-text-color-active` doesnt seem to exist and maybe should
+
+
+#### navbar (horizontal) sticky prop
+- add back 'sticky' prop
+  - is it working?
+
+
+---
+### 2.5.0 - new components
+
+#### bbbadge
+- new component!
+  - minimal addition
+- demo page?
+
+
+#### BBTabs
+- accessible tab interface
+- lazy loading of tab content
+- vertical/horizontal orientations
 
 
 #### BBLayout components
@@ -177,16 +206,10 @@
 - BBSpacer - flexible spacing component
 
 
+---
+### 2.6.0 - motion & mobile navbar
 
-### Cypress enhancements
-- [ ] Visual regression testing with screenshot comparison
-  - automated screenshot comparison
-  - cross-browser testing setup
-  - responsive design validation
-- [ ] Performance benchmarking for component rendering
-
-
-##### Animation system
+#### Animation system
 - consistent motion design language
 - enter/exit animations for all components
 - spring-based animations investigation
@@ -205,28 +228,13 @@
     - overflow-y?
 
 
-
 ---
-### 2.4.0
+### 2.7.0 - form components
 
-
-
-#### cypress tests - fill in rest of tests
-- get coverage higher!
-- components left
-  - button? collapsible, divider, link, loading spinner, modal, navbar, navbar item, tooltip
-    - double check these / all existing tests
-  - form components
-    - dont exist yet
--
-- update docs again - theyre quite long
-
-
-
-
-
-
-
+#### consolidate bb field select and bb field select multiple
+- e.g., could just add a `multiple` prop to the select field
+- is this a good move?
+- is it easily do-able
 
 
 #### bb form demo components get fully functional
@@ -243,49 +251,27 @@
     - find a way to auto detect these so we dont need to manually add
 
 
+---
+### Testing backlog
+
+#### cypress tests - fill in rest of tests
+- get coverage higher!
+- components left
+  - button? collapsible, divider, link, loading spinner, modal, navbar, navbar item, tooltip
+    - double check these / all existing tests
+  - form components
+    - dont exist yet
+-
+- update docs again - theyre quite long
 
 
-#### consolidate bb field select and bb field select multiple
-- e.g., could just add a `multiple` prop to the select field
-- is this a good move?
-- is it easily do-able
+#### visual regression + performance benchmarking
+- [ ] Visual regression testing with screenshot comparison
+  - automated screenshot comparison
+  - cross-browser testing setup
+  - responsive design validation
+- [ ] Performance benchmarking for component rendering
 
-
-
-
-
-
-
-
-
-
-#### BBTabs
-- accessible tab interface
-- lazy loading of tab content
-- vertical/horizontal orientations
-
-
-
-#### bbbadge
-- new component!
-  - minimal addition
-- demo page?
-
-
-
-#### navbar (horizontal) sticky prop
-- add back 'sticky' prop
-  - is it working?
-
-
-#### issue with navbar item active color:
-```
-// Active state selectors (must come after hover to have proper precedence)
-...
-```
-- using the text color not the variable?
-  - i.e., --navbar-item-bg-color-active is not being used as it should
-  - `--navbar-item-text-color-active` doesnt seem to exist and maybe should
 
 ### [X.X.X] - TBD
 - TODO
@@ -293,4 +279,4 @@
 -------------------------------------------------------
 
 ##### [https://danielnazarian.com](https://danielnazarian.com)
-##### Copyright 2025 © Daniel Nazarian.
+##### Copyright 2026 © Daniel Nazarian.
