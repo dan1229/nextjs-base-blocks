@@ -187,6 +187,21 @@
 ---
 ### 2.5.0 - new components
 
+#### conform the release workflow to the standard
+- every release body on this repo today is a generic string, and this is a public package -
+  strangers read it. `detect-version.yml` builds the body itself and dispatches
+  `deploy-branch.yml`
+- the standard reads the real notes out of `CHANGELOG.md` at the release SHA, keeps
+  sub-bullet indentation, hard-errors rather than shipping a blank body, and adds a
+  `release/X.X.X` marker branch alongside the tag
+- keep `deploy-branch.yml` wired as the downstream dispatch. It is `workflow_dispatch`, not
+  `on: push: tags:`, so it does not stop firing when CI starts pushing the tag
+- turn ON the version-source check against `package.json` - it agrees at 2.4.1 today, and
+  the check keeps it that way
+- tags stay bare (`2.4.1`, not `v2.4.1`) - all 56 existing tags are bare
+- `/dan:release-setup` installs it
+
+
 #### bbbadge
 - new component!
   - minimal addition
