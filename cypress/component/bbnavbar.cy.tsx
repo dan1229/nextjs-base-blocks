@@ -115,6 +115,14 @@ describe('BBNavbar Component Tests', () => {
       cy.contains('Login').should('exist');
     });
 
+    // NOTE: no layout assertions here on purpose. The component harness mocks
+    // every CSS module away (see the NormalModuleReplacementPlugin in
+    // cypress.config.ts), so a computed-style check like
+    // `should('have.css', 'flex-direction', 'row')` can only ever measure
+    // browser initial values - it passes or fails regardless of the
+    // stylesheet. Layout (e.g. the buttonsAction row) is verified visually in
+    // a consuming app; visual regression coverage is on the TODO.
+
     const alignments = ['left', 'center', 'right'];
     alignments.forEach((alignment) => {
       it(`renders with menuAlignment="${alignment}"`, () => {

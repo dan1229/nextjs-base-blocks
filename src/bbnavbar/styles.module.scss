@@ -146,6 +146,9 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
     }
 
     .containerButtonsAction {
+      // The base block is a row now, so the vertical navbar states its stack
+      // explicitly instead of inheriting it.
+      flex-direction: column;
       align-items: stretch; // Allow buttons to stretch to fill width
       width: 100%;
       margin: 0;
@@ -365,15 +368,24 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
 
 .containerButtonsAction {
   display: flex;
-  flex-direction: column;
+  // Row, not column: a horizontal bar lays its actions out side by side.
+  // This was column, and every consumer passing more than one button had to
+  // wrap the pair in its own row container to escape the stack. The vertical
+  // navbar and the hamburger-drawer widths restore the stack where it is the
+  // right shape (the .vertical block above, the media-lg block below).
+  flex-direction: row;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+  gap: var(--navbar-buttons-gap, 0.5rem);
   margin: 0 0.75rem;
+}
 
-  // For non-vertical navbars, keep existing behavior
-  &:not(.vertical) {
+@include media-lg {
+  // Hamburger range: the actions render with the collapsed menu, where
+  // side-by-side no longer fits - stack them like the rest of the drawer.
+  .containerButtonsAction {
+    flex-direction: column;
     align-items: flex-end;
-    width: auto;
   }
 }
 

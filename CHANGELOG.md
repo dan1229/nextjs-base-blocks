@@ -14,6 +14,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [2.5.0] - 2026-08-24
+- **`BBNavbar` action buttons lay out in a row** - the `buttonsAction` slot was a column flex, so passing more than one button stacked them vertically in a horizontal bar and every consumer had to wrap the pair in its own row container. The slot is now `flex-direction: row` with a themeable gap (`--navbar-buttons-gap`, defaults to 0.5rem); the vertical navbar and the hamburger widths still stack. **Behavior change** for consumers passing multiple unwrapped buttons and expecting a stack - wrap them in a column container to keep the old layout.
+- README entry for `--navbar-buttons-gap`. No cypress layout assertions - the component harness mocks CSS modules away (documented in `bbnavbar.cy.tsx`), so the layout was verified against a consuming app instead.
+
+
 ### [2.4.1] - 2026-06-17
 - **`BBButton` primary text color** - the filled primary button's text/icon color is now themeable via `--button-primary-text-color` (defaults to white), fixing low-contrast white-on-light-primary buttons. The label `BBText` and icon follow the same color via a descendant override. Non-breaking - existing consumers keep white text.
 - README entry for `--button-primary-text-color`.

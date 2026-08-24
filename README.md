@@ -166,6 +166,7 @@ html,
   --navbar-background-color: var(--primary-color);
   --navbar-icon-mobile-color: var(--primary-color);
   --navbar-transition: all 0.2s ease-in-out;
+  --navbar-buttons-gap: 0.5rem; // gap between action buttons (buttonsAction)
   // responsive vertical navbar widths for different screen sizes
   --navbar-vertical-width-xs: 5rem;
   --navbar-vertical-width-sm: 6rem;
