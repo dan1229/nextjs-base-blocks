@@ -288,6 +288,29 @@
 - [ ] Performance benchmarking for component rendering
 
 
+---
+### 3.0.0 - breaking
+
+#### `BBLink`'s `className` points at the wrong element
+- `className` lands on the inner `BBText`, not on the `<a>` that `next/link` renders. Every
+  other component in the library sends `className` to its outer element and names sub-parts
+  with a `classNameX` (`classNameHelperText`, `classNameButton`, `classNameIcon`,
+  `classNameWrapper`), so `BBLink` is the one inversion
+- 2.6.0 added `classNameLink` so the anchor is reachable at all, which is the non-breaking
+  half. Straightening the rest means `className` moves to the `<a>` and a `classNameText`
+  takes over the inner text
+-
+- this is genuinely breaking and not just a rename. The inner `BBText` stamps its own color
+  and `font-family` classes, which beat anything inherited from a parent anchor - so a
+  consumer whose class currently sets a color or a font silently loses it the moment the
+  class moves up. Anchor-level layout (flex, gap, borders) has the mirror problem in reverse
+- one known consumer passes `className` at 17 call sites, so a migration has to land in the
+  same push as the release, not after it
+- the same release should decide whether `BBLink`'s default should be `asSpan`. A link is
+  inline, but the default renders a `<p>` below size `large` and an `<h4>`/`<h3>` above it,
+  which is why consumers keep hitting hydration failures when a link wraps anything but text
+
+
 ### [X.X.X] - TBD
 - TODO
 
