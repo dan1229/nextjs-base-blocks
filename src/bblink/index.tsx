@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import Link from 'next/link';
 import React from 'react';
 import BBText from '../bbtext';
@@ -17,6 +18,19 @@ import type { IPropsBBBase, TBBTextColor, TBBTextSize } from '../types';
  * @param {boolean} asSpan - whether to render as a span or not
  * @param {boolean} external - whether the link is external or not. will open in new tab and handle seo.
  * @param {string=} hover - whether the text has a hover effect
+ * @param {string=} classNameLink - Any class name to add to the anchor element
+ *
+ * Note: `className` (from IPropsBBBase) lands on the inner BBText, not on the
+ * anchor. That is backwards from the rest of the library, where `className`
+ * goes to the outer element and a `classNameX` names the sub-part, but moving
+ * it now would silently restyle every existing consumer - the inner BBText
+ * stamps its own color and font-family classes, which beat anything inherited
+ * from a parent anchor. `classNameLink` is the additive way to reach the anchor.
+ *
+ * Note: `onClick` (also from IPropsBBBase) was accepted by the type and never
+ * forwarded anywhere, so it silently did nothing. It now goes on the anchor -
+ * the click target - which is also the only place its
+ * `MouseEventHandler<HTMLElement>` signature fits.
  */
 export interface IPropsBBLink {
   children: React.ReactNode;
@@ -29,6 +43,7 @@ export interface IPropsBBLink {
   asSpan?: boolean;
   external?: boolean;
   hover?: boolean;
+  classNameLink?: string;
 }
 
 /**
@@ -48,7 +63,9 @@ export default function BBLink(
     asSpan = false,
     external = false,
     hover = true,
-    className
+    className,
+    classNameLink,
+    onClick
   } = Props;
 
   return (
@@ -56,7 +73,11 @@ export default function BBLink(
       href={href}
       target={external ? '_blank' : ''}
       rel={external ? 'noreferrer noopener' : ''}
-      className={underline ? styles.underline : styles.no_underline}
+      className={classNames(
+        underline ? styles.underline : styles.no_underline,
+        classNameLink
+      )}
+      onClick={onClick}
     >
       <BBText
         size={size}

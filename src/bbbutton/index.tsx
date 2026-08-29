@@ -176,9 +176,21 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
       onMouseLeave={() => setIsHovered(false)}
     >
       {renderIcon('left', icon)}
+      {/*
+        Every BBText in here is `asSpan`. A button's content model is phrasing
+        content, and BBText picks its tag off `size` - so without it the label
+        rendered a `<p>` at xs/sm/md and an `<h4>`/`<h3>` at lg/xl, inside a
+        `<button>` (or an `<a>` for the href variant). That is invalid markup,
+        it put headings in the document outline, and it meant a BBButton placed
+        inside a `<p>` broke hydration: the browser closes the paragraph early
+        and React does not. Purely a tag swap - `.container_text * { margin: 0 }`
+        already suppressed the paragraph margin, the variant color overrides
+        reach the label through `.container_text *`, and the flex container had
+        already blockified the child.
+      */}
       {!!text && (
         <span className={classNames(styles.container_text)}>
-          <BBText color={colorText} size={getButtonSize()}>
+          <BBText asSpan color={colorText} size={getButtonSize()}>
             {text}
           </BBText>
         </span>
@@ -187,10 +199,12 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
       {helperTextOnHover && (
         <span className={classNames(styles.helper_text, isHovered && styles.helper_text_visible)} ref={helperTextRef}>
           <span className={styles.helper_text_content}>
-            <BBText color="white" size="small" className={styles.helper_text_question_mark}>
+            <BBText asSpan color="white" size="small" className={styles.helper_text_question_mark}>
               ?
             </BBText>
-            <BBText size="small">{helperTextOnHover}</BBText>
+            <BBText asSpan size="small">
+              {helperTextOnHover}
+            </BBText>
           </span>
         </span>
       )}

@@ -23,6 +23,26 @@ describe('BBLink Component Tests', () => {
       cy.mount(<BBLink {...defaultProps} className="custom-class" />);
       cy.get('.custom-class').should('exist');
     });
+
+    it('puts className on the inner text, not the anchor', () => {
+      // Backwards from the rest of the library, and deliberately kept that way -
+      // consumers style the text through `className` and would all regress if it
+      // moved to the anchor. `classNameLink` is how you reach the anchor.
+      cy.mount(<BBLink {...defaultProps} className="custom-class" />);
+      cy.get('a').should('not.have.class', 'custom-class');
+      cy.get('a').find('.custom-class').should('exist');
+    });
+
+    it('puts classNameLink on the anchor', () => {
+      cy.mount(<BBLink {...defaultProps} classNameLink="custom-link" />);
+      cy.get('a').should('have.class', 'custom-link');
+    });
+
+    it('keeps className and classNameLink on their own elements', () => {
+      cy.mount(<BBLink {...defaultProps} className="custom-class" classNameLink="custom-link" />);
+      cy.get('a').should('have.class', 'custom-link').and('not.have.class', 'custom-class');
+      cy.get('a').find('.custom-class').should('exist').and('not.have.class', 'custom-link');
+    });
   });
 
   describe('Link Behavior', () => {
@@ -37,6 +57,17 @@ describe('BBLink Component Tests', () => {
         .should('have.attr', 'href', 'https://example.com')
         .and('have.attr', 'target', '_blank')
         .and('have.attr', 'rel', 'noreferrer noopener');
+    });
+
+    it('calls onClick when the link is clicked', () => {
+      // Fragment href on purpose - a real path unloads the component-test
+      // iframe and every spec after this one loses its mount point.
+      const onClick = cy.stub();
+      cy.mount(<BBLink {...defaultProps} href="#test" onClick={onClick} />);
+      cy.contains('Test Link').click();
+      cy.then(() => {
+        expect(onClick).to.have.been.called;
+      });
     });
   });
 
@@ -70,6 +101,21 @@ describe('BBLink Component Tests', () => {
       cy.mount(<BBLink {...defaultProps} underline={false} />);
       cy.get('a').should('exist'); // CSS modules replace class names, just check existence
     });
+
+    it('renders a p inside the anchor by default', () => {
+      cy.mount(<BBLink {...defaultProps} />);
+      cy.get('a p').should('exist');
+    });
+
+    it('renders a span inside the anchor with asSpan', () => {
+      // The escape hatch for a BBLink that has to sit inside a paragraph, or
+      // that wraps anything other than a run of text - a block child under the
+      // default `<p>` closes the paragraph in the browser but not in React,
+      // which fails hydration.
+      cy.mount(<BBLink {...defaultProps} asSpan />);
+      cy.get('a span').should('exist');
+      cy.get('a p').should('not.exist');
+    });
   });
 
   describe('Responsive Behavior', () => {
@@ -79,7 +125,6 @@ describe('BBLink Component Tests', () => {
   });
 
   // TODO: Test hover behavior
-  // TODO: Test asSpan prop functionality
   // TODO: Add accessibility tests for keyboard navigation
   // TODO: Test with complex children (JSX elements)
 });

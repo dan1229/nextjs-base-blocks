@@ -148,4 +148,35 @@ describe('BBButton Component', () => {
       cy.get('button').should('not.contain.text', '→');
     });
   });
+
+  /**
+   * A button's content model is phrasing content, so nothing in here may render
+   * a block element. BBText picks its tag off `size` and BBButton maps its own
+   * sizes onto it, so before every label BBText was made `asSpan` this emitted a
+   * `<p>` at xs/sm/md and an `<h4>`/`<h3>` at lg/xl. That was invalid markup, it
+   * put headings in the document outline, and it meant a BBButton dropped inside
+   * a `<p>` broke hydration.
+   */
+  describe('Label Markup', () => {
+    const sizes = ['xs', 'sm', 'md', 'lg', 'xl'] as const;
+    sizes.forEach((size) => {
+      it(`renders no block element in the label at size="${size}"`, () => {
+        cy.mount(<BBButton text="Label" size={size} />);
+        cy.get('button').should('contain.text', 'Label');
+        cy.get('button p, button h1, button h2, button h3, button h4').should('not.exist');
+      });
+    });
+
+    it('renders no block element in the label of a link button', () => {
+      cy.mount(<BBButton text="Link" href="#test" size="xl" />);
+      cy.get('a').should('contain.text', 'Link');
+      cy.get('a p, a h1, a h2, a h3, a h4').should('not.exist');
+    });
+
+    it('renders no block element in the helper text', () => {
+      cy.mount(<BBButton text="Helped" onClick={() => {}} helperTextOnHover="Some help" />);
+      cy.get('button').should('contain.text', 'Some help');
+      cy.get('button p, button h1, button h2, button h3, button h4').should('not.exist');
+    });
+  });
 });
