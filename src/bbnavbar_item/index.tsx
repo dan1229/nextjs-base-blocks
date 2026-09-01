@@ -37,7 +37,7 @@ const getClassColorBorder = (colorBorder: TBBNavbarItemColorBorder): string => {
  */
 export interface IPropsBBNavbarItem {
   title: React.ReactNode;
-  children?: React.ReactElement[];
+  children?: React.ReactElement<{ href?: string }>[];
   href: string;
   className?: string;
   colorBorder?: TBBNavbarItemColorBorder;

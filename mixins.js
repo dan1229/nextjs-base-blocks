@@ -28,7 +28,11 @@ function configureSubmoduleSass(projectDir, stylesDir = 'styles', submodulePath 
   const baseBlocksPath = path.join(projectDir, submodulePath, 'src', 'styles');
 
   return {
+    // Both keys are set because sass-loader's default API (legacy vs. modern) depends on which
+    // one the host's installed `sass` package supports - `includePaths` is legacy-only,
+    // `loadPaths` is its modern-API replacement, and only one of the two is honored per run.
     includePaths: [clientStylesPath, baseBlocksPath],
+    loadPaths: [clientStylesPath, baseBlocksPath],
     additionalData: `@import "mixins.scss";`,
   };
 }

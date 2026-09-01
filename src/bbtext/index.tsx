@@ -98,8 +98,7 @@ export default function BBText(Props: IPropsBBText): React.ReactElement {
     }
   };
 
-  // eslint-disable-next-line no-undef
-  const Tag = getHtmlTag() as keyof JSX.IntrinsicElements;
+  const Tag = getHtmlTag() as keyof React.JSX.IntrinsicElements;
 
   /**
    * RENDER
