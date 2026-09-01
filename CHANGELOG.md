@@ -14,6 +14,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [2.6.1] - 2026-09-01
+- **`useOutsideClick` ref typing** - `RefObject<T>` -> `RefObject<T | null>`, matching what React 19's `useRef(null)` returns. A strict widening, so a React 18 ref still satisfies it. Non-breaking.
+- **`BBNavbarItem`'s `children` prop typed to what it already required at runtime** - `React.ReactElement[]` -> `React.ReactElement<{ href?: string }>[]`. It has always read `child.props.href`; React 19's stricter typing just surfaced that. Non-breaking for any consumer already passing `href`-bearing children.
+- **`BBText` drops the bare global `JSX` namespace** for `React.JSX.IntrinsicElements` - React 19 deprecated the ambient global. `React.JSX` exists since `@types/react@18.2.8`, so this resolves under 18 and 19 alike. Internal only.
+- **`configureSubmoduleSass` sets both `includePaths` and `loadPaths`** - sass-loader's modern Dart Sass API (which Next 16 now defaults to) only honors `loadPaths`, silently dropping the mixin import under `includePaths` alone. Non-breaking: legacy-API hosts still read `includePaths`.
+- Verified under React 18 (this package's own pin - build, lint, typecheck, full Cypress component suite, 93/93) and React 19 (how CI actually resolves it - no isolated `node_modules` here, so it always follows the host)
+
+
 ### [2.6.0] - 2026-08-29
 - **`BBButton` label markup** - every `BBText` inside a button is now `asSpan`. A button's content model is phrasing content, but `BBText` picks its tag off `size`, so the label rendered a `<p>` at `xs`/`sm`/`md` and an `<h4>`/`<h3>` at `lg`/`xl`, and the hover helper text rendered two more `<p>`s. That was invalid markup, it put headings in the document outline, and it meant a `BBButton` dropped inside a `<p>` failed hydration - the browser closes the paragraph early and React does not. Purely a tag swap with no visual change: `.container_text * { margin: 0 }` already suppressed the paragraph margin, the variant color overrides already reach the label through `.container_text *`, and the flex container had already blockified the child. Non-breaking unless you were selecting the label with `button p`.
 - **`BBLink` `classNameLink`** - new optional prop that lands on the anchor, merged with the underline class. `BBLink` forwards `className` to the inner `BBText`, so until now a consumer class could not reach the `<a>` at all and anchor-level styling (flex, gap, padding, borders) had to be faked on the text element. `className` is deliberately left where it is: the inner `BBText` stamps its own color and font-family classes that beat anything inherited from a parent anchor, so moving it would silently restyle every existing call site. Non-breaking.
