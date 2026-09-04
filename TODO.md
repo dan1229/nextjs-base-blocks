@@ -186,6 +186,36 @@
   - is it working?
 
 
+#### the hamburger and the action buttons collapse at different widths
+- `.hamburger` appears under `media-xl` (<=1200px) but `.containerButtonsAction` only flips
+  from row to column under `media-lg` (<=992px)
+- so 993-1200px renders the collapsed drawer with a full row of action buttons still beside
+  it, which is the one width where the bar has the least room for them
+- noticed while fixing the drawer's item colours for 2.6.2; not touched, since it is a
+  layout call rather than a bug with one right answer
+
+
+#### the dropdown opens on hover and nothing else
+- `.dropdownContainer:hover .dropdownContent { display: flex !important }` is the only thing
+  that opens a submenu. There is no click handler, no `:focus-within`, and no `aria-expanded`
+- a touch device at a width above the hamburger breakpoint - a tablet in landscape - cannot
+  open one at all, and neither can a keyboard. Any consumer putting real navigation in a
+  dropdown loses it for those users
+- a `:focus-within` branch is the cheap half and is additive. A tap-to-open needs state and
+  an outside-click, which `BBNavbar` already has a hook for
+
+
+#### the brand is a div with an onClick, not a link
+- `.containerBrand` in `BBNavbar` is `<div onClick={() => router.push(routeBrand)}>`, so the
+  logo is not keyboard reachable, does not middle-click into a new tab, and shows no href on
+  hover. Every site puts its way home there
+- this is why a consumer still has to carry a separate "Home" nav item. preon-site keeps one
+  for exactly this reason
+- making it a real anchor is the right fix but is not free: an `<a>` brings default link
+  styling that could disturb an existing consumer's brand block, so it wants a release of its
+  own rather than riding along with something else
+
+
 ---
 ### 2.5.0 - new components
 
