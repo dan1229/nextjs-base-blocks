@@ -37,8 +37,11 @@ $navbar-item-bg-color-active: var(--navbar-item-bg-color-active, $bg-dark-color)
 // same with --navbar-item-text-color-hover and --bg-color
 $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
 
+// The active BACKGROUND is not set here - see the active state selectors below
+// the hover ones. `.active` and `.navbarItemBase` land on the same `li` at the
+// same specificity, so a background declared here silently loses to the one
+// `.navbarItemBase` declares further down the file.
 .active {
-  background-color: $navbar-item-bg-color-active;
   border-radius: $border-radius;
 }
 
@@ -134,6 +137,17 @@ $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
 }
 
 // Active state selectors (must come after hover to have proper precedence)
+
+// The active background, doubled-class and placed after `.navbarItemBase` and
+// its `&:hover` for the same precedence reason the colour rules below carry.
+// Declared bare on `.active` it never painted at all, for any consumer at any
+// token values, because `.navbarItemBase` sets the same property later in the
+// file at equal specificity.
+.navbarItemBase.active,
+.navbarItemBase.active:hover {
+  background-color: $navbar-item-bg-color-active;
+}
+
 .navbarItemBase.active > div > div > a > *,
 .navbarItemBase.active .textLink,
 .navbarItemBase.active .textLink * {

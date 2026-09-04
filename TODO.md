@@ -169,14 +169,16 @@
 ---
 ### 2.4.1 - fixes
 
-#### issue with navbar item active color
-```
-// Active state selectors (must come after hover to have proper precedence)
-...
-```
-- using the text color not the variable?
-  - i.e., --navbar-item-bg-color-active is not being used as it should
-  - `--navbar-item-text-color-active` doesnt seem to exist and maybe should
+#### no `--navbar-item-text-color-active`
+- the active state selectors set `color` to `--navbar-item-text-color`, the same token the
+  resting `.textLink` already uses, so an active item cannot be told apart by its TEXT - only
+  by its background. Their real job today is stopping the hover colour applying to an active
+  item, which is worth keeping either way
+- a consumer who wants the label itself to change on the current page has no token to do it
+  with. Adding one is additive and would not disturb anyone who leaves it unset
+- the other half of this item - `--navbar-item-bg-color-active` never being used at all -
+  shipped in 2.6.2. It was a cascade bug, not a wiring one: the declaration was there and
+  `.navbarItemBase` overrode it further down the file
 
 
 #### navbar (horizontal) sticky prop

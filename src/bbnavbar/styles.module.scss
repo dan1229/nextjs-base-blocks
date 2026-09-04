@@ -474,11 +474,17 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
     min-width: 30vw;
     display: none;
     flex-direction: column;
-    background-color: color-mix(in srgb, $background-color, #fff 20%);
     box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
     /* need to add small border radius to match the navbar item */
     border-radius: calc($navbar-item-border-radius + 2px);
     z-index: 11;
+    /*
+     * Transparent on purpose, and the border is what draws the panel. The
+     * items tile it with no gap and paint their own opaque background, so the
+     * panel never needs a fill. That does mean --navbar-item-background-color
+     * and its hover/active variants have to be OPAQUE: a translucent one has
+     * nothing behind it here and shows the page through the drawer.
+     */
     background-color: transparent;
     border: 1px solid $bg-dark-color;
     padding: 0rem;

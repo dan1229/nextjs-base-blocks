@@ -14,6 +14,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [2.6.2] - 2026-09-04
+- **`BBNavbarItem`'s active background never painted** - `.active` and `.navbarItemBase` land on the same `li` at equal specificity, and `.navbarItemBase` set `background-color` ten lines later in the file, so the active background lost the cascade. That held for every consumer at every token value, including this library's own defaults: an active item was pixel-identical to an inactive one. The background moves to a doubled `.navbarItemBase.active`, after the hover rules, the same way the active *colour* rules already were - `.navbarItemBase.active:hover` comes with it, so an active item keeps its background under the pointer. **Visual change**: `--navbar-item-bg-color-active` becomes visible for the first time, so a consumer who never set it gets `--bg-dark-color` where they previously got `--navbar-item-background-color`.
+- **The mobile drawer's transparency is documented rather than accidental** - `.navigationMenuList` carried a `background-color` immediately overridden by the `transparent` added in #87, which read as a bug and is not one. The dead declaration is gone and a comment says the panel is transparent by design: the items tile it with no gap and paint themselves, so a consumer's item background tokens have to be OPAQUE. A translucent one has nothing behind it in the drawer and shows the page through the row.
+- Verified against the full Cypress component suite (357/357) plus build and lint, in an isolated checkout - this package carries no `node_modules` of its own inside a host project.
+
+
 ### [2.6.1] - 2026-09-01
 - **`useOutsideClick` ref typing** - `RefObject<T>` -> `RefObject<T | null>`, matching what React 19's `useRef(null)` returns. A strict widening, so a React 18 ref still satisfies it. Non-breaking.
 - **`BBNavbarItem`'s `children` prop typed to what it already required at runtime** - `React.ReactElement[]` -> `React.ReactElement<{ href?: string }>[]`. It has always read `child.props.href`; React 19's stricter typing just surfaced that. Non-breaking for any consumer already passing `href`-bearing children.
