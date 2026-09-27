@@ -14,6 +14,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [2.6.4] - 2026-09-27
+- **The last Sass deprecation warning is gone.** 2.6.3 claimed this package emitted none, and that was one short: `form_components/styles.module.scss` used the deprecated `if()` function - and the deprecated global `unit()` inside it - to add `1em` to an unitless `$input-line-height`. A consuming project's production build still reported 2 warnings from it after 2.6.3. It is now a compile-time `@if math.is-unitless(…)`, which keeps the condition (`$input-line-height` is `!default`, so a consumer may pass a unit) and drops both deprecated calls.
+- Compiled CSS byte-identical again, same content hashes as 2.6.2 and 2.6.3.
+
+
 ### [2.6.3] - 2026-09-27
 - **No more Sass deprecation warnings from this package.** Both deprecated constructs it used are gone in Dart Sass 3.0, so this was a build break waiting to happen, not only noise. Two separate causes:
   - `configureSubmoduleSass` injected `@import "mixins.scss";` into every stylesheet the host compiles, and `@import` is deprecated. It is now `@use "mixins.scss" as *;`. A consuming project measured 87 `@import` warnings in one production build, one per stylesheet, re-emitted on every recompile - a dev server left running for 53h wrote 39GB of them into an uncapped Next 16 dev log.
