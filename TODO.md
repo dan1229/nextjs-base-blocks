@@ -167,7 +167,7 @@
 
 
 ---
-### 2.6.4 - fixes
+### 2.6.5 - fixes
 
 #### several colour fallbacks name one token and carry another hue's hex
 - found while centralising the palette into `src/styles/_colors.scss` for 2.6.3. Each of these

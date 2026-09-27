@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 /**
 * FORM CONTROLS
 *
@@ -114,8 +116,13 @@ $form-required-indicator-color: var(--form-required-indicator-color, var(--dange
   // Add some height to date inputs on iOS
   // https://github.com/twbs/bootstrap/issues/23307
   &::-webkit-date-and-time-value {
-    // Multiply line-height by 1em if it has no unit
-    height: if(unit($input-line-height) == '', $input-line-height * 1em, $input-line-height);
+    // Multiply line-height by 1em if it has no unit. `$input-line-height` is `!default`, so a
+    // consumer may well hand us one that already carries a unit.
+    @if math.is-unitless($input-line-height) {
+      height: $input-line-height * 1em;
+    } @else {
+      height: $input-line-height;
+    }
   }
 
   // Prevent excessive date input height in Webkit
