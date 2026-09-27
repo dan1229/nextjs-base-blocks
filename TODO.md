@@ -167,7 +167,7 @@
 
 
 ---
-### 2.4.1 - fixes
+### 2.6.4 - fixes
 
 #### no `--navbar-item-text-color-active`
 - the active state selectors set `color` to `--navbar-item-text-color`, the same token the
@@ -216,8 +216,25 @@
   own rather than riding along with something else
 
 
+#### navbar item ids can collide
+- `BBNavbarItem` derives its element id from the title: `nav-item-${title.toLowerCase()}`
+  - a dropdown that repeats its parent's title as the first child - a normal pattern - emits the
+    same id twice, which is invalid html and makes `getElementById` / anchors pick whichever comes
+    first
+  - hit this for real on a downstream site with an 'About' dropdown containing 'About'
+  - non string titles all collapse to the bare `nav-item`, same problem
+-
+- add an `id` prop so a consumer can name it, and make the DEFAULT safe rather than just
+  documenting the footgun
+  - fold in the href? or a `useId()` suffix? or de-dupe within the parent `BBNavbar`?
+  - href derived reads better in devtools than a `useId` hash - probably worth the churn
+-
+- consumers may key off todays `nav-item-<title>` in tests/css, so this is breaking-ish
+  - minor bump, and call it out in the changelog entry
+
+
 ---
-### 2.5.0 - new components
+### 2.7.0 - new components
 
 #### conform the release workflow to the standard
 - every release body on this repo today is a generic string, and this is a public package -
@@ -228,9 +245,9 @@
   `release/X.X.X` marker branch alongside the tag
 - keep `deploy-branch.yml` wired as the downstream dispatch. It is `workflow_dispatch`, not
   `on: push: tags:`, so it does not stop firing when CI starts pushing the tag
-- turn ON the version-source check against `package.json` - it agrees at 2.4.1 today, and
+- turn ON the version-source check against `package.json` - it agrees at 2.6.2 today, and
   the check keeps it that way
-- tags stay bare (`2.4.1`, not `v2.4.1`) - all 56 existing tags are bare
+- tags stay bare (`2.6.2`, not `v2.6.2`) - all 60 existing tags are bare
 - `/dan:release-setup` installs it
 
 
@@ -254,7 +271,7 @@
 
 
 ---
-### 2.6.0 - motion & mobile navbar
+### 2.8.0 - motion & mobile navbar
 
 #### Animation system
 - consistent motion design language
@@ -276,7 +293,7 @@
 
 
 ---
-### 2.7.0 - form components
+### 2.9.0 - form components
 
 #### consolidate bb field select and bb field select multiple
 - e.g., could just add a `multiple` prop to the select field
