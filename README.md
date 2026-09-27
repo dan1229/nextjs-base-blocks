@@ -284,6 +284,15 @@ After setup, these mixins are automatically available in all your `.scss` files 
 
 See `mixins.scss` for the specific breakpoints and mixins available.
 
+> The mixins are injected with `@use "mixins.scss" as *`, so they are available unqualified in
+> every `.scss` file with no import of your own. One consequence: overriding a breakpoint by
+> redeclaring `$media-screen-width-md` in your own file no longer works - Sass modules require
+> `mixins.$media-screen-width-md: …` instead.
+
+`src/styles/_colors.scss` holds the default colour palette every component falls back to when a
+theme token is unset. It is internal - theme the components through the CSS custom properties
+below, not by loading that file.
+
 #### Dark Mode / Themes
 
 Add overrides for dark themes like so:

@@ -1,3 +1,5 @@
+@use '../styles/colors' as colors;
+
 // styles.module.scss
 
 // Color redefinitions to standardize across this file/component
@@ -8,17 +10,17 @@ $black: var(--black, #000000);
 $grey-light: var(--grey-light, #8199c2);
 $grey-dark: var(--grey-dark, #58647a);
 
-$primary-color: var(--primary-color, #78cdd7);
-$primary-light-color: var(--primary-light-color, lighten(#78cdd7, 10%));
-$primary-dark-color: var(--primary-dark-color, darken(#78cdd7, 10%));
+$primary-color: var(--primary-color, #{colors.$primary});
+$primary-light-color: var(--primary-light-color, #{colors.$primary-light});
+$primary-dark-color: var(--primary-dark-color, #{colors.$primary-dark});
 
-$secondary-color: var(--secondary-color, #ffc800);
-$secondary-light-color: var(--secondary-light-color, lighten(#ffc800, 10%));
-$secondary-dark-color: var(--secondary-dark-color, darken(#ffc800, 10%));
+$secondary-color: var(--secondary-color, #{colors.$secondary});
+$secondary-light-color: var(--secondary-light-color, #{colors.$secondary-light});
+$secondary-dark-color: var(--secondary-dark-color, #{colors.$secondary-dark});
 
-$accent-color: var(--accent-color, #ff6b6c);
-$accent-light-color: var(--accent-light-color, lighten(#ff6b6c, 10%));
-$accent-dark-color: var(--accent-dark-color, darken(#ff6b6c, 10%));
+$accent-color: var(--accent-color, #{colors.$accent});
+$accent-light-color: var(--accent-light-color, #{colors.$accent-light});
+$accent-dark-color: var(--accent-dark-color, #{colors.$accent-dark});
 
 // Base divider styles
 .divider {

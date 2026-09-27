@@ -1,3 +1,5 @@
+@use '../styles/colors' as colors;
+
 $border-radius: var(--navbar-item-border-radius, 8px);
 $navbar-item-color: var(--navbar-item-background-color, #303030);
 $navbar-item-padding: var(--navbar-item-padding, 0.5rem);
@@ -28,7 +30,7 @@ $primary-color: var(--primary-color, #78cdd7);
 $navbar-item-text-color: var(--navbar-item-text-color, $primary-color);
 
 // same with --navbar-item-text-color-hover and --primary-dark-color
-$primary-dark-color: var(--primary-dark-color, darken(#78cdd7, 10%));
+$primary-dark-color: var(--primary-dark-color, #{colors.$primary-dark});
 $navbar-item-text-color-hover: var(--navbar-item-text-color-hover, $primary-dark-color);
 
 // same with --navbar-item-bg-color-active and --bg-dark-color

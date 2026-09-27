@@ -1,3 +1,5 @@
+@use '../styles/colors' as colors;
+
 // color redefinitions to standardize across this file/component
 //
 $white: var(--white, #ffffff);
@@ -7,33 +9,33 @@ $grey-light: var(--grey-light, #8199c2);
 $grey-dark: var(--grey-dark, #58647a);
 $grey-darkest: var(--grey-darkest, #2f3542);
 
-$info-color: var(--info-color, #ffc800);
-$info-light-color: var(--info-light-color, lighten(#ffc800, 10%));
-$info-dark-color: var(--info-dark-color, darken(#ffc800, 10%));
+$info-color: var(--info-color, #{colors.$info});
+$info-light-color: var(--info-light-color, #{colors.$info-light});
+$info-dark-color: var(--info-dark-color, #{colors.$info-dark});
 
-$primary-color: var(--primary-color, #78cdd7);
-$primary-light-color: var(--primary-light-color, lighten(#78cdd7, 10%));
-$primary-dark-color: var(--primary-dark-color, darken(#78cdd7, 10%));
+$primary-color: var(--primary-color, #{colors.$primary});
+$primary-light-color: var(--primary-light-color, #{colors.$primary-light});
+$primary-dark-color: var(--primary-dark-color, #{colors.$primary-dark});
 
-$secondary-color: var(--secondary-color, #ffc800);
-$secondary-light-color: var(--secondary-light-color, lighten(#ffc800, 10%));
-$secondary-dark-color: var(--secondary-dark-color, darken(#ffc800, 10%));
+$secondary-color: var(--secondary-color, #{colors.$secondary});
+$secondary-light-color: var(--secondary-light-color, #{colors.$secondary-light});
+$secondary-dark-color: var(--secondary-dark-color, #{colors.$secondary-dark});
 
-$accent-color: var(--accent-color, #ff6b6c);
-$accent-light-color: var(--accent-light-color, lighten(#ff6b6c, 10%));
-$accent-dark-color: var(--accent-dark-color, darken(#ff6b6c, 10%));
+$accent-color: var(--accent-color, #{colors.$accent});
+$accent-light-color: var(--accent-light-color, #{colors.$accent-light});
+$accent-dark-color: var(--accent-dark-color, #{colors.$accent-dark});
 
-$danger-color: var(--danger-color, #da2f2f);
-$danger-light-color: var(--danger-light-color, lighten(#da2f2f, 10%));
-$danger-dark-color: var(--danger-dark-color, darken(#da2f2f, 10%));
+$danger-color: var(--danger-color, #{colors.$danger});
+$danger-light-color: var(--danger-light-color, #{colors.$danger-light});
+$danger-dark-color: var(--danger-dark-color, #{colors.$danger-dark});
 
-$success-color: var(--success-color, #50c758);
-$success-light-color: var(--success-light-color, lighten(#50c758, 10%));
-$success-dark-color: var(--success-dark-color, darken(#50c758, 10%));
+$success-color: var(--success-color, #{colors.$success});
+$success-light-color: var(--success-light-color, #{colors.$success-light});
+$success-dark-color: var(--success-dark-color, #{colors.$success-dark});
 
-$warning-color: var(--warning-color, #f1c500);
-$warning-light-color: var(--warning-light-color, lighten(#f1c500, 10%));
-$warning-dark-color: var(--warning-dark-color, darken(#f1c500, 10%));
+$warning-color: var(--warning-color, #{colors.$warning});
+$warning-light-color: var(--warning-light-color, #{colors.$warning-light});
+$warning-dark-color: var(--warning-dark-color, #{colors.$warning-dark});
 
 // tooltip variables
 $tooltip-padding: var(--tooltip-padding, 0.5rem 1rem);

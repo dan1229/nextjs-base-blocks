@@ -1,0 +1,44 @@
+// Default theme palette
+//
+// Every value here is a compile-time constant used ONLY as the fallback inside a
+// `var(--token, …)` declaration in a component stylesheet. A consumer overrides a colour by
+// setting the CSS custom property; nothing in this file is reachable from outside Sass.
+//
+// It exists so the derivations live in one place. The same seven hues and their +/-10%
+// lightness variants were previously copy-pasted across five component stylesheets, which is
+// how 7 colours became 38 separate `darken()` / `lighten()` calls.
+//
+// Loaded by relative path (`@use '../styles/colors' as colors;`), never by load path - a
+// consuming project's own styles directory is searched FIRST, so a bare `@use 'colors'` would
+// silently resolve to a consumer's file of the same name.
+
+@use 'sass:color';
+
+$primary: #78cdd7;
+$primary-light: color.adjust($primary, $lightness: 10%);
+$primary-dark: color.adjust($primary, $lightness: -10%);
+
+// secondary and info are deliberately the same hue; `warning` is a DIFFERENT yellow
+$secondary: #ffc800;
+$secondary-light: color.adjust($secondary, $lightness: 10%);
+$secondary-dark: color.adjust($secondary, $lightness: -10%);
+
+$info: $secondary;
+$info-light: $secondary-light;
+$info-dark: $secondary-dark;
+
+$accent: #ff6b6c;
+$accent-light: color.adjust($accent, $lightness: 10%);
+$accent-dark: color.adjust($accent, $lightness: -10%);
+
+$danger: #da2f2f;
+$danger-light: color.adjust($danger, $lightness: 10%);
+$danger-dark: color.adjust($danger, $lightness: -10%);
+
+$success: #50c758;
+$success-light: color.adjust($success, $lightness: 10%);
+$success-dark: color.adjust($success, $lightness: -10%);
+
+$warning: #f1c500;
+$warning-light: color.adjust($warning, $lightness: 10%);
+$warning-dark: color.adjust($warning, $lightness: -10%);

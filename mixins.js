@@ -33,7 +33,7 @@ function configureSubmoduleSass(projectDir, stylesDir = 'styles', submodulePath 
     // `loadPaths` is its modern-API replacement, and only one of the two is honored per run.
     includePaths: [clientStylesPath, baseBlocksPath],
     loadPaths: [clientStylesPath, baseBlocksPath],
-    additionalData: `@import "mixins.scss";`,
+    additionalData: `@use "mixins.scss" as *;`,
   };
 }
 

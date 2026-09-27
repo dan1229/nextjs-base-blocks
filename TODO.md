@@ -169,6 +169,24 @@
 ---
 ### 2.6.4 - fixes
 
+#### several colour fallbacks name one token and carry another hue's hex
+- found while centralising the palette into `src/styles/_colors.scss` for 2.6.3. Each of these
+  is the second argument to a `var(--token, fallback)`, so it only shows when a consumer leaves
+  that token unset - which is exactly the unthemed default this library ships
+- `--danger-color` falls back to the PRIMARY cyan `#78cdd7` in `bbtext` (`.danger`) and
+  `bbalert`, and `--danger-light-color` does the same in `bbalert`. An unthemed danger alert or
+  a `color='danger'` BBText renders cyan
+- `--accent-color` falls back to the WARNING yellow `#f1c500` in `bbtext` (`.accent`) and
+  `bbquote`
+- `--secondary-color` falls back to the primary cyan in `bbfield_select_card` and
+  `bbfield_select_multiple`
+- `--success-light-color` and `--info-light-color` in `bbalert` fall back to the BASE hue
+  rather than the light variant, so an unthemed success/info alert is darker than intended
+- the fix is to point every one at the matching `colors.$…` entry, which is what the four
+  migrated stylesheets already do. Held out of 2.6.3 deliberately: 2.6.3 is provably
+  byte-identical CSS, and these change rendered colour for any consumer not setting the token
+- wants a changelog callout naming each component, since a consumer may have been compensating
+
 #### no `--navbar-item-text-color-active`
 - the active state selectors set `color` to `--navbar-item-text-color`, the same token the
   resting `.textLink` already uses, so an active item cannot be told apart by its TEXT - only
@@ -214,6 +232,16 @@
 - making it a real anchor is the right fix but is not free: an `<a>` brings default link
   styling that could disturb an existing consumer's brand block, so it wants a release of its
   own rather than riding along with something else
+
+
+#### `BBNavbarItem` defines `$primary-color` twice
+- `$primary-color: var(--primary-color, #3f51b5)` and then, ten lines later,
+  `$primary-color: var(--primary-color, #78cdd7)`. The second wins, so the `#3f51b5` line is
+  dead and the file reads as though the indigo is in play
+- its `$secondary-color` (`#f50057`) and greys also diverge from every other component's
+  defaults, which is why this file was left out of the 2.6.3 palette migration
+- deciding which hexes are correct is a visual change, so it does not ride along with a
+  no-op refactor
 
 
 #### navbar item ids can collide

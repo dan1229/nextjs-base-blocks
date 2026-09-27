@@ -1,9 +1,11 @@
-$primary-color: var(--primary-color, #78cdd7);
-$primary-dark-color: var(--primary-dark-color, darken(#78cdd7, 10%));
-$secondary-color: var(--secondary-color, #ffc800);
-$secondary-dark-color: var(--secondary-dark-color, darken(#ffc800, 10%));
-$accent-color: var(--accent-color, #ff6b6c);
-$accent-dark-color: var(--accent-dark-color, darken(#ff6b6c, 10%));
+@use '../../styles/colors' as colors;
+
+$primary-color: var(--primary-color, #{colors.$primary});
+$primary-dark-color: var(--primary-dark-color, #{colors.$primary-dark});
+$secondary-color: var(--secondary-color, #{colors.$secondary});
+$secondary-dark-color: var(--secondary-dark-color, #{colors.$secondary-dark});
+$accent-color: var(--accent-color, #{colors.$accent});
+$accent-dark-color: var(--accent-dark-color, #{colors.$accent-dark});
 
 /**
 * COLORS
