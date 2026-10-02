@@ -47,6 +47,38 @@ See `package.json` for all the requirements.
 
 Since this is a submodule it can't enforce these requirements, but you will get errors if you don't have them installed.
 
+### Using Without NextJS
+
+The blocks default to NextJS for routing and images, and a NextJS project needs no setup for
+that. Any other React host swaps in the generic primitives (`src/framework/generic/`), which
+import nothing from `next`.
+
+With Vite, add the plugin to `vite.config.mts`. It makes the swap and wires the SCSS mixins,
+so `configureSubmoduleSass` is not needed as well:
+
+```ts
+import { baseBlocksVite } from './base_blocks/vite.js';
+
+export default defineConfig({
+  plugins: [baseBlocksVite(import.meta.dirname), react()],
+});
+```
+
+Then register your router once, before the first render:
+
+```tsx
+import { configureBaseBlocks } from '@/base_blocks/src/framework/generic/config';
+
+configureBaseBlocks({
+  Link: ({ href, ...rest }) => <RouterLink to={href} {...rest} />,
+  useNavigate: () => useNavigate(),
+  usePathname: () => useLocation().pathname,
+});
+```
+
+Every key is optional. Without a registered `Link`, links are plain anchors and each click is
+a full page load; without `Image`, `BBNavbar` renders a plain `<img>`.
+
 ### Components
 
 At the moment, the following components are available:

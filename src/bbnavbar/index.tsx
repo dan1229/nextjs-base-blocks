@@ -1,11 +1,11 @@
 'use client';
 
 import classNames from 'classnames';
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 import React, { useState, useRef } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import BBText from '../bbtext';
+import Image from '../framework/image';
+import { useNavigate } from '../framework/navigation';
 import useOutsideClick from '../utils/hooks/UseOutsideClick';
 import { createClassHelper, capitalize } from '../utils/scss-class-functions';
 import styles from './styles.module.scss';
@@ -95,7 +95,7 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
   });
 
   const [showNavExpanded, setShowNavExpanded] = useState(false);
-  const router = useRouter();
+  const navigate = useNavigate();
 
   // outside click for detecting when to close the expanded nav
   const ref = useRef<HTMLDivElement>(null);
@@ -120,7 +120,7 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
               }}
             />
           </div>
-          <div className={styles.containerBrand} onClick={async () => router.push(routeBrand)}>
+          <div className={styles.containerBrand} onClick={() => navigate(routeBrand)}>
             <div className={classNames(styles.brand, brandHorizontal ? styles.brandHorizontal : styles.brandVertical)}>
               {!!imageSrc && <Image src={imageSrc} alt="" height={imageHeight} width={imageWidth} />}
               {!!title && title.length && (

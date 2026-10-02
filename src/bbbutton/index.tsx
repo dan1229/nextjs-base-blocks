@@ -1,9 +1,9 @@
 'use client';
 
 import classNames from 'classnames';
-import Link from 'next/link';
 import React, { useState, useRef } from 'react';
 import BBText from '../bbtext';
+import Link from '../framework/link';
 import { createClassHelper, toStandardSnakeCase } from '../utils/scss-class-functions';
 import styles from './styles.module.scss';
 import type {

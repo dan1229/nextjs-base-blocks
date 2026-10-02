@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import Link from 'next/link';
 import React from 'react';
+import Link from '../framework/link';
 import { createClassHelper } from '../utils/scss-class-functions';
 import styles from './styles.module.scss';
 import type { IPropsBBBase, TBBCardColorBackground, TBBCardColorBorder, TBBCardElevation } from '../types';

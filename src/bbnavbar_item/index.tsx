@@ -1,10 +1,10 @@
 'use client';
 
 import classnames from 'classnames';
-import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import BBLink from '../bblink';
+import { usePathname } from '../framework/navigation';
 import { createClassHelper } from '../utils/scss-class-functions';
 import styles from './styles.module.scss';
 import type { TBBNavbarItemColorBorder } from '../types';

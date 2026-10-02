@@ -388,8 +388,10 @@
   which is why consumers keep hitting hydration failures when a link wraps anything but text
 
 
-### [X.X.X] - TBD
-- TODO
+### [2.7.0] - TBD
+- the blocks run outside NextJS: `BBLink`, `BBButton`, `BBCard`, `BBNavbar` and `BBNavbarItem` take routing and images from `src/framework/` and no longer import `next` themselves
+- NextJS hosts need no change - `src/framework/` is NextJS by default
+- new `vite.js` plugin swaps in the generic primitives and wires the SCSS mixins; `configureBaseBlocks` registers the host's router
 
 -------------------------------------------------------
 

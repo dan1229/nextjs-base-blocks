@@ -5,7 +5,8 @@
   "main": "mixins.js",
   "files": [
     "src/",
-    "mixins.js"
+    "mixins.js",
+    "vite.js"
   ],
   "scripts": {
     "dev": "next dev",
