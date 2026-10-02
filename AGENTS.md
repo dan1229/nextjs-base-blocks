@@ -6,7 +6,7 @@ This file provides comprehensive guidance for coding agents working in this repo
 
 ## Repository Overview
 
-**NextJS Base Blocks** is a comprehensive React component library designed as a git submodule for TypeScript + NextJS projects. It provides a collection of standardized UI "blocks" - the smallest reusable units of interface code that serve as building blocks for larger components.
+**NextJS Base Blocks** is a comprehensive React component library designed as a git submodule for TypeScript + NextJS projects. Other React hosts are supported through `src/framework/generic/` and the Vite plugin in `vite.js`. It provides a collection of standardized UI "blocks" - the smallest reusable units of interface code that serve as building blocks for larger components.
 
 ### Key Philosophy
 - **Self-contained blocks**: Each component is fully independent and reusable
@@ -39,6 +39,14 @@ This file provides comprehensive guidance for coding agents working in this repo
 - **`src/`**  
   - Main code directory
   - `src/app/` - demo app for this project
+  - `src/framework/` - the routing and image primitives the blocks need from their host.
+    The top level is the NextJS implementation, `generic/` is the same exports with no
+    `next` import. **A block never imports `next` itself** - it imports from `../framework`,
+    and anything added there is added to both
+
+- **`mixins.js`, `vite.js`**
+  - What a host's bundler config imports: the SCSS mixin wiring for NextJS, and the Vite
+    plugin that swaps in `src/framework/generic/` and wires the same mixins
 
 - **`cypress/`**  
   - Contains Cypress component tests in `cypress/component/` (the `e2e/` directory is currently unused)

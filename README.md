@@ -13,7 +13,7 @@
 
 `Base Block`s is a collection of UI 'blocks' that are used to build the rest of the components used on the sites.
 
-This is intended to be used as a git submodule in a NextJS + Typescript project.
+This is intended to be used as a git submodule in a NextJS + Typescript project. Other React hosts work too - see [Using Without NextJS](#using-without-nextjs).
 
 A `block` ideally is the smallest unit of UI code that can be reasonably reused. It is a self-contained piece of code that can be used in any context. It is not a component, but a building block for other, bigger components.
 
@@ -43,7 +43,7 @@ You must have the following installed to use this submodule
 - [classnames](https://www.npmjs.com/package/classnames)
 - [UseHooks TS](https://usehooks-typescript.com/)
 
-See `package.json` for all the requirements.
+See `package.json` for all the requirements. `next` is only needed by a NextJS host.
 
 Since this is a submodule it can't enforce these requirements, but you will get errors if you don't have them installed.
 
@@ -76,8 +76,17 @@ configureBaseBlocks({
 });
 ```
 
-Every key is optional. Without a registered `Link`, links are plain anchors and each click is
-a full page load; without `Image`, `BBNavbar` renders a plain `<img>`.
+Every key is optional, and each falls back to the plain browser behavior:
+
+- no `Link` - links are plain anchors, so each click is a full page load
+- no `Image` - `BBNavbar` renders a plain `<img>`
+- no `useNavigate` - clicking the navbar brand is a full page load
+- no `usePathname` - `BBNavbarItem` reads `window.location.pathname` once, when it mounts.
+  Register it whenever you register `Link`, or the active item stops following client-side
+  navigation
+
+The example assumes your host aliases `@/base_blocks` to the submodule, and
+`import.meta.dirname` needs Node 20.11 or later. Tested with Vite 8.
 
 ### Components
 
@@ -281,7 +290,7 @@ The responsive mixins provide consistent breakpoints and utilities throughout yo
 
 ##### Setup (Required - One-time breaking change in v2.2.0)
 
-Add this to your `next.config.js`:
+Add this to your `next.config.js` (a Vite host uses the plugin from [Using Without NextJS](#using-without-nextjs) instead):
 
 ```ts
 const { configureSubmoduleSass } = require('./base_blocks/mixins');
