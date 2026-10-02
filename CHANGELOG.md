@@ -14,6 +14,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [2.7.0] - 2026-10-02
+- the blocks run outside NextJS: `BBLink`, `BBButton`, `BBCard`, `BBNavbar` and `BBNavbarItem` take routing and images from `src/framework/` and no longer import `next` themselves
+- NextJS hosts need no change - `src/framework/` is NextJS by default
+- new `vite.js` plugin swaps in the generic primitives and wires the SCSS mixins; `configureBaseBlocks` registers the host's router
+
+
 ### [2.6.4] - 2026-09-27
 - **The last Sass deprecation warning is gone.** 2.6.3 claimed this package emitted none, and that was one short: `form_components/styles.module.scss` used the deprecated `if()` function - and the deprecated global `unit()` inside it - to add `1em` to an unitless `$input-line-height`. A consuming project's production build still reported 2 warnings from it after 2.6.3. It is now a compile-time `@if math.is-unitless(…)`, which keeps the condition (`$input-line-height` is `!default`, so a consumer may pass a unit) and drops both deprecated calls.
 - Compiled CSS byte-identical again, same content hashes as 2.6.2 and 2.6.3.
