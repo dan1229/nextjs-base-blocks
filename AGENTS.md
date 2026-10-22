@@ -118,17 +118,17 @@ Tests are run via Cypress and since this is a submodule, we want to ensure that 
 
 ## Releasing
 
-Releases are **triggered by the commit message**, not by a manual tag.
+Releases are **triggered by the commit subject**, not by a manual tag. `.github/workflows/detect-version.yml` is the standard release workflow (`dan-release-standard: 3` in its header), installed by the `release-setup` skill.
 
-- A push to `main` whose commit message contains a bracketed version (`[X.X.X]`, or `[X.X.X.X]`) is detected by `.github/workflows/detect-version.yml`, which dispatches `.github/workflows/deploy-branch.yml`. That workflow cuts a `version/X.X.X` branch and creates a GitHub release tagged `X.X.X` with the commit message as the release body.
-- If the commit message has **no** `[X.X.X]`, nothing deploys. Do **not** hand-create git tags or GitHub releases — let the workflow do it.
+- A push to `main` whose commit **subject** contains a bracketed version (`release: [X.X.X]`) is a release. Only the subject is read — a `[X.X.X]` in a commit body does nothing.
+- The workflow checks that `package.json`'s `version` matches, tags `X.X.X` (bare, no `v`), cuts a `release/X.X.X` marker branch, and publishes a GitHub release whose body is the `### [X.X.X]` section of `CHANGELOG.md` at that commit. A missing or empty section fails the release instead of shipping a blank body.
+- It then dispatches `.github/workflows/deploy-branch.yml`, which cuts the `version/X.X.X` branch. Repos that vendor this one as a submodule pin that branch (`branch = version/X.X.X` in their `.gitmodules`), so it must keep being cut.
+- A subject with **no** `[X.X.X]` releases nothing. Do **not** hand-create git tags, `version/` branches or GitHub releases — let the workflow do it.
 
 The canonical way to cut a release is the `release` skill, which:
 1. Moves the finished `### [X.X.X]` section from the bottom of `TODO.md` into `CHANGELOG.md` (with the final date).
-2. Commits using that section as the commit message (the bracketed `[X.X.X]` is what triggers the deploy).
-3. Pushes to `main` and leaves a fresh placeholder in `TODO.md`.
-
-Before releasing, bump the `version` field in `package.json` to match (this is manual — nothing updates it automatically).
+2. Bumps `version` in `package.json` and `package-lock.json` to match — the workflow refuses a release whose `package.json` disagrees, before anything is tagged.
+3. Commits with the subject `release: [X.X.X]`, pushes to `main`, and leaves a fresh placeholder in `TODO.md`.
 
 ---
 

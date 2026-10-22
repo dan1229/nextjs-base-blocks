@@ -1,4 +1,11 @@
 name: Deploy Branch
+# Dispatched by detect-version.yml after it has tagged X.X.X and published the GitHub
+# release from CHANGELOG.md (dan-release-standard 3). This workflow does one thing:
+# cut the `version/X.X.X` branch, which the repos vendoring this one pin as their
+# submodule branch (`branch = version/X.X.X` in their `.gitmodules`).
+#
+# It no longer creates the release. detect-version.yml already has, and a second
+# ncipollo run against the same tag fails `already_exists`.
 
 on:
   workflow_dispatch:
@@ -17,29 +24,9 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Get release notes from commit
-        id: notes
-        run: |
-          # This workflow runs via workflow_dispatch, so there is no
-          # pull_request / head_commit event payload to read - grab the
-          # latest commit message on main directly instead.
-          {
-            echo 'body<<EOF'
-            git log -1 --pretty=%B
-            echo EOF
-          } >> "$GITHUB_OUTPUT"
-
       - name: Create release branch
         uses: peterjgrainger/action-create-branch@v2.2.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           branch: version/${{ github.event.inputs.version }}
-
-      - name: Create release in GitHub
-        uses: ncipollo/release-action@v1
-        with:
-          tag: ${{ github.event.inputs.version }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit: ${{ github.sha }}
-          body: ${{ steps.notes.outputs.body }}
