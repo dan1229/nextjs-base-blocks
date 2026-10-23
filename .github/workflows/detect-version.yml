@@ -5,6 +5,8 @@ name: Detect Version
 # version of THIS template — release-setup greps for it to tell a conformed repo
 # from a legacy one, and to know whether an upgrade is available. Don't remove it.
 #
+# This file is copied into PUBLIC repos — never name a private repo in it.
+#
 # THE TRIGGER IS A BRACKETED VERSION IN THE COMMIT SUBJECT. An ordinary commit
 # must never contain `[X.X.X]` — that string IS the release. `dan:release`
 # produces the one commit that should have it, and its subject is the whole
@@ -17,7 +19,7 @@ name: Detect Version
 #
 #   1. Any repo that dispatched a second workflow shipped an EMPTY release body,
 #      because `github.event.head_commit` does not exist on `workflow_dispatch`.
-#      django_bootstrapper 6.5.0 and personal-voice-engine 0.4.0 both shipped blank.
+#      Two releases shipped blank that way.
 #   2. The repos that read the body directly flattened it with
 #      `sed 's/^[[:space:]]*//'`, destroying every sub-bullet.
 #
@@ -46,7 +48,7 @@ permissions:
 env:
   # Bare `X.X.X` is the house default. Set to 'v' ONLY in repos whose existing
   # tags are already v-prefixed — a repo cannot switch, it would double-tag every
-  # past version. (onyx-bot and ai-coding-army are the v-prefixed ones.)
+  # past version.
   TAG_PREFIX: ''
 
 jobs:
@@ -167,7 +169,7 @@ jobs:
       # FILE_VERSION line. Fails the release when the repo's version file
       # disagrees with the version being released.
       #
-      # Turn this on wherever a version file exists: personal-voice-engine shipped
+      # Turn this on wherever a version file exists: one repo shipped
       # 0.4.0 with pyproject.toml still reading 0.3.0 and nothing noticed.
       #
       # It runs BEFORE the tag on purpose, so a mismatch leaves nothing behind to
@@ -197,7 +199,7 @@ jobs:
           # FILE_VERSION=$(tr -d '[:space:]' < VERSION)
 
           # Cargo.toml — do NOT enable where CI rewrites the version at build
-          # time (closebright-etl does), it would compare against a stale literal.
+          # time, it would compare against a stale literal.
           # FILE_VERSION=$(awk -F'"' '/^version *=/{print $2; exit}' Cargo.toml)
 
           if [ "$FILE_VERSION" != "$VERSION" ]; then
@@ -267,8 +269,8 @@ jobs:
       # ☠️ KEEP `--repo`. Without it `gh` falls back to the `GH_REPO` environment
       # variable, and a self-hosted runner may well have one set by the host that
       # registered it — Daniel's writes a BARE repo name, which `gh` refuses:
-      # `expected the "[HOST/]OWNER/REPO" format, got "preon-site"`. That failed
-      # preon-site's 4.3.0 release on 2026-09-03 AFTER the tag, the marker branch
+      # `expected the "[HOST/]OWNER/REPO" format, got "<repo>"`. That failed
+      # a 4.3.0 release on 2026-09-03 AFTER the tag, the marker branch
       # and the release object existed, so the release looked successful while the
       # deploy never fired and the release stayed a draft. A flag outranks the
       # environment variable, which is the whole reason this one line fixes it.

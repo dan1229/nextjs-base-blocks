@@ -227,7 +227,7 @@
 - `.containerBrand` in `BBNavbar` is `<div onClick={() => router.push(routeBrand)}>`, so the
   logo is not keyboard reachable, does not middle-click into a new tab, and shows no href on
   hover. Every site puts its way home there
-- this is why a consumer still has to carry a separate "Home" nav item. preon-site keeps one
+- this is why a consumer still has to carry a separate "Home" nav item. Sites keep one
   for exactly this reason
 - making it a real anchor is the right fix but is not free: an `<a>` brings default link
   styling that could disturb an existing consumer's brand block, so it wants a release of its
