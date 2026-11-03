@@ -14,6 +14,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [2.7.1] - 2026-11-03
+- **A form field's error now shows under the field, in text, and the control points at it.** `InputWrapper` already took an `error` (a react-hook-form `FieldError`) but drew it as a dismissible `BBAlert` whose unthemed colour was cyan, and nothing tied it to the input, so a screen reader never heard it. It is now a `<p role="alert" id="<fieldName>-error">` in the danger colour, and the input, textarea or select gets `aria-invalid="true"` and `aria-describedby="<fieldName>-error"` while the error has a message. Covers `BBFieldText` (input and textarea), `BBFieldNumber`, `BBFieldFile`, `BBFieldCheckbox` and `BBFieldSelect`; `BBFieldSelectCard` and `BBFieldSelectMultiple` show the text but have no single control to mark.
+- Usage is unchanged and backward compatible: pass the field's error, `<BBFieldText fieldName="name" register={register('name', { required: 'Give it a name.' })} error={errors.name} />`. A field with no `error` renders exactly as before.
+- New `--form-error-color` token (falls back to `--danger-color`, then `#da2f2f`) and `$form-error-color` SCSS variable.
+- A `required` field still carries the native `required` attribute, so the browser blocks an empty submit with its own bubble before react-hook-form runs. Put `noValidate` on the `<form>` to let the field's own message show.
+
+
 ### [2.7.0] - 2026-10-02
 - the blocks run outside NextJS: `BBLink`, `BBButton`, `BBCard`, `BBNavbar` and `BBNavbarItem` take routing and images from `src/framework/` and no longer import `next` themselves
 - NextJS hosts need no change - `src/framework/` is NextJS by default
