@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import React from 'react';
 import { getClassName } from '../../utils/scss-class-functions';
-import InputWrapper from '../input_wrapper';
+import InputWrapper, { getErrorProps } from '../input_wrapper';
 import styles from '../styles.module.scss';
 import type { IPropsBBBaseForm, TBBFieldBaseSize, TBBFieldBaseTypes } from '../../types';
 import type { FieldError } from 'react-hook-form';
@@ -53,6 +53,7 @@ export default function BBFieldBase(Props: IPropsBBFieldBase & IPropsBBBaseForm)
         id={fieldName}
         type={type}
         autoComplete={getAutoComplete()}
+        {...getErrorProps(fieldName, Props.error)}
         required={required}
         onChange={handleChange}
         value={getInputValue()}

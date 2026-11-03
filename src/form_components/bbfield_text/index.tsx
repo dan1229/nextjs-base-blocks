@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import BBButton from '../../bbbutton';
 import { getClassName } from '../../utils/scss-class-functions';
-import InputWrapper from '../input_wrapper';
+import InputWrapper, { getErrorProps } from '../input_wrapper';
 import styles from '../styles.module.scss';
 import type { IPropsBBBaseForm, TBBFieldTextType } from '../../types';
 
@@ -33,6 +33,7 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
     size = 'md',
     value,
     onKeyDown,
+    error,
   } = Props;
 
   const [showPassword, setShowPassword] = useState(false);
@@ -74,6 +75,7 @@ export default function BBFieldText(Props: IPropsBBFieldText & IPropsBBBaseForm)
     required: required,
     placeholder: placeholder,
     onKeyDown: onKeyDown,
+    ...getErrorProps(fieldName, error),
     // if register is not used, apply onChange and value props
     // if register is used, let react-hook-form handle all input state via register()
     ...(!register && onChange ? { onChange: handleChange } : {}),

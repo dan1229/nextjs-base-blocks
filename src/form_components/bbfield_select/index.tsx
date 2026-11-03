@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import React from 'react';
 import { getClassName } from '../../utils/scss-class-functions';
-import InputWrapper from '../input_wrapper';
+import InputWrapper, { getErrorProps } from '../input_wrapper';
 import styles from '../styles.module.scss';
 import type { IBBFieldSelectOptions, IPropsBBBaseForm, TBBFieldBaseSize } from '../../types';
 
@@ -46,6 +46,7 @@ export default function BBFieldSelect(Props: IPropsBBFieldSelect & IPropsBBBaseF
           required={required}
           onChange={handleChange}
           autoComplete={getAutoComplete()}
+          {...getErrorProps(fieldName, Props.error)}
           {...register}
         >
           {options.map((val: IBBFieldSelectOptions) => (

@@ -1,6 +1,5 @@
 import classnames from 'classnames';
 import React from 'react';
-import BBAlert from '../../bbalert';
 import BBText from '../../bbtext';
 import BBTooltip from '../../bbtooltip';
 import styles from '../styles.module.scss';
@@ -24,6 +23,20 @@ export const getLabel = (label: string | undefined, fieldName: string): string =
   
   return capitalizedWords.join(' ');
 };
+
+/**
+ * ID of the element that shows a field's error text.
+ */
+export const getErrorId = (fieldName: string): string => `${fieldName}-error`;
+
+/**
+ * Attributes that tie a control to its error text: spread onto the input, select or textarea.
+ */
+export const getErrorProps = (
+  fieldName: string,
+  error: FieldError | undefined,
+): { 'aria-invalid'?: true; 'aria-describedby'?: string } =>
+  error && error.message ? { 'aria-invalid': true, 'aria-describedby': getErrorId(fieldName) } : {};
 
 /**
  * IProps
@@ -69,7 +82,11 @@ export default function InputWrapper(props: IPropsInputWrapper & IPropsBBBaseFor
         </label>
       )}
       {children}
-      {error && error.message && <BBAlert variant="danger">{error.message}</BBAlert>}
+      {error && error.message && (
+        <p id={getErrorId(fieldName)} role="alert" className={styles.error_message}>
+          {error.message}
+        </p>
+      )}
       {helperText && helperTextType === 'text' && (
         <BBText size="small" color={helperTextColor}>
           {helperText}
