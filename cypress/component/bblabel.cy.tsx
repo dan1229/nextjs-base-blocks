@@ -32,11 +32,14 @@ describe('BBLabel Component Tests', () => {
   });
 
   describe('Styling', () => {
-    it('renders the text in a monospace font', () => {
-      cy.mount(<BBLabel>mono</BBLabel>);
-      cy.get('span')
-        .should('have.css', 'font-family')
-        .and('match', /mono|monospace|Consolas|Menlo/i);
+    it("sets no font of its own, so BBText's main font applies", () => {
+      // Component tests stub every `.module.scss` (cypress.config.ts), so the font BBText's
+      // class sets never loads here. What this can see is the inline font BBLabel used to
+      // write, the mono stack, which overrode that class in a real host.
+      cy.mount(<BBLabel>label</BBLabel>);
+      cy.get('span').should(($span) => {
+        expect($span[0].style.fontFamily, 'no inline font').to.equal('');
+      });
     });
   });
 });

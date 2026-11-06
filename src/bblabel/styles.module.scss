@@ -1,7 +1,7 @@
 /*
  * BBLabel
  *
- * The mono eyebrow treatment. Font family (mono) and weight come through BBText props;
+ * The eyebrow treatment. Font family (BBText's main font) and weight come through BBText;
  * size comes from BBText. The muted ink applies only when no explicit color is set, and
  * relies on import order (BBText imported before these styles) to win over BBText's
  * default color.

@@ -4,9 +4,6 @@ import BBText from '../bbtext';
 import styles from './styles.module.scss';
 import type { TBBTextSize, TBBTextColor } from '../types';
 
-// Mono stack with a CSS-variable hook so consumers can override the font
-const FONT_FAMILY_MONO = "var(--font-family-mono, monospace)";
-
 /**
  * PROPS
  *
@@ -25,8 +22,9 @@ export interface IPropsBBLabel {
 /**
  * BBLabel
  *
- * Small uppercase, letter-spaced monospace eyebrow / kicker label. Composes BBText for
- * size / weight / color and adds the mono-label treatment. Renders as a <span>.
+ * Small uppercase, letter-spaced eyebrow / kicker label, in the main font
+ * (`--font-family-main`, through BBText). Composes BBText for size / weight / color
+ * and adds the label treatment. Renders as a <span>.
  */
 export default function BBLabel(Props: IPropsBBLabel): React.ReactElement {
   const { children, size = 'tiny', color, className } = Props;
@@ -37,7 +35,6 @@ export default function BBLabel(Props: IPropsBBLabel): React.ReactElement {
       size={size}
       weight="medium"
       color={color}
-      fontFamily={FONT_FAMILY_MONO}
       className={classNames(styles.label, !color && styles.muted, className)}
     >
       {children}
