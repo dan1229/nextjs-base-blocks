@@ -27,6 +27,7 @@ import type {
  * @param {TBBTextColor=} colorTitle - Color of the title
  * @param {TBBNavbarElevation=} elevation - Elevation of the navbar
  * @param {string=} imageSrc - Image src for the navbar, can be URL or local
+ * @param {string=} imageAlt - Alt text for the image; leave it empty (the default) when a title beside it already names the brand
  * @param {string=} routeBrand - Route to use for the brand button
  * @param {boolean=} vertical - Whether the navbar items are vertical
  * @param {TBBTextSize=} textSizeTitle - Size of the title
@@ -48,6 +49,7 @@ export interface IPropsBBNavbar {
   colorTitle?: TBBTextColor;
   elevation?: TBBNavbarElevation;
   imageSrc?: string;
+  imageAlt?: string;
   routeBrand?: string;
   textSizeTitle?: TBBTextSize;
   buttonsAction?: React.ReactNode;
@@ -72,6 +74,7 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
     title,
     colorTitle = 'primary',
     imageSrc,
+    imageAlt = '',
     elevation = 'low',
     routeBrand = '/',
     buttonsAction,
@@ -122,7 +125,7 @@ export default function BBNavbar(props: IPropsBBNavbar & Omit<IPropsBBBase, 'onC
           </div>
           <div className={styles.containerBrand} onClick={() => navigate(routeBrand)}>
             <div className={classNames(styles.brand, brandHorizontal ? styles.brandHorizontal : styles.brandVertical)}>
-              {!!imageSrc && <Image src={imageSrc} alt="" height={imageHeight} width={imageWidth} />}
+              {!!imageSrc && <Image src={imageSrc} alt={imageAlt} height={imageHeight} width={imageWidth} />}
               {!!title && title.length && (
                 <BBText className={styles.textTitle} color={colorTitle} size={textSizeTitle} bold={boldTitle} asSpan>
                   {title}

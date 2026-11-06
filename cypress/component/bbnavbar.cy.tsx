@@ -58,6 +58,16 @@ describe('BBNavbar Component Tests', () => {
       cy.get('img').should('have.attr', 'width', '50');
       cy.get('img').should('have.attr', 'height', '50');
     });
+
+    it('names the image with imageAlt', () => {
+      cy.mount(<BBNavbar {...defaultProps} imageSrc="/test-logo.png" imageAlt="Preon" imageWidth={50} imageHeight={50} />);
+      cy.get('img').should('have.attr', 'alt', 'Preon');
+    });
+
+    it('leaves the image decorative without imageAlt', () => {
+      cy.mount(<BBNavbar {...defaultProps} imageSrc="/test-logo.png" imageWidth={50} imageHeight={50} />);
+      cy.get('img').should('have.attr', 'alt', '');
+    });
   });
 
   describe('Navigation Behavior', () => {
