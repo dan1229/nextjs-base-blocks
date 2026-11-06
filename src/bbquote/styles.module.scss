@@ -1,14 +1,12 @@
 /*
  * BBQuote
  *
- * Accent left-border pull quote. Text colors come from BBText (theme-aware); the accent
- * border uses the brand accent variable with a sensible fallback.
+ * Indented pull quote. Text colors come from BBText (theme-aware).
  */
 
 .figure {
   margin: 0;
   padding-left: 1rem;
-  border-left: 3px solid var(--accent-color, #f1c500);
 }
 
 .blockquote {
