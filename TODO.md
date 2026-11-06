@@ -284,7 +284,7 @@
 
 
 ---
-### 2.8.0 - motion & mobile navbar
+### 2.9.0 - motion & mobile navbar
 
 #### Animation system
 - consistent motion design language
@@ -306,7 +306,7 @@
 
 
 ---
-### 2.9.0 - form components
+### 2.10.0 - form components
 
 #### consolidate bb field select and bb field select multiple
 - e.g., could just add a `multiple` prop to the select field

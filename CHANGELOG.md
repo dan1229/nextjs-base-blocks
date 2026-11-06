@@ -14,6 +14,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [2.8.0] - 2026-11-06
+- **`BBNavbar` takes an `imageAlt` prop** that names the logo image for screen readers. Without it the logo had an empty alt, so a screen reader said nothing. Leave it empty (the default) when a title beside the logo already names the brand.
+- **`BBQuote` no longer draws a coloured side stripe**, and no longer reads `--accent-color`.
+- **`BBLabel` is set in the main font, not mono**, and no longer reads `--font-family-mono`.
+- A host that styled `BBQuote` or `BBLabel` through those custom properties sees a change.
+
+
 ### [2.7.1] - 2026-11-03
 - **A form field's error now shows under the field, in text, and the control points at it.** `InputWrapper` already took an `error` (a react-hook-form `FieldError`) but drew it as a dismissible `BBAlert` whose unthemed colour was cyan, and nothing tied it to the input, so a screen reader never heard it. It is now a `<p role="alert" id="<fieldName>-error">` in the danger colour, and the input, textarea or select gets `aria-invalid="true"` and `aria-describedby="<fieldName>-error"` while the error has a message. Covers `BBFieldText` (input and textarea), `BBFieldNumber`, `BBFieldFile`, `BBFieldCheckbox` and `BBFieldSelect`; `BBFieldSelectCard` and `BBFieldSelectMultiple` show the text but have no single control to mark.
 - Usage is unchanged and backward compatible: pass the field's error, `<BBFieldText fieldName="name" register={register('name', { required: 'Give it a name.' })} error={errors.name} />`. A field with no `error` renders exactly as before.
