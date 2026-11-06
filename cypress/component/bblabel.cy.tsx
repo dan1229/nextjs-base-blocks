@@ -32,7 +32,7 @@ describe('BBLabel Component Tests', () => {
   });
 
   describe('Styling', () => {
-    it("sets no font of its own, so BBText's main font applies", () => {
+    it('writes no inline font of its own', () => {
       // Component tests stub every `.module.scss` (cypress.config.ts), so the font BBText's
       // class sets never loads here. What this can see is the inline font BBLabel used to
       // write, the mono stack, which overrode that class in a real host.
