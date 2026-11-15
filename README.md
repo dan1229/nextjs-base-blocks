@@ -208,6 +208,8 @@ html,
   --navbar-icon-mobile-color: var(--primary-color);
   --navbar-transition: all 0.2s ease-in-out;
   --navbar-buttons-gap: 0.5rem; // gap between action buttons (buttonsAction)
+  --navbar-padding: 0.25rem; // padding of the horizontal bar; the vertical navbar keeps its own
+  --navbar-border-bottom: none; // a line under the bar, e.g. 1px solid var(--bg-dark-color)
   // responsive vertical navbar widths for different screen sizes
   --navbar-vertical-width-xs: 5rem;
   --navbar-vertical-width-sm: 6rem;

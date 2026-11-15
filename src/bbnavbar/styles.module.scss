@@ -31,6 +31,10 @@ $navbar-vertical-width-default: var(--navbar-vertical-width-lg, 10rem);
 // navbar transition
 $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
 
+// the horizontal bar's padding and its bottom edge. The vertical navbar sets its own padding.
+$navbar-padding: var(--navbar-padding, 0.25rem);
+$navbar-border-bottom: var(--navbar-border-bottom, none);
+
 /**
  * ELEVATION
  */
@@ -100,7 +104,8 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
   justify-content: space-between;
   background-color: $background-color;
   overflow: visible;
-  padding: 0.25rem;
+  padding: $navbar-padding;
+  border-bottom: $navbar-border-bottom;
   transition: $navbar-transition;
   backdrop-filter: blur(8px);
 
