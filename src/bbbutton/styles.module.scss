@@ -41,6 +41,9 @@ $warning-light-color: var(--warning-light-color, #{colors.$warning-light});
 $warning-dark-color: var(--warning-dark-color, #{colors.$warning-dark});
 
 $button-base-padding: var(--button-base-padding, 0.6rem);
+// the hover lift and shadow; `none` turns either off
+$button-hover-transform: var(--button-hover-transform, translateY(-1px));
+$button-hover-shadow: var(--button-hover-shadow, 0 2px 8px rgba(0, 0, 0, 0.12));
 
 // base
 .base {
@@ -57,8 +60,8 @@ $button-base-padding: var(--button-base-padding, 0.6rem);
   }
 
   &:hover:not(.disabled) {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    transform: $button-hover-transform;
+    box-shadow: $button-hover-shadow;
   }
 
   &:active:not(.disabled) {

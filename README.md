@@ -185,6 +185,8 @@ html,
   // bb button
   --button-base-padding: 0.6rem;
   --button-border-radius: 1rem;
+  --button-hover-transform: translateY(-1px); // none for buttons that stay put under the pointer
+  --button-hover-shadow: 0 2px 8px rgba(0, 0, 0, 0.12); // none for no hover shadow
   --button-primary-text-color: #fff; // Text/icon color for the filled primary button. Defaults to white; set to a dark value when the primary color is light.
   // bb card
   --card-background-default-color: rgb(250, 250, 250);
