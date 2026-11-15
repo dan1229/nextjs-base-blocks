@@ -153,32 +153,39 @@ $navbar-item-text-underline-offset-active: var(--navbar-item-text-underline-offs
   background-color: $navbar-item-bg-color-active;
 }
 
+// The active colour reaches this item's own header only: `> div > div` is its
+// navbarContentContainer, then its navbarHeaderContainer. The dropdown `ul` sits inside
+// the active `li` too, so a bare `.active .textLink` would paint every sibling in the
+// current section's dropdown in the current page's colour.
 .navbarItemBase.active > div > div > a > *,
-.navbarItemBase.active .textLink,
-.navbarItemBase.active .textLink * {
+.navbarItemBase.active > div > div .textLink,
+.navbarItemBase.active > div > div .textLink * {
   color: $navbar-item-text-color-active;
 }
 
-.navbarItemBase.active > div > div > .iconDropdown,
-.navbarItemBase.active .iconDropdown {
+.navbarItemBase.active > div > div > .iconDropdown {
   color: $navbar-item-text-color-active;
 }
 
 // Active state should override hover
 .navbarItemBase.active:hover > div > div > a > *,
-.navbarItemBase.active:hover .textLink,
-.navbarItemBase.active:hover .textLink * {
+.navbarItemBase.active:hover > div > div .textLink,
+.navbarItemBase.active:hover > div > div .textLink * {
   color: $navbar-item-text-color-active;
 }
 
-.navbarItemBase.active:hover > div > div > .iconDropdown,
-.navbarItemBase.active:hover .iconDropdown {
+.navbarItemBase.active:hover > div > div > .iconDropdown {
   color: $navbar-item-text-color-active;
 }
 
-// The underline goes on this item's own label only. `.active .textLink` would also reach
-// the labels in its dropdown, so the path is spelled out from the active `li`.
-.navbarItemBase.active > div > div > a > * {
+// The underline goes on this item's own anchor and draws through to the label inside it.
+// On the label itself its default `none` would beat BBText's `.underline` and take the
+// mark off an active item rendered outside BBNavbar. On the anchor, `none` is what
+// `.navbarItemBase a` already sets. The anchor's `color` is the underline's colour
+// (currentcolor), so it takes the label's: without it the line draws in the browser's
+// link blue. A colour in a host's `text-decoration` shorthand still wins.
+.navbarItemBase.active > div > div > a {
+  color: $navbar-item-text-color-active;
   text-decoration: $navbar-item-text-decoration-active;
   text-decoration-thickness: $navbar-item-text-decoration-thickness-active;
   text-underline-offset: $navbar-item-text-underline-offset-active;
