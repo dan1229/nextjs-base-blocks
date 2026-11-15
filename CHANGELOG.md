@@ -14,6 +14,44 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+### [2.9.0] - 2026-11-15
+- **Dead code is gone from `BBNavbar` and `BBNavbarItem`.**
+  - Rules and Sass variables that never applied are removed, and so is a docblock line for `menuAlignment`, a prop that left in 2.2.0. Nothing renders differently.
+  - `TBBNavbarAlignment` is marked deprecated: nothing has read it since then, and 3.0.0 removes it.
+- **The horizontal navbar's padding and bottom border take tokens.**
+  - `--navbar-padding` sets the bar's padding (default `0.25rem`, as before) and `--navbar-border-bottom` draws a line under it (default `none`).
+  - A vertical navbar keeps its own padding.
+- **The current page's nav item can be told apart by its label, and says so to a screen reader.**
+  - `--navbar-item-text-color-active` colours its label (default: `--navbar-item-text-color`, as before), and `--navbar-item-text-decoration-active`, `--navbar-item-text-decoration-thickness-active` and `--navbar-item-text-underline-offset-active` can underline it (default: no underline).
+  - Its link carries `aria-current="page"` on the page it points to, and `aria-current="true"` when a dropdown child or an `activePaths` entry lights it.
+  - `BBLink` takes a new `ariaCurrent` prop for this.
+- **No stray `undefined` class on buttons, and no empty `target` or `rel` on links.**
+  - Every enabled `BBButton` carried a literal `undefined` class, and every internal `BBLink` rendered `target="" rel=""`.
+  - Both are gone, and a disabled button lists its disabled class once.
+  - The `hover` and `focus` props are still accepted and still change nothing.
+- **The navbar logo's hover takes tokens.**
+  - `--navbar-brand-border-radius` (default `0.5rem`), `--navbar-brand-bg-color-hover` (default: the bar's colour mixed 10% toward white) and `--navbar-brand-transform-hover` (default `translateY(-1px)`).
+  - Set the last two to `transparent` and `none` for a logo that stays still.
+- **The README's Sass sample uses `color.adjust` and `color.scale`.**
+  - `darken()` and `lighten()` print a deprecation warning under current Dart Sass.
+  - The sample now starts with `@use 'sass:color';`, which has to move to the top of the file you paste it into.
+- **`BBButton`'s hover lift and shadow take tokens.**
+  - `--button-hover-transform` (default `translateY(-1px)`) and `--button-hover-shadow` (default `0 2px 8px rgba(0, 0, 0, 0.12)`).
+  - Set both to `none` once in your globals for buttons that stay flat.
+- **A button's hover helper text stays under the button.**
+  - It used to hang off the hover lift, so on a disabled button, or with the lift turned off, it landed far from the button.
+- **In a navbar, a hovered link in the current section's open dropdown shows the hover colour.**
+  - It used to keep the current page's colour.
+- **Link buttons follow `--button-base-padding`.**
+  - A `BBButton` with an `href` had its own fixed `0.6rem` of padding and ignored the token.
+  - It now reads the token like every other button, and the default is still `0.6rem`.
+- **Who sees a change**
+  - A host that sets `--button-base-padding` to anything but `0.6rem`: its link buttons now take that size. `a.yourClass { padding: 0.6rem }` keeps the old one.
+  - A page with a `<base target>`: internal `BBLink`s now follow it, like any plain link.
+  - A button with helper text is now `position: relative`, so where an earlier positioned element with no `z-index` overlaps it, the button draws on top.
+  - A host that registers its own `Link` through `configureBaseBlocks` must pass `aria-current` on to its anchor for the nav marker to reach the page.
+
+
 ### [2.8.0] - 2026-11-06
 - **`BBNavbar` takes an `imageAlt` prop** that names the logo image for screen readers. Without it the logo had an empty alt, so a screen reader said nothing. Leave it empty (the default) when a title beside the logo already names the brand.
 - **`BBQuote` no longer draws a coloured side stripe**, and no longer reads `--accent-color`.
