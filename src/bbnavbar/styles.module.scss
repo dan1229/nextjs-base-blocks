@@ -31,7 +31,8 @@ $navbar-vertical-width-default: var(--navbar-vertical-width-lg, 10rem);
 // navbar transition
 $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
 
-// the horizontal bar's padding and its bottom edge. The vertical navbar sets its own padding.
+// the horizontal bar's padding and bottom border. The vertical navbar keeps its own padding
+// and draws no bottom border.
 $navbar-padding: var(--navbar-padding, 0.25rem);
 $navbar-border-bottom: var(--navbar-border-bottom, none);
 
@@ -115,6 +116,7 @@ $navbar-border-bottom: var(--navbar-border-bottom, none);
     flex-direction: column;
     align-items: stretch; // Allow items to stretch to fill width
     padding: 1rem 0.5rem;
+    border-bottom: none; // --navbar-border-bottom is for the horizontal bar
     position: fixed;
     top: 0;
     left: 0;
