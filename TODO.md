@@ -187,18 +187,6 @@
   byte-identical CSS, and these change rendered colour for any consumer not setting the token
 - wants a changelog callout naming each component, since a consumer may have been compensating
 
-#### no `--navbar-item-text-color-active`
-- the active state selectors set `color` to `--navbar-item-text-color`, the same token the
-  resting `.textLink` already uses, so an active item cannot be told apart by its TEXT - only
-  by its background. Their real job today is stopping the hover colour applying to an active
-  item, which is worth keeping either way
-- a consumer who wants the label itself to change on the current page has no token to do it
-  with. Adding one is additive and would not disturb anyone who leaves it unset
-- the other half of this item - `--navbar-item-bg-color-active` never being used at all -
-  shipped in 2.6.2. It was a cascade bug, not a wiring one: the declaration was there and
-  `.navbarItemBase` overrode it further down the file
-
-
 #### navbar (horizontal) sticky prop
 - add back 'sticky' prop
   - is it working?
@@ -234,10 +222,7 @@
   own rather than riding along with something else
 
 
-#### `BBNavbarItem` defines `$primary-color` twice
-- `$primary-color: var(--primary-color, #3f51b5)` and then, ten lines later,
-  `$primary-color: var(--primary-color, #78cdd7)`. The second wins, so the `#3f51b5` line is
-  dead and the file reads as though the indigo is in play
+#### `BBNavbarItem`'s secondary and grey fallbacks diverge from the rest
 - its `$secondary-color` (`#f50057`) and greys also diverge from every other component's
   defaults, which is why this file was left out of the 2.6.3 palette migration
 - deciding which hexes are correct is a visual change, so it does not ride along with a
@@ -259,6 +244,24 @@
 -
 - consumers may key off todays `nav-item-<title>` in tests/css, so this is breaking-ish
   - minor bump, and call it out in the changelog entry
+
+
+#### the vertical navbar's item rules never match
+- `BBNavbarItem`'s `.vertical &` rules (full width, left alignment, dropdown height) key on its own
+  module's `.vertical` class, which nothing sets. `BBNavbar`'s `.vertical` is a different class, so a
+  vertical navbar's items never get them
+- found while clearing the navbar's dead rules for 2.9.0. Wiring them changes how every vertical navbar
+  lays out, so it wants its own callout
+
+
+#### `BBButton`'s `text` variant has no styles
+- `TBBButtonVariant` offers `'text'` and no rule styles it, so it renders as a bare base button with a
+  white label
+
+
+#### `BBButton`'s `hover` and `focus` props do nothing
+- both are accepted and documented as having no effect since 2.9.0. `focus` showing each variant's
+  `:focus` look is 21 variant blocks and needs a design; `hover` could turn the hover look off
 
 
 ---
@@ -284,7 +287,7 @@
 
 
 ---
-### 2.9.0 - motion & mobile navbar
+### 2.10.0 - motion & mobile navbar
 
 #### Animation system
 - consistent motion design language
@@ -305,8 +308,13 @@
     - overflow-y?
 
 
+#### the hamburger's hover chip and the drawer's shadow take no tokens
+- `.iconHamburger:hover` mixes 20% black into the bar colour on a fixed 1rem radius, and the drawer's
+  shadow is fixed too. 2.9.0 gave the logo's hover box tokens; these two are the rest of the bar
+
+
 ---
-### 2.10.0 - form components
+### 2.11.0 - form components
 
 #### consolidate bb field select and bb field select multiple
 - e.g., could just add a `multiple` prop to the select field
@@ -373,8 +381,21 @@
   which is why consumers keep hitting hydration failures when a link wraps anything but text
 
 
+#### remove `TBBNavbarAlignment`
+- deprecated in 2.9.0. Nothing has read it since `BBNavbar` lost its `menuAlignment` prop in 2.2.0
+
+
 ### [X.X.X] - TBD
-- TODO
+- **Dead code is gone from `BBNavbar` and `BBNavbarItem`.** Rules and Sass variables that never applied are removed, and so is a docblock line for `menuAlignment`, a prop that left in 2.2.0. Nothing renders differently. `TBBNavbarAlignment` is marked deprecated: nothing has read it since then, and 3.0.0 removes it.
+- **The horizontal navbar's padding and bottom border take tokens.** `--navbar-padding` sets the bar's padding (default `0.25rem`, as before) and `--navbar-border-bottom` draws a line under it (default `none`). A vertical navbar keeps its own padding.
+- **The current page's nav item can be told apart by its label, and says so to a screen reader.** `--navbar-item-text-color-active` colours its label (default: `--navbar-item-text-color`, as before), and `--navbar-item-text-decoration-active`, `--navbar-item-text-decoration-thickness-active` and `--navbar-item-text-underline-offset-active` can underline it (default: no underline). Its link carries `aria-current="page"` on the page it points to, and `aria-current="true"` when a dropdown child or an `activePaths` entry lights it. `BBLink` takes a new `ariaCurrent` prop for this.
+- **No stray `undefined` class on buttons, and no empty `target` or `rel` on links.** Every enabled `BBButton` carried a literal `undefined` class, and every internal `BBLink` rendered `target="" rel=""`. Both are gone, and a disabled button lists its disabled class once. The `hover` and `focus` props are still accepted and still change nothing.
+- **The navbar logo's hover takes tokens.** `--navbar-brand-border-radius` (default `0.5rem`), `--navbar-brand-bg-color-hover` (default: the bar's colour mixed 10% toward white) and `--navbar-brand-transform-hover` (default `translateY(-1px)`). Set the last two to `transparent` and `none` for a logo that stays still.
+- **The README's Sass sample uses `color.adjust` and `color.scale`.** `darken()` and `lighten()` print a deprecation warning under current Dart Sass. The sample now starts with `@use 'sass:color';`, which has to move to the top of the file you paste it into.
+- **`BBButton`'s hover lift and shadow take tokens.** `--button-hover-transform` (default `translateY(-1px)`) and `--button-hover-shadow` (default `0 2px 8px rgba(0, 0, 0, 0.12)`). Set both to `none` once in your globals for buttons that stay flat.
+- **A button's hover helper text stays under the button.** It used to hang off the hover lift, so on a disabled button, or with the lift turned off, it landed far from the button.
+- **Link buttons follow `--button-base-padding`.** A `BBButton` with an `href` had its own fixed `0.6rem` of padding and ignored the token. It now reads the token like every other button. The default is still `0.6rem`.
+- A host sees a change if it sets `--button-base-padding` to anything but `0.6rem` (every link button inside that scope now takes the token's size, a lone one included; a rule like `a.yourClass { padding: 0.6rem }` keeps the old size), or if its page has a `<base target>` (internal `BBLink`s now follow it, like any plain link). In a navbar, a hovered link inside the current section's open dropdown now shows the hover colour. A host that registers its own `Link` through `configureBaseBlocks` must pass `aria-current` on to its anchor for the nav marker to reach the page.
 
 -------------------------------------------------------
 
