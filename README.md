@@ -210,6 +210,9 @@ html,
   --navbar-buttons-gap: 0.5rem; // gap between action buttons (buttonsAction)
   --navbar-padding: 0.25rem; // horizontal bar only; the vertical navbar keeps its own padding
   --navbar-border-bottom: none; // horizontal bar only, e.g. 1px solid var(--bg-dark-color); the vertical navbar draws none
+  --navbar-brand-border-radius: 0.5rem;
+  --navbar-brand-bg-color-hover: color-mix(in srgb, var(--navbar-background-color), #fff 10%); // transparent for no hover box
+  --navbar-brand-transform-hover: translateY(-1px); // none for a logo that stays put
   // responsive vertical navbar widths for different screen sizes
   --navbar-vertical-width-xs: 5rem;
   --navbar-vertical-width-sm: 6rem;

@@ -36,6 +36,12 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
 $navbar-padding: var(--navbar-padding, 0.25rem);
 $navbar-border-bottom: var(--navbar-border-bottom, none);
 
+// the brand's hover box: its corner, its hover fill and its hover movement. Set the last two
+// to `transparent` and `none` for a logo that stays still under the pointer.
+$navbar-brand-border-radius: var(--navbar-brand-border-radius, 0.5rem);
+$navbar-brand-bg-color-hover: var(--navbar-brand-bg-color-hover, color-mix(in srgb, $background-color, #fff 10%));
+$navbar-brand-transform-hover: var(--navbar-brand-transform-hover, translateY(-1px));
+
 /**
  * ELEVATION
  */
@@ -214,15 +220,15 @@ $navbar-border-bottom: var(--navbar-border-bottom, none);
   margin: $container-brand-margin;
   width: auto;
   cursor: pointer;
-  border-radius: 0.5rem;
+  border-radius: $navbar-brand-border-radius;
   padding: 0.15rem;
   height: 100%;
   transition: $navbar-transition;
   white-space: nowrap;
 
   &:hover {
-    background-color: color-mix(in srgb, $background-color, #fff 10%);
-    transform: translateY(-1px);
+    background-color: $navbar-brand-bg-color-hover;
+    transform: $navbar-brand-transform-hover;
   }
 
   // Responsive brand styling for vertical navbar
