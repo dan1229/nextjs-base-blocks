@@ -86,6 +86,11 @@ export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElem
 
   const urlMatch = !!currentPath.length && !!href.length && removeSlashes(currentPath) === removeSlashes(href);
   const isActive = urlMatch || isActiveInDropdown;
+  // `page` on the item that links to this page; `true` on one lit by a page under it (a
+  // dropdown child or an `activePaths` entry), which is a section, not the page itself.
+  let ariaCurrent: 'page' | 'true' | undefined;
+  if (urlMatch) ariaCurrent = 'page';
+  else if (isActiveInDropdown) ariaCurrent = 'true';
 
   // Generate ID from title if it's a string, otherwise use a generic ID
   const itemId = typeof title === 'string' ? `nav-item-${title.toLowerCase()}` : 'nav-item';
@@ -109,6 +114,7 @@ export default function BBNavbarItem(Props: IPropsBBNavbarItem): React.ReactElem
             className={styles.textLink}
             // hover is handled by this BBNavbarItem component
             hover={false}
+            ariaCurrent={ariaCurrent}
           >
             {title}
           </BBLink>

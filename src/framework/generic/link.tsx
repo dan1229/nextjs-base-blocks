@@ -10,9 +10,9 @@ export default function Link(props: IPropsFrameworkLink): React.ReactElement {
   const { Link: HostLink } = getBaseBlocksFramework();
   if (HostLink) return <HostLink {...props} />;
 
-  const { href, children, className, target, rel, onClick } = props;
+  const { href, children, className, target, rel, 'aria-current': ariaCurrent, onClick } = props;
   return (
-    <a href={href} className={className} target={target || undefined} rel={rel || undefined} onClick={onClick}>
+    <a href={href} className={className} target={target || undefined} rel={rel || undefined} aria-current={ariaCurrent} onClick={onClick}>
       {children}
     </a>
   );

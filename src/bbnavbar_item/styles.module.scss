@@ -35,6 +35,13 @@ $navbar-item-bg-color-active: var(--navbar-item-bg-color-active, $bg-dark-color)
 // same with --navbar-item-text-color-hover and --bg-color
 $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
 
+// the current page's label: its colour (the resting label colour until a host sets it) and
+// an optional underline, so the current page can be marked by more than colour
+$navbar-item-text-color-active: var(--navbar-item-text-color-active, $navbar-item-text-color);
+$navbar-item-text-decoration-active: var(--navbar-item-text-decoration-active, none);
+$navbar-item-text-decoration-thickness-active: var(--navbar-item-text-decoration-thickness-active, auto);
+$navbar-item-text-underline-offset-active: var(--navbar-item-text-underline-offset-active, auto);
+
 // The active BACKGROUND is not set here - see the active state selectors below
 // the hover ones. `.active` and `.navbarItemBase` land on the same `li` at the
 // same specificity, so a background declared here silently loses to the one
@@ -149,24 +156,32 @@ $navbar-item-bg-color-hover: var(--navbar-item-bg-color-hover, $bg-color);
 .navbarItemBase.active > div > div > a > *,
 .navbarItemBase.active .textLink,
 .navbarItemBase.active .textLink * {
-  color: $navbar-item-text-color;
+  color: $navbar-item-text-color-active;
 }
 
 .navbarItemBase.active > div > div > .iconDropdown,
 .navbarItemBase.active .iconDropdown {
-  color: $navbar-item-text-color;
+  color: $navbar-item-text-color-active;
 }
 
 // Active state should override hover
 .navbarItemBase.active:hover > div > div > a > *,
 .navbarItemBase.active:hover .textLink,
 .navbarItemBase.active:hover .textLink * {
-  color: $navbar-item-text-color;
+  color: $navbar-item-text-color-active;
 }
 
 .navbarItemBase.active:hover > div > div > .iconDropdown,
 .navbarItemBase.active:hover .iconDropdown {
-  color: $navbar-item-text-color;
+  color: $navbar-item-text-color-active;
+}
+
+// The underline goes on this item's own label only. `.active .textLink` would also reach
+// the labels in its dropdown, so the path is spelled out from the active `li`.
+.navbarItemBase.active > div > div > a > * {
+  text-decoration: $navbar-item-text-decoration-active;
+  text-decoration-thickness: $navbar-item-text-decoration-thickness-active;
+  text-underline-offset: $navbar-item-text-underline-offset-active;
 }
 
 .navbarContentContainer {

@@ -52,14 +52,27 @@ describe('BBNavbarItem Component Tests', () => {
   });
 
   describe('Active State Detection', () => {
-    it('shows active state when href matches current path', () => {
-      cy.mount(<BBNavbarItem {...defaultProps} href="/test" />);
-      cy.get('a').should('exist');
+    // The harness mocks usePathname to '/', so href="/" is the page being shown.
+    it('marks the link to this page aria-current="page"', () => {
+      cy.mount(<BBNavbarItem {...defaultProps} href="/" />);
+      cy.get('a').should('have.attr', 'aria-current', 'page');
     });
 
-    it('shows active state when activePaths match', () => {
-      cy.mount(<BBNavbarItem {...defaultProps} activePaths={['/test', '/test-alt']} />);
-      cy.get('a').should('exist');
+    it('leaves other links unmarked', () => {
+      cy.mount(<BBNavbarItem {...defaultProps} href="/about" />);
+      cy.get('a').should('not.have.attr', 'aria-current');
+    });
+
+    it('marks an item lit by activePaths aria-current="true"', () => {
+      cy.mount(<BBNavbarItem {...defaultProps} href="/about" activePaths={['/']} />);
+      cy.get('a').should('have.attr', 'aria-current', 'true');
+    });
+
+    it('marks the parent "true" and the child "page" when a dropdown child is this page', () => {
+      const children = [<BBNavbarItem key="1" title="Home" href="/" />];
+      cy.mount(<BBNavbarItem title="Parent" href="/about" children={children} />);
+      cy.get('#nav-item-parent a').first().should('have.attr', 'aria-current', 'true');
+      cy.get('#nav-item-home a').should('have.attr', 'aria-current', 'page');
     });
   });
 

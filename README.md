@@ -222,6 +222,10 @@ html,
   --navbar-item-background-color: transparent;
   --navbar-item-text-color: var(--accent-color);
   --navbar-item-text-color-hover: #{darken($accent-color, 20%)};
+  --navbar-item-text-color-active: var(--primary-color); // the current page's label (default: --navbar-item-text-color)
+  --navbar-item-text-decoration-active: none; // e.g. underline, to mark the current page by more than colour
+  --navbar-item-text-decoration-thickness-active: auto;
+  --navbar-item-text-underline-offset-active: auto;
   --navbar-item-bg-color-active: #{lighten($primary-color, 45%)};
   --navbar-item-bg-color-hover: #{lighten($accent-color, 20%)};
   --navbar-item-border-thickness: 2px;

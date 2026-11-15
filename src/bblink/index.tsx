@@ -19,6 +19,7 @@ import type { IPropsBBBase, TBBTextColor, TBBTextSize } from '../types';
  * @param {boolean} external - whether the link is external or not. will open in new tab and handle seo.
  * @param {string=} hover - whether the text has a hover effect
  * @param {string=} classNameLink - Any class name to add to the anchor element
+ * @param {React.AriaAttributes['aria-current']=} ariaCurrent - Marks the anchor as the current item, e.g. 'page' on a nav link to the page being shown
  *
  * Note: `className` (from IPropsBBBase) lands on the inner BBText, not on the
  * anchor. That is backwards from the rest of the library, where `className`
@@ -44,6 +45,7 @@ export interface IPropsBBLink {
   external?: boolean;
   hover?: boolean;
   classNameLink?: string;
+  ariaCurrent?: React.AriaAttributes['aria-current'];
 }
 
 /**
@@ -65,6 +67,7 @@ export default function BBLink(
     hover = true,
     className,
     classNameLink,
+    ariaCurrent,
     onClick
   } = Props;
 
@@ -77,6 +80,7 @@ export default function BBLink(
         underline ? styles.underline : styles.no_underline,
         classNameLink
       )}
+      aria-current={ariaCurrent}
       onClick={onClick}
     >
       <BBText

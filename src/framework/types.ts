@@ -13,6 +13,7 @@ export interface IPropsFrameworkLink {
   className?: string;
   target?: string;
   rel?: string;
+  'aria-current'?: React.AriaAttributes['aria-current'];
   onClick?: React.MouseEventHandler<HTMLElement>;
 }
 

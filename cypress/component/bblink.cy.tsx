@@ -59,6 +59,16 @@ describe('BBLink Component Tests', () => {
         .and('have.attr', 'rel', 'noreferrer noopener');
     });
 
+    it('puts aria-current on the anchor', () => {
+      cy.mount(<BBLink {...defaultProps} ariaCurrent="page" />);
+      cy.get('a').should('have.attr', 'aria-current', 'page');
+    });
+
+    it('writes no aria-current by default', () => {
+      cy.mount(<BBLink {...defaultProps} />);
+      cy.get('a').should('not.have.attr', 'aria-current');
+    });
+
     it('calls onClick when the link is clicked', () => {
       // Fragment href on purpose - a real path unloads the component-test
       // iframe and every spec after this one loses its mount point.

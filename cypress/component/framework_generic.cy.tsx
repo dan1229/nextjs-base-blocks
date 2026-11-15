@@ -49,6 +49,15 @@ describe('Generic framework primitives', () => {
       cy.get('a').should('not.have.attr', 'rel');
     });
 
+    it('forwards aria-current to the anchor', () => {
+      cy.mount(
+        <Link href="/plain" aria-current="page">
+          Plain
+        </Link>
+      );
+      cy.get('a').should('have.attr', 'aria-current', 'page');
+    });
+
     it('forwards onClick to the anchor', () => {
       const onClick = cy.stub().as('onClick');
       cy.mount(
