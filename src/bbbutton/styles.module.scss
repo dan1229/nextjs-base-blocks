@@ -161,6 +161,11 @@ $button-hover-shadow: var(--button-hover-shadow, 0 2px 8px rgba(0, 0, 0, 0.12));
 }
 
 // helper text
+// anchors the helper text without the hover transform; `:where` keeps `.base`'s specificity
+.base:where(:has(> .container_main > .helper_text)) {
+  position: relative;
+}
+
 .helper_text {
   position: absolute;
   max-width: 10rem;
