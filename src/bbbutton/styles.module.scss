@@ -133,7 +133,7 @@ $button-hover-shadow: var(--button-hover-shadow, 0 2px 8px rgba(0, 0, 0, 0.12));
 .link {
   // this is to make link buttons fill the container
   display: inline-block;
-  padding: 0.6rem;
+  // padding comes from `.base` (--button-base-padding), as on every other button
   text-decoration: none;
 }
 
