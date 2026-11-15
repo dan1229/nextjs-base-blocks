@@ -41,7 +41,7 @@ $warning-light-color: var(--warning-light-color, #{colors.$warning-light});
 $warning-dark-color: var(--warning-dark-color, #{colors.$warning-dark});
 
 $button-base-padding: var(--button-base-padding, 0.6rem);
-// the hover lift and shadow; `none` turns either off
+// the hover lift and shadow; `none` turns either off, and the shadow replaces an elevated button's own while hovered
 $button-hover-transform: var(--button-hover-transform, translateY(-1px));
 $button-hover-shadow: var(--button-hover-shadow, 0 2px 8px rgba(0, 0, 0, 0.12));
 
@@ -161,8 +161,8 @@ $button-hover-shadow: var(--button-hover-shadow, 0 2px 8px rgba(0, 0, 0, 0.12));
 }
 
 // helper text
-// anchors the helper text without the hover transform; `:where` keeps `.base`'s specificity
-.base:where(:has(> .container_main > .helper_text)) {
+// anchors the helper text without the hover transform; `:where` zeroes its specificity, so any host `position` wins
+:where(.base:has(> .container_main > .helper_text)) {
   position: relative;
 }
 
