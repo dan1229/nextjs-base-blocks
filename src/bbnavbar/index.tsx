@@ -40,7 +40,6 @@ import type {
  * @param {boolean=} boldTitle - Whether the title is bold
  * @param {TBBNavbarTextAlignment=} textAlignment - Text alignment for vertical navbar items (left/center)
  * @param {TBBNavbarVerticalAlignment=} verticalAlignment - Vertical alignment for vertical navbar items (top/center/bottom)
- * @param {string=} menuAlignment - [DEPRECATED] Use horizontalAlignment instead
  */
 export interface IPropsBBNavbar {
   children: React.ReactNode;

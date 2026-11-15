@@ -133,14 +133,6 @@ describe('BBNavbar Component Tests', () => {
     // stylesheet. Layout (e.g. the buttonsAction row) is verified visually in
     // a consuming app; visual regression coverage is on the TODO.
 
-    const alignments = ['left', 'center', 'right'];
-    alignments.forEach((alignment) => {
-      it(`renders with menuAlignment="${alignment}"`, () => {
-        cy.mount(<BBNavbar {...defaultProps} menuAlignment={alignment as any} />);
-        cy.get('nav').should('exist');
-      });
-    });
-
     it('renders with custom brand configuration', () => {
       cy.mount(
         <BBNavbar
@@ -181,7 +173,6 @@ describe('BBNavbar Component Tests', () => {
           elevation="high"
           buttonsAction={actionButtons}
           showButtonsAction={true}
-          menuAlignment="center"
           boldTitle={true}
         />
       );

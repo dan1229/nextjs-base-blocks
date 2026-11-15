@@ -150,6 +150,9 @@ export type TBBModalWidth = 'sm' | 'md' | 'lg' | 'full';
 /**
  * BBNavbar
  */
+/**
+ * @deprecated Nothing reads it: `BBNavbar` lost its `menuAlignment` prop in 2.2.0. Removed in 3.0.0.
+ */
 export type TBBNavbarAlignment = 'left' | 'center' | 'right';
 export type TBBNavbarVerticalAlignment = 'top' | 'center' | 'bottom';
 export type TBBNavbarTextAlignment = 'left' | 'center';

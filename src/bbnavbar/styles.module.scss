@@ -450,20 +450,10 @@ $navbar-transition: var(--navbar-transition, all 0.2s ease-in-out);
     align-self: center;
   }
 
-  .containerBrand {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .navigationMenu {
     &:not(.vertical) {
       // give room for brand to fill in
       width: 0px;
-    }
-
-    .vertical {
-      top: 100px;
-      left: 0;
     }
   }
 
