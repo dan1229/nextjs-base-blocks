@@ -294,7 +294,7 @@ html,
 
 While none of these variables are required, it definitely will help make your app look and feel more custom.
 
-It is recommended to copy and paste this whole block into your `globals.scss` file and then edit the variables as needed. Sass wants `@use` rules before any other rule, so move the `@use 'sass:color';` line to the top of the file, or drop it if the file already has one.
+It is recommended to copy and paste this whole block into your `globals.scss` file and then edit the variables as needed. Sass wants `@use` rules before any other rule, so move the `@use 'sass:color';` line to the top of the file, or drop it if the file already has that same line.
 
 #### Responsive Breakpoints & SCSS Mixins
 
