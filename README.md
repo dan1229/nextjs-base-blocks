@@ -129,7 +129,8 @@ You are also able to customize `Base Blocks` via SCSS variables. You typically w
 The list of available options is here:
 
 ```scss
-// keep these variables separate to allow for dynamic lighten/darken usage
+@use 'sass:color';
+// keep these variables separate so the colour functions below can derive shades from them
 // NOTE: these are not required but it is highly recommended to at least
 // set these theme colors
 $primary-color: #5a65ff;
@@ -144,17 +145,17 @@ html,
 :root {
   // app theme
   --primary-color: #{$primary-color};
-  --primary-dark-color: #{darken($primary-color, 10%)};
-  --primary-darkest-color: #{darken($primary-color, 20%)};
-  --primary-light-color: #{lighten($primary-color, 10%)};
+  --primary-dark-color: #{color.adjust($primary-color, $lightness: -10%)};
+  --primary-darkest-color: #{color.adjust($primary-color, $lightness: -20%)};
+  --primary-light-color: #{color.adjust($primary-color, $lightness: 10%)};
   --secondary-color: #{$secondary-color};
-  --secondary-dark-color: #{darken($secondary-color, 10%)};
-  --secondary-darkest-color: #{darken($secondary-color, 20%)};
-  --secondary-light-color: #{lighten($secondary-color, 10%)};
+  --secondary-dark-color: #{color.adjust($secondary-color, $lightness: -10%)};
+  --secondary-darkest-color: #{color.adjust($secondary-color, $lightness: -20%)};
+  --secondary-light-color: #{color.adjust($secondary-color, $lightness: 10%)};
   --accent-color: #{$accent-color};
-  --accent-dark-color: #{darken($accent-color, 10%)};
-  --accent-light-color: #{lighten($accent-color, 10%)};
-  --accent-darkest-color: #{darken($accent-color, 20%)};
+  --accent-dark-color: #{color.adjust($accent-color, $lightness: -10%)};
+  --accent-light-color: #{color.adjust($accent-color, $lightness: 10%)};
+  --accent-darkest-color: #{color.adjust($accent-color, $lightness: -20%)};
   // general colors
   --white: #fff;
   --black: rgb(35, 35, 35);
@@ -164,17 +165,17 @@ html,
   --grey-darkest: #6f7e9d;
   // theme colors
   --info-color: #{$info-color};
-  --info-dark-color: #{darken($info-color, 10%)};
-  --info-light-color: #{lighten($info-color, 10%)};
+  --info-dark-color: #{color.adjust($info-color, $lightness: -10%)};
+  --info-light-color: #{color.adjust($info-color, $lightness: 10%)};
   --warning-color: #{$warning-color};
-  --warning-dark-color: #{darken($warning-color, 10%)};
-  --warning-light-color: #{lighten($warning-color, 10%)};
+  --warning-dark-color: #{color.adjust($warning-color, $lightness: -10%)};
+  --warning-light-color: #{color.adjust($warning-color, $lightness: 10%)};
   --success-color: #{$success-color};
-  --success-dark-color: #{darken($success-color, 10%)};
-  --success-light-color: #{lighten($success-color, 10%)};
+  --success-dark-color: #{color.adjust($success-color, $lightness: -10%)};
+  --success-light-color: #{color.adjust($success-color, $lightness: 10%)};
   --danger-color: #{$danger-color};
-  --danger-dark-color: #{darken($danger-color, 10%)};
-  --danger-light-color: #{lighten($danger-color, 10%)};
+  --danger-dark-color: #{color.adjust($danger-color, $lightness: -10%)};
+  --danger-light-color: #{color.adjust($danger-color, $lightness: 10%)};
   // bg theme colors
   --bg-color: rgb(233, 233, 233);
   --bg-light-color: rgba(241, 241, 241, 1);
@@ -224,13 +225,13 @@ html,
   --navbar-item-padding: 0.5rem;
   --navbar-item-background-color: transparent;
   --navbar-item-text-color: var(--accent-color);
-  --navbar-item-text-color-hover: #{darken($accent-color, 20%)};
+  --navbar-item-text-color-hover: #{color.adjust($accent-color, $lightness: -20%)};
   --navbar-item-text-color-active: var(--primary-color); // the current page's label (default: --navbar-item-text-color)
   --navbar-item-text-decoration-active: none; // e.g. underline, to mark the current page by more than colour
   --navbar-item-text-decoration-thickness-active: auto;
   --navbar-item-text-underline-offset-active: auto;
-  --navbar-item-bg-color-active: #{lighten($primary-color, 45%)};
-  --navbar-item-bg-color-hover: #{lighten($accent-color, 20%)};
+  --navbar-item-bg-color-active: #{color.scale($primary-color, $lightness: 90%)};
+  --navbar-item-bg-color-hover: #{color.adjust($accent-color, $lightness: 20%)};
   --navbar-item-border-thickness: 2px;
   --navbar-item-border-default-color: var(--primary-color);
   // bb tooltip
