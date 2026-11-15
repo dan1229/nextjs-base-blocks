@@ -42,6 +42,18 @@ describe('BBButton Component', () => {
     cy.get('button').should('have.attr', 'type', 'submit');
   });
 
+  it('renders an href as a link', () => {
+    cy.mount(<BBButton text="Go" href="/go" />);
+    cy.get('a[href="/go"]').should('have.attr', 'target', '_self');
+    cy.get('button').should('not.exist');
+  });
+
+  it('renders a disabled href as a disabled button', () => {
+    cy.mount(<BBButton text="Go" href="/go" disabled />);
+    cy.get('button').should('be.disabled');
+    cy.get('a').should('not.exist');
+  });
+
   describe('Icon Alignment', () => {
     it('renders icon on the left by default', () => {
       cy.mount(

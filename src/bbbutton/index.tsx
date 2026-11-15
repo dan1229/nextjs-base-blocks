@@ -35,11 +35,11 @@ interface IPropsBBButtonIcon {
  * @param {string=} text - The text to display on the button
  * @param {TBBButtonType=} type - The type of button
  * @param {TBBButtonSize=} size - The size of the button
- * @param {TBButtonElevation=} elevation - The elevation of the button
+ * @param {TBBButtonElevation=} elevation - The elevation of the button
  * @param {TBBButtonVariant=} variant - Variant of button to use
  * @param {boolean=} disabled - Whether the button is disabled
- * @param {boolean=} hover - Whether the button is hovered
- * @param {boolean=} focus - Whether the button is focused
+ * @param {boolean=} hover - Has no effect: an enabled button always shows its hover look. Kept so existing callers type-check
+ * @param {boolean=} focus - Has no effect today. Kept so existing callers type-check
  * @param {IPropsBBButtonIcon=} icon - The icon to display on the button
  * @param {string=} idForm - The ID of the form to submit
  * @param {string=} className - Any class name to add
@@ -85,8 +85,6 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     variant = 'primary',
     elevation = 'none',
     disabled = false,
-    hover = true,
-    focus = false,
     icon = { icon: null, align: 'left', color: 'white' },
     idForm,
     className,
@@ -102,10 +100,6 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
 
   // set button disabling if appropriate
   const disabledRes = !onClick && type !== 'submit' && !href ? true : disabled;
-
-  // if hover is disabled or button as a whole
-  // id disabled , don't show hover
-  const hoverRes = disabledRes || !hover ? false : hover;
 
   // icon alignment
   const [align] = useState<TBBButtonIconAlign>(icon.align || 'left');
@@ -212,7 +206,7 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
   );
 
   // class names for buttons
-  let baseClassNames = classNames(
+  const baseClassNames = classNames(
     styles.base,
     classHelper.variant(variant),
     classHelper.elevation(elevation),
@@ -222,29 +216,20 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
     disabledRes ? styles.disabled : null,
     // if transparent, show transparent
     transparent ? styles.transparent : null,
-    // if focused, show focus
-    focus ? styles.focus : null,
     // extra class name
     className
   );
 
   // LINK COMPONENT
-  // We support a 'link button' via the 'href' prop that will
-  // render a BBLink component instead of a regular button
-  // this allows us to do things like right click to open in new tab
-
-  // if href is defined, use regular button and show it as disabled
+  // With an `href` the button renders as a link (the framework Link), so it can be
+  // right-clicked into a new tab. A disabled one falls through to a disabled `<button>`
+  // below, since an anchor cannot be disabled.
   if (href && !disabledRes) {
-    // add hover state for links
-    if (hoverRes) {
-      baseClassNames += ` ${styles.hover}`;
-    }
-    baseClassNames += ` ${styles.link}`;
     if (onClick) console.warn('BBButton: Both onClick and href are defined. onClick will be ignored.');
     return (
       <Link
         href={href}
-        className={baseClassNames}
+        className={classNames(baseClassNames, styles.link)}
         target={openInNewTab ? '_blank' : '_self'}
         rel={openInNewTab ? 'noreferrer noopener' : undefined}
       >
@@ -255,17 +240,6 @@ export default function BBButton(Props: IPropsBBButton): React.ReactElement {
 
   // DEFAULT BUTTON COMPONENT
   // Just a regular old button
-
-  // only 'regular buttons' support a disabled state
-  if (disabledRes) {
-    baseClassNames += ` ${styles.disabled}`;
-  }
-
-  // add hover state for buttons that are not disabled
-  if (hoverRes && !disabledRes) {
-    baseClassNames += ` ${styles.hover}`;
-  }
-
   return (
     <button
       className={baseClassNames}

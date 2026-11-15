@@ -48,7 +48,8 @@ describe('BBLink Component Tests', () => {
   describe('Link Behavior', () => {
     it('renders internal links correctly', () => {
       cy.mount(<BBLink {...defaultProps} href="/internal" />);
-      cy.get('a').should('have.attr', 'href', '/internal').and('have.attr', 'target', '');
+      cy.get('a').should('have.attr', 'href', '/internal').and('not.have.attr', 'target');
+      cy.get('a').should('not.have.attr', 'rel');
     });
 
     it('renders external links correctly', () => {

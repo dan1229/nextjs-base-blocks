@@ -74,8 +74,8 @@ export default function BBLink(
   return (
     <Link
       href={href}
-      target={external ? '_blank' : ''}
-      rel={external ? 'noreferrer noopener' : ''}
+      target={external ? '_blank' : undefined}
+      rel={external ? 'noreferrer noopener' : undefined}
       className={classNames(
         underline ? styles.underline : styles.no_underline,
         classNameLink
