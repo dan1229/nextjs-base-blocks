@@ -186,7 +186,7 @@ html,
   --button-base-padding: 0.6rem;
   --button-border-radius: 1rem;
   --button-hover-transform: translateY(-1px); // none for buttons that stay put under the pointer
-  --button-hover-shadow: 0 2px 8px rgba(0, 0, 0, 0.12); // none for no hover shadow
+  --button-hover-shadow: 0 2px 8px rgba(0, 0, 0, 0.12); // replaces an elevated button's shadow while hovered, so none drops it
   --button-primary-text-color: #fff; // Text/icon color for the filled primary button. Defaults to white; set to a dark value when the primary color is light.
   // bb card
   --card-background-default-color: rgb(250, 250, 250);
@@ -294,7 +294,7 @@ html,
 
 While none of these variables are required, it definitely will help make your app look and feel more custom.
 
-It is recommended to copy and paste this whole block into your `globals.scss` file and then edit the variables as needed.
+It is recommended to copy and paste this whole block into your `globals.scss` file and then edit the variables as needed. Sass wants `@use` rules before any other rule, so move the `@use 'sass:color';` line to the top of the file, or drop it if the file already has one.
 
 #### Responsive Breakpoints & SCSS Mixins
 
